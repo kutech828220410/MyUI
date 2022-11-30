@@ -58,7 +58,10 @@ namespace LeadShineUI
         public DMC1000B()
         {
             InitializeComponent();
+            this.plC_Button_Save.btnClick += PlC_Button_Save_btnClick;
         }
+
+   
 
         private void SetLowerMachine(LowerMachine PLC)
         {
@@ -585,10 +588,13 @@ namespace LeadShineUI
             if (IsOpen)
             {
                 this.BoardClose();
-                this.SaveProperties();
             }
         }
-
+        private void PlC_Button_Save_btnClick(object sender, EventArgs e)
+        {
+            this.SaveProperties();
+            MyMessageBox.ShowDialog("存檔完成!");
+        }
         #region Fuinction
         public enum enum_Axis_SpeedMode : int
         {
