@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E507E0A1-5C43-4F26-B914-641B23EE702E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeadShineUI</RootNamespace>
+    <AssemblyName>LeadShineUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="LadderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\LadderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="MyUI">
+      <HintPath>..\MyUI\bin\Release\MyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DMC1000B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC1000B.Designer.cs">
+      <DependentUpon>DMC1000B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC1000B_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC1000B_Basic.Designer.cs">
+      <DependentUpon>DMC1000B_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC2410.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC2410.Designer.cs">
+      <DependentUpon>DMC2410.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC2410_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC2410_Basic.Designer.cs">
+      <DependentUpon>DMC2410_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC2C80.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC2C80.Designer.cs">
+      <DependentUpon>DMC2C80.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC2C80_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC2C80_Basic.Designer.cs">
+      <DependentUpon>DMC2C80_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC3000.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC3000.Designer.cs">
+      <DependentUpon>DMC3000.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMC3C00_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DMC3C00_Basic.Designer.cs">
+      <DependentUpon>DMC3C00_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EM06AX-C1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EM06AX-C1.Designer.cs">
+      <DependentUpon>EM06AX-C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EM32DX-C1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EM32DX-C1.Designer.cs">
+      <DependentUpon>EM32DX-C1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOC1280.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IOC1280.Designer.cs">
+      <DependentUpon>IOC1280.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOC1280_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IOC1280_Basic.Designer.cs">
+      <DependentUpon>IOC1280_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pci-dmc1000.cs" />
+    <Compile Include="pci-dmc2410.cs" />
+    <Compile Include="pci-dmc2c80.cs" />
+    <Compile Include="pci-dmc3000.cs" />
+    <Compile Include="pci-ioc1280.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DMC1000B.resx">
+      <DependentUpon>DMC1000B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC1000B_Basic.resx">
+      <DependentUpon>DMC1000B_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC2410.resx">
+      <DependentUpon>DMC2410.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC2410_Basic.resx">
+      <DependentUpon>DMC2410_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC2C80.resx">
+      <DependentUpon>DMC2C80.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC2C80_Basic.resx">
+      <DependentUpon>DMC2C80_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC3000.resx">
+      <DependentUpon>DMC3000.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMC3C00_Basic.resx">
+      <DependentUpon>DMC3C00_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EM06AX-C1.resx">
+      <DependentUpon>EM06AX-C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EM32DX-C1.resx">
+      <DependentUpon>EM32DX-C1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOC1280.resx">
+      <DependentUpon>IOC1280.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IOC1280_Basic.resx">
+      <DependentUpon>IOC1280_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PCI.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\0.DLL"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

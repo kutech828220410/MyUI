@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF777A3A-CA43-45D8-95D8-C8303E568848}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LadderUI</RootNamespace>
+    <AssemblyName>LadderUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>618,612</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="CallBackUI, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CallBackUI\bin\Release\CallBackUI.dll</HintPath>
+    </Reference>
+    <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SMT\bin\Release\DrawingClass.dll</HintPath>
+    </Reference>
+    <Reference Include="MyUI">
+      <HintPath>..\..\MyUI20221003\MyUI\bin\Release\MyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TCP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TCP\TCP\bin\Release\TCP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="Verify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Verify.Designer.cs">
+      <DependentUpon>Verify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Download.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Download.Designer.cs">
+      <DependentUpon>Download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterSymbol.Designer.cs">
+      <DependentUpon>EnterSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindDevice.Designer.cs">
+      <DependentUpon>FindDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LADDER_Panel.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LADDER_Panel.Designer.cs">
+      <DependentUpon>LADDER_Panel.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="LowerMachine_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LowerMachine_Panel.Designer.cs">
+      <DependentUpon>LowerMachine_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReplaceDevice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplaceDevice.Designer.cs">
+      <DependentUpon>ReplaceDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopMachine_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TopMachine_Panel.Designer.cs">
+      <DependentUpon>TopMachine_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TranferSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TranferSetup.Designer.cs">
+      <DependentUpon>TranferSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Up%28Down%29load_Panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Up%28Down%29load_Panel.Designer.cs">
+      <DependentUpon>Up%28Down%29load_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Upload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Upload.Designer.cs">
+      <DependentUpon>Upload.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Verify.resx">
+      <DependentUpon>Verify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Download.resx">
+      <DependentUpon>Download.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterSymbol.resx">
+      <DependentUpon>EnterSymbol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindDevice.resx">
+      <DependentUpon>FindDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LADDER_Panel.resx">
+      <DependentUpon>LADDER_Panel.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LowerMachine_Panel.resx">
+      <DependentUpon>LowerMachine_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReplaceDevice.resx">
+      <DependentUpon>ReplaceDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopMachine_Panel.resx">
+      <DependentUpon>TopMachine_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TranferSetup.resx">
+      <DependentUpon>TranferSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Up%28Down%29load_Panel.resx">
+      <DependentUpon>Up%28Down%29load_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Upload.resx">
+      <DependentUpon>Upload.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\開新檔案.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\開新檔案1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\開啟舊檔.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\開啟舊檔1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\儲存檔案.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\儲存檔案1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\剪下.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\剪下1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\複製.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\複製1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\貼上.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\貼上1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OPen contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OPen contact1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Branch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draw horizontal line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draw horizontal line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draw vartical line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Draw vartical line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete horizontal line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete horizontal line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete vartical line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete vartical line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close contact1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free_draw line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free_draw line1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\復原.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\復原1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IL_LD切換.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IL_LD切換1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Device test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Device test1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitorwrite mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitorwrite mode1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IL_LD切換11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\復原2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\復原 未編譯.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\復原1 未編譯.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\0.DLL"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

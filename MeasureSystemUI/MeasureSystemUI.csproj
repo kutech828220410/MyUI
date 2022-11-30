@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D1855484-6581-4995-B3A8-96F0D7214AFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MeasureSystemUI</RootNamespace>
+    <AssemblyName>MeasureSystemUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxAltairUDrv">
+      <HintPath>Assemblies\MeasureSystemUI\AxAltairUDrv.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AxAltairUDrvAsm4.5">
+      <HintPath>Assemblies\MeasureSystemUI\AxAltairUDrvAsm4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="AxOvkBase">
+      <HintPath>Assemblies\MeasureSystemUI\AxOvkBase.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AxOvkBaseAsm4.5">
+      <HintPath>Assemblies\MeasureSystemUI\AxOvkBaseAsm4.5.dll</HintPath>
+    </Reference>
+    <Reference Include="AxOvkImage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Release\AxOvkImage.dll</HintPath>
+    </Reference>
+    <Reference Include="AxOvkMsr">
+      <HintPath>..\..\..\..\..\Program Files (x86)\AISYS Vision Corporation\AISYS Solutions\OVK Framework 64 Suite\OvkAssembly4.5\AxOvkMsr.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="CallBackUI, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SMT\bin\Release\CallBackUI.dll</HintPath>
+    </Reference>
+    <Reference Include="HsBase">
+      <HintPath>..\HsBase\obj\Release\HsBase.dll</HintPath>
+    </Reference>
+    <Reference Include="LadderUI">
+      <HintPath>..\LadderUI\obj\Release\LadderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="MeasureSystemFunction">
+      <HintPath>..\MeasureSystemFunction\bin\Release\MeasureSystemFunction.dll</HintPath>
+    </Reference>
+    <Reference Include="MyUI">
+      <HintPath>..\MyUI\obj\Release\MyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SLDUI">
+      <HintPath>..\SLDUI\obj\Release\SLDUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TCP">
+      <HintPath>..\SMT\bin\Release\TCP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="H_CircleROIBW8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_CircleROIBW8.Designer.cs">
+      <DependentUpon>H_CircleROIBW8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_AltairUDrv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_AltairUDrv.Designer.cs">
+      <DependentUpon>H_AltairUDrv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_Canvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_Canvas.Designer.cs">
+      <DependentUpon>H_Canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_ImageBW8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_ImageBW8.Designer.cs">
+      <DependentUpon>H_ImageBW8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_ImageC24.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_ImageC24.Designer.cs">
+      <DependentUpon>H_ImageC24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_ImageCopier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_ImageCopier.Designer.cs">
+      <DependentUpon>H_ImageCopier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_PointMsr.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_PointMsr.Designer.cs">
+      <DependentUpon>H_PointMsr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_ROIBW8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_ROIBW8.Designer.cs">
+      <DependentUpon>H_ROIBW8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_ROIC24.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_ROIC24.Designer.cs">
+      <DependentUpon>H_ROIC24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="H_Thread.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="H_Thread.Designer.cs">
+      <DependentUpon>H_Thread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeasureSystemFrmUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MeasureSystemFrmUI.Designer.cs">
+      <DependentUpon>MeasureSystemFrmUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="VariableUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VariableUI.Designer.cs">
+      <DependentUpon>VariableUI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="H_CircleROIBW8.resx">
+      <DependentUpon>H_CircleROIBW8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_AltairUDrv.resx">
+      <DependentUpon>H_AltairUDrv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_Canvas.resx">
+      <DependentUpon>H_Canvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_ImageBW8.resx">
+      <DependentUpon>H_ImageBW8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_ImageC24.resx">
+      <DependentUpon>H_ImageC24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_ImageCopier.resx">
+      <DependentUpon>H_ImageCopier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_PointMsr.resx">
+      <DependentUpon>H_PointMsr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_ROIBW8.resx">
+      <DependentUpon>H_ROIBW8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_ROIC24.resx">
+      <DependentUpon>H_ROIC24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="H_Thread.resx">
+      <DependentUpon>H_Thread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeasureSystemFrmUI.resx">
+      <DependentUpon>MeasureSystemFrmUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VariableUI.resx">
+      <DependentUpon>VariableUI.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\0.DLL"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

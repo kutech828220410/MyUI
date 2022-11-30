@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6C5FCE6-CA78-49A6-AE7C-42187447A924}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SLDUI</RootNamespace>
+    <AssemblyName>SLDUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="CallBackUI, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CallBackUI\bin\Release\CallBackUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LadderUI">
+      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PortControlUI">
+      <HintPath>..\ParallelPortControl\bin\Release\PortControlUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C9016.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C9016.Designer.cs">
+      <DependentUpon>C9016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C9016_Basic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C9016_Basic.Designer.cs">
+      <DependentUpon>C9016_Basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="E400.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="E400.Designer.cs">
+      <DependentUpon>E400.cs</DependentUpon>
+    </Compile>
+    <Compile Include="C1230.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="C1230.Designer.cs">
+      <DependentUpon>C1230.cs</DependentUpon>
+    </Compile>
+    <Compile Include="E6232.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="E6232.Designer.cs">
+      <DependentUpon>E6232.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pci9016.cs" />
+    <Compile Include="pcie1230.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="sldm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="C9016.resx">
+      <DependentUpon>C9016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C9016_Basic.resx">
+      <DependentUpon>C9016_Basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="E400.resx">
+      <DependentUpon>E400.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C1230.resx">
+      <DependentUpon>C1230.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="E6232.resx">
+      <DependentUpon>E6232.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyUI\MyUI.csproj">
+      <Project>{37F62262-9753-48D3-8E36-459CD50D543E}</Project>
+      <Name>MyUI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rain.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PCI.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ECAN.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\0.DLL"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

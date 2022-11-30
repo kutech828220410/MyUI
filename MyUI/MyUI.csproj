@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37F62262-9753-48D3-8E36-459CD50D543E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyUI</RootNamespace>
+    <AssemblyName>MyUI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+    </Reference>
+    <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Drawing\bin\Release\DrawingClass.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="HCGUI">
+      <HintPath>..\HCGUI\bin\Release\HCGUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LadderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LeadShineUI">
+      <HintPath>..\LeadShineUI\bin\Release\LeadShineUI.dll</HintPath>
+    </Reference>
+    <Reference Include="LightControlUI">
+      <HintPath>..\LightControlUI\bin\Release\LightControlUI.dll</HintPath>
+    </Reference>
+    <Reference Include="MeasureSystemUI">
+      <HintPath>..\MeasureSystemUI\bin\Release\MeasureSystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="MVSDKUI">
+      <HintPath>..\MVSDKUI\bin\Release\MVSDKUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PortControlUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ParallelPortControl\bin\Release\PortControlUI.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SLDUI">
+      <HintPath>..\SLDUI\bin\Release\SLDUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TCP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SMT\bin\Release\TCP.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZealTechUI">
+      <HintPath>..\ZealTechUI\bin\Release\ZealTechUI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBaseView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataBaseView.Designer.cs">
+      <DependentUpon>DataBaseView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeComList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateTimeComList.Designer.cs">
+      <DependentUpon>DateTimeComList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_ContextMenuStrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_NumPannel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_NumPannel.Designer.cs">
+      <DependentUpon>Dialog_NumPannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LScrollBar.cs" />
+    <Compile Include="MyContextMenuStrip.cs" />
+    <Compile Include="PLC_CheckDeviceTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_CheckDeviceTextBox.Designer.cs">
+      <DependentUpon>PLC_CheckDeviceTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumWordTextBox .cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumWordTextBox .Designer.cs">
+      <DependentUpon>NumWordTextBox .cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumTextBox.Designer.cs">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoSoundTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NoSoundTextBox.Designer.cs">
+      <DependentUpon>NoSoundTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_AlarmFlow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_AlarmFlow.Designer.cs">
+      <DependentUpon>PLC_AlarmFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_Button.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_Button.Designer.cs">
+      <DependentUpon>PLC_Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_CheckBox.Designer.cs">
+      <DependentUpon>PLC_CheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_ComboBox.Designer.cs">
+      <DependentUpon>PLC_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_Date.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_Date.Designer.cs">
+      <DependentUpon>PLC_Date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_Device.cs" />
+    <Compile Include="PLC_HighSpeedCounter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_HighSpeedCounter.Designer.cs">
+      <DependentUpon>PLC_HighSpeedCounter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_MultiStateDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_MultiStateDisplay.Designer.cs">
+      <DependentUpon>PLC_MultiStateDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_RJ_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_GroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_GroupBox.Designer.cs">
+      <DependentUpon>PLC_RJ_GroupBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_RJ_Pannel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_Pannel.Designer.cs">
+      <DependentUpon>PLC_RJ_Pannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_RJ_ScreenButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_ScreenButton.Designer.cs">
+      <DependentUpon>PLC_RJ_ScreenButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_RJ_WordBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RJ_TrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_TrackBar.Designer.cs">
+      <DependentUpon>RJ_TrackBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJ_ComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJ_DataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_GroupBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJ_Lable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_Pannel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_ProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_TextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJ_TextBox.Designer.cs">
+      <DependentUpon>RJ_TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RJ_DatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_RatioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RJ_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_SaveDeviceButtom .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_SaveDeviceButtom .Designer.cs">
+      <DependentUpon>PLC_SaveDeviceButtom .cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_MessageBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_MessageBox.Designer.cs">
+      <DependentUpon>PLC_MessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_NumBox.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_NumBox.Designer.cs">
+      <DependentUpon>PLC_NumBox.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="PLC_LoadDeviceButtom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_LoadDeviceButtom.Designer.cs">
+      <DependentUpon>PLC_LoadDeviceButtom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_ScreenButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_ScreenButton.Designer.cs">
+      <DependentUpon>PLC_ScreenButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_ScreenPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_ScreenPage.Designer.cs">
+      <DependentUpon>PLC_ScreenPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_SerialPort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_SerialPort.Designer.cs">
+      <DependentUpon>PLC_SerialPort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_TrackBarHorizontal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_TrackBarHorizontal.Designer.cs">
+      <DependentUpon>PLC_TrackBarHorizontal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_TrackBarVertical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_TrackBarVertical.Designer.cs">
+      <DependentUpon>PLC_TrackBarVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_UI_Init.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PLC_UI_Init.Designer.cs">
+      <DependentUpon>PLC_UI_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLC_WordBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_WordBox.Designer.cs">
+      <DependentUpon>PLC_WordBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExButton.Designer.cs">
+      <DependentUpon>ExButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Touchch_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Touchch_TextBox.Designer.cs">
+      <DependentUpon>Touchch_TextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="字母鍵盤.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="字母鍵盤.Designer.cs">
+      <DependentUpon>字母鍵盤.cs</DependentUpon>
+    </Compile>
+    <Compile Include="數字鍵盤.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="數字鍵盤.Designer.cs">
+      <DependentUpon>數字鍵盤.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataBaseView.resx">
+      <DependentUpon>DataBaseView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimeComList.resx">
+      <DependentUpon>DateTimeComList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_NumPannel.resx">
+      <DependentUpon>Dialog_NumPannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExButton.resx">
+      <DependentUpon>ExButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_CheckDeviceTextBox.resx">
+      <DependentUpon>PLC_CheckDeviceTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumWordTextBox .resx">
+      <DependentUpon>NumWordTextBox .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumTextBox.resx">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoSoundTextBox.resx">
+      <DependentUpon>NoSoundTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_AlarmFlow.resx">
+      <DependentUpon>PLC_AlarmFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_Button.resx">
+      <DependentUpon>PLC_Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_CheckBox.resx">
+      <DependentUpon>PLC_CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_ComboBox.resx">
+      <DependentUpon>PLC_ComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_Date.resx">
+      <DependentUpon>PLC_Date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_HighSpeedCounter.resx">
+      <DependentUpon>PLC_HighSpeedCounter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_MultiStateDisplay.resx">
+      <DependentUpon>PLC_MultiStateDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_RJ_ScreenButton.resx">
+      <DependentUpon>PLC_RJ_ScreenButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_SaveDeviceButtom .resx">
+      <DependentUpon>PLC_SaveDeviceButtom .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_MessageBox.resx">
+      <DependentUpon>PLC_MessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_NumBox.resx">
+      <DependentUpon>PLC_NumBox.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_LoadDeviceButtom.resx">
+      <DependentUpon>PLC_LoadDeviceButtom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_ScreenButton.resx">
+      <DependentUpon>PLC_ScreenButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_ScreenPage.resx">
+      <DependentUpon>PLC_ScreenPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_SerialPort.resx">
+      <DependentUpon>PLC_SerialPort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_TrackBarHorizontal.resx">
+      <DependentUpon>PLC_TrackBarHorizontal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_TrackBarVertical.resx">
+      <DependentUpon>PLC_TrackBarVertical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_UI_Init.resx">
+      <DependentUpon>PLC_UI_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PLC_WordBox.resx">
+      <DependentUpon>PLC_WordBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_TrackBar.resx">
+      <DependentUpon>RJ_TrackBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_GroupBox.resx">
+      <DependentUpon>RJ_GroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_TextBox.resx">
+      <DependentUpon>RJ_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Touchch_TextBox.resx">
+      <DependentUpon>Touchch_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="字母鍵盤.resx">
+      <DependentUpon>字母鍵盤.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="數字鍵盤.resx">
+      <DependentUpon>數字鍵盤.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUT_OFF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BUT_ON.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Speech Misrecognition.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BEEP.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\右箭頭_OFF_01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play1 - 複製.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play0 - 複製.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\按鈕00 %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICON.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PLC_TrackBarHorizontal.bmp" />
+    <EmbeddedResource Include="PLC_TrackBarVertical.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PLC_UI_Init.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PLC_ScreenPage.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PLC_AlarmFlow.bmp" />
+    <EmbeddedResource Include="PLC_MultiStateDisplay.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\568111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\568102.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar_Dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar_White.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y "$(TargetDir)$(ProjectName).dll" "$(SolutionDir)\0.DLL"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
