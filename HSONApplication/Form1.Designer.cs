@@ -57,6 +57,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,6 +98,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.sqL_DataGridView_file);
             this.tabPage1.Controls.Add(this.button1);
@@ -199,7 +201,7 @@
             this.rJ_TrackBar1.Minimum = 20;
             this.rJ_TrackBar1.MinValue = 20;
             this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(958, 90);
+            this.rJ_TrackBar1.Size = new System.Drawing.Size(998, 90);
             this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rJ_TrackBar1.SliderSize = 20;
             this.rJ_TrackBar1.TabIndex = 47;
@@ -632,6 +634,13 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1089, 190);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 51;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -645,6 +654,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.plC_ScreenPage1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -684,6 +694,7 @@
         private System.Windows.Forms.Button button1;
         private SQLUI.SQL_DataGridView sqL_DataGridView_file;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
