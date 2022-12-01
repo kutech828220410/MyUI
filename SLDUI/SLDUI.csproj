@@ -35,17 +35,17 @@
   <ItemGroup>
     <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+      <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="CallBackUI, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CallBackUI\bin\Release\CallBackUI.dll</HintPath>
+      <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
     <Reference Include="LadderUI">
-      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+      <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>
     <Reference Include="PortControlUI">
-      <HintPath>..\ParallelPortControl\bin\Release\PortControlUI.dll</HintPath>
+      <HintPath>..\0.DLL\PortControlUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

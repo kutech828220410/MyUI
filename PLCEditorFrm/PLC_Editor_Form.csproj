@@ -58,20 +58,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Basic">
-      <HintPath>..\HSONApplication\bin\Release\Basic.dll</HintPath>
+      <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="DrawingClass">
-      <HintPath>..\HSONApplication\bin\Release\DrawingClass.dll</HintPath>
+      <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
     </Reference>
     <Reference Include="LadderUI">
-      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+      <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>
     <Reference Include="MSBuild.AutoILMerge.Task, Version=1.0.0.0, Culture=en-US, processorArchitecture=MSIL">
       <HintPath>..\packages\MSBuild.AutoILMerge.Task.1.1.1\lib\net40\MSBuild.AutoILMerge.Task.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MyUI">
-      <HintPath>..\HSONApplication\bin\Release\MyUI.dll</HintPath>
+      <HintPath>..\0.DLL\MyUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

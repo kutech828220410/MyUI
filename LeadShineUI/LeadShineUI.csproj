@@ -35,14 +35,14 @@
   <ItemGroup>
     <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+      <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="LadderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\LadderUI.dll</HintPath>
+      <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>
     <Reference Include="MyUI">
-      <HintPath>..\MyUI\bin\Release\MyUI.dll</HintPath>
+      <HintPath>..\0.DLL\MyUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

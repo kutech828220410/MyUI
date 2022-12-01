@@ -46,46 +46,49 @@
       <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="CallBackUI">
-      <HintPath>..\CallBackUI\bin\Release\CallBackUI.dll</HintPath>
+      <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
     <Reference Include="DrawingClass">
-      <HintPath>..\Drawing\bin\Release\DrawingClass.dll</HintPath>
+      <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
     </Reference>
     <Reference Include="FontAwesome.Sharp">
-      <HintPath>..\MyUI\bin\Release\FontAwesome.Sharp.dll</HintPath>
+      <HintPath>..\0.DLL\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="HCGUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\HCGUI\bin\Release\HCGUI.dll</HintPath>
+      <HintPath>..\0.DLL\HCGUI.dll</HintPath>
     </Reference>
     <Reference Include="HsBase">
-      <HintPath>..\HsBase\obj\Release\HsBase.dll</HintPath>
+      <HintPath>..\0.DLL\ImageAISYS\HsBase.dll</HintPath>
+    </Reference>
+    <Reference Include="HsBasic">
+      <HintPath>..\0.DLL\ImageAISYS\HsBasic.dll</HintPath>
     </Reference>
     <Reference Include="Interop.SpeechLib, Version=5.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\Basic\bin\Release\Interop.SpeechLib.dll</HintPath>
+      <HintPath>..\0.DLL\Interop.SpeechLib.dll</HintPath>
     </Reference>
     <Reference Include="LadderUI">
-      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+      <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>
     <Reference Include="LeadShineUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LeadShineUI\bin\Release\LeadShineUI.dll</HintPath>
+      <HintPath>..\0.DLL\LeadShineUI.dll</HintPath>
     </Reference>
     <Reference Include="LightControlUI">
-      <HintPath>..\LightControlUI\obj\Release\LightControlUI.dll</HintPath>
+      <HintPath>..\0.DLL\LightControlUI.dll</HintPath>
     </Reference>
     <Reference Include="MeasureSystemUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MeasureSystemUI\bin\Release\MeasureSystemUI.dll</HintPath>
+      <HintPath>..\0.DLL\MeasureSystemUI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\System.Json.Text(6.0.1)\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="MVSDKUI">
-      <HintPath>..\MyUI\bin\Release\MVSDKUI.dll</HintPath>
+      <HintPath>..\0.DLL\MVSDKUI.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -93,20 +96,20 @@
     </Reference>
     <Reference Include="MyUI, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MyUI\bin\Release\MyUI.dll</HintPath>
+      <HintPath>..\0.DLL\MyUI.dll</HintPath>
     </Reference>
     <Reference Include="PC_Control">
-      <HintPath>..\Basic\bin\Release\PC_Control.dll</HintPath>
+      <HintPath>..\0.DLL\PC_Control.dll</HintPath>
     </Reference>
     <Reference Include="PortControlUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MyUI\bin\Release\PortControlUI.dll</HintPath>
+      <HintPath>..\0.DLL\PortControlUI.dll</HintPath>
     </Reference>
     <Reference Include="SLDUI">
-      <HintPath>..\SLDUI\bin\Release\SLDUI.dll</HintPath>
+      <HintPath>..\0.DLL\SLDUI.dll</HintPath>
     </Reference>
     <Reference Include="SQLUI">
-      <HintPath>..\SQLUI\bin\Release\SQLUI.dll</HintPath>
+      <HintPath>..\0.DLL\SQLUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -151,10 +154,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TCP">
-      <HintPath>..\TCP\TCP\bin\Release\TCP.dll</HintPath>
+      <HintPath>..\0.DLL\TCP.dll</HintPath>
     </Reference>
     <Reference Include="ZealTechUI">
-      <HintPath>..\ZealTechUI\obj\Release\ZealTechUI.dll</HintPath>
+      <HintPath>..\0.DLL\ZealTechUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

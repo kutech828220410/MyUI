@@ -33,17 +33,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Basic">
-      <HintPath>..\HsBase\bin\Release\Basic.dll</HintPath>
+      <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="DrawingClass">
-      <HintPath>..\HsBase\bin\Release\DrawingClass.dll</HintPath>
+      <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
     </Reference>
     <Reference Include="HsBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\HsBase\bin\Release\HsBase.dll</HintPath>
+      <HintPath>..\0.DLL\ImageAISYS\HsBase.dll</HintPath>
     </Reference>
     <Reference Include="HsBasic">
-      <HintPath>..\HsBase\bin\Release\HsBasic.dll</HintPath>
+      <HintPath>..\0.DLL\ImageAISYS\HsBasic.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

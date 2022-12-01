@@ -39,43 +39,43 @@
   <ItemGroup>
     <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Basic\bin\Release\Basic.dll</HintPath>
+      <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
     <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Drawing\bin\Release\DrawingClass.dll</HintPath>
+      <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
     </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Release\FontAwesome.Sharp.dll</HintPath>
+      <HintPath>..\0.DLL\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="HCGUI">
-      <HintPath>..\HCGUI\bin\Release\HCGUI.dll</HintPath>
+      <HintPath>..\0.DLL\HCGUI.dll</HintPath>
     </Reference>
     <Reference Include="LadderUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\LadderUI\bin\Release\LadderUI.dll</HintPath>
+      <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>
     <Reference Include="LeadShineUI">
-      <HintPath>..\LeadShineUI\bin\Release\LeadShineUI.dll</HintPath>
+      <HintPath>..\0.DLL\LeadShineUI.dll</HintPath>
     </Reference>
     <Reference Include="LightControlUI">
-      <HintPath>..\LightControlUI\bin\Release\LightControlUI.dll</HintPath>
+      <HintPath>..\0.DLL\LightControlUI.dll</HintPath>
     </Reference>
     <Reference Include="MeasureSystemUI">
-      <HintPath>..\MeasureSystemUI\bin\Release\MeasureSystemUI.dll</HintPath>
+      <HintPath>..\0.DLL\MeasureSystemUI.dll</HintPath>
     </Reference>
     <Reference Include="MVSDKUI">
-      <HintPath>..\MVSDKUI\bin\Release\MVSDKUI.dll</HintPath>
+      <HintPath>..\0.DLL\MVSDKUI.dll</HintPath>
     </Reference>
     <Reference Include="PortControlUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\ParallelPortControl\bin\Release\PortControlUI.dll</HintPath>
+      <HintPath>..\0.DLL\PortControlUI.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SLDUI">
-      <HintPath>..\SLDUI\bin\Release\SLDUI.dll</HintPath>
+      <HintPath>..\0.DLL\SLDUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -89,11 +89,11 @@
     <Reference Include="System.Xml" />
     <Reference Include="TCP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SMT\bin\Release\TCP.dll</HintPath>
+      <HintPath>..\0.DLL\TCP.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="ZealTechUI">
-      <HintPath>..\ZealTechUI\bin\Release\ZealTechUI.dll</HintPath>
+      <HintPath>..\0.DLL\ZealTechUI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
