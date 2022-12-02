@@ -85,7 +85,7 @@ namespace MyUI
         }
         #region 自訂屬性
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
-        public Color ForeColor
+        public Color mForeColor
         {
             get
             {
@@ -97,7 +97,7 @@ namespace MyUI
             }
         }
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
-        public Color BackColor
+        public Color mBackColor
         {
             get
             {

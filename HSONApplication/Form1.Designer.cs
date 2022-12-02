@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.sqL_DataGridView_file = new SQLUI.SQL_DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.plC_NumBox1 = new MyUI.PLC_NumBox();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,6 +99,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_NumBox1);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.sqL_DataGridView_file);
@@ -117,6 +119,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1089, 190);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 51;
             // 
             // button2
             // 
@@ -201,7 +210,7 @@
             this.rJ_TrackBar1.Minimum = 20;
             this.rJ_TrackBar1.MinValue = 20;
             this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(998, 90);
+            this.rJ_TrackBar1.Size = new System.Drawing.Size(1118, 90);
             this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rJ_TrackBar1.SliderSize = 20;
             this.rJ_TrackBar1.TabIndex = 47;
@@ -634,12 +643,23 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
-            // textBox1
+            // plC_NumBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1089, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 51;
+            this.plC_NumBox1.Location = new System.Drawing.Point(1099, 267);
+            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
+            this.plC_NumBox1.Name = "plC_NumBox1";
+            this.plC_NumBox1.ReadOnly = false;
+            this.plC_NumBox1.Size = new System.Drawing.Size(112, 22);
+            this.plC_NumBox1.TabIndex = 52;
+            this.plC_NumBox1.Value = 0;
+            this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
+            this.plC_NumBox1.密碼欄位 = false;
+            this.plC_NumBox1.小數點位置 = 0;
+            this.plC_NumBox1.微調數值 = 1;
+            this.plC_NumBox1.音效 = true;
+            this.plC_NumBox1.顯示微調按鈕 = false;
+            this.plC_NumBox1.顯示螢幕小鍵盤 = true;
             // 
             // Form1
             // 
@@ -695,6 +715,7 @@
         private SQLUI.SQL_DataGridView sqL_DataGridView_file;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private MyUI.PLC_NumBox plC_NumBox1;
     }
 }
 
