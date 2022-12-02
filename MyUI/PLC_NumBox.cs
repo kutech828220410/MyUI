@@ -84,6 +84,30 @@ namespace MyUI
             }
         }
         #region 自訂屬性
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Color ForeColor
+        {
+            get
+            {
+                return this.textBox1.ForeColor;
+            }
+            set
+            {
+                this.textBox1.ForeColor = value;
+            }
+        }
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Color BackColor
+        {
+            get
+            {
+                return this.textBox1.BackColor;
+            }
+            set
+            {
+                this.textBox1.BackColor = value;
+            }
+        }
         private bool _顯示螢幕小鍵盤 = true;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public bool 顯示螢幕小鍵盤
