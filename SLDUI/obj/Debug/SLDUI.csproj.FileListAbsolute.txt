@@ -1,0 +1,58 @@
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\PC_Control.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\PC_Control.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.C9016.resources
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.C9016_Basic.resources
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.E400.resources
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.E6232.resources
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.Properties.Resources.resources
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\SLDUI\obj\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PLC_NumBox.resx
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PLC_NumBox.cs
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PLC_NumBox.Designer.cs
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PC_Control.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PortControl.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\MyUI.xml
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PC_Control.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\PortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.C9016.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.C9016_Basic.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.E400.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.C1230.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.E6232.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SLDUI\obj\Debug\SLDUI.pdb

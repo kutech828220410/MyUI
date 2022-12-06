@@ -1,0 +1,14 @@
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\HsBase.dll
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\HsBase.pdb
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\HsBasic.dll
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\bin\Debug\HsBasic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\obj\Debug\HsBase.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\obj\Debug\HsBase.Canvas.resources
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\obj\Debug\HsBase.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\obj\Debug\HsBase.dll
+C:\Users\Evan\Desktop\MyUI20200331\HsBase\obj\Debug\HsBase.pdb

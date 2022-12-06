@@ -1,0 +1,50 @@
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\PC_Control.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\PC_Control.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.CilentUI.resources
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.ServerUI.resources
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.UDP_Cilent.resources
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\TCP\TCP\obj\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\PC_Control.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\PortControl.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\MyUI.xml
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\PC_Control.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\bin\Debug\PortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.CilentUI.resources
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.ServerUI.resources
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.UDP_Cilent.resources
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\TCP\TCP\obj\Debug\TCP.pdb

@@ -1,0 +1,4 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\DrawingClass\bin\Release\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\DrawingClass\bin\Release\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\DrawingClass\obj\Release\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\DrawingClass\obj\Release\DrawingClass.pdb

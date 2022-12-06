@@ -1,0 +1,22 @@
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\GPP編譯軟體 (鴻森整合機電有限公司)\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources

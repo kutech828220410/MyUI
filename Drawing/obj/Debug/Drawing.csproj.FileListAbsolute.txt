@@ -1,0 +1,25 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Drawing\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Drawing\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Drawing\obj\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Drawing\obj\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Drawing\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Drawing\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Drawing\obj\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Drawing\obj\Debug\DrawingClass.pdb
+D:\MyUI\Drawing\bin\Debug\DrawingClass.dll
+D:\MyUI\Drawing\bin\Debug\DrawingClass.pdb
+D:\MyUI\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+D:\MyUI\Drawing\obj\Debug\DrawingClass.dll
+D:\MyUI\Drawing\obj\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\Drawing\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\Drawing\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\Drawing\obj\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\Drawing\obj\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\Drawing\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\Drawing\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\Drawing\obj\Debug\Drawing.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\Drawing\obj\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\Drawing\obj\Debug\DrawingClass.pdb

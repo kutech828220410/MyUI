@@ -1,0 +1,83 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\LADDER.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\LADDER.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\Ladder_UI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\Ladder_UI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\PC_Control.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\bin\Debug\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416 _V0\Ladder_UI\obj\Debug\Ladder_UI.TESTForm.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\PC_Control.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\bin\Debug\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\Ladder_UI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\LADDER.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\LADDER.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\Ladder_UI.TESTForm.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\Ladder_UI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\Ladder_UI\obj\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\bin\Debug\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\LADDER.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\LADDER.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\Ladder_UI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\Ladder_UI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\Ladder_UI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\Ladder_UI\obj\Debug\Ladder_UI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\Ladder_UI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\Ladder_UI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.pdb

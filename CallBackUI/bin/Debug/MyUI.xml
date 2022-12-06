@@ -1,0 +1,813 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyUI</name>
+    </assembly>
+    <members>
+        <member name="F:MyUI.DataBaseView.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.DataBaseView.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.DataBaseView.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleClass.AddDataGridValue(System.String,System.Object)">
+            <summary>
+            增加Modeule內類別Data
+            </summary>
+            <param name="Name">引入:變數名稱</param>
+            <param name="val">引入:變數內容</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleClass.CreatClass(System.Object)">
+            <summary>
+            創建Moudule類別
+            </summary>
+            <param name="Class">引入:類別</param>
+            <returns>Moudule類別</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.SetFileName(System.String)">
+            <summary>
+            設置存檔檔名
+            </summary>
+            <param name="Name">引入:檔名</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.SetCurrentModule(MyUI.DataBaseView.ModuleClass)">
+            <summary>
+            設定當前作用Module
+            </summary>
+            <param name="Module">引入:ModuleClass</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.SetCurrentModule(System.Object)">
+            <summary>
+            設定當前作用Module
+            </summary>
+            <param name="Module">引入:(object)ModuleClass</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.GetCurrentModule">
+            <summary>
+            取得當前作用Module
+            </summary>
+            <returns>ModuleClass</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.GetCurrentModule(System.Object@)">
+            <summary>
+            取得當前作用Module
+            </summary>
+             <param name="Class">引入:(object)ModuleClass</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.AddModule(MyUI.DataBaseView.ModuleClass)">
+            <summary>
+            增加Module
+            </summary>
+             <param name="ModuleClass">引入:ModuleClass</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.AddModule(System.Object)">
+            <summary>
+            增加Module
+            </summary>
+             <param name="ModuleClass">引入:(object)ModuleClass</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.AddModule">
+            <summary>
+            增加Module,來源於CurrentModule
+            </summary>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.GetModule(System.String,System.String)">
+            <summary>
+            取得指定搜尋內容Module
+            </summary>
+             <param name="ValName">引入:變數內容</param>
+             <param name="TypeName">引入:變數名稱</param>
+            <returns>ModuleClass</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.GetModule(System.String,System.String,System.Object@)">
+            <summary>
+            取得指定搜尋內容Module
+            </summary>
+             <param name="ValName">引入:變數內容</param>
+             <param name="TypeName">引入:變數名稱</param>
+             <param name="Class">引入:(object)ModuleClass</param>
+            <returns>ModuleClass</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.GetModuleIndex(System.String,System.String)">
+            <summary>
+            取得ModuleList內編號
+            </summary>
+             <param name="ValName">引入:變數內容</param>
+             <param name="TypeName">引入:變數名稱</param>
+            <returns>索引編號</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.RelpaceModude(System.Int32,System.Object)">
+            <summary>
+            取代指定ModuleList內指定編號內容
+            </summary>
+             <param name="index">引入:編號</param>
+             <param name="Class">引入:(object)ModuleClass</param>
+            <returns>索引編號</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.DeleteModule(System.String,System.String)">
+            <summary>
+            刪除指定搜索內容Module
+            </summary>
+             <param name="ValName">引入:變數內容</param>
+             <param name="TypeName">引入:變數名稱</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.DeleteModule(System.Int32)">
+            <summary>
+            刪除指定編號Module
+            </summary>
+             <param name="index">引入:編號</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.SaveModules">
+            <summary>
+            儲存Module內容
+            </summary>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleListCtlClass.LoadModules">
+            <summary>
+            讀取Module內容
+            </summary>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.DataTableInit">
+            <summary>
+            初始化
+            </summary>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.DeleteModule">
+            <summary>
+            刪除選擇的Module
+            </summary>          
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.GetModule(System.Object@)">
+            <summary>
+            取得選擇的Module
+            </summary>
+            <param name="Module">引入:(object)ModuleClass</param>
+            <returns>ModuleClass</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.GetColumName(System.Int32)">
+            <summary>
+            取得指定編號行數名稱
+            </summary>
+            <param name="Num">引入:編號</param>
+            <returns>行名稱</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.FindColumNum(System.String)">
+            <summary>
+            取得指定行數名稱編號
+            </summary>
+            <param name="Num">引入:名稱</param>
+            <returns>行編號</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.GetSelectedCell(System.String)">
+            <summary>
+            取得指定格內容
+            </summary>
+            <param name="ColumName">引入:行名稱</param>
+            <returns>格內容</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.SetSelectRow(System.Int32)">
+            <summary>
+            設定選擇列數
+            </summary>
+            <param name="index">引入:指定列編號</param>
+            <returns>無</returns>
+        </member>
+        <member name="M:MyUI.DataBaseView.ModuleDataGridViewClass.GetSelectRow">
+            <summary>
+            取得選擇列數
+            </summary>
+            <returns>選擇列編號</returns>
+        </member>
+        <member name="F:MyUI.PLC_CheckDeviceTextBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_CheckDeviceTextBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_CheckDeviceTextBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.NumWordTextBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.NumWordTextBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.NumWordTextBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.NumTextBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.NumTextBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.NumTextBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.NoSoundTextBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.NoSoundTextBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.NoSoundTextBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_AlarmFlow.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_AlarmFlow.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_AlarmFlow.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_Button.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_Button.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_Button.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_CheckBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_CheckBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_CheckBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_ComboBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_ComboBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_ComboBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_Date.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_Date.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_Date.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_HighSpeedCounter.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_HighSpeedCounter.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_HighSpeedCounter.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_SaveDeviceButtom.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_SaveDeviceButtom.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_SaveDeviceButtom.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_MessageBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_MessageBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_MessageBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_NumBox.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_NumBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_NumBox.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_LoadDeviceButtom.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_LoadDeviceButtom.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_LoadDeviceButtom.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_ScreenButton.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_ScreenButton.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_ScreenButton.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_ScreenPage.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_ScreenPage.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_ScreenPage.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_SerialPort.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_SerialPort.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_SerialPort.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_TrackBarHorizontal.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_TrackBarHorizontal.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_TrackBarHorizontal.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_TrackBarVertical.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_TrackBarVertical.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_TrackBarVertical.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_UI_Init.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_UI_Init.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_UI_Init.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.PLC_WordBox.components">
+            <summary>
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.PLC_WordBox.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.PLC_WordBox.InitializeComponent">
+            <summary>
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="F:MyUI.ExButton.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:MyUI.ExButton.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:MyUI.ExButton.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+        <member name="T:MyUI.Resource1">
+            <summary>
+              用於查詢當地語系化字串等的強類型資源類別。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.ResourceManager">
+            <summary>
+              傳回這個類別使用的快取的 ResourceManager 執行個體。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Culture">
+            <summary>
+              覆寫目前執行緒的 CurrentUICulture 屬性，對象是所有
+              使用這個強類型資源類別的資源查閱。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.BEEP">
+            <summary>
+              查詢類似 System.IO.MemoryStream 的類型 System.IO.UnmanagedMemoryStream 當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.ICON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_紅_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_紅_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_綠_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_綠_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_黃_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Lamp_黃_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_灰_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_灰_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_紅_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_紅_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_紫_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_紫_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_綠_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_綠_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_藍_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_藍_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_黃_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.Light_Rect_黃_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.logo_1">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.logo_2">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.上箭頭_OFF_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.上箭頭_ON_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.下箭頭_OFF_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.下箭頭_ON_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.右箭頭_OFF_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.右箭頭_ON_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.左箭頭_OFF_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.左箭頭_ON_01">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.經典_OFF">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="P:MyUI.Resource1.經典_ON">
+            <summary>
+              查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+            </summary>
+        </member>
+        <member name="F:MyUI.SplashScreen.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyUI.SplashScreen.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyUI.SplashScreen.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:MyUI.SplashScreen.Instance">
+            <summary>
+            顯示的圖片
+            </summary>
+        </member>
+        <member name="F:MyUI.字母鍵盤.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyUI.字母鍵盤.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyUI.字母鍵盤.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:MyUI.數字鍵盤.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MyUI.數字鍵盤.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MyUI.數字鍵盤.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

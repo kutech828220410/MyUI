@@ -1,0 +1,12 @@
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\KU Office\Desktop\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb

@@ -1,0 +1,183 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Ladder_UI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\LADDER_Panel.resx
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\LADDER_Panel.cs
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderUI.Up_Down_load_Panel.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.Upload.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\LadderUI\obj\Debug\LadderForm.Download.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.resx
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.cs
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\LadderUI.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\LadderUI.pdb
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\Basic.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\CallBackUI.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\DrawingClass.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\MyUI.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\Basic.pdb
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\CallBackUI.pdb
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\DrawingClass.pdb
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\bin\Debug\MyUI.pdb
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.Download.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.Up_Down_load_Panel.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.Upload.resources
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.dll
+C:\Users\AOI-004\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.pdb
+D:\MyUI\LadderUI\bin\Debug\LADDER_Panel.resx
+D:\MyUI\LadderUI\bin\Debug\LADDER_Panel.cs
+D:\MyUI\LadderUI\bin\Debug\LADDER_Panel.Designer.cs
+D:\MyUI\LadderUI\bin\Debug\LadderUI.dll
+D:\MyUI\LadderUI\bin\Debug\LadderUI.pdb
+D:\MyUI\LadderUI\bin\Debug\Basic.dll
+D:\MyUI\LadderUI\bin\Debug\CallBackUI.dll
+D:\MyUI\LadderUI\bin\Debug\DrawingClass.dll
+D:\MyUI\LadderUI\bin\Debug\MyUI.dll
+D:\MyUI\LadderUI\bin\Debug\Basic.pdb
+D:\MyUI\LadderUI\bin\Debug\CallBackUI.pdb
+D:\MyUI\LadderUI\bin\Debug\DrawingClass.pdb
+D:\MyUI\LadderUI\bin\Debug\MyUI.pdb
+D:\MyUI\LadderUI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+D:\MyUI\LadderUI\obj\Debug\LadderForm.Download.resources
+D:\MyUI\LadderUI\obj\Debug\LadderForm.EnterSymbol.resources
+D:\MyUI\LadderUI\obj\Debug\LadderForm.FindDevice.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.LADDER_Panel.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.Properties.Resources.resources
+D:\MyUI\LadderUI\obj\Debug\LadderForm.ReplaceDevice.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.TopMachine_Panel.resources
+D:\MyUI\LadderUI\obj\Debug\LadderForm.TransferSetup.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.Up_Down_load_Panel.resources
+D:\MyUI\LadderUI\obj\Debug\LadderForm.Upload.resources
+D:\MyUI\LadderUI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+D:\MyUI\LadderUI\obj\Debug\LadderUI.dll
+D:\MyUI\LadderUI\obj\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.resx
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.cs
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\PC_Control.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\PC_Control.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.Verify.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.Download.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.Up_Down_load_Panel.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderForm.Upload.resources
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\LadderUI\obj\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\LADDER_Panel.resx
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\LADDER_Panel.cs
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\LADDER_Panel.Designer.cs
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\PC_Control.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\PortControl.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\MyUI.xml
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\PC_Control.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\bin\Debug\PortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.Verify.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.Download.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.EnterSymbol.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.FindDevice.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.LADDER_Panel.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.LowerMachine_Panel.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.ReplaceDevice.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.TopMachine_Panel.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.TransferSetup.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.Up_Down_load_Panel.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderForm.Upload.resources
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\LadderUI\obj\Debug\LadderUI.pdb

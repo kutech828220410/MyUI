@@ -1,0 +1,47 @@
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MeasureSystemUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MeasureSystemUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MeasureSystemFunction.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MeasureSystemFunction.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.CCD_PictureBox.resources
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.MeasureSystemFrmUI.resources
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.Properties.Resources.resources
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.dll
+C:\Users\KU Office\Desktop\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MeasureSystemUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MeasureSystemUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MeasureSystemFunction.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MeasureSystemFunction.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.CCD_PictureBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.MeasureSystemFrmUI.resources
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.VariableUI.resources
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MeasureSystemUI\obj\Debug\MeasureSystemUI.pdb

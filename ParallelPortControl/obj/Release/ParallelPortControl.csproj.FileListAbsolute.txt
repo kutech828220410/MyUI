@@ -1,0 +1,8 @@
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\bin\Release\ParallelPortControl.dll
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\bin\Release\ParallelPortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\bin\Release\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\bin\Release\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\bin\Release\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\obj\Release\ParallelPortControl.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\obj\Release\ParallelPortControl.dll
+C:\Users\Evan\Desktop\MyUI20200303\ParallelPortControl\obj\Release\ParallelPortControl.pdb

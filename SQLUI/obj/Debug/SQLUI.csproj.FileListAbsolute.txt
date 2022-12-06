@@ -1,0 +1,12 @@
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\SQLUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\SQLUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\obj\Debug\SQLUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\obj\Debug\SQLUI.SQL_DataGridView.resources
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\obj\Debug\SQLUI.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\obj\Debug\SQLUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\SQLUI\obj\Debug\SQLUI.pdb

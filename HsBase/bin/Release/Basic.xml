@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Basic</name>
+    </assembly>
+    <members>
+        <member name="M:Basic.Reflection.GetClassField(System.Object,System.String)">
+            <summary>
+            取得類別內變數值
+            </summary>
+            <param name="Class">引入:類別</param>
+            <param name="Name">引入:變數名稱</param>
+            <returns>變數值</returns>
+        </member>
+        <member name="M:Basic.Reflection.SetClassField(System.Object,System.String,System.Object)">
+            <summary>
+            設定類別內變數值
+            </summary>
+            <param name="Class">引入:類別</param>
+            <param name="Name">引入:變數名稱</param>
+            <param name="value">引入:變數內容</param>
+            <returns>更改後類別</returns>
+        </member>
+        <member name="M:Basic.Reflection.GetClassFields(System.Object)">
+            <summary>
+            取得類別內所有變數值
+            </summary>
+            <param name="Class">引入:類別</param>
+            <returns>變數值陣列</returns>
+        </member>
+        <member name="M:Basic.Reflection.GetClassFieldsName(System.Object)">
+            <summary>
+            取得類別內所有變數名稱
+            </summary>
+            <param name="Class">引入:類別</param>
+            <returns>變數名稱陣列</returns>
+        </member>
+    </members>
+</doc>

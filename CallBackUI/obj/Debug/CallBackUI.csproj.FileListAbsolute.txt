@@ -1,0 +1,71 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\CallBackUI\obj\Debug\CallBackUI.pdb
+D:\MyUI\CallBackUI\bin\Debug\CallBackUI.dll
+D:\MyUI\CallBackUI\bin\Debug\CallBackUI.pdb
+D:\MyUI\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+D:\MyUI\CallBackUI\obj\Debug\CallBackUI.dll
+D:\MyUI\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\PC_Control.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\PC_Control.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\PC_Control.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\PortControl.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\MyUI.xml
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\PC_Control.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\PortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\obj\Debug\CallBackUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\obj\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\CallBackUI\obj\Debug\CallBackUI.pdb

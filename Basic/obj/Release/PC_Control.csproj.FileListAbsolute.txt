@@ -1,0 +1,5 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\PC_Control\bin\Release\PC_Control.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\PC_Control\bin\Release\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\PC_Control\obj\Release\PC_Control.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\PC_Control\obj\Release\PC_Control.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\PC_Control\obj\Release\PC_Control.pdb

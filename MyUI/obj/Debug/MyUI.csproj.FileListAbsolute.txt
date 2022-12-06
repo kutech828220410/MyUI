@@ -1,0 +1,207 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180410\MyUI180410\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI180410\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180412\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\PC_Control.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180416\MyUI\bin\Debug\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\bin\Debug\PC_Control.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180417\MyUI\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\DrawingClass.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\DrawingClass.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180419\MyUI\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.NumTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\MyUI\obj\Debug\MyUI.NumWordTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\bin\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\bin\Debug\MyUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.NumWordTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.NumTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\MyUI\obj\Debug\MyUI.pdb
+D:\MyUI\MyUI\bin\Debug\MyUI.dll
+D:\MyUI\MyUI\bin\Debug\MyUI.pdb
+D:\MyUI\MyUI\bin\Debug\CallBackUI.dll
+D:\MyUI\MyUI\bin\Debug\CallBackUI.pdb
+D:\MyUI\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+D:\MyUI\MyUI\obj\Debug\MyUI.ExButton.resources
+D:\MyUI\MyUI\obj\Debug\MyUI.NumWordTextBox.resources
+D:\MyUI\MyUI\obj\Debug\MyUI.NumTextBox.resources
+D:\MyUI\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+D:\MyUI\MyUI\obj\Debug\MyUI.Resource1.resources
+D:\MyUI\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+D:\MyUI\MyUI\obj\Debug\MyUI.dll
+D:\MyUI\MyUI\obj\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\MyUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\LadderUI.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\PC_Control.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\SLDUI.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\TCP.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\DrawingClass.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\LadderUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\PC_Control.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\SLDUI.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\TCP.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\bin\Debug\DrawingClass.pdb
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_CheckDeviceTextBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.NumWordTextBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.NumTextBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_AlarmFlow.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_Button.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_CheckBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_ComboBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_SaveDeviceButtom.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_MessageBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_NumBox.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_LoadDeviceButtom.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_ScreenButton.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_ScreenPage.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_TrackBarHorizontal.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_TrackBarVertical.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.PLC_UI_Init.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.數字鍵盤.resources
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.dll
+C:\Users\KU Office\Desktop\MyUI\MyUI\obj\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PLC_NumBox.resx
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PLC_NumBox.cs
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PLC_NumBox.Designer.cs
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\MyUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\CallBackUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\LadderUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PC_Control.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PortControl.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\SLDUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\TCP.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\Basic.xml
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\CallBackUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\LadderUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PC_Control.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\PortControl.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\SLDUI.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\TCP.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\MyUI.xml
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\bin\Debug\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.DataBaseView.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.ExButton.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_CheckDeviceTextBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.NumWordTextBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.NumTextBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.NoSoundTextBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_AlarmFlow.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_Button.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_CheckBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_ComboBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_Date.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_HighSpeedCounter.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_MultiStateDisplay.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_SaveDeviceButtom.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_MessageBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_NumBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_LoadDeviceButtom.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_ScreenButton.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_ScreenPage.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_SerialPort.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_TrackBarHorizontal.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_TrackBarVertical.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_UI_Init.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.PLC_WordBox.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.Resource1.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.SplashScreen.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.字母鍵盤.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.數字鍵盤.resources
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.dll
+C:\Users\Evan\Desktop\MyUI20200331\MyUI\obj\Debug\MyUI.pdb

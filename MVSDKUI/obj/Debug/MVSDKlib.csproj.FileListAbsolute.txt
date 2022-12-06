@@ -1,0 +1,10 @@
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.MindVision_Camera_UI.resources
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\bin\Debug\MVSDKlib.dll
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\bin\Debug\MVSDKlib.pdb
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\bin\Debug\MVSDK.dll
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.csproj.CopyComplete
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.dll
+C:\Users\2\Desktop\MVSDKlib\MVSDKlib\obj\Debug\MVSDKlib.pdb

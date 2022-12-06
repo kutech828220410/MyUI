@@ -1,0 +1,537 @@
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2020828\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\ASUS\Desktop\MyUI2020830\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI2020902\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI2020904\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2020908\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2020910\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2020912\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2020914\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2021002\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021006\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021008\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021014\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021014 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021016\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021016 - 複製\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2021020\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210231\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021103\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2021104\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021120\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021127\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021130\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021207\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021209\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021211\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021219\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI202126\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI2021227\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20201231\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\HS\Desktop\MyUI20210109\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojResolveAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.Cache
+C:\Users\2\Desktop\MyUI20210111\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210112\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210113\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210115\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210116\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210117\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210122\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210126\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210127\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210305\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210312\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210322\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210517\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210715\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\2\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210812\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210826\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20210903\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20211005\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20211027\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\Evan\Desktop\MyUI20211206\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220118\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\hson_\OneDrive\桌面\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220225\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\hson_\OneDrive\桌面\MyUI20220401\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\hson_\OneDrive\桌面\MyUI20220411\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\hson_\OneDrive\桌面\MyUI20220422\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220504\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220511\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220516\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220606\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220625\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Desktop\MyUI20220824\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI20220829\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI20220903\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI20220905\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI20220923\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI20221005\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\Basic.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\DrawingClass.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\LadderUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\MyUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\System.Memory.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\Interop.SpeechLib.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\TCP.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\System.Numerics.Vectors.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\System.Buffers.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\AxOvkBase.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrvAsm4.5.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\AxOvkBaseAsm4.5.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\AxOvkMsr.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\MeasureSystemFunction.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrv.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CopyComplete

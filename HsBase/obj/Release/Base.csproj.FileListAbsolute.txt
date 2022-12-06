@@ -1,0 +1,10 @@
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\HsBase.dll
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\HsBase.pdb
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\obj\Release\HsBase.dll
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\obj\Release\HsBase.pdb
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\DrawingClass.dll
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\DrawingClass.pdb
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\obj\Release\Base.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200326\HsBase\bin\Release\Basic.xml

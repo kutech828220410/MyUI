@@ -1,0 +1,37 @@
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Basic\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Basic\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Basic\obj\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\C#.自訂函式庫\控件UI\MyUI180426\Basic\obj\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Basic\bin\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Basic\bin\Debug\Basic.pdb
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Basic\obj\Debug\Basic.dll
+C:\Users\DOMO\Google 雲端硬碟\CSharp自訂函式庫\控件UI\MyUI\Basic\obj\Debug\Basic.pdb
+D:\MyUI\Basic\bin\Debug\Basic.dll
+D:\MyUI\Basic\bin\Debug\Basic.pdb
+D:\MyUI\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+D:\MyUI\Basic\obj\Debug\Basic.dll
+D:\MyUI\Basic\obj\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\Basic\bin\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\Basic\bin\Debug\Basic.pdb
+C:\Users\KU Office\Desktop\MyUI\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+C:\Users\KU Office\Desktop\MyUI\Basic\obj\Debug\Basic.dll
+C:\Users\KU Office\Desktop\MyUI\Basic\obj\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\Basic\bin\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\Basic\bin\Debug\Basic.pdb
+C:\Users\Evan\Desktop\MyUI20200331\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+C:\Users\Evan\Desktop\MyUI20200331\Basic\obj\Debug\Basic.dll
+C:\Users\Evan\Desktop\MyUI20200331\Basic\obj\Debug\Basic.pdb
+C:\Users\2\Desktop\MyUI20210113\Basic\bin\Debug\Basic.dll
+C:\Users\2\Desktop\MyUI20210113\Basic\bin\Debug\Basic.pdb
+C:\Users\2\Desktop\MyUI20210113\Basic\bin\Debug\MyUI.dll
+C:\Users\2\Desktop\MyUI20210113\Basic\bin\Debug\MyUI.pdb
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.csprojAssemblyReference.cache
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.MyMessageBox.resources
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.Properties.Resources.resources
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.csproj.GenerateResource.cache
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.csproj.CoreCompileInputs.cache
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.csproj.CopyComplete
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.dll
+C:\Users\2\Desktop\MyUI20210113\Basic\obj\Debug\Basic.pdb
