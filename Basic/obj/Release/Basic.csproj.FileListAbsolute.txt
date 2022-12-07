@@ -1288,3 +1288,4 @@ C:\Users\User\Desktop\MyUI\Basic\bin\Release\AxOvkMsr.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\MeasureSystemFunction.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\AxAltairUDrv.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\MVSDK.dll
+C:\Users\User\Desktop\MyUI\Basic\bin\Release\LightControlUI.dll
