@@ -158,7 +158,17 @@ namespace MyUI
                 if (flag_init) this.SetValue(value);
             }
         }
-
+        public bool 起始狀態
+        {
+            get
+            {
+                return Value_Buf;
+            }
+            set
+            {
+                Value_Buf = value;
+            }
+        }
         public PLC_Button()
         {
             InitializeComponent();

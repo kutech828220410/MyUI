@@ -3873,3 +3873,4 @@ C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\TCP.dll.config
 C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\LadderUI.dll
 C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\DrawingClass.dll
 C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\MeasureSystemFunction.dll
+C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\LightControlUI.dll
