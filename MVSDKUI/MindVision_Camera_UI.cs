@@ -163,12 +163,16 @@ namespace MVSDKUI
             get
             {
                 double exposurTime = 0;
-                MvApi.CameraGetExposureTime(this.CameraHandle, ref exposurTime);
+                if (this.IsHandleCreated) MvApi.CameraGetExposureTime(this.CameraHandle, ref exposurTime);
                 return exposurTime;
             }
             set
             {
-                MvApi.CameraSetExposureTime(this.CameraHandle, value);
+                if(this.IsHandleCreated)
+                {
+                    MvApi.CameraSetExposureTime(this.CameraHandle, value);
+                }
+     
             }
         }
         [ReadOnly(false), Browsable(false)]
@@ -177,7 +181,7 @@ namespace MVSDKUI
             get
             {
                 int Contrast = 0;
-                MvApi.CameraGetContrast(this.CameraHandle, ref Contrast);
+                if (this.IsHandleCreated) MvApi.CameraGetContrast(this.CameraHandle, ref Contrast);
                 Contrast -= 100;
                 return Contrast;
             }
@@ -186,7 +190,7 @@ namespace MVSDKUI
                 if (value < -100) value = -100;
                 if (value > 100) value = 100;
                 value += 100;
-                MvApi.CameraSetContrast(this.CameraHandle, value);
+                if (this.IsHandleCreated) MvApi.CameraSetContrast(this.CameraHandle, value);
             }
         }
         [ReadOnly(false), Browsable(false)]
@@ -195,12 +199,12 @@ namespace MVSDKUI
             get
             {
                 int sharpness = 0;
-                MvApi.CameraGetSharpness(this.CameraHandle, ref sharpness);
+                if (this.IsHandleCreated) MvApi.CameraGetSharpness(this.CameraHandle, ref sharpness);
                 return sharpness;
             }
             set
             {
-                MvApi.CameraSetSharpness(this.CameraHandle, value);
+                if (this.IsHandleCreated) MvApi.CameraSetSharpness(this.CameraHandle, value);
             }
         }
         [ReadOnly(false), Browsable(false)]
@@ -214,7 +218,7 @@ namespace MVSDKUI
             }
             set
             {
-                MvApi.CameraSetMirror(this.CameraHandle, 0, value ? (uint)1 : (uint)0);
+                if (this.IsHandleCreated) MvApi.CameraSetMirror(this.CameraHandle, 0, value ? (uint)1 : (uint)0);
             }
         }
         [ReadOnly(false), Browsable(false)]
@@ -228,7 +232,7 @@ namespace MVSDKUI
             }
             set
             {
-                MvApi.CameraSetMirror(this.CameraHandle, 1, value ? (uint)1 : (uint)0);
+                if (this.IsHandleCreated) MvApi.CameraSetMirror(this.CameraHandle, 1, value ? (uint)1 : (uint)0);
             }
         }
         public enum enum_Rotate : int
@@ -246,7 +250,7 @@ namespace MVSDKUI
             }
             set
             {
-                MvApi.CameraSetRotate(this.CameraHandle, (int)value);
+                if (this.IsHandleCreated) MvApi.CameraSetRotate(this.CameraHandle, (int)value);
             }
         }
 
