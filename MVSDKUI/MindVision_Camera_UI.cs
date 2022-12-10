@@ -453,7 +453,7 @@ namespace MVSDKUI
             }
             else
             {
-                MessageBox.Show(string.Format("相機初始化失敗({0})", this.CameraName));
+                MyMessageBox.ShowDialog($"相機初始化失敗{this.CameraName}");
                 return false;
             }
         }
