@@ -340,6 +340,7 @@ namespace MVSDKUI
             this.ActiveForm = form;
             this.stopwatch.Start();
             form.FormClosing += Form_FormClosing;
+            #region 未選用程式
             //tSdkCameraDevInfo[] tSdkCameraDevInfos;
             //MvApi.CameraEnumerateDevice(out tSdkCameraDevInfos);
             //if (tSdkCameraDevInfos == null)
@@ -406,56 +407,63 @@ namespace MVSDKUI
             //    }
             //}
             //return false;
-
-            if (MvApi.CameraInitEx2(this.CameraName, out this._CameraHandle) == CameraSdkStatus.CAMERA_STATUS_SUCCESS)
+            #endregion
+            if (CameraHandle != 0)
             {
-                MvApi.CameraGetCapability(this.CameraHandle, out CameraCapability);
-
-
-                this.Invoke(new Action(delegate
+                if (MvApi.CameraInitEx2(this.CameraName, out this._CameraHandle) == CameraSdkStatus.CAMERA_STATUS_SUCCESS)
                 {
-                    MvApi.CameraDisplayInit(this.CameraHandle, PreviewBox.Handle);
-                    MvApi.CameraSetDisplaySize(this.CameraHandle, PreviewBox.Width, PreviewBox.Height);
-                    int tabindex = (int)emSdkPropSheetMask.PROP_SHEET_INDEX_TRIGGER_SET;
-                    MvApi.CameraCreateSettingPage(this.CameraHandle, this.Handle, this.CameraName, null, (IntPtr)null, (uint)(-1 & ~(1 << tabindex)));
-                }));
+                    MvApi.CameraGetCapability(this.CameraHandle, out CameraCapability);
 
 
-                this.Set_Trigger_Mode(Trigger_Mode.External);
+                    this.Invoke(new Action(delegate
+                    {
+                        MvApi.CameraDisplayInit(this.CameraHandle, PreviewBox.Handle);
+                        MvApi.CameraSetDisplaySize(this.CameraHandle, PreviewBox.Width, PreviewBox.Height);
+                        int tabindex = (int)emSdkPropSheetMask.PROP_SHEET_INDEX_TRIGGER_SET;
+                        MvApi.CameraCreateSettingPage(this.CameraHandle, this.Handle, this.CameraName, null, (IntPtr)null, (uint)(-1 & ~(1 << tabindex)));
+                    }));
 
-                MvApi.CameraSetAeState(this.CameraHandle, 0);
-                if (this.ImageDepth == enum_ImageDepth._24Bit)
-                {
-                    ImageBufferPtr = Marshal.AllocHGlobal(this.CameraCapability.sResolutionRange.iWidthMax * this.CameraCapability.sResolutionRange.iHeightMax * 3 + 1024);
-                    MvApi.CameraSetIspOutFormat(this.CameraHandle, (uint)MVSDK.emImageFormat.CAMERA_MEDIA_TYPE_OCCUPY24BIT);
+
+                    this.Set_Trigger_Mode(Trigger_Mode.External);
+
+                    MvApi.CameraSetAeState(this.CameraHandle, 0);
+                    if (this.ImageDepth == enum_ImageDepth._24Bit)
+                    {
+                        ImageBufferPtr = Marshal.AllocHGlobal(this.CameraCapability.sResolutionRange.iWidthMax * this.CameraCapability.sResolutionRange.iHeightMax * 3 + 1024);
+                        MvApi.CameraSetIspOutFormat(this.CameraHandle, (uint)MVSDK.emImageFormat.CAMERA_MEDIA_TYPE_OCCUPY24BIT);
+                    }
+                    else if (this.ImageDepth == enum_ImageDepth._8Bit)
+                    {
+                        ImageBufferPtr = Marshal.AllocHGlobal(this.CameraCapability.sResolutionRange.iWidthMax * this.CameraCapability.sResolutionRange.iHeightMax * 3 + 1024);
+                        MvApi.CameraSetIspOutFormat(this.CameraHandle, (uint)MVSDK.emImageFormat.CAMERA_MEDIA_TYPE_MONO8);
+                    }
+                    MvApi.CameraPlay(this.CameraHandle);
+
+                    //MvApi.CameraSetExtTrigSignalType(this.CameraHandle, 0);
+
+
+                    //CAMERA_SNAP_PROC pCaptureCallOld = null;
+                    //m_CaptureCallback = new CAMERA_SNAP_PROC(ImageCaptureCallback);
+                    //MvApi.CameraSetCallbackFunction(this.CameraHandle, m_CaptureCallback, m_iCaptureCallbackCtx, ref pCaptureCallOld);
+
+
+
+                    this.ExitCaptureThread = false;
+                    this.CaptureThread = new Thread(new ThreadStart(this.CaptureThreadProc));
+                    this.CaptureThread.Start();
+                    this.IsPortCreated = true;
+                    return true;
                 }
-                else if (this.ImageDepth == enum_ImageDepth._8Bit)
+
+
+                else
                 {
-                    ImageBufferPtr = Marshal.AllocHGlobal(this.CameraCapability.sResolutionRange.iWidthMax * this.CameraCapability.sResolutionRange.iHeightMax * 3 + 1024);
-                    MvApi.CameraSetIspOutFormat(this.CameraHandle, (uint)MVSDK.emImageFormat.CAMERA_MEDIA_TYPE_MONO8);
+                    MyMessageBox.ShowDialog($"相機初始化失敗{this.CameraName}");
+                    return false;
                 }
-                MvApi.CameraPlay(this.CameraHandle);
-
-                //MvApi.CameraSetExtTrigSignalType(this.CameraHandle, 0);
-
-
-                //CAMERA_SNAP_PROC pCaptureCallOld = null;
-                //m_CaptureCallback = new CAMERA_SNAP_PROC(ImageCaptureCallback);
-                //MvApi.CameraSetCallbackFunction(this.CameraHandle, m_CaptureCallback, m_iCaptureCallbackCtx, ref pCaptureCallOld);
-
-
-
-                this.ExitCaptureThread = false;
-                this.CaptureThread = new Thread(new ThreadStart(this.CaptureThreadProc));
-                this.CaptureThread.Start();
-                this.IsPortCreated = true;
-                return true;
             }
-            else
-            {
-                MyMessageBox.ShowDialog($"相機初始化失敗{this.CameraName}");
-                return false;
-            }
+            return false;
+
         }
 
         public void Snap()
