@@ -249,7 +249,7 @@ namespace MyUI
         }
         protected override void OnHandleCreated(EventArgs e)
         {
-            base.OnHandleCreated(e);
+            //base.OnHandleCreated(e);
             this.Parent.BackColorChanged += Parent_BackColorChanged;
         }
         private void Parent_BackColorChanged(object sender, EventArgs e)
