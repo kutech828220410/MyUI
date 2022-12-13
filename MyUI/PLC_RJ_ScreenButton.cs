@@ -749,6 +749,16 @@ namespace MyUI
                 }
             }
         }
+        public void SetVisible(bool value)
+        {
+            if (PLC != null && _顯示讀取位置 != null && _顯示讀取位置 != "")
+            {
+                if (LadderProperty.DEVICE.TestDevice(_顯示讀取位置))
+                {
+                    PLC.properties.Device.Set_Device(_顯示讀取位置, value);
+                }
+            }
+        }
         public void Set_PLC_ScreenPage(PLC_ScreenPage pLC_ScreenPage)
         {
             this.pLC_ScreenPage = pLC_ScreenPage;
