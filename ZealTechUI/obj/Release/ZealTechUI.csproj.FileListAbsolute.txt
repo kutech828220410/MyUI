@@ -2267,3 +2267,4 @@ C:\Users\88696\Desktop\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCompile
 C:\Users\88696\Desktop\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\88696\Desktop\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
+C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\LightControlUI.dll

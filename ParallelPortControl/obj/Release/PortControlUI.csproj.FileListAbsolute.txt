@@ -1184,3 +1184,4 @@ C:\Users\88696\Desktop\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj
 C:\Users\88696\Desktop\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\88696\Desktop\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
+C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll

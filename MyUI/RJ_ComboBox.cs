@@ -350,21 +350,26 @@ namespace MyUI
 
         public void SetDataSource(object value)
         {
-            int index = this.SelectedIndex;
-            this.DataSource = value;
-            if (index == -1)
+            this.Invoke(new Action(delegate 
             {
-                if (this.Items.Count > 0)
+                int index = this.SelectedIndex;
+                this.DataSource = value;
+                if (index == -1)
                 {
-                    this.SelectedIndex = 0;
+                    if (this.Items.Count > 0)
+                    {
+                        this.SelectedIndex = 0;
+                        return;
+                    }
+                }
+                if (index < this.Items.Count)
+                {
+                    this.SelectedIndex = index;
                     return;
                 }
-            }
-            if (index < this.Items.Count)
-            {
-                this.SelectedIndex = index;
-                return;
-            }
+                CmbList_TextChanged(null, null);
+            })) ;
+   
         }
 
         public void SetTextSize(int TextWidth , int iconWidth)

@@ -806,3 +806,4 @@ C:\Users\88696\Desktop\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileInputs
 C:\Users\88696\Desktop\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\88696\Desktop\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
+C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\LightControlUI.dll

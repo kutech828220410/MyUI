@@ -950,3 +950,4 @@ C:\Users\88696\Desktop\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInputs.cac
 C:\Users\88696\Desktop\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\88696\Desktop\MyUI\HCGUI\obj\Release\HCGUI.pdb
+C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\LightControlUI.dll

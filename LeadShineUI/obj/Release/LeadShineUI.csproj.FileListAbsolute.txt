@@ -3800,3 +3800,4 @@ C:\Users\88696\Desktop\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreCompi
 C:\Users\88696\Desktop\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\88696\Desktop\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
+C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\LightControlUI.dll
