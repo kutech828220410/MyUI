@@ -740,6 +740,7 @@ namespace MyUI
                     {
                         this.buttonType = ButtonType.Toggle;
                     }
+                    Visible_buf = this.Visible;
                 }
             }
         }

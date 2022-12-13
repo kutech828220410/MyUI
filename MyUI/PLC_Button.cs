@@ -139,6 +139,8 @@ namespace MyUI
         }
         public bool FLAG_buf = false;
         private bool Enable_buf = true;
+        private bool Visible_buf = true;
+
         public delegate void CaptureDelegate();
         public CaptureDelegate captureDelegate;
         public void LabelCapture()
@@ -758,6 +760,25 @@ namespace MyUI
             }
         }
 
+        private string _顯示讀取位置 = "";
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public virtual string 顯示讀取位置
+        {
+            get { return _顯示讀取位置; }
+            set
+            {
+                value = value.ToUpper();
+                bool divice_OK = false;
+                if (LadderProperty.DEVICE.TestDevice(value))
+                {
+                    string temp = value.Remove(1);
+                    if (temp == "X" || temp == "Y" || temp == "M" || temp == "S" || temp == "T") divice_OK = true;
+                }
+
+                if (divice_OK) _顯示讀取位置 = value;
+                else _顯示讀取位置 = "";
+            }
+        }
         #endregion
 
         #region Function
@@ -829,7 +850,58 @@ namespace MyUI
             }
             return false;
         }
-
+        public void EnableCheck()
+        {
+            if (PLC != null && _致能讀取位置 != null && _致能讀取位置 != "")
+            {
+                if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
+                {
+                    PLC.properties.Device.Get_Device(_致能讀取位置, out value);
+                    if (value is bool)
+                    {
+                        if (Enable_buf != (bool)value)
+                        {
+                            this.Invoke(new Action(delegate
+                            {
+                                this.Enabled = (bool)value;
+                            }));
+                            Enable_buf = (bool)value;
+                        }
+                    }
+                }
+            }
+        }
+        public void VisibleCheck()
+        {
+            if (PLC != null && _顯示讀取位置 != null && _顯示讀取位置 != "")
+            {
+                if (LadderProperty.DEVICE.TestDevice(_顯示讀取位置))
+                {
+                    PLC.properties.Device.Get_Device(_顯示讀取位置, out value);
+                    if (value is bool)
+                    {
+                        if (Visible_buf != (bool)value)
+                        {
+                            this.Invoke(new Action(delegate
+                            {
+                                this.Visible = (bool)value;
+                            }));
+                            Visible_buf = (bool)value;
+                        }
+                    }
+                }
+            }
+        }
+        public void SetVisible(bool value)
+        {
+            if (PLC != null && _顯示讀取位置 != null && _顯示讀取位置 != "")
+            {
+                if (LadderProperty.DEVICE.TestDevice(_顯示讀取位置))
+                {
+                    PLC.properties.Device.Set_Device(_顯示讀取位置, value);
+                }
+            }
+        }
 
         public virtual void Run(LowerMachine pLC)
         {
@@ -855,6 +927,7 @@ namespace MyUI
                     if (this.提示文字 != "") this.toolTip.SetToolTip(label1, this.提示文字);
                     this.寫入位置註解 = this.寫入位置註解;
                     this.讀取位置註解 = this.讀取位置註解;
+                    this.Visible_buf = this.Visible;
                 }
             }
         }
@@ -952,27 +1025,7 @@ namespace MyUI
             this.讀取元件位置 = pLC_Device.GetAdress();
             this.寫入元件位置 = pLC_Device.GetAdress();
         }
-        public void EnableCheck()
-        {
-            if (PLC != null && _致能讀取位置 != null && _致能讀取位置 != "")
-            {
-                if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
-                {
-                    PLC.properties.Device.Get_Device(_致能讀取位置, out value);
-                    if (value is bool)
-                    {
-                        if (Enable_buf != (bool)value)
-                        {
-                            this.Invoke(new Action(delegate
-                            {
-                                this.Enabled = (bool)value;
-                            }));
-                            Enable_buf = (bool)value;
-                        }
-                    }
-                }
-            }
-        }
+
 
         #endregion
         private void Init()
@@ -1007,7 +1060,7 @@ namespace MyUI
             _FLAG_讀取_buf = Value_Buf;
 
             this.EnableCheck();
-
+            this.VisibleCheck();
             if (but_press || IN)
             {
                 if (顯示)

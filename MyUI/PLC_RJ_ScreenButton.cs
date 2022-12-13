@@ -694,6 +694,7 @@ namespace MyUI
                     PLC.Add_UI_Method(Run);
                     this.寫入位置註解 = this.寫入位置註解;
                     this.讀取位置註解 = this.讀取位置註解;
+                    Visible_buf = this.Visible;
                 }
             }
          
