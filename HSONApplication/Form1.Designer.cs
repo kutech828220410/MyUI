@@ -32,6 +32,8 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.plC_Button1 = new MyUI.PLC_Button();
+            this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_NumBox1 = new MyUI.PLC_NumBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -59,8 +61,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
-            this.plC_Button1 = new MyUI.PLC_Button();
+            this.rJ_Pannel1 = new MyUI.RJ_Pannel();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -101,6 +102,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.rJ_Pannel1);
             this.tabPage1.Controls.Add(this.plC_Button1);
             this.tabPage1.Controls.Add(this.plC_AlarmFlow2);
             this.tabPage1.Controls.Add(this.plC_NumBox1);
@@ -123,6 +125,50 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // plC_Button1
+            // 
+            this.plC_Button1.Bool = false;
+            this.plC_Button1.but_press = false;
+            this.plC_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button1.Location = new System.Drawing.Point(1244, 123);
+            this.plC_Button1.Name = "plC_Button1";
+            this.plC_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button1.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button1.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button1.Size = new System.Drawing.Size(141, 60);
+            this.plC_Button1.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button1.TabIndex = 55;
+            this.plC_Button1.事件驅動 = false;
+            this.plC_Button1.字型鎖住 = false;
+            this.plC_Button1.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
+            this.plC_Button1.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button1.文字鎖住 = false;
+            this.plC_Button1.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button1.狀態OFF圖片")));
+            this.plC_Button1.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button1.狀態ON圖片")));
+            this.plC_Button1.讀取位元反向 = false;
+            this.plC_Button1.讀寫鎖住 = false;
+            this.plC_Button1.起始狀態 = false;
+            this.plC_Button1.音效 = true;
+            this.plC_Button1.顯示 = false;
+            this.plC_Button1.顯示狀態 = false;
+            // 
+            // plC_AlarmFlow2
+            // 
+            this.plC_AlarmFlow2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.plC_AlarmFlow2.Location = new System.Drawing.Point(0, 961);
+            this.plC_AlarmFlow2.Name = "plC_AlarmFlow2";
+            this.plC_AlarmFlow2.Size = new System.Drawing.Size(1650, 26);
+            this.plC_AlarmFlow2.TabIndex = 54;
+            this.plC_AlarmFlow2.捲動速度 = 200;
+            this.plC_AlarmFlow2.文字字體 = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_AlarmFlow2.文字顏色 = System.Drawing.Color.White;
+            this.plC_AlarmFlow2.自動隱藏 = false;
+            this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
+            this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
             // plC_NumBox1
             // 
@@ -232,7 +278,7 @@
             this.rJ_TrackBar1.Minimum = 20;
             this.rJ_TrackBar1.MinValue = 20;
             this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(1158, 90);
+            this.rJ_TrackBar1.Size = new System.Drawing.Size(1198, 90);
             this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rJ_TrackBar1.SliderSize = 20;
             this.rJ_TrackBar1.TabIndex = 47;
@@ -665,48 +711,17 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
-            // plC_AlarmFlow2
+            // rJ_Pannel1
             // 
-            this.plC_AlarmFlow2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.plC_AlarmFlow2.Location = new System.Drawing.Point(0, 961);
-            this.plC_AlarmFlow2.Name = "plC_AlarmFlow2";
-            this.plC_AlarmFlow2.Size = new System.Drawing.Size(1650, 26);
-            this.plC_AlarmFlow2.TabIndex = 54;
-            this.plC_AlarmFlow2.捲動速度 = 200;
-            this.plC_AlarmFlow2.文字字體 = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_AlarmFlow2.文字顏色 = System.Drawing.Color.White;
-            this.plC_AlarmFlow2.自動隱藏 = false;
-            this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
-            this.plC_AlarmFlow2.顯示警報編號 = false;
-            // 
-            // plC_Button1
-            // 
-            this.plC_Button1.Bool = false;
-            this.plC_Button1.but_press = false;
-            this.plC_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_Button1.Location = new System.Drawing.Point(1244, 123);
-            this.plC_Button1.Name = "plC_Button1";
-            this.plC_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button1.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_Button1.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_Button1.Size = new System.Drawing.Size(141, 60);
-            this.plC_Button1.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_Button1.TabIndex = 55;
-            this.plC_Button1.事件驅動 = false;
-            this.plC_Button1.字型鎖住 = false;
-            this.plC_Button1.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
-            this.plC_Button1.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_Button1.文字鎖住 = false;
-            this.plC_Button1.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button1.狀態OFF圖片")));
-            this.plC_Button1.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button1.狀態ON圖片")));
-            this.plC_Button1.讀取位元反向 = false;
-            this.plC_Button1.讀寫鎖住 = false;
-            this.plC_Button1.音效 = true;
-            this.plC_Button1.顯示 = false;
-            this.plC_Button1.顯示狀態 = false;
+            this.rJ_Pannel1.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Pannel1.BorderRadius = 10;
+            this.rJ_Pannel1.BorderSize = 2;
+            this.rJ_Pannel1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Pannel1.Location = new System.Drawing.Point(1089, 384);
+            this.rJ_Pannel1.Name = "rJ_Pannel1";
+            this.rJ_Pannel1.Size = new System.Drawing.Size(400, 300);
+            this.rJ_Pannel1.TabIndex = 7;
             // 
             // Form1
             // 
@@ -765,6 +780,7 @@
         private MyUI.PLC_NumBox plC_NumBox1;
         private MyUI.PLC_Button plC_Button1;
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
+        private MyUI.RJ_Pannel rJ_Pannel1;
     }
 }
 

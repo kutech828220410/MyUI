@@ -386,6 +386,12 @@
     <Compile Include="Touchch_TextBox.Designer.cs">
       <DependentUpon>Touchch_TextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TransparentPanel.Designer.cs">
+      <DependentUpon>TransparentPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="字母鍵盤.cs">
       <SubType>Form</SubType>
     </Compile>

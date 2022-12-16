@@ -67,6 +67,8 @@ namespace MyUI
             this.ForeColor = Color.White;
             this.Resize += RJ_Pannel_Resize;
         }
+
+
         private void RJ_Pannel_Resize(object sender, EventArgs e)
         {
             if (this.borderRadius > this.Height)

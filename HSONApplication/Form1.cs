@@ -96,11 +96,15 @@ namespace HSONApplication
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
-
+            rJ_Pannel1.MouseDown += RJ_Pannel1_MouseDown;
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
+        }
+
+        private void RJ_Pannel1_MouseDown(object sender, MouseEventArgs e)
+        {
+          
         }
 
         private void PlC_UI_Init1_UI_Finished_Event()
