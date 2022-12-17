@@ -7,11 +7,44 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Basic;
 namespace MyUI
 {
     public class RJ_Pannel : Panel
     {
+        [Serializable]
+        public class JaonstringClass
+        {
+
+            private int borderSize = 2;
+            private int borderRadius = 10;
+            private Color borderColor = Color.SkyBlue;
+            private Point location;
+            private Size size;
+
+            public int BorderSize { get => borderSize; set => borderSize = value; }
+            public int BorderRadius { get => borderRadius; set => borderRadius = value; }
+            public Color BorderColor { get => borderColor; set => borderColor = value; }
+            public Point Location { get => location; set => location = value; }
+            public Size Size { get => size; set => size = value; }
+
+            public static string GetJaonstring(RJ_Pannel control)
+            {
+                JaonstringClass jaonstringClass = new JaonstringClass();
+                jaonstringClass.BorderSize = control.BorderSize;
+                jaonstringClass.BorderRadius = control.BorderRadius;
+                jaonstringClass.BorderColor = control.BorderColor;
+                jaonstringClass.Location = control.Location;
+                jaonstringClass.Size = control.Size;
+
+                return jaonstringClass.JsonSerializationt();
+            }
+            public static RJ_Pannel SetJaonstring(string jsonstring)
+            {
+                return jsonstring.JsonDeserializet<RJ_Pannel>();
+            }
+        }
+
         private int borderSize = 2;
         private int borderRadius = 10;
         private Color borderColor = Color.SkyBlue;
