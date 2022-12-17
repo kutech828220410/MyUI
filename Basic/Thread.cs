@@ -108,7 +108,14 @@ namespace Basic
         }
         public void Add_Method(MethodDelegate method)
         {
-            lock (this) Method.Add(method);
+            lock (this.Method) Method.Add(method);
+        }
+        public void Clear_Method()
+        {
+            lock (this.Method)
+            {
+                Method.Clear();
+            }
         }
         public void SetSleepTime(int Time)
         {
