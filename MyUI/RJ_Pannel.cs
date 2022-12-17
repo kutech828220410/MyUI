@@ -44,7 +44,31 @@ namespace MyUI
                 return jsonstring.JsonDeserializet<RJ_Pannel>();
             }
         }
-
+        
+        private bool isSelected = false;
+        [Browsable(false)]
+        public bool IsSelected
+        {
+            get
+            {
+                return this.isSelected;
+            }
+            set
+            {
+                this.isSelected = value;
+                if (this.isSelected)
+                {
+                    this.BorderColor = this.borderColor;
+                    this.Invalidate();
+                }
+                else
+                {
+                    this.BorderColor = this.borderColor;
+                    this.Invalidate();
+                }
+            }
+        }
+        public string GUID = "";
         private int borderSize = 2;
         private int borderRadius = 10;
         private Color borderColor = Color.SkyBlue;
@@ -99,6 +123,8 @@ namespace MyUI
             this.BackColor = Color.White;
             this.ForeColor = Color.White;
             this.Resize += RJ_Pannel_Resize;
+            this.GUID = Guid.NewGuid().ToString();
+         
         }
 
 
@@ -108,6 +134,7 @@ namespace MyUI
             {
                 this.BorderRadius = this.Height;
             }
+            this.Invalidate();
         }
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
         {
@@ -130,13 +157,14 @@ namespace MyUI
 
             RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height);
             RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
-
+            Color mborderColor = borderColor;
+            if (this.isSelected) mborderColor = Color.Blue;
             if (this.borderRadius > 2)
             {
                 using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
                 using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius - 1F))
                 using (Pen penSurface = new Pen(this.Parent.BackColor, 2))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
+                using (Pen penBorder = new Pen(mborderColor, borderSize))
                 {
                     penBorder.Alignment = PenAlignment.Inset;
                     this.Region = new Region(pathSurface);
@@ -153,7 +181,7 @@ namespace MyUI
                 this.Region = new Region(rectSurface);
                 if (this.borderRadius >= 1)
                 {
-                    using (Pen penBorder = new Pen(borderColor, borderSize))
+                    using (Pen penBorder = new Pen(mborderColor, borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
                         pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
