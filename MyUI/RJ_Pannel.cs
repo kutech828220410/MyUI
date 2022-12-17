@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.Text.Encodings.Web;
+using System.Text.Json.Serialization;
 using Basic;
 namespace MyUI
 {
@@ -18,13 +21,21 @@ namespace MyUI
 
             private int borderSize = 2;
             private int borderRadius = 10;
-            private Color borderColor = Color.SkyBlue;
+
+            [JsonIgnore]
+            public Color BorderColor = Color.SkyBlue;
+            [Browsable(false)]
+            public string BorderColorr_Serialize
+            {
+                get { return Basic.Net.ColorSerializationHelper.ToString(BorderColor); }
+                set { BorderColor = Basic.Net.ColorSerializationHelper.FromString(value); }
+            }
+
             private Point location;
             private Size size;
 
             public int BorderSize { get => borderSize; set => borderSize = value; }
             public int BorderRadius { get => borderRadius; set => borderRadius = value; }
-            public Color BorderColor { get => borderColor; set => borderColor = value; }
             public Point Location { get => location; set => location = value; }
             public Size Size { get => size; set => size = value; }
 
