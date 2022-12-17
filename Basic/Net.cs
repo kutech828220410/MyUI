@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,65 @@ namespace Basic
 {
     static public class Net
     {
+        static public class ColorSerializationHelper
+        {
+            static public Color FromString(string value)
+            {
+                var parts = value.Split(':');
+
+                int A = 0;
+                int R = 0;
+                int G = 0;
+                int B = 0;
+                int.TryParse(parts[0], out A);
+                int.TryParse(parts[1], out R);
+                int.TryParse(parts[2], out G);
+                int.TryParse(parts[3], out B);
+                return Color.FromArgb(A, R, G, B);
+            }
+            static public string ToString(Color color)
+            {
+                return color.A + ":" + color.R + ":" + color.G + ":" + color.B;
+
+            }
+        }
+        [TypeConverter(typeof(FontConverter))]
+        static public class FontSerializationHelper
+        {
+            static public Font FromString(string value)
+            {
+                var parts = value.Split(':');
+                return new Font(
+                    parts[0],                                                   // FontFamily.Name
+                    float.Parse(parts[1]),                                      // Size
+                    EnumSerializationHelper.FromString<FontStyle>(parts[2]),    // Style
+                    EnumSerializationHelper.FromString<GraphicsUnit>(parts[3]), // Unit
+                    byte.Parse(parts[4]),                                       // GdiCharSet
+                    bool.Parse(parts[5])                                        // GdiVerticalFont
+                );
+            }
+            static public string ToString(Font font)
+            {
+                return font.FontFamily.Name
+                        + ":" + font.Size
+                        + ":" + font.Style
+                        + ":" + font.Unit
+                        + ":" + font.GdiCharSet
+                        + ":" + font.GdiVerticalFont
+                        ;
+            }
+        }
+        [TypeConverter(typeof(EnumConverter))]
+        static public class EnumSerializationHelper
+        {
+            static public T FromString<T>(string value)
+            {
+                return (T)Enum.Parse(typeof(T), value, true);
+            }
+        }
+
+
+
         public static bool is_Chrome()
         {
             try
