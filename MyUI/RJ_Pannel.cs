@@ -25,7 +25,7 @@ namespace MyUI
             [JsonIgnore]
             public Color BorderColor = Color.SkyBlue;
             [Browsable(false)]
-            public string BorderColorr_Serialize
+            public string BorderColor_Serialize
             {
                 get { return Basic.Net.ColorSerializationHelper.ToString(BorderColor); }
                 set { BorderColor = Basic.Net.ColorSerializationHelper.FromString(value); }
@@ -52,7 +52,15 @@ namespace MyUI
             }
             public static RJ_Pannel SetJaonstring(string jsonstring)
             {
-                return jsonstring.JsonDeserializet<RJ_Pannel>();
+                JaonstringClass jaonstringClass = jsonstring.JsonDeserializet<JaonstringClass>();
+                RJ_Pannel rJ_Pannel = new RJ_Pannel();
+                rJ_Pannel.BorderSize = jaonstringClass.BorderSize;
+                rJ_Pannel.BorderRadius = jaonstringClass.BorderRadius;
+                rJ_Pannel.BorderColor = jaonstringClass.BorderColor;
+                rJ_Pannel.Location = jaonstringClass.Location;
+                rJ_Pannel.Size = jaonstringClass.Size;
+
+                return rJ_Pannel;
             }
         }
         

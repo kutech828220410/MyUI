@@ -1111,7 +1111,7 @@ namespace MyUI
             {
                 _FLAG_讀取_buf = FLAG_寫入;
             }
-            if (_FLAG_讀取_buf != FLAG_讀取 || IsRunOnce)
+            if (_FLAG_讀取_buf != FLAG_讀取 || !IsRunOnce)
             {
                 FLAG_讀取 = _FLAG_讀取_buf;
             }

@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rJ_Pannel1 = new MyUI.RJ_Pannel();
             this.plC_Button1 = new MyUI.PLC_Button();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_NumBox1 = new MyUI.PLC_NumBox();
@@ -61,7 +62,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.rJ_Pannel1 = new MyUI.RJ_Pannel();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,6 +126,19 @@
             this.tabPage1.Text = "主畫面";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // rJ_Pannel1
+            // 
+            this.rJ_Pannel1.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Pannel1.BorderRadius = 10;
+            this.rJ_Pannel1.BorderSize = 2;
+            this.rJ_Pannel1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Pannel1.IsSelected = false;
+            this.rJ_Pannel1.Location = new System.Drawing.Point(1089, 384);
+            this.rJ_Pannel1.Name = "rJ_Pannel1";
+            this.rJ_Pannel1.Size = new System.Drawing.Size(400, 300);
+            this.rJ_Pannel1.TabIndex = 7;
+            // 
             // plC_Button1
             // 
             this.plC_Button1.Bool = false;
@@ -182,8 +195,10 @@
             this.plC_NumBox1.Value = 0;
             this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
             this.plC_NumBox1.密碼欄位 = false;
+            this.plC_NumBox1.寫入元件位置 = "R1000";
             this.plC_NumBox1.小數點位置 = 0;
             this.plC_NumBox1.微調數值 = 1;
+            this.plC_NumBox1.讀取元件位置 = "R1000";
             this.plC_NumBox1.音效 = true;
             this.plC_NumBox1.顯示微調按鈕 = false;
             this.plC_NumBox1.顯示螢幕小鍵盤 = true;
@@ -278,7 +293,7 @@
             this.rJ_TrackBar1.Minimum = 20;
             this.rJ_TrackBar1.MinValue = 20;
             this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(1198, 90);
+            this.rJ_TrackBar1.Size = new System.Drawing.Size(1238, 90);
             this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rJ_TrackBar1.SliderSize = 20;
             this.rJ_TrackBar1.TabIndex = 47;
@@ -710,18 +725,6 @@
             this.plC_AlarmFlow1.自動隱藏 = false;
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
-            // 
-            // rJ_Pannel1
-            // 
-            this.rJ_Pannel1.BackColor = System.Drawing.Color.White;
-            this.rJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
-            this.rJ_Pannel1.BorderRadius = 10;
-            this.rJ_Pannel1.BorderSize = 2;
-            this.rJ_Pannel1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Pannel1.Location = new System.Drawing.Point(1089, 384);
-            this.rJ_Pannel1.Name = "rJ_Pannel1";
-            this.rJ_Pannel1.Size = new System.Drawing.Size(400, 300);
-            this.rJ_Pannel1.TabIndex = 7;
             // 
             // Form1
             // 

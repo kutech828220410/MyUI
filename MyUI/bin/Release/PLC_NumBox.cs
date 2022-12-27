@@ -348,8 +348,8 @@ namespace MyUI
                 }
             }
             if (有負號) value = "-" + value;
-
-            if(textBox1.Text != value)
+            string text = textBox1.Text;
+            if (text != value)
             {
                 if (this.IsHandleCreated)
                 {
@@ -362,6 +362,7 @@ namespace MyUI
                 else
                 {
                     textBox1.Text = value;
+                    base.Text = value.Replace(".", "");
                 }
             }
           
@@ -544,6 +545,7 @@ namespace MyUI
                     }
                     Value_Str_Buf = value.ToString();
                 }
+                string text = this.Text;
                 if (this.Text != Value_Str_Buf)
                 {
                     this.Text = Value_Str_Buf;

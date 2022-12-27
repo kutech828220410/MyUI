@@ -213,7 +213,7 @@ namespace MVSDKUI
             get
             {
                 uint pbEnable = 0;
-                MvApi.CameraGetMirror(this.CameraHandle, 0, ref pbEnable);
+                if (this.IsHandleCreated) MvApi.CameraGetMirror(this.CameraHandle, 0, ref pbEnable);
                 return (pbEnable == 1);
             }
             set
@@ -227,7 +227,7 @@ namespace MVSDKUI
             get
             {
                 uint pbEnable = 0;
-                MvApi.CameraGetMirror(this.CameraHandle, 1, ref pbEnable);
+                if (this.IsHandleCreated) MvApi.CameraGetMirror(this.CameraHandle, 1, ref pbEnable);
                 return (pbEnable == 1);
             }
             set
@@ -245,7 +245,7 @@ namespace MVSDKUI
             get
             {
                 int iRot = 0;
-                MvApi.CameraGetRotate(this.CameraHandle, out iRot);
+                if (this.IsHandleCreated) MvApi.CameraGetRotate(this.CameraHandle, out iRot);
                 return (enum_Rotate)iRot;
             }
             set
