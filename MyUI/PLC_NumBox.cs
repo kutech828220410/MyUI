@@ -529,6 +529,7 @@ namespace MyUI
         }
         public void Run()
         {
+            if (!this.CanSelect) return;
             flag_init = true;
             if (PLC != null)
             {

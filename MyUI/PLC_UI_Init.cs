@@ -231,12 +231,12 @@ namespace MyUI
 
                     this.Thread_ButtonUI.AutoRun(true);
                     this.Thread_ButtonUI.AutoStop(true);
-                    this.Thread_ButtonUI.SetSleepTime(10);
+                    this.Thread_ButtonUI.SetSleepTime(100);
                     this.Thread_ButtonUI.Trigger();
 
                     this.Thread_NumBoxUI.AutoRun(true);
                     this.Thread_NumBoxUI.AutoStop(true);
-                    this.Thread_NumBoxUI.SetSleepTime(10);
+                    this.Thread_NumBoxUI.SetSleepTime(100);
                     this.Thread_NumBoxUI.Trigger();
 
                     PLC.FLAG_UI_init = true;

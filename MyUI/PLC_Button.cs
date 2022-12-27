@@ -1045,6 +1045,7 @@ namespace MyUI
         private void 按鈕狀態計算()
         {
             Init();
+            if (!this.CanSelect) return;
             if (PLC_要讀取)
             {
                 if (LadderProperty.DEVICE.TestDevice(_讀取元件位置))
