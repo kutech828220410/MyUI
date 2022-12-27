@@ -20,6 +20,11 @@ namespace MyUI
         {
             stopwatch.Start();
         }
+        public MyTimer(double TickTime)
+        {
+            stopwatch.Start();
+            this.StartTickTime(TickTime);
+        }
         public MyTimer(string adress)
         {
             pLC_Device = new PLC_Device(adress);
