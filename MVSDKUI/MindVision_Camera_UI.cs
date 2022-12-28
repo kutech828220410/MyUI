@@ -335,6 +335,7 @@ namespace MVSDKUI
         protected IntPtr m_Grabber = IntPtr.Zero;
         protected tSdkCameraDevInfo m_DevInfo;
         #region Function
+        bool FLAG_初始化失敗訊息視窗 = true;
         public bool Init(Form form)
         {
             this.ActiveForm = form;
@@ -408,7 +409,7 @@ namespace MVSDKUI
             //}
             //return false;
             #endregion
-            if (CameraHandle != 0)
+            if (CameraHandle == 0)
             {
                 if (MvApi.CameraInitEx2(this.CameraName, out this._CameraHandle) == CameraSdkStatus.CAMERA_STATUS_SUCCESS)
                 {
@@ -458,7 +459,12 @@ namespace MVSDKUI
 
                 else
                 {
-                    MyMessageBox.ShowDialog($"相機初始化失敗{this.CameraName}");
+                    if(FLAG_初始化失敗訊息視窗)
+                    {
+                        FLAG_初始化失敗訊息視窗 = false;
+                        MyMessageBox.ShowDialog($"相機初始化失敗{this.CameraName}");
+                    }
+                    
                     return false;
                 }
             }
