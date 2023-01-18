@@ -265,8 +265,6 @@ namespace MyUI
             }
         }
 
- 
-
         private void FindMindVisionControl()
         {
             if (this.邁得威視元件初始化)

@@ -100,6 +100,7 @@ namespace HSONApplication
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
+ 
         }
 
         private void RJ_Pannel1_MouseDown(object sender, MouseEventArgs e)
@@ -110,9 +111,9 @@ namespace HSONApplication
         private void PlC_UI_Init1_UI_Finished_Event()
         {
             this.LoadDBConfig();
+            this.plC_RJ_Pannel1.Set_Enable(false);
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
-            sqL_DataGridView_file.Init();
-            if (!sqL_DataGridView_file.SQL_IsTableCreat()) sqL_DataGridView_file.SQL_CreateTable();
+         
         }
 
         private void SqL_DataGridView_人員資料_CheckedChangedEvent(List<object[]> RowsList)
@@ -136,51 +137,12 @@ namespace HSONApplication
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
-
+       
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MyTimer myTimer = new MyTimer();
-            myTimer.StartTickTime(5000);
-            byte[] bytes = FileIO.LoadFileStream(@"C:\Users\User\Desktop\Release.zip");
-            Console.WriteLine($"讀取檔案,耗時 {myTimer.ToString()}");
-            List<object[]> list_value = this.sqL_DataGridView_file.SQL_GetAllRows(false);
-            list_value.GetRows((int)file.filename, "Release.zip");
-            Console.WriteLine($"取得SQL資料,耗時 {myTimer.ToString()}");
-            object[] value = new object[new file().GetLength()];
-            if (list_value.Count == 0)
-            {
-                value[(int)file.GUID] = Guid.NewGuid().ToString();
-                value[(int)file.filename] = "Release.zip";
-                value[(int)file.value] = bytes;
-                this.sqL_DataGridView_file.SQL_AddRow(value, false);
-                Console.WriteLine($"新增SQL資料,耗時 {myTimer.ToString()}");
-            }
-            else
-            {
-                value = list_value[0];
-                value[(int)file.filename] = "Release.zip";
-                value[(int)file.value] = bytes;
-                this.sqL_DataGridView_file.SQL_ReplaceExtra(value, false);
-                Console.WriteLine($"修正SQL資料,耗時 {myTimer.ToString()}");
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MyTimer myTimer = new MyTimer();
-            myTimer.StartTickTime(5000);
-            List<object[]> list_value = this.sqL_DataGridView_file.SQL_GetAllRows(false);
-            Console.WriteLine($"取得SQL資料,耗時 {myTimer.ToString()}");
-            for (int i = 0; i < list_value.Count; i++)
-            {
-                if(list_value[i][(int)file.value] is byte[])
-                {
-                    FileIO.SaveFileStream((byte[])list_value[i][(int)file.value], @"C:\Users\User\Desktop\Release11122.zip");
-                }
-            }
-            Console.WriteLine($"寫入本地,耗時 {myTimer.ToString()}");
+            this.plC_RJ_Pannel1.Set_Enable(!this.plC_RJ_Pannel1.Get_Enable());
         }
     }
 }

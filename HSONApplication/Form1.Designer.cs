@@ -33,12 +33,12 @@
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rJ_Pannel1 = new MyUI.RJ_Pannel();
+            this.rJ_TextBox1 = new MyUI.RJ_TextBox();
             this.plC_Button1 = new MyUI.PLC_Button();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_NumBox1 = new MyUI.PLC_NumBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.sqL_DataGridView_file = new SQLUI.SQL_DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.rJ_TrackBar1 = new MyUI.RJ_TrackBar();
             this.rJ_Button2 = new MyUI.RJ_Button();
@@ -62,6 +62,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
+            this.plC_RJ_Pannel1 = new MyUI.PLC_RJ_Pannel();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,6 +70,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.plC_ScreenPage.SuspendLayout();
+            this.plC_RJ_Pannel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // openFileDialog_LoadExcel
@@ -102,13 +104,13 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_RJ_Pannel1);
             this.tabPage1.Controls.Add(this.rJ_Pannel1);
             this.tabPage1.Controls.Add(this.plC_Button1);
             this.tabPage1.Controls.Add(this.plC_AlarmFlow2);
             this.tabPage1.Controls.Add(this.plC_NumBox1);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.sqL_DataGridView_file);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.rJ_TrackBar1);
             this.tabPage1.Controls.Add(this.rJ_Button2);
@@ -134,10 +136,33 @@
             this.rJ_Pannel1.BorderSize = 2;
             this.rJ_Pannel1.ForeColor = System.Drawing.Color.White;
             this.rJ_Pannel1.IsSelected = false;
-            this.rJ_Pannel1.Location = new System.Drawing.Point(1089, 384);
+            this.rJ_Pannel1.Location = new System.Drawing.Point(412, 597);
             this.rJ_Pannel1.Name = "rJ_Pannel1";
             this.rJ_Pannel1.Size = new System.Drawing.Size(400, 300);
             this.rJ_Pannel1.TabIndex = 7;
+            // 
+            // rJ_TextBox1
+            // 
+            this.rJ_TextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rJ_TextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox1.BorderRadius = 0;
+            this.rJ_TextBox1.BorderSize = 2;
+            this.rJ_TextBox1.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox1.Location = new System.Drawing.Point(40, 48);
+            this.rJ_TextBox1.Multiline = false;
+            this.rJ_TextBox1.Name = "rJ_TextBox1";
+            this.rJ_TextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox1.PassWordChar = false;
+            this.rJ_TextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox1.PlaceholderText = "";
+            this.rJ_TextBox1.ShowTouchPannel = false;
+            this.rJ_TextBox1.Size = new System.Drawing.Size(222, 30);
+            this.rJ_TextBox1.TabIndex = 0;
+            this.rJ_TextBox1.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox1.Texts = "";
+            this.rJ_TextBox1.UnderlineStyle = false;
             // 
             // plC_Button1
             // 
@@ -212,67 +237,16 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(984, 626);
+            this.button2.Location = new System.Drawing.Point(896, 626);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 50;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // sqL_DataGridView_file
-            // 
-            this.sqL_DataGridView_file.AutoSelectToDeep = true;
-            this.sqL_DataGridView_file.backColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_file.BorderColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_file.BorderRadius = 10;
-            this.sqL_DataGridView_file.BorderSize = 2;
-            this.sqL_DataGridView_file.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.sqL_DataGridView_file.cellStylBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_file.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_file.cellStylForeColor = System.Drawing.Color.Black;
-            this.sqL_DataGridView_file.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
-            this.sqL_DataGridView_file.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_file.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.sqL_DataGridView_file.columnHeadersHeight = 26;
-            this.sqL_DataGridView_file.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sqL_DataGridView_file.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_file.Columns"))));
-            this.sqL_DataGridView_file.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_file.Columns1"))));
-            this.sqL_DataGridView_file.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_file.Columns2"))));
-            this.sqL_DataGridView_file.DataBaseName = "test";
-            this.sqL_DataGridView_file.Font = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_file.ImageBox = false;
-            this.sqL_DataGridView_file.Location = new System.Drawing.Point(195, 6);
-            this.sqL_DataGridView_file.Name = "sqL_DataGridView_file";
-            this.sqL_DataGridView_file.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
-            this.sqL_DataGridView_file.Password = "user82822040";
-            this.sqL_DataGridView_file.Port = ((uint)(3306u));
-            this.sqL_DataGridView_file.rowHeaderBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_file.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.sqL_DataGridView_file.RowsColor = System.Drawing.SystemColors.Control;
-            this.sqL_DataGridView_file.RowsHeight = 10;
-            this.sqL_DataGridView_file.SaveFileName = "SQL_DataGridView";
-            this.sqL_DataGridView_file.Server = "127.0.0.0";
-            this.sqL_DataGridView_file.Size = new System.Drawing.Size(805, 585);
-            this.sqL_DataGridView_file.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
-            this.sqL_DataGridView_file.TabIndex = 49;
-            this.sqL_DataGridView_file.TableName = "file";
-            this.sqL_DataGridView_file.UserName = "root";
-            this.sqL_DataGridView_file.可拖曳欄位寬度 = false;
-            this.sqL_DataGridView_file.可選擇多列 = false;
-            this.sqL_DataGridView_file.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.sqL_DataGridView_file.自動換行 = true;
-            this.sqL_DataGridView_file.表單字體 = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_file.邊框樣式 = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sqL_DataGridView_file.顯示CheckBox = false;
-            this.sqL_DataGridView_file.顯示首列 = true;
-            this.sqL_DataGridView_file.顯示首行 = true;
-            this.sqL_DataGridView_file.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.sqL_DataGridView_file.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(984, 597);
+            this.button1.Location = new System.Drawing.Point(896, 597);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 48;
@@ -287,13 +261,13 @@
             this.rJ_TrackBar1.BarForeColor = System.Drawing.Color.DarkGray;
             this.rJ_TrackBar1.BarSize = 50;
             this.rJ_TrackBar1.BottomSliderColor = System.Drawing.Color.Red;
-            this.rJ_TrackBar1.Location = new System.Drawing.Point(312, 278);
+            this.rJ_TrackBar1.Location = new System.Drawing.Point(131, 171);
             this.rJ_TrackBar1.Maximum = 100;
             this.rJ_TrackBar1.MaxValue = 25;
             this.rJ_TrackBar1.Minimum = 20;
             this.rJ_TrackBar1.MinValue = 20;
             this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(1238, 90);
+            this.rJ_TrackBar1.Size = new System.Drawing.Size(1318, 90);
             this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.rJ_TrackBar1.SliderSize = 20;
             this.rJ_TrackBar1.TabIndex = 47;
@@ -350,7 +324,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(883, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(984, 16);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(240, 150);
@@ -726,6 +700,21 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
+            // plC_RJ_Pannel1
+            // 
+            this.plC_RJ_Pannel1.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_Pannel1.BorderRadius = 10;
+            this.plC_RJ_Pannel1.BorderSize = 2;
+            this.plC_RJ_Pannel1.Controls.Add(this.rJ_TextBox1);
+            this.plC_RJ_Pannel1.ForeColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel1.IsSelected = false;
+            this.plC_RJ_Pannel1.Location = new System.Drawing.Point(1049, 373);
+            this.plC_RJ_Pannel1.Name = "plC_RJ_Pannel1";
+            this.plC_RJ_Pannel1.Size = new System.Drawing.Size(400, 300);
+            this.plC_RJ_Pannel1.TabIndex = 56;
+            this.plC_RJ_Pannel1.致能讀取位置 = "S6000";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -745,6 +734,7 @@
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.plC_ScreenPage.ResumeLayout(false);
+            this.plC_RJ_Pannel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -777,13 +767,14 @@
         private MyUI.RJ_Button rJ_Button2;
         private MyUI.RJ_TrackBar rJ_TrackBar1;
         private System.Windows.Forms.Button button1;
-        private SQLUI.SQL_DataGridView sqL_DataGridView_file;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private MyUI.PLC_NumBox plC_NumBox1;
         private MyUI.PLC_Button plC_Button1;
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
         private MyUI.RJ_Pannel rJ_Pannel1;
+        private MyUI.RJ_TextBox rJ_TextBox1;
+        private MyUI.PLC_RJ_Pannel plC_RJ_Pannel1;
     }
 }
 

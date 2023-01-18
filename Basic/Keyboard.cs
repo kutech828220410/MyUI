@@ -259,7 +259,8 @@ namespace Basic
         }
 
         public delegate void KeyAction(int nCode, IntPtr wParam, Keys Keys);
-        class Hook
+        public delegate void MouseAction(int nCode, int mouse_x, int mouse_y);
+        public class Hook
         {
             //挂钩
             [DllImport("user32.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Auto)]
@@ -280,21 +281,66 @@ namespace Basic
                 public int time;
                 public int dwExtraInfo;
             }
+
+
+            public enum MouseEventType : int
+            {
+                MouseMove = 512,
+                MouseDown = 513,
+                MouseUp = 514,
+            }
+            //滑鼠事件結構
+            [StructLayout(LayoutKind.Sequential)]
+            private struct POINT
+            {
+                public int x;
+                public int y;
+            }
+
+            [StructLayout(LayoutKind.Sequential)]
+            private struct MSLLHOOKSTRUCT
+            {
+                public POINT pt;
+                public uint mouseData;
+                public uint flags;
+                public uint time;
+                public IntPtr dwExtraInfo;
+            }
+
             //私有委托
             private delegate int HookProc(int nCode, IntPtr wParam, IntPtr LParam);
             private static HookProc KeyBoardHookProcedure;
+            private static HookProc MouseHookProcedure;
 
             //事件聲明
-            //按下
             public static event KeyAction KeyDown;
-            //鬆開
             public static event KeyAction KeyUp;
+            public static event MouseAction MouseMove;
+            public static event MouseAction MouseUp;
+            public static event MouseAction MouseDown;
 
             //要用到的变量，标记是否成功设置钩子
             private static int hHook = 0;
 
             //LowLevel键盘截获，如果是WH_KEYBOARD＝2，并不能对系统键盘截取，Acrobat Reader会在你截取之前获得键盘。 
-            private const int WH_KEYBOARD_LL = 13;
+            public enum HookType : int
+            {
+                WH_JOURNALRECORD = 0,
+                WH_JOURNALPLAYBACK = 1,
+                WH_KEYBOARD = 2,
+                WH_GETMESSAGE = 3,
+                WH_CALLWNDPROC = 4,
+                WH_CBT = 5,
+                WH_SYSMSGFILTER = 6,
+                WH_MOUSE = 7,
+                WH_HARDWARE = 8,
+                WH_DEBUG = 9,
+                WH_SHELL = 10,
+                WH_FOREGROUNDIDLE = 11,
+                WH_CALLWNDPROCRET = 12,
+                WH_KEYBOARD_LL = 13,
+                WH_MOUSE_LL = 14
+            }
 
 
             private static int KeyBoardHookProc(int nCode, IntPtr wParam, IntPtr lParam)
@@ -303,6 +349,7 @@ namespace Basic
                 //使用前需要為KeyUp和KeyDown綁定对应的处理过程，就像使用控件的事件一樣。
 
                 //鬆開按鍵
+                
                 if (wParam.ToInt32() == 257)
                 {
                     KeyUp(nCode, wParam, (Keys)kbh.vkCode);
@@ -318,38 +365,70 @@ namespace Basic
                 }
 
                 //將按鍵消息交給下一個鉤子
+                
                 return CallNextHookEx(hHook, nCode, wParam, lParam);
                 //這句好像沒什麼用？即使這裡不調用，其他程序還是能收到鍵盤消息，有待研究。
 
             }
+            private static int MouseHookProc(int nCode, IntPtr wParam, IntPtr lParam)
+            {
+                MSLLHOOKSTRUCT kbh = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
+                //使用前需要為KeyUp和KeyDown綁定对应的处理过程，就像使用控件的事件一樣。
+                if (nCode >= 0)
+                {
+                    if ((int)wParam == (int)MouseEventType.MouseMove)
+                    {
+                        MouseMove(nCode, kbh.pt.x, kbh.pt.y);
+                    }
+                    else if ((int)wParam == (int)MouseEventType.MouseDown)
+                    {
+                        MouseDown(nCode, kbh.pt.x, kbh.pt.y);
+                    }
+                    else if ((int)wParam == (int)MouseEventType.MouseUp)
+                    {
+                        MouseUp(nCode, kbh.pt.x, kbh.pt.y);
+                    }
+                }               
+                //將按鍵消息交給下一個鉤子
+                return CallNextHookEx(hHook, nCode, wParam, lParam);
 
+            }
             //取消钩子事件
             public static bool Hook_Clear()
             {
-                bool retKeyboard = true;
                 if (hHook != 0)
                 {
-                    retKeyboard = UnhookWindowsHookEx(hHook);
                     hHook = 0;
+                    return UnhookWindowsHookEx(hHook);
+                   
                 }
-                return retKeyboard;
+                return true;
             }
             //开始钩子
             public static bool Hook_Start()
             {
-                bool retKeyboard = true;
                 if (hHook == 0)
                 {
                     KeyBoardHookProcedure = new HookProc(KeyBoardHookProc);
-                    hHook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyBoardHookProcedure, Process.GetCurrentProcess().MainModule.BaseAddress, 0);
+                    hHook = SetWindowsHookEx((int)(HookType.WH_KEYBOARD_LL), KeyBoardHookProcedure, Process.GetCurrentProcess().MainModule.BaseAddress, 0);
                     //如果设置钩子失败. 
                     if (hHook == 0)
                     {
-                        retKeyboard = false;
                         Hook_Clear();
+                        return false;                     
                     }
+
+                    MouseHookProcedure = new HookProc(MouseHookProc);
+                    hHook = SetWindowsHookEx((int)HookType.WH_MOUSE_LL, MouseHookProcedure, Process.GetCurrentProcess().MainModule.BaseAddress, 0);
+                    //如果设置钩子失败. 
+                    if (hHook == 0)
+                    {
+                        Hook_Clear();
+                        return false;
+                    }
+
                 }
-                return retKeyboard;
+                return true;
             }
         }
     }
