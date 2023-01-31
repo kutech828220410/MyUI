@@ -126,9 +126,9 @@ namespace SQLUI
             dataTable_buffer = new DataTable();
             foreach (ColumnElement columns in Columns)
             {
-                if (dataTable_buffer.Columns[columns.Name] == null)
+                if (dataTable_buffer.Columns[columns.Text] == null)
                 {
-                    dataTable_buffer.Columns.Add(new DataColumn(columns.Name));
+                    dataTable_buffer.Columns.Add(new DataColumn(columns.Text));
                 }
             }
             foreach (object[] object_templass in RowsList)
@@ -742,6 +742,19 @@ namespace SQLUI
             {
                 get { return datalen; }
                 set { datalen = value; }
+            }
+            private string text = "";
+            public string Text
+            {
+                get
+                {
+                    if (text.StringIsEmpty()) return this._Name;
+                    return text;
+                }
+                set
+                {
+                    this.text = value;
+                }
             }
 
             private Color _BackgroundColor = Color.White;
@@ -2141,18 +2154,18 @@ namespace SQLUI
             dataTable = new DataTable();
             foreach (ColumnElement columns in Columns)
             {
-                dataTable.Columns.Add(new DataColumn(columns.Name));
+                dataTable.Columns.Add(new DataColumn(columns.Text));
             }
             dataGridView.DataSource = dataTable;
          
             foreach (ColumnElement columns in Columns)
             {
                 //DataGridViewColumn dataGridViewColumn = new DataGridViewColumn();
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
-                dataGridView.Columns[$"{columns.Name}"].Width = columns.Width;
-                dataGridView.Columns[$"{columns.Name}"].SortMode = columns.SortMode;
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.Alignment = columns.Alignment;
-                dataGridView.Columns[$"{columns.Name}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
+                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
             }
 
             if(_顯示CheckBox)
@@ -2800,11 +2813,11 @@ namespace SQLUI
             }
             foreach (ColumnElement columns in Columns)
             {
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
-                dataGridView.Columns[$"{columns.Name}"].Width = columns.Width;
-                dataGridView.Columns[$"{columns.Name}"].SortMode = columns.SortMode;
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.Alignment = columns.Alignment;
-                dataGridView.Columns[$"{columns.Name}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
+                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
             }
         }
         public void Set_ColumnWidth(int width, object Enum)
@@ -2826,11 +2839,11 @@ namespace SQLUI
             }
             foreach (ColumnElement columns in Columns)
             {
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
-                dataGridView.Columns[$"{columns.Name}"].Width = columns.Width;
-                dataGridView.Columns[$"{columns.Name}"].SortMode = columns.SortMode;
-                dataGridView.Columns[$"{columns.Name}"].DefaultCellStyle.Alignment = columns.Alignment;
-                dataGridView.Columns[$"{columns.Name}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
+                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
             }
         }
         public void Set_ColumnHeaderHeight(int height)

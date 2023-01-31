@@ -352,16 +352,11 @@ namespace Basic
                 
                 if (wParam.ToInt32() == 257)
                 {
-                    KeyUp(nCode, wParam, (Keys)kbh.vkCode);
+                    if (KeyUp != null) KeyUp(nCode, wParam, (Keys)kbh.vkCode);
                 }
                 else
                 {
-                    //按下
-
-                    if (KeyDown != null)
-                    {
-                        KeyDown(nCode, wParam, (Keys)kbh.vkCode);
-                    }
+                    if (KeyDown != null) KeyDown(nCode, wParam, (Keys)kbh.vkCode);
                 }
 
                 //將按鍵消息交給下一個鉤子
@@ -378,15 +373,15 @@ namespace Basic
                 {
                     if ((int)wParam == (int)MouseEventType.MouseMove)
                     {
-                        MouseMove(nCode, kbh.pt.x, kbh.pt.y);
+                        if (MouseMove != null) MouseMove(nCode, kbh.pt.x, kbh.pt.y);
                     }
                     else if ((int)wParam == (int)MouseEventType.MouseDown)
                     {
-                        MouseDown(nCode, kbh.pt.x, kbh.pt.y);
+                        if (MouseDown != null) MouseDown(nCode, kbh.pt.x, kbh.pt.y);
                     }
                     else if ((int)wParam == (int)MouseEventType.MouseUp)
                     {
-                        MouseUp(nCode, kbh.pt.x, kbh.pt.y);
+                        if (MouseUp != null) MouseUp(nCode, kbh.pt.x, kbh.pt.y);
                     }
                 }               
                 //將按鍵消息交給下一個鉤子
