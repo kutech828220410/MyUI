@@ -47,9 +47,23 @@ namespace Basic
         }
         static public List<object[]> GetRowsByLike(this List<object[]> list_value, int colindex, string serchvalue)
         {
-            list_value = (from value in list_value
-                          where value[colindex].ObjectToString().Contains(serchvalue)
-                          select value).ToList();
+            return GetRowsByLike(list_value, colindex, serchvalue);
+        }
+        static public List<object[]> GetRowsByLike(this List<object[]> list_value, int colindex, string serchvalue , bool upper)
+        {
+            if (upper)
+            {
+                list_value = (from value in list_value
+                              where value[colindex].ObjectToString().ToUpper().Contains(serchvalue.ToUpper())
+                              select value).ToList();
+            }
+            else
+            {
+                list_value = (from value in list_value
+                              where value[colindex].ObjectToString().Contains(serchvalue)
+                              select value).ToList();
+            }
+            
             return list_value;
         }
         static public List<object[]> GetRowsInDate(this List<object[]> list_value, int colindex, DateTime datetime)
