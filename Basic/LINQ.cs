@@ -47,7 +47,7 @@ namespace Basic
         }
         static public List<object[]> GetRowsByLike(this List<object[]> list_value, int colindex, string serchvalue)
         {
-            return GetRowsByLike(list_value, colindex, serchvalue);
+            return GetRowsByLike(list_value, colindex, serchvalue , false);
         }
         static public List<object[]> GetRowsByLike(this List<object[]> list_value, int colindex, string serchvalue , bool upper)
         {
