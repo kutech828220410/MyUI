@@ -1573,7 +1573,178 @@ namespace LadderProperty
             }
 
         }
+        public List<object[]> Get_D_Device_Value()
+        {
+            List<object[]> allValue = new List<object[]>();
+            List<object> DeviceValue = new List<object>();
+            string Device;
+            object value;
+            DeviceValue.Add("D");
+            for (int i = 0; i < this.D_count; i++)
+            {
+                Device = "D" + i.ToString();
+                this.Get_Device(Device, out value);
+                DeviceValue.Add(value);
+            }
+            allValue.Add(DeviceValue.ToArray());
+            DeviceValue.Clear();
+            return allValue;
+        }
+        public void Set_D_Device_Value(List<object[]> D_Device_Value)
+        {
+            if (D_Device_Value != null)
+            {
+                foreach (object[] obj_array in D_Device_Value)
+                {
+                    if (obj_array[0] is string)
+                    {
+                        string Device = (string)obj_array[0];
 
+                        if (Device == "D")
+                        {
+                            for (int i = 1; i < obj_array.Length; i++)
+                            {
+                                if (obj_array[i].GetType().Name == "Int32")
+                                {
+                                    this.Set_Device(Device + (i - 1).ToString(), (int)obj_array[i]);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+        public List<object[]> Get_R_Device_Value()
+        {
+            List<object[]> allValue = new List<object[]>();
+            List<object> DeviceValue = new List<object>();
+            string Device;
+            object value;
+            DeviceValue.Add("R");
+            for (int i = 0; i < this.R_count; i++)
+            {
+                Device = "R" + i.ToString();
+                this.Get_Device(Device, out value);
+                DeviceValue.Add(value);
+            }
+            allValue.Add(DeviceValue.ToArray());
+            DeviceValue.Clear();
+            return allValue;
+        }
+        public void Set_R_Device_Value(List<object[]> R_Device_Value)
+        {
+            if (R_Device_Value != null)
+            {
+                foreach (object[] obj_array in R_Device_Value)
+                {
+                    if (obj_array[0] is string)
+                    {
+                        string Device = (string)obj_array[0];
+
+                        if (Device == "R")
+                        {
+                            for (int i = 1; i < obj_array.Length; i++)
+                            {
+                                if (obj_array[i].GetType().Name == "Int32")
+                                {
+                                    this.Set_Device(Device + (i - 1).ToString(), (int)obj_array[i]);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+        public List<object[]> Get_M_Device_Value()
+        {
+            List<object[]> allValue = new List<object[]>();
+            List<object> DeviceValue = new List<object>();
+            string Device;
+            object value;
+            DeviceValue.Add("M");
+            for (int i = 0; i < this.M_count; i++)
+            {
+                Device = "M" + i.ToString();
+                this.Get_Device(Device, out value);
+                DeviceValue.Add(value);
+            }
+            allValue.Add(DeviceValue.ToArray());
+            DeviceValue.Clear();
+            return allValue;
+        }
+        public void Set_M_Device_Value(List<object[]> M_Device_Value)
+        {
+            if (M_Device_Value != null)
+            {
+                foreach (object[] obj_array in M_Device_Value)
+                {
+                    if (obj_array[0] is string)
+                    {
+                        string Device = (string)obj_array[0];
+
+                        if (Device == "M")
+                        {
+                            for (int i = 1; i < obj_array.Length; i++)
+                            {
+                                if (obj_array[i] is bool)
+                                {
+                                    this.Set_Device(Device + (i - 1).ToString(), (bool)obj_array[i]);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+        public List<object[]> Get_S_Device_Value()
+        {
+            List<object[]> allValue = new List<object[]>();
+            List<object> DeviceValue = new List<object>();
+            string Device;
+            object value;
+            DeviceValue.Add("S");
+            for (int i = 0; i < this.S_count; i++)
+            {
+                Device = "S" + i.ToString();
+                this.Get_Device(Device, out value);
+                DeviceValue.Add(value);
+            }
+            allValue.Add(DeviceValue.ToArray());
+            DeviceValue.Clear();
+            return allValue;
+        }
+        public void Set_S_Device_Value(List<object[]> S_Device_Value)
+        {
+            if (S_Device_Value != null)
+            {
+                foreach (object[] obj_array in S_Device_Value)
+                {
+                    if (obj_array[0] is string)
+                    {
+                        string Device = (string)obj_array[0];
+
+                        if (Device == "S")
+                        {
+                            for (int i = 1; i < obj_array.Length; i++)
+                            {
+                                if (obj_array[i] is bool)
+                                {
+                                    this.Set_Device(Device + (i - 1).ToString(), (bool)obj_array[i]);
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
         public string DeviceIndex(String device)
         {
             string[] temp;

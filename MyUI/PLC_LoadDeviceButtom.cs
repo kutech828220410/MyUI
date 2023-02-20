@@ -79,7 +79,7 @@ namespace MyUI
         #region 顯示屬性
         public enum 讀取範圍Enum : int
         {
-            F元件, 所有元件
+            F元件, R元件, D元件, M元件, S元件, 所有元件
         }
         讀取範圍Enum _讀取範圍 = new 讀取範圍Enum();
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
@@ -196,6 +196,22 @@ namespace MyUI
                     else if (_讀取範圍 == 讀取範圍Enum.F元件)
                     {
                         base.PLC.properties.Device.Set_F_Device_Value(_SaveDeviceFile.allValue);
+                    }
+                    else if (_讀取範圍 == 讀取範圍Enum.R元件)
+                    {
+                        base.PLC.properties.Device.Set_R_Device_Value(_SaveDeviceFile.allValue);
+                    }
+                    else if (_讀取範圍 == 讀取範圍Enum.D元件)
+                    {
+                        base.PLC.properties.Device.Set_D_Device_Value(_SaveDeviceFile.allValue);
+                    }
+                    else if (_讀取範圍 == 讀取範圍Enum.S元件)
+                    {
+                        base.PLC.properties.Device.Set_S_Device_Value(_SaveDeviceFile.allValue);
+                    }
+                    else if (_讀取範圍 == 讀取範圍Enum.M元件)
+                    {
+                        base.PLC.properties.Device.Set_M_Device_Value(_SaveDeviceFile.allValue);
                     }
                 }
                 if (_旗標位置_開始讀取 != null || _旗標位置_開始讀取 != "") PLC.properties.Device.Set_Device(_旗標位置_開始讀取, false);

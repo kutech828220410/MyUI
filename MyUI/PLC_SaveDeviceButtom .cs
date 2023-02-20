@@ -65,12 +65,12 @@ namespace MyUI
             {
                 base.讀寫鎖住 = value;
             }
-        }        
+        }
         #endregion
         #region 顯示屬性
         public enum 存檔範圍Enum : int
         {
-          F元件,所有元件
+            F元件, R元件, D元件, M元件, S元件 ,所有元件
         }
         存檔範圍Enum _存檔範圍 = new 存檔範圍Enum();
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
@@ -187,6 +187,22 @@ namespace MyUI
                     else if (_存檔範圍 == 存檔範圍Enum.F元件)
                     {
                         _SaveDeviceFile.allValue = base.PLC.properties.Device.Get_F_Device_Value();
+                    }
+                    else if (_存檔範圍 == 存檔範圍Enum.D元件)
+                    {
+                        _SaveDeviceFile.allValue = base.PLC.properties.Device.Get_D_Device_Value();
+                    }
+                    else if (_存檔範圍 == 存檔範圍Enum.R元件)
+                    {
+                        _SaveDeviceFile.allValue = base.PLC.properties.Device.Get_R_Device_Value();
+                    }
+                    else if (_存檔範圍 == 存檔範圍Enum.M元件)
+                    {
+                        _SaveDeviceFile.allValue = base.PLC.properties.Device.Get_M_Device_Value();
+                    }
+                    else if (_存檔範圍 == 存檔範圍Enum.S元件)
+                    {
+                        _SaveDeviceFile.allValue = base.PLC.properties.Device.Get_S_Device_Value();
                     }
                     Basic.FileIO.SaveProperties(_SaveDeviceFile, saveFileDialog.FileName);
                    
