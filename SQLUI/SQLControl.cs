@@ -1763,6 +1763,21 @@ namespace SQLUI
             return Delete(TableName, serchColumnName, IN_value, SerchType.IN, "");
         }
 
+        public void DeleteExtra(string TableName , object[] Value)
+        {
+            List<object[]> list_value = new List<object[]>();
+            list_value.Add(Value);
+            DeleteExtra(TableName, list_value);
+        }
+        public void DeleteExtra(string TableName, List<object[]> Value)
+        {
+            List<object> serchValue = new List<object>();
+            for (int i = 0; i < Value.Count; i++)
+            {
+                serchValue.Add(Value[i][0]);
+            }
+            DeleteExtra(TableName, "GUID", serchValue);
+        }
         public void DeleteExtra(string TableName, string serchColumnName, List<object> serchValue)
         {
             List<object[]> _serchValue = new List<object[]>();
