@@ -128,7 +128,9 @@ namespace SQLUI
             {
                 if (dataTable_buffer.Columns[columns.Text] == null)
                 {
-                    dataTable_buffer.Columns.Add(new DataColumn(columns.Text));
+                    if (this.IsColumnsText(columns.Text)) dataTable_buffer.Columns.Add(new DataColumn(columns.Text));
+                    else dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+
                 }
             }
             foreach (object[] object_templass in RowsList)
@@ -2148,12 +2150,28 @@ namespace SQLUI
                 DataGrid_Init();
             }
         }
+        private bool IsColumnsText(string colName)
+        {
+            foreach (ColumnElement columns in Columns)
+            {
+                if(columns.Text == colName)
+                {
+                    return (columns.OtherType != Table.OtherType.IMAGE);
+                }
+            }
+            return true;
+        }
         private void DataGrid_Init()
         {
             dataGridView.Columns.Clear();
             dataTable = new DataTable();
             foreach (ColumnElement columns in Columns)
             {
+                if(columns.OtherType == Table.OtherType.IMAGE)
+                {
+                    dataTable.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+                    continue;
+                }
                 dataTable.Columns.Add(new DataColumn(columns.Text));
             }
             dataGridView.DataSource = dataTable;
@@ -2166,6 +2184,10 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                if (columns.OtherType == Table.OtherType.IMAGE)
+                {
+                    ((DataGridViewImageColumn)dataGridView.Columns[$"{columns.Text}"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                }
             }
 
             if(_顯示CheckBox)
@@ -2189,8 +2211,14 @@ namespace SQLUI
             if (this.DesignMode)
             {
                 object[] value = new object[dataGridView.Columns.Count];
-                if(_顯示CheckBox) value = new object[dataGridView.Columns.Count - 1];
-                for (int k = 0; k < value.Length; k++) value[k] = "#######";
+                if (_顯示CheckBox) value = new object[dataGridView.Columns.Count - 1];
+              
+                for (int k = 0; k < Columns.Count; k++)
+                {
+                    if (Columns[k].OtherType == Table.OtherType.IMAGE) value[k] = null;
+                    else value[k] = "#######";
+
+                }
                 dataTable.Rows.Add(value);
                 dataTable.Rows.Add(value);
             }

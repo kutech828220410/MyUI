@@ -37,16 +37,10 @@
             this.rJ_Pannel1 = new MyUI.RJ_Pannel();
             this.plC_Button1 = new MyUI.PLC_Button();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
-            this.plC_NumBox1 = new MyUI.PLC_NumBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.rJ_TrackBar1 = new MyUI.RJ_TrackBar();
             this.rJ_Button2 = new MyUI.RJ_Button();
             this.rJ_Button1 = new MyUI.RJ_Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton2 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
@@ -63,12 +57,10 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.plC_SaveDeviceButtom1 = new MyUI.PLC_SaveDeviceButtom();
-            this.plC_LoadDeviceButtom1 = new MyUI.PLC_LoadDeviceButtom();
+            this.sqL_DataGridView1 = new SQLUI.SQL_DataGridView();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.plC_RJ_Pannel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -106,20 +98,15 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
-            this.tabPage1.Controls.Add(this.plC_LoadDeviceButtom1);
-            this.tabPage1.Controls.Add(this.plC_SaveDeviceButtom1);
+            this.tabPage1.Controls.Add(this.sqL_DataGridView1);
             this.tabPage1.Controls.Add(this.plC_RJ_Pannel1);
             this.tabPage1.Controls.Add(this.rJ_Pannel1);
             this.tabPage1.Controls.Add(this.plC_Button1);
             this.tabPage1.Controls.Add(this.plC_AlarmFlow2);
-            this.tabPage1.Controls.Add(this.plC_NumBox1);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.rJ_TrackBar1);
             this.tabPage1.Controls.Add(this.rJ_Button2);
             this.tabPage1.Controls.Add(this.rJ_Button1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton1);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton2);
             this.tabPage1.Controls.Add(this.plC_UI_Init1);
@@ -229,33 +216,6 @@
             this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
             this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
-            // plC_NumBox1
-            // 
-            this.plC_NumBox1.Location = new System.Drawing.Point(1099, 267);
-            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Window;
-            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
-            this.plC_NumBox1.Name = "plC_NumBox1";
-            this.plC_NumBox1.ReadOnly = false;
-            this.plC_NumBox1.Size = new System.Drawing.Size(112, 22);
-            this.plC_NumBox1.TabIndex = 52;
-            this.plC_NumBox1.Value = 0;
-            this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
-            this.plC_NumBox1.密碼欄位 = false;
-            this.plC_NumBox1.寫入元件位置 = "R1000";
-            this.plC_NumBox1.小數點位置 = 0;
-            this.plC_NumBox1.微調數值 = 1;
-            this.plC_NumBox1.讀取元件位置 = "R1000";
-            this.plC_NumBox1.音效 = true;
-            this.plC_NumBox1.顯示微調按鈕 = false;
-            this.plC_NumBox1.顯示螢幕小鍵盤 = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1089, 190);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 51;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(896, 626);
@@ -274,26 +234,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // rJ_TrackBar1
-            // 
-            this.rJ_TrackBar1.BarColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.rJ_TrackBar1.BarFont = new System.Drawing.Font("微軟正黑體", 9F);
-            this.rJ_TrackBar1.BarForeColor = System.Drawing.Color.DarkGray;
-            this.rJ_TrackBar1.BarSize = 50;
-            this.rJ_TrackBar1.BottomSliderColor = System.Drawing.Color.Red;
-            this.rJ_TrackBar1.Location = new System.Drawing.Point(131, 171);
-            this.rJ_TrackBar1.Maximum = 100;
-            this.rJ_TrackBar1.MaxValue = 25;
-            this.rJ_TrackBar1.Minimum = 20;
-            this.rJ_TrackBar1.MinValue = 20;
-            this.rJ_TrackBar1.Name = "rJ_TrackBar1";
-            this.rJ_TrackBar1.Size = new System.Drawing.Size(1358, 90);
-            this.rJ_TrackBar1.SliderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.rJ_TrackBar1.SliderSize = 20;
-            this.rJ_TrackBar1.TabIndex = 47;
-            this.rJ_TrackBar1.Text = "rJ_TrackBar1";
-            this.rJ_TrackBar1.TopSliderColor = System.Drawing.Color.Red;
             // 
             // rJ_Button2
             // 
@@ -338,28 +278,6 @@
             this.rJ_Button1.TextColor = System.Drawing.Color.White;
             this.rJ_Button1.UseVisualStyleBackColor = false;
             this.rJ_Button1.Click += new System.EventHandler(this.rJ_Button1_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(984, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 31;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
             // 
             // plC_RJ_ScreenButton1
             // 
@@ -721,71 +639,52 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
-            // plC_SaveDeviceButtom1
+            // sqL_DataGridView1
             // 
-            this.plC_SaveDeviceButtom1.Bool = false;
-            this.plC_SaveDeviceButtom1.but_press = false;
-            this.plC_SaveDeviceButtom1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_SaveDeviceButtom1.Location = new System.Drawing.Point(896, 281);
-            this.plC_SaveDeviceButtom1.Name = "plC_SaveDeviceButtom1";
-            this.plC_SaveDeviceButtom1.OFF_文字內容 = "SAVE";
-            this.plC_SaveDeviceButtom1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_SaveDeviceButtom1.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_SaveDeviceButtom1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_SaveDeviceButtom1.ON_文字內容 = "SAVE";
-            this.plC_SaveDeviceButtom1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_SaveDeviceButtom1.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_SaveDeviceButtom1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_SaveDeviceButtom1.Size = new System.Drawing.Size(110, 52);
-            this.plC_SaveDeviceButtom1.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_SaveDeviceButtom1.TabIndex = 57;
-            this.plC_SaveDeviceButtom1.事件驅動 = false;
-            this.plC_SaveDeviceButtom1.字型鎖住 = false;
-            this.plC_SaveDeviceButtom1.存檔範圍 = MyUI.PLC_SaveDeviceButtom.存檔範圍Enum.M元件;
-            this.plC_SaveDeviceButtom1.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
-            this.plC_SaveDeviceButtom1.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_SaveDeviceButtom1.文字鎖住 = false;
-            this.plC_SaveDeviceButtom1.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_SaveDeviceButtom1.狀態OFF圖片")));
-            this.plC_SaveDeviceButtom1.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_SaveDeviceButtom1.狀態ON圖片")));
-            this.plC_SaveDeviceButtom1.讀取位元反向 = false;
-            this.plC_SaveDeviceButtom1.讀寫鎖住 = false;
-            this.plC_SaveDeviceButtom1.起始狀態 = false;
-            this.plC_SaveDeviceButtom1.音效 = true;
-            this.plC_SaveDeviceButtom1.顯示 = false;
-            this.plC_SaveDeviceButtom1.顯示狀態 = false;
-            // 
-            // plC_LoadDeviceButtom1
-            // 
-            this.plC_LoadDeviceButtom1.Bool = false;
-            this.plC_LoadDeviceButtom1.but_press = false;
-            this.plC_LoadDeviceButtom1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_LoadDeviceButtom1.Location = new System.Drawing.Point(896, 349);
-            this.plC_LoadDeviceButtom1.Name = "plC_LoadDeviceButtom1";
-            this.plC_LoadDeviceButtom1.OFF_文字內容 = "LOAD";
-            this.plC_LoadDeviceButtom1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_LoadDeviceButtom1.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.plC_LoadDeviceButtom1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_LoadDeviceButtom1.ON_文字內容 = "LOAD";
-            this.plC_LoadDeviceButtom1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_LoadDeviceButtom1.ON_文字顏色 = System.Drawing.Color.White;
-            this.plC_LoadDeviceButtom1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_LoadDeviceButtom1.Size = new System.Drawing.Size(110, 52);
-            this.plC_LoadDeviceButtom1.Style = MyUI.PLC_Button.StyleEnum.經典;
-            this.plC_LoadDeviceButtom1.TabIndex = 58;
-            this.plC_LoadDeviceButtom1.事件驅動 = false;
-            this.plC_LoadDeviceButtom1.字型鎖住 = false;
-            this.plC_LoadDeviceButtom1.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
-            this.plC_LoadDeviceButtom1.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
-            this.plC_LoadDeviceButtom1.文字鎖住 = false;
-            this.plC_LoadDeviceButtom1.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_LoadDeviceButtom1.狀態OFF圖片")));
-            this.plC_LoadDeviceButtom1.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_LoadDeviceButtom1.狀態ON圖片")));
-            this.plC_LoadDeviceButtom1.讀取位元反向 = false;
-            this.plC_LoadDeviceButtom1.讀取範圍 = MyUI.PLC_LoadDeviceButtom.讀取範圍Enum.M元件;
-            this.plC_LoadDeviceButtom1.讀寫鎖住 = false;
-            this.plC_LoadDeviceButtom1.起始狀態 = false;
-            this.plC_LoadDeviceButtom1.音效 = true;
-            this.plC_LoadDeviceButtom1.顯示 = false;
-            this.plC_LoadDeviceButtom1.顯示狀態 = false;
+            this.sqL_DataGridView1.AutoSelectToDeep = true;
+            this.sqL_DataGridView1.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView1.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView1.BorderRadius = 10;
+            this.sqL_DataGridView1.BorderSize = 2;
+            this.sqL_DataGridView1.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.sqL_DataGridView1.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView1.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView1.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView1.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView1.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView1.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.sqL_DataGridView1.columnHeadersHeight = 26;
+            this.sqL_DataGridView1.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView1.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView1.Columns"))));
+            this.sqL_DataGridView1.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView1.Columns1"))));
+            this.sqL_DataGridView1.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView1.Columns2"))));
+            this.sqL_DataGridView1.ImageBox = false;
+            this.sqL_DataGridView1.Location = new System.Drawing.Point(885, 96);
+            this.sqL_DataGridView1.Name = "sqL_DataGridView1";
+            this.sqL_DataGridView1.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView1.Password = "user82822040";
+            this.sqL_DataGridView1.Port = ((uint)(3306u));
+            this.sqL_DataGridView1.rowHeaderBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView1.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.sqL_DataGridView1.RowsColor = System.Drawing.SystemColors.Control;
+            this.sqL_DataGridView1.RowsHeight = 10;
+            this.sqL_DataGridView1.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView1.Server = "127.0.0.0";
+            this.sqL_DataGridView1.Size = new System.Drawing.Size(760, 577);
+            this.sqL_DataGridView1.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView1.TabIndex = 57;
+            this.sqL_DataGridView1.UserName = "root";
+            this.sqL_DataGridView1.可拖曳欄位寬度 = false;
+            this.sqL_DataGridView1.可選擇多列 = false;
+            this.sqL_DataGridView1.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.sqL_DataGridView1.自動換行 = true;
+            this.sqL_DataGridView1.表單字體 = new System.Drawing.Font("新細明體", 9F);
+            this.sqL_DataGridView1.邊框樣式 = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.sqL_DataGridView1.顯示CheckBox = false;
+            this.sqL_DataGridView1.顯示首列 = true;
+            this.sqL_DataGridView1.顯示首行 = true;
+            this.sqL_DataGridView1.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.sqL_DataGridView1.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             // 
             // Form1
             // 
@@ -800,9 +699,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.plC_ScreenPage1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.plC_RJ_Pannel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -832,23 +729,16 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.OpenFileDialog openFileDialog_LoadExcel;
         private DemoControls.LScrollBar lScrollBar1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewButtonColumn Column2;
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.RJ_Button rJ_Button2;
-        private MyUI.RJ_TrackBar rJ_TrackBar1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private MyUI.PLC_NumBox plC_NumBox1;
         private MyUI.PLC_Button plC_Button1;
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
         private MyUI.RJ_Pannel rJ_Pannel1;
         private MyUI.RJ_TextBox rJ_TextBox1;
         private MyUI.PLC_RJ_Pannel plC_RJ_Pannel1;
-        private MyUI.PLC_LoadDeviceButtom plC_LoadDeviceButtom1;
-        private MyUI.PLC_SaveDeviceButtom plC_SaveDeviceButtom1;
+        private SQLUI.SQL_DataGridView sqL_DataGridView1;
     }
 }
 

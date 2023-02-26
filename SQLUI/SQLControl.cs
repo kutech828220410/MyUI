@@ -2531,6 +2531,7 @@ namespace SQLUI
         {
             ENUM = 1,
             SET = 2,
+            IMAGE = 3,
             None = 100,
         }
         public enum ValueType
