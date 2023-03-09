@@ -14,6 +14,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Json.Serialization;
+using System.Xml;
 //using Newtonsoft.Json;
 namespace Basic
 {
@@ -208,6 +209,50 @@ namespace Basic
             return JsonSerializer.Deserialize<T>(readOnlySpan);
         }
 
+        public static XmlDocument Xml_GetDocument(this string str)
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(str);
+            return doc;
+        }
+        public static XmlElement Xml_GetElement(this string str, string[] nodeNames)
+        {
+            XmlDocument doc = Xml_GetDocument(str);
+            if (doc == null) return null;
+            XmlElement xmlElement = doc.DocumentElement;
+            return Xml_GetElement(xmlElement, nodeNames);
+        }
+        public static XmlElement Xml_GetElement(this XmlElement xmlElement, string[] nodeNames)
+        {
+            for (int i = 0; i < nodeNames.Length; i++)
+            {
+                if (xmlElement == null) return null;
+                xmlElement = xmlElement[nodeNames[i]];               
+            }
+            return xmlElement;
+        }
+        public static string Xml_GetInnerXml(this string str, string[] nodeNames)
+        {
+            XmlDocument doc = Xml_GetDocument(str);
+            if (doc == null) return string.Empty;
+            XmlElement xmlElement = doc.DocumentElement;
+            return xmlElement.Xml_GetInnerXml(nodeNames);
+        }
+        public static string Xml_GetInnerXml(this XmlElement xmlElement, string[] nodeNames)
+        {
+            for (int i = 0; i < nodeNames.Length; i++)
+            {
+                if (xmlElement == null) return string.Empty;
+                xmlElement = xmlElement[nodeNames[i]];
+            }
+            return xmlElement.InnerXml;
+        }
+        public static string Xml_GetInnerXml(this XmlElement xmlElement, string Names)
+        {
+            XmlElement xmlElement1 = xmlElement[Names];
+            if (xmlElement1 == null) return "";
+            return xmlElement1.InnerXml;
+        }
 
         public class HttpContentType
         {
@@ -332,6 +377,39 @@ namespace Basic
             {
                 return responseBody;
             }
+        }
+
+        public static string WebServicePost(string uri, StringBuilder _str)
+        {
+            return WebServicePost(uri, _str.ToString());
+        }
+        public static string WebServicePost(string uri, string _str)
+        {
+            string _returnstr = "";
+            Uri _uri = new Uri(@uri);
+            //发起请求
+            WebRequest webRequest = WebRequest.Create(_uri);
+            webRequest.ContentType = "text/xml; charset=utf-8";
+            webRequest.Method = "POST";
+            using (Stream requestStream = webRequest.GetRequestStream())
+            {
+                byte[] paramBytes = Encoding.UTF8.GetBytes(_str);
+                requestStream.Write(paramBytes, 0, paramBytes.Length);
+            }
+            //响应
+            try
+            {
+                WebResponse webResponse = webRequest.GetResponse();
+                using (StreamReader myStreamReader = new StreamReader(webResponse.GetResponseStream(), Encoding.UTF8))
+                {
+                    _returnstr = myStreamReader.ReadToEnd();
+                }
+            }
+            catch (WebException ex)
+            {
+                _returnstr = new StreamReader(ex.Response.GetResponseStream()).ReadToEnd();
+            }
+            return _returnstr;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace SQLUI
     [System.Drawing.ToolboxBitmap(typeof(DataSet))]
     public partial class SQL_DataGridView : UserControl
     {
+        private bool flag_Init = false;
         private CheckBox checkBoxHeader = new CheckBox();
         private bool flag_unCheckedAll = false;
 
@@ -1160,6 +1161,7 @@ namespace SQLUI
         }
         public void Init()
         {
+            if (this.flag_Init == true) return;
             if (OnlineState == OnlineEnum.Online)
             {
                 this.SQL_Reset();
@@ -1189,6 +1191,7 @@ namespace SQLUI
             {
                 checkBoxHeader.CheckedChanged += CheckBoxHeader_CheckedChanged;
             }
+            this.flag_Init = true;
         }
 
  

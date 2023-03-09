@@ -575,6 +575,11 @@ namespace SQLUI
             }     
             return string_list.ToArray();
         }
+
+        public bool IsTableCreat()
+        {
+            return this.IsTableCreat(null);
+        }
         public bool IsTableCreat(string TableName)
         {
             if (TableName == null) TableName = this.TableName;
