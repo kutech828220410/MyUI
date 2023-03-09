@@ -1046,6 +1046,7 @@ namespace SQLUI
             public MySqlSslMode MySqlSslMode { get => mySqlSslMode; set => mySqlSslMode = value; }
             public string TableName { get => tableName; set => tableName = value; }
         }
+
         public static void SQL_UI_Init(Form ActiveForm)
         {
             List<Control> list_ctl = MyUI.PLC_UI_Init.Find_Control(ActiveForm, new SQLUI.SQL_DataGridView().GetType());

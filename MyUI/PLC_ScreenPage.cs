@@ -17,6 +17,9 @@ namespace MyUI
       [System.Drawing.ToolboxBitmap(typeof(PLC_ScreenPage), "PLC_ScreenPage.bmp")]
     public partial class PLC_ScreenPage : TabControl
     {
+        public delegate void TabChangeEventHandler(string PageText);
+        public event TabChangeEventHandler TabChangeEvent;
+
         private LowerMachine PLC;
         Form form;
         public string PageText = "";
@@ -296,6 +299,15 @@ namespace MyUI
         private void PLC_ScreenPage_SelectedIndexChanged(object sender, EventArgs e)
         {
             PLC_ScreenPage_Layout(this, new LayoutEventArgs(this, ""));
+            if (TabChangeEvent != null)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    this.PageText = this.SelectedTab.Text;
+                    TabChangeEvent(this.PageText);
+                }));
+            }
+
         }
         private void PLC_ScreenPage_Layout(object sender, LayoutEventArgs e)
         {
