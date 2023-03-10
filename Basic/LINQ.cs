@@ -79,9 +79,10 @@ namespace Basic
                 return new List<object[]>();
             }
             System.DateTime dt = System.DateTime.Now;
-            DateTime datetime_start = new System.DateTime(dt.Year, Month, 1, 0, 0, 1);
+            DateTime datetime_start = new System.DateTime(dt.Year, Month, 1, 23, 59, 59);
             DateTime datetime_end = datetime_start.AddMonths(1).AddDays(-1);
             datetime_end = new System.DateTime(datetime_end.Year, datetime_end.Month, datetime_end.Day, 23, 59, 59);
+            datetime_start = datetime_start.AddMonths(0).AddDays(-1);
             return GetRowsInDate(list_value, colindex, datetime_start, datetime_end);
         }
         static public List<object[]> GetRowsInDate(this List<object[]> list_value, int colindex, System.Windows.Forms.DateTimePicker datetime_start, System.Windows.Forms.DateTimePicker datetime_end)
