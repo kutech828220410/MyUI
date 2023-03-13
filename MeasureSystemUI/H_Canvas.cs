@@ -776,10 +776,8 @@ namespace MeasureSystemUI
                     this.AxCanvas.OnCanvasMouseDown += AxCanvas_OnCanvasMouseDown;
                     this.AxCanvas.OnCanvasMouseMove += AxCanvas_OnCanvasMouseMove;
                     this.AxCanvas.OnCanvasMouseUp += AxCanvas_OnCanvasMouseUp;
+                    this.Paint += H_Canvas_Paint;  
 
-                    this.AxCanvas.CanvasWidth = this.panel_Canvas.Width;
-                    this.AxCanvas.CanvasHeight = this.panel_Canvas.Height;
-                    this.AxCanvas.RefreshCanvas();
                 }
                 catch
                 {
@@ -788,7 +786,22 @@ namespace MeasureSystemUI
                 flag_Canvas_Init = true;
 
             }
+    
         }
+
+        private void H_Canvas_Paint(object sender, PaintEventArgs e)
+        {
+            if (this.AxCanvas.CanvasWidth != this.panel_Canvas.Width || this.AxCanvas.CanvasHeight != this.panel_Canvas.Height)
+            {
+                this.AxCanvas.Dock = DockStyle.Fill;
+                this.AxCanvas.Location = new System.Drawing.Point(0, 0);
+                this.Size_InitPanel = new Size(this.panel_Canvas.Width, this.panel_Canvas.Height);
+                this.AxCanvas.CanvasWidth = this.panel_Canvas.Width;
+                this.AxCanvas.CanvasHeight = this.panel_Canvas.Height;
+                this.AxCanvas.RefreshCanvas();
+            }
+        }
+
         private void Init()
         {    
             if (this.PLC != null && this.Activeform != null && !flag_Init)

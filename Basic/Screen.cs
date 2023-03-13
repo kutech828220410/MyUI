@@ -22,9 +22,9 @@ namespace Basic
         private static int SM_CXSCREEN = 0;
         private static int SM_CYSCREEN = 1;
         [DllImport("user32.dll")]
-        private static extern bool SetWindowPos(IntPtr hWnd, int hWndlnsertAfter, int X, int Y, int cx, int cy, uint Flags);
-        private static int HWND_TOP = 0; //{在前面}
-        private static int HWND_BOTTOM = 1; //{在后面}
+        public static extern bool SetWindowPos(IntPtr hWnd, int hWndlnsertAfter, int X, int Y, int cx, int cy, uint Flags);
+        public static int HWND_TOP = 0; //{在前面}
+        public static int HWND_BOTTOM = 1; //{在后面}
         //uFlags 参数可选值:
         static uint SWP_NOMOVE = 0X02;
         static uint SWP_NOSIZE = 0x01;

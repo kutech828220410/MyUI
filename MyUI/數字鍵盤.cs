@@ -43,10 +43,11 @@ namespace MyUI
                     _數字鍵盤 = new 數字鍵盤();
                 }
                 Enter = false;
-                視窗已建立 = true;
+                
             }
             return _數字鍵盤;
         }
+
         public void SetPosition(Point P0)
         {
             _數字鍵盤.StartPosition = FormStartPosition.Manual;
@@ -74,6 +75,7 @@ namespace MyUI
 
         private void 數字鍵盤_Load(object sender, EventArgs e)
         {
+            _視窗已建立 = true;
             List_ExButton.Add(exButton_0);
             List_ExButton.Add(exButton_1);
             List_ExButton.Add(exButton_2);

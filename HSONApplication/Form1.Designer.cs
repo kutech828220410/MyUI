@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.sqL_DataGridView1 = new SQLUI.SQL_DataGridView();
             this.plC_RJ_Pannel1 = new MyUI.PLC_RJ_Pannel();
             this.rJ_TextBox1 = new MyUI.RJ_TextBox();
@@ -58,7 +59,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.button3 = new System.Windows.Forms.Button();
+            this.plC_NumBox1 = new MyUI.PLC_NumBox();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.plC_RJ_Pannel1.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_NumBox1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.sqL_DataGridView1);
             this.tabPage1.Controls.Add(this.plC_RJ_Pannel1);
@@ -120,6 +122,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(290, 688);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 58;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // sqL_DataGridView1
             // 
@@ -689,15 +701,23 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
-            // button3
+            // plC_NumBox1
             // 
-            this.button3.Location = new System.Drawing.Point(290, 688);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 58;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.plC_NumBox1.Location = new System.Drawing.Point(1049, 65);
+            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
+            this.plC_NumBox1.Name = "plC_NumBox1";
+            this.plC_NumBox1.ReadOnly = false;
+            this.plC_NumBox1.Size = new System.Drawing.Size(100, 25);
+            this.plC_NumBox1.TabIndex = 59;
+            this.plC_NumBox1.Value = 0;
+            this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
+            this.plC_NumBox1.密碼欄位 = false;
+            this.plC_NumBox1.小數點位置 = 0;
+            this.plC_NumBox1.微調數值 = 1;
+            this.plC_NumBox1.音效 = true;
+            this.plC_NumBox1.顯示微調按鈕 = false;
+            this.plC_NumBox1.顯示螢幕小鍵盤 = true;
             // 
             // Form1
             // 
@@ -753,6 +773,7 @@
         private MyUI.PLC_RJ_Pannel plC_RJ_Pannel1;
         private SQLUI.SQL_DataGridView sqL_DataGridView1;
         private System.Windows.Forms.Button button3;
+        private MyUI.PLC_NumBox plC_NumBox1;
     }
 }
 
