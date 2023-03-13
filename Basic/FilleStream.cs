@@ -593,80 +593,86 @@ namespace Basic
         }
         static public DataTable LoadFile(string FullFilePath, char SplitChar, string Encoding, int TitleNum, DataTable dt) //這個dt 是個空白的沒有任何行列的DataTable
         {
-            
-            int i = 0, m = 0;
-            StreamReader reader = new StreamReader(FullFilePath, System.Text.Encoding.GetEncoding(Encoding), false);
-            if (TitleNum == -1)
+            try
             {
-                reader.Peek();
-                bool Init = false;
-                while (reader.Peek() > 0)
+                int i = 0, m = 0;
+                StreamReader reader = new StreamReader(FullFilePath, System.Text.Encoding.GetEncoding(Encoding), false);
+                if (TitleNum == -1)
                 {
-                    string str = reader.ReadLine();
-                    str = str.Replace("\"", "");
-                    string[] array = str.Split(SplitChar);
-                    for (int k = 0; k < array.Length; k++)
+                    reader.Peek();
+                    bool Init = false;
+                    while (reader.Peek() > 0)
                     {
-                        array[k] = array[k].Trim();
-                        if (!Init)
+                        string str = reader.ReadLine();
+                        str = str.Replace("\"", "");
+                        string[] array = str.Split(SplitChar);
+                        for (int k = 0; k < array.Length; k++)
                         {
-                            dt.Columns.Add(k.ToString());
-                        }
-                    }
-                    Init = true;
-               
-                    i = 0;
-                    System.Data.DataRow dr = dt.NewRow();
-                    foreach (string mc in array)
-                    {
-                        if (i < dr.ItemArray.Length) dr[i] = @mc;
-                        i++;
-                    }
-                    dt.Rows.Add(dr);  //DataTable 增加一行 
-                }
-            }
-            else
-            {
-                reader.Peek();
-                while (reader.Peek() > 0)
-                {
-                    m++;
-                    string str = reader.ReadLine();
-                    str = str.Replace("\"", "");
-                    if (m >= TitleNum + 1)
-                    {
-                        if (m == TitleNum + 1) //如果是欄位行，則自動加入欄位。
-                        {
-                            string[] array = str.Split(SplitChar);
-                            foreach (string mc in array)
+                            array[k] = array[k].Trim();
+                            if (!Init)
                             {
-                                dt.Columns.Add(mc); //增加列標題
+                                dt.Columns.Add(k.ToString());
+                            }
+                        }
+                        Init = true;
+
+                        i = 0;
+                        System.Data.DataRow dr = dt.NewRow();
+                        foreach (string mc in array)
+                        {
+                            if (i < dr.ItemArray.Length) dr[i] = @mc;
+                            i++;
+                        }
+                        dt.Rows.Add(dr);  //DataTable 增加一行 
+                    }
+                }
+                else
+                {
+                    reader.Peek();
+                    while (reader.Peek() > 0)
+                    {
+                        m++;
+                        string str = reader.ReadLine();
+                        str = str.Replace("\"", "");
+                        if (m >= TitleNum + 1)
+                        {
+                            if (m == TitleNum + 1) //如果是欄位行，則自動加入欄位。
+                            {
+                                string[] array = str.Split(SplitChar);
+                                foreach (string mc in array)
+                                {
+                                    dt.Columns.Add(mc); //增加列標題
+                                }
+
+                            }
+                            else
+                            {
+                                string[] array = str.Split(SplitChar);
+                                for (int k = 0; k < array.Length; k++)
+                                {
+                                    array[k] = array[k].Trim();
+                                }
+                                i = 0;
+                                System.Data.DataRow dr = dt.NewRow();
+                                foreach (string mc in array)
+                                {
+                                    if (i < dr.ItemArray.Length) dr[i] = mc;
+                                    i++;
+                                }
+                                dt.Rows.Add(dr);  //DataTable 增加一行     
                             }
 
                         }
-                        else
-                        {
-                            string[] array = str.Split(SplitChar);
-                            for (int k = 0; k < array.Length; k++)
-                            {
-                                array[k] = array[k].Trim();
-                            }
-                            i = 0;
-                            System.Data.DataRow dr = dt.NewRow();
-                            foreach (string mc in array)
-                            {
-                                if (i < dr.ItemArray.Length) dr[i] = mc;
-                                i++;
-                            }
-                            dt.Rows.Add(dr);  //DataTable 增加一行     
-                        }
-
                     }
                 }
+
+                reader.Dispose();
+                return dt;
             }
-          
-            reader.Dispose();
-            return dt;
+            catch
+            {
+                return null;
+            }
         }
 
 

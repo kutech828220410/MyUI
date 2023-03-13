@@ -66,6 +66,19 @@ namespace Basic
             
             return list_value;
         }
+        static public List<object[]> GetRowsStartWithByLike(this List<object[]> list_value, int colindex, string serchvalue)
+        {
+            list_value = (from value in list_value
+                          where value[colindex].ObjectToString().Length >= serchvalue.Length
+                          select value).ToList();
+
+            list_value = (from value in list_value
+                          where value[colindex].ObjectToString().Substring(0, serchvalue.Length).ToUpper() == serchvalue
+                          select value).ToList();
+            return list_value;
+        }
+
+       
         static public List<object[]> GetRowsInDate(this List<object[]> list_value, int colindex, DateTime datetime)
         {
             DateTime datetime_start = new DateTime(datetime.Year, datetime.Month, datetime.Day, 0, 0, 0);
@@ -101,6 +114,8 @@ namespace Basic
                           select value).ToList();
             return list_value;
         }
+
+        
         static public bool IsEqual(this object[] srcvalue, object[] dstvalue ,params int[] exclude)
         {
             bool flag_continue = false;
