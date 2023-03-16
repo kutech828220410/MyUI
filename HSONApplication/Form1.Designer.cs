@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.plC_NumBox1 = new MyUI.PLC_NumBox();
             this.button3 = new System.Windows.Forms.Button();
             this.sqL_DataGridView1 = new SQLUI.SQL_DataGridView();
             this.plC_RJ_Pannel1 = new MyUI.PLC_RJ_Pannel();
@@ -59,7 +60,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.plC_AlarmFlow1 = new MyUI.PLC_AlarmFlow();
-            this.plC_NumBox1 = new MyUI.PLC_NumBox();
+            this.plC_Button2 = new MyUI.PLC_Button();
+            this.plC_RJ_Button_領藥台_01_手動作業 = new MyUI.PLC_RJ_Button();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.plC_RJ_Pannel1.SuspendLayout();
@@ -100,6 +102,8 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_RJ_Button_領藥台_01_手動作業);
+            this.tabPage1.Controls.Add(this.plC_Button2);
             this.tabPage1.Controls.Add(this.plC_NumBox1);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.sqL_DataGridView1);
@@ -122,6 +126,24 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // plC_NumBox1
+            // 
+            this.plC_NumBox1.Location = new System.Drawing.Point(1049, 65);
+            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Window;
+            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
+            this.plC_NumBox1.Name = "plC_NumBox1";
+            this.plC_NumBox1.ReadOnly = false;
+            this.plC_NumBox1.Size = new System.Drawing.Size(100, 25);
+            this.plC_NumBox1.TabIndex = 59;
+            this.plC_NumBox1.Value = 0;
+            this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
+            this.plC_NumBox1.密碼欄位 = false;
+            this.plC_NumBox1.小數點位置 = 0;
+            this.plC_NumBox1.微調數值 = 1;
+            this.plC_NumBox1.音效 = true;
+            this.plC_NumBox1.顯示微調按鈕 = false;
+            this.plC_NumBox1.顯示螢幕小鍵盤 = true;
             // 
             // button3
             // 
@@ -701,23 +723,78 @@
             this.plC_AlarmFlow1.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow1.警報編輯")));
             this.plC_AlarmFlow1.顯示警報編號 = true;
             // 
-            // plC_NumBox1
+            // plC_Button2
             // 
-            this.plC_NumBox1.Location = new System.Drawing.Point(1049, 65);
-            this.plC_NumBox1.mBackColor = System.Drawing.SystemColors.Window;
-            this.plC_NumBox1.mForeColor = System.Drawing.SystemColors.WindowText;
-            this.plC_NumBox1.Name = "plC_NumBox1";
-            this.plC_NumBox1.ReadOnly = false;
-            this.plC_NumBox1.Size = new System.Drawing.Size(100, 25);
-            this.plC_NumBox1.TabIndex = 59;
-            this.plC_NumBox1.Value = 0;
-            this.plC_NumBox1.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
-            this.plC_NumBox1.密碼欄位 = false;
-            this.plC_NumBox1.小數點位置 = 0;
-            this.plC_NumBox1.微調數值 = 1;
-            this.plC_NumBox1.音效 = true;
-            this.plC_NumBox1.顯示微調按鈕 = false;
-            this.plC_NumBox1.顯示螢幕小鍵盤 = true;
+            this.plC_Button2.Bool = false;
+            this.plC_Button2.but_press = false;
+            this.plC_Button2.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button2.Location = new System.Drawing.Point(46, 675);
+            this.plC_Button2.Name = "plC_Button2";
+            this.plC_Button2.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button2.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button2.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button2.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button2.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button2.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button2.Size = new System.Drawing.Size(110, 52);
+            this.plC_Button2.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button2.TabIndex = 60;
+            this.plC_Button2.事件驅動 = false;
+            this.plC_Button2.字型鎖住 = false;
+            this.plC_Button2.寫入元件位置 = "S105";
+            this.plC_Button2.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button2.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button2.文字鎖住 = false;
+            this.plC_Button2.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button2.狀態OFF圖片")));
+            this.plC_Button2.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button2.狀態ON圖片")));
+            this.plC_Button2.讀取位元反向 = false;
+            this.plC_Button2.讀取元件位置 = "S105";
+            this.plC_Button2.讀寫鎖住 = false;
+            this.plC_Button2.起始狀態 = false;
+            this.plC_Button2.音效 = true;
+            this.plC_Button2.顯示 = false;
+            this.plC_Button2.顯示狀態 = false;
+            // 
+            // plC_RJ_Button_領藥台_01_手動作業
+            // 
+            this.plC_RJ_Button_領藥台_01_手動作業.AutoResetState = true;
+            this.plC_RJ_Button_領藥台_01_手動作業.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_領藥台_01_手動作業.Bool = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_領藥台_01_手動作業.BorderRadius = 10;
+            this.plC_RJ_Button_領藥台_01_手動作業.BorderSize = 0;
+            this.plC_RJ_Button_領藥台_01_手動作業.but_press = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_領藥台_01_手動作業.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_領藥台_01_手動作業.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_領藥台_01_手動作業.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_領藥台_01_手動作業.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_領藥台_01_手動作業.Location = new System.Drawing.Point(96, 782);
+            this.plC_RJ_Button_領藥台_01_手動作業.Name = "plC_RJ_Button_領藥台_01_手動作業";
+            this.plC_RJ_Button_領藥台_01_手動作業.OFF_文字內容 = "手動作業";
+            this.plC_RJ_Button_領藥台_01_手動作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_領藥台_01_手動作業.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_領藥台_01_手動作業.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_領藥台_01_手動作業.ON_文字內容 = "手動作業";
+            this.plC_RJ_Button_領藥台_01_手動作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_領藥台_01_手動作業.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_領藥台_01_手動作業.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_領藥台_01_手動作業.Size = new System.Drawing.Size(152, 69);
+            this.plC_RJ_Button_領藥台_01_手動作業.State = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.TabIndex = 120;
+            this.plC_RJ_Button_領藥台_01_手動作業.Text = "手動作業";
+            this.plC_RJ_Button_領藥台_01_手動作業.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_領藥台_01_手動作業.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.字型鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_領藥台_01_手動作業.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_領藥台_01_手動作業.文字鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.致能讀取位置 = "S105";
+            this.plC_RJ_Button_領藥台_01_手動作業.讀取位元反向 = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.讀寫鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.音效 = true;
+            this.plC_RJ_Button_領藥台_01_手動作業.顯示 = false;
+            this.plC_RJ_Button_領藥台_01_手動作業.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -774,6 +851,8 @@
         private SQLUI.SQL_DataGridView sqL_DataGridView1;
         private System.Windows.Forms.Button button3;
         private MyUI.PLC_NumBox plC_NumBox1;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_領藥台_01_手動作業;
+        private MyUI.PLC_Button plC_Button2;
     }
 }
 

@@ -913,6 +913,8 @@ namespace MyUI
         private void 按鈕狀態計算()
         {
             Init();
+            this.EnableCheck();
+            this.VisibleCheck();
             if (!this.CanSelect) return;
             if (PLC_要讀取)
             {
@@ -928,8 +930,7 @@ namespace MyUI
             }
             _FLAG_讀取_buf = Value_Buf;
 
-            this.EnableCheck();
-            this.VisibleCheck();
+
 
             if (but_press || IN)
             {

@@ -531,8 +531,9 @@ namespace MyUI
         }
         public void Run()
         {
-            if (!this.CanSelect) return;
             flag_init = true;
+            //if (!this.CanSelect) return;
+         
             if (PLC != null)
             {
                 if (_讀取元件位置 != string.Empty)
