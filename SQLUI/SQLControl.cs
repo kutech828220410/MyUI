@@ -1817,6 +1817,7 @@ namespace SQLUI
         }
         public void DeleteExtra(string TableName, List<string[]> serchColumnName, List<string[]> serchValue)
         {
+            if (TableName == null) TableName = this.TableName;
             MySqlConnection _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;");
             this.OpenConnection(_MySqlConnection);
             MySqlCommand _MySqlCommand = _MySqlConnection.CreateCommand();
