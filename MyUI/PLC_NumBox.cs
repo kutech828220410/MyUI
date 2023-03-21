@@ -549,12 +549,8 @@ namespace MyUI
                     }
                     Value_Str_Buf = value.ToString();
                 }
-                string text = this.Text;
-                if (this.Text != Value_Str_Buf)
-                {
-                    this.Text = Value_Str_Buf;
-                }
-        
+
+            
                 if (_致能讀取位置 != string.Empty)
                 {
                     if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
@@ -574,7 +570,11 @@ namespace MyUI
                     }
                 }
             }
-           
+            string text = this.Text;
+            if (this.Text != Value_Str_Buf)
+            {
+                this.Text = Value_Str_Buf;
+            }
         }
 
 

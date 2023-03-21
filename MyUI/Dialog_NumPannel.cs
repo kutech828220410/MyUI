@@ -36,6 +36,19 @@ namespace MyUI
                 this.Invoke(new Action(delegate { this.rJ_TextBox_Value.Text = value; }));      
             }
         }
+        public string Title
+        {
+            get
+            {
+                return this.rJ_Lable_Title.Text;
+            }
+            private set
+            {
+                this.Invoke(new Action(delegate { this.rJ_Lable_Title.Text = value; }));
+            }
+        }
+        private int Value_buf = 0;
+        private string Title_buf = "";
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.NumPad0 || keyData == Keys.D0)
@@ -99,6 +112,17 @@ namespace MyUI
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+        public Dialog_NumPannel(string title, int value)
+        {
+            InitializeComponent();
+            Value_buf = value;
+            Title_buf = title;
+        }
+        public Dialog_NumPannel(int value)
+        {
+            InitializeComponent();
+            Value_buf = value;
+        }
         public Dialog_NumPannel()
         {
             InitializeComponent();
@@ -123,6 +147,9 @@ namespace MyUI
         {
             this.DialogResult = DialogResult.None;
             this.OnClick_CE();
+            this.Value = Value_buf;
+            this.Title = Title_buf;
+            
         }
 
 
