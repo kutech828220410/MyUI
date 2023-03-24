@@ -73,7 +73,7 @@ namespace Basic
                           select value).ToList();
 
             list_value = (from value in list_value
-                          where value[colindex].ObjectToString().Substring(0, serchvalue.Length).ToUpper() == serchvalue
+                          where value[colindex].ObjectToString().Substring(0, serchvalue.Length).ToUpper() == serchvalue.ToUpper()
                           select value).ToList();
             return list_value;
         }
