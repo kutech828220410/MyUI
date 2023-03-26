@@ -112,6 +112,11 @@ namespace MyUI
 
             return base.ProcessCmdKey(ref msg, keyData);
         }
+        public Dialog_NumPannel(string title)
+        {
+            InitializeComponent();
+            Title_buf = title;
+        }
         public Dialog_NumPannel(string title, int value)
         {
             InitializeComponent();

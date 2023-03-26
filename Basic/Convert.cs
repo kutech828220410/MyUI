@@ -511,12 +511,43 @@ namespace Basic
             L_byte = (byte)(value);
             H_byte = (byte)(value >> 8);
         }
-
-
-
     }
+
     public static class TypeConvert
     {
+        static public int SetBit(this ref int value, int index, bool state)
+        {
+            value = 31 - index;
+            string str_temp0 = Convert.ToString(value, 2);
+            while (true)
+            {
+                if (str_temp0.Length >= 32) break;
+                str_temp0 = "0" + str_temp0;
+            }
+            char[] char_buf = str_temp0.ToCharArray();
+            if (state) char_buf[index] = '1';
+            else char_buf[index] = '0';
+            str_temp0 = new string(char_buf);
+            value = Convert.ToInt32(str_temp0, 2);
+            return value;
+        }
+        static public bool GetBit(this int value, int index)
+        {
+            bool FLAG = false;
+            index = 31 - index;
+            string str_temp0 = Convert.ToString(value, 2);
+            while (true)
+            {
+                if (str_temp0.Length >= 32) break;
+                str_temp0 = "0" + str_temp0;
+            }
+            char[] char_buf = str_temp0.ToCharArray();
+            if (char_buf[index] == '1') FLAG = true;
+            else FLAG = false;
+
+            return FLAG;
+        }
+
         static public string SetTextValue(string[] columns, object[] value)
         {
             if (columns.Length != value.Length) return null;

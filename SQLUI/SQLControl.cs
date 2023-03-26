@@ -409,6 +409,7 @@ namespace SQLUI
             string Command = string.Format("ALTER TABLE {0} CHANGE COLUMN {1} {2} {3}{4}", TableName, Old_Name, New_Name, valueType, TypeLen);
             WtrteCommand(Command);
         }
+      
         public int Add_Column(string TableName, string ColumnName, string ColumnType)
         {
             if (TableName == null) TableName = this.TableName;
@@ -417,7 +418,59 @@ namespace SQLUI
             {
                 if (value == ColumnName) return -1;
             }
-            string Command = string.Format("ALTER TABLE {0}.{1} ADD COLUMN {2} {3} NULL AFTER {4}", this.Database, TableName, ColumnName, ColumnType, ColumnNames[ColumnNames.Length - 1]);
+  
+            return this.Add_Column(TableName , ColumnName, ColumnType, ColumnNames[ColumnNames.Length - 1]);
+        }
+        public int Add_Column(string TableName, string ColumnName, string ColumnType, Table.IndexType indexType, string AfterColumnName)
+        {
+            if (TableName == null) TableName = this.TableName;
+            string[] ColumnNames = this.GetAllColumn_Name(TableName);
+            foreach (string value in ColumnNames)
+            {
+                if (value == ColumnName) return -1;
+            }
+            int temp = this.Add_Column(TableName, ColumnName, ColumnType, AfterColumnName);
+            if (temp == 1)
+            {
+                if (indexType != Table.IndexType.None)
+                {
+                    this.Add_Index(TableName, ColumnName, indexType);
+                }
+            }
+            return temp;
+        }
+        public int Add_Column(string TableName, string ColumnName, string ColumnType, int index)
+        {
+            if (TableName == null) TableName = this.TableName;
+            string[] ColumnNames = this.GetAllColumn_Name(TableName);
+            foreach (string value in ColumnNames)
+            {
+                if (value == ColumnName) return -1;
+            }
+            return this.Add_Column(TableName, ColumnName, ColumnType, ColumnNames[index]);
+        }
+        public int Add_Column(string TableName, string ColumnName, string ColumnType, Table.IndexType indexType, int index)
+        {
+            if (TableName == null) TableName = this.TableName;
+            string[] ColumnNames = this.GetAllColumn_Name(TableName);
+            foreach (string value in ColumnNames)
+            {
+                if (value == ColumnName) return -1;
+            }
+            int temp = this.Add_Column(TableName, ColumnName, ColumnType, ColumnNames[index]);
+            if (temp == 1)
+            {
+                if(indexType != Table.IndexType.None)
+                {
+                    this.Add_Index(TableName, ColumnName, indexType);
+                }
+            }
+            return temp;
+        }
+        public int Add_Column(string TableName, string ColumnName, string ColumnType, string AfterColumnName)
+        {
+            if (TableName == null) TableName = this.TableName;
+            string Command = $"ALTER TABLE {this.Database}.{TableName} ADD COLUMN {ColumnName} {ColumnType} NULL AFTER {AfterColumnName}";
             WtrteCommand(Command);
             return 1;
         }
@@ -669,71 +722,7 @@ namespace SQLUI
                     this.CloseConection(_MySqlConnection);
                     _MySqlConnection.Dispose();
                     _MySqlCommand.Dispose();
-                    //Parallel.ForEach(Value, value =>
-                    //{
-                    //    string Command = "";
-                    //    string text = "";
-                    //    Command = $@"INSERT INTO {TableName} VALUES (";
-                    //    for (int k = 0; k < value.Length; k++)
-                    //    {
-                    //        text = value[k].ObjectToString();
-                    //        text = text.Replace("'", @"\'");
-                    //        Command += $"'{text}'";
-                    //        if (k != value.Length - 1) Command += ",";
-                    //    }
-                    //    Command += ");";
-                    //    list_command.LockAdd(Command);
-                    //});
-
-                    //string result_Command = "";
-                    //for (int i = 0; i < list_command.Count; i++)
-                    //{
-                    //    result_Command += list_command[i];
-                    //}
-                    //WtrteCommand(result_Command);
-
-
-                    //List<string[]> Name = new List<string[]>();
-                    //List<string> Name_temp = new List<string>();
-                    //List<object[]> temp = new List<object[]>();
-                    //Command = @"INSERT INTO ";
-                    //Command += TableName;
-                    //Command += " (";
-                    //for (int i = 0; i < Value[0].Length; i++)
-                    //{
-                    //    Command += (string)obj_AllColumnName[i];
-                    //    Command += ",";
-                    //}
-                    //Command = Command.Remove(Command.Length - 1);
-                    //Command += " )";
-                    //Command += " VALUES";
-
-                    //for (int i = 0; i < Value.Length; i++)
-                    //{
-                    //    Command += " (";
-                    //    Name_temp.Clear();
-                    //    for (int j = 0; j < Value[0].Length; j++)
-                    //    {
-                    //        Name_temp.Add("@" + (string)obj_AllColumnName[j] + i.ToString());
-                    //        Command += Name_temp[j];
-                    //        Command += ",";
-                    //    }
-                    //    Command = Command.Remove(Command.Length - 1);
-                    //    Command += " )";
-                    //    Command += ",";
-                    //    Name.Add(Name_temp.ToArray());
-                    //}
-                    //Command = Command.Remove(Command.Length - 1);
-                    //Command += ";";
-
-                    //for (int i = 0; i < Value.Length; i++)
-                    //{
-                    //    for (int j = 0; j < Value[0].Length; j++)
-                    //    {
-                    //        temp.Add(new object[] { Name[i][j], Value[i][j] });
-                    //    }
-                    //}
-                    //WtrteCommand(Command, temp.ToArray());
+                    
                 }
             }
            
@@ -972,7 +961,21 @@ namespace SQLUI
             }
       
         }
-
+        public void Add_Index(string TableName, string ColumnName, Table.IndexType indexType)
+        {
+            if (indexType == Table.IndexType.INDEX)
+            {
+                this.Add_Index(TableName, ColumnName, false);
+            }
+            else if (indexType == Table.IndexType.UNIQUE)
+            {
+                this.Add_Index(TableName, ColumnName, true);
+            }
+            else if (indexType == Table.IndexType.PRIMARY)
+            {
+                this.Add_primary_key(TableName, ColumnName);
+            }
+        }
         public void Add_Index(string TableName, string[] ColumnNames, bool IsUnique)
         {
             string Command = string.Format("USE  {0};", this.Database);
@@ -2587,6 +2590,29 @@ namespace SQLUI
         {
             this.TableName = Name;
         }
+        public string GetTypeName(string ColumnName)
+        {
+            for(int i = 0; i < ColumnList.Count; i++)
+            {
+                if(ColumnList[i].Name == ColumnName)
+                {
+                    return ColumnList[i].TypeName;
+                }
+            }
+            return null;
+        }
+        public IndexType GetIndexType(string ColumnName)
+        {
+            for (int i = 0; i < ColumnList.Count; i++)
+            {
+                if (ColumnList[i].Name == ColumnName)
+                {
+                    return ColumnList[i].IndexType;
+                }
+            }
+            return IndexType.None;
+        }
+
         public static string GetTypeName(OtherType _OtherType)
         {
             string str = null;

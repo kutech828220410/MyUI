@@ -824,6 +824,31 @@ namespace SQLUI
                     _OtherType = value;
                 }
             }
+
+            public override string ToString()
+            {
+                string str = $"[Name : {Name}]";
+
+                if(_ValueType != Table.ValueType.None)
+                {
+                    str += $"[Type : {_ValueType.GetEnumName()}]";
+                }
+                else if (_DateType != Table.DateType.None)
+                {
+                    str += $"[Type : {_DateType.GetEnumName()}]";
+                }
+                else if (_StringType != Table.StringType.None)
+                {
+                    str += $"[Type : {_StringType.GetEnumName()}]";
+                }
+                else if (_OtherType != Table.OtherType.None)
+                {
+                    str += $"[Type : {_OtherType.GetEnumName()}]";
+                }
+                str += $"[Datalen : {Datalen}]";
+                str += $"[Index : {_IndexType.GetEnumName()}]";
+                return str;
+            }
         }
         private List<ColumnElement> _Columns = new List<ColumnElement>();       
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
@@ -1345,6 +1370,58 @@ namespace SQLUI
         public bool SQL_IsTableCreat()
         {
             return _SQLControl.IsTableCreat(SQL_Table.GetTableName());
+        }
+        public void SQL_Add_Column(string ColumnName, string AfterColumnName)
+        {
+            _SQLControl.Add_Column(this.TableName, ColumnName, SQL_Table.GetTypeName(ColumnName), SQL_Table.GetIndexType(ColumnName), AfterColumnName);
+        }
+
+        public bool SQL_CheckAllColumnName()
+        {
+            return this.SQL_CheckAllColumnName(false);
+        }
+        public bool SQL_CheckAllColumnName(bool autoAdd)
+        {
+            object[] obj_colname = this.SQL_GetAllColumn_Name();
+            List<string> list_error_msg = new List<string>();
+            string error_msg = "";
+            for (int k = 0; k < this.Columns.Count; k++)
+            {
+                bool flag_OK = false;
+                for (int i = 0; i < obj_colname.Length; i++)
+                {
+                    string str = obj_colname[i].ObjectToString();
+                    if (this.Columns[k].Name == str)
+                    {
+                        if (i != k)
+                        {
+                            list_error_msg.Add($"排序不一致>>>ColumnName : [{str}] ,Database排序 : {i} , 程式排序 : {k}");
+                        }
+                        flag_OK = true;
+                    }                  
+                }
+                if (!flag_OK)
+                {
+                    if ((k - 1) > 0)
+                    {
+                        if(autoAdd)SQL_Add_Column(this.Columns[k].Name, this.Columns[k - 1].Name);
+                    }
+                  
+                    list_error_msg.Add($"DataBase找無欄位>> 請新增   [排序:{k}]{this.Columns[k].ToString()}");
+                }
+            }
+            
+            for (int i = 0; i < list_error_msg.Count; i++)
+            {
+                error_msg += $"({(i+1).ToString("00")}).{list_error_msg[i]}\n";
+            }
+            if (error_msg.Length != 0)
+            {
+                error_msg = $"TableName : {SQL_Table.GetTableName()}\n{error_msg}";
+                Console.WriteLine($"{error_msg}");
+                //MyMessageBox.ShowDialog(error_msg);
+            }
+            return (error_msg.Length == 0);
         }
         public object[] SQL_GetAllColumn_Name()
         {
