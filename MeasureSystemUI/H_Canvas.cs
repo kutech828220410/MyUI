@@ -769,13 +769,17 @@ namespace MeasureSystemUI
                     panel_Canvas.Controls.Add(this.AxCanvas);
                     ((System.ComponentModel.ISupportInitialize)(this.AxCanvas)).EndInit();
 
-
+                    Basic.Reflection.MakeDoubleBuffered(this.panel_Canvas, true);
+                   // Basic.Reflection.MakeDoubleBuffered(this.AxCanvas, true);
+                    Basic.Reflection.MakeDoubleBuffered(this, true);
                     this.AxCanvas.Dock = DockStyle.Fill;
                     this.AxCanvas.Location = new System.Drawing.Point(0, 0);
                     this.Size_InitPanel = new Size(this.panel_Canvas.Width, this.panel_Canvas.Height);
                     this.AxCanvas.OnCanvasMouseDown += AxCanvas_OnCanvasMouseDown;
                     this.AxCanvas.OnCanvasMouseMove += AxCanvas_OnCanvasMouseMove;
                     this.AxCanvas.OnCanvasMouseUp += AxCanvas_OnCanvasMouseUp;
+                    this.AxCanvas.ParentDoubleBuffered = true;
+                    this.Validated += H_Canvas_Validated;
                     this.Paint += H_Canvas_Paint;  
 
                 }
@@ -789,7 +793,7 @@ namespace MeasureSystemUI
     
         }
 
-        private void H_Canvas_Paint(object sender, PaintEventArgs e)
+        private void H_Canvas_Validated(object sender, EventArgs e)
         {
             if (this.AxCanvas.CanvasWidth != this.panel_Canvas.Width || this.AxCanvas.CanvasHeight != this.panel_Canvas.Height)
             {
@@ -800,6 +804,24 @@ namespace MeasureSystemUI
                 this.AxCanvas.CanvasHeight = this.panel_Canvas.Height;
                 this.AxCanvas.RefreshCanvas();
             }
+            if (this.ImageWidth != 0 && this.ImageHeight != 0)
+            {
+                //this.AxCanvas.ClearCanvas();
+                this.GetImageScale(ref ZoomX, ref ZoomY);
+                this.AxCanvas.DrawSurface(this.VegaHandle, ZoomX, ZoomY, 0, 0);
+                if (this.OnCanvasDrawEvent != null) this.OnCanvasDrawEvent(this.AxCanvas.hDC, ZoomX, ZoomY, this.CanvasHandle);
+
+            }
+            this.AxCanvas.RefreshCanvas();
+            Console.WriteLine($"{Name} : H_Canvas_Validated");
+        }
+
+ 
+
+        private void H_Canvas_Paint(object sender, PaintEventArgs e)
+        {
+         
+            Console.WriteLine($"{Name} : H_Canvas_Paint");
         }
 
         private void Init()

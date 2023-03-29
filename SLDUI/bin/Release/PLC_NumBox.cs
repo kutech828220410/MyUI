@@ -422,6 +422,8 @@ namespace MyUI
             InitializeComponent();
         }
 
+  
+
         #region Function
         public int GetValue()
         {
@@ -529,8 +531,9 @@ namespace MyUI
         }
         public void Run()
         {
-            if (!this.CanSelect) return;
             flag_init = true;
+            //if (!this.CanSelect) return;
+         
             if (PLC != null)
             {
                 if (_讀取元件位置 != string.Empty)
@@ -546,12 +549,8 @@ namespace MyUI
                     }
                     Value_Str_Buf = value.ToString();
                 }
-                string text = this.Text;
-                if (this.Text != Value_Str_Buf)
-                {
-                    this.Text = Value_Str_Buf;
-                }
-        
+
+            
                 if (_致能讀取位置 != string.Empty)
                 {
                     if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
@@ -571,27 +570,41 @@ namespace MyUI
                     }
                 }
             }
-           
+            string text = this.Text;
+            if (this.Text != Value_Str_Buf)
+            {
+                this.Text = Value_Str_Buf;
+            }
         }
+
+
         public void ShowKeyBoard()
+        {
+            this.ShowKeyBoard(new Point());
+        }
+        public void ShowKeyBoard(Point point)
         {
             if (顯示螢幕小鍵盤 && !MyUI.數字鍵盤.視窗已建立)
             {
                 MyUI.數字鍵盤.小數點位置 = this.小數點位置;
                 MyUI.數字鍵盤.音效 = 音效;
                 MyUI.數字鍵盤 form = MyUI.數字鍵盤.GetForm();
+                System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.FromPoint(point);
+ 
                 Form main_form = this.FindForm();
                 Point p0 = this.PointToScreen(new Point());
-                Point p1 = new Point(this.Location.X + Size.Width, this.Location.Y + Size.Height);
-                p0.X = main_form.Location.X + (main_form.Width / 2) - (form.Width / 2);
-                p0.Y = main_form.Location.Y + (main_form.Height / 2) - (form.Height / 2);
+                p0.X = screen.Bounds.X + (screen.Bounds.Width / 2) - (form.Width / 2);
+                p0.Y = screen.Bounds.Y + (screen.Bounds.Height / 2) - (form.Height / 2);
                 form.SetPosition(p0);
                 form.TopLevel = true;//將表單顯示在最上層。
                 form.Activate();//啟動表單並且給予焦點。
                 form.Init_Text = this.textBox1.Text;
-                FormDelegate formDelegate = new FormDelegate(form_show);
-                Invoke(formDelegate, form);
+                this.Invoke(new Action(delegate
+                {
+                    this.form_show(form);
+                }));
             }
+          
         }
         #endregion
         #region Event
@@ -606,8 +619,9 @@ namespace MyUI
         private void textBox1_MouseDown(object sender, MouseEventArgs e)
         {
             this.Focus();
-            this.ShowKeyBoard();
+            this.ShowKeyBoard(new Point(System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y));
         }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48) || (int)e.KeyChar == 8) // 8 > BackSpace
