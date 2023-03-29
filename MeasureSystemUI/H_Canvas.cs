@@ -136,7 +136,7 @@ namespace MeasureSystemUI
         public delegate void OnCanvasMouseUpEventHandler(int x, int y, float ZoomX, float ZoomY);
         public event OnCanvasMouseUpEventHandler OnCanvasMouseUpEvent;
 
-        public delegate void OnCanvasDrawEventHandler(long HDC, float ZoomX, float ZoomY ,int CanvasHandle);
+        public delegate void OnCanvasDrawEventHandler(long HDC, float ZoomX, float ZoomY, int CanvasHandle);
         public event OnCanvasDrawEventHandler OnCanvasDrawEvent;
         #endregion
         #region 元件參數
@@ -151,7 +151,7 @@ namespace MeasureSystemUI
             {
                 if (PLC_10_SrcImageHandle != null) return PLC_10_SrcImageHandle.DoubleValue;
                 return -1;
-                  
+
             }
         }
         [Browsable(false)]
@@ -162,15 +162,15 @@ namespace MeasureSystemUI
                 if (ImageType == ImageTypeEnum.BW8)
                 {
                     if (AxImageBW8 != null)
-                    return AxImageBW8.VegaHandle;
+                        return AxImageBW8.VegaHandle;
                 }
                 else if (ImageType == ImageTypeEnum.C24)
                 {
                     if (AxImageC24 != null)
-                    return AxImageC24.VegaHandle;
+                        return AxImageC24.VegaHandle;
                 }
                 return 0;
-                
+
             }
         }
         [Browsable(false)]
@@ -181,12 +181,12 @@ namespace MeasureSystemUI
                 if (ImageType == ImageTypeEnum.BW8)
                 {
                     if (AxImageBW8 != null)
-                    return AxImageBW8.ImageWidth;
+                        return AxImageBW8.ImageWidth;
                 }
                 else if (ImageType == ImageTypeEnum.C24)
                 {
                     if (AxImageC24 != null)
-                    return AxImageC24.ImageWidth;
+                        return AxImageC24.ImageWidth;
                 }
                 return 0;
             }
@@ -195,12 +195,12 @@ namespace MeasureSystemUI
                 if (ImageType == ImageTypeEnum.BW8)
                 {
                     if (AxImageBW8 != null)
-                    AxImageBW8.ImageWidth = value;
+                        AxImageBW8.ImageWidth = value;
                 }
                 else if (ImageType == ImageTypeEnum.C24)
                 {
                     if (AxImageC24 != null)
-                    AxImageC24.ImageWidth = value;
+                        AxImageC24.ImageWidth = value;
                 }
             }
         }
@@ -212,12 +212,12 @@ namespace MeasureSystemUI
                 if (ImageType == ImageTypeEnum.BW8)
                 {
                     if (AxImageBW8 != null)
-                    return AxImageBW8.ImageHeight;
+                        return AxImageBW8.ImageHeight;
                 }
                 else if (ImageType == ImageTypeEnum.C24)
                 {
                     if (AxImageC24 != null)
-                    return AxImageC24.ImageHeight;
+                        return AxImageC24.ImageHeight;
                 }
                 return 0;
             }
@@ -226,12 +226,12 @@ namespace MeasureSystemUI
                 if (ImageType == ImageTypeEnum.BW8)
                 {
                     if (AxImageBW8 != null)
-                    AxImageBW8.ImageWidth = value;
+                        AxImageBW8.ImageWidth = value;
                 }
                 else if (ImageType == ImageTypeEnum.C24)
                 {
                     if (AxImageC24 != null)
-                    AxImageC24.ImageWidth = value;
+                        AxImageC24.ImageWidth = value;
                 }
             }
         }
@@ -270,7 +270,7 @@ namespace MeasureSystemUI
         private ImageTypeEnum _ImageTypeEnum = ImageTypeEnum.BW8;
         [ReadOnly(false), Browsable(true), Category("參數設定"), Description(""), DefaultValue("")]
         public ImageTypeEnum ImageType
-        { 
+        {
             get
             {
                 return _ImageTypeEnum;
@@ -439,7 +439,7 @@ namespace MeasureSystemUI
                 else __00_HDC = "";
             }
         }
- 
+
         private string __01_ZoomX = "K100";
         [ReadOnly(false), Browsable(true), Category("數值位置"), Description(""), DefaultValue("")]
         public string _01_ZoomX
@@ -621,7 +621,7 @@ namespace MeasureSystemUI
             //this.FindForm().Load += new System.EventHandler(this.Form_Load);
         }
 
-      
+
         private PLC_Device _PLC_00_HDC;
         public PLC_Device PLC_00_HDC
         {
@@ -646,12 +646,12 @@ namespace MeasureSystemUI
         {
             this.Activeform = Activeform;
             this.PLC = pLC;
-          
+
             if (this._00_HDC != string.Empty)
             {
                 this._PLC_00_HDC = new PLC_Device(this._00_HDC);
                 this._PLC_00_HDC.SetComment(string.Format("{0} : HDC", this.CanvasName));
-                
+
                 // this.PLC_00_HDC.DoubleValue = this.AxCanvas.hDC;
             }
             if (this._01_ZoomX != string.Empty)
@@ -760,7 +760,7 @@ namespace MeasureSystemUI
         {
             if (!flag_Canvas_Init)
             {
-              
+
 
                 try
                 {
@@ -770,7 +770,7 @@ namespace MeasureSystemUI
                     ((System.ComponentModel.ISupportInitialize)(this.AxCanvas)).EndInit();
 
                     Basic.Reflection.MakeDoubleBuffered(this.panel_Canvas, true);
-                   // Basic.Reflection.MakeDoubleBuffered(this.AxCanvas, true);
+                    // Basic.Reflection.MakeDoubleBuffered(this.AxCanvas, true);
                     Basic.Reflection.MakeDoubleBuffered(this, true);
                     this.AxCanvas.Dock = DockStyle.Fill;
                     this.AxCanvas.Location = new System.Drawing.Point(0, 0);
@@ -780,7 +780,7 @@ namespace MeasureSystemUI
                     this.AxCanvas.OnCanvasMouseUp += AxCanvas_OnCanvasMouseUp;
                     this.AxCanvas.ParentDoubleBuffered = true;
                     this.Validated += H_Canvas_Validated;
-                    this.Paint += H_Canvas_Paint;  
+                    this.Paint += H_Canvas_Paint;
 
                 }
                 catch
@@ -790,7 +790,7 @@ namespace MeasureSystemUI
                 flag_Canvas_Init = true;
 
             }
-    
+
         }
 
         private void H_Canvas_Validated(object sender, EventArgs e)
@@ -816,16 +816,16 @@ namespace MeasureSystemUI
             Console.WriteLine($"{Name} : H_Canvas_Validated");
         }
 
- 
+
 
         private void H_Canvas_Paint(object sender, PaintEventArgs e)
         {
-         
+
             Console.WriteLine($"{Name} : H_Canvas_Paint");
         }
 
         private void Init()
-        {    
+        {
             if (this.PLC != null && this.Activeform != null && !flag_Init)
             {
                 if (this.AxImageBW8 == null) this.AxImageBW8 = new AxOvkBase.AxImageBW8();
@@ -836,11 +836,11 @@ namespace MeasureSystemUI
                 this.PLC_11_VegaHandle.DoubleValue = this.VegaHandle;
                 this.Invoke(new Action(delegate { this.CanvasHandle = (int)this.Handle; }));
                 flag_Init = true;
-            }       
+            }
         }
         private void Run()
         {
-      
+
             if (flag_Init)
             {
                 if (this.PLC_04_鎖定長寬比.Bool)
@@ -861,7 +861,7 @@ namespace MeasureSystemUI
                     this.PLC_01_清除畫布.Bool = false;
                 }
                 if (this.PLC_02_繪製影像.Bool)
-                {       
+                {
                     if (this.ImageWidth != 0 && this.ImageHeight != 0)
                     {
                         //this.AxCanvas.ClearCanvas();
@@ -869,7 +869,7 @@ namespace MeasureSystemUI
                         this.AxCanvas.DrawSurface(this.VegaHandle, ZoomX, ZoomY, 0, 0);
                         if (this.OnCanvasDrawEvent != null) this.OnCanvasDrawEvent(this.AxCanvas.hDC, ZoomX, ZoomY, this.CanvasHandle);
 
-                    }               
+                    }
                     this.PLC_00_更新畫布.Bool = true;
                 }
                 if (this.PLC_00_更新畫布.Bool)
@@ -879,7 +879,7 @@ namespace MeasureSystemUI
                     this.PLC_02_繪製影像.Bool = false;
                 }
             }
-            
+
         }
 
         #region Function
@@ -889,7 +889,7 @@ namespace MeasureSystemUI
         }
 
         public long GetHDC()
-        {   
+        {
             return PLC_00_HDC.DoubleValue;
         }
         public void SetCanvasSize(Size Size)
@@ -934,7 +934,7 @@ namespace MeasureSystemUI
             return false;
         }
         public void GetImageScale(ref float Scale_X, ref float Scale_Y)
-        {         
+        {
             double T_Width, T_Height;
             T_Width = this.Size_InitPanel.Width * (double)this.PLC_01_ZoomX.Value / 100D;
             T_Height = this.Size_InitPanel.Height * (double)this.PLC_02_ZoomY.Value / 100D;
@@ -956,8 +956,8 @@ namespace MeasureSystemUI
                     AxImageC24.SetSize(Width, Height);
             }
 
-           // this.ImageWidth = Width;
-           // this.ImageHeight = Height;
+            // this.ImageWidth = Width;
+            // this.ImageHeight = Height;
         }
         public void ImageCopy(long SrcImageHandle)
         {
@@ -1012,18 +1012,18 @@ namespace MeasureSystemUI
         }
 
 
-        public static void FindCanvas( Form form, ref List<H_Canvas> List_Canvas)
+        public static void FindCanvas(Form form, ref List<H_Canvas> List_Canvas)
         {
             foreach (Control ctl in form.Controls)
             {
                 FindSubControl(ctl, "GetAll", ref List_Canvas);
             }
         }
-        public static void FindCanvas(string CanvasName , Form form ,ref List<H_Canvas> List_Canvas)
+        public static void FindCanvas(string CanvasName, Form form, ref List<H_Canvas> List_Canvas)
         {
             foreach (Control ctl in form.Controls)
             {
-                FindSubControl(ctl, CanvasName,ref List_Canvas);
+                FindSubControl(ctl, CanvasName, ref List_Canvas);
             }
         }
         private static void FindSubControl(Control ctl, string CanvasName, ref List<H_Canvas> List_Canvas)
@@ -1033,14 +1033,14 @@ namespace MeasureSystemUI
                 PLC_ScreenPage ctl_temp = (PLC_ScreenPage)ctl;
                 foreach (Control temp in ctl_temp.Controls)
                 {
-                    FindSubControl(temp, CanvasName, ref  List_Canvas);
+                    FindSubControl(temp, CanvasName, ref List_Canvas);
                 }
             }
             else if (ctl.Controls.Count > 0)
             {
                 foreach (Control sub_ctl in ctl.Controls)
                 {
-                    FindSubControl(sub_ctl, CanvasName, ref  List_Canvas);
+                    FindSubControl(sub_ctl, CanvasName, ref List_Canvas);
                 }
             }
 
@@ -1051,7 +1051,7 @@ namespace MeasureSystemUI
                 {
                     List_Canvas.Add((H_Canvas)ctl);
                 }
-                else if(CanvasName == "GetAll")
+                else if (CanvasName == "GetAll")
                 {
                     List_Canvas.Add((H_Canvas)ctl);
                 }
@@ -1062,7 +1062,7 @@ namespace MeasureSystemUI
         private void H_Canvas_Load(object sender, EventArgs e)
         {
 
-  
+
         }
 
         int AxCanvas_MousePoX;
@@ -1071,9 +1071,9 @@ namespace MeasureSystemUI
         {
             this.InUsedEventNum = 0;
             if (this.OnCanvasMouseDownEvent != null) this.OnCanvasMouseDownEvent(e.x, e.y, ZoomX, ZoomY, ref InUsedEventNum, this.CanvasHandle);
-            if(InUsedEventNum == 0)
+            if (InUsedEventNum == 0)
             {
-                if(AxCanvas.HorzScrollMax > 0 || AxCanvas.VertScrollMax > 0)
+                if (AxCanvas.HorzScrollMax > 0 || AxCanvas.VertScrollMax > 0)
                 {
                     InUsedEventNum = -1;
                     Cursor = Cursors.NoMove2D;
@@ -1125,7 +1125,7 @@ namespace MeasureSystemUI
         }
         private void Form_Load(object sender, EventArgs e)
         {
- 
+
         }
     }
 }

@@ -135,6 +135,7 @@ namespace MyUI
                 {
                     this.SetState(this.state);
                     this.state_buf = this.state;
+                    if (StateChangeEvent != null) StateChangeEvent(this, this.state);
                 }
                 return this.state;
             }
@@ -145,6 +146,7 @@ namespace MyUI
                 {
                     this.SetState(this.state);
                     this.state_buf = this.state;
+                    if (StateChangeEvent != null) StateChangeEvent(this, this.state);
                 }
             }
         }
@@ -157,7 +159,6 @@ namespace MyUI
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += RJ_Button_Resize;
-            this.Click += RJ_Button_Click;
         }
 
         public void ResetState()
@@ -415,10 +416,9 @@ namespace MyUI
             }
         }
 
-        private void RJ_Button_Click(object sender, EventArgs e)
-        {
-           
-        }
+        public delegate void StateChangeEventHandler(RJ_Button rJ_Button, bool state);
+        public event StateChangeEventHandler StateChangeEvent;
+
 
 
     }

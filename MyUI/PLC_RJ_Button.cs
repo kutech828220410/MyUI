@@ -604,6 +604,19 @@ namespace MyUI
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public virtual PressEnum 按鍵方式 { get; set; }
 
+        private int on_BorderSize = 5;
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public int ON_BorderSize
+        {
+            get
+            {
+                return on_BorderSize;
+            }
+            set
+            {
+                on_BorderSize = value;
+            }
+        }
         string _寫入位置註解 = "";
         [ReadOnly(false), Browsable(true), Category("註解"), Description(""), DefaultValue("")]
         public string 寫入位置註解
@@ -651,6 +664,7 @@ namespace MyUI
                     this.Text = this.ON_文字內容;
                     this.Font = ON_文字字體;
                     this.ForeColor = ON_文字顏色;
+                    this.BorderSize = on_BorderSize;
                 }));
             }
             else
@@ -659,6 +673,7 @@ namespace MyUI
                 this.Text = this.ON_文字內容;
                 this.Font = ON_文字字體;
                 this.ForeColor = ON_文字顏色;
+                this.BorderSize = on_BorderSize;
             }
 
         }
@@ -672,6 +687,7 @@ namespace MyUI
                     this.Text = this.OFF_文字內容;
                     this.Font = OFF_文字字體;
                     this.ForeColor = OFF_文字顏色;
+                    this.BorderSize = 0;
                 }));
             }
             else
@@ -680,6 +696,7 @@ namespace MyUI
                 this.Text = this.OFF_文字內容;
                 this.Font = OFF_文字字體;
                 this.ForeColor = OFF_文字顏色;
+                this.BorderSize = 0;
             }
         }
         public bool Load_WriteState()

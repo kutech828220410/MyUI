@@ -515,6 +515,38 @@ namespace Basic
 
     public static class TypeConvert
     {
+        static public UInt32 SetBit(this ref UInt32 value, int index, bool state)
+        {
+            index = 31 - index;
+            string str_temp0 = Convert.ToString(value, 2);
+            while (true)
+            {
+                if (str_temp0.Length >= 32) break;
+                str_temp0 = "0" + str_temp0;
+            }
+            char[] char_buf = str_temp0.ToCharArray();
+            if (state) char_buf[index] = '1';
+            else char_buf[index] = '0';
+            str_temp0 = new string(char_buf);
+            value = Convert.ToUInt32(str_temp0, 2);
+            return value;
+        }
+        static public bool GetBit(this UInt32 value, int index)
+        {
+            bool FLAG = false;
+            index = 31 - index;
+            string str_temp0 = Convert.ToString(value, 2);
+            while (true)
+            {
+                if (str_temp0.Length >= 32) break;
+                str_temp0 = "0" + str_temp0;
+            }
+            char[] char_buf = str_temp0.ToCharArray();
+            if (char_buf[index] == '1') FLAG = true;
+            else FLAG = false;
+
+            return FLAG;
+        }
         static public int SetBit(this ref int value, int index, bool state)
         {
             value = 31 - index;
@@ -739,6 +771,27 @@ namespace Basic
             else
             {
                 return -1;
+            }
+            return value_temp;
+
+        }
+        static public UInt32 StringToUInt32(this object item)
+        {
+            if (item == null) return 0;
+            if (item is Int32) return (UInt32)item;
+            if (!(item is string)) return 0;
+            return StringToUInt32((string)item);
+        }
+        static public UInt32 StringToUInt32(this string item)
+        {
+            UInt32 value_temp = 0;
+            if (UInt32.TryParse(item, out value_temp))
+            {
+                return value_temp;
+            }
+            else
+            {
+                return 0;
             }
             return value_temp;
 

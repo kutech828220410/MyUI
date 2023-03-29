@@ -25,7 +25,18 @@ namespace Basic
                 }
             }
         }
-
+        static public void LockAdd(this List<string> list_value, List<string> values, bool Distinct)
+        {
+            lock (list_value)
+            {
+                List<string> list_value_buf = new List<string>();
+                for (int i = 0; i < values.Count; i++)
+                {
+                    list_value.Add(values[i]);
+                }          
+            }
+            list_value = list_value.Distinct().ToList();
+        }
 
         static public List<string> GetSelectColumnValue(this List<object[]> list_value, int colindex)
         {

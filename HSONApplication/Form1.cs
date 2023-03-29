@@ -103,8 +103,16 @@ namespace HSONApplication
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
- 
+            plC_RJ_Button_領藥台_01_手動作業.StateChangeEvent += PlC_RJ_Button_領藥台_01_手動作業_StateChangeEvent;
+
         }
+
+        private void PlC_RJ_Button_領藥台_01_手動作業_StateChangeEvent(RJ_Button rJ_Button, bool state)
+        {
+           
+        }
+
+
 
         private void RJ_Pannel1_MouseDown(object sender, MouseEventArgs e)
         {
