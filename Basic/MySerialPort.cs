@@ -178,5 +178,10 @@ namespace Basic
             this.RX_TickRST();
             this.FLAG_UART_RX = true;
         }
+
+        public static string[] GetPortNames()
+        {
+            return SerialPort.GetPortNames();
+        }
     }
 }
