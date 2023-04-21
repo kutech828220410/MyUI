@@ -91,92 +91,45 @@ namespace HSONApplication
         {
             InitializeComponent();
         }
-        enum file
-        {
-            GUID,
-            filename,
-            value,
-        }
+      
         private void Form1_Load(object sender, EventArgs e)
         {
-            rJ_Pannel1.MouseDown += RJ_Pannel1_MouseDown;
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
-            plC_RJ_Button_領藥台_01_手動作業.StateChangeEvent += PlC_RJ_Button_領藥台_01_手動作業_StateChangeEvent;
+
+            this.plC_RJ_Button_顯示.MouseDownEvent += PlC_RJ_Button_顯示_MouseDownEvent;
 
         }
 
-        private void PlC_RJ_Button_領藥台_01_手動作業_StateChangeEvent(RJ_Button rJ_Button, bool state)
+        private void PlC_RJ_Button_顯示_MouseDownEvent(MouseEventArgs mevent)
         {
-           
-        }
-
-
-
-        private void RJ_Pannel1_MouseDown(object sender, MouseEventArgs e)
-        {
-          
+            this.sqL_DataGridView_人員資料.SQL_GetAllRows(true);
         }
 
         private void PlC_UI_Init1_UI_Finished_Event()
         {
             this.LoadDBConfig();
-            this.plC_RJ_Pannel1.Set_Enable(false);
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
-         
+            this.sqL_DataGridView_人員資料.Init();
+            this.sqL_DataGridView_人員資料.RowEndEditEvent += SqL_DataGridView_人員資料_RowEndEditEvent;
+            this.sqL_DataGridView_人員資料.CellValidatingEvent += SqL_DataGridView_人員資料_CellValidatingEvent;
         }
 
-        private void SqL_DataGridView_人員資料_CheckedChangedEvent(List<object[]> RowsList)
+        private void SqL_DataGridView_人員資料_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
         {
-         
+           if(value.StringIsInt32() == false)
+            {
+                e.Cancel = true;
+            }
         }
 
-        private void rJ_Button1_Click(object sender, EventArgs e)
+        private void SqL_DataGridView_人員資料_RowEndEditEvent(object[] RowValue, int rowIndex, int colIndex, string value)
         {
+            this.sqL_DataGridView_人員資料.SQL_ReplaceExtra(RowValue, false);
+          //  this.sqL_DataGridView_人員資料.ReplaceExtra(RowValue, true);
         }
 
-        private void rJ_Button2_Click(object sender, EventArgs e)
-        {
-        
-        }
 
-        private void lowerMachine_Panel1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-       
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.plC_RJ_Pannel1.Set_Enable(!this.plC_RJ_Pannel1.Get_Enable());
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string str = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><Drug_DATAResponse xmlns=\"http://tempuri.org/\"><Drug_DATAResult><xs:schema id=\"NewDataSet\" xmlns=\"\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\"><xs:element name=\"NewDataSet\" msdata:IsDataSet=\"true\" msdata:MainDataTable=\"Temp1\" msdata:UseCurrentLocale=\"true\"><xs:complexType><xs:choice minOccurs=\"0\" maxOccurs=\"unbounded\"><xs:element name=\"Temp1\"><xs:complexType><xs:sequence><xs:element name=\"MCODE\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"FULLNAME\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"SHORTNAME\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS11\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS12\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS21\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS22\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS221\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"UDPOS222\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"FQCNVOUT2\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"FQCNVOUT3\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"MFG_COMP\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"MFG_NAME\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"LICENSE\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGLOTNO1\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGDUEDT1\" type=\"xs:dateTime\" minOccurs=\"0\" /><xs:element name=\"DRGLOTNO2\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGDUEDT2\" type=\"xs:dateTime\" minOccurs=\"0\" /><xs:element name=\"DRGLOTNO3\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGDUEDT3\" type=\"xs:dateTime\" minOccurs=\"0\" /><xs:element name=\"DRGLOTNO4\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGDUEDT4\" type=\"xs:dateTime\" minOccurs=\"0\" /><xs:element name=\"DRGLOTNO5\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"DRGDUEDT5\" type=\"xs:dateTime\" minOccurs=\"0\" /><xs:element name=\"COMPAR2\" type=\"xs:string\" minOccurs=\"0\" /><xs:element name=\"MLEVEL\" type=\"xs:string\" minOccurs=\"0\" /></xs:sequence></xs:complexType></xs:element></xs:choice></xs:complexType></xs:element></xs:schema><diffgr:diffgram xmlns:msdata=\"urn:schemas-microsoft-com:xml-msdata\" xmlns:diffgr=\"urn:schemas-microsoft-com:xml-diffgram-v1\"><NewDataSet xmlns=\"\"><Temp1 diffgr:id=\"Temp11\" msdata:rowOrder=\"0\"><MCODE>21061</MCODE><FULLNAME>FUSIDIC ACID/FUCIDIN* 250</FULLNAME><SHORTNAME>FUSIDIC ACID/FUCIDIN* 250</SHORTNAME><UDPOS11>D5</UDPOS11><UDPOS12>D5</UDPOS12><UDPOS21>A4-11</UDPOS21><UDPOS22>A4-11</UDPOS22><UDPOS221>A4-11</UDPOS221><UDPOS222>A4-11</UDPOS222><FQCNVOUT2>成水O2,兒水K2,*C6-1,急E3,庫A5</FQCNVOUT2><MFG_COMP>禾利行股份有限公司 </MFG_COMP><MFG_NAME> LABORATOIRES LEO, S.A.</MFG_NAME><LICENSE>衛署藥輸字第019108號</LICENSE></Temp1></NewDataSet></diffgr:diffgram></Drug_DATAResult></Drug_DATAResponse></soap:Body></soap:Envelope>";
-
-            string[] str_array = new string[] { "soap:Body" , "Drug_DATAResponse" , "Drug_DATAResult" , "diffgr:diffgram", "NewDataSet" , "Temp1" , "MCODE" };
-
-            // XmlElement xmlElement = str.Xml_GetElement(str_array);
-            //XmlDocument doc = new XmlDocument();
-            //doc.LoadXml(str);
-
-            //XmlElement xmlElement = doc.DocumentElement;
-            //for (int i = 0; i < str_array.Length; i++)
-            //{
-            //    xmlElement = xmlElement[str_array[i]];
-
-            //}
-            //XmlNodeList xmlNodeList = xmlElement.ChildNodes;
-            // string MCODE = doc.DocumentElement["soap:Body"]["Drug_DATAResponse"]["Drug_DATAResult"]["diffgr:diffgram"]["NewDataSet"]["Temp1"]["MCODE"].InnerXml;
-
-
-            string MCODE = str.Xml_GetInnerXml(str_array);
-        }
     }
 }

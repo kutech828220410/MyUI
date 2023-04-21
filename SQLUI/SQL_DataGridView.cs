@@ -24,6 +24,7 @@ namespace SQLUI
     public partial class SQL_DataGridView : UserControl
     {
         private bool flag_Init = false;
+        private bool flag_Refresh = false;
         private CheckBox checkBoxHeader = new CheckBox();
         private bool flag_unCheckedAll = false;
 
@@ -52,6 +53,10 @@ namespace SQLUI
         public event RowDoubleClickEventHandler RowDoubleClickEvent;
         public delegate void RowEnterEventHandler(object[] RowValue);
         public event RowEnterEventHandler RowEnterEvent;
+        public delegate void RowEndEditEventHandler(object[] RowValue, int rowIndex, int colIndex, string value);
+        public event RowEndEditEventHandler RowEndEditEvent;
+        public delegate void CellValidatingEventHandler(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e);
+        public event CellValidatingEventHandler CellValidatingEvent;
         public delegate void CheckedChangedEventHandler(List<object[]> RowsList, int index);
         public event CheckedChangedEventHandler CheckedChangedEvent;
 
@@ -64,6 +69,7 @@ namespace SQLUI
         }
         public void RowsChange(List<object[]> RowsList, bool SelectToDeep)
         {
+            this.flag_Refresh = true;
             if (this.DataGridRowsChangeEvent != null)
             {
                 this.DataGridRowsChangeEvent(RowsList);
@@ -129,7 +135,7 @@ namespace SQLUI
             {
                 if (dataTable_buffer.Columns[columns.Text] == null)
                 {
-                    if (this.IsColumnsText(columns.Text)) dataTable_buffer.Columns.Add(new DataColumn(columns.Text));
+                    if (this.IsColumnsText(columns.Text)) dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(string)));
                     else dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
 
                 }
@@ -197,6 +203,18 @@ namespace SQLUI
                         }
                     }
                 }
+                foreach (ColumnElement columns in Columns)
+                {
+                    if(columns.CanEdit)
+                    {
+                        dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionBackColor = Color.Yellow;
+                        dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
+                        dataGridView.Columns[columns.Text].DefaultCellStyle.ForeColor = Color.DimGray;
+                    }
+                   
+                }
+
+
                 if (IsSetEnable) dataGridView.Enabled = true;
                 if (dataGridView.RowCount - 1 > 0)
                 {
@@ -216,7 +234,7 @@ namespace SQLUI
                 dataGridView.ResumeDrawing();
                
             }));
-            
+            this.flag_Refresh = false;
         }
         private void DataGridView_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -759,6 +777,13 @@ namespace SQLUI
                     this.text = value;
                 }
             }
+            private bool canEdit = true;
+            public bool CanEdit
+            {
+                get { return canEdit; }
+                set { canEdit = value; }
+            }
+
 
             private Color _BackgroundColor = Color.White;
             public Color BackgroundColor
@@ -1199,6 +1224,10 @@ namespace SQLUI
                 dataGridView.CellEnter += DataGridView_CellEnter;
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
                 dataGridView.CellPainting += DataGridView_CellPainting;
+                dataGridView.CellEndEdit += DataGridView_CellEndEdit;
+                dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+                dataGridView.CellValidating += DataGridView_CellValidating;
+                dataGridView.CellValidated += DataGridView_CellValidated;
             }
             else if (OnlineState == OnlineEnum.Offline)
             {
@@ -1210,6 +1239,10 @@ namespace SQLUI
                 dataGridView.CellEnter += DataGridView_CellEnter;
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
                 dataGridView.CellPainting += DataGridView_CellPainting;
+                dataGridView.CellEndEdit += DataGridView_CellEndEdit;
+                dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+                dataGridView.CellValidating += DataGridView_CellValidating;
+                dataGridView.CellValidated += DataGridView_CellValidated;
             }
             dataGridView.Paint += DataGridView_Paint;
             dataGridView.MouseWheel += DataGridView_MouseWheel;
@@ -1220,7 +1253,7 @@ namespace SQLUI
             this.flag_Init = true;
         }
 
- 
+
 
         public DataTable GetDataTable()
         {
@@ -2253,10 +2286,11 @@ namespace SQLUI
                     dataTable.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
                     continue;
                 }
-                dataTable.Columns.Add(new DataColumn(columns.Text));
+                dataTable.Columns.Add(new DataColumn(columns.Text , typeof(string)));
             }
             dataGridView.DataSource = dataTable;
-         
+            dataGridView.EditMode = DataGridViewEditMode.EditOnEnter;
+            dataGridView.ReadOnly = false;
             foreach (ColumnElement columns in Columns)
             {
                 //DataGridViewColumn dataGridViewColumn = new DataGridViewColumn();
@@ -2265,6 +2299,8 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+          
                 if (columns.OtherType == Table.OtherType.IMAGE)
                 {
                     ((DataGridViewImageColumn)dataGridView.Columns[$"{columns.Text}"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -3248,6 +3284,62 @@ namespace SQLUI
             int SelectRowindex = GetSelectRow();
             this.On_RowEnter(SelectRowindex);
         }
+        private void DataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
+            
+
+
+        }
+        private void DataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            object[] value = this.GetRowValues();
+            if (value == null) return;
+            string colname = dataGridView.Columns[e.ColumnIndex].Name;
+            int col_index = -1;
+            for (int i = 0; i < Columns.Count; i++)
+            {
+                if (Columns[i].Name == colname)
+                {
+                    col_index = i;
+                    break;
+                }
+            }
+            if (col_index == -1) return;
+            value[col_index] = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+            dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+            dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Black;
+            
+            dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font(cellStyleFont.FontFamily, cellStyleFont.Size, FontStyle.Bold);
+            if (value != null)
+            {
+                if (this.RowEndEditEvent != null) this.RowEndEditEvent(value , e.RowIndex,e.ColumnIndex, value[col_index].ToString());
+            }
+            dataGridView.Rows[0].Cells[e.ColumnIndex].Selected = true;
+            //dataGridView.CurrentCell = dataGridView.Rows[0].Cells[e.ColumnIndex];
+        }
+        private void DataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (this.flag_Refresh) return;
+            object[] value = this.GetRowValues();
+            if (value == null) return;
+            string colname = dataGridView.Columns[e.ColumnIndex].Name;
+            int col_index = -1;
+            for (int i = 0; i < Columns.Count; i++)
+            {
+                if (Columns[i].Name == colname)
+                {
+                    col_index = i;
+                    break;
+                }
+            }
+            if (col_index == -1) return;
+            if (this.CellValidatingEvent != null) CellValidatingEvent(value, e.RowIndex, e.ColumnIndex, e.FormattedValue.ToString(), e);
+        }
+        private void DataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
         private void CheckBoxHeader_CheckedChanged(object sender, EventArgs e)
         {
             if (!_顯示CheckBox) return;
@@ -3347,8 +3439,15 @@ namespace SQLUI
                     dataGridView.Rows[i].Selected = false;
                 }
             }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+         
+            }
         }
 
+
+   
+      
 
     }
 }
