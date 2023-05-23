@@ -68,6 +68,41 @@ namespace DrawingClass
             }
           
         }
+        static public void 文字中心繪製(String _str, Rectangle rectangle, int Width, Font 文字字體, Color 文字顏色, Graphics g)
+        {
+            char[] char_array = _str.ToArray();
+            if (char_array.Length - 1 < 0) return;
+            float str_width = 0;
+            float str_last_width = 0;
+            for (int i = 0; i < char_array.Length; i++)
+            {
+                SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                else str_last_width = sizeF.Width;
+            }
+            double space_width = (Width - str_last_width - str_width) / (char_array.Length - 1);
+
+
+            SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+            SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+            文字面積.Width = Width;
+            Point 文字位置 = new Point((int)((rectangle.Width - 文字面積.Width) / 2 + rectangle.X), (int)((rectangle.Height - 文字面積.Height) / 2 + rectangle.Y));
+            for (int i = 0; i < char_array.Length; i++)
+            {
+                SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置);
+                文字位置.X += (int)sizeF.Width;
+                文字位置.X += (int)space_width;
+            }
+        }
+        static public void 文字中心繪製(String _str, Rectangle rectangle, Font 文字字體, Color 文字顏色, Graphics g)
+        {
+            Size size = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+            Point p0 = new Point((rectangle.Width - size.Width) / 2 + rectangle.X, (rectangle.Height - size.Height) / 2 + rectangle.Y);
+            g.DrawString(_str, 文字字體, new SolidBrush(文字顏色), p0);
+        }
         static public void 文字中心繪製(String _str, PointF 文字位置, Font 文字字體, Color 文字顏色, Color 背景顏色, Graphics AxCanvasHDC, float Zoom_X, float Zoom_Y)
         {
             SizeF 文字面積 = AxCanvasHDC.MeasureString(_str, 文字字體);

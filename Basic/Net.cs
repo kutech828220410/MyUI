@@ -378,7 +378,43 @@ namespace Basic
                 return responseBody;
             }
         }
+        public static byte[] WEBApiPostJsonBytes(string url, string value)
+        {
+            byte[] result = Task.Run(async () =>
+            {
+                byte[] responseBody = await WEBApiPostJsonAsyncBytes(url, value);
+                return responseBody;
+            }).Result;
+            return result;
+        }
+        public static async Task<byte[]> WEBApiPostJsonAsyncBytes(string url, string value)
+        {
+            byte[] responseBody = new byte[0];
+            if (url.StringIsEmpty())
+            {
+                Console.WriteLine($"{Basic.Reflection.GetMethodName()} : 網址不得為空!");
+                return null;
+            }
 
+            try
+            {
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                HttpClient client = new HttpClient();
+                HttpRequestMessage request = new HttpRequestMessage();
+                request.RequestUri = new Uri(url);
+                request.Method = HttpMethod.Post;
+
+
+                request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
+                var response = await client.SendAsync(request);
+                responseBody = await response.Content.ReadAsByteArrayAsync();
+                return responseBody;
+            }
+            catch
+            {
+                return responseBody;
+            }
+        }
         public static string WebServicePost(string uri, StringBuilder _str)
         {
             return WebServicePost(uri, _str.ToString());

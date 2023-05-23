@@ -928,6 +928,7 @@ namespace Basic
         }
         #region Enum_Convert
         // 取得 Enum 列舉 Attribute Description 設定值
+   
         public static string GetDescriptionText<T>(this T source)
         {
             FieldInfo fi = source.GetType().GetField(source.ToString());
@@ -942,10 +943,16 @@ namespace Basic
             Array Array_Enum = System.Enum.GetValues(t);
             for (int i = 0; i < Array_Enum.Length; i++)
             {
-                if(Array_Enum.GetValue(i).ToString() != Array_Enum.GetValue(i).GetDescriptionText())
+              
+                if (Array_Enum.GetValue(i).GetDescriptionText().StringIsEmpty())
+                {
+                    texts[i] = Array_Enum.GetValue(i).ToString();
+                }
+                else
                 {
                     texts[i] = Array_Enum.GetValue(i).GetDescriptionText();
-                }          
+                }
+          
             }
             return texts;
         }
@@ -1101,6 +1108,10 @@ namespace Basic
             }
             return ToDATE_String(datetime.Year, datetime.Month, datetime.Day, split_char);
 
+        }
+        static public string ToDateTinyString(this DateTime item)
+        {
+            return $"{item.Year.ToString("0000")}{item.Month.ToString("00")}{item.Day.ToString("00")}";
         }
 
         static public string ToTimeString(this object item)
@@ -1332,6 +1343,70 @@ namespace Basic
             {
                 return true;
             }
+            if (date.ToString("MM/dd").Equals("10/10"))
+            {
+                return true;
+            }
+
+            // 國定假日(農曆)
+            System.Globalization.TaiwanLunisolarCalendar TaiwanLunisolarCalendar = new System.Globalization.TaiwanLunisolarCalendar();
+            string LeapDate = string.Format("{0}/{1}", TaiwanLunisolarCalendar.GetMonth(date), TaiwanLunisolarCalendar.GetDayOfMonth(date));
+            if (LeapDate == "12/30")
+            {
+                return true;
+            }
+            if (LeapDate == ("1/1"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/2"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/3"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/4"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("5/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("8/15"))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        public static bool IsHspitalHolidays(DateTime date)
+        {
+            // 週休二日
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return true;
+            }
+            // 國定假日(國曆)
+            if (date.ToString("MM/dd").Equals("01/01"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("02/28"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("04/05"))
+            {
+                return true;
+            }
+     
             if (date.ToString("MM/dd").Equals("10/10"))
             {
                 return true;

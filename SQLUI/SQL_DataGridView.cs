@@ -70,6 +70,7 @@ namespace SQLUI
         public void RowsChange(List<object[]> RowsList, bool SelectToDeep)
         {
             this.flag_Refresh = true;
+            dataGridView.CellValueChanged -= DataGridView_CellValueChanged;
             if (this.DataGridRowsChangeEvent != null)
             {
                 this.DataGridRowsChangeEvent(RowsList);
@@ -235,6 +236,7 @@ namespace SQLUI
                
             }));
             this.flag_Refresh = false;
+            dataGridView.CellValueChanged += DataGridView_CellValueChanged;
         }
         private void DataGridView_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -1225,7 +1227,7 @@ namespace SQLUI
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
                 dataGridView.CellPainting += DataGridView_CellPainting;
                 dataGridView.CellEndEdit += DataGridView_CellEndEdit;
-                dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+            
                 dataGridView.CellValidating += DataGridView_CellValidating;
                 dataGridView.CellValidated += DataGridView_CellValidated;
             }
@@ -1240,7 +1242,7 @@ namespace SQLUI
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
                 dataGridView.CellPainting += DataGridView_CellPainting;
                 dataGridView.CellEndEdit += DataGridView_CellEndEdit;
-                dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+               
                 dataGridView.CellValidating += DataGridView_CellValidating;
                 dataGridView.CellValidated += DataGridView_CellValidated;
             }
@@ -1435,7 +1437,7 @@ namespace SQLUI
                 }
                 if (!flag_OK)
                 {
-                    if ((k - 1) > 0)
+                    if ((k - 1) >= 0)
                     {
                         if(autoAdd)SQL_Add_Column(this.Columns[k].Name, this.Columns[k - 1].Name);
                     }

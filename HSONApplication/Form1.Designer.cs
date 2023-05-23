@@ -44,6 +44,8 @@
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,6 +63,7 @@
             this.plC_ScreenPage1.BackColor = System.Drawing.Color.White;
             this.plC_ScreenPage1.Controls.Add(this.tabPage1);
             this.plC_ScreenPage1.Controls.Add(this.tabPage2);
+            this.plC_ScreenPage1.Controls.Add(this.tabPage3);
             this.plC_ScreenPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_ScreenPage1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.plC_ScreenPage1.ForekColor = System.Drawing.Color.Black;
@@ -306,6 +309,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.plC_UI_Init1);
             this.tabPage2.Controls.Add(this.lowerMachine_Panel1);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton3);
@@ -419,6 +423,25 @@
             this.plC_RJ_ScreenButton4.顯示狀態 = false;
             this.plC_RJ_ScreenButton4.顯示讀取位置 = "";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1650, 1013);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1094, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -454,6 +477,8 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_顯示;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

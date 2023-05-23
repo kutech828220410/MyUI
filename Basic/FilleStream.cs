@@ -266,7 +266,7 @@ namespace Basic
                     File.Copy("\\\\" + filepath + "\\" + filename, desfilepath + "\\" + desfilename, true);
                 }
                 else
-                {
+                {                    
                     DirectoryInfo source = new DirectoryInfo(filepath);
                     FileInfo[] finfo = source.GetFiles();
 
@@ -282,6 +282,42 @@ namespace Basic
             catch (Exception ex)
             {
                 return false;
+            }
+        }
+
+        static public DateTime GetLastWriteTime(string filepath, string filename, string username, string password)
+        {
+            try
+            {
+                DateTime dateTime;
+                bool bln = false;
+                bln = Connect(filepath, username, password);
+                dateTime =  File.GetLastWriteTime($"{filepath}\\{filename}");
+                bln = DisConnect(filepath);
+                return dateTime;
+
+            }
+            catch
+            {
+                return DateTime.MinValue;
+            }
+          
+        }
+        static public DateTime GetCreationTime(string filepath, string filename, string username, string password)
+        {
+            try
+            {
+                DateTime dateTime;
+                bool bln = false;
+                bln = Connect(filepath, username, password);
+                dateTime = File.GetCreationTime($"{filepath}\\{filename}");
+                bln = DisConnect(filepath);
+                return dateTime;
+
+            }
+            catch
+            {
+                return DateTime.MinValue;
             }
         }
 

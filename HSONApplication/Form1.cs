@@ -35,7 +35,7 @@ namespace HSONApplication
             [JsonPropertyName("lot_number")]
             public string 批號 { get; set; }
             [JsonPropertyName("acceptance_date")]
-            public string 驗收時間 { get; set; }
+            public string 盤點時間 { get; set; }
             [JsonPropertyName("state")]
             public string 狀態 { get; set; }
 
@@ -130,6 +130,9 @@ namespace HSONApplication
           //  this.sqL_DataGridView_人員資料.ReplaceExtra(RowValue, true);
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<string> list_text = MyFileStream.LoadFile(@"C:\Users\User\Desktop\IP_LOCK.txt");
+        }
     }
 }

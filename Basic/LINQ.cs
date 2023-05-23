@@ -184,18 +184,27 @@ namespace Basic
 
             return dst_values;
         }
-
+      
         static public object[] CopyRow(this object[] src_value ,object enum_src, object enum_dst, params int[] src_exclude)
         {
             string[] dst_EnumNames = enum_dst.GetEnumNames();
             object[] dst_value = new object[dst_EnumNames.Length];
             return src_value.CopyRow(ref dst_value, enum_src, enum_dst, src_exclude);
         }
+        static public object[] CopyRow(this object[] src_value, string[] src_EnumNames, string[] dst_EnumNames, params int[] src_exclude)
+        {
+            object[] dst_value = new object[dst_EnumNames.Length];
+            return src_value.CopyRow(ref dst_value, src_EnumNames, dst_EnumNames, src_exclude);
+        }
         static public object[] CopyRow(this object[] src_value, ref object[] dst_value, object enum_src, object enum_dst, params int[] src_exclude)
         {
             string[] src_EnumNames = enum_src.GetEnumNames();
             string[] dst_EnumNames = enum_dst.GetEnumNames();
-          
+
+            return src_value.CopyRow(ref dst_value, src_EnumNames, dst_EnumNames, src_exclude);
+        }
+        static public object[] CopyRow(this object[] src_value, ref object[] dst_value, string[] src_EnumNames, string[] dst_EnumNames, params int[] src_exclude)
+        {
             bool flag_continue = false;
             for (int i = 0; i < dst_EnumNames.Length; i++)
             {
@@ -204,7 +213,7 @@ namespace Basic
                     flag_continue = false;
                     for (int m = 0; m < src_exclude.Length; m++)
                     {
-                        if(k == src_exclude[m])
+                        if (k == src_exclude[m])
                         {
                             flag_continue = true;
                             break;
@@ -224,7 +233,6 @@ namespace Basic
             }
             return dst_value;
         }
-
         static public int RemoveByGUID(this List<object[]> list_value, object[] serchvalue)
         {
             List<object[]> list_serchvalue = new List<object[]>();
