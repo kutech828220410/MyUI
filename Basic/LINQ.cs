@@ -125,8 +125,15 @@ namespace Basic
                           select value).ToList();
             return list_value;
         }
+        static public List<object[]> GetRowsInDateEx(this List<object[]> list_value, int colindex, DateTime datetime_start, DateTime datetime_end)
+        {
+            list_value = (from value in list_value
+                          where TypeConvert.IsInDate(value[colindex].StringToDateTime(), datetime_start, datetime_end)
+                          select value).ToList();
+            return list_value;
+        }
 
-        
+
         static public bool IsEqual(this object[] srcvalue, object[] dstvalue ,params int[] exclude)
         {
             bool flag_continue = false;

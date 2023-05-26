@@ -62,7 +62,7 @@ namespace SQLUI
             SeverString += string.Format("password='{0}';", Password);
             SeverString += string.Format("Port='{0}';", Port);
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
-            TestConnection();
+            //TestConnection();
         }
         public SQLControl(string Server, string Database, string UserID, string Password, uint Port, MySqlSslMode SSLMode)
         {
@@ -144,7 +144,26 @@ namespace SQLUI
         {
 
         }
-
+        public void Set_Config(string server, string dbName)
+        {
+            this.Server = server;
+            this.Database = dbName;
+            _MySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
+            {
+                Server = Server,
+                Database = Database,
+                UserID = UserID,
+                Password = Password,
+                Port = Port,
+                SslMode = SSLMode
+            };
+            SeverString += string.Format("server='{0}';", Server);
+            SeverString += string.Format("database='{0}';", Database);
+            SeverString += string.Format("user id='{0}';", UserID);
+            SeverString += string.Format("password='{0}';", Password);
+            SeverString += string.Format("Port='{0}';", Port);
+            SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
+        }
         public void Set_Database(string Database)
         {
             this.Database = Database;
