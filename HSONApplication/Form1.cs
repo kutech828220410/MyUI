@@ -132,7 +132,18 @@ namespace HSONApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string> list_text = MyFileStream.LoadFile(@"C:\Users\User\Desktop\IP_LOCK.txt");
+            string temp = " VARCHAR  ";
+            int index_of = temp.IndexOf('(');
+            int num = 50;
+            if(index_of != -1)
+            {
+                string str_num = temp.Substring(index_of, temp.Length - index_of);
+                str_num = str_num.Replace("(", "");
+                str_num = str_num.Replace(")", "");
+                num = str_num.StringToInt32();
+            }
+            temp = temp.Remove(index_of, temp.Length - index_of);
+            temp = temp.Trim();
         }
     }
 }

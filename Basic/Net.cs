@@ -180,6 +180,7 @@ namespace Basic
                 WriteIndented = WriteIndented,
                 IgnoreReadOnlyProperties = true,
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                IgnoreNullValues = true,
             };
             string jsonString = JsonSerializer.Serialize<object>(value, options);
             return jsonString;

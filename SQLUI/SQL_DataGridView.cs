@@ -1207,6 +1207,24 @@ namespace SQLUI
             this.TableName = sQL_DataGridView.TableName;
             this.Init();
         }
+        public void Init(Table table)
+        {
+            this.TableName = table.TableName;
+            for(int i = 0; i < table.ColumnList.Count; i++)
+            {
+                ColumnElement columnElement = new ColumnElement();
+                columnElement.Name = table.ColumnList[i].Name;
+                columnElement.Text = table.ColumnList[i].Name;
+                columnElement.IndexType = table.ColumnList[i].IndexType;
+                columnElement.StringType = table.ColumnList[i].StringType;
+                columnElement.ValueType = table.ColumnList[i].ValueType;
+                columnElement.DateType = table.ColumnList[i].DateType;
+                columnElement.OtherType = table.ColumnList[i].OtherType;
+                columnElement.Datalen = (uint)table.ColumnList[i].Num;
+                this.Columns.Add(columnElement);
+            }
+            Init();
+        }
         public void Init(List<ColumnElement> Columns)
         {
             this.Columns = Columns.DeepClone();
@@ -1417,46 +1435,8 @@ namespace SQLUI
         }
         public bool SQL_CheckAllColumnName(bool autoAdd)
         {
-            object[] obj_colname = this.SQL_GetAllColumn_Name();
-            List<string> list_error_msg = new List<string>();
-            string error_msg = "";
-            for (int k = 0; k < this.Columns.Count; k++)
-            {
-                bool flag_OK = false;
-                for (int i = 0; i < obj_colname.Length; i++)
-                {
-                    string str = obj_colname[i].ObjectToString();
-                    if (this.Columns[k].Name == str)
-                    {
-                        if (i != k)
-                        {
-                            list_error_msg.Add($"排序不一致>>>ColumnName : [{str}] ,Database排序 : {i} , 程式排序 : {k}");
-                        }
-                        flag_OK = true;
-                    }                  
-                }
-                if (!flag_OK)
-                {
-                    if ((k - 1) >= 0)
-                    {
-                        if(autoAdd)SQL_Add_Column(this.Columns[k].Name, this.Columns[k - 1].Name);
-                    }
-                  
-                    list_error_msg.Add($"DataBase找無欄位>> 請新增   [排序:{k}]{this.Columns[k].ToString()}");
-                }
-            }
-            
-            for (int i = 0; i < list_error_msg.Count; i++)
-            {
-                error_msg += $"({(i+1).ToString("00")}).{list_error_msg[i]}\n";
-            }
-            if (error_msg.Length != 0)
-            {
-                error_msg = $"TableName : {SQL_Table.GetTableName()}\n{error_msg}";
-                Console.WriteLine($"{error_msg}");
-                //MyMessageBox.ShowDialog(error_msg);
-            }
-            return (error_msg.Length == 0);
+            return _SQLControl.CheckAllColumnName(SQL_Table, autoAdd);
+        
         }
         public object[] SQL_GetAllColumn_Name()
         {
@@ -2965,6 +2945,7 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
             }
         }
         public void Set_ColumnWidth(int width, object Enum)
@@ -2991,8 +2972,40 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
             }
         }
+        public void Set_ColumnWidth(int width, DataGridViewContentAlignment alignment, object Enum)
+        {
+            this.Set_ColumnWidth(width, alignment, Enum.GetEnumName());
+        }
+        public void Set_ColumnWidth(int width, DataGridViewContentAlignment alignment, string name)
+        {
+            for (int i = 0; i < name.Length; i++)
+            {
+                for (int k = 0; k < this.Columns.Count; k++)
+                {
+                    if (this.Columns[k].Name == name)
+                    {
+                        Columns[k].Width = width;
+                        Columns[k].Visable = true;
+                        Columns[k].Alignment = alignment;
+                        Columns[k].CanEdit = false;
+                    }
+                }
+            }
+            foreach (ColumnElement columns in Columns)
+            {
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
+                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+            }
+        }
+
+
         public void Set_ColumnHeaderHeight(int height)
         {
             this.columnHeadersHeight = height;
@@ -3345,6 +3358,8 @@ namespace SQLUI
         private void CheckBoxHeader_CheckedChanged(object sender, EventArgs e)
         {
             if (!_顯示CheckBox) return;
+            this.SuspendDrawing();
+            dataGridView.SuspendDrawing();
             if (checkBoxHeader.Checked)
             {
                 for (int i = 0; i < dataGridView.RowCount; i++)
@@ -3364,6 +3379,8 @@ namespace SQLUI
             }
             flag_unCheckedAll = true;
             this.On_CheckedChanged(-1);
+            this.ResumeDrawing();
+            dataGridView.ResumeDrawing();
         }
         public void On_RowDoubleClick()
         {

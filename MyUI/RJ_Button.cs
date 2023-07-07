@@ -12,6 +12,8 @@ namespace MyUI
 {
     public class RJ_Button : Button
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private int borderSize = 0;
         private int borderRadius = 40;
         private Color borderColor = Color.PaleVioletRed;
@@ -124,7 +126,7 @@ namespace MyUI
             Toggle,
         }
 
-        private bool state = false;
+        public bool state = false;
         private bool state_buf = false;
         [ReadOnly(false), Browsable(false), Category(""), Description(""), DefaultValue("")]
         public bool State
@@ -260,6 +262,13 @@ namespace MyUI
                 this.Invalidate();
             }
         }
+
+        private bool flag_MouseDownEventEx_done = false;
+        public delegate void MouseDownEventExHandler(RJ_Button rJ_Button, MouseEventArgs mevent);
+        public event MouseDownEventExHandler MouseDownEventEx;
+       
+
+
         private bool flag_MouseDownEvent_done = false;
         public delegate void MouseDownEventHandler(MouseEventArgs mevent);
         public event MouseDownEventHandler MouseDownEvent;
@@ -278,7 +287,8 @@ namespace MyUI
                 Task task = Task.Factory.StartNew(new Action(delegate
                 {
                     if (this.MouseDownEvent != null) this.MouseDownEvent(mevent);
-                    if(AutoResetState)
+                    if (this.MouseDownEventEx != null) this.MouseDownEventEx(this, mevent);
+                    if (AutoResetState)
                     {
                         this.Invoke(new Action(delegate
                         {
@@ -304,6 +314,7 @@ namespace MyUI
                 Task task = Task.Factory.StartNew(new Action(delegate
                 {
                     if (this.MouseDownEvent != null) this.MouseDownEvent(mevent);
+                    if (this.MouseDownEventEx != null) this.MouseDownEventEx(this, mevent);
                     if (AutoResetState)
                     {
                         this.Invoke(new Action(delegate

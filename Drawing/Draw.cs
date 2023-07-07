@@ -36,35 +36,225 @@ namespace DrawingClass
         {
             文字左上繪製(_str, Width, 文字位置, 文字字體, 文字顏色, Color.Transparent, g);
         }
+        static public void 文字左上繪製(String _str, int Width, PointF 文字位置, int 高度, Font 文字字體, int 文字間距, Color 文字顏色, Color 背景顏色, Graphics g)
+        {
+            _str = _str.Replace("\\n", "\n");
+            string[] list_line = _str.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            SizeF src_size = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+            RectangleF rectangleF = new RectangleF(文字位置.X, 文字位置.Y, src_size.Width, 高度);
+
+            if (list_line.Length == 1)
+            {
+                char[] char_array = _str.ToArray();
+      
+                if (char_array.Length - 1 < 0) return;
+                float str_width = 0;
+                float str_last_width = 0;
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                    if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                    else str_last_width = sizeF.Width;
+                }
+                double space_width = 文字間距;
+
+
+                SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                文字面積.Width = Width;
+                文字位置 = new PointF((float)文字位置.X, (float)文字位置.Y);
+                g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                    g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), new RectangleF(文字位置.X, 文字位置.Y, rectangleF.Width, rectangleF.Height));
+                    文字位置.X += sizeF.Width;
+                    文字位置.X += (float)space_width;
+                }
+            }
+            else
+            {
+
+                for (int k = 0; k < list_line.Length; k++)
+                {
+                    PointF 文字位置_src = new PointF(文字位置.X, 文字位置.Y);
+                    SizeF lint_sizeF = System.Windows.Forms.TextRenderer.MeasureText(list_line[k], 文字字體);
+                    char[] char_array = list_line[k].ToArray();
+                    if (char_array.Length - 1 < 0) return;
+
+                    float str_width = 0;
+                    float str_last_width = 0;
+
+
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                        if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                        else str_last_width = sizeF.Width;
+                    }
+                    double space_width = 文字間距;
+                    SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                    SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                    文字面積.Width = Width;
+                    文字位置_src = new PointF((float)文字位置_src.X, (float)(文字位置_src.Y + lint_sizeF.Height * k));
+                    g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置_src, 文字面積));
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                        g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), new RectangleF(文字位置_src.X, 文字位置_src.Y, rectangleF.Width, rectangleF.Height));
+                        文字位置_src.X += sizeF.Width;
+                        文字位置_src.X += (float)space_width;
+                    }
+                }
+            }
+        }
+        static public void 文字左上繪製(String _str, int Width, PointF 文字位置, Font 文字字體, int 文字間距, Color 文字顏色, Color 背景顏色, Graphics g)
+        {
+            _str = _str.Replace("\\n", "\n");
+            string[] list_line = _str.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            if (list_line.Length == 1)
+            {
+                char[] char_array = _str.ToArray();
+                if (char_array.Length - 1 < 0) return;
+                float str_width = 0;
+                float str_last_width = 0;
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                    if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                    else str_last_width = sizeF.Width;
+                }
+                double space_width = 文字間距;
+
+
+                SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                文字面積.Width = Width;
+                文字位置 = new PointF((float)文字位置.X, (float)文字位置.Y);
+                g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                    g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置);
+                    文字位置.X += sizeF.Width;
+                    文字位置.X += (float)space_width;
+                }
+            }
+            else
+            {
+
+                for (int k = 0; k < list_line.Length; k++)
+                {
+                    PointF 文字位置_src = new PointF(文字位置.X, 文字位置.Y);
+                    SizeF lint_sizeF = System.Windows.Forms.TextRenderer.MeasureText(list_line[k], 文字字體);
+                    char[] char_array = list_line[k].ToArray();
+                    if (char_array.Length - 1 < 0) return;
+
+                    float str_width = 0;
+                    float str_last_width = 0;
+                 
+          
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                        if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                        else str_last_width = sizeF.Width;
+                    }
+                    double space_width = 文字間距;
+                    SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                    SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                    文字面積.Width = Width;
+                    文字位置_src = new PointF((float)文字位置_src.X, (float)(文字位置_src.Y + lint_sizeF.Height * k));
+                    g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置_src, 文字面積));
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                        g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置_src);
+                        文字位置_src.X += sizeF.Width;
+                        文字位置_src.X += (float)space_width;
+                    }
+                }
+            }
+        }
         static public void 文字左上繪製(String _str, int Width, PointF 文字位置, Font 文字字體, Color 文字顏色, Color 背景顏色, Graphics g)
         {
-       
-            char[] char_array = _str.ToArray();
-            if (char_array.Length - 1 < 0) return;
-            float str_width = 0;
-            float str_last_width = 0;
-            for (int i = 0; i < char_array.Length; i++)
-            {
-                SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
-                if (i != (char_array.Length - 1)) str_width += sizeF.Width;
-                else str_last_width = sizeF.Width;
-            }
-            double space_width = (Width  - str_last_width - str_width) / (char_array.Length - 1);
     
-           
-            SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
-            SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
-            文字面積.Width = Width;
-            文字位置 = new PointF((float)文字位置.X, (float)文字位置.Y);
-            g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
-            for (int i = 0; i < char_array.Length; i++) 
-            {             
-                SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
-                
+            _str = _str.Replace("\\n", "\n");
+            string[] list_line = _str.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            if (list_line.Length == 1)
+            {
+                char[] char_array = _str.ToArray();
+                if (char_array.Length - 1 < 0) return;
+                float str_width = 0;
+                float str_last_width = 0;
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                    if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                    else str_last_width = sizeF.Width;
+                }
+                double space_width = (Width - str_last_width - str_width) / (char_array.Length - 1);
 
-                g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置);
-                文字位置.X += sizeF.Width;
-                文字位置.X += (float)space_width;
+
+                SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                文字面積.Width = Width;
+                文字位置 = new PointF((float)文字位置.X, (float)文字位置.Y);
+                g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
+                for (int i = 0; i < char_array.Length; i++)
+                {
+                    SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                    g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置);
+                    文字位置.X += sizeF.Width;
+                    文字位置.X += (float)space_width;
+                }
+            }
+            else
+            {
+     
+                for (int k = 0; k < list_line.Length; k++)
+                {
+                    PointF 文字位置_src = new PointF(文字位置.X, 文字位置.Y);
+                    SizeF lint_sizeF = System.Windows.Forms.TextRenderer.MeasureText(list_line[k], 文字字體);
+                    char[] char_array = list_line[k].ToArray();
+                    if (char_array.Length - 1 < 0) return;
+
+                    float str_width = 0;
+                    float str_last_width = 0;
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+                        if (i != (char_array.Length - 1)) str_width += sizeF.Width;
+                        else str_last_width = sizeF.Width;
+                    }
+                    double space_width = (Width - str_last_width - str_width) / (char_array.Length - 1);
+
+
+                    SizeF 文字面積 = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+                    SizeF str_area = System.Windows.Forms.TextRenderer.MeasureText(char_array[char_array.Length - 1].ToString(), 文字字體);
+                    文字面積.Width = Width;
+                    文字位置_src = new PointF((float)文字位置_src.X, (float)(文字位置_src.Y + lint_sizeF.Height * k));
+                    g.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置_src, 文字面積));
+                    for (int i = 0; i < char_array.Length; i++)
+                    {
+                        SizeF sizeF = System.Windows.Forms.TextRenderer.MeasureText(char_array[i].ToString(), 文字字體);
+
+
+                        g.DrawString(char_array[i].ToString(), 文字字體, new SolidBrush(文字顏色), 文字位置_src);
+                        文字位置_src.X += sizeF.Width;
+                        文字位置_src.X += (float)space_width;
+                    }
+                }
             }
           
         }

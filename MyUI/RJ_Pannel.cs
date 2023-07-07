@@ -33,11 +33,14 @@ namespace MyUI
 
             private Point location;
             private Size size;
+            private string gUID = "";
+            public string GUID { get => gUID; set => gUID = value; }
 
             public int BorderSize { get => borderSize; set => borderSize = value; }
             public int BorderRadius { get => borderRadius; set => borderRadius = value; }
             public Point Location { get => location; set => location = value; }
             public Size Size { get => size; set => size = value; }
+       
 
             public static string GetJaonstring(RJ_Pannel control)
             {

@@ -14,6 +14,8 @@ namespace MyUI
     [DefaultEvent("_TextChanged")]
     public partial class RJ_TextBox : UserControl
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private Color borderColor = Color.MediumSlateBlue;
         private int borderSize = 2;
         private bool underlineStyle = false;
@@ -170,6 +172,7 @@ namespace MyUI
                 {
                     this.Invoke(new Action(delegate
                     {
+                        if (isPlaceholder && value == "") return;
                         textBox1.Text = value;
                         RemovePlcaeHolder();
                         textBox1.Text = value;

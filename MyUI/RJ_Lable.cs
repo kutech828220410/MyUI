@@ -12,6 +12,8 @@ namespace MyUI
 {
     public class RJ_Lable :Label
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private int borderSize = 0;
         private int borderRadius = 40;
         private Color borderColor = Color.PaleVioletRed;

@@ -13,6 +13,8 @@ namespace MyUI
     [DefaultEvent("OnSelectedIndexChanged")]
     public class RJ_ComboBox : UserControl
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private Color backColor = Color.WhiteSmoke;
         private Color iconColor = Color.RoyalBlue;
         private Color listBackColor = Color.FromArgb(230, 228, 245);

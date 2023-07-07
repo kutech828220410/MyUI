@@ -9,6 +9,10 @@ using System.Drawing;
 using System.Diagnostics;
 using System.IO;
 using Basic;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.ComponentModel;
+
 namespace SQLUI
 {
     public class SQLControl
@@ -603,7 +607,7 @@ namespace SQLUI
             foreach (Table.ColumnElement temp in _Table.GetColumnList())
             {
                 if (temp.TypeName == Table.GetTypeName(Table.StringType.TINYTEXT)) continue;
-                if (temp.TypeName == Table.GetTypeName(Table.StringType.TEXT)) continue;
+                //if (temp.TypeName == Table.GetTypeName(Table.StringType.TEXT)) continue;
                 if (temp.TypeName == Table.GetTypeName(Table.StringType.LONGTEXT)) continue;
                 if (temp.TypeName == Table.GetTypeName(Table.StringType.LONGBLOB)) continue;
                 if (temp.TypeName == Table.GetTypeName(Table.StringType.MEDIUMTEXT)) continue;
@@ -624,7 +628,51 @@ namespace SQLUI
 
             return 1;
         }
-  
+        public bool CheckAllColumnName(Table table ,bool autoAdd)
+        {
+            string TableName = table.GetTableName();
+            object[] obj_colname = this.GetAllColumn_Name(TableName);
+            List<string> list_error_msg = new List<string>();
+            string error_msg = "";
+            for (int k = 0; k < table.GetColumnList().Count; k++)
+            {
+                bool flag_OK = false;
+                for (int i = 0; i < obj_colname.Length; i++)
+                {
+                    string str = obj_colname[i].ObjectToString();
+                    if (table.GetColumnList()[k].Name == str)
+                    {
+                        if (i != k)
+                        {
+                            list_error_msg.Add($"排序不一致>>>ColumnName : [{str}] ,Database排序 : {i} , 程式排序 : {k}");
+                        }
+                        flag_OK = true;
+                    }
+                }
+                if (!flag_OK)
+                {
+                    if ((k - 1) >= 0)
+                    {
+                        if (autoAdd) Add_Column(TableName, table.GetColumnList()[k].Name, table.GetTypeName(table.GetColumnList()[k].Name), table.GetIndexType(table.GetColumnList()[k].Name), table.GetColumnList()[k - 1].Name);
+                    }
+
+                    list_error_msg.Add($"DataBase找無欄位>> 請新增   [排序:{k}]{table.GetColumnList()[k].ToString()}");
+                }
+            }
+
+            for (int i = 0; i < list_error_msg.Count; i++)
+            {
+                error_msg += $"({(i + 1).ToString("00")}).{list_error_msg[i]}\n";
+            }
+            if (error_msg.Length != 0)
+            {
+                error_msg = $"TableName : {table.GetTableName()}\n{error_msg}";
+                Console.WriteLine($"{error_msg}");
+                //MyMessageBox.ShowDialog(error_msg);
+            }
+            return (error_msg.Length == 0);
+        }
+
         public string[] GetTables()
         {
             List<string> string_list = new List<string>();
@@ -948,7 +996,19 @@ namespace SQLUI
 
             return list_endcoding.ToArray();
         }
-     
+
+        public bool ColumnName_Enum_IsEqual(object _enum)
+        {
+            string[] _enum_ary = _enum.GetEnumNames();
+            string[] colName_ary = GetAllColumn_Name(null);
+            if (_enum_ary.Length != colName_ary.Length) return false;
+            for (int i = 0; i < _enum_ary.Length; i++)
+            {
+                if (_enum_ary[i] != colName_ary[i]) return false;
+            }
+            return true;
+        }
+
         #region Method_Index
         public void Modify_Index(string TableName, string ColumnName, Table.IndexType IndexType)
         {
@@ -2538,15 +2598,134 @@ namespace SQLUI
     }
     public class Table
     {
-        DateTime Date = DateTime.Now;
-        private string TableName = "";
+        private DateTime Date = DateTime.Now;
+        private string tableName = "";
+        private List<ColumnElement> columnList = new List<ColumnElement>();
+        [JsonPropertyName("tableName")]
+        public string TableName { get => tableName; set => tableName = value; }
+        [JsonPropertyName("columnList")]
+        public List<ColumnElement> ColumnList { get => columnList; set => columnList = value; }
         public class ColumnElement
         {
-           public string Name;
-           public string TypeName;
-           public IndexType IndexType = IndexType.None;
+            public override string ToString()
+            {
+                return $"名稱 : {Name} ,類別 : {TypeName} , 索引 : {IndexType.ToString()}";
+            }
+
+            private string name;
+            private string typeName;
+            private IndexType indexType = IndexType.None;
+            private int num = 50;
+
+            [JsonPropertyName("name")]
+            public string Name { get => name; set => name = value; }
+            [JsonPropertyName("typeName")]
+            public string TypeName { get => typeName; set => typeName = value; }
+            [JsonPropertyName("indexType")]
+            public IndexType IndexType { get => indexType; set => indexType = value; }
+            [JsonIgnore]
+            public Table.OtherType OtherType
+            {
+                get
+                {
+                    string temp = TypeName;
+                    int index_of = temp.IndexOf('(');
+
+                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    temp = temp.Trim();
+
+                    string[] ary = new Table.OtherType().GetEnumNames();
+                    for (int i = 0; i < ary.Length; i++)
+                    {
+                        if (temp == ary[i])
+                        {
+                            return (OtherType)i;
+                        }
+                    }
+                    return OtherType.None;
+                }
+            }
+            [JsonIgnore]
+            public Table.ValueType ValueType
+            {
+                get
+                {
+                    string temp = TypeName;
+                    int index_of = temp.IndexOf('(');
+     
+                    int num = 50;
+                    if (index_of != -1)
+                    {
+                        string str_num = temp.Substring(index_of, temp.Length - index_of);
+                        str_num = str_num.Replace("(", "");
+                        str_num = str_num.Replace(")", "");
+                        num = str_num.StringToInt32();
+                        this.Num = num;
+                    }
+                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    temp = temp.Trim();
+                    string[] ary = new Table.ValueType().GetEnumNames();
+                    for (int i = 0; i < ary.Length; i++)
+                    {
+                        if (temp == ary[i])
+                        {
+                            return (ValueType)i;
+                        }
+                    }
+                    return ValueType.None;
+                }
+            }
+            [JsonIgnore]
+            public Table.StringType StringType
+            {
+                get
+                {
+                    string temp = TypeName;
+                    int index_of = temp.IndexOf('(');
+                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    temp = temp.Trim();
+                    string[] ary = new Table.StringType().GetEnumNames();
+                    for (int i = 0; i < ary.Length; i++)
+                    {
+                        if (temp == ary[i])
+                        {
+                            return (StringType)i;
+                        }
+                    }
+                    return StringType.None;
+                }
+            }
+            [JsonIgnore]
+            public Table.DateType DateType
+            {
+                get
+                {
+                    string temp = TypeName;
+                    int index_of = temp.IndexOf('(');
+                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    temp = temp.Trim();
+                    string[] ary = new Table.DateType().GetEnumNames();
+                    for (int i = 0; i < ary.Length; i++)
+                    {
+                        if (temp == ary[i])
+                        {
+                            return (DateType)i;
+                        }
+                    }
+                    return DateType.None;
+                }
+            }
+            [JsonIgnore]
+            public int Num { get => num; set => num = value; }
         }
-        private List<ColumnElement> ColumnList = new List<ColumnElement>();
+        [JsonConstructor]
+        public Table(string tableName, List<ColumnElement> columnList)
+        {
+            TableName = tableName;
+            ColumnList = columnList;
+        }
+
+
 
         public enum IndexType
         {
@@ -2878,11 +3057,11 @@ namespace SQLUI
             }
             else if (_StringType == StringType.TEXT)
             {
-                str = " SMALLINT";
+                str = " TEXT";
             }
             else if (_StringType == StringType.LONGTEXT)
             {
-                str = " SMALLINT";
+                str = " LONGTEXT";
             }
 
             return str;

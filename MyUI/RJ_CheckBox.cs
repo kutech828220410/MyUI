@@ -16,6 +16,8 @@ namespace MyUI
 {
     public class RJ_CheckBox : CheckBox
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private Color onBackColor = Color.MediumSlateBlue;
         private Color onToggleColor = Color.WhiteSmoke;
         private Color offBackColor = Color.Gray;

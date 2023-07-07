@@ -17,6 +17,8 @@ namespace MyUI
     [Designer(typeof(MyUserControlDesigner))]
     public class RJ_GroupBox :UserControl
     {
+        private string gUID = "";
+        public string GUID { get => gUID; set => gUID = value; }
         private RJ_Lable rJ_Lable_Title;
         private RJ_Pannel rJ_Pannel;
 
