@@ -2368,6 +2368,10 @@ namespace SQLUI
             }
             return list_value;
         }
+        public void SetSelectRow(object[] value)
+        {
+            this.SetSelectRow("GUID", value[0].ObjectToString());
+        }
         public void SetSelectRow(string[] ColumnName, string[] value)
         {
             if (ColumnName.Length != value.Length) return;
@@ -2410,6 +2414,8 @@ namespace SQLUI
         {
             this.Invoke(new Action(delegate
             {
+                this.SuspendDrawing();
+                dataGridView.SuspendDrawing();
                 if (index < dataGridView.Rows.Count)
                 {
                     for (int i = 0; i < dataGridView.Rows.Count; i++)
@@ -2418,6 +2424,8 @@ namespace SQLUI
                     }
                     dataGridView.Rows[index].Selected = true;
                 }
+                this.ResumeDrawing();
+                dataGridView.ResumeDrawing();
             }));
           
             if (RowEnterEvent != null) RowEnterEvent(this.GetRowValues(index));
@@ -3381,6 +3389,19 @@ namespace SQLUI
             this.On_CheckedChanged(-1);
             this.ResumeDrawing();
             dataGridView.ResumeDrawing();
+        }
+
+        public void On_RowDoubleClick(int SelectRowindex)
+        {
+            if (SelectRowindex_Buf != SelectRowindex)
+            {
+                SelectRowindex_Buf = SelectRowindex;
+                object[] value = this.GetRowValues(SelectRowindex);
+                if (value != null)
+                {
+                    if (this.RowEnterEvent != null) this.RowDoubleClickEvent(value);
+                }
+            }
         }
         public void On_RowDoubleClick()
         {

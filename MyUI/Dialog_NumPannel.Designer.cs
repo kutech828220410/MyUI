@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_top = new System.Windows.Forms.Panel();
             this.rJ_Button_X = new MyUI.RJ_Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -50,21 +50,23 @@
             this.rJ_Button_Enter = new MyUI.RJ_Button();
             this.rJ_TextBox_Value = new MyUI.RJ_TextBox();
             this.rJ_Lable_Title = new MyUI.RJ_Lable();
-            this.panel1.SuspendLayout();
+            this.rJ_Lable_Content = new MyUI.RJ_Lable();
+            this.panel_top.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_top
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Window;
-            this.panel1.Controls.Add(this.rJ_Lable_Title);
-            this.panel1.Controls.Add(this.rJ_Button_X);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 44);
-            this.panel1.TabIndex = 1;
+            this.panel_top.BackColor = System.Drawing.SystemColors.Window;
+            this.panel_top.Controls.Add(this.rJ_Lable_Content);
+            this.panel_top.Controls.Add(this.rJ_Lable_Title);
+            this.panel_top.Controls.Add(this.rJ_Button_X);
+            this.panel_top.Controls.Add(this.panel2);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Location = new System.Drawing.Point(5, 5);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(402, 33);
+            this.panel_top.TabIndex = 1;
             // 
             // rJ_Button_X
             // 
@@ -78,11 +80,12 @@
             this.rJ_Button_X.Dock = System.Windows.Forms.DockStyle.Right;
             this.rJ_Button_X.FlatAppearance.BorderSize = 0;
             this.rJ_Button_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 14.25F);
+            this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_X.ForeColor = System.Drawing.Color.White;
-            this.rJ_Button_X.Location = new System.Drawing.Point(361, 0);
+            this.rJ_Button_X.GUID = "";
+            this.rJ_Button_X.Location = new System.Drawing.Point(317, 0);
             this.rJ_Button_X.Name = "rJ_Button_X";
-            this.rJ_Button_X.Size = new System.Drawing.Size(41, 36);
+            this.rJ_Button_X.Size = new System.Drawing.Size(85, 23);
             this.rJ_Button_X.State = false;
             this.rJ_Button_X.TabIndex = 15;
             this.rJ_Button_X.Text = "X";
@@ -93,9 +96,9 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 36);
+            this.panel2.Location = new System.Drawing.Point(0, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(402, 8);
+            this.panel2.Size = new System.Drawing.Size(402, 10);
             this.panel2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -118,9 +121,9 @@
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button15);
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button_Enter);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 127);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 116);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(402, 330);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(402, 353);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // rJ_Button_1
@@ -136,6 +139,7 @@
             this.rJ_Button_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_1.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_1.GUID = "";
             this.rJ_Button_1.Location = new System.Drawing.Point(3, 3);
             this.rJ_Button_1.Name = "rJ_Button_1";
             this.rJ_Button_1.Size = new System.Drawing.Size(93, 76);
@@ -159,6 +163,7 @@
             this.rJ_Button_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_2.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_2.GUID = "";
             this.rJ_Button_2.Location = new System.Drawing.Point(102, 3);
             this.rJ_Button_2.Name = "rJ_Button_2";
             this.rJ_Button_2.Size = new System.Drawing.Size(93, 76);
@@ -182,6 +187,7 @@
             this.rJ_Button_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_3.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_3.GUID = "";
             this.rJ_Button_3.Location = new System.Drawing.Point(201, 3);
             this.rJ_Button_3.Name = "rJ_Button_3";
             this.rJ_Button_3.Size = new System.Drawing.Size(93, 76);
@@ -205,6 +211,7 @@
             this.rJ_Button_BackSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_BackSpace.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_BackSpace.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_BackSpace.GUID = "";
             this.rJ_Button_BackSpace.Location = new System.Drawing.Point(300, 3);
             this.rJ_Button_BackSpace.Name = "rJ_Button_BackSpace";
             this.rJ_Button_BackSpace.Size = new System.Drawing.Size(93, 76);
@@ -228,6 +235,7 @@
             this.rJ_Button_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_4.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_4.GUID = "";
             this.rJ_Button_4.Location = new System.Drawing.Point(3, 85);
             this.rJ_Button_4.Name = "rJ_Button_4";
             this.rJ_Button_4.Size = new System.Drawing.Size(93, 76);
@@ -251,6 +259,7 @@
             this.rJ_Button_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_5.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_5.GUID = "";
             this.rJ_Button_5.Location = new System.Drawing.Point(102, 85);
             this.rJ_Button_5.Name = "rJ_Button_5";
             this.rJ_Button_5.Size = new System.Drawing.Size(93, 76);
@@ -274,6 +283,7 @@
             this.rJ_Button_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_6.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_6.GUID = "";
             this.rJ_Button_6.Location = new System.Drawing.Point(201, 85);
             this.rJ_Button_6.Name = "rJ_Button_6";
             this.rJ_Button_6.Size = new System.Drawing.Size(93, 76);
@@ -297,6 +307,7 @@
             this.rJ_Button_CE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_CE.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_CE.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_CE.GUID = "";
             this.rJ_Button_CE.Location = new System.Drawing.Point(300, 85);
             this.rJ_Button_CE.Name = "rJ_Button_CE";
             this.rJ_Button_CE.Size = new System.Drawing.Size(93, 76);
@@ -320,6 +331,7 @@
             this.rJ_Button_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_7.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_7.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_7.GUID = "";
             this.rJ_Button_7.Location = new System.Drawing.Point(3, 167);
             this.rJ_Button_7.Name = "rJ_Button_7";
             this.rJ_Button_7.Size = new System.Drawing.Size(93, 76);
@@ -343,6 +355,7 @@
             this.rJ_Button_8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_8.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_8.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_8.GUID = "";
             this.rJ_Button_8.Location = new System.Drawing.Point(102, 167);
             this.rJ_Button_8.Name = "rJ_Button_8";
             this.rJ_Button_8.Size = new System.Drawing.Size(93, 76);
@@ -366,6 +379,7 @@
             this.rJ_Button_9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_9.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_9.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_9.GUID = "";
             this.rJ_Button_9.Location = new System.Drawing.Point(201, 167);
             this.rJ_Button_9.Name = "rJ_Button_9";
             this.rJ_Button_9.Size = new System.Drawing.Size(93, 76);
@@ -389,6 +403,7 @@
             this.rJ_Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Cancel.Font = new System.Drawing.Font("微軟正黑體", 14.25F);
             this.rJ_Button_Cancel.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.GUID = "";
             this.rJ_Button_Cancel.Location = new System.Drawing.Point(300, 167);
             this.rJ_Button_Cancel.Name = "rJ_Button_Cancel";
             this.rJ_Button_Cancel.Size = new System.Drawing.Size(93, 76);
@@ -412,6 +427,7 @@
             this.rJ_Button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button13.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button13.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button13.GUID = "";
             this.rJ_Button13.Location = new System.Drawing.Point(3, 249);
             this.rJ_Button13.Name = "rJ_Button13";
             this.rJ_Button13.Size = new System.Drawing.Size(93, 76);
@@ -433,6 +449,7 @@
             this.rJ_Button_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_0.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_0.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_0.GUID = "";
             this.rJ_Button_0.Location = new System.Drawing.Point(102, 249);
             this.rJ_Button_0.Name = "rJ_Button_0";
             this.rJ_Button_0.Size = new System.Drawing.Size(93, 76);
@@ -456,6 +473,7 @@
             this.rJ_Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button15.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button15.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button15.GUID = "";
             this.rJ_Button15.Location = new System.Drawing.Point(201, 249);
             this.rJ_Button15.Name = "rJ_Button15";
             this.rJ_Button15.Size = new System.Drawing.Size(93, 76);
@@ -477,6 +495,7 @@
             this.rJ_Button_Enter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Enter.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Enter.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_Enter.GUID = "";
             this.rJ_Button_Enter.Location = new System.Drawing.Point(300, 249);
             this.rJ_Button_Enter.Name = "rJ_Button_Enter";
             this.rJ_Button_Enter.Size = new System.Drawing.Size(93, 76);
@@ -498,7 +517,8 @@
             this.rJ_TextBox_Value.Enabled = false;
             this.rJ_TextBox_Value.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_Value.ForeColor = System.Drawing.Color.DimGray;
-            this.rJ_TextBox_Value.Location = new System.Drawing.Point(5, 49);
+            this.rJ_TextBox_Value.GUID = "";
+            this.rJ_TextBox_Value.Location = new System.Drawing.Point(5, 38);
             this.rJ_TextBox_Value.Multiline = false;
             this.rJ_TextBox_Value.Name = "rJ_TextBox_Value";
             this.rJ_TextBox_Value.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -518,29 +538,49 @@
             this.rJ_Lable_Title.BackColor = System.Drawing.Color.Lavender;
             this.rJ_Lable_Title.BackgroundColor = System.Drawing.Color.Lavender;
             this.rJ_Lable_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_Title.BorderRadius = 12;
+            this.rJ_Lable_Title.BorderRadius = 0;
             this.rJ_Lable_Title.BorderSize = 0;
-            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.rJ_Lable_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable_Title.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Title.GUID = "";
             this.rJ_Lable_Title.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable_Title.Name = "rJ_Lable_Title";
-            this.rJ_Lable_Title.Size = new System.Drawing.Size(361, 36);
-            this.rJ_Lable_Title.TabIndex = 16;
-            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable_Title.Size = new System.Drawing.Size(317, 11);
+            this.rJ_Lable_Title.TabIndex = 17;
+            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_Lable_Content
+            // 
+            this.rJ_Lable_Content.BackColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Content.BackgroundColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Content.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_Content.BorderRadius = 0;
+            this.rJ_Lable_Content.BorderSize = 0;
+            this.rJ_Lable_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rJ_Lable_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_Content.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_Content.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Content.GUID = "";
+            this.rJ_Lable_Content.Location = new System.Drawing.Point(0, 11);
+            this.rJ_Lable_Content.Name = "rJ_Lable_Content";
+            this.rJ_Lable_Content.Size = new System.Drawing.Size(317, 12);
+            this.rJ_Lable_Content.TabIndex = 18;
+            this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
             // 
             // Dialog_NumPannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(412, 462);
+            this.ClientSize = new System.Drawing.Size(412, 474);
             this.ControlBox = false;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rJ_TextBox_Value);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel_top);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Dialog_NumPannel";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -548,7 +588,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dialog_NumPannel_FormClosed);
             this.Load += new System.EventHandler(this.Dialog_NumPannel_Load);
-            this.panel1.ResumeLayout(false);
+            this.panel_top.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -557,7 +597,7 @@
         #endregion
 
         private RJ_TextBox rJ_TextBox_Value;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_top;
         private RJ_Button rJ_Button_1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private RJ_Button rJ_Button_2;
@@ -578,5 +618,6 @@
         private RJ_Button rJ_Button_X;
         private System.Windows.Forms.Panel panel2;
         private RJ_Lable rJ_Lable_Title;
+        private RJ_Lable rJ_Lable_Content;
     }
 }

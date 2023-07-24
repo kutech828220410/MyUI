@@ -128,6 +128,7 @@
             this.plC_RJ_Button_顯示.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_顯示.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_顯示.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button_顯示.GUID = "";
             this.plC_RJ_Button_顯示.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
             this.plC_RJ_Button_顯示.Location = new System.Drawing.Point(1407, 253);
             this.plC_RJ_Button_顯示.Name = "plC_RJ_Button_顯示";
@@ -173,17 +174,6 @@
             this.sqL_DataGridView_人員資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.sqL_DataGridView_人員資料.columnHeadersHeight = 23;
             this.sqL_DataGridView_人員資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns1"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns2"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns3"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns4"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns5"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns6"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns7"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns8"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns9"))));
-            this.sqL_DataGridView_人員資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_人員資料.Columns10"))));
             this.sqL_DataGridView_人員資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_人員資料.Dock = System.Windows.Forms.DockStyle.Left;
             this.sqL_DataGridView_人員資料.Font = new System.Drawing.Font("新細明體", 9F);

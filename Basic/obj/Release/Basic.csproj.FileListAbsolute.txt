@@ -1409,3 +1409,4 @@ C:\Users\aaa\Source\Repos\MyUI2\Basic\obj\Release\Basic.csproj.CoreCompileInputs
 C:\Users\aaa\Source\Repos\MyUI2\Basic\obj\Release\Basic.csproj.CopyComplete
 C:\Users\aaa\Source\Repos\MyUI2\Basic\obj\Release\Basic.dll
 C:\Users\aaa\Source\Repos\MyUI2\Basic\obj\Release\Basic.pdb
+C:\Users\User\Desktop\MyUI\Basic\obj\Release\Basic.Dialog_Prcessbar.resources

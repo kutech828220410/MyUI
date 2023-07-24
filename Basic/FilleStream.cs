@@ -13,6 +13,7 @@ using System.Runtime.Serialization;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 namespace Basic
 {
     static public class FileIO
@@ -503,6 +504,26 @@ namespace Basic
             list_value.Add(text);
             return SaveFile(filename, list_value);
         }
+        static public bool SaveFile(string filename, List<string> list_value , string endcoding)
+        {
+            try
+            {
+                FileStream fs = new FileStream(filename, System.IO.FileMode.Create, System.IO.FileAccess.Write);
+                StreamWriter sw = new StreamWriter(fs, System.Text.Encoding.GetEncoding(endcoding));
+                foreach (string value in list_value)
+                {
+                    sw.WriteLine(value);
+                }
+                sw.Close();
+                fs.Close();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
         static public bool SaveFile(string filename, List<string> list_value)
         {           
             try
@@ -594,6 +615,81 @@ namespace Basic
                 dataTable.Rows.Add(list_value[i].ToArray());
             }
             return dataTable;
+        }
+
+        internal enum MoveFileFlags
+        {
+            MOVEFILE_REPLACE_EXISTING = 1,
+            MOVEFILE_COPY_ALLOWED = 2,
+            MOVEFILE_DELAY_UNTIL_REBOOT = 4,
+            MOVEFILE_WRITE_THROUGH = 8
+        }
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+        internal static extern bool MoveFileEx(string lpExistingFileName, string lpNewFileName, MoveFileFlags dwFlags);
+        static public void RunFile(string sourceFolderPath, string updateFolderPath, string tempFolderPath, string StartFileName, SearchOption searchOption = SearchOption.TopDirectoryOnly, params string[] exclude_filename)
+        {
+            try
+            {
+                CopyFolder(sourceFolderPath, updateFolderPath, tempFolderPath, searchOption, exclude_filename);
+
+
+                //清除垃圾舊檔
+                Process P_sources = new Process();
+                //設定一秒延遲,讓程式順利關閉才能刪除 
+                P_sources.StartInfo = new ProcessStartInfo("cmd.exe", $"/C choice /C Y /N /D Y /T 3 & rmdir /S /Q \"{tempFolderPath}\"");
+                P_sources.StartInfo.CreateNoWindow = true;
+                P_sources.StartInfo.UseShellExecute = false;
+                P_sources.Start();
+
+                Process P_new = new Process();
+                //設定一秒延遲,讓程式順利關閉才能刪除 
+                P_new.StartInfo = new ProcessStartInfo("cmd.exe", "/C choice /C Y /N /D Y /T 3 & " + "\"" + $"{sourceFolderPath}\\{StartFileName}" + "\"");
+                P_new.StartInfo.CreateNoWindow = true;
+                P_new.StartInfo.UseShellExecute = false;
+                P_new.Start();
+
+                Process.GetCurrentProcess().Close();
+                Process.GetCurrentProcess().CloseMainWindow();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred during program upgrade: " + ex.Message);
+            }
+        }
+        static public void CopyFolder(string sourceFolderPath, string updateFolderPath, string tempFolderPath, SearchOption searchOption = SearchOption.TopDirectoryOnly, params string[] exclude_filename)
+        {
+            // 创建目标文件夹
+            Directory.CreateDirectory(sourceFolderPath);
+            Directory.CreateDirectory(updateFolderPath);
+            Directory.CreateDirectory(tempFolderPath);
+
+            // 获取源文件夹中的所有文件和子文件夹
+            string[] source_files = Directory.GetFiles(sourceFolderPath, "*", SearchOption.TopDirectoryOnly);
+            // 移動每个文件到目标文件夹
+            foreach (string file in source_files)
+            {
+                string filename = Path.GetFileName(file);
+                bool flag_move = true;
+                for (int i = 0; i < exclude_filename.Length; i++)
+                {
+                    if (exclude_filename[i] == filename)
+                    {
+                        flag_move = false;
+                        break;
+                    }
+                }
+                string targetFilePath = $"{tempFolderPath}\\{filename}";
+                if (flag_move) MoveFileEx(file, targetFilePath, MoveFileFlags.MOVEFILE_REPLACE_EXISTING);
+            }
+            string[] update_files = Directory.GetFiles(updateFolderPath, "*", SearchOption.TopDirectoryOnly);
+            // 复制每个文件到目标文件夹
+            foreach (string file in update_files)
+            {
+                string filename = Path.GetFileName(file);
+                string targetFilePath = $"{sourceFolderPath}\\{filename}";
+                System.IO.Directory.CreateDirectory(Path.GetDirectoryName(targetFilePath));
+                System.IO.File.Copy(file, targetFilePath, true);
+            }
         }
 
     }

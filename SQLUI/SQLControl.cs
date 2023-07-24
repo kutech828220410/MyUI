@@ -2631,7 +2631,10 @@ namespace SQLUI
                     string temp = TypeName;
                     int index_of = temp.IndexOf('(');
 
-                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    if (index_of != -1)
+                    {
+                        temp = temp.Remove(index_of, temp.Length - index_of);
+                    }
                     temp = temp.Trim();
 
                     string[] ary = new Table.OtherType().GetEnumNames();
@@ -2662,7 +2665,6 @@ namespace SQLUI
                         num = str_num.StringToInt32();
                         this.Num = num;
                     }
-                    temp = temp.Remove(index_of, temp.Length - index_of);
                     temp = temp.Trim();
                     string[] ary = new Table.ValueType().GetEnumNames();
                     for (int i = 0; i < ary.Length; i++)
@@ -2682,7 +2684,10 @@ namespace SQLUI
                 {
                     string temp = TypeName;
                     int index_of = temp.IndexOf('(');
-                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    if(index_of != -1)
+                    {
+                        temp = temp.Remove(index_of, temp.Length - index_of);
+                    }    
                     temp = temp.Trim();
                     string[] ary = new Table.StringType().GetEnumNames();
                     for (int i = 0; i < ary.Length; i++)
@@ -2702,7 +2707,10 @@ namespace SQLUI
                 {
                     string temp = TypeName;
                     int index_of = temp.IndexOf('(');
-                    temp = temp.Remove(index_of, temp.Length - index_of);
+                    if (index_of != -1)
+                    {
+                        temp = temp.Remove(index_of, temp.Length - index_of);
+                    }
                     temp = temp.Trim();
                     string[] ary = new Table.DateType().GetEnumNames();
                     for (int i = 0; i < ary.Length; i++)

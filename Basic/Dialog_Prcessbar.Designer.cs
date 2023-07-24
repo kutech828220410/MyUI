@@ -54,6 +54,7 @@
             // 
             // rJ_Button_取消
             // 
+            this.rJ_Button_取消.AutoResetState = false;
             this.rJ_Button_取消.BackColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.BackgroundColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.BorderColor = System.Drawing.Color.PaleVioletRed;
@@ -65,6 +66,7 @@
             this.rJ_Button_取消.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_取消.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_取消.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_取消.GUID = "";
             this.rJ_Button_取消.Location = new System.Drawing.Point(533, 0);
             this.rJ_Button_取消.Name = "rJ_Button_取消";
             this.rJ_Button_取消.Size = new System.Drawing.Size(88, 85);

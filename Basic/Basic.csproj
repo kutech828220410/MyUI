@@ -67,6 +67,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
@@ -144,6 +145,7 @@
     <Compile Include="FilleStream.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Keyboard.cs" />
+    <Compile Include="LicenseLib.cs" />
     <Compile Include="LINQ.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="MyMessageBox.cs">
@@ -176,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog_DateTime.resx">
       <DependentUpon>Dialog_DateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_Prcessbar.resx">
+      <DependentUpon>Dialog_Prcessbar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog_TextBox.resx">
       <DependentUpon>Dialog_TextBox.cs</DependentUpon>

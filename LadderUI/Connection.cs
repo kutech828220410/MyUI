@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.Reflection;
 using System.IO.Ports;
 using System.IO;
 using System.Threading;
@@ -2823,7 +2824,7 @@ namespace LadderConnection
                 if (changeFilename)
                 {
 
-                    MyFileStream.檔案更名(".\\", "program.stp", "program.bak.stp");
+                    MyFileStream.檔案更名($@"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\", "program.stp", "program.bak.stp");
                 }
 
                 saveProgramFile.Program = MyFileStream.DeepClone(properties.Program);
@@ -2832,7 +2833,7 @@ namespace LadderConnection
                 saveProgramFile.通訊方式 = this.通訊方式;
                 try
                 {
-                    stream = File.Open("program.stp", FileMode.Create);
+                    stream = File.Open($@"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\program.stp", FileMode.Create);
                     binFmt.Serialize(stream, saveProgramFile);
                 }
                 finally
@@ -2854,9 +2855,9 @@ namespace LadderConnection
             Stream stream = null;
             try
             {
-                if (File.Exists(".\\program.stp"))
+                if (File.Exists($@"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\program.stp"))
                 {
-                    stream = File.Open(".\\program.stp", FileMode.Open);
+                    stream = File.Open($@"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\program.stp", FileMode.Open);
                     try { saveProgramFile = (SaveProgramFile)binFmt.Deserialize(stream); }
                     catch { }
 

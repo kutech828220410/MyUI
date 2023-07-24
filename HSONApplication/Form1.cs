@@ -111,9 +111,7 @@ namespace HSONApplication
         {
             this.LoadDBConfig();
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
-            this.sqL_DataGridView_人員資料.Init();
-            this.sqL_DataGridView_人員資料.RowEndEditEvent += SqL_DataGridView_人員資料_RowEndEditEvent;
-            this.sqL_DataGridView_人員資料.CellValidatingEvent += SqL_DataGridView_人員資料_CellValidatingEvent;
+      
         }
 
         private void SqL_DataGridView_人員資料_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
@@ -132,18 +130,10 @@ namespace HSONApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string temp = " VARCHAR  ";
-            int index_of = temp.IndexOf('(');
-            int num = 50;
-            if(index_of != -1)
-            {
-                string str_num = temp.Substring(index_of, temp.Length - index_of);
-                str_num = str_num.Replace("(", "");
-                str_num = str_num.Replace(")", "");
-                num = str_num.StringToInt32();
-            }
-            temp = temp.Remove(index_of, temp.Length - index_of);
-            temp = temp.Trim();
+            string table_json = "{\r\n  \"tableName\": \"medicine_page_cloud\",\r\n  \"columnList\": [\r\n    {\r\n      \"name\": \"GUID\",\r\n      \"typeName\": \" VARCHAR(50)\",\r\n      \"indexType\": 2\r\n    },\r\n    {\r\n      \"name\": \"藥品碼\",\r\n      \"typeName\": \" VARCHAR(20)\",\r\n      \"indexType\": 1\r\n    },\r\n    {\r\n      \"name\": \"料號\",\r\n      \"typeName\": \" VARCHAR(20)\",\r\n      \"indexType\": 1\r\n    },\r\n    {\r\n      \"name\": \"中文名稱\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品名稱\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品學名\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"健保碼\",\r\n      \"typeName\": \" VARCHAR(50)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"包裝單位\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"包裝數量\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"最小包裝單位\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"最小包裝數量\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品條碼1\",\r\n      \"typeName\": \" VARCHAR(200)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品條碼2\",\r\n      \"typeName\": \" TEXT\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"警訊藥品\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"管制級別\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"類別\",\r\n      \"typeName\": \" VARCHAR(500)\",\r\n      \"indexType\": 0\r\n    }\r\n  ]\r\n}";
+            Console.WriteLine(table_json);
+            Table table = table_json.JsonDeserializet<Table>();
+            this.sqL_DataGridView_人員資料.Init(table);
         }
     }
 }

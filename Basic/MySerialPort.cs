@@ -8,6 +8,13 @@ namespace Basic
 {
     public class MySerialPort
     {
+        public bool RecvFinished
+        {
+            get
+            {
+                return (serialPort.BytesToRead == 0);
+            }
+        }
         public bool IsConnected
         {
             get

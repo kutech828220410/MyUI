@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Basic;
+using DrawingClass;
 namespace MyUI
 {
     public partial class Dialog_NumPannel : Form
@@ -47,8 +48,49 @@ namespace MyUI
                 this.Invoke(new Action(delegate { this.rJ_Lable_Title.Text = value; }));
             }
         }
+        public string Content
+        {
+            get
+            {
+                return this.rJ_Lable_Content.Text;
+            }
+            private set
+            {
+                this.Invoke(new Action(delegate { this.rJ_Lable_Content.Text = value; }));
+            }
+        }
+        public Font TitleFont
+        {
+            get
+            {
+                return rJ_Lable_Title.Font;
+            }
+            set
+            {
+                rJ_Lable_Title.Font = value;
+            }
+        }
+        public Font ContentFont
+        {
+            get
+            {
+                return rJ_Lable_Content.Font;
+            }
+            set
+            {
+                rJ_Lable_Content.Font = value;
+            }
+        }
+        public bool X_Visible
+        {
+            set
+            {
+                rJ_Button_X.Visible = value;
+            }
+        }
         private int Value_buf = 0;
         private string Title_buf = "";
+        private string Content_buf = "";
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.NumPad0 || keyData == Keys.D0)
@@ -117,6 +159,12 @@ namespace MyUI
             InitializeComponent();
             Title_buf = title;
         }
+        public Dialog_NumPannel(string title , string content)
+        {
+            InitializeComponent();
+            Title_buf = title;
+            Content_buf = content;        
+        }
         public Dialog_NumPannel(string title, int value)
         {
             InitializeComponent();
@@ -154,7 +202,25 @@ namespace MyUI
             this.OnClick_CE();
             this.Value = Value_buf;
             this.Title = Title_buf;
-            
+            this.Content = Content_buf;
+
+            Size size_title = Draw.MeasureText(Title_buf, TitleFont);
+            Size size_content = Draw.MeasureText(Content_buf, ContentFont);
+            if (Title_buf.StringIsEmpty()) this.rJ_Lable_Title.Height = 0;
+            else
+            {
+                this.rJ_Lable_Title.Height += size_title.Height;
+                this.panel_top.Height += size_title.Height;
+                this.Height += size_title.Height;
+            }
+            if (Content_buf.StringIsEmpty()) this.rJ_Lable_Content.Height = 0;
+            else
+            {
+                this.panel_top.Height += size_content.Height;
+                this.Height += size_content.Height;
+            }
+
+    
         }
 
 

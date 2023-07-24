@@ -448,5 +448,28 @@ namespace Basic
             }
             return _returnstr;
         }
+
+        public static bool DownloadFile(string url, string saveFilePath)
+        {
+            return DownloadFile(url, saveFilePath, null);
+        }
+        public static bool DownloadFile(string url, string saveFilePath , DownloadProgressChangedEventHandler Client_DownloadProgressChanged)
+        {
+            try
+            {
+                using (System.Net.WebClient client = new System.Net.WebClient())
+                {
+                    if (Client_DownloadProgressChanged != null) client.DownloadProgressChanged += Client_DownloadProgressChanged;
+                    client.DownloadFile($"{url}", saveFilePath);
+                }
+            }
+            catch
+            {
+                return false;
+            }
+            return true;
+        }
+
+ 
     }
 }
