@@ -86,6 +86,7 @@ namespace MyUI
             set
             {
                 rJ_Button_X.Visible = value;
+                rJ_Button_Cancel.Enabled = value;
             }
         }
         private int Value_buf = 0;

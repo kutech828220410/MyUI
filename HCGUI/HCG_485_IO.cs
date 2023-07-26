@@ -21,6 +21,7 @@ namespace HCGUI
 {
     public partial class HCG_485_IO : UserControl
     {
+        public string PortName = ""; 
         private Basic.MyConvert Myconvert = new Basic.MyConvert();
         private bool FLAG_UART_RX = false;
         private List<int> UART_RX_BUF = new List<int>();
@@ -346,7 +347,8 @@ namespace HCGUI
             bool flag_OK = false;
             this.Invoke(new Action(delegate 
             {
-                flag_OK = this.SerialPortOpen(this.textBox_COM.Text, this.comboBox_Baudrate.Text.StringToInt32());
+                if (PortName.StringIsEmpty() == false) PortName = this.textBox_COM.Text;
+                 flag_OK = this.SerialPortOpen(this.textBox_COM.Text, this.comboBox_Baudrate.Text.StringToInt32());
             }));
             return flag_OK;
         }
