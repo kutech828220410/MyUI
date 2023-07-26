@@ -21,7 +21,8 @@ namespace HCGUI
 {
     public partial class HCG_485_IO : UserControl
     {
-        public string PortName = ""; 
+        public string PortName = "";
+        public int BaudRate = 115500;
         private Basic.MyConvert Myconvert = new Basic.MyConvert();
         private bool FLAG_UART_RX = false;
         private List<int> UART_RX_BUF = new List<int>();
@@ -109,10 +110,13 @@ namespace HCGUI
         public void Init()
         {
             this.FindForm().FormClosing += this.FormClosing;
+            this.plC_Button_SAVE.btnClick += PlC_Button_SAVE_btnClick;
             this.IsOpen = this.BoardOpen();
             this.LoadProperties();
             this.IsOpen = this.SerialPortOpen();
         }
+
+    
 
         private void TabPage_Init(int Card_count)
         {
@@ -275,7 +279,7 @@ namespace HCGUI
                 {
                     flag_OK = false;
                 }
-                this.SaveProperties();
+                //this.SaveProperties();
             }
             this.First_Init = false;
             for (int i = 0; i < this.從站數量; i++)
@@ -347,8 +351,17 @@ namespace HCGUI
             bool flag_OK = false;
             this.Invoke(new Action(delegate 
             {
-                if (PortName.StringIsEmpty() == false) PortName = this.textBox_COM.Text;
-                 flag_OK = this.SerialPortOpen(this.textBox_COM.Text, this.comboBox_Baudrate.Text.StringToInt32());
+                if (PortName.StringIsEmpty() == false)
+                {
+                    this.textBox_COM.Text = PortName;
+                    this.comboBox_Baudrate.Text = BaudRate.ToString();
+                    flag_OK = this.SerialPortOpen(PortName,BaudRate);
+                }
+                else
+                {
+                    flag_OK = this.SerialPortOpen(this.textBox_COM.Text, this.comboBox_Baudrate.Text.StringToInt32());
+                }
+              
             }));
             return flag_OK;
         }
@@ -357,6 +370,7 @@ namespace HCGUI
             bool flag_OK = true;
             if (!this.serialPort.IsOpen)
             {
+
                 try
                 {
                     this.serialPort.PortName = PortName;
@@ -378,6 +392,8 @@ namespace HCGUI
         {
             this.serialPort.Close();
         }
+
+
         public bool Command_Read_Output(int station, ref int Output)
         {
             bool flag_OK = true;
@@ -413,10 +429,12 @@ namespace HCGUI
                             break;
                         }
                         this.UART_RX_BUF.Clear();
+                        Recv_Buffer.Clear();
                         this.FLAG_UART_RX = false;
                         if (serialPort.IsOpen) serialPort.Write(list_byte.ToArray(), 0, list_byte.Count);
+                        System.Threading.Thread.Sleep(50);
                         MyTimer_UART_TimeOut.TickStop();
-                        MyTimer_UART_TimeOut.StartTickTime(200);
+                        MyTimer_UART_TimeOut.StartTickTime(500);
                         cnt++;
                     }
                     else if (cnt == 1)
@@ -428,26 +446,47 @@ namespace HCGUI
                         }
                         if (this.FLAG_UART_RX)
                         {
-                            if (this.UART_RX_BUF.Count > 4)
+                            while(true)
                             {
-                                if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x01)
+                                if (Recv_Buffer.Count < 7)
                                 {
-                                    int numOfBytes = this.UART_RX_BUF[2] + 5;
-
-                                    if (this.UART_RX_BUF.Count == numOfBytes)
-                                    {
-                                        if (this.CRC_Check(UART_RX_BUF.ToArray()))
-                                        {
-                                            Output = 0;
-                                            Output |= (this.UART_RX_BUF[3] << (0 * 8));
-                                            Output |= (this.UART_RX_BUF[4] << (1 * 8));
-                                            Output |= (this.UART_RX_BUF[5] << (2 * 8));
-                                            Output |= (this.UART_RX_BUF[6] << (3 * 8));
-                                            break;
-                                        }
-                                    }
+                                    retry++;
+                                    cnt = 0;
+                                    break;
                                 }
+                                if ((byte)Recv_Buffer.Dequeue() == station && (byte)Recv_Buffer.Dequeue() == 0x01)
+                                {
+                                    byte num = (byte)Recv_Buffer.Dequeue();
+                                    Output = 0;
+                                    Output |= ((byte)Recv_Buffer.Dequeue() << (0 * 8));
+                                    Output |= ((byte)Recv_Buffer.Dequeue() << (1 * 8));
+                                    Output |= ((byte)Recv_Buffer.Dequeue() << (2 * 8));
+                                    Output |= ((byte)Recv_Buffer.Dequeue() << (3 * 8));
+                                    return true;
+                                }
+
                             }
+                          
+                            //if (this.UART_RX_BUF.Count > 4)
+                            //{
+                            //    if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x01)
+                            //    {
+                            //        int numOfBytes = this.UART_RX_BUF[2] + 5;
+
+                            //        if (this.UART_RX_BUF.Count == numOfBytes)
+                            //        {
+                            //            if (this.CRC_Check(UART_RX_BUF.ToArray()))
+                            //            {
+                            //                Output = 0;
+                            //                Output |= (this.UART_RX_BUF[3] << (0 * 8));
+                            //                Output |= (this.UART_RX_BUF[4] << (1 * 8));
+                            //                Output |= (this.UART_RX_BUF[5] << (2 * 8));
+                            //                Output |= (this.UART_RX_BUF[6] << (3 * 8));
+                            //                break;
+                            //            }
+                            //        }
+                            //    }
+                            //}
 
 
                         }
@@ -465,7 +504,7 @@ namespace HCGUI
                 byte CRC_L = 0;
                 byte CRC_H = 0;
                 int start_channel = 8 * 0;
-                int numOfoutputs = 4 * 8;
+                int numOfoutputs = 2 * 8;
                 List<byte> list_byte = new List<byte>();
 
                 list_byte.Add((byte)station);
@@ -474,11 +513,11 @@ namespace HCGUI
                 list_byte.Add((byte)(start_channel >> 0));
                 list_byte.Add((byte)(numOfoutputs >> 8));
                 list_byte.Add((byte)(numOfoutputs >> 0));
-                list_byte.Add((byte)(4));
+                list_byte.Add((byte)(2));
                 list_byte.Add((byte)(Output >> 8 * 0));
                 list_byte.Add((byte)(Output >> 8 * 1));
-                list_byte.Add((byte)(Output >> 8 * 2));
-                list_byte.Add((byte)(Output >> 8 * 3));
+                //list_byte.Add((byte)(Output >> 8 * 2));
+                //list_byte.Add((byte)(Output >> 8 * 3));
                 Basic.MyConvert.Get_CRC16(list_byte.ToArray(), ref CRC_L, ref CRC_H);
                 list_byte.Add(CRC_L);
                 list_byte.Add(CRC_H);
@@ -495,11 +534,13 @@ namespace HCGUI
                             flag_OK = false;
                             break;
                         }
+                        Recv_Buffer.Clear();
                         this.UART_RX_BUF.Clear();
                         this.FLAG_UART_RX = false;
                         if (serialPort.IsOpen) serialPort.Write(list_byte.ToArray(), 0, list_byte.Count);
+                        System.Threading.Thread.Sleep(50);
                         MyTimer_UART_TimeOut.TickStop();
-                        MyTimer_UART_TimeOut.StartTickTime(200);
+                        MyTimer_UART_TimeOut.StartTickTime(500);
                         cnt++;
                     }
                     else if (cnt == 1)
@@ -511,20 +552,35 @@ namespace HCGUI
                         }
                         if (this.FLAG_UART_RX)
                         {
-                            if (this.UART_RX_BUF.Count > 4)
+                            while (true)
                             {
-                                if (this.UART_RX_BUF.Count == 8)
+                                if (Recv_Buffer.Count < 2)
                                 {
-                                    if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x0F)
-                                    {
-                                        if (this.CRC_Check(UART_RX_BUF.ToArray()))
-                                        {
-
-                                            break;
-                                        }
-                                    }
+                                    retry++;
+                                    cnt = 0;
+                                    break;
                                 }
+                                if ((byte)Recv_Buffer.Dequeue() == station && (byte)Recv_Buffer.Dequeue() == 0x0F)
+                                {
+                                    return true;
+                                }
+
                             }
+
+                            //if (this.UART_RX_BUF.Count > 4)
+                            //{
+                            //    if (this.UART_RX_BUF.Count == 8)
+                            //    {
+                            //        if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x0F)
+                            //        {
+                            //            if (this.CRC_Check(UART_RX_BUF.ToArray()))
+                            //            {
+
+                            //                break;
+                            //            }
+                            //        }
+                            //    }
+                            //}
 
 
                         }
@@ -564,11 +620,13 @@ namespace HCGUI
                             flag_OK = false;
                             break;
                         }
+                        Recv_Buffer.Clear();
                         this.UART_RX_BUF.Clear();
                         this.FLAG_UART_RX = false;
                         if (serialPort.IsOpen) serialPort.Write(list_byte.ToArray(), 0, list_byte.Count);
+                        System.Threading.Thread.Sleep(50);
                         MyTimer_UART_TimeOut.TickStop();
-                        MyTimer_UART_TimeOut.StartTickTime(200);
+                        MyTimer_UART_TimeOut.StartTickTime(500);
                         cnt++;
                     }
                     else if (cnt == 1)
@@ -580,26 +638,46 @@ namespace HCGUI
                         }
                         if (this.FLAG_UART_RX)
                         {
-                            if (this.UART_RX_BUF.Count > 4)
+                            while (true)
                             {
-                                if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x03)
+                                if (Recv_Buffer.Count < 7)
                                 {
-                                    int numOfBytes = this.UART_RX_BUF[2] + 5;
-
-                                    if (this.UART_RX_BUF.Count == numOfBytes)
-                                    {
-                                        if (this.CRC_Check(UART_RX_BUF.ToArray()))
-                                        {
-                                            Input = 0;
-                                            Input |= (this.UART_RX_BUF[4] << (0 * 8));
-                                            Input |= (this.UART_RX_BUF[3] << (1 * 8));
-                                            Input |= (this.UART_RX_BUF[6] << (2 * 8));
-                                            Input |= (this.UART_RX_BUF[5] << (3 * 8));
-                                            break;
-                                        }
-                                    }
+                                    retry++;
+                                    cnt = 0;
+                                    break;
+                                }
+                                if ((byte)Recv_Buffer.Dequeue() == station && (byte)Recv_Buffer.Dequeue() == 0x03)
+                                {
+                                    byte num = (byte)Recv_Buffer.Dequeue();
+                                    Input = 0;
+                                    Input |= ((byte)Recv_Buffer.Dequeue() << (1 * 8));
+                                    Input |= ((byte)Recv_Buffer.Dequeue() << (0 * 8));
+                                    Input |= ((byte)Recv_Buffer.Dequeue() << (3 * 8));
+                                    Input |= ((byte)Recv_Buffer.Dequeue() << (2 * 8));
+                                    return true;
                                 }
                             }
+
+                            //if (this.UART_RX_BUF.Count > 4)
+                            //{
+                            //    if (this.UART_RX_BUF[0] == station && this.UART_RX_BUF[1] == 0x03)
+                            //    {
+                            //        int numOfBytes = this.UART_RX_BUF[2] + 5;
+
+                            //        if (this.UART_RX_BUF.Count == numOfBytes)
+                            //        {
+                            //            if (this.CRC_Check(UART_RX_BUF.ToArray()))
+                            //            {
+                            //                Input = 0;
+                            //                Input |= (this.UART_RX_BUF[4] << (0 * 8));
+                            //                Input |= (this.UART_RX_BUF[3] << (1 * 8));
+                            //                Input |= (this.UART_RX_BUF[6] << (2 * 8));
+                            //                Input |= (this.UART_RX_BUF[5] << (3 * 8));
+                            //                break;
+                            //            }
+                            //        }
+                            //    }
+                            //}
 
 
                         }
@@ -683,6 +761,7 @@ namespace HCGUI
 
 
         #region Event
+        System.Collections.Queue Recv_Buffer = new System.Collections.Queue();
         private void plC_Button_Open_btnClick(object sender, EventArgs e)
         {
             if (!this.IsOpen)
@@ -698,7 +777,9 @@ namespace HCGUI
             {
                 if (serialPort.IsOpen)
                 {
-                    this.UART_RX_BUF.Add(this.serialPort.ReadByte());
+                    int readbyte = this.serialPort.ReadByte();
+                    if (readbyte != null) Recv_Buffer.Enqueue((byte)readbyte);
+                    this.UART_RX_BUF.Add(readbyte);
                 }
                
             }
@@ -708,10 +789,14 @@ namespace HCGUI
         {
             if (this.IsOpen)
             {
-                this.SaveProperties();
+               // this.SaveProperties();
             }
         }
-
+        private void PlC_Button_SAVE_btnClick(object sender, EventArgs e)
+        {
+            this.SaveProperties();
+            MyMessageBox.ShowDialog("存檔成功!");
+        }
 
         #endregion
 

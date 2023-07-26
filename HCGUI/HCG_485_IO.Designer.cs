@@ -43,6 +43,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.panel_TAB = new System.Windows.Forms.Panel();
+            this.plC_Button_SAVE = new MyUI.PLC_Button();
             this.panel_Open.SuspendLayout();
             this.panel67.SuspendLayout();
             this.groupBox14.SuspendLayout();
@@ -51,6 +52,7 @@
             // panel_Open
             // 
             this.panel_Open.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_Open.Controls.Add(this.plC_Button_SAVE);
             this.panel_Open.Controls.Add(this.plC_Button_Open);
             this.panel_Open.Controls.Add(this.panel67);
             this.panel_Open.Controls.Add(this.groupBox14);
@@ -67,6 +69,7 @@
             // plC_Button_Open
             // 
             this.plC_Button_Open.Bool = false;
+            this.plC_Button_Open.but_press = false;
             this.plC_Button_Open.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
             this.plC_Button_Open.Location = new System.Drawing.Point(499, 9);
             this.plC_Button_Open.Name = "plC_Button_Open";
@@ -81,6 +84,7 @@
             this.plC_Button_Open.Size = new System.Drawing.Size(88, 41);
             this.plC_Button_Open.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_Open.TabIndex = 45;
+            this.plC_Button_Open.事件驅動 = false;
             this.plC_Button_Open.字型鎖住 = false;
             this.plC_Button_Open.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
             this.plC_Button_Open.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
@@ -89,6 +93,7 @@
             this.plC_Button_Open.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_Open.狀態ON圖片")));
             this.plC_Button_Open.讀取位元反向 = false;
             this.plC_Button_Open.讀寫鎖住 = false;
+            this.plC_Button_Open.起始狀態 = false;
             this.plC_Button_Open.音效 = true;
             this.plC_Button_Open.顯示 = false;
             this.plC_Button_Open.顯示狀態 = false;
@@ -200,6 +205,38 @@
             this.panel_TAB.Size = new System.Drawing.Size(691, 325);
             this.panel_TAB.TabIndex = 7;
             // 
+            // plC_Button_SAVE
+            // 
+            this.plC_Button_SAVE.Bool = false;
+            this.plC_Button_SAVE.but_press = false;
+            this.plC_Button_SAVE.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_Button_SAVE.Location = new System.Drawing.Point(593, 9);
+            this.plC_Button_SAVE.Name = "plC_Button_SAVE";
+            this.plC_Button_SAVE.OFF_文字內容 = "SAVE";
+            this.plC_Button_SAVE.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_SAVE.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_Button_SAVE.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_SAVE.ON_文字內容 = "SAVE";
+            this.plC_Button_SAVE.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_Button_SAVE.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_Button_SAVE.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_Button_SAVE.Size = new System.Drawing.Size(88, 41);
+            this.plC_Button_SAVE.Style = MyUI.PLC_Button.StyleEnum.經典;
+            this.plC_Button_SAVE.TabIndex = 46;
+            this.plC_Button_SAVE.事件驅動 = false;
+            this.plC_Button_SAVE.字型鎖住 = false;
+            this.plC_Button_SAVE.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button_SAVE.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
+            this.plC_Button_SAVE.文字鎖住 = false;
+            this.plC_Button_SAVE.狀態OFF圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_SAVE.狀態OFF圖片")));
+            this.plC_Button_SAVE.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_SAVE.狀態ON圖片")));
+            this.plC_Button_SAVE.讀取位元反向 = false;
+            this.plC_Button_SAVE.讀寫鎖住 = false;
+            this.plC_Button_SAVE.起始狀態 = false;
+            this.plC_Button_SAVE.音效 = true;
+            this.plC_Button_SAVE.顯示 = false;
+            this.plC_Button_SAVE.顯示狀態 = false;
+            // 
             // HCG_485_IO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -234,5 +271,6 @@
         private MyUI.NumWordTextBox numWordTextBox_StreamName;
         private System.Windows.Forms.Panel panel_TAB;
         private MyUI.PLC_Button plC_Button_Open;
+        private MyUI.PLC_Button plC_Button_SAVE;
     }
 }
