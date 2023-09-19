@@ -291,7 +291,7 @@ namespace DrawingClass
         {
             Size size = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
             Point p0 = new Point((rectangle.Width - size.Width) / 2 + rectangle.X, (rectangle.Height - size.Height) / 2 + rectangle.Y);
-            g.DrawString(_str, 文字字體, new SolidBrush(文字顏色), p0);
+            g.DrawString(_str, 文字字體, new SolidBrush(文字顏色), p0, StringFormat.GenericDefault);
         }
         static public void 文字中心繪製(String _str, PointF 文字位置, Font 文字字體, Color 文字顏色, Color 背景顏色, Graphics AxCanvasHDC, float Zoom_X, float Zoom_Y)
         {

@@ -14,6 +14,19 @@ namespace MyUI
     public partial class Dialog_NumPannel : Form
     {
         public static Form form;
+        private Point location = new Point(0, 0);
+        public new Point Location
+        {
+            get
+            {
+                return this.location;
+            }
+            set
+            {
+
+                this.location = value;
+            }
+        }
         public int Value
         {
             get
@@ -220,8 +233,12 @@ namespace MyUI
                 this.panel_top.Height += size_content.Height;
                 this.Height += size_content.Height;
             }
+            if (this.location.X != 0 && this.location.Y != 0)
+            {
+                this.StartPosition = FormStartPosition.WindowsDefaultLocation;
+                base.Location = this.location;
+            }
 
-    
         }
 
 

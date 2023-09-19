@@ -2999,7 +2999,6 @@ C:\Users\aaa\Source\Repos\MyUI2\MeasureSystemUI\obj\Release\MeasureSystemUI.cspr
 C:\Users\aaa\Source\Repos\MyUI2\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete
 C:\Users\aaa\Source\Repos\MyUI2\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\aaa\Source\Repos\MyUI2\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
-C:\Users\User\Desktop\MyUI\MeasureSystemUI\bin\Release\Basic.xml
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.dll.config
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.pdb

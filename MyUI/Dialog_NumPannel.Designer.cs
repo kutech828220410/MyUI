@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
+            this.rJ_Lable_Content = new MyUI.RJ_Lable();
+            this.rJ_Lable_Title = new MyUI.RJ_Lable();
             this.rJ_Button_X = new MyUI.RJ_Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -49,8 +51,6 @@
             this.rJ_Button15 = new MyUI.RJ_Button();
             this.rJ_Button_Enter = new MyUI.RJ_Button();
             this.rJ_TextBox_Value = new MyUI.RJ_TextBox();
-            this.rJ_Lable_Title = new MyUI.RJ_Lable();
-            this.rJ_Lable_Content = new MyUI.RJ_Lable();
             this.panel_top.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,44 @@
             this.panel_top.Name = "panel_top";
             this.panel_top.Size = new System.Drawing.Size(402, 33);
             this.panel_top.TabIndex = 1;
+            // 
+            // rJ_Lable_Content
+            // 
+            this.rJ_Lable_Content.BackColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Content.BackgroundColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Content.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_Content.BorderRadius = 0;
+            this.rJ_Lable_Content.BorderSize = 0;
+            this.rJ_Lable_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rJ_Lable_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_Content.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_Content.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Content.GUID = "";
+            this.rJ_Lable_Content.Location = new System.Drawing.Point(0, 11);
+            this.rJ_Lable_Content.Name = "rJ_Lable_Content";
+            this.rJ_Lable_Content.Size = new System.Drawing.Size(317, 12);
+            this.rJ_Lable_Content.TabIndex = 18;
+            this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_Lable_Title
+            // 
+            this.rJ_Lable_Title.BackColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Title.BackgroundColor = System.Drawing.Color.Lavender;
+            this.rJ_Lable_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_Title.BorderRadius = 0;
+            this.rJ_Lable_Title.BorderSize = 0;
+            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_Lable_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_Title.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Title.GUID = "";
+            this.rJ_Lable_Title.Location = new System.Drawing.Point(0, 0);
+            this.rJ_Lable_Title.Name = "rJ_Lable_Title";
+            this.rJ_Lable_Title.Size = new System.Drawing.Size(317, 11);
+            this.rJ_Lable_Title.TabIndex = 17;
+            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
             // 
             // rJ_Button_X
             // 
@@ -533,44 +571,6 @@
             this.rJ_TextBox_Value.UnderlineStyle = false;
             this.rJ_TextBox_Value.Leave += new System.EventHandler(this.rJ_TextBox_Value_Leave);
             // 
-            // rJ_Lable_Title
-            // 
-            this.rJ_Lable_Title.BackColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Title.BackgroundColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_Title.BorderRadius = 0;
-            this.rJ_Lable_Title.BorderSize = 0;
-            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rJ_Lable_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_Title.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable_Title.GUID = "";
-            this.rJ_Lable_Title.Location = new System.Drawing.Point(0, 0);
-            this.rJ_Lable_Title.Name = "rJ_Lable_Title";
-            this.rJ_Lable_Title.Size = new System.Drawing.Size(317, 11);
-            this.rJ_Lable_Title.TabIndex = 17;
-            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
-            // 
-            // rJ_Lable_Content
-            // 
-            this.rJ_Lable_Content.BackColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Content.BackgroundColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Content.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_Content.BorderRadius = 0;
-            this.rJ_Lable_Content.BorderSize = 0;
-            this.rJ_Lable_Content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rJ_Lable_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_Content.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_Content.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable_Content.GUID = "";
-            this.rJ_Lable_Content.Location = new System.Drawing.Point(0, 11);
-            this.rJ_Lable_Content.Name = "rJ_Lable_Content";
-            this.rJ_Lable_Content.Size = new System.Drawing.Size(317, 12);
-            this.rJ_Lable_Content.TabIndex = 18;
-            this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
-            // 
             // Dialog_NumPannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -586,6 +586,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dialog_NumPannel_FormClosed);
             this.Load += new System.EventHandler(this.Dialog_NumPannel_Load);
             this.panel_top.ResumeLayout(false);

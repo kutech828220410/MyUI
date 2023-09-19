@@ -16,11 +16,13 @@ using Basic;
 using LadderUI;
 using LadderConnection;
 using MyUI;
+using System.Reflection;
 
 namespace HCGUI
 {
     public partial class HCG_485_IO : UserControl
     {
+        static public string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public string PortName = "";
         public int BaudRate = 115500;
         private Basic.MyConvert Myconvert = new Basic.MyConvert();
@@ -726,13 +728,13 @@ namespace HCGUI
                 this.savePropertyFile.List_HCG_485_IO_Basic.Add(this.HCG_485_IO_Basic[i].GetSaveObject());
             }
 
-            this.StreamName = @".\\HCG_485_IO\\" + _設備名稱 + ".pro";
+            this.StreamName = $@"{currentDirectory}\HCG_485_IO\\" + _設備名稱 + ".pro";
             Basic.FileIO.SaveProperties(this.savePropertyFile, this.StreamName);
         }
         private void LoadProperties()
         {
             object temp = new object();
-            this.StreamName = @".\\HCG_485_IO\\" + _設備名稱 + ".pro";
+            this.StreamName = $@"{currentDirectory}\HCG_485_IO\\" + _設備名稱 + ".pro";
             if (Basic.FileIO.LoadProperties(ref temp, StreamName))
             {
                 if(temp is SavePropertyFile)

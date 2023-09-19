@@ -212,7 +212,8 @@ namespace SQLUI
                         dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
                         dataGridView.Columns[columns.Text].DefaultCellStyle.ForeColor = Color.DimGray;
                     }
-                   
+                    dataGridView.Columns[columns.Text].Width = columns.Width;
+                    dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
                 }
 
 
@@ -1232,10 +1233,10 @@ namespace SQLUI
         }
         public void Init()
         {
+            if (OnlineState == OnlineEnum.Online) this.SQL_Reset();
             if (this.flag_Init == true) return;
             if (OnlineState == OnlineEnum.Online)
-            {
-                this.SQL_Reset();
+            {           
                 this.SQL_TableInit();
                 this.DataGrid_Init(IsStart);       
                 this.ModuleChangeEvent += new ModuleChangeEventHandler(RowsChange);
@@ -3011,6 +3012,27 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
                 dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
             }
+        }
+        public void Set_ColumnText(string text, object Enum)
+        {
+            this.Set_ColumnText(text, Enum.GetEnumName());
+        }
+        public void Set_ColumnText(string text, string name)
+        {
+            if (text.StringIsEmpty()) return;
+            for (int i = 0; i < name.Length; i++)
+            {
+                for (int k = 0; k < this.Columns.Count; k++)
+                {
+                    if (this.Columns[k].Name == name)
+                    {
+                        dataGridView.Columns[$"{ Columns[k].Name}"].HeaderText = text;
+                        Columns[k].Text = text;
+                        Columns[k].Visable = true;
+                    }
+                }
+            }
+      
         }
 
 

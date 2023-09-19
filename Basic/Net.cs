@@ -9,6 +9,7 @@ using System.IO;
 using System.Drawing;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.Json;
@@ -469,7 +470,55 @@ namespace Basic
             }
             return true;
         }
+        public static string UploadFileToApi(string filePath, string apiUrl)
+        {
+            return UploadFileToApi(filePath, apiUrl, "");
+        }
+        public static string UploadFileToApi(string filePath, string apiUrl, string jsonParams)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var content = new MultipartFormDataContent();
 
- 
+                    // Adding the file content
+                    byte[] fileBytes = LoadFileBytes(filePath);
+                    var fileContent = new ByteArrayContent(fileBytes);
+                    fileContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                    content.Add(fileContent, "file", Path.GetFileName(filePath)); // 替换为实际的文件名
+
+                    // Adding JSON parameters as StringContent
+                    var jsonContent = new StringContent(jsonParams);
+                    jsonContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    content.Add(jsonContent, "jsonParams");
+
+                    HttpResponseMessage response = client.PostAsync(apiUrl, content).Result;
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return response.Content.ReadAsStringAsync().Result;
+                    }
+                    else
+                    {
+                        throw new Exception("File upload failed. Status code: " + response.StatusCode);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return "";
+        }
+        public static byte[] LoadFileBytes(string filePath)
+        {
+            using (FileStream fileStream = File.OpenRead(filePath))
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                fileStream.CopyTo(memoryStream);
+                return memoryStream.ToArray();
+            }
+        }
     }
 }

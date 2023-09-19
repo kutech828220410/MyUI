@@ -31,8 +31,8 @@ namespace LadderConnection
         public List<String[]> Program_緩衝區 = new List<string[]>();
         public bool Program_緩衝區寫入主程式 = false;
         public List<String[]> Comment = new List<string[]>();
-        public List<String[]> Comment_緩衝區 = new List<string[]>(); 
-
+        public List<String[]> Comment_緩衝區 = new List<string[]>();
+        public static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public DEVICE device_system = new DEVICE(500, 500, 100, 100, 20, 66, 0,true);
         public enum TxDataType
         {
@@ -75,6 +75,7 @@ namespace LadderConnection
     }
     static public class TopMachine
     {
+        static public string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         static public TCP.UDP_Cilent UDP_Cilent;
         static private BackgroundWorker backgroundWorker = new BackgroundWorker();
         static private SerialPort serialPort = new SerialPort();
@@ -2704,6 +2705,7 @@ namespace LadderConnection
     }
     public class LowerMachine
     {
+        static public string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         public delegate void MethodDelegate();
         public Properties.Tx通訊方式 通訊方式 = new Properties.Tx通訊方式();
         private List<MethodDelegate> Run_start = new List<MethodDelegate>();
@@ -2907,7 +2909,7 @@ namespace LadderConnection
 
                 try
                 {
-                    stream = File.Open("Device.val", FileMode.Create);
+                    stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Create);
                     binFmt.Serialize(stream, saveDeviceFile);
                 }
                 finally
@@ -2928,9 +2930,10 @@ namespace LadderConnection
             MemoryStream memoryStream = null;
             try
             {
-                if (File.Exists(".\\Device.val"))
+               
+                if (File.Exists($@"{currentDirectory}\Device.val"))
                 {
-                    stream = File.Open(".\\Device.val", FileMode.Open);
+                    stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Open);
                     try { saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(stream); }
                     catch { }
                 }
