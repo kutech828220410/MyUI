@@ -15,7 +15,7 @@ namespace MyUI
         private string gUID = "";
         public string GUID { get => gUID; set => gUID = value; }
         private int borderSize = 0;
-        private int borderRadius = 40;
+        private int borderRadius = 10;
         private Color borderColor = Color.PaleVioletRed;
         private ButtonType _buttonType = ButtonType.Push;
         [Category("RJ Code Advance")]
@@ -69,16 +69,20 @@ namespace MyUI
                 if (flag_refresh) this.Invalidate();
             }
         }
+        private Color _backgroundColor_buf = Color.Transparent;
+        private Color _backgroundColor = Color.Coral;
+        private Color backgroundColor = Color.RoyalBlue;
         [Category("RJ Code Advance")]
         public Color BackgroundColor
         {
             get
             {
-                return this.BackColor;
+                return this.backgroundColor;
             }
             set
             {
-                this.BackColor = value;
+                this.backgroundColor = value;
+                this.Invalidate();
             }
         }
         [Category("RJ Code Advance")]
@@ -120,6 +124,7 @@ namespace MyUI
             }
         }
 
+
         public enum ButtonType
         {
             Push,
@@ -158,10 +163,12 @@ namespace MyUI
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.MediumSlateBlue;
+            this.BackColor = Color.RoyalBlue;
             this.ForeColor = Color.White;
             this.Resize += RJ_Button_Resize;
         }
+
+ 
 
         public void ResetState()
         {
@@ -171,7 +178,6 @@ namespace MyUI
                 this.Enabled = true;
             }));
         }
-
         private void SetState(bool state)
         {
             if(state)
@@ -199,6 +205,7 @@ namespace MyUI
                 this.BorderRadius = this.Height;
             }
         }
+      
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -212,48 +219,87 @@ namespace MyUI
 
             return path;
         }
-        protected override void OnPaint(PaintEventArgs pevent)
+        private void Paint(Graphics g)
         {
-            base.OnPaint(pevent);
-            pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-            RectangleF rectSurface = new RectangleF(0, 0, this.Width, this.Height);
-            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
-
-            if(this.borderRadius > 2)
+            if (this.Enabled == false)
             {
+                this._backgroundColor = Color.LightGray;
+            }
+            else
+            {
+                this._backgroundColor = this.backgroundColor;
+            }
+            if(this._backgroundColor != this._backgroundColor_buf)
+            {
+                this.BackColor = this._backgroundColor;
+                this._backgroundColor_buf = this._backgroundColor;
+            }
+            RectangleF rectSurface = new RectangleF(1, 1, this.Width, this.Height);
+            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            if (this.Enabled == false)
+            {
+                rectBorder = new RectangleF(1, 1, this.Width - 1, this.Height - 1);
                 using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
                 using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius - 1F))
-                using (Pen penSurface = new Pen(this.Parent.BackColor, 2))
-                using (Pen penBorder = new Pen(borderColor, borderSize))
+                using (Pen penSurface = new Pen(this.BackgroundColor, 2))
+                using (Pen penBorder = new Pen(Color.Red, 2))
                 {
                     penBorder.Alignment = PenAlignment.Inset;
                     this.Region = new Region(pathSurface);
-                    pevent.Graphics.DrawPath(penSurface, pathSurface);
+                    g.DrawPath(penSurface, pathSurface);
 
-                    if(borderSize >=1)
-                    {
-                        pevent.Graphics.DrawPath(penBorder, pathBorder);
-                    }
+                    g.DrawPath(penBorder, pathBorder);
+                    g.DrawLine(penBorder, new Point(this.Width, 0), new Point(0, this.Height));
                 }
             }
             else
             {
-                this.Region = new Region(rectSurface);
-                if(this.borderRadius >= 1)
+                if (this.borderRadius > 2)
                 {
+                    using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
+                    using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius - 1F))
+                    using (Pen penSurface = new Pen(this.BackgroundColor, 2))
                     using (Pen penBorder = new Pen(borderColor, borderSize))
                     {
                         penBorder.Alignment = PenAlignment.Inset;
-                        pevent.Graphics.DrawRectangle(penBorder, 0, 0, this.Width - 1, this.Height - 1);
+                        this.Region = new Region(pathSurface);
+                        g.DrawPath(penSurface, pathSurface);
+
+                        if (borderSize >= 1)
+                        {
+                            g.DrawPath(penBorder, pathBorder);
+                        }
+                    }
+                }
+                else
+                {
+                    this.Region = new Region(rectSurface);
+                    if (this.borderRadius >= 1)
+                    {
+                        using (Pen penBorder = new Pen(borderColor, borderSize))
+                        {
+                            penBorder.Alignment = PenAlignment.Inset;
+                            g.DrawRectangle(penBorder, 1, 1, this.Width - 1, this.Height - 1);
+                        }
                     }
                 }
             }
+           
+
+        }
+        protected override void OnPaint(PaintEventArgs pevent)
+        {
+            base.OnPaint(pevent);
+                  
+            Paint(pevent.Graphics);
+            
         }
         protected override void OnHandleCreated(EventArgs e)
         {
             //base.OnHandleCreated(e);
             this.Parent.BackColorChanged += Parent_BackColorChanged;
+
         }
         private void Parent_BackColorChanged(object sender, EventArgs e)
         {

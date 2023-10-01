@@ -104,7 +104,10 @@ namespace HSONApplication
 
         private void PlC_RJ_Button_顯示_MouseDownEvent(MouseEventArgs mevent)
         {
-            this.sqL_DataGridView_人員資料.SQL_GetAllRows(true);
+            this.Invoke(new Action(delegate 
+            {
+                rJ_Button1.Enabled = !rJ_Button1.Enabled;
+            }));
         }
 
         private void PlC_UI_Init1_UI_Finished_Event()

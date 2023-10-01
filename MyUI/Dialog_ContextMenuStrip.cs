@@ -203,6 +203,7 @@ namespace MyUI
             this.Controls.Clear();
             panel = new System.Windows.Forms.Panel();
             panel.Dock = DockStyle.Fill;
+            panel.Padding = new Padding(2, 2, 2, 2);
             label_Title = new Label();
 
             label_Title.AutoSize = false;
@@ -231,6 +232,7 @@ namespace MyUI
             rJ_Button_Calcel.ForeColor = controlsForeColor;
             rJ_Button_Calcel.Click += RJ_Button_Calcel_Click;
             rJ_Button_Calcel.BackColor = Color.DarkGray;
+            rJ_Button_Calcel.Margin = new Padding(2, 2, 2, 2);
             for (int i = list_Controls.Count - 1; i >= 0; i--)
             {
                 panel.Controls.Add(list_Controls[i]);

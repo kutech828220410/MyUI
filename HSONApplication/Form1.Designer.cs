@@ -32,6 +32,8 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
+            this.rJ_Button1 = new MyUI.RJ_Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plC_RJ_Button_顯示 = new MyUI.PLC_RJ_Button();
@@ -84,6 +86,8 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_RJ_Button1);
+            this.tabPage1.Controls.Add(this.rJ_Button1);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.plC_RJ_Button_顯示);
             this.tabPage1.Controls.Add(this.sqL_DataGridView_人員資料);
@@ -96,6 +100,68 @@
             this.tabPage1.Size = new System.Drawing.Size(1650, 1013);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
+            // 
+            // plC_RJ_Button1
+            // 
+            this.plC_RJ_Button1.AutoResetState = false;
+            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button1.Bool = false;
+            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button1.BorderRadius = 10;
+            this.plC_RJ_Button1.BorderSize = 0;
+            this.plC_RJ_Button1.but_press = false;
+            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.GUID = "";
+            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button1.Location = new System.Drawing.Point(1408, 180);
+            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
+            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ON_BorderSize = 5;
+            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.Size = new System.Drawing.Size(150, 58);
+            this.plC_RJ_Button1.State = false;
+            this.plC_RJ_Button1.TabIndex = 59;
+            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button1.字型鎖住 = false;
+            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button1.文字鎖住 = false;
+            this.plC_RJ_Button1.讀取位元反向 = false;
+            this.plC_RJ_Button1.讀寫鎖住 = false;
+            this.plC_RJ_Button1.音效 = true;
+            this.plC_RJ_Button1.顯示 = false;
+            this.plC_RJ_Button1.顯示狀態 = false;
+            // 
+            // rJ_Button1
+            // 
+            this.rJ_Button1.AutoResetState = false;
+            this.rJ_Button1.BackColor = System.Drawing.Color.LightSalmon;
+            this.rJ_Button1.BackgroundColor = System.Drawing.Color.LightSalmon;
+            this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button1.BorderRadius = 10;
+            this.rJ_Button1.BorderSize = 0;
+            this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button1.Enabled = false;
+            this.rJ_Button1.FlatAppearance.BorderSize = 0;
+            this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button1.GUID = "";
+            this.rJ_Button1.Location = new System.Drawing.Point(1420, 386);
+            this.rJ_Button1.Name = "rJ_Button1";
+            this.rJ_Button1.Size = new System.Drawing.Size(186, 63);
+            this.rJ_Button1.State = false;
+            this.rJ_Button1.TabIndex = 58;
+            this.rJ_Button1.Text = "rJ_Button1";
+            this.rJ_Button1.TextColor = System.Drawing.Color.White;
+            this.rJ_Button1.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -118,7 +184,7 @@
             // plC_RJ_Button_顯示
             // 
             this.plC_RJ_Button_顯示.AutoResetState = false;
-            this.plC_RJ_Button_顯示.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_顯示.BackgroundColor = System.Drawing.Color.LightSeaGreen;
             this.plC_RJ_Button_顯示.Bool = false;
             this.plC_RJ_Button_顯示.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_顯示.BorderRadius = 5;
@@ -135,13 +201,13 @@
             this.plC_RJ_Button_顯示.OFF_文字內容 = "顯示";
             this.plC_RJ_Button_顯示.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_Button_顯示.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_顯示.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_顯示.OFF_背景顏色 = System.Drawing.SystemColors.ControlDarkDark;
             this.plC_RJ_Button_顯示.ON_BorderSize = 5;
             this.plC_RJ_Button_顯示.ON_文字內容 = "顯示";
             this.plC_RJ_Button_顯示.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_Button_顯示.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_顯示.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_顯示.Size = new System.Drawing.Size(150, 75);
+            this.plC_RJ_Button_顯示.Size = new System.Drawing.Size(143, 85);
             this.plC_RJ_Button_顯示.State = false;
             this.plC_RJ_Button_顯示.TabIndex = 56;
             this.plC_RJ_Button_顯示.Text = "顯示";
@@ -172,7 +238,7 @@
             this.sqL_DataGridView_人員資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_人員資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_人員資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_人員資料.columnHeadersHeight = 23;
+            this.sqL_DataGridView_人員資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_人員資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_人員資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_人員資料.Dock = System.Windows.Forms.DockStyle.Left;
@@ -469,6 +535,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
+        private MyUI.RJ_Button rJ_Button1;
+        private MyUI.PLC_RJ_Button plC_RJ_Button1;
     }
 }
 
