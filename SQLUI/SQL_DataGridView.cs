@@ -3017,24 +3017,46 @@ namespace SQLUI
         {
             this.Set_ColumnText(text, Enum.GetEnumName());
         }
-        public void Set_ColumnText(string text, string name)
+        public void Set_ColumnText(string text, string ColumnName)
         {
             if (text.StringIsEmpty()) return;
+            for (int k = 0; k < this.Columns.Count; k++)
+            {
+                if (this.Columns[k].Name == ColumnName)
+                {
+                    dataGridView.Columns[$"{ Columns[k].Name}"].HeaderText = text;
+                    Columns[k].Text = text;
+                    Columns[k].Visable = true;
+                }
+            }
+
+        }
+        public void Set_ColumnSortMode(DataGridViewColumnSortMode dataGridViewColumnSortMode, object Enum)
+        {
+            this.Set_ColumnSortMode(dataGridViewColumnSortMode, Enum.GetEnumName());
+        }
+        public void Set_ColumnSortMode(DataGridViewColumnSortMode dataGridViewColumnSortMode, string name)
+        {
             for (int i = 0; i < name.Length; i++)
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
                     if (this.Columns[k].Name == name)
                     {
-                        dataGridView.Columns[$"{ Columns[k].Name}"].HeaderText = text;
-                        Columns[k].Text = text;
-                        Columns[k].Visable = true;
+                        Columns[k].SortMode = dataGridViewColumnSortMode;
                     }
                 }
             }
-      
+            foreach (ColumnElement columns in Columns)
+            {
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
+                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
+                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
+                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+            }
         }
-
 
         public void Set_ColumnHeaderHeight(int height)
         {

@@ -13,7 +13,7 @@ namespace MyUI
     public class MyTimer
     {
         private bool OnTick = false;
-        public double TickTime = 0;
+        public double tickTime = 0;
         static private Stopwatch stopwatch = new Stopwatch();
         PLC_Device pLC_Device;
         public MyTimer()
@@ -33,7 +33,7 @@ namespace MyUI
         private double CycleTime_start;
         public void StartTickTime(double TickTime)
         {
-            this.TickTime = TickTime;
+            this.tickTime = TickTime;
             if (!OnTick)
             {
                 CycleTime_start = stopwatch.Elapsed.TotalMilliseconds;
@@ -43,7 +43,7 @@ namespace MyUI
 
         public void StartTickTime()
         {
-            this.TickTime = pLC_Device.GetValue();
+            this.tickTime = pLC_Device.GetValue();
             if (!OnTick)
             {
                 CycleTime_start = stopwatch.Elapsed.TotalMilliseconds;
@@ -58,10 +58,14 @@ namespace MyUI
         {
             this.OnTick = false;
         }
+        public void Console_log()
+        {
+            Console.WriteLine($"sub Time : {(stopwatch.Elapsed.TotalMilliseconds - CycleTime_start)} , TickTime : {this.tickTime}");
+        }
         public bool IsTimeOut()
         {
             //if (OnTick == false) return false;
-            if ((stopwatch.Elapsed.TotalMilliseconds - CycleTime_start) >= TickTime)
+            if ((stopwatch.Elapsed.TotalMilliseconds - CycleTime_start) >= this.tickTime)
             {
                 OnTick = false;
                 return true;
@@ -84,7 +88,7 @@ namespace MyUI
             if (retick)
             {
                 this.TickStop();
-                this.StartTickTime(999999);
+                //this.StartTickTime(999999);
             }        
             return text;
 

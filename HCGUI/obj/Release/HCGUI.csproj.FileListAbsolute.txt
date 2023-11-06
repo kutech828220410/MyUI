@@ -887,7 +887,6 @@ C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\System.Text.Encodings.Web.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\System.Text.Json.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\System.ValueTuple.dll
-C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\MeasureSystemFunction.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\System.Buffers.xml
@@ -1003,3 +1002,4 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComp
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll

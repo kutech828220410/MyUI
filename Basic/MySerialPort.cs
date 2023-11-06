@@ -213,6 +213,7 @@ namespace Basic
             {
                 for (int i = 0; i < byte2read; i++)
                 {
+                    if (this.serialPort.IsOpen == false) return;
                     UART_RX_bytes[i + BytesToRead] = (byte)this.serialPort.ReadByte();
                 }
                 BytesToRead = BytesToRead + byte2read;

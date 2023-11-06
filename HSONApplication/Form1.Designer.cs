@@ -48,6 +48,7 @@
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dateTimeComList1 = new MyUI.DateTimeComList();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -86,6 +87,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.dateTimeComList1);
             this.tabPage1.Controls.Add(this.plC_RJ_Button1);
             this.tabPage1.Controls.Add(this.rJ_Button1);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -498,6 +500,21 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dateTimeComList1
+            // 
+            this.dateTimeComList1.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeComList1.Day = 7;
+            this.dateTimeComList1.End_Year = 2030;
+            this.dateTimeComList1.Location = new System.Drawing.Point(380, 54);
+            this.dateTimeComList1.mFont = new System.Drawing.Font("標楷體", 18F);
+            this.dateTimeComList1.Month = 10;
+            this.dateTimeComList1.Name = "dateTimeComList1";
+            this.dateTimeComList1.Size = new System.Drawing.Size(400, 55);
+            this.dateTimeComList1.Start_Year = 2022;
+            this.dateTimeComList1.TabIndex = 60;
+            this.dateTimeComList1.Value = new System.DateTime(2023, 10, 7, 15, 35, 29, 415);
+            this.dateTimeComList1.Year = 2023;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -537,6 +554,7 @@
         private System.Windows.Forms.Button button1;
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.PLC_RJ_Button plC_RJ_Button1;
+        private MyUI.DateTimeComList dateTimeComList1;
     }
 }
 

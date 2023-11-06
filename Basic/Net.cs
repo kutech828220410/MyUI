@@ -179,9 +179,10 @@ namespace Basic
             JsonSerializerOptions options = new JsonSerializerOptions
             {
                 WriteIndented = WriteIndented,
-                IgnoreReadOnlyProperties = true,
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                 IgnoreNullValues = true,
+                IgnoreReadOnlyProperties = true,
+                //DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
             };
             string jsonString = JsonSerializer.Serialize<object>(value, options);
             return jsonString;

@@ -263,6 +263,7 @@ namespace MyUI
         {
             get
             {
+                if (this.IsHandleCreated == false) return null;
                 object value = new object();
                 this.Invoke(new Action(delegate
                 {

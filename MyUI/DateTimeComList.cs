@@ -80,33 +80,33 @@ namespace MyUI
         {
             get
             {
-                return this.rJ_ComboBox_Year.Texts.StringToInt32();
+                return this.rJ_ComboBox_Year.SelectedItem.StringToInt32();
             }
             set
             {
-                this.rJ_ComboBox_Year.Texts = value.ToString();
+                this.rJ_ComboBox_Year.SelectedItem = value.ToString();
             }
         }
         public int Month
         {
             get
             {
-                return this.rJ_ComboBox_Month.Texts.StringToInt32();
+                return this.rJ_ComboBox_Month.SelectedItem.StringToInt32();
             }
             set
             {
-                this.rJ_ComboBox_Month.Texts = value.ToString();
+                this.rJ_ComboBox_Month.SelectedItem = value.ToString();
             }
         }
         public int Day
         {
             get
             {
-                return this.rJ_ComboBox_Day.Texts.StringToInt32();
+                return this.rJ_ComboBox_Day.SelectedItem.StringToInt32();
             }
             set
             {
-                this.rJ_ComboBox_Day.Texts = value.ToString();
+                this.rJ_ComboBox_Day.SelectedItem = value.ToString();
             }
         }
         private DateTime value = DateTime.Now;
@@ -137,10 +137,12 @@ namespace MyUI
             this.label1.ForeColor = Color.Black;
             this.label2.ForeColor = Color.Black;
             if (start_Year > end_Year) start_Year = end_Year;
+            this.rJ_ComboBox_Year.Items.Clear();
             for (int i = start_Year; i <= end_Year; i++)
             {
                 this.rJ_ComboBox_Year.Items.Add(i.ToString());
             }
+            this.rJ_ComboBox_Month.Items.Clear();
             for (int i = 1; i <= 12; i++)
             {
                 this.rJ_ComboBox_Month.Items.Add(i.ToString());
@@ -158,12 +160,12 @@ namespace MyUI
         private void rJ_ComboBox_Month_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             int old_selected = this.rJ_ComboBox_Day.SelectedIndex;
-            int MontOfDays = Basic.TypeConvert.GetMonthOfDays(Month);
-            if (Value.Day > MontOfDays) Value = new DateTime(Value.Year, Month, Value.Day);
+            int MonthOfDays = Basic.TypeConvert.GetMonthOfDays(Month);
+            if (Value.Day >= MonthOfDays) Value = new DateTime(Value.Year, Month, MonthOfDays);
             else Value = new DateTime(Value.Year, Month, Value.Day);
 
             List<string> list_value = new List<string>();
-            for (int i = 1; i <= MontOfDays; i++)
+            for (int i = 1; i <= MonthOfDays; i++)
             {
                 list_value.Add(i.ToString());
             }
@@ -171,7 +173,6 @@ namespace MyUI
             if (this.rJ_ComboBox_Day.Items.Count == 0) return;
             if (old_selected == -1) this.rJ_ComboBox_Day.SelectedIndex = 0;
             else if (old_selected < this.rJ_ComboBox_Day.Items.Count) this.rJ_ComboBox_Day.SelectedIndex = old_selected;
-
         }
         private void rJ_ComboBox_Day_OnSelectedIndexChanged(object sender, EventArgs e)
         {

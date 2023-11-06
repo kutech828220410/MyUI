@@ -228,9 +228,9 @@ namespace MyUI
             rJ_Button_Calcel.Text = "取消";
             rJ_Button_Calcel.Font = controlsFont;
             rJ_Button_Calcel.BorderRadius = controlsRadius;
-            rJ_Button_Calcel.BackColor = controlsBackColor;
-            rJ_Button_Calcel.ForeColor = controlsForeColor;
+            rJ_Button_Calcel.ForeColor = Color.Black;
             rJ_Button_Calcel.Click += RJ_Button_Calcel_Click;
+            rJ_Button_Calcel.BackgroundColor = Color.DarkGray;
             rJ_Button_Calcel.BackColor = Color.DarkGray;
             rJ_Button_Calcel.Margin = new Padding(2, 2, 2, 2);
             for (int i = list_Controls.Count - 1; i >= 0; i--)
@@ -279,7 +279,7 @@ namespace MyUI
         }
         private void Resize()
         {
-            this.Height = label_height + rjbutton_height + rjbutton_cancel_height;
+            this.Height = label_height + rjbutton_height + rjbutton_cancel_height + 10;
             int ScreenWidth = this.FindForm().Width;
             int ScreenHeight = this.FindForm().Height;
             this.Location = new Point((ScreenWidth - this.Width) / 2 + this.FindForm().Location.X, (ScreenHeight - this.Height) / 2 + this.FindForm().Location.Y);
