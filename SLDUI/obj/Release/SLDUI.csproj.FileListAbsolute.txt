@@ -5061,7 +5061,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.Text.Encodings
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.C9016.resources
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.C9016_Basic.resources
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.E400.resources
@@ -5073,3 +5072,4 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csprojAssemblyReference.cache

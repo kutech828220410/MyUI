@@ -3473,8 +3473,8 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Text.Enco
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csprojAssemblyReference.cache

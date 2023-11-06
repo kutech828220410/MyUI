@@ -8357,7 +8357,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\System.Text.Encodings.
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.DataBaseView.resources
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.DateTimeComList.resources
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.Dialog_NumPannel.resources
@@ -8399,3 +8398,4 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompil
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csprojAssemblyReference.cache

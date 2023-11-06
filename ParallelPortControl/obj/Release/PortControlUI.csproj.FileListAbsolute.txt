@@ -1228,7 +1228,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControl.ParallelPortControlUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControl.SerialPortControlUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.GenerateResource.cache
@@ -1236,3 +1235,4 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortCon
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csprojAssemblyReference.cache

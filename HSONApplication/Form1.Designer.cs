@@ -32,26 +32,19 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
-            this.rJ_Button1 = new MyUI.RJ_Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.plC_RJ_Button_顯示 = new MyUI.PLC_RJ_Button();
-            this.sqL_DataGridView_人員資料 = new SQLUI.SQL_DataGridView();
+            this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton2 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
-            this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dateTimeComList1 = new MyUI.DateTimeComList();
+            this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
+            this.c90161 = new SLDUI.C9016();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,12 +80,9 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
-            this.tabPage1.Controls.Add(this.dateTimeComList1);
-            this.tabPage1.Controls.Add(this.plC_RJ_Button1);
-            this.tabPage1.Controls.Add(this.rJ_Button1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.plC_RJ_Button_顯示);
-            this.tabPage1.Controls.Add(this.sqL_DataGridView_人員資料);
+            this.tabPage1.Controls.Add(this.plC_UI_Init1);
+            this.tabPage1.Controls.Add(this.lowerMachine_Panel1);
+            this.tabPage1.Controls.Add(this.c90161);
             this.tabPage1.Controls.Add(this.plC_AlarmFlow2);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton1);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton2);
@@ -103,176 +93,13 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             // 
-            // plC_RJ_Button1
+            // lowerMachine_Panel1
             // 
-            this.plC_RJ_Button1.AutoResetState = false;
-            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button1.Bool = false;
-            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button1.BorderRadius = 10;
-            this.plC_RJ_Button1.BorderSize = 0;
-            this.plC_RJ_Button1.but_press = false;
-            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.GUID = "";
-            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button1.Location = new System.Drawing.Point(1408, 180);
-            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
-            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.ON_BorderSize = 5;
-            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.Size = new System.Drawing.Size(150, 58);
-            this.plC_RJ_Button1.State = false;
-            this.plC_RJ_Button1.TabIndex = 59;
-            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button1.字型鎖住 = false;
-            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button1.文字鎖住 = false;
-            this.plC_RJ_Button1.讀取位元反向 = false;
-            this.plC_RJ_Button1.讀寫鎖住 = false;
-            this.plC_RJ_Button1.音效 = true;
-            this.plC_RJ_Button1.顯示 = false;
-            this.plC_RJ_Button1.顯示狀態 = false;
-            // 
-            // rJ_Button1
-            // 
-            this.rJ_Button1.AutoResetState = false;
-            this.rJ_Button1.BackColor = System.Drawing.Color.LightSalmon;
-            this.rJ_Button1.BackgroundColor = System.Drawing.Color.LightSalmon;
-            this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button1.BorderRadius = 10;
-            this.rJ_Button1.BorderSize = 0;
-            this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
-            this.rJ_Button1.Enabled = false;
-            this.rJ_Button1.FlatAppearance.BorderSize = 0;
-            this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Button1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Button1.GUID = "";
-            this.rJ_Button1.Location = new System.Drawing.Point(1420, 386);
-            this.rJ_Button1.Name = "rJ_Button1";
-            this.rJ_Button1.Size = new System.Drawing.Size(186, 63);
-            this.rJ_Button1.State = false;
-            this.rJ_Button1.TabIndex = 58;
-            this.rJ_Button1.Text = "rJ_Button1";
-            this.rJ_Button1.TextColor = System.Drawing.Color.White;
-            this.rJ_Button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
-            this.dataGridView1.Location = new System.Drawing.Point(576, 286);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 57;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // plC_RJ_Button_顯示
-            // 
-            this.plC_RJ_Button_顯示.AutoResetState = false;
-            this.plC_RJ_Button_顯示.BackgroundColor = System.Drawing.Color.LightSeaGreen;
-            this.plC_RJ_Button_顯示.Bool = false;
-            this.plC_RJ_Button_顯示.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_顯示.BorderRadius = 5;
-            this.plC_RJ_Button_顯示.BorderSize = 0;
-            this.plC_RJ_Button_顯示.but_press = false;
-            this.plC_RJ_Button_顯示.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_顯示.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_顯示.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_顯示.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button_顯示.GUID = "";
-            this.plC_RJ_Button_顯示.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_顯示.Location = new System.Drawing.Point(1407, 253);
-            this.plC_RJ_Button_顯示.Name = "plC_RJ_Button_顯示";
-            this.plC_RJ_Button_顯示.OFF_文字內容 = "顯示";
-            this.plC_RJ_Button_顯示.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button_顯示.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_顯示.OFF_背景顏色 = System.Drawing.SystemColors.ControlDarkDark;
-            this.plC_RJ_Button_顯示.ON_BorderSize = 5;
-            this.plC_RJ_Button_顯示.ON_文字內容 = "顯示";
-            this.plC_RJ_Button_顯示.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button_顯示.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_顯示.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_顯示.Size = new System.Drawing.Size(143, 85);
-            this.plC_RJ_Button_顯示.State = false;
-            this.plC_RJ_Button_顯示.TabIndex = 56;
-            this.plC_RJ_Button_顯示.Text = "顯示";
-            this.plC_RJ_Button_顯示.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_顯示.Texts = "顯示";
-            this.plC_RJ_Button_顯示.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_顯示.字型鎖住 = false;
-            this.plC_RJ_Button_顯示.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_顯示.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_顯示.文字鎖住 = false;
-            this.plC_RJ_Button_顯示.讀取位元反向 = false;
-            this.plC_RJ_Button_顯示.讀寫鎖住 = false;
-            this.plC_RJ_Button_顯示.音效 = true;
-            this.plC_RJ_Button_顯示.顯示 = false;
-            this.plC_RJ_Button_顯示.顯示狀態 = false;
-            // 
-            // sqL_DataGridView_人員資料
-            // 
-            this.sqL_DataGridView_人員資料.AutoSelectToDeep = false;
-            this.sqL_DataGridView_人員資料.backColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_人員資料.BorderColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_人員資料.BorderRadius = 10;
-            this.sqL_DataGridView_人員資料.BorderSize = 2;
-            this.sqL_DataGridView_人員資料.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_人員資料.cellStylBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_人員資料.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_人員資料.cellStylForeColor = System.Drawing.Color.Black;
-            this.sqL_DataGridView_人員資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
-            this.sqL_DataGridView_人員資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_人員資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_人員資料.columnHeadersHeight = 15;
-            this.sqL_DataGridView_人員資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sqL_DataGridView_人員資料.DataBaseName = "Dispensing_000";
-            this.sqL_DataGridView_人員資料.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sqL_DataGridView_人員資料.Font = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_人員資料.ImageBox = false;
-            this.sqL_DataGridView_人員資料.Location = new System.Drawing.Point(0, 0);
-            this.sqL_DataGridView_人員資料.Name = "sqL_DataGridView_人員資料";
-            this.sqL_DataGridView_人員資料.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
-            this.sqL_DataGridView_人員資料.Password = "user82822040";
-            this.sqL_DataGridView_人員資料.Port = ((uint)(3306u));
-            this.sqL_DataGridView_人員資料.rowHeaderBackColor = System.Drawing.Color.CornflowerBlue;
-            this.sqL_DataGridView_人員資料.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_人員資料.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sqL_DataGridView_人員資料.RowsHeight = 50;
-            this.sqL_DataGridView_人員資料.SaveFileName = "SQL_DataGridView";
-            this.sqL_DataGridView_人員資料.Server = "localhost";
-            this.sqL_DataGridView_人員資料.Size = new System.Drawing.Size(1390, 987);
-            this.sqL_DataGridView_人員資料.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
-            this.sqL_DataGridView_人員資料.TabIndex = 55;
-            this.sqL_DataGridView_人員資料.TableName = "person_page";
-            this.sqL_DataGridView_人員資料.UserName = "root";
-            this.sqL_DataGridView_人員資料.可拖曳欄位寬度 = false;
-            this.sqL_DataGridView_人員資料.可選擇多列 = true;
-            this.sqL_DataGridView_人員資料.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_人員資料.自動換行 = true;
-            this.sqL_DataGridView_人員資料.表單字體 = new System.Drawing.Font("新細明體", 9F);
-            this.sqL_DataGridView_人員資料.邊框樣式 = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sqL_DataGridView_人員資料.顯示CheckBox = true;
-            this.sqL_DataGridView_人員資料.顯示首列 = true;
-            this.sqL_DataGridView_人員資料.顯示首行 = true;
-            this.sqL_DataGridView_人員資料.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_人員資料.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.lowerMachine_Panel1.Location = new System.Drawing.Point(632, -13);
+            this.lowerMachine_Panel1.Name = "lowerMachine_Panel1";
+            this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
+            this.lowerMachine_Panel1.TabIndex = 56;
+            this.lowerMachine_Panel1.掃描速度 = 0;
             // 
             // plC_AlarmFlow2
             // 
@@ -368,8 +195,6 @@
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.plC_UI_Init1);
-            this.tabPage2.Controls.Add(this.lowerMachine_Panel1);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton3);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -387,33 +212,6 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // plC_UI_Init1
-            // 
-            this.plC_UI_Init1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.plC_UI_Init1.Location = new System.Drawing.Point(931, 41);
-            this.plC_UI_Init1.Name = "plC_UI_Init1";
-            this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
-            this.plC_UI_Init1.TabIndex = 34;
-            this.plC_UI_Init1.光道視覺元件初始化 = true;
-            this.plC_UI_Init1.全螢幕顯示 = false;
-            this.plC_UI_Init1.掃描速度 = 1;
-            this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
-            this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
-            this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
-            this.plC_UI_Init1.起始畫面顯示 = false;
-            this.plC_UI_Init1.邁得威視元件初始化 = false;
-            this.plC_UI_Init1.開機延遲 = 0;
-            this.plC_UI_Init1.音效 = false;
-            // 
-            // lowerMachine_Panel1
-            // 
-            this.lowerMachine_Panel1.Location = new System.Drawing.Point(18, 6);
-            this.lowerMachine_Panel1.Name = "lowerMachine_Panel1";
-            this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
-            this.lowerMachine_Panel1.TabIndex = 33;
-            this.lowerMachine_Panel1.掃描速度 = 0;
             // 
             // plC_RJ_ScreenButton3
             // 
@@ -500,20 +298,33 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dateTimeComList1
+            // plC_UI_Init1
             // 
-            this.dateTimeComList1.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeComList1.Day = 7;
-            this.dateTimeComList1.End_Year = 2030;
-            this.dateTimeComList1.Location = new System.Drawing.Point(380, 54);
-            this.dateTimeComList1.mFont = new System.Drawing.Font("標楷體", 18F);
-            this.dateTimeComList1.Month = 10;
-            this.dateTimeComList1.Name = "dateTimeComList1";
-            this.dateTimeComList1.Size = new System.Drawing.Size(400, 55);
-            this.dateTimeComList1.Start_Year = 2022;
-            this.dateTimeComList1.TabIndex = 60;
-            this.dateTimeComList1.Value = new System.DateTime(2023, 10, 7, 15, 35, 29, 415);
-            this.dateTimeComList1.Year = 2023;
+            this.plC_UI_Init1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.plC_UI_Init1.Location = new System.Drawing.Point(632, 565);
+            this.plC_UI_Init1.Name = "plC_UI_Init1";
+            this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
+            this.plC_UI_Init1.TabIndex = 57;
+            this.plC_UI_Init1.光道視覺元件初始化 = true;
+            this.plC_UI_Init1.全螢幕顯示 = false;
+            this.plC_UI_Init1.掃描速度 = 1;
+            this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
+            this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
+            this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
+            this.plC_UI_Init1.起始畫面顯示 = false;
+            this.plC_UI_Init1.邁得威視元件初始化 = false;
+            this.plC_UI_Init1.開機延遲 = 0;
+            this.plC_UI_Init1.音效 = false;
+            // 
+            // c90161
+            // 
+            this.c90161.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.c90161.CycleTime = 1;
+            this.c90161.Location = new System.Drawing.Point(8, 19);
+            this.c90161.Name = "c90161";
+            this.c90161.Size = new System.Drawing.Size(583, 519);
+            this.c90161.TabIndex = 55;
+            this.c90161.設備名稱 = "C9016-001";
             // 
             // Form1
             // 
@@ -527,7 +338,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.plC_ScreenPage1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -544,17 +354,11 @@
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton4;
         private System.Windows.Forms.OpenFileDialog openFileDialog_LoadExcel;
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
-        private SQLUI.SQL_DataGridView sqL_DataGridView_人員資料;
-        private MyUI.PLC_UI_Init plC_UI_Init1;
-        private LadderUI.LowerMachine_Panel lowerMachine_Panel1;
-        private MyUI.PLC_RJ_Button plC_RJ_Button_顯示;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
-        private MyUI.RJ_Button rJ_Button1;
-        private MyUI.PLC_RJ_Button plC_RJ_Button1;
-        private MyUI.DateTimeComList dateTimeComList1;
+        private LadderUI.LowerMachine_Panel lowerMachine_Panel1;
+        private MyUI.PLC_UI_Init plC_UI_Init1;
+        private SLDUI.C9016 c90161;
     }
 }
 

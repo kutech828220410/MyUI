@@ -3036,7 +3036,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\System.Text
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.H_CircleROIBW8.resources
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.H_AltairUDrv.resources
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.H_Canvas.resources
@@ -3055,3 +3054,8 @@ C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSyst
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csprojAssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb

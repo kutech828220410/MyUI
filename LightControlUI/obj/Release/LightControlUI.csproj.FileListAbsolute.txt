@@ -1446,10 +1446,10 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Text.
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.LD_NP24DV_4T.resources
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csprojAssemblyReference.cache

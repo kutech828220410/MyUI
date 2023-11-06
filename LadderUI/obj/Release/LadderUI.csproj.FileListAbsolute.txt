@@ -6376,7 +6376,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.Text.Encodi
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderForm.Verify.resources
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderForm.Download.resources
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderForm.EnterSymbol.resources
@@ -6394,3 +6393,4 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Co
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csprojAssemblyReference.cache

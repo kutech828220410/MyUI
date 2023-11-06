@@ -901,7 +901,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Text.Encodin
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.MindVision_Camera_UI.resources
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.PLC_MindVision_Camera_UI.resources
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.GenerateResource.cache
@@ -909,3 +908,4 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Core
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csprojAssemblyReference.cache

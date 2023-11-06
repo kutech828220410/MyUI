@@ -4024,7 +4024,6 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.Text.Encodin
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.CilentUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.ServerUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.UDP_Cilent.resources
@@ -4033,3 +4032,4 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.pdb
+C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csprojAssemblyReference.cache
