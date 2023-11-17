@@ -84,7 +84,7 @@ namespace Basic
         private SerialPort serialPort = new SerialPort();
         private bool FLAG_UART_RX = false;
         private List<byte> UART_RX_BUF = new List<byte>();
-        private byte[] UART_RX_bytes = new byte[4096];
+        private byte[] UART_RX_bytes = new byte[20480];
         public int BytesToRead = 0;
         private MyUI.MyTimer MyTimer_RX_Timeout = new MyUI.MyTimer();
         public void Init(string PortName, int BaudRate, int DataBits, System.IO.Ports.Parity Parity, System.IO.Ports.StopBits StopBits)
@@ -98,8 +98,8 @@ namespace Basic
             this.DataBits = DataBits;
             this.Parity = Parity;
             this.StopBits = StopBits;
-            this.serialPort.ReadBufferSize = 4096;
-            this.serialPort.WriteBufferSize = 4096;
+            this.serialPort.ReadBufferSize = 20480;
+            this.serialPort.WriteBufferSize = 20480;
             this.serialPort.DataReceived += SerialPort_DataReceived;
 
             this.RX_TickRST();
@@ -189,7 +189,7 @@ namespace Basic
         }
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            //if (this.UART_RX_BUF.Count >= 4096)
+            //if (this.UART_RX_BUF.Count >= 20480)
             //{
             //    this.UART_RX_BUF.Clear();
             //}
@@ -205,7 +205,7 @@ namespace Basic
 
             int byte2read = this.serialPort.BytesToRead;
             if (ConsoleWrite) Console.Write($"{PortName} 讀取到{byte2read}長度資料!\n");
-            if (BytesToRead + byte2read >= 4096)
+            if (BytesToRead + byte2read >= 20480)
             {
                 ClearReadByte();
             }

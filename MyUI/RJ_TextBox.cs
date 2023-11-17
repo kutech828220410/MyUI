@@ -87,20 +87,20 @@ namespace MyUI
         {
             get
             {
-                return textBox1.UseSystemPasswordChar;
+                return isPasswordChar;
             }
             set
             {
                 isPasswordChar = value;
-                if (value)
-                {
-                    textBox1.PasswordChar = '*';
-                }
-                else
-                {
-                    textBox1.PasswordChar = new char();
-                }
-                textBox1.UseSystemPasswordChar = value;
+                //if (value)
+                //{
+                //    textBox1.PasswordChar = '*';
+                //}
+                //else
+                //{
+                //    textBox1.PasswordChar = new char();
+                //}
+                //textBox1.UseSystemPasswordChar = value;
             }
         }
         [Category("RJ Code Advance")]
@@ -370,14 +370,15 @@ namespace MyUI
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
             {
+                if (isPasswordChar)
+                {
+                    textBox1.PasswordChar = new char();
+                    //textBox1.UseSystemPasswordChar = false;
+                }
                 isPlaceholder = true;
                 textBox1.Text = placeholderText;
                 textBox1.ForeColor = placeholderColor;
-                if(isPasswordChar)
-                {
-                    textBox1.PasswordChar = new char();
-                    textBox1.UseSystemPasswordChar = false;
-                }
+              
             }
         }
         private void RemovePlcaeHolder()
@@ -390,7 +391,7 @@ namespace MyUI
                 if (isPasswordChar)
                 {
                     textBox1.PasswordChar = '*';
-                    textBox1.UseSystemPasswordChar = true;
+                    //textBox1.UseSystemPasswordChar = true;
                 }
             }
         }
@@ -476,8 +477,9 @@ namespace MyUI
             if (!this.DesignMode)
             {
                 this.IsFocused = false;
-                this.Invalidate();
                 this.SetPlcaeHolder();
+                this.Invalidate();
+        
             }
         }
     }

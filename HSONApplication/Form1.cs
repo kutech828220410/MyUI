@@ -99,7 +99,7 @@ namespace HSONApplication
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
 
             this.plC_RJ_Button_顯示.MouseDownEvent += PlC_RJ_Button_顯示_MouseDownEvent;
-
+            rJ_TextBox1.PassWordChar = true;
         }
 
         private void PlC_RJ_Button_顯示_MouseDownEvent(MouseEventArgs mevent)
@@ -108,6 +108,7 @@ namespace HSONApplication
             {
                 rJ_Button1.Enabled = !rJ_Button1.Enabled;
             }));
+            System.Threading.Thread.Sleep(5000);
         }
 
         private void PlC_UI_Init1_UI_Finished_Event()
@@ -133,10 +134,10 @@ namespace HSONApplication
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string table_json = "{\r\n  \"tableName\": \"medicine_page_cloud\",\r\n  \"columnList\": [\r\n    {\r\n      \"name\": \"GUID\",\r\n      \"typeName\": \" VARCHAR(50)\",\r\n      \"indexType\": 2\r\n    },\r\n    {\r\n      \"name\": \"藥品碼\",\r\n      \"typeName\": \" VARCHAR(20)\",\r\n      \"indexType\": 1\r\n    },\r\n    {\r\n      \"name\": \"料號\",\r\n      \"typeName\": \" VARCHAR(20)\",\r\n      \"indexType\": 1\r\n    },\r\n    {\r\n      \"name\": \"中文名稱\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品名稱\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品學名\",\r\n      \"typeName\": \" VARCHAR(300)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"健保碼\",\r\n      \"typeName\": \" VARCHAR(50)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"包裝單位\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"包裝數量\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"最小包裝單位\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"最小包裝數量\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品條碼1\",\r\n      \"typeName\": \" VARCHAR(200)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"藥品條碼2\",\r\n      \"typeName\": \" TEXT\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"警訊藥品\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"管制級別\",\r\n      \"typeName\": \" VARCHAR(10)\",\r\n      \"indexType\": 0\r\n    },\r\n    {\r\n      \"name\": \"類別\",\r\n      \"typeName\": \" VARCHAR(500)\",\r\n      \"indexType\": 0\r\n    }\r\n  ]\r\n}";
-            Console.WriteLine(table_json);
-            Table table = table_json.JsonDeserializet<Table>();
-            this.sqL_DataGridView_人員資料.Init(table);
+            LoadingForm loadingForm = LoadingForm.getLoading();
+            loadingForm.ShowDialog();
+
+
         }
     }
 }

@@ -12,6 +12,7 @@ namespace MyUI
 {
     public class RJ_Button : Button
     {
+        private MyTimer myTimer = new MyTimer();
         private string gUID = "";
         public string GUID { get => gUID; set => gUID = value; }
         private int borderSize = 0;
@@ -121,6 +122,20 @@ namespace MyUI
             set
             {
                 autoResetState = value;
+            }
+        }
+
+        private bool showLoadingForm = false;
+        [Category("RJ Code Advance")]
+        public bool ShowLoadingForm
+        {
+            get
+            {
+                return showLoadingForm;
+            }
+            set
+            {
+                showLoadingForm = value;
             }
         }
 
@@ -324,7 +339,21 @@ namespace MyUI
             {
                 return;
             }
+            myTimer.TickStop();
+            myTimer.StartTickTime(999999);
             flag_MouseDownEvent_done = true;
+            if(showLoadingForm)
+            {
+                if(this.MouseDownEvent != null || this.MouseDownEventEx != null)
+                {
+                    LoadingForm loadingForm = LoadingForm.getLoading();
+                    Task.Run(new Action(delegate
+                    {
+                        loadingForm.ShowDialog();
+                    }));
+              
+                }
+            }
             if (buttonType == ButtonType.Push)
             {
                 EventArgs e = new EventArgs();
@@ -332,8 +361,14 @@ namespace MyUI
                 base.OnMouseEnter(e);
                 Task task = Task.Factory.StartNew(new Action(delegate
                 {
-                    if (this.MouseDownEvent != null) this.MouseDownEvent(mevent);
-                    if (this.MouseDownEventEx != null) this.MouseDownEventEx(this, mevent);
+                    if (this.MouseDownEvent != null)
+                    {
+                        this.MouseDownEvent(mevent);
+                    }
+                    if (this.MouseDownEventEx != null)
+                    {
+                        this.MouseDownEventEx(this, mevent);
+                    }
                     if (AutoResetState)
                     {
                         this.Invoke(new Action(delegate
@@ -344,8 +379,11 @@ namespace MyUI
                             }
                         }));
                     }
-                 
-                    
+                    if (myTimer.GetTickTime() < 2000 && showLoadingForm)
+                    {
+                        System.Threading.Thread.Sleep(2000 - (int)myTimer.GetTickTime());
+                    }
+
                 }));
              
                 await task;
@@ -371,6 +409,10 @@ namespace MyUI
                             }
                         }));
                     }
+                    if (myTimer.GetTickTime() < 2000 && showLoadingForm)
+                    {
+                        System.Threading.Thread.Sleep(2000 - (int)myTimer.GetTickTime());
+                    }
                     flag_MouseDownEvent_done = false;
 
                 }));
@@ -378,6 +420,8 @@ namespace MyUI
                 flag_MouseDownEvent_done = false;
 
             }
+           
+            LoadingForm.getLoading().CloseLoadingForm();
             this.OnMouseClick(mevent);
         }
         protected override void OnMouseDoubleClick(MouseEventArgs e)

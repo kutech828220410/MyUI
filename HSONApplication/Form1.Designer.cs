@@ -32,6 +32,8 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rJ_TextBox1 = new MyUI.RJ_TextBox();
+            this.dateTimeComList1 = new MyUI.DateTimeComList();
             this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
             this.rJ_Button1 = new MyUI.RJ_Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -44,11 +46,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
-            this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
+            this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dateTimeComList1 = new MyUI.DateTimeComList();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -87,6 +88,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.rJ_TextBox1);
             this.tabPage1.Controls.Add(this.dateTimeComList1);
             this.tabPage1.Controls.Add(this.plC_RJ_Button1);
             this.tabPage1.Controls.Add(this.rJ_Button1);
@@ -102,6 +104,45 @@
             this.tabPage1.Size = new System.Drawing.Size(1650, 1013);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
+            // 
+            // rJ_TextBox1
+            // 
+            this.rJ_TextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.rJ_TextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox1.BorderRadius = 0;
+            this.rJ_TextBox1.BorderSize = 2;
+            this.rJ_TextBox1.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox1.GUID = "";
+            this.rJ_TextBox1.Location = new System.Drawing.Point(981, 297);
+            this.rJ_TextBox1.Multiline = false;
+            this.rJ_TextBox1.Name = "rJ_TextBox1";
+            this.rJ_TextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox1.PassWordChar = false;
+            this.rJ_TextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox1.PlaceholderText = "請輸入密碼";
+            this.rJ_TextBox1.ShowTouchPannel = false;
+            this.rJ_TextBox1.Size = new System.Drawing.Size(250, 30);
+            this.rJ_TextBox1.TabIndex = 61;
+            this.rJ_TextBox1.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox1.Texts = "";
+            this.rJ_TextBox1.UnderlineStyle = false;
+            // 
+            // dateTimeComList1
+            // 
+            this.dateTimeComList1.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeComList1.Day = 7;
+            this.dateTimeComList1.End_Year = 2030;
+            this.dateTimeComList1.Location = new System.Drawing.Point(380, 54);
+            this.dateTimeComList1.mFont = new System.Drawing.Font("標楷體", 18F);
+            this.dateTimeComList1.Month = 10;
+            this.dateTimeComList1.Name = "dateTimeComList1";
+            this.dateTimeComList1.Size = new System.Drawing.Size(314, 55);
+            this.dateTimeComList1.Start_Year = 2022;
+            this.dateTimeComList1.TabIndex = 60;
+            this.dateTimeComList1.Value = new System.DateTime(2023, 10, 7, 0, 0, 0, 0);
+            this.dateTimeComList1.Year = 2023;
             // 
             // plC_RJ_Button1
             // 
@@ -127,6 +168,7 @@
             this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ShowLoadingForm = false;
             this.plC_RJ_Button1.Size = new System.Drawing.Size(150, 58);
             this.plC_RJ_Button1.State = false;
             this.plC_RJ_Button1.TabIndex = 59;
@@ -158,6 +200,7 @@
             this.rJ_Button1.GUID = "";
             this.rJ_Button1.Location = new System.Drawing.Point(1420, 386);
             this.rJ_Button1.Name = "rJ_Button1";
+            this.rJ_Button1.ShowLoadingForm = false;
             this.rJ_Button1.Size = new System.Drawing.Size(186, 63);
             this.rJ_Button1.State = false;
             this.rJ_Button1.TabIndex = 58;
@@ -209,6 +252,7 @@
             this.plC_RJ_Button_顯示.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.plC_RJ_Button_顯示.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_顯示.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_顯示.ShowLoadingForm = true;
             this.plC_RJ_Button_顯示.Size = new System.Drawing.Size(143, 85);
             this.plC_RJ_Button_顯示.State = false;
             this.plC_RJ_Button_顯示.TabIndex = 56;
@@ -369,9 +413,9 @@
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.plC_UI_Init1);
-            this.tabPage2.Controls.Add(this.lowerMachine_Panel1);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton3);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton4);
+            this.tabPage2.Controls.Add(this.lowerMachine_Panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -406,14 +450,6 @@
             this.plC_UI_Init1.邁得威視元件初始化 = false;
             this.plC_UI_Init1.開機延遲 = 0;
             this.plC_UI_Init1.音效 = false;
-            // 
-            // lowerMachine_Panel1
-            // 
-            this.lowerMachine_Panel1.Location = new System.Drawing.Point(18, 6);
-            this.lowerMachine_Panel1.Name = "lowerMachine_Panel1";
-            this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
-            this.lowerMachine_Panel1.TabIndex = 33;
-            this.lowerMachine_Panel1.掃描速度 = 0;
             // 
             // plC_RJ_ScreenButton3
             // 
@@ -491,6 +527,14 @@
             this.plC_RJ_ScreenButton4.顯示狀態 = false;
             this.plC_RJ_ScreenButton4.顯示讀取位置 = "";
             // 
+            // lowerMachine_Panel1
+            // 
+            this.lowerMachine_Panel1.Location = new System.Drawing.Point(18, 6);
+            this.lowerMachine_Panel1.Name = "lowerMachine_Panel1";
+            this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
+            this.lowerMachine_Panel1.TabIndex = 33;
+            this.lowerMachine_Panel1.掃描速度 = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -499,21 +543,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dateTimeComList1
-            // 
-            this.dateTimeComList1.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeComList1.Day = 7;
-            this.dateTimeComList1.End_Year = 2030;
-            this.dateTimeComList1.Location = new System.Drawing.Point(380, 54);
-            this.dateTimeComList1.mFont = new System.Drawing.Font("標楷體", 18F);
-            this.dateTimeComList1.Month = 10;
-            this.dateTimeComList1.Name = "dateTimeComList1";
-            this.dateTimeComList1.Size = new System.Drawing.Size(400, 55);
-            this.dateTimeComList1.Start_Year = 2022;
-            this.dateTimeComList1.TabIndex = 60;
-            this.dateTimeComList1.Value = new System.DateTime(2023, 10, 7, 15, 35, 29, 415);
-            this.dateTimeComList1.Year = 2023;
             // 
             // Form1
             // 
@@ -555,6 +584,7 @@
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.PLC_RJ_Button plC_RJ_Button1;
         private MyUI.DateTimeComList dateTimeComList1;
+        private MyUI.RJ_TextBox rJ_TextBox1;
     }
 }
 
