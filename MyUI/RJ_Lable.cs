@@ -121,6 +121,20 @@ namespace MyUI
 
             return path;
         }
+        public static void DrawRoundShadow(Graphics g, Rectangle rect, int width)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            Color color = Color.FromArgb(0, 0, 0, 0);
+            int penWidth = 3;
+            using (Pen pen = new Pen(color, penWidth))
+            {
+                for (int i = -penWidth; i < width; i++)
+                {
+                    pen.Color = Color.FromArgb((50 / width) * (width - i), color);
+                    g.DrawEllipse(pen, new Rectangle(rect.X - i, rect.Y - i, rect.Width + 2 * i, rect.Height + 2 * i));
+                }
+            }
+        }
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
@@ -143,6 +157,16 @@ namespace MyUI
 
                     if (borderSize >= 1)
                     {
+                        //Color color = Color.FromArgb(0, 0, 0, 0);
+                        //int penWidth = 3;
+                        //using (Pen pen = new Pen(color, penWidth))
+                        //{
+                        //    for (int i = -penWidth; i < width; i++)
+                        //    {
+                        //        pen.Color = Color.FromArgb((50 / width) * (width - i), color);
+                        //        pevent.Graphics.DrawPath(pen, new Rectangle(rect.X - i, rect.Y - i, rect.Width + 2 * i, rect.Height + 2 * i));
+                        //    }
+                        //}
                         pevent.Graphics.DrawPath(penBorder, pathBorder);
                     }
                 }
