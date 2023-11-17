@@ -2311,10 +2311,10 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\System.Text.Enco
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.DAQM_4206A.resources
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csprojAssemblyReference.cache

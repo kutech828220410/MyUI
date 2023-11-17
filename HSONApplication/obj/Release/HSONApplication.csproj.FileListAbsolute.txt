@@ -4896,7 +4896,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\System.Thre
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\System.ValueTuple.xml
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\Interop.WMPLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\AxInterop.WMPLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\Interop.WMPLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\AxInterop.WMPLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.ResolveComReference.cache
@@ -4907,3 +4906,4 @@ C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplica
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
+C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csprojAssemblyReference.cache

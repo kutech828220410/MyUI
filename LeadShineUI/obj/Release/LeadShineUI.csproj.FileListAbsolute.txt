@@ -3844,7 +3844,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.Text.Enc
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.DMC1000B.resources
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.DMC1000B_Basic.resources
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.DMC2410.resources
@@ -3862,3 +3861,4 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csp
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csprojAssemblyReference.cache

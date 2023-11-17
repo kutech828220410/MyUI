@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
             this.rJ_TextBox1 = new MyUI.RJ_TextBox();
             this.dateTimeComList1 = new MyUI.DateTimeComList();
             this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
@@ -40,19 +41,29 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plC_RJ_Button_顯示 = new MyUI.PLC_RJ_Button();
             this.sqL_DataGridView_人員資料 = new SQLUI.SQL_DataGridView();
+=======
+            this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton2 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
+=======
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+<<<<<<< HEAD
+=======
+            this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
+            this.c90161 = new SLDUI.C9016();
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +99,7 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+<<<<<<< HEAD
             this.tabPage1.Controls.Add(this.rJ_TextBox1);
             this.tabPage1.Controls.Add(this.dateTimeComList1);
             this.tabPage1.Controls.Add(this.plC_RJ_Button1);
@@ -95,6 +107,11 @@
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.plC_RJ_Button_顯示);
             this.tabPage1.Controls.Add(this.sqL_DataGridView_人員資料);
+=======
+            this.tabPage1.Controls.Add(this.plC_UI_Init1);
+            this.tabPage1.Controls.Add(this.lowerMachine_Panel1);
+            this.tabPage1.Controls.Add(this.c90161);
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             this.tabPage1.Controls.Add(this.plC_AlarmFlow2);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton1);
             this.tabPage1.Controls.Add(this.plC_RJ_ScreenButton2);
@@ -105,6 +122,7 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             // 
+<<<<<<< HEAD
             // rJ_TextBox1
             // 
             this.rJ_TextBox1.BackColor = System.Drawing.SystemColors.Window;
@@ -317,6 +335,15 @@
             this.sqL_DataGridView_人員資料.顯示首行 = true;
             this.sqL_DataGridView_人員資料.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.sqL_DataGridView_人員資料.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+=======
+            // lowerMachine_Panel1
+            // 
+            this.lowerMachine_Panel1.Location = new System.Drawing.Point(632, -13);
+            this.lowerMachine_Panel1.Name = "lowerMachine_Panel1";
+            this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
+            this.lowerMachine_Panel1.TabIndex = 56;
+            this.lowerMachine_Panel1.掃描速度 = 0;
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             // 
             // plC_AlarmFlow2
             // 
@@ -412,7 +439,10 @@
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.button1);
+<<<<<<< HEAD
             this.tabPage2.Controls.Add(this.plC_UI_Init1);
+=======
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton3);
             this.tabPage2.Controls.Add(this.plC_RJ_ScreenButton4);
             this.tabPage2.Controls.Add(this.lowerMachine_Panel1);
@@ -431,6 +461,7 @@
             this.button1.TabIndex = 35;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+<<<<<<< HEAD
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // plC_UI_Init1
@@ -450,6 +481,8 @@
             this.plC_UI_Init1.邁得威視元件初始化 = false;
             this.plC_UI_Init1.開機延遲 = 0;
             this.plC_UI_Init1.音效 = false;
+=======
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             // 
             // plC_RJ_ScreenButton3
             // 
@@ -544,6 +577,37 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+=======
+            // plC_UI_Init1
+            // 
+            this.plC_UI_Init1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.plC_UI_Init1.Location = new System.Drawing.Point(632, 565);
+            this.plC_UI_Init1.Name = "plC_UI_Init1";
+            this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
+            this.plC_UI_Init1.TabIndex = 57;
+            this.plC_UI_Init1.光道視覺元件初始化 = true;
+            this.plC_UI_Init1.全螢幕顯示 = false;
+            this.plC_UI_Init1.掃描速度 = 1;
+            this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
+            this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
+            this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
+            this.plC_UI_Init1.起始畫面顯示 = false;
+            this.plC_UI_Init1.邁得威視元件初始化 = false;
+            this.plC_UI_Init1.開機延遲 = 0;
+            this.plC_UI_Init1.音效 = false;
+            // 
+            // c90161
+            // 
+            this.c90161.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.c90161.CycleTime = 1;
+            this.c90161.Location = new System.Drawing.Point(8, 19);
+            this.c90161.Name = "c90161";
+            this.c90161.Size = new System.Drawing.Size(583, 519);
+            this.c90161.TabIndex = 55;
+            this.c90161.設備名稱 = "C9016-001";
+            // 
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -556,7 +620,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.plC_ScreenPage1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -573,18 +636,18 @@
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton4;
         private System.Windows.Forms.OpenFileDialog openFileDialog_LoadExcel;
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
-        private SQLUI.SQL_DataGridView sqL_DataGridView_人員資料;
-        private MyUI.PLC_UI_Init plC_UI_Init1;
-        private LadderUI.LowerMachine_Panel lowerMachine_Panel1;
-        private MyUI.PLC_RJ_Button plC_RJ_Button_顯示;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;
+<<<<<<< HEAD
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.PLC_RJ_Button plC_RJ_Button1;
         private MyUI.DateTimeComList dateTimeComList1;
         private MyUI.RJ_TextBox rJ_TextBox1;
+=======
+        private LadderUI.LowerMachine_Panel lowerMachine_Panel1;
+        private MyUI.PLC_UI_Init plC_UI_Init1;
+        private SLDUI.C9016 c90161;
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
     }
 }
 

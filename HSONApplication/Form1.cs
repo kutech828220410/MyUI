@@ -24,22 +24,7 @@ namespace HSONApplication
 {
     public partial class Form1 : Form
     {
-        public class class_acceptance_med_data
-        {
-            [JsonPropertyName("code")]
-            public string 藥品碼 { get; set; }
-            [JsonPropertyName("value")]
-            public string 數量 { get; set; }
-            [JsonPropertyName("validity_period")]
-            public string 效期 { get; set; }
-            [JsonPropertyName("lot_number")]
-            public string 批號 { get; set; }
-            [JsonPropertyName("acceptance_date")]
-            public string 盤點時間 { get; set; }
-            [JsonPropertyName("state")]
-            public string 狀態 { get; set; }
-
-        }
+ 
 
         #region DBConfigClass
         private const string DBConfigFileName = "DBConfig.txt";
@@ -98,6 +83,7 @@ namespace HSONApplication
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
 
+<<<<<<< HEAD
             this.plC_RJ_Button_顯示.MouseDownEvent += PlC_RJ_Button_顯示_MouseDownEvent;
             rJ_TextBox1.PassWordChar = true;
         }
@@ -110,6 +96,11 @@ namespace HSONApplication
             }));
             System.Threading.Thread.Sleep(5000);
         }
+=======
+
+        }
+
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
 
         private void PlC_UI_Init1_UI_Finished_Event()
         {
@@ -126,6 +117,7 @@ namespace HSONApplication
             }
         }
 
+<<<<<<< HEAD
         private void SqL_DataGridView_人員資料_RowEndEditEvent(object[] RowValue, int rowIndex, int colIndex, string value)
         {
             this.sqL_DataGridView_人員資料.SQL_ReplaceExtra(RowValue, false);
@@ -139,5 +131,8 @@ namespace HSONApplication
 
 
         }
+=======
+  
+>>>>>>> 44464dc389e50c0970cb8b67cc71d646ec362a53
     }
 }

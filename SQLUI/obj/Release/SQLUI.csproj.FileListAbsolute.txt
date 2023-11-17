@@ -2426,7 +2426,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\System.Text.Encodings
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.SQL_DataGridView.resources
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.SQL_TextBoxUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.GenerateResource.cache
@@ -2434,3 +2433,4 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csprojAssemblyReference.cache

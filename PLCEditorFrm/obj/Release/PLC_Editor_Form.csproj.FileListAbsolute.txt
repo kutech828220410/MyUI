@@ -602,7 +602,6 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
@@ -610,3 +609,4 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_For
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csprojAssemblyReference.cache
