@@ -3328,7 +3328,6 @@ C:\Users\User\Desktop\MyUI\CallBackUI\bin\Release\System.Threading.Tasks.Extensi
 C:\Users\User\Desktop\MyUI\CallBackUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\User\Desktop\MyUI\CallBackUI\bin\Release\System.Buffers.xml
 C:\Users\User\Desktop\MyUI\CallBackUI\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete
 C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.dll
@@ -3478,3 +3477,4 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.cspro
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache

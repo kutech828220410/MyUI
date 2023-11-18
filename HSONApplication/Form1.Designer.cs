@@ -32,7 +32,13 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rJ_Lable1 = new MyUI.RJ_Lable();
+            this.rJ_Button3 = new MyUI.RJ_Button();
+            this.rJ_Button2 = new MyUI.RJ_Button();
+            this.rJ_Button1 = new MyUI.RJ_Button();
+            this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
+            this.c90161 = new SLDUI.C9016();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton2 = new MyUI.PLC_RJ_ScreenButton();
@@ -41,8 +47,7 @@
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
-            this.c90161 = new SLDUI.C9016();
+            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -80,6 +85,11 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.plC_RJ_Button1);
+            this.tabPage1.Controls.Add(this.rJ_Lable1);
+            this.tabPage1.Controls.Add(this.rJ_Button3);
+            this.tabPage1.Controls.Add(this.rJ_Button2);
+            this.tabPage1.Controls.Add(this.rJ_Button1);
             this.tabPage1.Controls.Add(this.plC_UI_Init1);
             this.tabPage1.Controls.Add(this.lowerMachine_Panel1);
             this.tabPage1.Controls.Add(this.c90161);
@@ -93,6 +103,121 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             // 
+            // rJ_Lable1
+            // 
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable1.BorderRadius = 10;
+            this.rJ_Lable1.BorderSize = 0;
+            this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable1.GUID = "";
+            this.rJ_Lable1.Location = new System.Drawing.Point(188, 615);
+            this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 3;
+            this.rJ_Lable1.Size = new System.Drawing.Size(176, 76);
+            this.rJ_Lable1.TabIndex = 64;
+            this.rJ_Lable1.Text = "rJ_Lable1";
+            this.rJ_Lable1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable1.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Button3
+            // 
+            this.rJ_Button3.AutoResetState = false;
+            this.rJ_Button3.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Button3.BackgroundColor = System.Drawing.Color.MediumOrchid;
+            this.rJ_Button3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button3.BorderRadius = 10;
+            this.rJ_Button3.BorderSize = 0;
+            this.rJ_Button3.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button3.FlatAppearance.BorderSize = 0;
+            this.rJ_Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button3.GUID = "";
+            this.rJ_Button3.Location = new System.Drawing.Point(886, 670);
+            this.rJ_Button3.Name = "rJ_Button3";
+            this.rJ_Button3.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button3.ShadowSize = 3;
+            this.rJ_Button3.ShowLoadingForm = false;
+            this.rJ_Button3.Size = new System.Drawing.Size(207, 69);
+            this.rJ_Button3.State = false;
+            this.rJ_Button3.TabIndex = 63;
+            this.rJ_Button3.Text = "rJ_Button3";
+            this.rJ_Button3.TextColor = System.Drawing.Color.White;
+            this.rJ_Button3.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button2
+            // 
+            this.rJ_Button2.AutoResetState = false;
+            this.rJ_Button2.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Button2.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Button2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button2.BorderRadius = 10;
+            this.rJ_Button2.BorderSize = 0;
+            this.rJ_Button2.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button2.FlatAppearance.BorderSize = 0;
+            this.rJ_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button2.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button2.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_Button2.GUID = "";
+            this.rJ_Button2.Location = new System.Drawing.Point(678, 775);
+            this.rJ_Button2.Name = "rJ_Button2";
+            this.rJ_Button2.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button2.ShadowSize = 3;
+            this.rJ_Button2.ShowLoadingForm = false;
+            this.rJ_Button2.Size = new System.Drawing.Size(195, 72);
+            this.rJ_Button2.State = false;
+            this.rJ_Button2.TabIndex = 62;
+            this.rJ_Button2.Text = "rJ_Button2\\n123";
+            this.rJ_Button2.TextColor = System.Drawing.Color.DimGray;
+            this.rJ_Button2.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button1
+            // 
+            this.rJ_Button1.AutoResetState = false;
+            this.rJ_Button1.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Button1.BackgroundColor = System.Drawing.Color.DodgerBlue;
+            this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button1.BorderRadius = 10;
+            this.rJ_Button1.BorderSize = 0;
+            this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button1.Enabled = false;
+            this.rJ_Button1.FlatAppearance.BorderSize = 0;
+            this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button1.ForeColor = System.Drawing.Color.LightGreen;
+            this.rJ_Button1.GUID = "";
+            this.rJ_Button1.Location = new System.Drawing.Point(413, 752);
+            this.rJ_Button1.Name = "rJ_Button1";
+            this.rJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button1.ShadowSize = 3;
+            this.rJ_Button1.ShowLoadingForm = false;
+            this.rJ_Button1.Size = new System.Drawing.Size(202, 75);
+            this.rJ_Button1.State = false;
+            this.rJ_Button1.TabIndex = 61;
+            this.rJ_Button1.Text = "rJ_Button1";
+            this.rJ_Button1.TextColor = System.Drawing.Color.LightGreen;
+            this.rJ_Button1.UseVisualStyleBackColor = false;
+            // 
+            // plC_UI_Init1
+            // 
+            this.plC_UI_Init1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.plC_UI_Init1.Location = new System.Drawing.Point(632, 565);
+            this.plC_UI_Init1.Name = "plC_UI_Init1";
+            this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
+            this.plC_UI_Init1.TabIndex = 57;
+            this.plC_UI_Init1.光道視覺元件初始化 = true;
+            this.plC_UI_Init1.全螢幕顯示 = false;
+            this.plC_UI_Init1.掃描速度 = 1;
+            this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
+            this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
+            this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
+            this.plC_UI_Init1.起始畫面顯示 = false;
+            this.plC_UI_Init1.邁得威視元件初始化 = false;
+            this.plC_UI_Init1.開機延遲 = 0;
+            this.plC_UI_Init1.音效 = false;
+            // 
             // lowerMachine_Panel1
             // 
             this.lowerMachine_Panel1.Location = new System.Drawing.Point(632, -13);
@@ -100,6 +225,16 @@
             this.lowerMachine_Panel1.Size = new System.Drawing.Size(869, 572);
             this.lowerMachine_Panel1.TabIndex = 56;
             this.lowerMachine_Panel1.掃描速度 = 0;
+            // 
+            // c90161
+            // 
+            this.c90161.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.c90161.CycleTime = 1;
+            this.c90161.Location = new System.Drawing.Point(8, 19);
+            this.c90161.Name = "c90161";
+            this.c90161.Size = new System.Drawing.Size(583, 519);
+            this.c90161.TabIndex = 55;
+            this.c90161.設備名稱 = "C9016-001";
             // 
             // plC_AlarmFlow2
             // 
@@ -298,33 +433,51 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // plC_UI_Init1
+            // plC_RJ_Button1
             // 
-            this.plC_UI_Init1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.plC_UI_Init1.Location = new System.Drawing.Point(632, 565);
-            this.plC_UI_Init1.Name = "plC_UI_Init1";
-            this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
-            this.plC_UI_Init1.TabIndex = 57;
-            this.plC_UI_Init1.光道視覺元件初始化 = true;
-            this.plC_UI_Init1.全螢幕顯示 = false;
-            this.plC_UI_Init1.掃描速度 = 1;
-            this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
-            this.plC_UI_Init1.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
-            this.plC_UI_Init1.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init1.起始畫面背景")));
-            this.plC_UI_Init1.起始畫面顯示 = false;
-            this.plC_UI_Init1.邁得威視元件初始化 = false;
-            this.plC_UI_Init1.開機延遲 = 0;
-            this.plC_UI_Init1.音效 = false;
-            // 
-            // c90161
-            // 
-            this.c90161.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.c90161.CycleTime = 1;
-            this.c90161.Location = new System.Drawing.Point(8, 19);
-            this.c90161.Name = "c90161";
-            this.c90161.Size = new System.Drawing.Size(583, 519);
-            this.c90161.TabIndex = 55;
-            this.c90161.設備名稱 = "C9016-001";
+            this.plC_RJ_Button1.AutoResetState = false;
+            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button1.Bool = false;
+            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button1.BorderRadius = 10;
+            this.plC_RJ_Button1.BorderSize = 0;
+            this.plC_RJ_Button1.but_press = false;
+            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.GUID = "";
+            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button1.Location = new System.Drawing.Point(158, 787);
+            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
+            this.plC_RJ_Button1.OFF_文字內容 = "123\n555";
+            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ON_BorderSize = 5;
+            this.plC_RJ_Button1.ON_文字內容 = "123\n555";
+            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button1.ShadowSize = 3;
+            this.plC_RJ_Button1.ShowLoadingForm = false;
+            this.plC_RJ_Button1.Size = new System.Drawing.Size(206, 98);
+            this.plC_RJ_Button1.State = false;
+            this.plC_RJ_Button1.TabIndex = 65;
+            this.plC_RJ_Button1.Text = "123\n555";
+            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button1.Texts = "123\n555";
+            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button1.字型鎖住 = false;
+            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button1.文字鎖住 = false;
+            this.plC_RJ_Button1.讀取位元反向 = false;
+            this.plC_RJ_Button1.讀寫鎖住 = false;
+            this.plC_RJ_Button1.音效 = true;
+            this.plC_RJ_Button1.顯示 = false;
+            this.plC_RJ_Button1.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -359,6 +512,11 @@
         private LadderUI.LowerMachine_Panel lowerMachine_Panel1;
         private MyUI.PLC_UI_Init plC_UI_Init1;
         private SLDUI.C9016 c90161;
+        private MyUI.RJ_Button rJ_Button1;
+        private MyUI.RJ_Button rJ_Button3;
+        private MyUI.RJ_Button rJ_Button2;
+        private MyUI.RJ_Lable rJ_Lable1;
+        private MyUI.PLC_RJ_Button plC_RJ_Button1;
     }
 }
 

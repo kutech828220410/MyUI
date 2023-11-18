@@ -12,12 +12,18 @@ namespace MyUI
 {
     public class RJ_Button : Button
     {
+        private bool flag_MouseMove = false;
+        private bool flag_MouseDown = false;
         private MyTimer myTimer = new MyTimer();
         private string gUID = "";
         public string GUID { get => gUID; set => gUID = value; }
         private int borderSize = 0;
         private int borderRadius = 10;
         private Color borderColor = Color.PaleVioletRed;
+
+        private int shadowSize = 0;
+        private Color shadowColor = Color.DimGray;
+
         private ButtonType _buttonType = ButtonType.Push;
         [Category("RJ Code Advance")]
         public int BorderSize
@@ -70,6 +76,7 @@ namespace MyUI
                 if (flag_refresh) this.Invalidate();
             }
         }
+
         private Color _backgroundColor_buf = Color.Transparent;
         private Color _backgroundColor = Color.Coral;
         private Color backgroundColor = Color.RoyalBlue;
@@ -139,6 +146,33 @@ namespace MyUI
             }
         }
 
+        [Category("RJ Code Advance")]
+        public int ShadowSize
+        {
+            get
+            {
+                return shadowSize;
+            }
+            set
+            {
+                if (value < 3) value = 3;
+                shadowSize = value;
+                this.Invalidate();
+            }
+        }
+        [Category("RJ Code Advance")]
+        public Color ShadowColor
+        {
+            get
+            {
+                return shadowColor;
+            }
+            set
+            {
+                shadowColor = value;
+                this.Invalidate();
+            }
+        }
 
         public enum ButtonType
         {
@@ -220,108 +254,164 @@ namespace MyUI
                 this.BorderRadius = this.Height;
             }
         }
-      
+
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
         {
+            return GetFigurePath(rect, radius, 0);
+        }
+        private GraphicsPath GetFigurePath(RectangleF rect, float radius, int offset)
+        {
             GraphicsPath path = new GraphicsPath();
-            if (radius < 0) radius = 0;
+
             path.StartFigure();
-            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
-            path.AddArc(rect.Width - radius, rect.Y, radius, radius, 270, 90);
-            path.AddArc(rect.Width - radius, rect.Height - radius, radius, radius, 0, 90);
-            path.AddArc(rect.X, rect.Height - radius, radius, radius, 90, 90);
+            path.AddArc(rect.X + 0, rect.Y + 0, radius, radius, 180, 90);
+            path.AddArc(rect.Width + offset - radius, rect.Y + 0, radius, radius, 270, 90);
+            path.AddArc(rect.Width + offset - radius, rect.Height + offset - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X + 0, rect.Height + offset - radius, radius, radius, 90, 90);
             path.CloseFigure();
 
             return path;
         }
-        private void Paint(Graphics g)
+        public void DrawRoundShadow(Graphics g, RectangleF rect, float radius, int width)
         {
-            if (this.Enabled == false)
-            {
-                this._backgroundColor = Color.LightGray;
-            }
-            else
-            {
-                this._backgroundColor = this.backgroundColor;
-            }
-            if(this._backgroundColor != this._backgroundColor_buf)
-            {
-                this.BackColor = this._backgroundColor;
-                this._backgroundColor_buf = this._backgroundColor;
-            }
-            RectangleF rectSurface = new RectangleF(1, 1, this.Width, this.Height);
-            RectangleF rectBorder = new RectangleF(1, 1, this.Width - 0.8F, this.Height - 1);
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            if (this.Enabled == false)
+            int penWidth = 3;
+            int index = 1;
+            using (Pen pen = new Pen(ShadowColor, penWidth))
             {
-                rectBorder = new RectangleF(1, 1, this.Width - 1, this.Height - 1);
-                using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
-                using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius - 1F))
-                using (Pen penSurface = new Pen(this.BackgroundColor, 2))
-                using (Pen penBorder = new Pen(Color.Red, 2))
-                {
-                    penBorder.Alignment = PenAlignment.Inset;
-                    this.Region = new Region(pathSurface);
-                    g.DrawPath(penSurface, pathSurface);
+                int color_temp_R = ShadowColor.R;
+                int offset_color_R = (254 - ShadowColor.R) / (width + penWidth);
 
-                    g.DrawPath(penBorder, pathBorder);
-                    g.DrawLine(penBorder, new Point(this.Width, 0), new Point(0, this.Height));
-                }
-            }
-            else
-            {
-                if (this.borderRadius > 2)
-                {
-                    using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
-                    using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius - 1F))
-                    using (Pen penSurface = new Pen(this.BackgroundColor, 2))
-                    using (Pen penBorder = new Pen(borderColor, borderSize))
-                    {
-                        penBorder.Alignment = PenAlignment.Inset;
-                        this.Region = new Region(pathSurface);
-                        g.DrawPath(penSurface, pathSurface);
+                int color_temp_G = ShadowColor.G;
+                int offset_color_G = (254 - ShadowColor.G) / (width + penWidth);
 
-                        if (borderSize >= 1)
-                        {
-                            g.DrawPath(penBorder, pathBorder);
-                        }
-                    }
-                }
-                else
+                int color_temp_B = ShadowColor.B;
+                int offset_color_B = (254 - ShadowColor.B) / (width + penWidth);
+
+                for (int i = -penWidth; i < width; i++)
                 {
-                    this.Region = new Region(rectSurface);
-                    if (this.borderRadius >= 1)
+                    color_temp_R += offset_color_R;
+                    color_temp_G += offset_color_G;
+                    color_temp_B += offset_color_B;
+                    pen.Color = Color.FromArgb(255, color_temp_R, color_temp_G, color_temp_B);
+                    using (GraphicsPath pathBorder = this.GetFigurePath(rect, radius, i))
                     {
-                        using (Pen penBorder = new Pen(borderColor, borderSize))
-                        {
-                            penBorder.Alignment = PenAlignment.Inset;
-                            g.DrawRectangle(penBorder, 1, 1, this.Width - 1, this.Height - 1);
-                        }
+                        g.DrawPath(pen, pathBorder);
                     }
                 }
             }
-           
-
         }
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
-                  
-            Paint(pevent.Graphics);
-            
-        }
-        protected override void OnHandleCreated(EventArgs e)
-        {
-            //base.OnHandleCreated(e);
-            this.Parent.BackColorChanged += Parent_BackColorChanged;
+            pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
-        }
-        private void Parent_BackColorChanged(object sender, EventArgs e)
-        {
-            if(this.DesignMode)
+            RectangleF rectBorder = new RectangleF(0, 0, this.Width - (this.ShadowSize + this.BorderSize), this.Height - (this.ShadowSize + this.BorderSize));
+            RectangleF rectShadow = new RectangleF(0, 0, this.Width - (this.ShadowSize), this.Height - (this.ShadowSize));
+            RectangleF rectSurface = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
+            RectangleF rectBackGround = new RectangleF(0, 0, this.Width, this.Height);
+            Color bkgroundcolor = this.backgroundColor;
+            if(this.Enabled == false)
             {
-                this.Invalidate();
+                bkgroundcolor = Color.Gray;
             }
+            else if (flag_MouseDown)
+            {
+                int R = bkgroundcolor.R + (int)(bkgroundcolor.R * 0.3);
+                int G = bkgroundcolor.G + (int)(bkgroundcolor.G * 0.3);
+                int B = bkgroundcolor.B + (int)(bkgroundcolor.B * 0.3);
+                if (R > 255) R = 255;
+                if (G > 255) G = 255;
+                if (B > 255) B = 255;
+                bkgroundcolor = Color.FromArgb(R, G, B);
+            }
+            else if (flag_MouseMove)
+            {
+                int R = bkgroundcolor.R - (int)(bkgroundcolor.R * 0.1);
+                int G = bkgroundcolor.G - (int)(bkgroundcolor.G * 0.1);
+                int B = bkgroundcolor.B - (int)(bkgroundcolor.B * 0.1);
+                if (R > 255) R = 255;
+                if (G > 255) G = 255;
+                if (B > 255) B = 255;
+                bkgroundcolor = Color.FromArgb(R, G, B);
+            }
+
+            using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
+            using (GraphicsPath pathBackGround = this.GetFigurePath(rectBackGround, this.borderRadius))
+            using (GraphicsPath pathShadow = this.GetFigurePath(rectShadow, this.borderRadius))
+            using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius))
+            using (Brush brushBackgroung = new SolidBrush(bkgroundcolor))
+            using (Pen penSurface = new Pen(this.Parent.BackColor, this.ShadowSize + 1))
+            using (Pen penBorder = new Pen(borderColor, borderSize))
+            {
+                penBorder.Alignment = PenAlignment.Inset;
+                this.Region = new Region(rectBackGround);
+                //this.BackColor = this.Parent.BackColor;
+               
+                pevent.Graphics.FillPath(brushBackgroung, pathBackGround);
+                if (this.ShadowSize >= 1) DrawRoundShadow(pevent.Graphics, rectShadow, this.borderRadius, this.ShadowSize);
+                pevent.Graphics.DrawPath(penSurface, pathBackGround);
+
+                if (this.Enabled == true)
+                {
+                    if (this.BorderSize >= 1) pevent.Graphics.DrawPath(penBorder, pathBorder);
+                }
+
+                Rectangle rectangle_text = new Rectangle((int)rectShadow.X, (int)rectShadow.Y, (int)rectShadow.Width, (int)rectShadow.Height);
+                SizeF size_Text_temp = pevent.Graphics.MeasureString(this.Text, this.Font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
+                Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
+                Point point = new Point(0, 0);
+                if(TextAlign == ContentAlignment.TopLeft)
+                {
+                    point = new Point(0, 0);
+                }
+                else if (TextAlign == ContentAlignment.TopCenter)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width) / 2, 0);
+                }
+                else if (TextAlign == ContentAlignment.TopRight)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width), 0);
+                }
+                else if (TextAlign == ContentAlignment.MiddleLeft)
+                {
+                    point = new Point(0, (rectangle_text.Height - size_Text.Height) / 2);
+                }
+                else if (TextAlign == ContentAlignment.MiddleCenter)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height) / 2);
+                }
+                else if (TextAlign == ContentAlignment.MiddleRight)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height) / 2);
+                }
+                else if (TextAlign == ContentAlignment.BottomLeft)
+                {
+                    point = new Point(0, (rectangle_text.Height - size_Text.Height));
+                }
+                else if (TextAlign == ContentAlignment.BottomCenter)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height));
+                }
+                else if (TextAlign == ContentAlignment.BottomRight)
+                {
+                    point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
+                }
+                Color foreColor = this.ForeColor;
+                if (this.Enabled == false) foreColor = Color.LightGray;
+                pevent.Graphics.DrawString($"{this.Text}", this.Font, new SolidBrush(foreColor), point, StringFormat.GenericDefault);
+               
+                if(this.Enabled == false)DrawProhibitionSymbol(pevent.Graphics, new Point((int)((rectShadow.X + rectShadow.Width) / 2), (int)((rectShadow.Y + rectShadow.Height) / 2)), 30, 4, 1);
+
+            }
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs pevent)
+        {
+            base.OnPaintBackground(pevent);
+
+         
         }
 
         private bool flag_MouseDownEventEx_done = false;
@@ -335,6 +425,7 @@ namespace MyUI
         public event MouseDownEventHandler MouseDownEvent;
         async protected override void OnMouseDown(MouseEventArgs mevent)
         {
+            flag_MouseDown = true;
             if (flag_MouseDownEvent_done)
             {
                 return;
@@ -454,6 +545,7 @@ namespace MyUI
         public event MouseLeaveEventHandler MouseLeaveEvent;
         protected override void OnMouseLeave(EventArgs e)
         {
+            flag_MouseMove = false;
             if (buttonType == ButtonType.Push)
             {
                 MouseButtons mouseButtons = MouseButtons.Left;
@@ -473,6 +565,7 @@ namespace MyUI
         public event MouseMoveEventHandler MouseMoveEvent;
         protected override void OnMouseMove(MouseEventArgs mevent)
         {
+            flag_MouseMove = true;
             if (buttonType == ButtonType.Push)
             {
             }
@@ -486,6 +579,7 @@ namespace MyUI
         public event MouseUpEventHandler MouseUpEvent;
         protected override void OnMouseUp(MouseEventArgs mevent)
         {
+            flag_MouseDown = false;
             if (buttonType == ButtonType.Push)
             {
                 EventArgs e = new EventArgs();
@@ -520,7 +614,22 @@ namespace MyUI
         public delegate void StateChangeEventHandler(RJ_Button rJ_Button, bool state);
         public event StateChangeEventHandler StateChangeEvent;
 
+        private void DrawProhibitionSymbol(Graphics g, Point center, int size, int lineWidth, int borderLineWidth)
+        {
+            // 计算符号绘制的起始坐标
+            int startX = center.X - size / 2;
+            int startY = center.Y - size / 2;
 
 
+            // 画红色圆圈和红色斜线
+            using (Pen redPen = new Pen(Color.Red, lineWidth))
+            {
+                // 绘制红色圆圈
+                g.DrawEllipse(redPen, startX, startY, size, size);
+
+                // 绘制红色斜线
+                g.DrawLine(redPen, startX + size * 0.2f, startY + size * 0.8f, startX + size * 0.8f, startY + size * 0.2f);
+            }
+        }
     }
 }
