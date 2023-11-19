@@ -155,7 +155,7 @@ namespace MyUI
             }
             set
             {
-                if (value < 3) value = 3;
+                if (value < 3 && value != 0) value = 3;
                 shadowSize = value;
                 this.Invalidate();
             }
@@ -212,9 +212,10 @@ namespace MyUI
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
-            this.BackColor = Color.RoyalBlue;
+            this.BackColor = Color.Transparent;
             this.ForeColor = Color.White;
             this.Resize += RJ_Button_Resize;
+            
         }
 
  
@@ -308,6 +309,7 @@ namespace MyUI
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
             RectangleF rectBorder = new RectangleF(0, 0, this.Width - (this.ShadowSize + this.BorderSize), this.Height - (this.ShadowSize + this.BorderSize));
+            if (this.ShadowSize == 0) rectBorder = new RectangleF(0, 0, this.Width - (1), this.Height - (1));
             RectangleF rectShadow = new RectangleF(0, 0, this.Width - (this.ShadowSize), this.Height - (this.ShadowSize));
             RectangleF rectSurface = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
             RectangleF rectBackGround = new RectangleF(0, 0, this.Width, this.Height);

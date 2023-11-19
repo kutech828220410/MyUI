@@ -32,6 +32,10 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rJ_Lable3 = new MyUI.RJ_Lable();
+            this.plC_RJ_Button_領藥台_01_取消作業 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable2 = new MyUI.RJ_Lable();
+            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
             this.rJ_Lable1 = new MyUI.RJ_Lable();
             this.rJ_Button3 = new MyUI.RJ_Button();
             this.rJ_Button2 = new MyUI.RJ_Button();
@@ -47,7 +51,7 @@
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable4 = new MyUI.RJ_Lable();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,6 +89,10 @@
             // 
             this.tabPage1.AutoScroll = true;
             this.tabPage1.BackColor = System.Drawing.SystemColors.Window;
+            this.tabPage1.Controls.Add(this.rJ_Lable4);
+            this.tabPage1.Controls.Add(this.rJ_Lable3);
+            this.tabPage1.Controls.Add(this.plC_RJ_Button_領藥台_01_取消作業);
+            this.tabPage1.Controls.Add(this.rJ_Lable2);
             this.tabPage1.Controls.Add(this.plC_RJ_Button1);
             this.tabPage1.Controls.Add(this.rJ_Lable1);
             this.tabPage1.Controls.Add(this.rJ_Button3);
@@ -103,12 +111,143 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
             // 
+            // rJ_Lable3
+            // 
+            this.rJ_Lable3.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable3.BorderRadius = 10;
+            this.rJ_Lable3.BorderSize = 0;
+            this.rJ_Lable3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable3.GUID = "";
+            this.rJ_Lable3.Location = new System.Drawing.Point(454, 686);
+            this.rJ_Lable3.Name = "rJ_Lable3";
+            this.rJ_Lable3.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable3.ShadowSize = 0;
+            this.rJ_Lable3.Size = new System.Drawing.Size(150, 40);
+            this.rJ_Lable3.TabIndex = 119;
+            this.rJ_Lable3.Text = "rJ_Lable3";
+            this.rJ_Lable3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable3.TextColor = System.Drawing.Color.White;
+            // 
+            // plC_RJ_Button_領藥台_01_取消作業
+            // 
+            this.plC_RJ_Button_領藥台_01_取消作業.AutoResetState = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_領藥台_01_取消作業.Bool = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_領藥台_01_取消作業.BorderRadius = 20;
+            this.plC_RJ_Button_領藥台_01_取消作業.BorderSize = 0;
+            this.plC_RJ_Button_領藥台_01_取消作業.but_press = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_領藥台_01_取消作業.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_領藥台_01_取消作業.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_領藥台_01_取消作業.Font = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_領藥台_01_取消作業.GUID = "";
+            this.plC_RJ_Button_領藥台_01_取消作業.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_領藥台_01_取消作業.Location = new System.Drawing.Point(649, 641);
+            this.plC_RJ_Button_領藥台_01_取消作業.Name = "plC_RJ_Button_領藥台_01_取消作業";
+            this.plC_RJ_Button_領藥台_01_取消作業.OFF_文字內容 = "取消作業";
+            this.plC_RJ_Button_領藥台_01_取消作業.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_領藥台_01_取消作業.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_領藥台_01_取消作業.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_領藥台_01_取消作業.ON_BorderSize = 5;
+            this.plC_RJ_Button_領藥台_01_取消作業.ON_文字內容 = "取消作業";
+            this.plC_RJ_Button_領藥台_01_取消作業.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 18F);
+            this.plC_RJ_Button_領藥台_01_取消作業.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_領藥台_01_取消作業.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_領藥台_01_取消作業.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_領藥台_01_取消作業.ShadowSize = 0;
+            this.plC_RJ_Button_領藥台_01_取消作業.ShowLoadingForm = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.Size = new System.Drawing.Size(200, 72);
+            this.plC_RJ_Button_領藥台_01_取消作業.State = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.TabIndex = 118;
+            this.plC_RJ_Button_領藥台_01_取消作業.Text = "取消作業";
+            this.plC_RJ_Button_領藥台_01_取消作業.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_領藥台_01_取消作業.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.字型鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_領藥台_01_取消作業.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_領藥台_01_取消作業.文字鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.讀取位元反向 = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.讀寫鎖住 = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.音效 = true;
+            this.plC_RJ_Button_領藥台_01_取消作業.顯示 = false;
+            this.plC_RJ_Button_領藥台_01_取消作業.顯示狀態 = false;
+            // 
+            // rJ_Lable2
+            // 
+            this.rJ_Lable2.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable2.BorderRadius = 8;
+            this.rJ_Lable2.BorderSize = 5;
+            this.rJ_Lable2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable2.GUID = "";
+            this.rJ_Lable2.Location = new System.Drawing.Point(510, 865);
+            this.rJ_Lable2.Name = "rJ_Lable2";
+            this.rJ_Lable2.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable2.ShadowSize = 0;
+            this.rJ_Lable2.Size = new System.Drawing.Size(294, 90);
+            this.rJ_Lable2.TabIndex = 66;
+            this.rJ_Lable2.Text = "rJ_Lable2";
+            this.rJ_Lable2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable2.TextColor = System.Drawing.Color.White;
+            // 
+            // plC_RJ_Button1
+            // 
+            this.plC_RJ_Button1.AutoResetState = false;
+            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button1.Bool = false;
+            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button1.BorderRadius = 20;
+            this.plC_RJ_Button1.BorderSize = 0;
+            this.plC_RJ_Button1.but_press = false;
+            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.GUID = "";
+            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button1.Location = new System.Drawing.Point(158, 787);
+            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
+            this.plC_RJ_Button1.OFF_文字內容 = "123\n555";
+            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ON_BorderSize = 5;
+            this.plC_RJ_Button1.ON_文字內容 = "123\n555";
+            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button1.ShadowSize = 3;
+            this.plC_RJ_Button1.ShowLoadingForm = false;
+            this.plC_RJ_Button1.Size = new System.Drawing.Size(206, 98);
+            this.plC_RJ_Button1.State = false;
+            this.plC_RJ_Button1.TabIndex = 65;
+            this.plC_RJ_Button1.Text = "123\n555";
+            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button1.Texts = "123\n555";
+            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button1.字型鎖住 = false;
+            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button1.文字鎖住 = false;
+            this.plC_RJ_Button1.讀取位元反向 = false;
+            this.plC_RJ_Button1.讀寫鎖住 = false;
+            this.plC_RJ_Button1.音效 = true;
+            this.plC_RJ_Button1.顯示 = false;
+            this.plC_RJ_Button1.顯示狀態 = false;
+            // 
             // rJ_Lable1
             // 
             this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable1.BorderRadius = 10;
+            this.rJ_Lable1.BorderRadius = 20;
             this.rJ_Lable1.BorderSize = 0;
             this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable1.ForeColor = System.Drawing.Color.White;
@@ -117,7 +256,7 @@
             this.rJ_Lable1.Name = "rJ_Lable1";
             this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable1.ShadowSize = 3;
-            this.rJ_Lable1.Size = new System.Drawing.Size(176, 76);
+            this.rJ_Lable1.Size = new System.Drawing.Size(200, 72);
             this.rJ_Lable1.TabIndex = 64;
             this.rJ_Lable1.Text = "rJ_Lable1";
             this.rJ_Lable1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +278,7 @@
             this.rJ_Button3.Location = new System.Drawing.Point(886, 670);
             this.rJ_Button3.Name = "rJ_Button3";
             this.rJ_Button3.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Button3.ShadowSize = 3;
+            this.rJ_Button3.ShadowSize = 5;
             this.rJ_Button3.ShowLoadingForm = false;
             this.rJ_Button3.Size = new System.Drawing.Size(207, 69);
             this.rJ_Button3.State = false;
@@ -180,7 +319,7 @@
             this.rJ_Button1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Button1.BackgroundColor = System.Drawing.Color.DodgerBlue;
             this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button1.BorderRadius = 10;
+            this.rJ_Button1.BorderRadius = 20;
             this.rJ_Button1.BorderSize = 0;
             this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button1.Enabled = false;
@@ -433,51 +572,25 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // plC_RJ_Button1
+            // rJ_Lable4
             // 
-            this.plC_RJ_Button1.AutoResetState = false;
-            this.plC_RJ_Button1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button1.Bool = false;
-            this.plC_RJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button1.BorderRadius = 10;
-            this.plC_RJ_Button1.BorderSize = 0;
-            this.plC_RJ_Button1.but_press = false;
-            this.plC_RJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button1.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button1.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.GUID = "";
-            this.plC_RJ_Button1.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button1.Location = new System.Drawing.Point(158, 787);
-            this.plC_RJ_Button1.Name = "plC_RJ_Button1";
-            this.plC_RJ_Button1.OFF_文字內容 = "123\n555";
-            this.plC_RJ_Button1.OFF_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button1.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.ON_BorderSize = 5;
-            this.plC_RJ_Button1.ON_文字內容 = "123\n555";
-            this.plC_RJ_Button1.ON_文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_Button1.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button1.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button1.ShadowSize = 3;
-            this.plC_RJ_Button1.ShowLoadingForm = false;
-            this.plC_RJ_Button1.Size = new System.Drawing.Size(206, 98);
-            this.plC_RJ_Button1.State = false;
-            this.plC_RJ_Button1.TabIndex = 65;
-            this.plC_RJ_Button1.Text = "123\n555";
-            this.plC_RJ_Button1.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button1.Texts = "123\n555";
-            this.plC_RJ_Button1.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button1.字型鎖住 = false;
-            this.plC_RJ_Button1.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button1.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button1.文字鎖住 = false;
-            this.plC_RJ_Button1.讀取位元反向 = false;
-            this.plC_RJ_Button1.讀寫鎖住 = false;
-            this.plC_RJ_Button1.音效 = true;
-            this.plC_RJ_Button1.顯示 = false;
-            this.plC_RJ_Button1.顯示狀態 = false;
+            this.rJ_Lable4.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable4.BorderRadius = 10;
+            this.rJ_Lable4.BorderSize = 0;
+            this.rJ_Lable4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable4.ForeColor = System.Drawing.Color.Transparent;
+            this.rJ_Lable4.GUID = "";
+            this.rJ_Lable4.Location = new System.Drawing.Point(1018, 863);
+            this.rJ_Lable4.Name = "rJ_Lable4";
+            this.rJ_Lable4.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable4.ShadowSize = 0;
+            this.rJ_Lable4.Size = new System.Drawing.Size(150, 40);
+            this.rJ_Lable4.TabIndex = 120;
+            this.rJ_Lable4.Text = "rJ_Lable4";
+            this.rJ_Lable4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable4.TextColor = System.Drawing.Color.Black;
             // 
             // Form1
             // 
@@ -517,6 +630,10 @@
         private MyUI.RJ_Button rJ_Button2;
         private MyUI.RJ_Lable rJ_Lable1;
         private MyUI.PLC_RJ_Button plC_RJ_Button1;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_領藥台_01_取消作業;
+        private MyUI.RJ_Lable rJ_Lable2;
+        private MyUI.RJ_Lable rJ_Lable3;
+        private MyUI.RJ_Lable rJ_Lable4;
     }
 }
 

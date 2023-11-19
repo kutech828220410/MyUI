@@ -101,7 +101,5 @@ namespace HSONApplication
                 e.Cancel = true;
             }
         }
-
-  
     }
 }

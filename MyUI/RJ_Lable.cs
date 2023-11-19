@@ -14,6 +14,7 @@ namespace MyUI
     {
         private string gUID = "";
         public string GUID { get => gUID; set => gUID = value; }
+        private Color textColor = Color.White;
         private Color backgroundColor = Color.RoyalBlue;
         private int borderSize = 0;
         private int borderRadius = 10;
@@ -86,11 +87,11 @@ namespace MyUI
         {
             get
             {
-                return this.ForeColor;
+                return textColor;
             }
             set
             {
-                this.ForeColor = value;
+                textColor = value;
             }
         }
         [Category("RJ Code Advance")]
@@ -102,7 +103,7 @@ namespace MyUI
             }
             set
             {
-                if (value < 3) value = 3;
+                if (value < 3 && value != 0) value = 3;
                 shadowSize = value;
                 this.Invalidate();
             }
@@ -127,7 +128,7 @@ namespace MyUI
             this.FlatStyle = FlatStyle.Flat;          
             this.Size = new Size(150, 40);
             this.BackColor = Color.MediumSlateBlue;
-            this.ForeColor = Color.White;
+            this.ForeColor = Color.Transparent;
             this.Resize += RJ_Label_Resize;         
             this.TextAlign = ContentAlignment.MiddleCenter;
         }
@@ -200,6 +201,7 @@ namespace MyUI
             pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 
             RectangleF rectBorder = new RectangleF(0, 0, this.Width - (this.ShadowSize + this.BorderSize), this.Height - (this.ShadowSize + this.BorderSize));
+            if (this.ShadowSize == 0) rectBorder = new RectangleF(0, 0, this.Width - (1), this.Height - (1));
             RectangleF rectShadow = new RectangleF(0, 0, this.Width - (this.ShadowSize), this.Height - (this.ShadowSize));
             RectangleF rectSurface = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
             RectangleF rectBackGround = new RectangleF(0, 0, this.Width, this.Height);
@@ -261,7 +263,7 @@ namespace MyUI
                     point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
                 }
 
-                pevent.Graphics.DrawString($"{this.Text}", this.Font, new SolidBrush(this.ForeColor), point, StringFormat.GenericDefault);
+                pevent.Graphics.DrawString($"{this.Text}", this.Font, new SolidBrush(this.TextColor), point, StringFormat.GenericDefault);
             }
         }
         protected override void OnHandleCreated(EventArgs e)
