@@ -32,6 +32,7 @@
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.plC_ScreenPage1 = new MyUI.PLC_ScreenPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rJ_Lable4 = new MyUI.RJ_Lable();
             this.rJ_Lable3 = new MyUI.RJ_Lable();
             this.plC_RJ_Button_領藥台_01_取消作業 = new MyUI.PLC_RJ_Button();
             this.rJ_Lable2 = new MyUI.RJ_Lable();
@@ -51,7 +52,6 @@
             this.plC_RJ_ScreenButton3 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton4 = new MyUI.PLC_RJ_ScreenButton();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.rJ_Lable4 = new MyUI.RJ_Lable();
             this.plC_ScreenPage1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,6 +110,26 @@
             this.tabPage1.Size = new System.Drawing.Size(1650, 1013);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "主畫面";
+            // 
+            // rJ_Lable4
+            // 
+            this.rJ_Lable4.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable4.BorderRadius = 10;
+            this.rJ_Lable4.BorderSize = 0;
+            this.rJ_Lable4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable4.ForeColor = System.Drawing.Color.Transparent;
+            this.rJ_Lable4.GUID = "";
+            this.rJ_Lable4.Location = new System.Drawing.Point(1018, 863);
+            this.rJ_Lable4.Name = "rJ_Lable4";
+            this.rJ_Lable4.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable4.ShadowSize = 0;
+            this.rJ_Lable4.Size = new System.Drawing.Size(150, 40);
+            this.rJ_Lable4.TabIndex = 120;
+            this.rJ_Lable4.Text = "rJ_Lable4";
+            this.rJ_Lable4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable4.TextColor = System.Drawing.Color.Black;
             // 
             // rJ_Lable3
             // 
@@ -286,6 +306,7 @@
             this.rJ_Button3.Text = "rJ_Button3";
             this.rJ_Button3.TextColor = System.Drawing.Color.White;
             this.rJ_Button3.UseVisualStyleBackColor = false;
+            this.rJ_Button3.Click += new System.EventHandler(this.rJ_Button3_Click);
             // 
             // rJ_Button2
             // 
@@ -571,26 +592,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // rJ_Lable4
-            // 
-            this.rJ_Lable4.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_Lable4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable4.BorderRadius = 10;
-            this.rJ_Lable4.BorderSize = 0;
-            this.rJ_Lable4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable4.ForeColor = System.Drawing.Color.Transparent;
-            this.rJ_Lable4.GUID = "";
-            this.rJ_Lable4.Location = new System.Drawing.Point(1018, 863);
-            this.rJ_Lable4.Name = "rJ_Lable4";
-            this.rJ_Lable4.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable4.ShadowSize = 0;
-            this.rJ_Lable4.Size = new System.Drawing.Size(150, 40);
-            this.rJ_Lable4.TabIndex = 120;
-            this.rJ_Lable4.Text = "rJ_Lable4";
-            this.rJ_Lable4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rJ_Lable4.TextColor = System.Drawing.Color.Black;
             // 
             // Form1
             // 

@@ -24,8 +24,26 @@ namespace HSONApplication
 {
     public partial class Form1 : Form
     {
- 
 
+        public enum ContextMenuStrip_藥品資料_藥檔資料
+        {
+            [Description("M8000")]
+            匯出,
+            [Description("M8000")]
+            匯入,
+            [Description("M8000")]
+            顯示有儲位藥品,
+            [Description("M8000")]
+            下載未建置條碼藥品,
+            [Description("M8000")]
+            下載已建置條碼藥品,
+            [Description("M8000")]
+            上載條碼Excel表,
+            [Description("M8000")]
+            藥檔維護,
+            [Description("S4077")]
+            更新至線上藥檔,
+        }
         #region DBConfigClass
         private const string DBConfigFileName = "DBConfig.txt";
         public DBConfigClass dBConfigClass = new DBConfigClass();
@@ -99,6 +117,15 @@ namespace HSONApplication
            if(value.StringIsInt32() == false)
             {
                 e.Cancel = true;
+            }
+        }
+
+        private void rJ_Button3_Click(object sender, EventArgs e)
+        {
+            Dialog_ContextMenuStrip dialog_ContextMenuStrip = new Dialog_ContextMenuStrip(new ContextMenuStrip_藥品資料_藥檔資料());
+            if (dialog_ContextMenuStrip.ShowDialog() == DialogResult.Yes)
+            {
+               
             }
         }
     }

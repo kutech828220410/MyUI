@@ -263,7 +263,7 @@ namespace MyUI
         private GraphicsPath GetFigurePath(RectangleF rect, float radius, int offset)
         {
             GraphicsPath path = new GraphicsPath();
-
+            if (radius == 0) radius = 1;
             path.StartFigure();
             path.AddArc(rect.X + 0, rect.Y + 0, radius, radius, 180, 90);
             path.AddArc(rect.Width + offset - radius, rect.Y + 0, radius, radius, 270, 90);

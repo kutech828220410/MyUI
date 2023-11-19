@@ -217,6 +217,8 @@ namespace MyUI
             {
                 RJ_Button rJ_Button = new RJ_Button();
                 rJ_Button.Click += RJ_Button_Click;
+                rJ_Button.MouseDownEvent += RJ_Button_MouseDownEvent;
+                rJ_Button.MouseDownEventEx += RJ_Button_MouseDownEventEx;
                 list_Controls.Add(rJ_Button);           
                 rJ_Buttons.Add(rJ_Button);
             }
@@ -230,6 +232,7 @@ namespace MyUI
             rJ_Button_Calcel.BorderRadius = controlsRadius;
             rJ_Button_Calcel.ForeColor = Color.Black;
             rJ_Button_Calcel.Click += RJ_Button_Calcel_Click;
+            rJ_Button_Calcel.MouseDownEventEx += RJ_Button_Calcel_MouseDownEventEx;
             rJ_Button_Calcel.BackgroundColor = Color.DarkGray;
             rJ_Button_Calcel.BackColor = Color.DarkGray;
             rJ_Button_Calcel.Margin = new Padding(2, 2, 2, 2);
@@ -243,6 +246,9 @@ namespace MyUI
             this.ResumeLayout(false);
 
         }
+
+ 
+
         public Dialog_ContextMenuStrip(object Enum)
         {
             texts = Enum.GetEnumNames();
@@ -309,14 +315,26 @@ namespace MyUI
         }
         private void RJ_Button_Calcel_Click(object sender, EventArgs e)
         {
+            
+        }
+        private void RJ_Button_MouseDownEvent(MouseEventArgs mevent)
+        {
+        
+        }
+        private void RJ_Button_Calcel_MouseDownEventEx(RJ_Button rJ_Button, MouseEventArgs mevent)
+        {
             this.DialogResult = DialogResult.No;
+            this.Close();
+        }
+        private void RJ_Button_MouseDownEventEx(RJ_Button rJ_Button, MouseEventArgs mevent)
+        {
+            this.DialogResult = DialogResult.Yes;
+            this.value = rJ_Button.Text;
             this.Close();
         }
         private void RJ_Button_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
-            this.value = ((Control)sender).Text;
-            this.Close();
+       
         }
     }
 }
