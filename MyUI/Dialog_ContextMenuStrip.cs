@@ -323,14 +323,24 @@ namespace MyUI
         }
         private void RJ_Button_Calcel_MouseDownEventEx(RJ_Button rJ_Button, MouseEventArgs mevent)
         {
-            this.DialogResult = DialogResult.No;
-            this.Close();
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.No;
+                this.Close();
+
+            }));
+          
         }
         private void RJ_Button_MouseDownEventEx(RJ_Button rJ_Button, MouseEventArgs mevent)
         {
-            this.DialogResult = DialogResult.Yes;
-            this.value = rJ_Button.Text;
-            this.Close();
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.Yes;
+                this.value = rJ_Button.Text;
+                this.Close();
+
+            }));
+   
         }
         private void RJ_Button_Click(object sender, EventArgs e)
         {
