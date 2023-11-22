@@ -2209,7 +2209,12 @@ namespace SQLUI
                 if (serchColumnName.Length == 1)
                 {
                     Command += " WHERE ";
-                    Name = "(" + serchColumnName[0] + ")";          
+                    if (serchValue[0].Check_Date_String() || serchValue[1].Check_Date_String())
+                    {
+                        Name = "date(" + serchColumnName[0] + ")";
+                        Console.WriteLine("get rows date beteeen ");
+                    }
+                    else Name = "(" + serchColumnName[0] + ")";          
                 }
                 Command += Name + " >= " + "'" + serchValue[0] + "'" + " AND " + Name  + "<="+ "'" + serchValue[1] + "'" ;
             }
