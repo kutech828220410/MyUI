@@ -2318,7 +2318,6 @@ C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\System.Threading.Tasks.Extensions.x
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\System.Buffers.xml
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.SQL_DataGridView.resources
 C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.SQL_TextBoxUI.resources
 C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.csproj.GenerateResource.cache
@@ -2434,3 +2433,4 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComp
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csprojAssemblyReference.cache
+C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache

@@ -145,38 +145,18 @@ namespace SQLUI
             {
                 dataTable_buffer.Rows.Add(object_templass);
             }
-             
             dataGridView.Invoke(new Action(delegate
             {
                 this.SuspendDrawing();
                 dataGridView.SuspendDrawing();
                 //if (dataGridView.DataSource != null) dataGridView.DataSource = null;
                 dataGridView.DataSource = dataTable_buffer;
-               
+
                 bool IsSetEnable = (dataTable.Rows.Count != dataTable_buffer.Rows.Count);
                 if (IsSetEnable) dataGridView.Enabled = false;
-                //dataTable.BeginInit();             
-                //dataTable.Rows.Clear();
-                //for (int Y = 0; Y < dataTable_buffer.Rows.Count; Y++)
-                //{
-                //    dataTable.Rows.Add(dataTable_buffer.Rows[Y].ItemArray);
-                //}
-                //dataTable.EndInit();
-               
-
-                //dataGridView.Enabled = false;
-                //for (int Y = 0; Y < dataTable_buffer.Rows.Count; Y++)
-                //{
-                //    for (int X = 0; X < dataTable_buffer.Columns.Count; X++)
-                //    {
-                //        if (Y >= dataTable.Rows.Count) dataTable.Rows.Add(dataTable_buffer.Rows[Y][X]);
-                //        else dataTable.Rows[Y][X] = dataTable_buffer.Rows[Y][X];
-                //    }
-                //}
-                //dataGridView.Enabled = true;
 
                 if (DataGridRefreshEvent != null) this.DataGridRefreshEvent();
-                if(this.顯示首列)
+                if (this.顯示首列)
                 {
                     dataGridView.RowHeadersDefaultCellStyle.Padding = new Padding(0, 0, 0, 0);
                     dataGridView.RowHeadersDefaultCellStyle.Font = this.cellStyleFont;
@@ -192,7 +172,7 @@ namespace SQLUI
                 }
                 Size size = System.Windows.Forms.TextRenderer.MeasureText((dataGridView.Rows.Count + 1).ToString(), dataGridView.RowHeadersDefaultCellStyle.Font);
                 dataGridView.RowHeadersWidth = size.Width + 22;
-               
+
 
                 for (int i = 0; i < List_SelectRowindex.Count; i++)
                 {
@@ -206,7 +186,7 @@ namespace SQLUI
                 }
                 foreach (ColumnElement columns in Columns)
                 {
-                    if(columns.CanEdit)
+                    if (columns.CanEdit)
                     {
                         dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionBackColor = Color.Yellow;
                         dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
@@ -232,9 +212,16 @@ namespace SQLUI
                         }
                     }
                 }
+                int temp = -1;
+                for (int i = 0; i < dataGridView.ColumnCount; i++)
+                {
+                    if (dataGridView.Columns[i].Visible == true) temp = i;
+                }
+                if(temp != -1) dataGridView.Columns[temp].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
                 this.ResumeDrawing();
                 dataGridView.ResumeDrawing();
-               
+
             }));
             this.flag_Refresh = false;
             dataGridView.CellValueChanged += DataGridView_CellValueChanged;
@@ -252,6 +239,7 @@ namespace SQLUI
                 dataGridView.FirstDisplayedScrollingRowIndex = index;
             }
         }
+
         #endregion
         private SaveDataValClass SaveDataVal = new SaveDataValClass();
         [Serializable]
@@ -1175,7 +1163,11 @@ namespace SQLUI
             InitializeComponent();
             this.IsStart = true;
             this.Resize += SQL_DataGridView_Resize;
+            this.dataGridView.RowPostPaint += DataGridView_RowPostPaint;
+            this.dataGridView.CellPainting += DataGridView_CellPainting;
+            this.dataGridView.Paint += DataGridView_Paint;
         }
+
 
         private void SQL_DataGridView_Resize(object sender, EventArgs e)
         {
@@ -1244,7 +1236,6 @@ namespace SQLUI
                 dataGridView.CellClick += DataGridView_CellClick;
                 dataGridView.CellEnter += DataGridView_CellEnter;
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
-                dataGridView.CellPainting += DataGridView_CellPainting;
                 dataGridView.CellEndEdit += DataGridView_CellEndEdit;
             
                 dataGridView.CellValidating += DataGridView_CellValidating;
@@ -1259,13 +1250,11 @@ namespace SQLUI
                 dataGridView.CellClick += DataGridView_CellClick;
                 dataGridView.CellEnter += DataGridView_CellEnter;
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
-                dataGridView.CellPainting += DataGridView_CellPainting;
                 dataGridView.CellEndEdit += DataGridView_CellEndEdit;
                
                 dataGridView.CellValidating += DataGridView_CellValidating;
                 dataGridView.CellValidated += DataGridView_CellValidated;
             }
-            dataGridView.Paint += DataGridView_Paint;
             dataGridView.MouseWheel += DataGridView_MouseWheel;
             if(checkBoxHeader != null)
             {
@@ -3258,19 +3247,7 @@ namespace SQLUI
             return string_list.ToArray();
         }
 
-        private void DataGridView_Paint(object sender, PaintEventArgs e)
-        {
-            if(dataGridView.CanSelect && dataGridView.Rows.Count > 0)
-            {
-                if (_顯示CheckBox)
-                {
-                    checkBoxHeader.Visible = true;
-                    int headerWidth = dataGridView.RowHeadersWidth;
-                    int headerHeight = dataGridView.ColumnHeadersHeight;
-                    checkBoxHeader.Location = new Point(headerWidth + (dataGridView.Columns[0].Width - checkBoxHeader.Width) /2, (headerHeight - checkBoxHeader.Height) / 2);
-                }
-            }      
-        }
+      
         private void DataGridView_DoubleClick(object sender, EventArgs e)
         {
             object[] value = this.GetRowValues();
@@ -3330,6 +3307,70 @@ namespace SQLUI
             }
        
         }
+        private void DataGridView_Paint(object sender, PaintEventArgs e)
+        {
+            //this.dataGridView.DataSource = this.SaveDataVal.RowsList;
+            if (dataGridView.CanSelect && dataGridView.Rows.Count > 0)
+            {
+                if (_顯示CheckBox)
+                {
+                    checkBoxHeader.Visible = true;
+                    int headerWidth = dataGridView.RowHeadersWidth;
+                    int headerHeight = dataGridView.ColumnHeadersHeight;
+                    checkBoxHeader.Location = new Point(headerWidth + (dataGridView.Columns[0].Width - checkBoxHeader.Width) / 2, (headerHeight - checkBoxHeader.Height) / 2);
+                }
+            }
+        }
+        private void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, DataGridViewContentAlignment dataGridViewContentAlignment)
+        {
+            if (text == null) return;
+
+            Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
+            SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
+            Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
+            Point point = new Point(0, 0);
+            if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopLeft)
+            {
+                point = new Point(0, 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
+            }
+
+            rectangle.X += point.X;
+            rectangle.Y += point.Y;
+
+            e.DrawString($"{text}", font, new SolidBrush(forecolor), rectangle, StringFormat.GenericDefault);
+        }
         private void DataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (_顯示CheckBox)
@@ -3344,7 +3385,63 @@ namespace SQLUI
                     e.Handled = true;
                 }
             }
-          
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            if (e.RowIndex > -1 && e.ColumnIndex == -1)
+            {
+                using (Brush brush_background = new SolidBrush(this.rowHeaderBackColor))
+                using (Pen pen_border = new Pen(Color.White))
+                {
+                    e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                    e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+              
+                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                    e.Handled = true;
+                }
+            }
+            if (e.RowIndex == -1 && e.ColumnIndex >= -1)
+            {
+                using (Brush brush_background = new SolidBrush(this.columnHeaderBackColor))
+                using (Pen pen_border = new Pen(Color.White))
+                {
+                    e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                    e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                    e.Handled = true;
+                }            
+            }
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
+                using (Pen pen_border = new Pen(Color.White))
+                {
+                    e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                    e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                    e.Handled = true;
+                }
+            }
+        }
+        private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            if (this.dataGridView.Rows[e.RowIndex].Selected)
+            {
+                using (Brush brush = new SolidBrush(Color.FromArgb(137, 91, 163)))
+                using (Pen pen = new Pen(Color.FromArgb(137, 91, 163)))
+                {
+                    int penWidth = 3;
+                    pen.Width = penWidth;
+
+                    int x = e.RowBounds.Left + (penWidth / 2) + 1;
+                    int y = e.RowBounds.Top + (penWidth / 2);
+                    int width = e.RowBounds.Width - penWidth - 3;
+                    int height = e.RowBounds.Height - penWidth;
+                    e.Graphics.DrawRectangle(pen, x, y, width, height);
+                    
+                }
+            }
         }
         private void DataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -3513,7 +3610,6 @@ namespace SQLUI
             }
             this.SaveDataVal.RowsList = RowsList_buf.DeepClone();
         }
-
         private void dataGridView_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Escape)

@@ -20,75 +20,13 @@ using System.Text.Json.Serialization;
 using System.Xml;
 using System.Xml.Xsl;
 using System.Xml.Schema;
+using HIS_DB_Lib;
 namespace HSONApplication
 {
     public partial class Form1 : Form
     {
 
-        public enum ContextMenuStrip_藥品資料_藥檔資料
-        {
-            [Description("M8000")]
-            匯出,
-            [Description("M8000")]
-            匯入,
-            [Description("M8000")]
-            顯示有儲位藥品,
-            [Description("M8000")]
-            下載未建置條碼藥品,
-            [Description("M8000")]
-            下載已建置條碼藥品,
-            [Description("M8000")]
-            上載條碼Excel表,
-            [Description("M8000")]
-            藥檔維護,
-            [Description("S4077")]
-            更新至線上藥檔,
-        }
-        #region DBConfigClass
-        private const string DBConfigFileName = "DBConfig.txt";
-        public DBConfigClass dBConfigClass = new DBConfigClass();
-        public class DBConfigClass
-        {
-            private SQL_DataGridView.ConnentionClass dB_Basic = new SQL_DataGridView.ConnentionClass();
-            private SQL_DataGridView.ConnentionClass dB_person_page = new SQL_DataGridView.ConnentionClass();
-            private SQL_DataGridView.ConnentionClass dB_order_list = new SQL_DataGridView.ConnentionClass();
 
-
-            public SQL_DataGridView.ConnentionClass DB_Basic { get => dB_Basic; set => dB_Basic = value; }
-            public SQL_DataGridView.ConnentionClass DB_person_page { get => dB_person_page; set => dB_person_page = value; }
-            public SQL_DataGridView.ConnentionClass DB_order_list { get => dB_order_list; set => dB_order_list = value; }
-        }
-        private void LoadDBConfig()
-        {
-            string jsonstr = MyFileStream.LoadFileAllText($".//{DBConfigFileName}");
-            if (jsonstr.StringIsEmpty())
-            {
-
-                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(new DBConfigClass());
-                List<string> list_jsonstring = new List<string>();
-                list_jsonstring.Add(jsonstr);
-                if (!MyFileStream.SaveFile($".//{DBConfigFileName}", list_jsonstring))
-                {
-                    MyMessageBox.ShowDialog($"建立{DBConfigFileName}檔案失敗!");
-                }
-                MyMessageBox.ShowDialog($"未建立參數文件!請至子目錄設定{DBConfigFileName}");
-                Application.Exit();
-            }
-            else
-            {
-                dBConfigClass = Basic.Net.JsonDeserializet<DBConfigClass>(jsonstr);
-
-                jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(dBConfigClass);
-                List<string> list_jsonstring = new List<string>();
-                list_jsonstring.Add(jsonstr);
-                if (!MyFileStream.SaveFile($".//{DBConfigFileName}", list_jsonstring))
-                {
-                    MyMessageBox.ShowDialog($"建立{DBConfigFileName}檔案失敗!");
-                }
-
-            }
-        }
-        #endregion
         Basic.MyConvert _MyConvert = new Basic.MyConvert();
         public Form1()
         {
@@ -107,26 +45,55 @@ namespace HSONApplication
 
         private void PlC_UI_Init1_UI_Finished_Event()
         {
-            this.LoadDBConfig();
-            SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
-      
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_main, this.plC_ScreenPage_main);
+            string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/init_udnoectc";
+            returnData returnData = new returnData();
+            returnData.ServerName = "cheom";
+            returnData.ServerType = "癌症備藥機";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            List<Table> tables = json.JsonDeserializet<List<Table>>();
+
+            this.sqL_DataGridView_備藥通知.Init(tables[0]);
+            this.sqL_DataGridView_備藥通知.Set_ColumnVisible(false, new enum_udnoectc().GetEnumNames());
+
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, enum_udnoectc.病房);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.病歷號);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.診別);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);
+            this.sqL_DataGridView_備藥通知.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_udnoectc.病歷號);
+            this.sqL_DataGridView_備藥通知.DataGridRefreshEvent += SqL_DataGridView_備藥通知_DataGridRefreshEvent;
+            Function_取得備藥通知();
         }
 
-        private void SqL_DataGridView_人員資料_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
+        private void SqL_DataGridView_備藥通知_DataGridRefreshEvent()
         {
-           if(value.StringIsInt32() == false)
+            for (int i = 0; i < this.sqL_DataGridView_備藥通知.dataGridView.Rows.Count; i++)
             {
-                e.Cancel = true;
+                this.sqL_DataGridView_備藥通知.dataGridView.Rows[i].Cells["病歷號"].Value = $"{i}S";
             }
         }
 
-        private void rJ_Button3_Click(object sender, EventArgs e)
+        private void Function_取得備藥通知()
         {
-            Dialog_ContextMenuStrip dialog_ContextMenuStrip = new Dialog_ContextMenuStrip(new ContextMenuStrip_藥品資料_藥檔資料());
-            if (dialog_ContextMenuStrip.ShowDialog() == DialogResult.Yes)
-            {
-               
-            }
+            string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/get_udnoectc_by_ctdate_st_end";
+            returnData returnData = new returnData();
+            returnData.ServerName = "cheom";
+            returnData.ServerType = "癌症備藥機";
+            returnData.Value = "2023-11-23 00:00:00,2023-11-24 23:59:59";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            returnData = json.JsonDeserializet<returnData>();
+
+            List<udnoectc> udnoectcs = returnData.Data.ObjToListClass<udnoectc>();
+            List<object[]> list_udnoectc = udnoectcs.ClassToSQL<udnoectc, enum_udnoectc>();
+            this.sqL_DataGridView_備藥通知.RefreshGrid(list_udnoectc);
+
+        }
+
+        private void sqL_DataGridView_備藥通知_MouseDown(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
