@@ -26,7 +26,7 @@ namespace HSONApplication
     public partial class Form1 : Form
     {
 
-
+        MySerialPort mySerialPort_delta = new MySerialPort();
         Basic.MyConvert _MyConvert = new Basic.MyConvert();
         public Form1()
         {
@@ -39,9 +39,44 @@ namespace HSONApplication
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
 
-
+            mySerialPort_delta.Init("COM8", 38400, 8, System.IO.Ports.Parity.None, System.IO.Ports.StopBits.One);
+            this.rJ_Button_UJOG.MouseDownEvent += RJ_Button_UJOG_MouseDownEvent; 
+            this.rJ_Button_DJOG.MouseDownEvent += RJ_Button_DJOG_MouseDownEvent;
+            this.rJ_Button_JOG_STOP.MouseDownEvent += RJ_Button_JOG_STOP_MouseDownEvent;
+            this.rJ_Button_enable_driver_DI.MouseDownEvent += RJ_Button_enable_driver_DI_MouseDownEvent;
+            this.rJ_Button_set_driver_DI.MouseDownEvent += RJ_Button_set_driver_DI_MouseDownEvent;
+            this.rJ_Button_get_driver_DO.MouseDownEvent += RJ_Button_get_driver_DO_MouseDownEvent;
         }
 
+        private void RJ_Button_get_driver_DO_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Driver_DO driver_DO = new DeltaMotor485.Driver_DO();
+            DeltaMotor485.Communication.UART_Command_Get_driver_DO(mySerialPort_delta, 1, ref driver_DO);
+        }
+        private void RJ_Button_set_driver_DI_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Communication.UART_Command_Set_driver_DI(mySerialPort_delta, 1, DeltaMotor485.enum_DI.SON);
+        }
+        private void RJ_Button_enable_driver_DI_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Communication.UART_Command_enable_driver_DI(mySerialPort_delta, 1, DeltaMotor485.enum_DI.SON);
+        }
+        private void RJ_Button_JOG_STOP_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Communication.UART_Command_JOG(mySerialPort_delta, 1, 0);
+        }
+
+        private void RJ_Button_DJOG_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Communication.UART_Command_JOG(mySerialPort_delta, 1, -1000);
+        }
+
+        private void RJ_Button_UJOG_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DeltaMotor485.Communication.UART_Command_JOG(mySerialPort_delta, 1, 1000);
+        }
+
+ 
 
         private void PlC_UI_Init1_UI_Finished_Event()
         {

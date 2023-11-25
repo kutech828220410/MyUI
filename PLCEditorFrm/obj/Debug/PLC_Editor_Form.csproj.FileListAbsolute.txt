@@ -10,3 +10,40 @@ C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻�
 C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.GenerateResource.Cache
 C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Evan\Desktop\MyUI20200331\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\Basic.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\DrawingClass.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\LadderUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\MyUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\System.Memory.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\Interop.SpeechLib.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\TCP.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\CallBackUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\MeasureSystemUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\MVSDKUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\SLDUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\LeadShineUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\PortControlUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\LightControlUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\ZealTechUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\HCGUI.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\System.Buffers.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\AxOvkBase.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\AxAltairUDrvAsm4.5.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\AxOvkBaseAsm4.5.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\AxOvkMsr.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\MeasureSystemFunction.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\AxAltairUDrv.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\bin\Debug\MVSDK.dll
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.CopyComplete
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb

@@ -10,3 +10,10 @@ C:\Users\Evan\Desktop\MyUI20200331\UpdateProgramFrm\obj\Debug\UpdateProgram.Prop
 C:\Users\Evan\Desktop\MyUI20200331\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.GenerateResource.Cache
 C:\Users\Evan\Desktop\MyUI20200331\UpdateProgramFrm\obj\Debug\UpdateProgram.exe
 C:\Users\Evan\Desktop\MyUI20200331\UpdateProgramFrm\obj\Debug\UpdateProgram.pdb
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.AssemblyReference.cache
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.UpdatForm.resources
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.Properties.Resources.resources
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.GenerateResource.cache
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.CoreCompileInputs.cache
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.exe
+C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.pdb

@@ -11,12 +11,103 @@ using LadderConnection;
 using Basic;
 namespace MyUI
 {
-    public partial class PLC_NumBox : TextBox
+    [Designer(typeof(ComponentSet.JLabelExDesigner))]  
+    [System.Drawing.ToolboxBitmap(typeof(NumericUpDown))]
+    public partial class PLC_NumBox : UserControl
     {
+        private delegate void FormDelegate(MyUI.數字鍵盤 form);
         private MyConvert myConvert = new MyConvert();
         private LowerMachine PLC;
         private bool flag_init = false;
+        private string Value_Str_Buf = "0";
+        private Int64 Int64_Value
+        {
+            get
+            {
+                Int64 temp = 0;
+                Int64.TryParse(Value_Str_Buf,out temp);
+                return temp;
+            }
+            set
+            {
+                Value_Str_Buf = value.ToString();
+            }
+        }
+        private int Int_Value
+        {
+            get
+            {
+                int temp = 0;
+                int.TryParse(Value_Str_Buf, out temp);
+                return temp;
+            }
+            set
+            {
+
+                Value_Str_Buf = value.ToString();
+            }
+        }
+        private bool Enable_buf = true;
+        private object value;
+        [Browsable(false)]
+        public override string Text
+        {
+            get
+            {
+                return base.Text;
+            }
+            set
+            {
+                數字轉換(value.ToString(), textBox1);
+            }
+        }
+        [ReadOnly(false), Browsable(false)]
+        public int Value
+        {
+            get
+            {
+                return this.GetValue();
+            }
+            set
+            {
+                this.SetValue(value);
+            }
+
+        }
+        public override Font Font
+        {
+            get => base.Font;
+            set
+            {
+                this.Height = this.textBox1.Height + 2;
+                base.Font = value;
+            }
+        }
         #region 自訂屬性
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Color mForeColor
+        {
+            get
+            {
+                return this.textBox1.ForeColor;
+            }
+            set
+            {
+                this.textBox1.ForeColor = value;
+            }
+        }
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Color mBackColor
+        {
+            get
+            {
+                return this.textBox1.BackColor;
+            }
+            set
+            {
+                this.textBox1.BackColor = value;
+            }
+        }
         private bool _顯示螢幕小鍵盤 = true;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public bool 顯示螢幕小鍵盤
@@ -26,6 +117,28 @@ namespace MyUI
             {
                 _ReadOnly = !value;
                 _顯示螢幕小鍵盤 = value;
+            }
+        }
+        private bool _顯示微調按鈕 = false;
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public bool 顯示微調按鈕
+        {
+            get { return _顯示微調按鈕; }
+            set
+            {
+                this.button_UP.Visible = value;
+                this.button_DOWN.Visible = value;
+                _顯示微調按鈕 = value;
+            }
+        }
+        private int _微調數值 = 1;
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public int 微調數值
+        {
+            get { return _微調數值; }
+            set
+            {
+                _微調數值 = value;
             }
         }
         private bool _密碼欄位 = false;
@@ -138,7 +251,7 @@ namespace MyUI
                 if (LadderProperty.DEVICE.TestDevice(value))
                 {
                     string temp = value.Remove(1);
-                    if (temp == "R" || temp == "D" || temp == "F" || temp == "Z") divice_OK = true;
+                    if (temp == "R" || temp == "D" || temp == "F" || temp == "Z" || temp == "K") divice_OK = true;
                 }
 
                 if (divice_OK) _寫入元件位置 = value;
@@ -157,7 +270,7 @@ namespace MyUI
                 if (LadderProperty.DEVICE.TestDevice(value))
                 {
                     string temp = value.Remove(1);
-                    if (temp == "R" || temp == "D" || temp == "F" || temp == "Z") divice_OK = true;
+                    if (temp == "R" || temp == "D" || temp == "F" || temp == "Z" || temp == "K") divice_OK = true;
                 }
 
                 if (divice_OK) _讀取元件位置 = value;
@@ -171,34 +284,45 @@ namespace MyUI
         }
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public WordLengthEnum 字元長度 { get; set; }
-        #endregion
-        public override System.Windows.Forms.Layout.LayoutEngine LayoutEngine
+
+        string _寫入位置註解 = "";
+        [ReadOnly(false), Browsable(true), Category("註解"), Description(""), DefaultValue("")]
+        public string 寫入位置註解
         {
             get
             {
-                if (!flag_init) 數字轉換(0.ToString(), textBox1);
-                return base.LayoutEngine;
-            }
-        }
-        private delegate void BaseTextDelegate(string str);
-        void BaseText(string str)
-        {
-            base.Text = str;
-        }
-        [Browsable(false)]
-        public override string Text
-        {
-            get
-            {
-                return base.Text;
+                return _寫入位置註解;
             }
             set
             {
-                數字轉換(value.ToString(), textBox1);
+                _寫入位置註解 = value;
+                if (this.PLC != null && this.寫入元件位置 != "" && value != "")
+                {
+                    PLC.properties.Device.Set_Device(this.寫入元件位置, "*" + value);
+                }
             }
         }
-        BaseTextDelegate baseTextDelegate;
-        void 數字轉換(string value, TextBox textBox1)
+        string _讀取位置註解 = "";
+        [ReadOnly(false), Browsable(true), Category("註解"), Description(""), DefaultValue("")]
+        public string 讀取位置註解
+        {
+            get
+            {
+                return _讀取位置註解;
+            }
+            set
+            {
+                _讀取位置註解 = value;
+                if (this.PLC != null && this.讀取元件位置 != "" && value != "")
+                {
+                    PLC.properties.Device.Set_Device(this.讀取元件位置, "*" + value);
+                }
+            }
+        }
+        #endregion
+     
+
+        private void 數字轉換(string value, TextBox textBox1)
         {
 
             bool 有負號 = false;
@@ -224,71 +348,27 @@ namespace MyUI
                 }
             }
             if (有負號) value = "-" + value;
-            CallBackUI.textbox.字串更換(value, textBox1);
-            if (this.IsHandleCreated)
+            string text = textBox1.Text;
+            if (text != value)
             {
-                baseTextDelegate = new BaseTextDelegate(BaseText);
-                Invoke(baseTextDelegate, value.Replace(".", ""));
+                if (this.IsHandleCreated)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        textBox1.Text = value;
+                        base.Text = value.Replace(".", "");
+                    }));
+                }
+                else
+                {
+                    textBox1.Text = value;
+                    base.Text = value.Replace(".", "");
+                }
             }
+          
 
         }
-        public PLC_NumBox()
-        {
-            InitializeComponent();
-            // init_finish = true;
-        }
-        bool Enable_buf = true;
-        private delegate void enableUI(bool enable);
-        public void EnableUI(bool enable)
-        {
-            this.Enabled = enable;
-        }
-        public void GetValue(ref Int64 value)
-        {
-            object temp = new object();
-            if (_讀取元件位置 != "" && _讀取元件位置 != null && PLC != null)
-            {
-                if (字元長度 == WordLengthEnum.單字元)
-                {
-                    PLC.properties.Device.Get_Device(_讀取元件位置, out temp);
-                    value = (Int64)temp;
-                }
-                else if (字元長度 == WordLengthEnum.雙字元)
-                {
-                    value = PLC.properties.Device.Get_DoubleWord(_讀取元件位置);
-                }
-            }
-        }
-        public void GetValue(ref int value)
-        {
-            object temp = new object();
-            if (_讀取元件位置 != "" && _讀取元件位置 != null && PLC != null)
-            {
-                if (字元長度 == WordLengthEnum.單字元)
-                {
-                    PLC.properties.Device.Get_Device(_讀取元件位置, out temp);
-                    value = (int)temp;
-                }
-            }
-        }
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48) || (int)e.KeyChar == 8) // 8 > BackSpace
-            {
-                e.Handled = false;
-            }
-            else if ((int)e.KeyChar == 13)
-            {
-                this.Text = textBox1.Text;
-            }
-            else e.Handled = true;
-        }
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            this.ImeMode = System.Windows.Forms.ImeMode.Disable;
-        }
-        private delegate void FormDelegate(MyUI.數字鍵盤 form);
-        void form_show(MyUI.數字鍵盤 form)
+        private void form_show(MyUI.數字鍵盤 form)
         {
             form.ShowDialog();
             if (MyUI.數字鍵盤.Enter)
@@ -326,33 +406,86 @@ namespace MyUI
                                 PLC.properties.Device.Set_Device(_數值更動旗標, true);
                             }
                         }
-                        
+
                     }
                     else
                     {
-                        this.Text = MyUI.數字鍵盤.value;
+                        Value_Str_Buf = MyUI.數字鍵盤.value;
                     }
                 }
             }
 
         }
-        private void textBox1_Click(object sender, EventArgs e)
+     
+        public PLC_NumBox()
         {
-            if (顯示螢幕小鍵盤 && !MyUI.數字鍵盤.視窗已建立)
+            InitializeComponent();
+        }
+
+  
+
+        #region Function
+        public int GetValue()
+        {
+            int value = 0;
+            this.GetValue(ref value);
+            return value;
+        }
+        public void GetValue(ref Int64 value)
+        {    
+            if (_讀取元件位置 != "" && _讀取元件位置 != null && PLC != null)
             {
-                MyUI.數字鍵盤.小數點位置 = this.小數點位置;
-                MyUI.數字鍵盤.音效 = 音效;
-                MyUI.數字鍵盤 form = MyUI.數字鍵盤.GetForm();
-                Form main_form = this.FindForm();
-                Point p0 = this.PointToScreen(new Point());
-                Point p1 = new Point(this.Location.X + Size.Width, this.Location.Y + Size.Height);
-                p0.X = main_form.Location.X + (main_form.Width / 2) - (form.Width / 2);
-                p0.Y = main_form.Location.Y + (main_form.Height / 2) - (form.Height / 2);
-                form.SetPosition(p0);
-                form.TopLevel = true;//將表單顯示在最上層。
-                form.Activate();//啟動表單並且給予焦點。
-                FormDelegate formDelegate = new FormDelegate(form_show);
-                Invoke(formDelegate, form);
+                object temp = new object();
+                if (字元長度 == WordLengthEnum.單字元)
+                {
+                    PLC.properties.Device.Get_Device(_讀取元件位置, out temp);
+                    value = (Int64)temp;
+                }
+                else if (字元長度 == WordLengthEnum.雙字元)
+                {
+                    value = PLC.properties.Device.Get_DoubleWord(_讀取元件位置);
+                }
+            }
+            else
+            {
+                value = Int64_Value;
+            }
+        }
+        public void GetValue(ref int value)
+        {
+
+            if (_讀取元件位置 != string.Empty && PLC != null)
+            {
+                value = PLC.properties.Device.Get_DataFast_Ex(_讀取元件位置);
+            }
+            else
+            {
+                value = Int_Value;
+            }
+        }
+        public void SetValue(int value)
+        {
+            if (_寫入元件位置 != string.Empty && PLC != null)
+            {
+                PLC.properties.Device.Set_DataFast_Ex(_寫入元件位置, value);
+            }
+            else
+            {
+                Int_Value = value;
+            }
+        }
+        public void SetValue(Int64 value)
+        {
+            if (_寫入元件位置 != "" && _寫入元件位置 != null && PLC != null)
+            {
+                if (字元長度 == WordLengthEnum.雙字元)
+                {
+                    PLC.properties.Device.Set_DoubleWord(_寫入元件位置, value);
+                }
+            }
+            else
+            {
+                Int64_Value = value;
             }
         }
         public bool Set_PLC(LowerMachine pLC)
@@ -364,6 +497,12 @@ namespace MyUI
             }
             return false;
         }
+        public void Load_PLC_Device(PLC_Device pLC_Device)
+        {
+            this.讀取元件位置 = pLC_Device.GetAdress();
+            this.寫入元件位置 = pLC_Device.GetAdress();
+        }
+
         public void Run(LowerMachine pLC)
         {
             if (PLC == null)
@@ -371,44 +510,146 @@ namespace MyUI
                 if (Set_PLC(pLC))
                 {
                     PLC.Add_UI_Method(Run);
+                    this.寫入位置註解 = this.寫入位置註解;
+                    this.讀取位置註解 = this.讀取位置註解;
                 }
             }
         }
-        object value;
-        enableUI Delegate;
+        public void Run(LowerMachine pLC , Basic.MyThread myThread)
+        {
+            if (PLC == null)
+            {
+                if (Set_PLC(pLC))
+                {
+                    myThread.Add_Method(Run);
+                    //PLC.Add_UI_Method(Run);
+
+                    this.寫入位置註解 = this.寫入位置註解;
+                    this.讀取位置註解 = this.讀取位置註解;
+                }
+            }
+        }
         public void Run()
         {
             flag_init = true;
-            if (_讀取元件位置 != "" && _讀取元件位置 != null && PLC != null)
+            //if (!this.CanSelect) return;
+         
+            if (PLC != null)
             {
+                if (_讀取元件位置 != string.Empty)
+                {
 
-                if (字元長度 == WordLengthEnum.單字元)
-                {
-                    PLC.properties.Device.Get_Device(_讀取元件位置, out value);
-                }
-                else if (字元長度 == WordLengthEnum.雙字元)
-                {
-                    value = PLC.properties.Device.Get_DoubleWord(_讀取元件位置);
-                }
-                Text = value.ToString();
-
-            }
-            if (PLC != null && _致能讀取位置 != null && _致能讀取位置 != "")
-            {
-                if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
-                {
-                    PLC.properties.Device.Get_Device(_致能讀取位置, out value);
-                    Delegate = new enableUI(EnableUI);
-                    if (value is bool)
+                    if (字元長度 == WordLengthEnum.單字元)
                     {
-                        if (Enable_buf != (bool)value)
+                        value = PLC.properties.Device.Get_DataFast_Ex(_讀取元件位置);
+                    }
+                    else if (字元長度 == WordLengthEnum.雙字元)
+                    {
+                        value = PLC.properties.Device.Get_DoubleWord(_讀取元件位置);
+                    }
+                    Value_Str_Buf = value.ToString();
+                }
+
+            
+                if (_致能讀取位置 != string.Empty)
+                {
+                    if (LadderProperty.DEVICE.TestDevice(_致能讀取位置))
+                    {
+                        PLC.properties.Device.Get_Device(_致能讀取位置, out value);
+                        if (value is bool)
                         {
-                            Invoke(Delegate, (bool)value);
-                            Enable_buf = (bool)value;
+                            if (Enable_buf != (bool)value)
+                            {
+                                this.Invoke(new Action(delegate
+                                {
+                                    this.Enabled = (bool)value;
+                                }));
+                                Enable_buf = (bool)value;
+                            }
                         }
                     }
                 }
             }
+            string text = this.Text;
+            if (this.Text != Value_Str_Buf)
+            {
+                this.Text = Value_Str_Buf;
+            }
         }
+
+
+        public void ShowKeyBoard()
+        {
+            this.ShowKeyBoard(new Point());
+        }
+        public void ShowKeyBoard(Point point)
+        {
+            if (顯示螢幕小鍵盤 && !MyUI.數字鍵盤.視窗已建立)
+            {
+                MyUI.數字鍵盤.小數點位置 = this.小數點位置;
+                MyUI.數字鍵盤.音效 = 音效;
+                MyUI.數字鍵盤 form = MyUI.數字鍵盤.GetForm();
+                System.Windows.Forms.Screen screen = System.Windows.Forms.Screen.FromPoint(point);
+ 
+                Form main_form = this.FindForm();
+                Point p0 = this.PointToScreen(new Point());
+                p0.X = screen.Bounds.X + (screen.Bounds.Width / 2) - (form.Width / 2);
+                p0.Y = screen.Bounds.Y + (screen.Bounds.Height / 2) - (form.Height / 2);
+                form.SetPosition(p0);
+                form.TopLevel = true;//將表單顯示在最上層。
+                form.Activate();//啟動表單並且給予焦點。
+                form.Init_Text = this.textBox1.Text;
+                this.Invoke(new Action(delegate
+                {
+                    this.form_show(form);
+                }));
+            }
+          
+        }
+        #endregion
+        #region Event
+        public override System.Windows.Forms.Layout.LayoutEngine LayoutEngine
+        {
+            get
+            {
+                if (!flag_init) 數字轉換(0.ToString(), textBox1);
+                return base.LayoutEngine;
+            }
+        }
+        private void textBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.Focus();
+            this.ShowKeyBoard(new Point(System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y));
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48) || (int)e.KeyChar == 8) // 8 > BackSpace
+            {
+                e.Handled = false;
+            }
+            else if ((int)e.KeyChar == 13)
+            {
+                this.Text = textBox1.Text;
+            }
+            else e.Handled = true;
+        }
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            this.ImeMode = System.Windows.Forms.ImeMode.Disable;
+        }
+        private void button_DOWN_Click(object sender, EventArgs e)
+        {
+            this.SetValue(this.GetValue() - this.微調數值);
+        }
+        private void button_UP_Click(object sender, EventArgs e)
+        {
+            this.SetValue(this.GetValue() + this.微調數值);
+        }
+
+
+        #endregion
+
+
     }
 }

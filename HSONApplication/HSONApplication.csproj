@@ -50,6 +50,9 @@
     <Reference Include="CallBackUI">
       <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
+    <Reference Include="DeltaMotor485">
+      <HintPath>..\0.DLL\DeltaMotor485.dll</HintPath>
+    </Reference>
     <Reference Include="DrawingClass">
       <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
     </Reference>
@@ -160,7 +163,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>

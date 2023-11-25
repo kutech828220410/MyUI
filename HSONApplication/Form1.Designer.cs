@@ -35,11 +35,17 @@
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_ScreenPage_main = new MyUI.PLC_ScreenPage();
             this.主畫面 = new System.Windows.Forms.TabPage();
+            this.rJ_Button_set_driver_DI = new MyUI.RJ_Button();
+            this.rJ_Button_enable_driver_DI = new MyUI.RJ_Button();
+            this.rJ_Button_JOG_STOP = new MyUI.RJ_Button();
+            this.rJ_Button_DJOG = new MyUI.RJ_Button();
+            this.rJ_Button_UJOG = new MyUI.RJ_Button();
             this.sqL_DataGridView_備藥通知 = new SQLUI.SQL_DataGridView();
             this.手動 = new System.Windows.Forms.TabPage();
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
+            this.rJ_Button_get_driver_DO = new MyUI.RJ_Button();
             this.panel_main.SuspendLayout();
             this.plC_ScreenPage_main.SuspendLayout();
             this.主畫面.SuspendLayout();
@@ -163,6 +169,12 @@
             // 
             // 主畫面
             // 
+            this.主畫面.Controls.Add(this.rJ_Button_get_driver_DO);
+            this.主畫面.Controls.Add(this.rJ_Button_set_driver_DI);
+            this.主畫面.Controls.Add(this.rJ_Button_enable_driver_DI);
+            this.主畫面.Controls.Add(this.rJ_Button_JOG_STOP);
+            this.主畫面.Controls.Add(this.rJ_Button_DJOG);
+            this.主畫面.Controls.Add(this.rJ_Button_UJOG);
             this.主畫面.Controls.Add(this.sqL_DataGridView_備藥通知);
             this.主畫面.Location = new System.Drawing.Point(4, 25);
             this.主畫面.Name = "主畫面";
@@ -170,6 +182,136 @@
             this.主畫面.TabIndex = 2;
             this.主畫面.Text = "主畫面";
             this.主畫面.UseVisualStyleBackColor = true;
+            // 
+            // rJ_Button_set_driver_DI
+            // 
+            this.rJ_Button_set_driver_DI.AutoResetState = false;
+            this.rJ_Button_set_driver_DI.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_set_driver_DI.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_set_driver_DI.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_set_driver_DI.BorderRadius = 10;
+            this.rJ_Button_set_driver_DI.BorderSize = 0;
+            this.rJ_Button_set_driver_DI.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_set_driver_DI.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_set_driver_DI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_set_driver_DI.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_set_driver_DI.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_set_driver_DI.GUID = "";
+            this.rJ_Button_set_driver_DI.Location = new System.Drawing.Point(195, 738);
+            this.rJ_Button_set_driver_DI.Name = "rJ_Button_set_driver_DI";
+            this.rJ_Button_set_driver_DI.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_set_driver_DI.ShadowSize = 0;
+            this.rJ_Button_set_driver_DI.ShowLoadingForm = false;
+            this.rJ_Button_set_driver_DI.Size = new System.Drawing.Size(171, 49);
+            this.rJ_Button_set_driver_DI.State = false;
+            this.rJ_Button_set_driver_DI.TabIndex = 10;
+            this.rJ_Button_set_driver_DI.Text = "set_driver_DI";
+            this.rJ_Button_set_driver_DI.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_set_driver_DI.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button_enable_driver_DI
+            // 
+            this.rJ_Button_enable_driver_DI.AutoResetState = false;
+            this.rJ_Button_enable_driver_DI.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_enable_driver_DI.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_enable_driver_DI.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_enable_driver_DI.BorderRadius = 10;
+            this.rJ_Button_enable_driver_DI.BorderSize = 0;
+            this.rJ_Button_enable_driver_DI.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_enable_driver_DI.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_enable_driver_DI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_enable_driver_DI.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_enable_driver_DI.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_enable_driver_DI.GUID = "";
+            this.rJ_Button_enable_driver_DI.Location = new System.Drawing.Point(18, 738);
+            this.rJ_Button_enable_driver_DI.Name = "rJ_Button_enable_driver_DI";
+            this.rJ_Button_enable_driver_DI.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_enable_driver_DI.ShadowSize = 0;
+            this.rJ_Button_enable_driver_DI.ShowLoadingForm = false;
+            this.rJ_Button_enable_driver_DI.Size = new System.Drawing.Size(171, 49);
+            this.rJ_Button_enable_driver_DI.State = false;
+            this.rJ_Button_enable_driver_DI.TabIndex = 9;
+            this.rJ_Button_enable_driver_DI.Text = "enable_driver_DI";
+            this.rJ_Button_enable_driver_DI.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_enable_driver_DI.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button_JOG_STOP
+            // 
+            this.rJ_Button_JOG_STOP.AutoResetState = false;
+            this.rJ_Button_JOG_STOP.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_JOG_STOP.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_JOG_STOP.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_JOG_STOP.BorderRadius = 10;
+            this.rJ_Button_JOG_STOP.BorderSize = 0;
+            this.rJ_Button_JOG_STOP.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_JOG_STOP.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_JOG_STOP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_JOG_STOP.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_JOG_STOP.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_JOG_STOP.GUID = "";
+            this.rJ_Button_JOG_STOP.Location = new System.Drawing.Point(919, 738);
+            this.rJ_Button_JOG_STOP.Name = "rJ_Button_JOG_STOP";
+            this.rJ_Button_JOG_STOP.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_JOG_STOP.ShadowSize = 0;
+            this.rJ_Button_JOG_STOP.ShowLoadingForm = false;
+            this.rJ_Button_JOG_STOP.Size = new System.Drawing.Size(150, 49);
+            this.rJ_Button_JOG_STOP.State = false;
+            this.rJ_Button_JOG_STOP.TabIndex = 8;
+            this.rJ_Button_JOG_STOP.Text = "JOG STOP";
+            this.rJ_Button_JOG_STOP.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_JOG_STOP.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button_DJOG
+            // 
+            this.rJ_Button_DJOG.AutoResetState = false;
+            this.rJ_Button_DJOG.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_DJOG.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_DJOG.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_DJOG.BorderRadius = 10;
+            this.rJ_Button_DJOG.BorderSize = 0;
+            this.rJ_Button_DJOG.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_DJOG.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_DJOG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_DJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_DJOG.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_DJOG.GUID = "";
+            this.rJ_Button_DJOG.Location = new System.Drawing.Point(1075, 738);
+            this.rJ_Button_DJOG.Name = "rJ_Button_DJOG";
+            this.rJ_Button_DJOG.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_DJOG.ShadowSize = 0;
+            this.rJ_Button_DJOG.ShowLoadingForm = false;
+            this.rJ_Button_DJOG.Size = new System.Drawing.Size(150, 49);
+            this.rJ_Button_DJOG.State = false;
+            this.rJ_Button_DJOG.TabIndex = 7;
+            this.rJ_Button_DJOG.Text = "DJOG";
+            this.rJ_Button_DJOG.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_DJOG.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Button_UJOG
+            // 
+            this.rJ_Button_UJOG.AutoResetState = false;
+            this.rJ_Button_UJOG.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_UJOG.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_UJOG.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_UJOG.BorderRadius = 10;
+            this.rJ_Button_UJOG.BorderSize = 0;
+            this.rJ_Button_UJOG.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_UJOG.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_UJOG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_UJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_UJOG.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_UJOG.GUID = "";
+            this.rJ_Button_UJOG.Location = new System.Drawing.Point(763, 738);
+            this.rJ_Button_UJOG.Name = "rJ_Button_UJOG";
+            this.rJ_Button_UJOG.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_UJOG.ShadowSize = 0;
+            this.rJ_Button_UJOG.ShowLoadingForm = false;
+            this.rJ_Button_UJOG.Size = new System.Drawing.Size(150, 49);
+            this.rJ_Button_UJOG.State = false;
+            this.rJ_Button_UJOG.TabIndex = 6;
+            this.rJ_Button_UJOG.Text = "UJOG";
+            this.rJ_Button_UJOG.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_UJOG.UseVisualStyleBackColor = false;
             // 
             // sqL_DataGridView_備藥通知
             // 
@@ -187,7 +329,7 @@
             this.sqL_DataGridView_備藥通知.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             this.sqL_DataGridView_備藥通知.columnHeadersHeight = 40;
             this.sqL_DataGridView_備藥通知.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.sqL_DataGridView_備藥通知.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sqL_DataGridView_備藥通知.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_備藥通知.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.ImageBox = false;
             this.sqL_DataGridView_備藥通知.Location = new System.Drawing.Point(0, 0);
@@ -202,7 +344,7 @@
             this.sqL_DataGridView_備藥通知.RowsHeight = 80;
             this.sqL_DataGridView_備藥通知.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_備藥通知.Server = "127.0.0.0";
-            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1256, 830);
+            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1256, 715);
             this.sqL_DataGridView_備藥通知.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_備藥通知.TabIndex = 5;
             this.sqL_DataGridView_備藥通知.UserName = "root";
@@ -273,6 +415,32 @@
             this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
             this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
+            // rJ_Button_get_driver_DO
+            // 
+            this.rJ_Button_get_driver_DO.AutoResetState = false;
+            this.rJ_Button_get_driver_DO.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button_get_driver_DO.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_get_driver_DO.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_get_driver_DO.BorderRadius = 10;
+            this.rJ_Button_get_driver_DO.BorderSize = 0;
+            this.rJ_Button_get_driver_DO.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_get_driver_DO.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_get_driver_DO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_get_driver_DO.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_get_driver_DO.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_get_driver_DO.GUID = "";
+            this.rJ_Button_get_driver_DO.Location = new System.Drawing.Point(439, 738);
+            this.rJ_Button_get_driver_DO.Name = "rJ_Button_get_driver_DO";
+            this.rJ_Button_get_driver_DO.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_get_driver_DO.ShadowSize = 0;
+            this.rJ_Button_get_driver_DO.ShowLoadingForm = false;
+            this.rJ_Button_get_driver_DO.Size = new System.Drawing.Size(171, 49);
+            this.rJ_Button_get_driver_DO.State = false;
+            this.rJ_Button_get_driver_DO.TabIndex = 11;
+            this.rJ_Button_get_driver_DO.Text = "get_driver_DO";
+            this.rJ_Button_get_driver_DO.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_get_driver_DO.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -282,6 +450,7 @@
             this.Controls.Add(this.plC_ScreenPage_main);
             this.Controls.Add(this.panel_main);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_main.ResumeLayout(false);
@@ -304,6 +473,12 @@
         private MyUI.PLC_AlarmFlow plC_AlarmFlow2;
         private System.Windows.Forms.TabPage 主畫面;
         private SQLUI.SQL_DataGridView sqL_DataGridView_備藥通知;
+        private MyUI.RJ_Button rJ_Button_UJOG;
+        private MyUI.RJ_Button rJ_Button_JOG_STOP;
+        private MyUI.RJ_Button rJ_Button_DJOG;
+        private MyUI.RJ_Button rJ_Button_enable_driver_DI;
+        private MyUI.RJ_Button rJ_Button_set_driver_DI;
+        private MyUI.RJ_Button rJ_Button_get_driver_DO;
     }
 }
 

@@ -1,1 +1,3 @@
 C:\Users\Evan\Desktop\MyUI20200331\HsImage\obj\Debug\HsImage.csprojResolveAssemblyReference.cache
+C:\Users\HS\Source\Repos\MyUI\HsImage\obj\Debug\HsImage.csproj.AssemblyReference.cache
+C:\Users\HS\Source\Repos\MyUI\HsImage\obj\Debug\HsImage.csproj.CoreCompileInputs.cache

@@ -143,6 +143,8 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.backgroundWorker_計時器 = new System.ComponentModel.BackgroundWorker();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.checkBox_Online_High_Speed = new System.Windows.Forms.CheckBox();
             this.panel_main.SuspendLayout();
             this.panel_程式分頁.SuspendLayout();
             this.contextMenuStrip_TreeView.SuspendLayout();
@@ -209,24 +211,25 @@
             this.調整大小ToolStripMenuItem,
             this.取消ToolStripMenuItem1});
             this.contextMenuStrip_TreeView.Name = "contextMenuStrip1";
-            this.contextMenuStrip_TreeView.Size = new System.Drawing.Size(123, 48);
+            this.contextMenuStrip_TreeView.Size = new System.Drawing.Size(125, 48);
             // 
             // 調整大小ToolStripMenuItem
             // 
             this.調整大小ToolStripMenuItem.Name = "調整大小ToolStripMenuItem";
-            this.調整大小ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.調整大小ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.調整大小ToolStripMenuItem.Text = "調整大小";
             this.調整大小ToolStripMenuItem.Click += new System.EventHandler(this.調整大小ToolStripMenuItem_Click);
             // 
             // 取消ToolStripMenuItem1
             // 
             this.取消ToolStripMenuItem1.Name = "取消ToolStripMenuItem1";
-            this.取消ToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.取消ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.取消ToolStripMenuItem1.Text = "取消";
             this.取消ToolStripMenuItem1.Click += new System.EventHandler(this.取消ToolStripMenuItem1_Click);
             // 
             // panel_工具箱
             // 
+            this.panel_工具箱.Controls.Add(this.checkBox_Online_High_Speed);
             this.panel_工具箱.Controls.Add(this.flowLayoutPanel_工具列_檔案讀寫);
             this.panel_工具箱.Controls.Add(this.flowLayoutPanel1);
             this.panel_工具箱.Controls.Add(this.flowLayoutPanel2);
@@ -252,9 +255,9 @@
             // 
             this.exButton_開新專案.Location = new System.Drawing.Point(3, 3);
             this.exButton_開新專案.Name = "exButton_開新專案";
-            this.exButton_開新專案.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_開新專案.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_開新專案.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_開新專案.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_開新專案.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_開新專案.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_開新專案.Size = new System.Drawing.Size(30, 30);
             this.exButton_開新專案.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -272,9 +275,9 @@
             // 
             this.exButton_讀取檔案.Location = new System.Drawing.Point(39, 3);
             this.exButton_讀取檔案.Name = "exButton_讀取檔案";
-            this.exButton_讀取檔案.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_讀取檔案.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_讀取檔案.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_讀取檔案.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_讀取檔案.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_讀取檔案.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_讀取檔案.Size = new System.Drawing.Size(30, 30);
             this.exButton_讀取檔案.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -292,9 +295,9 @@
             // 
             this.exButton_儲存檔案.Location = new System.Drawing.Point(75, 3);
             this.exButton_儲存檔案.Name = "exButton_儲存檔案";
-            this.exButton_儲存檔案.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_儲存檔案.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_儲存檔案.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_儲存檔案.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_儲存檔案.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_儲存檔案.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_儲存檔案.Size = new System.Drawing.Size(30, 30);
             this.exButton_儲存檔案.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -325,9 +328,9 @@
             // 
             this.exButton_剪下.Location = new System.Drawing.Point(3, 3);
             this.exButton_剪下.Name = "exButton_剪下";
-            this.exButton_剪下.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_剪下.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_剪下.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_剪下.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_剪下.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_剪下.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_剪下.Size = new System.Drawing.Size(30, 30);
             this.exButton_剪下.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -345,9 +348,9 @@
             // 
             this.exButton_複製.Location = new System.Drawing.Point(39, 3);
             this.exButton_複製.Name = "exButton_複製";
-            this.exButton_複製.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_複製.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_複製.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_複製.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_複製.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_複製.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_複製.Size = new System.Drawing.Size(30, 30);
             this.exButton_複製.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -365,9 +368,9 @@
             // 
             this.exButton_貼上.Location = new System.Drawing.Point(75, 3);
             this.exButton_貼上.Name = "exButton_貼上";
-            this.exButton_貼上.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_貼上.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_貼上.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_貼上.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_貼上.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_貼上.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_貼上.Size = new System.Drawing.Size(30, 30);
             this.exButton_貼上.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -385,9 +388,9 @@
             // 
             this.exButton_上一步.Location = new System.Drawing.Point(111, 3);
             this.exButton_上一步.Name = "exButton_上一步";
-            this.exButton_上一步.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_上一步.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_上一步.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_上一步.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_上一步.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_上一步.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_上一步.Size = new System.Drawing.Size(30, 30);
             this.exButton_上一步.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -405,9 +408,9 @@
             // 
             this.exButton_復原回未修正.Location = new System.Drawing.Point(147, 3);
             this.exButton_復原回未修正.Name = "exButton_復原回未修正";
-            this.exButton_復原回未修正.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_復原回未修正.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_復原回未修正.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_復原回未修正.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_復原回未修正.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_復原回未修正.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_復原回未修正.Size = new System.Drawing.Size(30, 30);
             this.exButton_復原回未修正.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -440,9 +443,9 @@
             // 
             this.exButton_寫入A接點.Location = new System.Drawing.Point(3, 3);
             this.exButton_寫入A接點.Name = "exButton_寫入A接點";
-            this.exButton_寫入A接點.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_寫入A接點.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_寫入A接點.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_寫入A接點.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_寫入A接點.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_寫入A接點.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_寫入A接點.Size = new System.Drawing.Size(30, 30);
             this.exButton_寫入A接點.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -460,9 +463,9 @@
             // 
             this.exButton_寫入B接點.Location = new System.Drawing.Point(39, 3);
             this.exButton_寫入B接點.Name = "exButton_寫入B接點";
-            this.exButton_寫入B接點.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_寫入B接點.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_寫入B接點.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_寫入B接點.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_寫入B接點.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_寫入B接點.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_寫入B接點.Size = new System.Drawing.Size(30, 30);
             this.exButton_寫入B接點.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -480,9 +483,9 @@
             // 
             this.exButton_畫橫線.Location = new System.Drawing.Point(75, 3);
             this.exButton_畫橫線.Name = "exButton_畫橫線";
-            this.exButton_畫橫線.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_畫橫線.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_畫橫線.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_畫橫線.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_畫橫線.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_畫橫線.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_畫橫線.Size = new System.Drawing.Size(30, 30);
             this.exButton_畫橫線.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -500,9 +503,9 @@
             // 
             this.exButton_畫豎線.Location = new System.Drawing.Point(111, 3);
             this.exButton_畫豎線.Name = "exButton_畫豎線";
-            this.exButton_畫豎線.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_畫豎線.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_畫豎線.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_畫豎線.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_畫豎線.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_畫豎線.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_畫豎線.Size = new System.Drawing.Size(30, 30);
             this.exButton_畫豎線.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -520,9 +523,9 @@
             // 
             this.exButton_刪除橫線.Location = new System.Drawing.Point(147, 3);
             this.exButton_刪除橫線.Name = "exButton_刪除橫線";
-            this.exButton_刪除橫線.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_刪除橫線.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_刪除橫線.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_刪除橫線.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_刪除橫線.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_刪除橫線.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_刪除橫線.Size = new System.Drawing.Size(30, 30);
             this.exButton_刪除橫線.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -540,9 +543,9 @@
             // 
             this.exButton_刪除豎線.Location = new System.Drawing.Point(183, 3);
             this.exButton_刪除豎線.Name = "exButton_刪除豎線";
-            this.exButton_刪除豎線.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_刪除豎線.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_刪除豎線.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_刪除豎線.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_刪除豎線.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_刪除豎線.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_刪除豎線.Size = new System.Drawing.Size(30, 30);
             this.exButton_刪除豎線.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -560,9 +563,9 @@
             // 
             this.exButton_窗選模式切換.Location = new System.Drawing.Point(219, 3);
             this.exButton_窗選模式切換.Name = "exButton_窗選模式切換";
-            this.exButton_窗選模式切換.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_窗選模式切換.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_窗選模式切換.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_窗選模式切換.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_窗選模式切換.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_窗選模式切換.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_窗選模式切換.Size = new System.Drawing.Size(30, 30);
             this.exButton_窗選模式切換.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -592,9 +595,9 @@
             // 
             this.exButton_語法切換.Location = new System.Drawing.Point(3, 3);
             this.exButton_語法切換.Name = "exButton_語法切換";
-            this.exButton_語法切換.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_語法切換.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_語法切換.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_語法切換.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_語法切換.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_語法切換.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_語法切換.Size = new System.Drawing.Size(30, 30);
             this.exButton_語法切換.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -612,9 +615,9 @@
             // 
             this.exButton_程式_註解模式選擇.Location = new System.Drawing.Point(39, 3);
             this.exButton_程式_註解模式選擇.Name = "exButton_程式_註解模式選擇";
-            this.exButton_程式_註解模式選擇.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_程式_註解模式選擇.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_程式_註解模式選擇.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_程式_註解模式選擇.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_程式_註解模式選擇.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_程式_註解模式選擇.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_程式_註解模式選擇.Size = new System.Drawing.Size(30, 30);
             this.exButton_程式_註解模式選擇.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -632,9 +635,9 @@
             // 
             this.exButton15.Location = new System.Drawing.Point(75, 3);
             this.exButton15.Name = "exButton15";
-            this.exButton15.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton15.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton15.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton15.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton15.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton15.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton15.Size = new System.Drawing.Size(30, 30);
             this.exButton15.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -652,9 +655,9 @@
             // 
             this.exButton_Online.Location = new System.Drawing.Point(111, 3);
             this.exButton_Online.Name = "exButton_Online";
-            this.exButton_Online.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_Online.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_Online.OFF_文字顏色 = System.Drawing.Color.Black;
-            this.exButton_Online.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_Online.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_Online.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_Online.Size = new System.Drawing.Size(30, 30);
             this.exButton_Online.Style = MyUI.ExButton.StyleEnum.自定義;
@@ -743,37 +746,37 @@
             this.D_刪除,
             this.D_選取全部});
             this.contextMenuStrip_註解列表_右鑑選單.Name = "contextMenuStrip_右鍵選單";
-            this.contextMenuStrip_註解列表_右鑑選單.Size = new System.Drawing.Size(196, 114);
+            this.contextMenuStrip_註解列表_右鑑選單.Size = new System.Drawing.Size(198, 114);
             this.contextMenuStrip_註解列表_右鑑選單.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_註解列表_右鑑選單_ItemClicked);
             // 
             // D_剪下
             // 
             this.D_剪下.Name = "D_剪下";
-            this.D_剪下.Size = new System.Drawing.Size(195, 22);
+            this.D_剪下.Size = new System.Drawing.Size(197, 22);
             this.D_剪下.Text = "剪下                    Ctrl+X";
             // 
             // D_複製
             // 
             this.D_複製.Name = "D_複製";
-            this.D_複製.Size = new System.Drawing.Size(195, 22);
+            this.D_複製.Size = new System.Drawing.Size(197, 22);
             this.D_複製.Text = "複製                    Ctrl+C";
             // 
             // D_貼上
             // 
             this.D_貼上.Name = "D_貼上";
-            this.D_貼上.Size = new System.Drawing.Size(195, 22);
+            this.D_貼上.Size = new System.Drawing.Size(197, 22);
             this.D_貼上.Text = "貼上                    Ctrl+V";
             // 
             // D_刪除
             // 
             this.D_刪除.Name = "D_刪除";
-            this.D_刪除.Size = new System.Drawing.Size(195, 22);
+            this.D_刪除.Size = new System.Drawing.Size(197, 22);
             this.D_刪除.Text = "刪除                    Delete";
             // 
             // D_選取全部
             // 
             this.D_選取全部.Name = "D_選取全部";
-            this.D_選取全部.Size = new System.Drawing.Size(195, 22);
+            this.D_選取全部.Size = new System.Drawing.Size(197, 22);
             this.D_選取全部.Text = "選取全部            Ctrl+A";
             // 
             // exButton_註解查詢
@@ -781,10 +784,10 @@
             this.exButton_註解查詢.Location = new System.Drawing.Point(200, 11);
             this.exButton_註解查詢.Name = "exButton_註解查詢";
             this.exButton_註解查詢.OFF_文字內容 = "Display";
-            this.exButton_註解查詢.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_註解查詢.OFF_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_註解查詢.OFF_文字顏色 = System.Drawing.Color.Black;
             this.exButton_註解查詢.ON_文字內容 = "Display";
-            this.exButton_註解查詢.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exButton_註解查詢.ON_文字字體 = new System.Drawing.Font("SimSun", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_註解查詢.ON_文字顏色 = System.Drawing.Color.White;
             this.exButton_註解查詢.Size = new System.Drawing.Size(84, 28);
             this.exButton_註解查詢.Style = MyUI.ExButton.StyleEnum.經典;
@@ -909,105 +912,105 @@
             this.繪製豎線,
             this.刪除豎線});
             this.contextMenuStrip_Ladder_右鍵選單.Name = "contextMenuStrip_右鍵選單";
-            this.contextMenuStrip_Ladder_右鍵選單.Size = new System.Drawing.Size(213, 314);
+            this.contextMenuStrip_Ladder_右鍵選單.Size = new System.Drawing.Size(215, 314);
             this.contextMenuStrip_Ladder_右鍵選單.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_右鍵選單_ItemClicked);
             // 
             // 編譯
             // 
             this.編譯.Name = "編譯";
-            this.編譯.Size = new System.Drawing.Size(212, 22);
+            this.編譯.Size = new System.Drawing.Size(214, 22);
             this.編譯.Text = "編譯                    F4";
             // 
             // 復原回未編譯
             // 
             this.復原回未編譯.Name = "復原回未編譯";
-            this.復原回未編譯.Size = new System.Drawing.Size(212, 22);
+            this.復原回未編譯.Size = new System.Drawing.Size(214, 22);
             this.復原回未編譯.Text = "復原回未編譯";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(211, 6);
             // 
             // 復原
             // 
             this.復原.Name = "復原";
-            this.復原.Size = new System.Drawing.Size(212, 22);
+            this.復原.Size = new System.Drawing.Size(214, 22);
             this.復原.Text = "復原                    Ctrl+Z";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(211, 6);
             // 
             // 剪下
             // 
             this.剪下.Name = "剪下";
-            this.剪下.Size = new System.Drawing.Size(212, 22);
+            this.剪下.Size = new System.Drawing.Size(214, 22);
             this.剪下.Text = "剪下                    Ctrl+X";
             // 
             // 複製
             // 
             this.複製.Name = "複製";
-            this.複製.Size = new System.Drawing.Size(212, 22);
+            this.複製.Size = new System.Drawing.Size(214, 22);
             this.複製.Text = "複製                    Ctrl+C";
             // 
             // 貼上
             // 
             this.貼上.Name = "貼上";
-            this.貼上.Size = new System.Drawing.Size(212, 22);
+            this.貼上.Size = new System.Drawing.Size(214, 22);
             this.貼上.Text = "貼上                    Ctrl+V";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(211, 6);
             // 
             // 插入一列
             // 
             this.插入一列.Name = "插入一列";
-            this.插入一列.Size = new System.Drawing.Size(212, 22);
+            this.插入一列.Size = new System.Drawing.Size(214, 22);
             this.插入一列.Text = "插入一列            Shift+Ins";
             // 
             // 刪除一列
             // 
             this.刪除一列.Name = "刪除一列";
-            this.刪除一列.Size = new System.Drawing.Size(212, 22);
+            this.刪除一列.Size = new System.Drawing.Size(214, 22);
             this.刪除一列.Text = "刪除一列            Shift+Del";
             // 
             // 插入一行
             // 
             this.插入一行.Name = "插入一行";
-            this.插入一行.Size = new System.Drawing.Size(212, 22);
+            this.插入一行.Size = new System.Drawing.Size(214, 22);
             this.插入一行.Text = "插入一行            Ctrl+Ins";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(209, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(211, 6);
             // 
             // 繪製橫線
             // 
             this.繪製橫線.Name = "繪製橫線";
-            this.繪製橫線.Size = new System.Drawing.Size(212, 22);
+            this.繪製橫線.Size = new System.Drawing.Size(214, 22);
             this.繪製橫線.Text = "繪製橫線            F9";
             // 
             // 刪除橫線
             // 
             this.刪除橫線.Name = "刪除橫線";
-            this.刪除橫線.Size = new System.Drawing.Size(212, 22);
+            this.刪除橫線.Size = new System.Drawing.Size(214, 22);
             this.刪除橫線.Text = "刪除橫線            Ctrl+F9";
             // 
             // 繪製豎線
             // 
             this.繪製豎線.Name = "繪製豎線";
-            this.繪製豎線.Size = new System.Drawing.Size(212, 22);
+            this.繪製豎線.Size = new System.Drawing.Size(214, 22);
             this.繪製豎線.Text = "繪製豎線            Shift+F9";
             // 
             // 刪除豎線
             // 
             this.刪除豎線.Name = "刪除豎線";
-            this.刪除豎線.Size = new System.Drawing.Size(212, 22);
+            this.刪除豎線.Size = new System.Drawing.Size(214, 22);
             this.刪除豎線.Text = "刪除豎線            Shift+F10";
             // 
             // menuStrip
@@ -1030,34 +1033,34 @@
             this.儲存ToolStripMenuItem,
             this.關閉ToolStripMenuItem});
             this.專案ToolStripMenuItem.Name = "專案ToolStripMenuItem";
-            this.專案ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.專案ToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.專案ToolStripMenuItem.Text = "專案";
             // 
             // 新專案ToolStripMenuItem
             // 
             this.新專案ToolStripMenuItem.Name = "新專案ToolStripMenuItem";
-            this.新專案ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.新專案ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.新專案ToolStripMenuItem.Text = "新專案";
             this.新專案ToolStripMenuItem.Click += new System.EventHandler(this.新專案ToolStripMenuItem_Click);
             // 
             // 讀取ToolStripMenuItem
             // 
             this.讀取ToolStripMenuItem.Name = "讀取ToolStripMenuItem";
-            this.讀取ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.讀取ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.讀取ToolStripMenuItem.Text = "讀取";
             this.讀取ToolStripMenuItem.Click += new System.EventHandler(this.讀取ToolStripMenuItem_Click);
             // 
             // 儲存ToolStripMenuItem
             // 
             this.儲存ToolStripMenuItem.Name = "儲存ToolStripMenuItem";
-            this.儲存ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.儲存ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.儲存ToolStripMenuItem.Text = "儲存";
             this.儲存ToolStripMenuItem.Click += new System.EventHandler(this.儲存ToolStripMenuItem_Click);
             // 
             // 關閉ToolStripMenuItem
             // 
             this.關閉ToolStripMenuItem.Name = "關閉ToolStripMenuItem";
-            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.關閉ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.關閉ToolStripMenuItem.Text = "關閉";
             this.關閉ToolStripMenuItem.Click += new System.EventHandler(this.關閉ToolStripMenuItem_Click);
             // 
@@ -1079,7 +1082,7 @@
             this.toolStripSeparator12,
             this.顯示_預設值ToolStripMenuItem});
             this.顯示ToolStripMenuItem.Name = "顯示ToolStripMenuItem";
-            this.顯示ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.顯示ToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.顯示ToolStripMenuItem.Text = "顯示";
             // 
             // toolStripMenuItem顯示目錄
@@ -1087,49 +1090,49 @@
             this.toolStripMenuItem顯示目錄.Checked = true;
             this.toolStripMenuItem顯示目錄.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolStripMenuItem顯示目錄.Name = "toolStripMenuItem顯示目錄";
-            this.toolStripMenuItem顯示目錄.Size = new System.Drawing.Size(146, 22);
+            this.toolStripMenuItem顯示目錄.Size = new System.Drawing.Size(148, 22);
             this.toolStripMenuItem顯示目錄.Text = "顯示目錄";
             this.toolStripMenuItem顯示目錄.Click += new System.EventHandler(this.toolStripMenuItem顯示目錄_Click);
             // 
             // toolStripSeparator11
             // 
             this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator11.Size = new System.Drawing.Size(145, 6);
             // 
             // 顯示註解列表toolStripMenuItem
             // 
             this.顯示註解列表toolStripMenuItem.Checked = true;
             this.顯示註解列表toolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.顯示註解列表toolStripMenuItem.Name = "顯示註解列表toolStripMenuItem";
-            this.顯示註解列表toolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.顯示註解列表toolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.顯示註解列表toolStripMenuItem.Text = "顯示註解列表";
             this.顯示註解列表toolStripMenuItem.Click += new System.EventHandler(this.顯示註解列表toolStripMenuItem_Click);
             // 
             // 顯示註解列表toolStripSeparator1
             // 
             this.顯示註解列表toolStripSeparator1.Name = "顯示註解列表toolStripSeparator1";
-            this.顯示註解列表toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.顯示註解列表toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
             // 
             // 註解顯示ToolStripMenuItem
             // 
             this.註解顯示ToolStripMenuItem.Checked = true;
             this.註解顯示ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.註解顯示ToolStripMenuItem.Name = "註解顯示ToolStripMenuItem";
-            this.註解顯示ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.註解顯示ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.註解顯示ToolStripMenuItem.Text = "顯示註解";
             this.註解顯示ToolStripMenuItem.Click += new System.EventHandler(this.commentToolStripMenuItem_Click);
             // 
             // 註解顏色ToolStripMenuItem
             // 
             this.註解顏色ToolStripMenuItem.Name = "註解顏色ToolStripMenuItem";
-            this.註解顏色ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.註解顏色ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.註解顏色ToolStripMenuItem.Text = "註解顏色";
             this.註解顏色ToolStripMenuItem.Click += new System.EventHandler(this.註解顏色ToolStripMenuItem_Click);
             // 
             // 註解字體ToolStripMenuItem
             // 
             this.註解字體ToolStripMenuItem.Name = "註解字體ToolStripMenuItem";
-            this.註解字體ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.註解字體ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.註解字體ToolStripMenuItem.Text = "註解字體";
             this.註解字體ToolStripMenuItem.Click += new System.EventHandler(this.註解字體ToolStripMenuItem_Click);
             // 
@@ -1147,7 +1150,7 @@
             this.toolStripSeparator8,
             this.toolStripMenuItem_註解列數_確認});
             this.註解格式ToolStripMenuItem.Name = "註解格式ToolStripMenuItem";
-            this.註解格式ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.註解格式ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.註解格式ToolStripMenuItem.Text = "註解格式";
             // 
             // 字母數ToolStripMenuItem
@@ -1217,36 +1220,36 @@
             // toolStripSeparator10
             // 
             this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator10.Size = new System.Drawing.Size(145, 6);
             // 
             // oNLINE字體ToolStripMenuItem
             // 
             this.oNLINE字體ToolStripMenuItem.Name = "oNLINE字體ToolStripMenuItem";
-            this.oNLINE字體ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.oNLINE字體ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.oNLINE字體ToolStripMenuItem.Text = "ONLINE字體";
             this.oNLINE字體ToolStripMenuItem.Click += new System.EventHandler(this.oNLINE字體ToolStripMenuItem_Click);
             // 
             // toolStripSeparator9
             // 
             this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator9.Size = new System.Drawing.Size(145, 6);
             // 
             // toolStripMenuItem視窗字體
             // 
             this.toolStripMenuItem視窗字體.Name = "toolStripMenuItem視窗字體";
-            this.toolStripMenuItem視窗字體.Size = new System.Drawing.Size(146, 22);
+            this.toolStripMenuItem視窗字體.Size = new System.Drawing.Size(148, 22);
             this.toolStripMenuItem視窗字體.Text = "視窗字體";
             this.toolStripMenuItem視窗字體.Click += new System.EventHandler(this.toolStripMenuItem視窗字體_Click);
             // 
             // toolStripSeparator12
             // 
             this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator12.Size = new System.Drawing.Size(145, 6);
             // 
             // 顯示_預設值ToolStripMenuItem
             // 
             this.顯示_預設值ToolStripMenuItem.Name = "顯示_預設值ToolStripMenuItem";
-            this.顯示_預設值ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.顯示_預設值ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.顯示_預設值ToolStripMenuItem.Text = "預設值";
             this.顯示_預設值ToolStripMenuItem.Click += new System.EventHandler(this.顯示_預設值ToolStripMenuItem_Click);
             // 
@@ -1258,34 +1261,34 @@
             this.下載ToolStripMenuItem,
             this.程式比較ToolStripMenuItem});
             this.通訊ToolStripMenuItem.Name = "通訊ToolStripMenuItem";
-            this.通訊ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.通訊ToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.通訊ToolStripMenuItem.Text = "通訊";
             // 
             // 設定ToolStripMenuItem
             // 
             this.設定ToolStripMenuItem.Name = "設定ToolStripMenuItem";
-            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.設定ToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.設定ToolStripMenuItem.Text = "設定";
             this.設定ToolStripMenuItem.Click += new System.EventHandler(this.設定ToolStripMenuItem_Click);
             // 
             // 上傳ToolStripMenuItem
             // 
             this.上傳ToolStripMenuItem.Name = "上傳ToolStripMenuItem";
-            this.上傳ToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.上傳ToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.上傳ToolStripMenuItem.Text = "上傳...";
             this.上傳ToolStripMenuItem.Click += new System.EventHandler(this.上傳ToolStripMenuItem_Click);
             // 
             // 下載ToolStripMenuItem
             // 
             this.下載ToolStripMenuItem.Name = "下載ToolStripMenuItem";
-            this.下載ToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.下載ToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.下載ToolStripMenuItem.Text = "下載...";
             this.下載ToolStripMenuItem.Click += new System.EventHandler(this.下載ToolStripMenuItem_Click);
             // 
             // 程式比較ToolStripMenuItem
             // 
             this.程式比較ToolStripMenuItem.Name = "程式比較ToolStripMenuItem";
-            this.程式比較ToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.程式比較ToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.程式比較ToolStripMenuItem.Text = "比較...";
             this.程式比較ToolStripMenuItem.Click += new System.EventHandler(this.程式比較ToolStripMenuItem_Click);
             // 
@@ -1319,7 +1322,6 @@
             // 
             // backgroundWorker_Online讀取
             // 
-            this.backgroundWorker_Online讀取.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_Online讀取_DoWork);
             // 
             // colorDialog
             // 
@@ -1328,6 +1330,21 @@
             // backgroundWorker_計時器
             // 
             this.backgroundWorker_計時器.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_計時器_DoWork);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // checkBox_Online_High_Speed
+            // 
+            this.checkBox_Online_High_Speed.AutoSize = true;
+            this.checkBox_Online_High_Speed.Location = new System.Drawing.Point(712, 17);
+            this.checkBox_Online_High_Speed.Name = "checkBox_Online_High_Speed";
+            this.checkBox_Online_High_Speed.Size = new System.Drawing.Size(112, 16);
+            this.checkBox_Online_High_Speed.TabIndex = 15;
+            this.checkBox_Online_High_Speed.Text = "Online High Speed";
+            this.checkBox_Online_High_Speed.UseVisualStyleBackColor = true;
             // 
             // LADDER_Panel
             // 
@@ -1341,6 +1358,7 @@
             this.panel_程式分頁.ResumeLayout(false);
             this.contextMenuStrip_TreeView.ResumeLayout(false);
             this.panel_工具箱.ResumeLayout(false);
+            this.panel_工具箱.PerformLayout();
             this.flowLayoutPanel_工具列_檔案讀寫.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -1471,5 +1489,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
         private System.Windows.Forms.ToolStripMenuItem 調整大小ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 取消ToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.CheckBox checkBox_Online_High_Speed;
     }
 }

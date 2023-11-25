@@ -151,6 +151,24 @@ namespace Basic
             }
 
         }
+
+        public byte[] ReadByteEx()
+        {
+            if (FLAG_UART_RX && MyTimer_RX_Timeout.IsTimeOut())
+            {
+                List<byte> bytes = new List<byte>();
+                for(int i = 0; i < BytesToRead; i++)
+                {
+                    bytes.Add(UART_RX_bytes[i]);
+                }
+                return bytes.ToArray();
+            }
+            else
+            {
+                return null;
+            }
+
+        }
         public void WriteString(string value)
         {
             this.WriteString(value, "UTF-8");

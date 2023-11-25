@@ -23,6 +23,7 @@ namespace LadderUI
 {
     public partial class LADDER_Panel : UserControl
     {
+        Basic.MyThread MyThread_Online讀取;
         private void backgroundWorker_LADDER_主程式_DoWork(object sender, DoWorkEventArgs e)
         {
             EnterSymbol enterSymbol = new EnterSymbol();
@@ -134,17 +135,15 @@ namespace LadderUI
                 System.Threading.Thread.Sleep(10);
             }*/
         }
-        private void backgroundWorker_Online讀取_DoWork(object sender, DoWorkEventArgs e)
-        {
-            while (true)
-            {
-                if (!sub_Online讀取()) Thread.Sleep(100);
-                else Thread.Sleep(1);
-            }
-        }
         public LADDER_Panel()
         {
             InitializeComponent();
+
+            this.MyThread_Online讀取 = new MyThread();
+            this.MyThread_Online讀取.AutoRun(true);
+            this.MyThread_Online讀取.Add_Method(this.sub_Online讀取);
+            this.MyThread_Online讀取.SetSleepTime(0);
+            this.MyThread_Online讀取.Trigger();
 
             LoadSystemProperties();
            
@@ -160,7 +159,7 @@ namespace LadderUI
             操作方框索引 = new Point(0, 0);
             CallBackUI.peremeter.設定跨執行序存取UI(true);
             CallBackUI.peremeter.MakeDoubleBuffered(dataGridView_註解列表, true);
-            CallBackUI.peremeter.MakeDoubleBuffered(pictureBox_LADDER, true);
+            Basic.Reflection.MakeDoubleBuffered(pictureBox_LADDER, true);
             CallBackUI.peremeter.MakeDoubleBuffered(vScrollBar_picture_滾動條, true);
             mainThreadId = Thread.CurrentThread.ManagedThreadId;
             TopMachine.init(this.serialPort);
@@ -493,7 +492,7 @@ namespace LadderUI
         #region Online讀取
    
         byte cnt_Online讀取 = 255;
-        bool sub_Online讀取()
+        void sub_Online讀取()
         {     
             if (cnt_Online讀取 == 255) cnt_Online讀取 = 1;
             if (Upload.視窗已建立) cnt_Online讀取 = 255;
@@ -528,8 +527,7 @@ namespace LadderUI
             if (cnt_Online讀取 == 250) cnt_Online讀取_250_畫面讀取完成(ref cnt_Online讀取);
             if (cnt_Online讀取 == 251) cnt_Online讀取 = 255;
 
-            if (cnt_Online讀取 != 255 && cnt_Online讀取 != 1) return true;
-            else return false;
+            if (!this.checkBox_Online_High_Speed.Checked && Online讀取_讀取完成) Thread.Sleep(10);
         }
 
         int Online讀取_Xtemp = 0;
@@ -540,6 +538,7 @@ namespace LadderUI
         string[] Online讀取_分離字串;
         String Online讀取_DeviceType = "";
         String Online讀取_Device = "";
+        bool Online讀取_讀取完成 = false;
         void cnt_Online讀取_00_檢查是否在Online(ref byte cnt)
         {
             if (FLAG_Online ) cnt++;
@@ -547,6 +546,7 @@ namespace LadderUI
         }
         void cnt_Online讀取_10_檢查XY是否到達最大值(ref byte cnt)
         {
+            this.Online讀取_讀取完成 = false;
             Online讀取_要讀取 = false;
             bool X_已到達 = false;
             bool Y_已到達 = false;
@@ -842,6 +842,7 @@ namespace LadderUI
         {
             Online讀取_Xtemp = 0;
             Online讀取_Ytemp = 0;
+            Online讀取_讀取完成 = true;
             cnt++;
         }
         void cnt_Online讀取_(ref byte cnt)
@@ -853,8 +854,7 @@ namespace LadderUI
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         public static extern bool DeleteObject(IntPtr hObject);
         private Graphics pic_ladder_g;
-        private IntPtr gdibitmap;
-       // Bitmap bmp;
+        Graphics Graphics_PictureBox;
         private static object objlock = new object();
         bool graphics_init = false;
         void sub_畫面更新()
@@ -882,21 +882,11 @@ namespace LadderUI
                             sub_VscrollBar_檢查();
                             sub_ListBox_IL指令集更新();
                         }
-
-                        //bmp = new Bitmap(bitmap_temp);
-                        //gdibitmap = bitmap_temp.GetHbitmap();
-                        //pictureBox_LADDER.Image = Image.FromHbitmap(gdibitmap);
-                        pictureBox_LADDER.Image = bitmap_temp;
+                        pictureBox_LADDER.CreateGraphics().DrawImage(bitmap_temp,0,0);
                     }
                     finally
                     {
-                         // if (pictureBox_LADDER.Image != null) pictureBox_LADDER.Image.Dispose();
-                        //  if (bmp != null) bmp.Dispose();
-                     
-                        
-                        //DeleteObject(gdibitmap);
-                       // GC.SuppressFinalize(gdibitmap);
-                        //GC.Collect();
+
                     }
 
                 }
@@ -1817,21 +1807,25 @@ namespace LadderUI
                 {
                     if (value0 == value1) OK = true;
                 }
-                if (type == ">")
+                else if (type == ">")
                 {
                     if (value0 > value1) OK = true;
                 }
-                if (type == "<")
+                else if (type == "<")
                 {
                     if (value0 < value1) OK = true;
                 }
-                if (type == ">=")
+                else if (type == ">=")
                 {
                     if (value0 >= value1) OK = true;
                 }
-                if (type == "<=")
+                else if (type == "<=")
                 {
                     if (value0 <= value1) OK = true;
+                }
+                else if (type == "<>")
+                {
+                    if (value0 != value1) OK = true;
                 }
                 if(OK)
                 {
@@ -6813,9 +6807,10 @@ namespace LadderUI
                     {
                         TAB目錄_temp = new string[3];
                         TAB目錄_temp[0] = ladder_temp[1].ladderParam[1];
-                        if (TAB目錄_temp[0].Length < 3) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
-                        if (TAB目錄_temp[0].Length < 3) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
-                        if (TAB目錄_temp[0].Length < 3) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
+                        if (TAB目錄_temp[0].Length < 4) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
+                        if (TAB目錄_temp[0].Length < 4) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
+                        if (TAB目錄_temp[0].Length < 4) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
+                        if (TAB目錄_temp[0].Length < 4) TAB目錄_temp[0] = "0" + TAB目錄_temp[0];
                         TAB目錄_temp[1] = row.ToString();
                         TAB目錄_temp[2] = ladder_temp[1].ladderParam[2];                     
                         TAB目錄.Add(TAB目錄_temp);
@@ -7972,22 +7967,32 @@ namespace LadderUI
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD>=") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD<=") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD<") cnt = 120;
-            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD>") cnt = 120;
+            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD>")
+            {
+                cnt = 120;
+            }
+            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LD<>")
+            {
+                cnt = 120;
+            }
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD=") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD>=") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD<=") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD<") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD>") cnt = 120;
+            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "LDD<>") cnt = 120;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND>=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND<=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND<") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND>") cnt = 125;
+            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "AND<>") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD>=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD<=") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD<") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD>") cnt = 125;
+            else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "ANDD<>") cnt = 125;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "OR=") cnt = 130;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "OR>=") cnt = 130;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "OR<=") cnt = 130;
@@ -8045,7 +8050,10 @@ namespace LadderUI
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "TAB") cnt = 220;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "JUMP") cnt = 225;
             else if (程式編譯_IL轉換為階梯圖.當前指令[0] == "REF") cnt = 230;
-            else 程式編譯_IL轉換為階梯圖.轉換NG = true;
+            else
+            {
+                程式編譯_IL轉換為階梯圖.轉換NG = true;
+            }
 
             if (程式編譯_IL轉換為階梯圖.轉換NG) cnt = 10;
         }
@@ -13031,10 +13039,11 @@ namespace LadderUI
                 if (Keys.Key_M) { code++; EnterSymbol_起始視窗TextBox文字 = "M"; }
                 if ((Keys.Key_Enter && !Keys.Key_ShiftKey) || FLAG_picture_LADDER_MouseDoubleclick)
                 {
-                    code = 99;               
+                    code = 99;
+   
                 }
                 if (code > 0)
-                {
+                {                    
                     EnterSymbol進入視窗按鈕按下 = true;
                 }
                 else EnterSymbol進入視窗按鈕按下 = false;
@@ -13452,6 +13461,7 @@ namespace LadderUI
             form.Activate();//啟動表單並且給予焦點。
             cnt++;
             Keys.KeyReset();
+            FLAG_picture_LADDER_MouseDoubleclick = false;
             form.ShowDialog();          
         }
         void cnt_EnterSymbol視窗進入檢查_30_檢查表單關閉(ref byte cnt, ref bool isWork)
@@ -14510,10 +14520,10 @@ namespace LadderUI
         private DataTable dt;
         private DataTable dt_buf;
         private String str_首列_Device = "";
-        private String[] Array_查詢Device = new string[300];
-        private int[] Array_接點數量 = new int[300];
-        private int[] Array_輸出數量 = new int[300];
-        private String[] Array_Comment = new string[300];
+        private String[] Array_查詢Device = new string[1000];
+        private int[] Array_接點數量 = new int[1000];
+        private int[] Array_輸出數量 = new int[1000];
+        private String[] Array_Comment = new string[1000];
         private int Device_範圍上限 = 0;
         private int Device_範圍下限 = 0;
 
@@ -14566,7 +14576,7 @@ namespace LadderUI
             dt.Columns.Add(new DataColumn("-( )-"));
             dt.Columns.Add(new DataColumn("Count"));
             dt.Columns.Add(new DataColumn("Comment"));
-            for (int i = 0; i < 300;i++ )
+            for (int i = 0; i < 1000;i++ )
             {
                 dt.Rows.Add();
             }
@@ -14587,10 +14597,10 @@ namespace LadderUI
             dt_buf.Columns.Add(new DataColumn("Count"));
             dt_buf.Columns.Add(new DataColumn("Comment"));
 
-            Array_查詢Device = new string[300];
-            Array_接點數量 = new int[300];
-            Array_輸出數量 = new int[300];
-            Array_Comment = new string[300];
+            Array_查詢Device = new string[1000];
+            Array_接點數量 = new int[1000];
+            Array_輸出數量 = new int[1000];
+            Array_Comment = new string[1000];
             Device_範圍上限 = 0;
             Device_範圍下限 = 0;
             cnt++;
@@ -14627,10 +14637,10 @@ namespace LadderUI
                 return;
             }
 
-            for (int i = 0; i < 300; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 if (i == 0) Device_範圍下限 = int_Device_編號;
-                if (i == 299) Device_範圍上限 = int_Device_編號 + i;
+                if (i == 999) Device_範圍上限 = int_Device_編號 + i;
                 String str_註解文字 = "";
                 Array_查詢Device[i] = str_Device_類型 + (int_Device_編號 + i).ToString();
                 object comment = new object();
@@ -14818,7 +14828,7 @@ namespace LadderUI
         }
         void cnt_DataGridView_註解列表_更新列表(ref byte cnt)
         {
-            for (int i = 0; i < 300; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 String 接點符號 = "";
                 String 輸出符號 = "";
@@ -14996,7 +15006,7 @@ namespace LadderUI
                     string device_編號 = dt.Rows[選擇的列][0].ToString().Substring(1, dt.Rows[選擇的列][0].ToString().Length - 1);
 
                     int 貼上內容列數 = 0;
-                    for (int i = 選擇的列; i < 300; i++)
+                    for (int i = 選擇的列; i < 1000; i++)
                     {
                         int 被貼上列數 = i;
                         bool 此列合法 = true;
