@@ -549,18 +549,14 @@ namespace Basic
         }
         static public int SetBit(this ref int value, int index, bool state)
         {
-            value = 31 - index;
-            string str_temp0 = Convert.ToString(value, 2);
-            while (true)
+            if (state) // 设置位
             {
-                if (str_temp0.Length >= 32) break;
-                str_temp0 = "0" + str_temp0;
+                value |= (1 << index); // 将指定位设置为 1
             }
-            char[] char_buf = str_temp0.ToCharArray();
-            if (state) char_buf[index] = '1';
-            else char_buf[index] = '0';
-            str_temp0 = new string(char_buf);
-            value = Convert.ToInt32(str_temp0, 2);
+            else // 重置位
+            {
+                value &= ~(1 << index); // 将指定位设置为 0
+            }
             return value;
         }
         static public bool GetBit(this int value, int index)

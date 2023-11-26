@@ -61,3 +61,4 @@ C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Debug\HSONApplication.csproj.C
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Debug\HSONApplication.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Debug\HSONApplication.exe
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Debug\HSONApplication.pdb
+C:\Users\HS\source\repos\MyUI\HSONApplication\bin\Debug\DeltaMotor485.dll

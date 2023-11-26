@@ -58,3 +58,4 @@ C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Debug\LeadShineUI.csproj.CoreCompi
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Debug\LeadShineUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Debug\LeadShineUI.dll
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Debug\LeadShineUI.pdb
+C:\Users\HS\source\repos\MyUI\LeadShineUI\bin\Debug\LightControlUI.dll
