@@ -49,8 +49,8 @@ namespace DeltaMotor485
         SON = 0,
         CTRG = 1,
         ORGP = 2,
-        EMGS = 2,
-        STP = 2,
+        EMGS = 3,
+        STP = 4,
     }
 
     /// <summary>
@@ -371,12 +371,40 @@ namespace DeltaMotor485
 
         static public bool DriverInit(MySerialPort MySerialPort, byte station)
         {
-            Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : station : {station}  {DateTime.Now.ToDateTimeString()}");
-            if (UART_Command_set_driver_DI0_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.SON) == false) return false;
-            if (UART_Command_set_driver_DI1_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.CTRG) == false) return false;
-            if (UART_Command_set_driver_DI2_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.ORGP) == false) return false;
-            if (UART_Command_enable_rs485_DI(MySerialPort, station, DeltaMotor485.enum_DI.SON) == false) return false;
-            return true;
+            bool result = true;
+            try
+            {
+                if (UART_Command_set_driver_DI0_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.SON) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                if (UART_Command_set_driver_DI1_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.CTRG) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                if (UART_Command_set_driver_DI2_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.ORGP) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                if (UART_Command_enable_rs485_DI(MySerialPort, station, DeltaMotor485.enum_DI.SON) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                return result;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : station : {station}  {DateTime.Now.ToDateTimeString()} {(result ? "OK":"NG")}");
+            }
+         
         }
         static public bool Servo_On(MySerialPort MySerialPort, byte station)
         {
