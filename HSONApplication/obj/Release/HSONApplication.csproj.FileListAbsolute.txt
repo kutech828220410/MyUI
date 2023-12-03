@@ -4969,3 +4969,4 @@ C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
 C:\Users\HS\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
