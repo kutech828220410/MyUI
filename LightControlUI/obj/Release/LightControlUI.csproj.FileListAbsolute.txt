@@ -1452,7 +1452,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControl
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\bin\Release\LightControlUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\bin\Release\LightControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\bin\Release\LightControlUI.pdb
@@ -1503,3 +1502,4 @@ C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.C
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.AssemblyReference.cache

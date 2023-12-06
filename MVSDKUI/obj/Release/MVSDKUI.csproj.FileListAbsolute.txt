@@ -908,7 +908,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Core
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.pdb
@@ -960,3 +959,4 @@ C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileInpu
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.AssemblyReference.cache

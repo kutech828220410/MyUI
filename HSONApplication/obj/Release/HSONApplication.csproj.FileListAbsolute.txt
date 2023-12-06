@@ -4905,7 +4905,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplica
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
-C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csprojAssemblyReference.cache
 C:\Users\User\Desktop\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\bin\Release\HSONApplication.exe.config
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\bin\Release\HSONApplication.exe
@@ -4970,3 +4969,5 @@ C:\Users\HS\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
 C:\Users\HS\Source\Repos\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
 C:\Users\HS\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
+C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
+C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache

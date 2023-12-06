@@ -1235,7 +1235,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortCon
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.pdb
@@ -1287,3 +1286,4 @@ C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.cspr
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.AssemblyReference.cache

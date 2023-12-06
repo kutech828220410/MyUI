@@ -99,10 +99,10 @@ namespace HSONApplication
         {
             DeltaMotor485_port[1].JOG(100);
         }
-        async private void RJ_Button_set_path_config_MouseDownEvent(MouseEventArgs mevent)
+        private void RJ_Button_set_path_config_MouseDownEvent(MouseEventArgs mevent)
         {
-            await DeltaMotor485_port[1].DDRVA(500000, 1000, 200);
-            await DeltaMotor485_port[1].DDRVA(0, 1000, 200);
+            DeltaMotor485_port[1].DDRVA(500000, 1000, 200);
+            DeltaMotor485_port[1].DDRVA(0, 1000, 200);
         }
 
 

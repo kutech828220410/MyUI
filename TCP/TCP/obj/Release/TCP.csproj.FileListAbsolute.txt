@@ -4032,7 +4032,6 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.pdb
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\bin\Release\TCP.dll.config
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\bin\Release\TCP.dll
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\bin\Release\TCP.pdb
@@ -4086,3 +4085,4 @@ C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CoreCompileInputs.c
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.dll
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.pdb
+C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.AssemblyReference.cache

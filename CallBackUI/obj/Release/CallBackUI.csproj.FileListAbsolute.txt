@@ -3476,7 +3476,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.cspro
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csprojAssemblyReference.cache
 C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\bin\Release\CallBackUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\bin\Release\CallBackUI.dll
@@ -3526,3 +3525,4 @@ C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCompi
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache

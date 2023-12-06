@@ -2432,7 +2432,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csprojAssemblyReference.cache
 C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\SQLUI\bin\Release\SQLUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\SQLUI\bin\Release\SQLUI.dll
@@ -2487,3 +2486,4 @@ C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInputs.c
 C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache

@@ -3054,11 +3054,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSyst
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csprojAssemblyReference.cache
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.dll
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MeasureSystemUI.pdb
@@ -3120,3 +3115,8 @@ C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb

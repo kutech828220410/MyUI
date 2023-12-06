@@ -3861,7 +3861,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csp
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.dll
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.pdb
@@ -3923,3 +3922,4 @@ C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreCom
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache

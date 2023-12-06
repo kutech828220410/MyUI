@@ -5072,7 +5072,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.resx
 C:\Users\HS\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.cs
 C:\Users\HS\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.Designer.cs
@@ -5133,3 +5132,4 @@ C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs.c
 C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.AssemblyReference.cache

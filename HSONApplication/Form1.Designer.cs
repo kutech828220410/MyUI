@@ -67,7 +67,7 @@
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_main.Location = new System.Drawing.Point(0, 0);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1264, 62);
+            this.panel_main.Size = new System.Drawing.Size(1084, 62);
             this.panel_main.TabIndex = 2;
             // 
             // plC_RJ_ScreenButton2
@@ -164,7 +164,7 @@
             this.plC_ScreenPage_main.Padding = new System.Drawing.Point(0, 0);
             this.plC_ScreenPage_main.SelectedIndex = 0;
             this.plC_ScreenPage_main.ShowToolTips = true;
-            this.plC_ScreenPage_main.Size = new System.Drawing.Size(1264, 859);
+            this.plC_ScreenPage_main.Size = new System.Drawing.Size(1084, 859);
             this.plC_ScreenPage_main.TabBackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_main.TabIndex = 3;
             this.plC_ScreenPage_main.顯示標籤列 = MyUI.PLC_ScreenPage.TabVisibleEnum.顯示;
@@ -184,7 +184,7 @@
             this.主畫面.Controls.Add(this.sqL_DataGridView_備藥通知);
             this.主畫面.Location = new System.Drawing.Point(4, 25);
             this.主畫面.Name = "主畫面";
-            this.主畫面.Size = new System.Drawing.Size(1256, 830);
+            this.主畫面.Size = new System.Drawing.Size(1076, 830);
             this.主畫面.TabIndex = 2;
             this.主畫面.Text = "主畫面";
             this.主畫面.UseVisualStyleBackColor = true;
@@ -447,7 +447,7 @@
             this.sqL_DataGridView_備藥通知.RowsHeight = 80;
             this.sqL_DataGridView_備藥通知.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_備藥通知.Server = "127.0.0.0";
-            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1256, 547);
+            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1076, 223);
             this.sqL_DataGridView_備藥通知.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_備藥通知.TabIndex = 5;
             this.sqL_DataGridView_備藥通知.UserName = "root";
@@ -523,7 +523,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1264, 921);
+            this.ClientSize = new System.Drawing.Size(1084, 921);
             this.Controls.Add(this.plC_ScreenPage_main);
             this.Controls.Add(this.panel_main);
             this.Name = "Form1";

@@ -1470,7 +1470,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CoreComp
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
-C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\Basic\bin\Release\Basic.dll.config
 C:\Users\HS\Source\Repos\MyUI\Basic\bin\Release\Basic.XML
 C:\Users\HS\Source\Repos\MyUI\Basic\bin\Release\Basic.dll
@@ -1532,3 +1531,4 @@ C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInputs.c
 C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
+C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.AssemblyReference.cache

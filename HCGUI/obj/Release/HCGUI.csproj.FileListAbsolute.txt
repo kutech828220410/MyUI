@@ -1002,7 +1002,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComp
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HCGUI\bin\Release\HCGUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\HCGUI\bin\Release\HCGUI.dll
 C:\Users\HS\Source\Repos\MyUI\HCGUI\bin\Release\HCGUI.pdb
@@ -1055,3 +1054,4 @@ C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInputs.c
 C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.AssemblyReference.cache

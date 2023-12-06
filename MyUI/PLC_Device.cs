@@ -13,6 +13,7 @@ namespace MyUI
     public class MyTimer
     {
         private bool OnTick = false;
+        public bool Stop = false;
         public double tickTime = 0;
         static private Stopwatch stopwatch = new Stopwatch();
         PLC_Device pLC_Device;
@@ -64,6 +65,7 @@ namespace MyUI
         }
         public bool IsTimeOut()
         {
+            if (Stop == true) return false;
             //if (OnTick == false) return false;
             if ((stopwatch.Elapsed.TotalMilliseconds - CycleTime_start) >= this.tickTime)
             {

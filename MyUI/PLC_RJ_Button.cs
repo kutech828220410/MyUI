@@ -783,7 +783,14 @@ namespace MyUI
         {
             if (PLC_要寫入)
             {
-                PLC.properties.Device.Set_DeviceFast_Ex(_寫入元件位置, value);
+                if (_寫入元件位置.Substring(0, 1) == "X" || _寫入元件位置.Substring(0, 1) == "Y")
+                {
+                    PLC.properties.device_system.Set_DeviceFast_Ex(_寫入元件位置, value);
+                }
+                else
+                {
+                    PLC.properties.Device.Set_DeviceFast_Ex(_寫入元件位置, value);
+                }
             }
             else
             {

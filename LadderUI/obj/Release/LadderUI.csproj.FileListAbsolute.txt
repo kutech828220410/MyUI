@@ -6393,7 +6393,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Co
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\LadderUI\bin\Release\LADDER_Panel.resx
 C:\Users\HS\Source\Repos\MyUI\LadderUI\bin\Release\LADDER_Panel.cs
 C:\Users\HS\Source\Repos\MyUI\LadderUI\bin\Release\LADDER_Panel.Designer.cs
@@ -6458,3 +6457,4 @@ C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompileIn
 C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.AssemblyReference.cache

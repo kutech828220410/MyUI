@@ -35,8 +35,8 @@ namespace DeltaMotor485
         POS4 = 0x1B,
         POS5 = 0x1C,
         POS6 = 0x1E,
-        PL = 0x22,
-        NL = 0x23,
+        PL = 0x23,
+        NL = 0x22,
         ORGP = 0x24,
         EMGS = 0x21,
         STP = 0x46,
@@ -114,6 +114,14 @@ namespace DeltaMotor485
         public bool HOME { get; set; }
         public bool OLW { get; set; }
         public bool WARN { get; set; }
+        public bool DDRVA_Done
+        {
+            get
+            {
+                return (flag_DDRVA_BUSY == false);
+            }
+        }
+        public int CurrentPath = 0;
         private Driver_DI driver_DI = new Driver_DI();
         public Driver_DI DI 
         { 
@@ -169,7 +177,7 @@ namespace DeltaMotor485
         {
             flag_positionToZero = true;
         }
-        async public Task DDRVA( int postion, int speed_rpm, int acc_ms)
+        async public Task DDRVA_Async( int postion, int speed_rpm, int acc_ms)
         {
             if (DDRVAConfig == null) DDRVAConfig = new DDRVAConfigClass();
             DDRVAConfig.postion = postion;
@@ -185,6 +193,16 @@ namespace DeltaMotor485
                     break;
                 }
             }
+        }
+        public void DDRVA(int postion, int speed_rpm, int acc_ms)
+        {
+            if (DDRVAConfig == null) DDRVAConfig = new DDRVAConfigClass();
+            DDRVAConfig.postion = postion;
+            DDRVAConfig.speed_rpm = speed_rpm;
+            DDRVAConfig.acc_ms = acc_ms;
+            flag_DDRVA = true;
+            flag_DDRVA_BUSY = true;
+        
         }
         public void Home( enum_Direction enum_Direction, bool Z_enable, int speed1, int speed2, int dec1, int dec2, int offset_postion, int offset_speed, int offset_acc)
         {
@@ -280,28 +298,27 @@ namespace DeltaMotor485
                 Driver_DO driver_DO = drivers_DO[i];
                 Driver_DI driver_DI = drivers_DO[i].DI;
                 byte station = driver_DO.station;
-                if(drivers_DO[i].Read485_Enable)
-                {
-                    if (this.MyTimerBasic_driver_DO.IsTimeOut())
-                    {
-                        Communication.UART_Command_get_driver_DO(mySerialPort, station, ref driver_DO);
-                        MyTimerBasic_driver_DO.TickStop();
-                        MyTimerBasic_driver_DO.StartTickTime(50);
-                    }
-                    if (this.MyTimerBasic_driver_DI.IsTimeOut())
-                    {
-                        Communication.UART_Command_get_driver_DI(mySerialPort, station, ref driver_DI);
-                        MyTimerBasic_driver_DI.TickStop();
-                        MyTimerBasic_driver_DI.StartTickTime(50);
-                    }
-                    if (this.MyTimerBasic_CommandPosition.IsTimeOut())
-                    {
-                        driver_DO.CommandPosition = Communication.Get_position(mySerialPort, station);
-                        MyTimerBasic_CommandPosition.TickStop();
-                        MyTimerBasic_CommandPosition.StartTickTime(10);
-                    }
+                driver_DO.CommandPosition = Communication.Get_position(mySerialPort, station);
+                Communication.UART_Command_get_driver_DO(mySerialPort, station, ref driver_DO);
+                Communication.UART_Command_get_driver_DI(mySerialPort, station, ref driver_DI);
 
-                }
+                //if (drivers_DO[i].Read485_Enable)
+                //{
+                //    if (this.MyTimerBasic_driver_DO.IsTimeOut())
+                //    {
+                //        Communication.UART_Command_get_driver_DO(mySerialPort, station, ref driver_DO);
+                //        MyTimerBasic_driver_DO.TickStop();
+                //        MyTimerBasic_driver_DO.StartTickTime(50);
+                //    }
+                //    if (this.MyTimerBasic_driver_DI.IsTimeOut())
+                //    {
+                //        Communication.UART_Command_get_driver_DI(mySerialPort, station, ref driver_DI);
+                //        MyTimerBasic_driver_DI.TickStop();
+                //        MyTimerBasic_driver_DI.StartTickTime(50);
+                //    }
+
+
+                //}
 
             }
 
@@ -329,7 +346,9 @@ namespace DeltaMotor485
                 if (driver_DO.flag_DDRVA)
                 {
                     driver_DO.flag_DDRVA = false;
-                    Communication.DDRVA(mySerialPort, station, driver_DO);
+                    driver_DO.flag_DDRVA_BUSY = true;
+                    driver_DO = Communication.DDRVA(mySerialPort, station, driver_DO);
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : driver_DO.flag_DDRVA_BUSY :{driver_DO.flag_DDRVA_BUSY }");
                 }
                 if (driver_DO.flag_Stop)
                 {
@@ -351,6 +370,39 @@ namespace DeltaMotor485
                     else
                     {
                         Communication.Servo_Off(mySerialPort, station);
+                    }
+                }
+                if (driver_DO.flag_DDRVA_BUSY == true)
+                {
+                    int value = -1;
+                    Communication.UART_Command_get_position_state(mySerialPort, station, ref value);
+                    if (value < 0)
+                    {
+                        Console.Write($"station : {station} , DDRVA 指令異常!\n");
+                        driver_DO.flag_DDRVA_BUSY = false;
+                    }
+                    else if (value >= 1 && value <100)
+                    {
+                        //Console.Write($"station : {station} , DDRVA 指令未傳輸完成!\n");
+
+                    }
+                    else if (value >= 10000 && value < 20000)
+                    {
+                        //Console.Write($"station : {station} , DDRVA 指令已傳輸完成,運轉中!\n");
+
+                    }
+                    else if (value >= 20000 && value < 30000)
+                    {
+                        if(value != 21000)
+                        {
+                            if(value -20000 == driver_DO.CurrentPath)
+                            {
+                                Console.Write($"station : {station} , DDRVA 指令已全部完成!\n");
+                                driver_DO.flag_DDRVA_BUSY = false;
+                            }    
+      
+                        }
+                  
                     }
                 }
             }
@@ -512,12 +564,13 @@ namespace DeltaMotor485
             }));
             return true;
         }
-        static public bool DDRVA(MySerialPort MySerialPort, byte station, Driver_DO driver_DO)
+        static public Driver_DO DDRVA(MySerialPort MySerialPort, byte station, Driver_DO driver_DO)
         {
            
             bool result = true;
             try
             {
+                driver_DO.CurrentPath = 1;
                 driver_DO.flag_DDRVA_BUSY = true;
                 int speed_rpm = driver_DO.DDRVAConfig.speed_rpm;
                 int acc_ms = driver_DO.DDRVAConfig.acc_ms;
@@ -525,57 +578,81 @@ namespace DeltaMotor485
                 Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : station:{station} ,postion:{postion} ,speed_rpm:{speed_rpm} ,acc_ms:{acc_ms} , {DateTime.Now.ToDateTimeString()}");
                 if (UART_Command_set_path1_config(MySerialPort, station) == false)
                 {
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : UART_Command_set_path1_config failed!");
                     result = false;
-                    return false;
+                    return driver_DO;
                 }
                 if (UART_Command_set_position0_speed(MySerialPort, station, speed_rpm) == false)
                 {
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : UART_Command_set_position0_speed failed!");
                     result = false;
-                    return false;
+                    return driver_DO;
                 }
                 if (UART_Command_set_position0_acc(MySerialPort, station, acc_ms) == false)
                 {
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : UART_Command_set_position0_acc failed!");
                     result = false;
-                    return false;
+                    return driver_DO;
                 }
                 if (UART_Command_set_target_position0(MySerialPort, station, postion) == false)
                 {
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : UART_Command_set_target_position0 failed!");
                     result = false;
-                    return false;
+                    return driver_DO;
                 }
                 driver_DO.flag_ZSPD_refresh = true;
-                if (UART_Command_set_position0_trigger(MySerialPort, station) == false)
+                int retry = 0;
+                while(true)
                 {
-                    result = false;
-                    return false;
-                }
-                Task task = Task.Factory.StartNew(new Action(delegate
-                {
-                    while (true)
+                    if (retry >= 5)
                     {
-                        System.Threading.Thread.Sleep(10);
-                        if (driver_DO.ZSPD && driver_DO.flag_ZSPD_refresh == false)
-                        {
-                            if (ConsoleWrite) Console.Write($"station : {station} , DDRVA 指令完成!");
-                            driver_DO.flag_DDRVA_BUSY = false;
-                            break;
-                        }
+                        result = false;
+                        return driver_DO;
+
                     }
+                    if (UART_Command_set_position0_trigger(MySerialPort, station) == false)
+                    {
+                        Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : UART_Command_set_position0_trigger failed!");
+                        result = false;
+                        return driver_DO;
+                    }
+                    int value = -1;
+                    Communication.UART_Command_get_position_state(MySerialPort, station, ref value);
+                    if (value == 1) break;
+                    retry++;
+                }
 
 
-                }));
-                return result;
+                //Task task = Task.Factory.StartNew(new Action(delegate
+                //{
+
+                //    while (true)
+                //    {
+                //        System.Threading.Thread.Sleep(10);
+                //        if (driver_DO.ZSPD && driver_DO.TOPS && driver_DO.flag_ZSPD_refresh == false)
+                //        {
+                //            Console.Write($"station : {station} , DDRVA 指令完成!\n");
+                //            driver_DO.flag_DDRVA_BUSY = false;
+                //            break;
+                //        }
+                //    }
+
+
+                //}));
+                return driver_DO;
             }
-            catch
+            catch(Exception e)
             {
-                driver_DO.flag_DDRVA_BUSY = false;
-                return false;
+                Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] :{e.Message} ");
+
+                return driver_DO;
             }
             finally
             {
                 if(result == false)
                 {
-                    driver_DO.flag_DDRVA_BUSY = false;
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : 指令有異常! ");
+
                 }
             }
         
@@ -826,7 +903,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -861,7 +938,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_DJOG(MySerialPort MySerialPort, byte station)
@@ -883,7 +960,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -918,7 +995,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_JOG_Speed(MySerialPort MySerialPort, byte station, int speed_rpm)
@@ -940,7 +1017,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -975,7 +1052,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_enable_rs485_DI(MySerialPort MySerialPort, byte station, params enum_DI[] enum_DIs)
@@ -1002,7 +1079,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1037,7 +1114,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI0_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1070,7 +1147,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                             Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1105,7 +1182,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI1_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1138,7 +1215,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1173,7 +1250,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI2_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1206,7 +1283,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                          Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1241,7 +1318,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI3_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1274,7 +1351,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1309,7 +1386,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI4_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1342,7 +1419,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1377,7 +1454,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI(MySerialPort MySerialPort, byte station , params enum_DI[] enum_DIs)
@@ -1404,7 +1481,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1439,7 +1516,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI(MySerialPort MySerialPort, byte station, int value)
@@ -1462,7 +1539,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1497,7 +1574,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DI(MySerialPort MySerialPort, byte station, ref Driver_DI driver_DI)
@@ -1519,7 +1596,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1584,7 +1661,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DI(MySerialPort MySerialPort, byte station, ref int value)
@@ -1606,7 +1683,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1655,7 +1732,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DO(MySerialPort MySerialPort, byte station, ref Driver_DO driver_DO)
@@ -1677,7 +1754,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1752,7 +1829,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_home_mode(MySerialPort MySerialPort, byte station , enum_Direction enum_direction , bool Z_enable)
@@ -1781,7 +1858,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1819,7 +1896,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_org_postion_mode(MySerialPort MySerialPort, byte station)
@@ -1844,7 +1921,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1882,7 +1959,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_serch_home(MySerialPort MySerialPort, byte station)
@@ -1905,7 +1982,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -1940,7 +2017,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_home_speed1(MySerialPort MySerialPort, byte station , int rpm)
@@ -1968,7 +2045,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2003,7 +2080,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_home_speed2(MySerialPort MySerialPort, byte station, int rpm)
@@ -2029,7 +2106,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2064,7 +2141,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_home_config(MySerialPort MySerialPort, byte station , int value)
@@ -2085,7 +2162,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                             Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2120,7 +2197,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_org_offset(MySerialPort MySerialPort, byte station, int offset)
@@ -2143,7 +2220,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2178,7 +2255,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -2201,7 +2278,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2236,7 +2313,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_read_state0(MySerialPort MySerialPort, byte station, ref int value)
@@ -2258,7 +2335,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2309,7 +2386,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_read_state0_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2338,7 +2415,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2373,7 +2450,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_read_state1(MySerialPort MySerialPort, byte station, ref int value)
@@ -2395,7 +2472,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2446,7 +2523,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_read_state1_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2475,7 +2552,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2510,7 +2587,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_read_state2(MySerialPort MySerialPort, byte station, ref int value)
@@ -2532,7 +2609,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2583,7 +2660,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_read_state2_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2612,7 +2689,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2647,7 +2724,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_encoder_mode(MySerialPort MySerialPort, byte station, enum_EncoderMode  enum_EncoderMode)
@@ -2676,7 +2753,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2711,7 +2788,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -2734,7 +2811,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2785,7 +2862,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_get_position_encoder(MySerialPort MySerialPort, byte station, ref int value)
@@ -2807,7 +2884,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2858,7 +2935,80 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
+            return flag_OK;
+        }
+        static public bool UART_Command_get_position_state(MySerialPort MySerialPort, byte station, ref int value)
+        {
+            bool flag_OK = false;
+
+            if (MySerialPort.SerialPortOpen())
+            {
+                MyTimer MyTimer_UART_TimeOut = new MyTimer();
+                int retry = 0;
+                int cnt = 0;
+                MySerialPort.ClearReadByte();
+                List<byte> list_byte = Get_ReadCommad(station, (int)enum_Command.set_PR_trigger, 2);
+
+
+                while (true)
+                {
+                    if (cnt == 0)
+                    {
+                        if (retry >= UART_RetryNum)
+                        {
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            flag_OK = false;
+                            break;
+                        }
+                        MySerialPort.ClearReadByte();
+                        MySerialPort.WriteByte(list_byte.ToArray());
+                        MyTimer_UART_TimeOut.TickStop();
+                        MyTimer_UART_TimeOut.StartTickTime(UART_TimeOut);
+                        cnt++;
+                    }
+                    if (cnt == 1)
+                    {
+                        if (retry >= UART_RetryNum)
+                        {
+                            flag_OK = false;
+                            break;
+                        }
+                        if (MyTimer_UART_TimeOut.IsTimeOut())
+                        {
+                            retry++;
+                            cnt = 0;
+                        }
+                        byte[] UART_RX = MySerialPort.ReadByteEx();
+
+                        if (UART_RX != null)
+                        {
+
+                            if (UART_RX.Length == 9)
+                            {
+                                value = 0;
+                                value |= UART_RX[5] << 24;
+                                value |= UART_RX[6] << 16;
+                                value |= UART_RX[3] << 8;
+                                value |= UART_RX[4] << 0;
+                                if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  sucessed! station : {station}\n {UART_RX.ByteToStringHex()} , value : {value}\n");
+                                flag_OK = true;
+                                break;
+                            }
+                            else
+                            {
+                                retry++;
+                                cnt = 0;
+                            }
+
+                        }
+
+                    }
+
+                    System.Threading.Thread.Sleep(1);
+                }
+            }
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -2884,7 +3034,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2919,7 +3069,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_target_position0(MySerialPort MySerialPort, byte station, int target_position)
@@ -2941,7 +3091,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -2976,7 +3126,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_position0_trigger(MySerialPort MySerialPort, byte station)
@@ -2999,7 +3149,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3034,7 +3184,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -3061,7 +3211,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3096,7 +3246,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_position0_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3121,7 +3271,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3156,7 +3306,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -3183,7 +3333,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3218,7 +3368,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_position1_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3243,7 +3393,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3278,7 +3428,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -3305,7 +3455,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3340,7 +3490,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
         static public bool UART_Command_set_position2_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3365,7 +3515,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3400,7 +3550,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 
@@ -3424,7 +3574,7 @@ namespace DeltaMotor485
                     {
                         if (retry >= UART_RetryNum)
                         {
-                            if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
+                            Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  error! station: {station}\n {list_byte.ToArray().ByteToStringHex()}");
                             flag_OK = false;
                             break;
                         }
@@ -3459,7 +3609,7 @@ namespace DeltaMotor485
                     System.Threading.Thread.Sleep(1);
                 }
             }
-            MySerialPort.SerialPortClose();
+            //MySerialPort.SerialPortClose();
             return flag_OK;
         }
 

@@ -2317,7 +2317,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.cspro
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csprojAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.dll.config
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.dll
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.pdb
@@ -2368,3 +2367,4 @@ C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCompi
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
+C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.AssemblyReference.cache

@@ -8,6 +8,7 @@ namespace Basic
 {
     public class MySerialPort
     {
+        private MyThread myThread;
         public bool RecvFinished
         {
             get
@@ -83,8 +84,9 @@ namespace Basic
         }
         private SerialPort serialPort = new SerialPort();
         private bool FLAG_UART_RX = false;
+        public int BufferSize = 20480;
         private List<byte> UART_RX_BUF = new List<byte>();
-        private byte[] UART_RX_bytes = new byte[20480];
+        private byte[] UART_RX_bytes;
         public int BytesToRead = 0;
         private MyUI.MyTimer MyTimer_RX_Timeout = new MyUI.MyTimer();
         public void Init(string PortName, int BaudRate, int DataBits, System.IO.Ports.Parity Parity, System.IO.Ports.StopBits StopBits)
@@ -98,16 +100,22 @@ namespace Basic
             this.DataBits = DataBits;
             this.Parity = Parity;
             this.StopBits = StopBits;
-            this.serialPort.ReadBufferSize = 20480;
-            this.serialPort.WriteBufferSize = 20480;
+            this.serialPort.ReadBufferSize = BufferSize;
+            this.serialPort.WriteBufferSize = BufferSize;
             this.serialPort.DataReceived += SerialPort_DataReceived;
-
+            UART_RX_bytes = new byte[BufferSize];
             this.RX_TickRST();
+            //myThread = new MyThread();
+            //myThread.AutoRun(true);
+            //myThread.SetSleepTime(1);
+            //myThread.Add_Method(DataReceived);
+            //myThread.Trigger();
 
             if (AutoConnect) this.SerialPortOpen();
         }
         public bool SerialPortOpen()
         {
+            if (IsConnected) return true;
             this.serialPort.Close();
             try
             {
@@ -207,27 +215,19 @@ namespace Basic
         }
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            //if (this.UART_RX_BUF.Count >= 20480)
-            //{
-            //    this.UART_RX_BUF.Clear();
-            //}
-            //if (ConsoleWrite) Console.Write($"{PortName} 讀取到{this.serialPort.BytesToRead}長度資料!\n");
-            //int byte2read = this.serialPort.BytesToRead;
 
-            //for (int i = 0; i < byte2read; i++)
-            //{
-            //    this.UART_RX_BUF.Add((byte)this.serialPort.ReadByte());
-            //}
-            //this.RX_TickRST();
-            //this.FLAG_UART_RX = true;
-
+            DataReceived();
+        }
+        private void DataReceived()
+        {
+            if (!IsConnected) return;
             int byte2read = this.serialPort.BytesToRead;
             if (ConsoleWrite) Console.Write($"{PortName} 讀取到{byte2read}長度資料!\n");
-            if (BytesToRead + byte2read >= 20480)
+            if (BytesToRead + byte2read >= BufferSize)
             {
                 ClearReadByte();
             }
-            lock(UART_RX_bytes)
+            lock (UART_RX_bytes)
             {
                 for (int i = 0; i < byte2read; i++)
                 {
@@ -238,9 +238,7 @@ namespace Basic
                 this.RX_TickRST();
                 this.FLAG_UART_RX = true;
             }
-            
         }
-
         public static string[] GetPortNames()
         {
             return SerialPort.GetPortNames();
