@@ -49,8 +49,8 @@ namespace DeltaMotor485
         SON = 0,
         CTRG = 1,
         ORGP = 2,
-        EMGS = 3,
-        STP = 4,
+        PL = 3,
+        NL = 4,
     }
 
     /// <summary>
@@ -102,7 +102,7 @@ namespace DeltaMotor485
             this.station = station;
         }
         public byte station { get; set; }
-
+        public bool Read485_Enable { get; set; }
         public bool SRDY { get; set; }
         public bool SON { get; set; }
         public bool ZSPD { get; set; }
@@ -114,7 +114,18 @@ namespace DeltaMotor485
         public bool HOME { get; set; }
         public bool OLW { get; set; }
         public bool WARN { get; set; }
-
+        private Driver_DI driver_DI = new Driver_DI();
+        public Driver_DI DI 
+        { 
+            get
+            {
+                return driver_DI;
+            }
+            set
+            {
+                driver_DI = value;
+            }
+        }
         public int CommandPosition { get; set; }
         public bool flag_Init { get; set; }
         public bool flag_Servo_on_off { get; set; }
@@ -234,6 +245,9 @@ namespace DeltaMotor485
         private MyThread myThread;
         public int Start_station = 1;
         private MySerialPort mySerialPort;
+        private MyTimerBasic MyTimerBasic_driver_DO = new MyTimerBasic(100);
+        private MyTimerBasic MyTimerBasic_driver_DI = new MyTimerBasic(100);
+        private MyTimerBasic MyTimerBasic_CommandPosition = new MyTimerBasic(50);
         public Driver_DO this[byte station]
         {
             get
@@ -258,17 +272,44 @@ namespace DeltaMotor485
             myThread.SetSleepTime(1);
             myThread.Trigger();
         }
+        
         private void sub_program()
         {
             for (int i = 0; i < drivers_DO.Count; i++)
             {
                 Driver_DO driver_DO = drivers_DO[i];
+                Driver_DI driver_DI = drivers_DO[i].DI;
                 byte station = driver_DO.station;
-                Communication.UART_Command_get_driver_DO(mySerialPort, station, ref driver_DO);
+                if(drivers_DO[i].Read485_Enable)
+                {
+                    if (this.MyTimerBasic_driver_DO.IsTimeOut())
+                    {
+                        Communication.UART_Command_get_driver_DO(mySerialPort, station, ref driver_DO);
+                        MyTimerBasic_driver_DO.TickStop();
+                        MyTimerBasic_driver_DO.StartTickTime(50);
+                    }
+                    if (this.MyTimerBasic_driver_DI.IsTimeOut())
+                    {
+                        Communication.UART_Command_get_driver_DI(mySerialPort, station, ref driver_DI);
+                        MyTimerBasic_driver_DI.TickStop();
+                        MyTimerBasic_driver_DI.StartTickTime(50);
+                    }
+                    if (this.MyTimerBasic_CommandPosition.IsTimeOut())
+                    {
+                        driver_DO.CommandPosition = Communication.Get_position(mySerialPort, station);
+                        MyTimerBasic_CommandPosition.TickStop();
+                        MyTimerBasic_CommandPosition.StartTickTime(10);
+                    }
+
+                }
+
+            }
+
+            for (int i = 0; i < drivers_DO.Count; i++)
+            {
+                Driver_DO driver_DO = drivers_DO[i];
+                byte station = driver_DO.station;
                 driver_DO.flag_ZSPD_refresh = false;
-                //System.Threading.Thread.Sleep(20);
-                driver_DO.CommandPosition = Communication.Get_position(mySerialPort, station);
-                //System.Threading.Thread.Sleep(20);
                 if (driver_DO.flag_Init)
                 {
                     Communication.DriverInit(mySerialPort, station);
@@ -313,7 +354,6 @@ namespace DeltaMotor485
                     }
                 }
             }
-
         }
     }
     public class Communication
@@ -385,6 +425,16 @@ namespace DeltaMotor485
                     return false;
                 }
                 if (UART_Command_set_driver_DI2_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.ORGP) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                if (UART_Command_set_driver_DI3_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.PL) == false)
+                {
+                    result = false;
+                    return false;
+                }
+                if (UART_Command_set_driver_DI4_function(MySerialPort, station, DeltaMotor485.enum_DI_function_index.NL) == false)
                 {
                     result = false;
                     return false;
@@ -661,6 +711,7 @@ namespace DeltaMotor485
                     result = false;
                     return false;
                 }
+                driver_DO.flag_ZSPD_refresh = true;
                 Task task = Task.Factory.StartNew(new Action(delegate
                 {
                     int cnt = 0;
@@ -669,9 +720,9 @@ namespace DeltaMotor485
                         System.Threading.Thread.Sleep(10);
                         if (cnt == 0)
                         {
-                            if (driver_DO.HOME && driver_DO.ZSPD)
+                            if (driver_DO.HOME && driver_DO.ZSPD && driver_DO.flag_ZSPD_refresh == false)
                             {
-                                System.Threading.Thread.Sleep(100);
+                                System.Threading.Thread.Sleep(200);
                                 cnt++;
                             }
                         }
@@ -686,7 +737,7 @@ namespace DeltaMotor485
                         }
                         if (cnt == 2)
                         {
-                            if (ConsoleWrite) Console.Write($"station : {station} , 復歸完成!");
+                             Console.Write($"station : {station} , 復歸完成!");
                             break;
                         }
 
@@ -1500,8 +1551,8 @@ namespace DeltaMotor485
                                 driver_DI.SON = ((value >> (int)enum_DI.SON) % 2) == 1;
                                 driver_DI.CTRG = ((value >> (int)enum_DI.CTRG) % 2) == 1;
                                 driver_DI.ORGP = ((value >> (int)enum_DI.ORGP) % 2) == 1;
-                                driver_DI.EMGS = ((value >> (int)enum_DI.EMGS) % 2) == 1;
-                                driver_DI.STP = ((value >> (int)enum_DI.STP) % 2) == 1;
+                                driver_DI.PL = ((value >> (int)enum_DI.PL) % 2) == 1;
+                                driver_DI.NL = ((value >> (int)enum_DI.NL) % 2) == 1;
 
                                 if (ConsoleWrite)
                                 {
@@ -1509,8 +1560,8 @@ namespace DeltaMotor485
                                     Console.WriteLine($"SRDY : {driver_DI.SON}");
                                     Console.WriteLine($"CTRG : {driver_DI.CTRG}");
                                     Console.WriteLine($"ORGP : {driver_DI.ORGP}");
-                                    Console.WriteLine($"EMGS : {driver_DI.EMGS}");
-                                    Console.WriteLine($"STP : {driver_DI.STP}");
+                                    Console.WriteLine($"PL : {driver_DI.EMGS}");
+                                    Console.WriteLine($"NL : {driver_DI.STP}");
 
                                     Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  sucessed! station : {station}\n {UART_RX.ByteToStringHex()} \n");
 

@@ -17,3 +17,8 @@ C:\Users\HS\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.Canvas.resources
 C:\Users\HS\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.csproj.GenerateResource.cache
 C:\Users\HS\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.csproj.CoreCompileInputs.cache
 C:\Users\HS\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.dll
+C:\Users\Administrator\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.Canvas.resources
+C:\Users\Administrator\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.csproj.GenerateResource.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsBase\obj\Debug\HsBase.dll

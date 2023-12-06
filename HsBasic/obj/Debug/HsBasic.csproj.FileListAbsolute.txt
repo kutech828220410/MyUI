@@ -1,3 +1,5 @@
 C:\Users\Evan\Desktop\MyUI20200331\HsBasic\obj\Debug\HsBasic.csprojResolveAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HsBasic\obj\Debug\HsBasic.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HsBasic\obj\Debug\HsBasic.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsBasic\obj\Debug\HsBasic.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsBasic\obj\Debug\HsBasic.csproj.CoreCompileInputs.cache

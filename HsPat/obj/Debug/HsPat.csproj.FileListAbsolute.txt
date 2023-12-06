@@ -1,3 +1,5 @@
 C:\Users\Evan\Desktop\MyUI20200331\HsPat\obj\Debug\HsPat.csprojResolveAssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HsPat\obj\Debug\HsPat.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\MyUI\HsPat\obj\Debug\HsPat.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsPat\obj\Debug\HsPat.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\HsPat\obj\Debug\HsPat.csproj.CoreCompileInputs.cache

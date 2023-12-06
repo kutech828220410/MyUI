@@ -17,3 +17,10 @@ C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.Ge
 C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.CoreCompileInputs.cache
 C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.exe
 C:\Users\HS\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.pdb
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.UpdatForm.resources
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.Properties.Resources.resources
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.GenerateResource.cache
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.exe
+C:\Users\Administrator\Source\Repos\MyUI\UpdateProgramFrm\obj\Debug\UpdateProgram.pdb
