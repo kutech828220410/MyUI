@@ -376,9 +376,10 @@ namespace DeltaMotor485
                 {
                     int value = -1;
                     Communication.UART_Command_get_position_state(mySerialPort, station, ref value);
+                    System.Threading.Thread.Sleep(10);
                     if (value < 0)
                     {
-                        Console.Write($"station : {station} , DDRVA 指令異常!\n");
+                        Console.Write($"station : {station} , DDRVA 指令異常! value:{value}\n");
                         driver_DO.flag_DDRVA_BUSY = false;
                     }
                     else if (value >= 1 && value <100)
@@ -397,7 +398,7 @@ namespace DeltaMotor485
                         {
                             if(value -20000 == driver_DO.CurrentPath)
                             {
-                                Console.Write($"station : {station} , DDRVA 指令已全部完成!\n");
+                                Console.Write($"station : {station} , DDRVA 指令已全部完成! value:{value}\n");
                                 driver_DO.flag_DDRVA_BUSY = false;
                             }    
       
