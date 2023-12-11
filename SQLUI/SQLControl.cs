@@ -21,12 +21,13 @@ namespace SQLUI
         MySqlConnectionStringBuilder _MySqlConnectionStringBuilder = null;
         public string TableName = "";
         private bool IsConnect = false;
-        private string Server = "";
-        private string Database = "";
-        private string UserID = "";
-        private string Password = "";
-        private uint Port = 1;
-        private MySqlSslMode SSLMode;
+
+        public string Server = "";
+        public string Database = "";
+        public string UserID = "";
+        public string Password = "";
+        public uint Port = 1;
+        public MySqlSslMode SSLMode;
         private string SeverString = "";
         public enum OrderType
         {
@@ -2608,6 +2609,16 @@ namespace SQLUI
         private List<ColumnElement> columnList = new List<ColumnElement>();
         [JsonPropertyName("tableName")]
         public string TableName { get => tableName; set => tableName = value; }
+        [JsonPropertyName("server")]
+        public string Server { get; set; }
+        [JsonPropertyName("dBName")]
+        public string DBName { get; set; }
+        [JsonPropertyName("username")]
+        public string Username { get; set; }
+        [JsonPropertyName("password")]
+        public string Password { get; set; }
+        [JsonPropertyName("port")]
+        public string Port { get; set; }
         [JsonPropertyName("columnList")]
         public List<ColumnElement> ColumnList { get => columnList; set => columnList = value; }
         public class ColumnElement
@@ -2738,7 +2749,16 @@ namespace SQLUI
             ColumnList = columnList;
         }
 
+        public void SetTableConfig(SQLControl sQLControl)
+        {
+            this.TableName = sQLControl.TableName;
+            this.Server = sQLControl.Server;
+            this.DBName = sQLControl.Database;
+            this.Username = sQLControl.UserID;
+            this.Password = sQLControl.Password;
+            this.Port = sQLControl.Port.ToString();
 
+        }
 
         public enum IndexType
         {

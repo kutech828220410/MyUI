@@ -133,7 +133,47 @@ namespace Basic
             return list_value;
         }
 
+        static public List<object[]> GetRows(this Dictionary<object, List<object[]>> dictionary,  object serchvalue)
+        {
+            if (dictionary.TryGetValue(serchvalue, out List<object[]> result))
+            {
+                return result;
+            }
+            else
+            {
+                return new List<object[]>();
+            }
+        }
 
+        static public Dictionary<object, object[]> ConvertToDictionaryPRI(this List<object[]> list_value, int idColumnIndex)
+        {
+            Dictionary<object, object[]> dictionary = list_value.ToDictionary(item => item[idColumnIndex]);
+
+            return dictionary;
+        }
+        static public Dictionary<object, List<object[]>> ConvertToDictionary(this List<object[]> list_value, int idColumnIndex)
+        {
+            Dictionary<object, List<object[]>> dictionary = new Dictionary<object, List<object[]>>();
+
+            foreach (var item in list_value)
+            {
+                object key = item[idColumnIndex];
+
+                // 如果字典中已經存在該索引鍵，則將值添加到對應的列表中
+                if (dictionary.ContainsKey(key))
+                {
+                    dictionary[key].Add(item);
+                }
+                // 否則創建一個新的列表並添加值
+                else
+                {
+                    List<object[]> values = new List<object[]> { item };
+                    dictionary[key] = values;
+                }
+            }
+
+            return dictionary;
+        }
         static public bool IsEqual(this object[] srcvalue, object[] dstvalue ,params int[] exclude)
         {
             bool flag_continue = false;

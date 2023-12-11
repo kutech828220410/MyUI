@@ -521,5 +521,56 @@ namespace Basic
                 return memoryStream.ToArray();
             }
         }
+
+        public static string WEBApiPost(string apiUrl, string fileName, byte[] file_bytes, List<string> names, List<string> values)
+        {
+            string result = Task.Run(async () =>
+            {
+                string responseBody = await WEBApiPostAsync(apiUrl, fileName, file_bytes, names, values);
+                return responseBody;
+            }).Result;
+            return result;
+        }
+
+        public static async Task<string> WEBApiPostAsync(string apiUrl,string fileName, byte[] file_bytes, List<string> names, List<string> values)
+        {
+            var client = new HttpClient();
+            string responseBody = "";
+            // 建立Form資料
+            MultipartFormDataContent form = new MultipartFormDataContent();
+            if (file_bytes != null || file_bytes.Length != 0)
+            {
+                // 加入檔案
+                var fileContent = new ByteArrayContent(file_bytes);
+                form.Add(fileContent, "file", fileName); // 替換為你的檔名
+            }
+
+            for (int i = 0; i < names.Count; i++)
+            {
+                // 加入其他表單參數
+                form.Add(new StringContent(values[i]), names[i]);
+    
+            }
+          
+
+            // 呼叫API
+            HttpResponseMessage response = await client.PostAsync(apiUrl, form);
+
+            if (response.IsSuccessStatusCode)
+            {
+                // 取得API回應
+                responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine("API 回應: " + responseBody);
+                return responseBody;
+        
+            }
+            else
+            {
+                Console.WriteLine("API 呼叫失敗，狀態碼: " + response.StatusCode);
+                return responseBody;
+        
+            }
+        }
+
     }
 }
