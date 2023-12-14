@@ -3120,3 +3120,4 @@ C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
+C:\Users\User\Desktop\MyUI\MeasureSystemUI\bin\Release\Basic.xml

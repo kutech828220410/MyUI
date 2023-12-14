@@ -69,16 +69,41 @@ namespace Basic
             dateTimeComList.Start_Year = start_Year;
             dateTimeComList.End_Year = end_Year;
             dateTimeComList.Value = dateTime;
-            this.DialogResult = DialogResult.None;
+            this.Load += Dialog_DateTime_Load;
+     
         }
+
+        private void Dialog_DateTime_Load(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.None;
+            rJ_Button_OK.MouseDownEvent += RJ_Button_OK_MouseDownEvent;
+            rJ_Button_Cancel.MouseDownEvent += RJ_Button_Cancel_MouseDownEvent;
+        }
+
+        private void RJ_Button_Cancel_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.No;
+                this.Close();
+            }));
+        }
+
+        private void RJ_Button_OK_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            }));
+        }
+
         private void rJ_Button_OK_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
         }
 
         private void rJ_Button_Cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No;
         }
 
     }
