@@ -257,11 +257,14 @@ namespace DeltaMotor485
         絕對型 = 0x0001,
         增量型 = 0x0000,
     }
+
     public class Port
     {
         public List<Driver_DO> drivers_DO = new List<Driver_DO>();
         private MyThread myThread;
         public int Start_station = 1;
+        public int SleepTime = 1;
+       
         private MySerialPort mySerialPort;
         private MyTimerBasic MyTimerBasic_driver_DO = new MyTimerBasic(100);
         private MyTimerBasic MyTimerBasic_driver_DI = new MyTimerBasic(100);
@@ -287,7 +290,7 @@ namespace DeltaMotor485
             myThread = new MyThread();
             myThread.Add_Method(sub_program);
             myThread.AutoRun(true);
-            myThread.SetSleepTime(1);
+            myThread.SetSleepTime(SleepTime);
             myThread.Trigger();
         }
         
@@ -411,9 +414,10 @@ namespace DeltaMotor485
     }
     public class Communication
     {
+        public static int UART_Delay = 10;
         public static int UART_RetryNum = 3;
         public static bool ConsoleWrite = false;
-        public static int UART_TimeOut = 50;
+        public static int UART_TimeOut = 100;
 
   
         public enum enum_Command
@@ -936,10 +940,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_DJOG(MySerialPort MySerialPort, byte station)
@@ -993,10 +997,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_JOG_Speed(MySerialPort MySerialPort, byte station, int speed_rpm)
@@ -1050,10 +1054,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_enable_rs485_DI(MySerialPort MySerialPort, byte station, params enum_DI[] enum_DIs)
@@ -1112,10 +1116,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI0_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1180,10 +1184,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI1_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1248,10 +1252,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI2_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1316,10 +1320,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI3_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1384,10 +1388,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI4_function(MySerialPort MySerialPort, byte station, enum_DI_function_index enum_DI_Function_Index)
@@ -1452,10 +1456,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI(MySerialPort MySerialPort, byte station , params enum_DI[] enum_DIs)
@@ -1514,10 +1518,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_driver_DI(MySerialPort MySerialPort, byte station, int value)
@@ -1572,10 +1576,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DI(MySerialPort MySerialPort, byte station, ref Driver_DI driver_DI)
@@ -1659,10 +1663,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DI(MySerialPort MySerialPort, byte station, ref int value)
@@ -1730,10 +1734,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_driver_DO(MySerialPort MySerialPort, byte station, ref Driver_DO driver_DO)
@@ -1827,10 +1831,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_home_mode(MySerialPort MySerialPort, byte station , enum_Direction enum_direction , bool Z_enable)
@@ -1894,10 +1898,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_org_postion_mode(MySerialPort MySerialPort, byte station)
@@ -1957,10 +1961,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_serch_home(MySerialPort MySerialPort, byte station)
@@ -2015,10 +2019,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_home_speed1(MySerialPort MySerialPort, byte station , int rpm)
@@ -2078,10 +2082,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_home_speed2(MySerialPort MySerialPort, byte station, int rpm)
@@ -2139,10 +2143,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_home_config(MySerialPort MySerialPort, byte station , int value)
@@ -2195,10 +2199,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_org_offset(MySerialPort MySerialPort, byte station, int offset)
@@ -2253,10 +2257,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -2311,10 +2315,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_read_state0(MySerialPort MySerialPort, byte station, ref int value)
@@ -2384,10 +2388,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_read_state0_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2448,10 +2452,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_read_state1(MySerialPort MySerialPort, byte station, ref int value)
@@ -2521,10 +2525,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_read_state1_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2585,10 +2589,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_read_state2(MySerialPort MySerialPort, byte station, ref int value)
@@ -2658,10 +2662,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_read_state2_mode(MySerialPort MySerialPort, byte station, enum_StateMode enum_StateMode)
@@ -2722,10 +2726,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_encoder_mode(MySerialPort MySerialPort, byte station, enum_EncoderMode  enum_EncoderMode)
@@ -2786,10 +2790,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -2860,10 +2864,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_position_encoder(MySerialPort MySerialPort, byte station, ref int value)
@@ -2933,10 +2937,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_get_position_state(MySerialPort MySerialPort, byte station, ref int value)
@@ -3006,10 +3010,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -3067,10 +3071,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_target_position0(MySerialPort MySerialPort, byte station, int target_position)
@@ -3124,10 +3128,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_position0_trigger(MySerialPort MySerialPort, byte station)
@@ -3182,10 +3186,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -3244,10 +3248,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_position0_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3304,10 +3308,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -3366,10 +3370,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_position1_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3426,10 +3430,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -3488,10 +3492,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
         static public bool UART_Command_set_position2_acc(MySerialPort MySerialPort, byte station, int ms)
@@ -3548,10 +3552,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
@@ -3607,10 +3611,10 @@ namespace DeltaMotor485
 
                     }
 
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(0);
                 }
             }
-            //MySerialPort.SerialPortClose();
+            System.Threading.Thread.Sleep(UART_Delay);
             return flag_OK;
         }
 
