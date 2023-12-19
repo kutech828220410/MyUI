@@ -102,7 +102,7 @@ namespace Basic
 
         public static bool DowloadToPictureBox(string url, PictureBox pictureBox)
         {
-            Uri urlCheck = new Uri(@url); 
+            Uri urlCheck = new Uri(@url);
             WebRequest webreq = WebRequest.Create(@url);
             HttpWebRequest request = (HttpWebRequest)webreq;
 
@@ -129,7 +129,7 @@ namespace Basic
                 return false; //could not connect to the internet (maybe) 
             }
 
-                      
+
             return true;
         }
         public static bool Ping(string IP, int retrynum, int timeout)
@@ -165,14 +165,14 @@ namespace Basic
                 Console.Write($"{IP} ping failed!\n");
                 return false;
             }
-            
+
         }
 
         public static string JsonSerializationt<T>(this T value)
         {
             return JsonSerializationt(value, false);
         }
-        public static string JsonSerializationt<T>(this T value ,bool WriteIndented)
+        public static string JsonSerializationt<T>(this T value, bool WriteIndented)
         {
             //string jsonString = JsonConvert.SerializeObject(value);
             //return jsonString;
@@ -198,7 +198,7 @@ namespace Basic
             {
                 return default(T);
             }
-           
+
         }
 
         public static byte[] JsonUtf8BytesSerializationt<T>(this T value)
@@ -230,7 +230,7 @@ namespace Basic
             for (int i = 0; i < nodeNames.Length; i++)
             {
                 if (xmlElement == null) return null;
-                xmlElement = xmlElement[nodeNames[i]];               
+                xmlElement = xmlElement[nodeNames[i]];
             }
             return xmlElement;
         }
@@ -288,7 +288,7 @@ namespace Basic
         {
             string result = Task.Run(async () =>
             {
-                string responseBody = await WEBApiGetAsync(url);   
+                string responseBody = await WEBApiGetAsync(url);
                 return responseBody;
             }).Result;
             return result;
@@ -345,14 +345,19 @@ namespace Basic
 
         public static string WEBApiPostJson(string url, string value)
         {
+            return WEBApiPostJson(url, value, true);
+        }
+        public static string WEBApiPostJson(string url, string value, bool debug)
+        {
             string result = Task.Run(async () =>
             {
-                string responseBody = await WEBApiPostJsonAsync(url, value);
+                string responseBody = await WEBApiPostJsonAsync(url, value, debug);
                 return responseBody;
             }).Result;
             return result;
         }
-        public static async Task<string> WEBApiPostJsonAsync(string url, string value)
+
+        public static async Task<string> WEBApiPostJsonAsync(string url, string value, bool debug)
         {
             string responseBody = "";
             if (url.StringIsEmpty())
@@ -360,7 +365,7 @@ namespace Basic
                 Console.WriteLine($"{Basic.Reflection.GetMethodName()} : 網址不得為空!");
                 return null;
             }
- 
+
             try
             {
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
@@ -368,12 +373,12 @@ namespace Basic
                 HttpRequestMessage request = new HttpRequestMessage();
                 request.RequestUri = new Uri(url);
                 request.Method = HttpMethod.Post;
-                
-           
+
+
                 request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
                 var response = await client.SendAsync(request);
                 responseBody = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseBody);
+                if (debug) Console.WriteLine(responseBody);
                 return responseBody;
             }
             catch
@@ -455,7 +460,7 @@ namespace Basic
         {
             return DownloadFile(url, saveFilePath, null);
         }
-        public static bool DownloadFile(string url, string saveFilePath , DownloadProgressChangedEventHandler Client_DownloadProgressChanged)
+        public static bool DownloadFile(string url, string saveFilePath, DownloadProgressChangedEventHandler Client_DownloadProgressChanged)
         {
             try
             {
@@ -532,7 +537,7 @@ namespace Basic
             return result;
         }
 
-        public static async Task<string> WEBApiPostAsync(string apiUrl,string fileName, byte[] file_bytes, List<string> names, List<string> values)
+        public static async Task<string> WEBApiPostAsync(string apiUrl, string fileName, byte[] file_bytes, List<string> names, List<string> values)
         {
             var client = new HttpClient();
             string responseBody = "";
@@ -549,9 +554,9 @@ namespace Basic
             {
                 // 加入其他表單參數
                 form.Add(new StringContent(values[i]), names[i]);
-    
+
             }
-          
+
 
             // 呼叫API
             HttpResponseMessage response = await client.PostAsync(apiUrl, form);
@@ -562,13 +567,13 @@ namespace Basic
                 responseBody = await response.Content.ReadAsStringAsync();
                 Console.WriteLine("API 回應: " + responseBody);
                 return responseBody;
-        
+
             }
             else
             {
                 Console.WriteLine("API 呼叫失敗，狀態碼: " + response.StatusCode);
                 return responseBody;
-        
+
             }
         }
 
