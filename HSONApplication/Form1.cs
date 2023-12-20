@@ -54,8 +54,7 @@ namespace HSONApplication
         }
         private void RJ_Button_Init_MouseDownEvent(MouseEventArgs mevent)
         {
-            DeltaMotor485_port.Init(mySerialPort_delta, new byte[] {1 });
-            DeltaMotor485_port[1].flag_Init = true;
+            List<object[]> list_value = this.sqL_DataGridView_備藥通知.Get_All_Checked_RowsValues();
         }
 
         private void sub_program()
@@ -109,24 +108,24 @@ namespace HSONApplication
         private void PlC_UI_Init1_UI_Finished_Event()
         {
             PLC_UI_Init.Set_PLC_ScreenPage(panel_main, this.plC_ScreenPage_main);
-            //string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/init_udnoectc";
-            //returnData returnData = new returnData();
-            //returnData.ServerName = "cheom";
-            //returnData.ServerType = "癌症備藥機";
-            //string json_in = returnData.JsonSerializationt();
-            //string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
-            //List<Table> tables = json.JsonDeserializet<List<Table>>();
+            string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/init_udnoectc";
+            returnData returnData = new returnData();
+            returnData.ServerName = "cheom";
+            returnData.ServerType = "癌症備藥機";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            List<Table> tables = json.JsonDeserializet<List<Table>>();
 
-            //this.sqL_DataGridView_備藥通知.Init(tables[0]);
-            //this.sqL_DataGridView_備藥通知.Set_ColumnVisible(false, new enum_udnoectc().GetEnumNames());
+            this.sqL_DataGridView_備藥通知.Init(tables[0]);
+            this.sqL_DataGridView_備藥通知.Set_ColumnVisible(false, new enum_udnoectc().GetEnumNames());
 
-            //this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, enum_udnoectc.病房);
-            //this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.病歷號);
-            //this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.診別);
-            //this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);
-            //this.sqL_DataGridView_備藥通知.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_udnoectc.病歷號);
-            //this.sqL_DataGridView_備藥通知.DataGridRefreshEvent += SqL_DataGridView_備藥通知_DataGridRefreshEvent;
-            //Function_取得備藥通知();
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, enum_udnoectc.病房);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.病歷號);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.診別);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);
+            this.sqL_DataGridView_備藥通知.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_udnoectc.病歷號);
+            this.sqL_DataGridView_備藥通知.DataGridRefreshEvent += SqL_DataGridView_備藥通知_DataGridRefreshEvent;
+            Function_取得備藥通知();
         }
 
         private void SqL_DataGridView_備藥通知_DataGridRefreshEvent()

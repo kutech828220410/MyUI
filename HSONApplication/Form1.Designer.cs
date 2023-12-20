@@ -447,7 +447,7 @@
             this.sqL_DataGridView_備藥通知.RowsHeight = 80;
             this.sqL_DataGridView_備藥通知.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_備藥通知.Server = "127.0.0.0";
-            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1076, 223);
+            this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1076, 384);
             this.sqL_DataGridView_備藥通知.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_備藥通知.TabIndex = 5;
             this.sqL_DataGridView_備藥通知.UserName = "root";
@@ -457,7 +457,7 @@
             this.sqL_DataGridView_備藥通知.自動換行 = true;
             this.sqL_DataGridView_備藥通知.表單字體 = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.邊框樣式 = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.sqL_DataGridView_備藥通知.顯示CheckBox = false;
+            this.sqL_DataGridView_備藥通知.顯示CheckBox = true;
             this.sqL_DataGridView_備藥通知.顯示首列 = true;
             this.sqL_DataGridView_備藥通知.顯示首行 = true;
             this.sqL_DataGridView_備藥通知.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
@@ -474,7 +474,7 @@
             this.手動.Location = new System.Drawing.Point(4, 25);
             this.手動.Margin = new System.Windows.Forms.Padding(0);
             this.手動.Name = "手動";
-            this.手動.Size = new System.Drawing.Size(1256, 830);
+            this.手動.Size = new System.Drawing.Size(1076, 830);
             this.手動.TabIndex = 0;
             this.手動.Text = "手動";
             // 
@@ -509,7 +509,7 @@
             this.plC_AlarmFlow2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.plC_AlarmFlow2.Location = new System.Drawing.Point(0, 804);
             this.plC_AlarmFlow2.Name = "plC_AlarmFlow2";
-            this.plC_AlarmFlow2.Size = new System.Drawing.Size(1256, 26);
+            this.plC_AlarmFlow2.Size = new System.Drawing.Size(1076, 26);
             this.plC_AlarmFlow2.TabIndex = 54;
             this.plC_AlarmFlow2.捲動速度 = 200;
             this.plC_AlarmFlow2.文字字體 = new System.Drawing.Font("標楷體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));

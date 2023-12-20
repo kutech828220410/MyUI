@@ -230,8 +230,7 @@ namespace Basic
             }
 
             return dst_values;
-        }
-      
+        }     
         static public object[] CopyRow(this object[] src_value ,object enum_src, object enum_dst, params int[] src_exclude)
         {
             string[] dst_EnumNames = enum_dst.GetEnumNames();
@@ -280,6 +279,7 @@ namespace Basic
             }
             return dst_value;
         }
+
         static public int RemoveByGUID(this List<object[]> list_value, object[] serchvalue)
         {
             List<object[]> list_serchvalue = new List<object[]>();
@@ -303,6 +303,7 @@ namespace Basic
         {
             return RemoveRow(list_value, 0, serchvalue);
         }
+
         static public int RemoveRow(this List<object[]> list_value, int colindex, string serchvalue)
         {
             return RemoveRow(list_value, colindex, new string[]{ serchvalue });

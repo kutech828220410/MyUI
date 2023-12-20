@@ -3373,6 +3373,8 @@ namespace SQLUI
         }
         private void DataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
             if (_顯示CheckBox)
             {
                 if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -3385,7 +3387,6 @@ namespace SQLUI
                     e.Handled = true;
                 }
             }
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
             if (e.RowIndex > -1 && e.ColumnIndex == -1)
             {
@@ -3412,6 +3413,11 @@ namespace SQLUI
             }
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
+                if (_顯示CheckBox && e.ColumnIndex == 0)
+                {
+                    e.Handled = true;
+                    return;
+                }
                 using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
                 using (Pen pen_border = new Pen(Color.White))
                 {
