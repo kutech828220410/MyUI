@@ -76,11 +76,11 @@ namespace MyUI
         {
             get
             {
-                return rJ_Lable_Title.ForeColor;
+                return rJ_Lable_Title.TextColor;
             }
             set
             {
-                rJ_Lable_Title.ForeColor = value;
+                rJ_Lable_Title.TextColor = value;
             }
         }
         [Category("RJ Code Advance")]
@@ -88,11 +88,12 @@ namespace MyUI
         {
             get
             {
-                return rJ_Lable_Title.BackColor;
+                return rJ_Lable_Title.BackgroundColor;
             }
             set
             {
                 rJ_Lable_Title.BackColor = value;
+                rJ_Lable_Title.BackgroundColor = value;
             }
         }
         [Category("RJ Code Advance")]

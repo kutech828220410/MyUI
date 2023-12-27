@@ -129,7 +129,6 @@ namespace SQLUI
            
             RowsList = RowsList_buf.DeepClone();
             RowsList_buf = null;
-
             if (dataTable_buffer != null) dataTable_buffer.Dispose();
             dataTable_buffer = new DataTable();
             foreach (ColumnElement columns in Columns)
@@ -253,7 +252,7 @@ namespace SQLUI
         private bool IsStart = false;
         private SQLControl _SQLControl;
         private DataTable dataTable = new DataTable();
-        private DataTable dataTable_buffer = new DataTable();
+        private DataTable dataTable_buffer;
         private Basic.MyConvert _MyConvert = new MyConvert();
         private Table SQL_Table = new Table("");
         public override System.Windows.Forms.Layout.LayoutEngine LayoutEngine
@@ -3309,7 +3308,7 @@ namespace SQLUI
         }
         private void DataGridView_Paint(object sender, PaintEventArgs e)
         {
-            //this.dataGridView.DataSource = this.SaveDataVal.RowsList;
+            if(dataTable_buffer != null) this.dataGridView.DataSource = dataTable_buffer;
             if (dataGridView.CanSelect && dataGridView.Rows.Count > 0)
             {
                 if (_顯示CheckBox)
