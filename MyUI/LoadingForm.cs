@@ -28,6 +28,19 @@ namespace MyUI
             this.Load += LoadingForm_Load;
             this.FormClosing += LoadingForm_FormClosing;
         }
+
+        public static void ShowLoadingForm()
+        {
+            LoadingForm loadingForm = LoadingForm.getLoading();
+            Task.Run(new Action(delegate
+            {
+                loadingForm.ShowDialog();
+            }));
+        }
+        public static void CloseLoadingForm()
+        {
+            LoadingForm.getLoading().mCloseLoadingForm();
+        }
         public static LoadingForm getLoading()
         {
             if (pLoading.IsDisposed)
@@ -71,11 +84,11 @@ namespace MyUI
         {
             if (MethodEvent != null) MethodEvent();
         }
-        public void CloseLoadingForm()
+        public void mCloseLoadingForm()
         {
             if (this.InvokeRequired)
             {
-                CloseFormCallback d = new CloseFormCallback(CloseLoadingForm);
+                CloseFormCallback d = new CloseFormCallback(mCloseLoadingForm);
                 this.Invoke(d, new object[] { });
             }
             else

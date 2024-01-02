@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-//using System.Drawing;
 using System.Linq;
 using System.Text;
-//using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
-using System.Reflection;
-using System.Text.RegularExpressions;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 namespace Basic
@@ -572,7 +566,7 @@ namespace Basic
             }
             if (error_msg != "")
             {
-                MyMessageBox.ShowDialog(error_msg);
+                Console.WriteLine(error_msg);
                 return null;
             }
             DataTable dataTable = new DataTable();

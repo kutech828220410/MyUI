@@ -514,7 +514,7 @@ namespace MyUI
 
             }
            
-            LoadingForm.getLoading().CloseLoadingForm();
+            LoadingForm.CloseLoadingForm();
             this.OnMouseClick(mevent);
         }
         protected override void OnMouseDoubleClick(MouseEventArgs e)

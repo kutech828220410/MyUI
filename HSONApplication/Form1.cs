@@ -51,6 +51,8 @@ namespace HSONApplication
 
             this.rJ_Button_Servo_ON.MouseDownEvent += RJ_Button_Servo_ON_MouseDownEvent;
             this.rJ_Button_Servo_OFF.MouseDownEvent += RJ_Button_Servo_OFF_MouseDownEvent;
+
+            Dialog_AlarmForm.form = this.FindForm();
         }
         private void RJ_Button_Init_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -156,6 +158,8 @@ namespace HSONApplication
         private void sqL_DataGridView_備藥通知_MouseDown(object sender, MouseEventArgs e)
         {
             Function_取得備藥通知();
+            Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm("123", 1000, 0, -100);
+            dialog_AlarmForm.ShowDialog();
         }
     }
 }
