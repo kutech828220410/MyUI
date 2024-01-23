@@ -611,6 +611,8 @@ namespace DeltaMotor485
                 {
                     if (retry >= 5)
                     {
+                        Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : Retry time over failed!");
+
                         result = false;
                         return driver_DO;
 
@@ -623,7 +625,7 @@ namespace DeltaMotor485
                     }
                     int value = -1;
                     Communication.UART_Command_get_position_state(MySerialPort, station, ref value);
-                    if (value == 1) break;
+                    if (value == 1 || (value - 20000) == 1) break;
                     retry++;
                 }
 
@@ -656,7 +658,7 @@ namespace DeltaMotor485
             {
                 if(result == false)
                 {
-                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : 指令有異常! ");
+                    Console.WriteLine($"[{MethodBase.GetCurrentMethod().Name}] : 指令有異常! {DateTime.Now.ToDateTimeString()} ");
 
                 }
             }
@@ -2996,12 +2998,14 @@ namespace DeltaMotor485
                                 value |= UART_RX[6] << 16;
                                 value |= UART_RX[3] << 8;
                                 value |= UART_RX[4] << 0;
-                                if (ConsoleWrite) Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data  sucessed! station : {station}\n {UART_RX.ByteToStringHex()} , value : {value}\n");
+                                Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data sucessed! station : {station}\n {UART_RX.ByteToStringHex()} , value : {value}\n");
                                 flag_OK = true;
                                 break;
                             }
                             else
                             {
+                                Console.Write($"[{MethodBase.GetCurrentMethod().Name}] Set data failed! station : {station}\n {UART_RX.ByteToStringHex()} , value : {value}\n");
+
                                 retry++;
                                 cnt = 0;
                             }
