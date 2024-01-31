@@ -73,6 +73,14 @@ namespace Basic
                 return buffer;
             }
         }
+        public static Image BytesToImage(this byte[] buffer)
+        {
+            using (MemoryStream ms = new MemoryStream(buffer))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
+            }
+        }
         static ImageCodecInfo GetEncoder(ImageFormat format)
         {
             ImageCodecInfo codec = ImageCodecInfo.GetImageDecoders().Where(m => m.FormatID == format.Guid).FirstOrDefault();
@@ -81,6 +89,61 @@ namespace Basic
                 return null;
             }
             return codec;
+        }
+
+        public static Bitmap BytesToBitmap(this byte[] buffer)
+        {
+            using (MemoryStream ms = new MemoryStream(buffer))
+            {
+                Bitmap bitmap = new Bitmap(ms);
+                return bitmap;
+            }
+        }
+
+        public static byte[] BitmapToBytes(this Bitmap bitmap)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png); // 你可以根據需要選擇其他的 ImageFormat
+                return ms.ToArray();
+            }
+        }
+        public static Bitmap ScaleImage(this Bitmap SrcBitmap, int dstWidth, int dstHeight)
+        {
+            Graphics g = null;
+            try
+            {
+                Bitmap DstBitmap = new Bitmap(dstWidth, dstHeight);
+                //按比例缩放           
+                int width = (int)(SrcBitmap.Width * ((float)dstWidth / (float)SrcBitmap.Width));
+                int height = (int)(SrcBitmap.Height * ((float)dstHeight / (float)SrcBitmap.Height));
+
+
+                g = Graphics.FromImage(DstBitmap);
+                g.Clear(Color.Transparent);
+
+                //设置画布的描绘质量         
+                g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(SrcBitmap, new Rectangle((width - width) / 2, (height - height) / 2, width, height), 0, 0, SrcBitmap.Width, SrcBitmap.Height, GraphicsUnit.Pixel);
+
+
+                return DstBitmap;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                if (g != null)
+                {
+                    g.Dispose();
+                }
+
+            }
+            return null;
         }
     }
 }

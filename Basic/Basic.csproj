@@ -147,6 +147,7 @@
     <Compile Include="Keyboard.cs" />
     <Compile Include="LicenseLib.cs" />
     <Compile Include="LINQ.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="MyMessageBox.cs">
       <SubType>Form</SubType>

@@ -20,6 +20,7 @@ namespace MyUI
         private int _time_ms = 1000;
         private int _Y_offset = 0;
         private int _X_offset = 0;
+        private Color backColor = Color.DarkRed;
         public static Form form;
         public DialogResult ShowDialog()
         {
@@ -37,7 +38,41 @@ namespace MyUI
 
             return this.DialogResult;
         }
+        public Dialog_AlarmForm(string title, int time_ms)
+        {
+            InitializeComponent();
+            _title = title;
+            _time_ms = time_ms;
 
+            this.Load += Dialog_AlarmForm_Load;
+            this.FormClosing += Dialog_AlarmForm_FormClosing;
+            this._Y_offset = 0;
+            this._X_offset = 0;
+        }
+        public Dialog_AlarmForm(string title, int time_ms, Color bkColor)
+        {
+            InitializeComponent();
+            _title = title;
+            _time_ms = time_ms;
+
+            this.Load += Dialog_AlarmForm_Load;
+            this.FormClosing += Dialog_AlarmForm_FormClosing;
+            this._Y_offset = 0;
+            this._X_offset = 0;
+            this.backColor = bkColor;
+        }
+        public Dialog_AlarmForm(string title, int time_ms, int x_offset, int y_offset,Color bkColor)
+        {
+            InitializeComponent();
+            _title = title;
+            _time_ms = time_ms;
+
+            this.Load += Dialog_AlarmForm_Load;
+            this.FormClosing += Dialog_AlarmForm_FormClosing;
+            this._Y_offset = y_offset;
+            this._X_offset = x_offset;
+            this.backColor = bkColor;
+        }
         public Dialog_AlarmForm(string title, int time_ms, int x_offset, int y_offset)
         {
             InitializeComponent();
@@ -48,6 +83,7 @@ namespace MyUI
             this.FormClosing += Dialog_AlarmForm_FormClosing;
             this._Y_offset = y_offset;
             this._X_offset = x_offset;
+
 
         }
         private void sub_program()
