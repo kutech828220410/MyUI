@@ -59,7 +59,8 @@ namespace SQLUI
         public event CellValidatingEventHandler CellValidatingEvent;
         public delegate void CheckedChangedEventHandler(List<object[]> RowsList, int index);
         public event CheckedChangedEventHandler CheckedChangedEvent;
-
+        public delegate void CellPaintingImageEventHandler(DataGridViewCellPaintingEventArgs e);
+        public event CellPaintingImageEventHandler CellPaintingImageEvent;
 
         private delegate void ModuleChangeEventHandler(List<object[]> RowsList);
         private event ModuleChangeEventHandler ModuleChangeEvent;
@@ -780,6 +781,12 @@ namespace SQLUI
             {
                 get { return _BackgroundColor; }
                 set { _BackgroundColor = value; }
+            }
+            private Color _ForeColor = Color.White;
+            public Color ForeColor
+            {
+                get { return _ForeColor; }
+                set { _ForeColor = value; }
             }
             private DataGridViewColumnSortMode _SortMode = DataGridViewColumnSortMode.NotSortable;
             public DataGridViewColumnSortMode SortMode
@@ -3389,13 +3396,14 @@ namespace SQLUI
 
             if (e.RowIndex > -1 && e.ColumnIndex == -1)
             {
+         
                 using (Brush brush_background = new SolidBrush(this.rowHeaderBackColor))
                 using (Pen pen_border = new Pen(Color.White))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
               
-                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
                     e.Handled = true;
                 }
             }
@@ -3406,7 +3414,7 @@ namespace SQLUI
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
-                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
                     e.Handled = true;
                 }            
             }
@@ -3417,14 +3425,47 @@ namespace SQLUI
                     e.Handled = true;
                     return;
                 }
+
                 using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
                 using (Pen pen_border = new Pen(Color.White))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
-                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, Color.Black, e.CellStyle.Alignment);
+                  
+                    if (e.Value.GetType() == typeof(Image) || e.Value.GetType() == typeof(Bitmap))
+                    {
+                        double scale = 0.0F;
+                        Image image = (Image)e.Value;
+
+                        if (e.CellBounds.Width < e.CellBounds.Height)
+                        {
+                            scale = (double)e.CellBounds.Width / (double)image.Width;
+                        }
+                        else
+                        {
+                            scale = (double)e.CellBounds.Height / (double)image.Height;
+                        }
+                    
+                        float width = (float)(image.Width * scale);
+                        float height = (float)(image.Height * scale);
+
+                        float pX = (float)(e.CellBounds.X + (e.CellBounds.Width - width) / 2);
+                        float pY = (float)(e.CellBounds.Y + (e.CellBounds.Height - height) / 2);
+
+                        Console.WriteLine($"width:{width},height:{height},scale:{scale}");
+                        if (CellPaintingImageEvent != null) CellPaintingImageEvent(e);
+                        e.Graphics.DrawImage(image, pX, pY, width, height);
+                    }
+                    else
+                    {
+              
+                        if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
+                    }
                     e.Handled = true;
+
                 }
+
+
             }
         }
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
