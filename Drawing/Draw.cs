@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace DrawingClass
     static public class Draw
     {
 
-        static public Size MeasureText(string text, Font font)
+        static public Size MeasureText(this string text, Font font)
         {
             Size size = System.Windows.Forms.TextRenderer.MeasureText(text, font);
             String[] Str_array = text.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
@@ -32,9 +33,28 @@ namespace DrawingClass
             AxCanvasHDC.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
             AxCanvasHDC.DrawString(_str, 文字字體, new SolidBrush(文字顏色), 文字位置);
         }
+        static public void 文字左上繪製(String _str, PointF 文字位置, Font 文字字體, Color 文字顏色, Color 背景顏色, Graphics AxCanvasHDC)
+        {
+            SizeF 文字面積 = AxCanvasHDC.MeasureString(_str, 文字字體);
+            文字位置 = new PointF((float)文字位置.X * 1, (float)文字位置.Y * 1);
+            AxCanvasHDC.FillRectangle(new SolidBrush(背景顏色), new RectangleF(文字位置, 文字面積));
+            AxCanvasHDC.DrawString(_str, 文字字體, new SolidBrush(文字顏色), 文字位置);
+        }
+        static public void 文字左上繪製(String _str, PointF 文字位置, Font 文字字體, Color 文字顏色, Graphics AxCanvasHDC)
+        {
+            SizeF 文字面積 = AxCanvasHDC.MeasureString(_str, 文字字體);
+            文字位置 = new PointF((float)文字位置.X * 1, (float)文字位置.Y * 1);
+            AxCanvasHDC.FillRectangle(new SolidBrush(Color.Transparent), new RectangleF(文字位置, 文字面積));
+            AxCanvasHDC.DrawString(_str, 文字字體, new SolidBrush(文字顏色), 文字位置);
+        }
         static public void 文字左上繪製(String _str, int Width, PointF 文字位置, Font 文字字體, Color 文字顏色, Graphics g)
         {
             文字左上繪製(_str, Width, 文字位置, 文字字體, 文字顏色, Color.Transparent, g);
+        }
+        static public void 文字左上繪製(String _str, Rectangle rectangle, Font 文字字體, Color 文字顏色, Graphics g)
+        {
+            Size size = System.Windows.Forms.TextRenderer.MeasureText(_str, 文字字體);
+            g.DrawString(_str, 文字字體, new SolidBrush(文字顏色), rectangle, StringFormat.GenericDefault);
         }
         static public void 文字左上繪製(String _str, int Width, PointF 文字位置, int 高度, Font 文字字體, int 文字間距, Color 文字顏色, Color 背景顏色, Graphics g)
         {
@@ -561,7 +581,55 @@ namespace DrawingClass
         {
             AxCanvasHDC.Clear(Color.White);
         }
-        
+
+        static private GraphicsPath GetFigurePath(RectangleF rect, float radius)
+        {
+            return GetFigurePath(rect, radius, 0);
+        }
+        static private GraphicsPath GetFigurePath(RectangleF rect, float radius, int offset)
+        {
+            GraphicsPath path = new GraphicsPath();
+            if (radius <= 0) radius = 1;
+            path.StartFigure();
+            path.AddArc(rect.X + 0, rect.Y + 0, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width + offset - radius, rect.Y + 0, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width + offset - radius, rect.Y + rect.Height + offset - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X + 0, rect.Y + rect.Height + offset - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            return path;
+        }
+        static public void DrawRoundShadow(Graphics g, RectangleF rect, Color ShadowColor, float radius, int width)
+        {
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+            int penWidth = 3;
+            int index = 1;
+            using (Pen pen = new Pen(ShadowColor, penWidth))
+            {
+                int color_temp_R = ShadowColor.R;
+                int offset_color_R = (254 - ShadowColor.R) / (width + penWidth);
+
+                int color_temp_G = ShadowColor.G;
+                int offset_color_G = (254 - ShadowColor.G) / (width + penWidth);
+
+                int color_temp_B = ShadowColor.B;
+                int offset_color_B = (254 - ShadowColor.B) / (width + penWidth);
+
+                for (int i = -penWidth; i < width; i++)
+                {
+                    color_temp_R += offset_color_R;
+                    color_temp_G += offset_color_G;
+                    color_temp_B += offset_color_B;
+                    pen.Color = Color.FromArgb(255, color_temp_R, color_temp_G, color_temp_B);
+                    using (GraphicsPath pathBorder = GetFigurePath(rect, radius, i))
+                    {
+                        g.DrawPath(pen, pathBorder);
+                    }
+                }
+            }
+        }
+
+
         static private double FunctionMsr_Y(double conf0, double conf1, double X)
         {
             double Y;

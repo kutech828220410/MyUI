@@ -564,11 +564,11 @@ namespace Basic
                 }
 
             }
-            if (error_msg != "")
-            {
-                Console.WriteLine(error_msg);
-                return null;
-            }
+            //if (error_msg != "")
+            //{
+            //    Console.WriteLine(error_msg);
+            //    return null;
+            //}
             DataTable dataTable = new DataTable();
             for (int k = 0; k < colnames.Length; k++)
             {
@@ -580,7 +580,14 @@ namespace Basic
                 list_obj.Clear();
                 for (int k = 0; k < colnames.Length; k++)
                 {
-                    list_obj.Add(dt.Rows[i][colnames[k]]);
+                    if (dt.Columns.Contains(colnames[k]))
+                    {
+                        list_obj.Add(dt.Rows[i][colnames[k]]);
+                    }
+                    else
+                    {
+                        list_obj.Add("");
+                    }
                 }
                 dataTable.Rows.Add(list_obj.ToArray());
             }

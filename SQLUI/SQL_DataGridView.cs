@@ -27,7 +27,7 @@ namespace SQLUI
         private bool flag_Refresh = false;
         private CheckBox checkBoxHeader = new CheckBox();
         private bool flag_unCheckedAll = false;
-
+        public bool[] Checked = new bool[] { };
         private int NumOfPageRows
         {
             get
@@ -61,6 +61,8 @@ namespace SQLUI
         public event CheckedChangedEventHandler CheckedChangedEvent;
         public delegate void CellPaintingImageEventHandler(DataGridViewCellPaintingEventArgs e);
         public event CellPaintingImageEventHandler CellPaintingImageEvent;
+        public delegate void RowPostPaintingEventHandler(DataGridViewRowPostPaintEventArgs e);
+        public event RowPostPaintingEventHandler RowPostPaintingEvent;
 
         private delegate void ModuleChangeEventHandler(List<object[]> RowsList);
         private event ModuleChangeEventHandler ModuleChangeEvent;
@@ -83,8 +85,8 @@ namespace SQLUI
             List<int> List_SelectRowindex = this.GetSelectRowsIndex();
             int ScrollingRowIndex = dataGridView.FirstDisplayedScrollingRowIndex;
             SaveDataVal.RowsList = null;
-            SaveDataVal.RowsList = RowsList;          
-
+            SaveDataVal.RowsList = RowsList;
+            this.Checked = new bool[RowsList.Count];
             List<object[]> RowsList_buf = new List<object[]>();
             DateTime Datebuf;
             int Index = 0;
@@ -129,6 +131,7 @@ namespace SQLUI
             }
            
             RowsList = RowsList_buf.DeepClone();
+
             RowsList_buf = null;
             if (dataTable_buffer != null) dataTable_buffer.Dispose();
             dataTable_buffer = new DataTable();
@@ -246,6 +249,7 @@ namespace SQLUI
         private class SaveDataValClass
         {
             public List<object[]> RowsList = new List<object[]>();
+        
             public List<object[]> OtherSaveList = new List<object[]>();
         }
 
@@ -1220,6 +1224,7 @@ namespace SQLUI
                 columnElement.DateType = table.ColumnList[i].DateType;
                 columnElement.OtherType = table.ColumnList[i].OtherType;
                 columnElement.Datalen = (uint)table.ColumnList[i].Num;
+                columnElement.CanEdit = false;
                 this.Columns.Add(columnElement);
             }
             Init();
@@ -3381,6 +3386,7 @@ namespace SQLUI
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
 
+
             if (_顯示CheckBox)
             {
                 if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -3420,6 +3426,11 @@ namespace SQLUI
             }
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
+                if (RowPostPaintingEvent != null)
+                {
+                    e.Handled = true;
+                    return;
+                }
                 if (_顯示CheckBox && e.ColumnIndex == 0)
                 {
                     e.Handled = true;
@@ -3452,7 +3463,6 @@ namespace SQLUI
                         float pX = (float)(e.CellBounds.X + (e.CellBounds.Width - width) / 2);
                         float pY = (float)(e.CellBounds.Y + (e.CellBounds.Height - height) / 2);
 
-                        Console.WriteLine($"width:{width},height:{height},scale:{scale}");
                         if (CellPaintingImageEvent != null) CellPaintingImageEvent(e);
                         e.Graphics.DrawImage(image, pX, pY, width, height);
                     }
@@ -3471,7 +3481,7 @@ namespace SQLUI
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-
+            if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
             if (this.dataGridView.Rows[e.RowIndex].Selected)
             {
                 using (Brush brush = new SolidBrush(Color.FromArgb(137, 91, 163)))

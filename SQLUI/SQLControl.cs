@@ -2217,7 +2217,7 @@ namespace SQLUI
                     }
                     else Name = "(" + serchColumnName[0] + ")";          
                 }
-                Command += Name + " >= " + "'" + serchValue[0] + "'" + " AND " + Name  + "<="+ "'" + serchValue[1] + "'" ;
+                Command += Name + " >= " + "'" + serchValue[0] + "'" + " AND " + Name + "<="+ "'" + serchValue[1] + "'" ;
             }
             else if (_SerchType == SerchType.IN)
             {
