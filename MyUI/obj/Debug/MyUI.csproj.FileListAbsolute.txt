@@ -176,3 +176,4 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.csproj.CoreCompileI
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_AlarmForm.resources

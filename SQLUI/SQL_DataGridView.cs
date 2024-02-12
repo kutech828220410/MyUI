@@ -53,6 +53,8 @@ namespace SQLUI
         public event RowDoubleClickEventHandler RowDoubleClickEvent;
         public delegate void RowEnterEventHandler(object[] RowValue);
         public event RowEnterEventHandler RowEnterEvent;
+        public delegate void RowClickEventHandler(object[] RowValue);
+        public event RowClickEventHandler RowClickEvent;
         public delegate void RowEndEditEventHandler(object[] RowValue, int rowIndex, int colIndex, string value);
         public event RowEndEditEventHandler RowEndEditEvent;
         public delegate void CellValidatingEventHandler(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e);
@@ -1262,7 +1264,7 @@ namespace SQLUI
                 dataGridView.CellEnter += DataGridView_CellEnter;
                 dataGridView.DoubleClick += DataGridView_DoubleClick;
                 dataGridView.CellEndEdit += DataGridView_CellEndEdit;
-               
+                dataGridView.Click += DataGridView_Click;
                 dataGridView.CellValidating += DataGridView_CellValidating;
                 dataGridView.CellValidated += DataGridView_CellValidated;
             }
@@ -1274,7 +1276,7 @@ namespace SQLUI
             this.flag_Init = true;
         }
 
-
+    
 
         public DataTable GetDataTable()
         {
@@ -3271,6 +3273,11 @@ namespace SQLUI
         {
             int SelectRowindex = GetSelectRow();
             this.On_RowEnter(SelectRowindex);
+            object[] value = this.GetRowValues();
+            if (value != null)
+            {
+                if (this.RowClickEvent != null) this.RowClickEvent(value);
+            }
             if (_顯示CheckBox)
             {
                 if (e.RowIndex >= 0 && e.ColumnIndex == 0)
@@ -3560,6 +3567,11 @@ namespace SQLUI
         {
            
         }
+        private void DataGridView_Click(object sender, EventArgs e)
+        {
+          
+        }
+  
         private void CheckBoxHeader_CheckedChanged(object sender, EventArgs e)
         {
             if (!_顯示CheckBox) return;
