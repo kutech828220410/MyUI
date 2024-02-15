@@ -4086,3 +4086,4 @@ C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.dll
 C:\Users\HS\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.pdb
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\obj\Release\TCP.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\PopupControl.dll

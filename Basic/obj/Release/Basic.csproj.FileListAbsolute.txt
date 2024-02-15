@@ -1532,3 +1532,4 @@ C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\HS\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\PopupControl.dll

@@ -73,6 +73,9 @@
     <Reference Include="MVSDKUI">
       <HintPath>..\0.DLL\MVSDKUI.dll</HintPath>
     </Reference>
+    <Reference Include="PopupControl">
+      <HintPath>..\0.DLL\PopupControl.dll</HintPath>
+    </Reference>
     <Reference Include="PortControlUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\PortControlUI.dll</HintPath>
@@ -138,6 +141,18 @@
     </Compile>
     <Compile Include="DateTimeComList.Designer.cs">
       <DependentUpon>DateTimeComList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeIntervelPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateTimeIntervelPicker.Designer.cs">
+      <DependentUpon>DateTimeIntervelPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimeIntervelPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DateTimeIntervelPopup.Designer.cs">
+      <DependentUpon>DateTimeIntervelPopup.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog_AlarmForm.cs">
       <SubType>Form</SubType>
@@ -392,6 +407,12 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimeSetting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TimeSetting.Designer.cs">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Touchch_TextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -423,6 +444,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DateTimeComList.resx">
       <DependentUpon>DateTimeComList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimeIntervelPicker.resx">
+      <DependentUpon>DateTimeIntervelPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DateTimeIntervelPopup.resx">
+      <DependentUpon>DateTimeIntervelPopup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog_AlarmForm.resx">
       <DependentUpon>Dialog_AlarmForm.cs</DependentUpon>
@@ -526,6 +553,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeSetting.resx">
+      <DependentUpon>TimeSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Touchch_TextBox.resx">
       <DependentUpon>Touchch_TextBox.cs</DependentUpon>

@@ -1277,7 +1277,6 @@ namespace SQLUI
         }
 
     
-
         public DataTable GetDataTable()
         {
             return this.GetDataTable(true);
@@ -3074,7 +3073,6 @@ namespace SQLUI
             this.columnHeadersHeight = height;
         }
        
-
         public void ClearGrid()
         {
             List<object[]> RowsList = new List<object[]>();
@@ -3125,7 +3123,6 @@ namespace SQLUI
             }
             return listValue;
         }
-
 
         public List<object[]> GetOtherSaveList()
         {
@@ -3268,8 +3265,7 @@ namespace SQLUI
 
             return string_list.ToArray();
         }
-
-      
+  
         private void DataGridView_DoubleClick(object sender, EventArgs e)
         {
             object[] value = this.GetRowValues();
@@ -3701,10 +3697,6 @@ namespace SQLUI
          
             }
         }
-
-
-   
-      
 
     }
 }

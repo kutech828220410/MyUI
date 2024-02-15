@@ -3526,3 +3526,4 @@ C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyCompl
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\HS\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\PopupControl.dll

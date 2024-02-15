@@ -267,3 +267,7 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.pdb
 C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.Dialog_AlarmForm.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.Dialog_AlarmForm.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPopup.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.TimeSetting.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPicker.resources

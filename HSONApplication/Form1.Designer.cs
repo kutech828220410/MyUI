@@ -35,6 +35,7 @@
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_ScreenPage_main = new MyUI.PLC_ScreenPage();
             this.主畫面 = new System.Windows.Forms.TabPage();
+            this.dateTimeIntervelPicker1 = new MyUI.DateTimeIntervelPicker();
             this.plC_NumBox_po = new MyUI.PLC_NumBox();
             this.rJ_Button_Servo_OFF = new MyUI.RJ_Button();
             this.rJ_Button_Servo_ON = new MyUI.RJ_Button();
@@ -172,6 +173,7 @@
             // 
             // 主畫面
             // 
+            this.主畫面.Controls.Add(this.dateTimeIntervelPicker1);
             this.主畫面.Controls.Add(this.plC_NumBox_po);
             this.主畫面.Controls.Add(this.rJ_Button_Servo_OFF);
             this.主畫面.Controls.Add(this.rJ_Button_Servo_ON);
@@ -188,6 +190,14 @@
             this.主畫面.TabIndex = 2;
             this.主畫面.Text = "主畫面";
             this.主畫面.UseVisualStyleBackColor = true;
+            // 
+            // dateTimeIntervelPicker1
+            // 
+            this.dateTimeIntervelPicker1.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeIntervelPicker1.Location = new System.Drawing.Point(169, 442);
+            this.dateTimeIntervelPicker1.Name = "dateTimeIntervelPicker1";
+            this.dateTimeIntervelPicker1.Size = new System.Drawing.Size(535, 32);
+            this.dateTimeIntervelPicker1.TabIndex = 24;
             // 
             // plC_NumBox_po
             // 
@@ -559,6 +569,7 @@
         private MyUI.RJ_Button rJ_Button_Servo_OFF;
         private MyUI.RJ_Button rJ_Button_Servo_ON;
         private MyUI.PLC_NumBox plC_NumBox_po;
+        private MyUI.DateTimeIntervelPicker dateTimeIntervelPicker1;
     }
 }
 

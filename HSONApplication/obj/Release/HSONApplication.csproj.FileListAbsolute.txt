@@ -4971,3 +4971,4 @@ C:\Users\HS\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj
 C:\Users\User\Desktop\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Release\PopupControl.dll
