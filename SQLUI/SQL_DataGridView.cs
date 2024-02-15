@@ -2514,8 +2514,17 @@ namespace SQLUI
             {
                 if (dataGridView[0, i].Value != null)
                 {
-                    if ((bool)dataGridView[0, i].Value == true) list_value.Add(this.GetRowValues(i));
+                    if ((bool)dataGridView[0, i].Value == true ) list_value.Add(this.GetRowValues(i));
                 }
+            }
+            return list_value;
+        }
+        public List<object[]> Get_All_Checked_RowsValuesEx()
+        {
+            List<object[]> list_value = new List<object[]>();
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                if (Checked[i]) list_value.Add(this.GetRowValues(i));
             }
             return list_value;
         }
