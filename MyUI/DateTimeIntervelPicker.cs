@@ -13,6 +13,9 @@ namespace MyUI
 {
     public partial class DateTimeIntervelPicker : UserControl
     {
+        public delegate void BtnClickHandle(object sender, EventArgs e, DateTime start, DateTime end);
+        public event BtnClickHandle SureClick;
+
         private Popup popup;
         private DateTime startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 00, 00, 00);
         private DateTime endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
@@ -61,6 +64,11 @@ namespace MyUI
             rJ_Lable_結束.Text = endTime.ToDateTimeString();
 
             popup.Hide();
+
+            if (SureClick != null)
+            {
+                SureClick(sender, e, startTime, endTime); 
+            }
         }
 
   

@@ -60,6 +60,7 @@ namespace MyUI
             this._Y_offset = 0;
             this._X_offset = 0;
             this.backColor = bkColor;
+         
         }
         public Dialog_AlarmForm(string title, int time_ms, int x_offset, int y_offset,Color bkColor)
         {
@@ -106,7 +107,9 @@ namespace MyUI
 
         private void Dialog_AlarmForm_Load(object sender, EventArgs e)
         {
+            this.rJ_Lable1.BackgroundColor = this.backColor;
             this.rJ_Lable1.Text = _title;
+       
             this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 + _X_offset, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 + _Y_offset);
 
             MyThread_program = new MyThread();
