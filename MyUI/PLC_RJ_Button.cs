@@ -664,6 +664,7 @@ namespace MyUI
                     this.Text = this.ON_文字內容;
                     this.Font = ON_文字字體;
                     this.ForeColor = ON_文字顏色;
+                    this.BackgroundColor = ON_背景顏色;
                     this.BorderSize = on_BorderSize;
                 }));
             }
@@ -673,6 +674,7 @@ namespace MyUI
                 this.Text = this.ON_文字內容;
                 this.Font = ON_文字字體;
                 this.ForeColor = ON_文字顏色;
+                this.BackgroundColor = ON_背景顏色;
                 this.BorderSize = on_BorderSize;
             }
 
@@ -687,6 +689,7 @@ namespace MyUI
                     this.Text = this.OFF_文字內容;
                     this.Font = OFF_文字字體;
                     this.ForeColor = OFF_文字顏色;
+                    this.BackgroundColor = OFF_背景顏色;
                     this.BorderSize = 0;
                 }));
             }
@@ -696,6 +699,7 @@ namespace MyUI
                 this.Text = this.OFF_文字內容;
                 this.Font = OFF_文字字體;
                 this.ForeColor = OFF_文字顏色;
+                this.BackgroundColor = OFF_背景顏色;
                 this.BorderSize = 0;
             }
         }
