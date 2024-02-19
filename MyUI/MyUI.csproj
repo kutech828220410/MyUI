@@ -425,6 +425,12 @@
     <Compile Include="TransparentPanel.Designer.cs">
       <DependentUpon>TransparentPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_NumPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_NumPanel.Designer.cs">
+      <DependentUpon>UC_NumPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="字母鍵盤.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -559,6 +565,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Touchch_TextBox.resx">
       <DependentUpon>Touchch_TextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_NumPanel.resx">
+      <DependentUpon>UC_NumPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="字母鍵盤.resx">
       <DependentUpon>字母鍵盤.cs</DependentUpon>

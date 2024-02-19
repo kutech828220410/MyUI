@@ -334,28 +334,16 @@ namespace MyUI
         {
             OnClick_Enter();
         }
-
-        private void Event_KeyDown(object sender, KeyEventArgs e)
+        private void rJ_Button_X_MouseDownEvent(MouseEventArgs mevent)
         {
-           
-        }
-        private void rJ_TextBox_Value_Leave(object sender, EventArgs e)
-        {
+            OnClick_Cancel();
         }
 
         private void Dialog_NumPannel_FormClosed(object sender, FormClosedEventArgs e)
         {
            // this.Close();
         }
-
-        private void rJ_Button_X_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void rJ_Button_X_MouseDownEvent(MouseEventArgs mevent)
-        {
-            OnClick_Cancel();
-        }
+ 
+       
     }
 }

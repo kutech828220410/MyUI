@@ -1,16 +1,17 @@
-﻿namespace MyUI
+﻿
+namespace MyUI
 {
-    partial class Dialog_NumPannel
+    partial class UC_NumPanel
     {
-        /// <summary>
-        /// Required designer variable.
+        /// <summary> 
+        /// 設計工具所需的變數。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
+        /// <summary> 
+        /// 清除任何使用中的資源。
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">如果應該處置受控資源則為 true，否則為 false。</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,11 +21,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region 元件設計工具產生的程式碼
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// <summary> 
+        /// 此為設計工具支援所需的方法 - 請勿使用程式碼編輯器修改
+        /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent()
         {
@@ -33,6 +34,7 @@
             this.rJ_Lable_Title = new MyUI.RJ_Lable();
             this.rJ_Button_X = new MyUI.RJ_Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rJ_TextBox_Value = new MyUI.RJ_TextBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.rJ_Button_1 = new MyUI.RJ_Button();
             this.rJ_Button_2 = new MyUI.RJ_Button();
@@ -50,7 +52,6 @@
             this.rJ_Button_0 = new MyUI.RJ_Button();
             this.rJ_Button15 = new MyUI.RJ_Button();
             this.rJ_Button_Enter = new MyUI.RJ_Button();
-            this.rJ_TextBox_Value = new MyUI.RJ_TextBox();
             this.panel_top.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,10 +64,10 @@
             this.panel_top.Controls.Add(this.rJ_Button_X);
             this.panel_top.Controls.Add(this.panel2);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Location = new System.Drawing.Point(5, 5);
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(402, 33);
-            this.panel_top.TabIndex = 1;
+            this.panel_top.Size = new System.Drawing.Size(397, 33);
+            this.panel_top.TabIndex = 2;
             // 
             // rJ_Lable_Content
             // 
@@ -84,7 +85,7 @@
             this.rJ_Lable_Content.Name = "rJ_Lable_Content";
             this.rJ_Lable_Content.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable_Content.ShadowSize = 0;
-            this.rJ_Lable_Content.Size = new System.Drawing.Size(317, 12);
+            this.rJ_Lable_Content.Size = new System.Drawing.Size(312, 12);
             this.rJ_Lable_Content.TabIndex = 18;
             this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
@@ -105,7 +106,7 @@
             this.rJ_Lable_Title.Name = "rJ_Lable_Title";
             this.rJ_Lable_Title.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable_Title.ShadowSize = 0;
-            this.rJ_Lable_Title.Size = new System.Drawing.Size(317, 11);
+            this.rJ_Lable_Title.Size = new System.Drawing.Size(312, 11);
             this.rJ_Lable_Title.TabIndex = 17;
             this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
@@ -125,7 +126,7 @@
             this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_X.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_X.GUID = "";
-            this.rJ_Button_X.Location = new System.Drawing.Point(317, 0);
+            this.rJ_Button_X.Location = new System.Drawing.Point(312, 0);
             this.rJ_Button_X.Name = "rJ_Button_X";
             this.rJ_Button_X.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_X.ShadowSize = 0;
@@ -136,15 +137,40 @@
             this.rJ_Button_X.Text = "X";
             this.rJ_Button_X.TextColor = System.Drawing.Color.White;
             this.rJ_Button_X.UseVisualStyleBackColor = false;
-            this.rJ_Button_X.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_X_MouseDownEvent);
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(402, 10);
+            this.panel2.Size = new System.Drawing.Size(397, 10);
             this.panel2.TabIndex = 0;
+            // 
+            // rJ_TextBox_Value
+            // 
+            this.rJ_TextBox_Value.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_Value.BorderColor = System.Drawing.Color.Black;
+            this.rJ_TextBox_Value.BorderFocusColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_Value.BorderRadius = 0;
+            this.rJ_TextBox_Value.BorderSize = 2;
+            this.rJ_TextBox_Value.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_TextBox_Value.Enabled = false;
+            this.rJ_TextBox_Value.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_Value.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_Value.GUID = "";
+            this.rJ_TextBox_Value.Location = new System.Drawing.Point(0, 33);
+            this.rJ_TextBox_Value.Multiline = false;
+            this.rJ_TextBox_Value.Name = "rJ_TextBox_Value";
+            this.rJ_TextBox_Value.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_Value.PassWordChar = false;
+            this.rJ_TextBox_Value.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox_Value.PlaceholderText = "";
+            this.rJ_TextBox_Value.ShowTouchPannel = false;
+            this.rJ_TextBox_Value.Size = new System.Drawing.Size(397, 78);
+            this.rJ_TextBox_Value.TabIndex = 3;
+            this.rJ_TextBox_Value.TextAlgin = System.Windows.Forms.HorizontalAlignment.Right;
+            this.rJ_TextBox_Value.Texts = "";
+            this.rJ_TextBox_Value.UnderlineStyle = false;
             // 
             // flowLayoutPanel1
             // 
@@ -166,10 +192,10 @@
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button15);
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button_Enter);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(5, 116);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 111);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(402, 353);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(397, 339);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // rJ_Button_1
             // 
@@ -196,7 +222,6 @@
             this.rJ_Button_1.Text = "1";
             this.rJ_Button_1.TextColor = System.Drawing.Color.White;
             this.rJ_Button_1.UseVisualStyleBackColor = false;
-            this.rJ_Button_1.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_1_MouseDownEvent);
             // 
             // rJ_Button_2
             // 
@@ -223,7 +248,6 @@
             this.rJ_Button_2.Text = "2";
             this.rJ_Button_2.TextColor = System.Drawing.Color.White;
             this.rJ_Button_2.UseVisualStyleBackColor = false;
-            this.rJ_Button_2.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_2_MouseDownEvent);
             // 
             // rJ_Button_3
             // 
@@ -250,7 +274,6 @@
             this.rJ_Button_3.Text = "3";
             this.rJ_Button_3.TextColor = System.Drawing.Color.White;
             this.rJ_Button_3.UseVisualStyleBackColor = false;
-            this.rJ_Button_3.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_3_MouseDownEvent);
             // 
             // rJ_Button_BackSpace
             // 
@@ -277,7 +300,6 @@
             this.rJ_Button_BackSpace.Text = "←";
             this.rJ_Button_BackSpace.TextColor = System.Drawing.Color.White;
             this.rJ_Button_BackSpace.UseVisualStyleBackColor = false;
-            this.rJ_Button_BackSpace.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_BackSpace_MouseDownEvent);
             // 
             // rJ_Button_4
             // 
@@ -304,7 +326,6 @@
             this.rJ_Button_4.Text = "4";
             this.rJ_Button_4.TextColor = System.Drawing.Color.White;
             this.rJ_Button_4.UseVisualStyleBackColor = false;
-            this.rJ_Button_4.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_4_MouseDownEvent);
             // 
             // rJ_Button_5
             // 
@@ -331,7 +352,6 @@
             this.rJ_Button_5.Text = "5";
             this.rJ_Button_5.TextColor = System.Drawing.Color.White;
             this.rJ_Button_5.UseVisualStyleBackColor = false;
-            this.rJ_Button_5.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_5_MouseDownEvent);
             // 
             // rJ_Button_6
             // 
@@ -358,7 +378,6 @@
             this.rJ_Button_6.Text = "6";
             this.rJ_Button_6.TextColor = System.Drawing.Color.White;
             this.rJ_Button_6.UseVisualStyleBackColor = false;
-            this.rJ_Button_6.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_6_MouseDownEvent);
             // 
             // rJ_Button_CE
             // 
@@ -385,7 +404,6 @@
             this.rJ_Button_CE.Text = "CE";
             this.rJ_Button_CE.TextColor = System.Drawing.Color.White;
             this.rJ_Button_CE.UseVisualStyleBackColor = false;
-            this.rJ_Button_CE.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_CE_MouseDownEvent);
             // 
             // rJ_Button_7
             // 
@@ -412,7 +430,6 @@
             this.rJ_Button_7.Text = "7";
             this.rJ_Button_7.TextColor = System.Drawing.Color.White;
             this.rJ_Button_7.UseVisualStyleBackColor = false;
-            this.rJ_Button_7.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_7_MouseDownEvent);
             // 
             // rJ_Button_8
             // 
@@ -439,7 +456,6 @@
             this.rJ_Button_8.Text = "8";
             this.rJ_Button_8.TextColor = System.Drawing.Color.White;
             this.rJ_Button_8.UseVisualStyleBackColor = false;
-            this.rJ_Button_8.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_8_MouseDownEvent);
             // 
             // rJ_Button_9
             // 
@@ -466,7 +482,6 @@
             this.rJ_Button_9.Text = "9";
             this.rJ_Button_9.TextColor = System.Drawing.Color.White;
             this.rJ_Button_9.UseVisualStyleBackColor = false;
-            this.rJ_Button_9.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_9_MouseDownEvent);
             // 
             // rJ_Button_Cancel
             // 
@@ -493,7 +508,6 @@
             this.rJ_Button_Cancel.Text = "Cancel";
             this.rJ_Button_Cancel.TextColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.UseVisualStyleBackColor = false;
-            this.rJ_Button_Cancel.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_Cancel_MouseDownEvent);
             // 
             // rJ_Button13
             // 
@@ -545,7 +559,6 @@
             this.rJ_Button_0.Text = "0";
             this.rJ_Button_0.TextColor = System.Drawing.Color.White;
             this.rJ_Button_0.UseVisualStyleBackColor = false;
-            this.rJ_Button_0.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_0_MouseDownEvent);
             // 
             // rJ_Button15
             // 
@@ -597,52 +610,16 @@
             this.rJ_Button_Enter.Text = "Enter";
             this.rJ_Button_Enter.TextColor = System.Drawing.Color.White;
             this.rJ_Button_Enter.UseVisualStyleBackColor = false;
-            this.rJ_Button_Enter.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_Enter_MouseDownEvent);
             // 
-            // rJ_TextBox_Value
-            // 
-            this.rJ_TextBox_Value.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_TextBox_Value.BorderColor = System.Drawing.Color.Black;
-            this.rJ_TextBox_Value.BorderFocusColor = System.Drawing.Color.DimGray;
-            this.rJ_TextBox_Value.BorderRadius = 0;
-            this.rJ_TextBox_Value.BorderSize = 2;
-            this.rJ_TextBox_Value.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rJ_TextBox_Value.Enabled = false;
-            this.rJ_TextBox_Value.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_TextBox_Value.ForeColor = System.Drawing.Color.DimGray;
-            this.rJ_TextBox_Value.GUID = "";
-            this.rJ_TextBox_Value.Location = new System.Drawing.Point(5, 38);
-            this.rJ_TextBox_Value.Multiline = false;
-            this.rJ_TextBox_Value.Name = "rJ_TextBox_Value";
-            this.rJ_TextBox_Value.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rJ_TextBox_Value.PassWordChar = false;
-            this.rJ_TextBox_Value.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rJ_TextBox_Value.PlaceholderText = "";
-            this.rJ_TextBox_Value.ShowTouchPannel = false;
-            this.rJ_TextBox_Value.Size = new System.Drawing.Size(402, 78);
-            this.rJ_TextBox_Value.TabIndex = 0;
-            this.rJ_TextBox_Value.TextAlgin = System.Windows.Forms.HorizontalAlignment.Right;
-            this.rJ_TextBox_Value.Texts = "";
-            this.rJ_TextBox_Value.UnderlineStyle = false;
-            // 
-            // Dialog_NumPannel
+            // UC_NumPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(412, 474);
-            this.ControlBox = false;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rJ_TextBox_Value);
             this.Controls.Add(this.panel_top);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Dialog_NumPannel";
-            this.Padding = new System.Windows.Forms.Padding(5);
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TopMost = true;
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dialog_NumPannel_FormClosed);
-            this.Load += new System.EventHandler(this.Dialog_NumPannel_Load);
+            this.Name = "UC_NumPanel";
+            this.Size = new System.Drawing.Size(397, 450);
             this.panel_top.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -651,10 +628,14 @@
 
         #endregion
 
-        private RJ_TextBox rJ_TextBox_Value;
         private System.Windows.Forms.Panel panel_top;
-        private RJ_Button rJ_Button_1;
+        private RJ_Lable rJ_Lable_Content;
+        private RJ_Lable rJ_Lable_Title;
+        private RJ_Button rJ_Button_X;
+        private System.Windows.Forms.Panel panel2;
+        private RJ_TextBox rJ_TextBox_Value;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private RJ_Button rJ_Button_1;
         private RJ_Button rJ_Button_2;
         private RJ_Button rJ_Button_3;
         private RJ_Button rJ_Button_BackSpace;
@@ -670,9 +651,5 @@
         private RJ_Button rJ_Button_0;
         private RJ_Button rJ_Button15;
         private RJ_Button rJ_Button_Enter;
-        private RJ_Button rJ_Button_X;
-        private System.Windows.Forms.Panel panel2;
-        private RJ_Lable rJ_Lable_Title;
-        private RJ_Lable rJ_Lable_Content;
     }
 }

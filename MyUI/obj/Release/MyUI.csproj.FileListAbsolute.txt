@@ -271,3 +271,4 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelP
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.TimeSetting.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPicker.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.UC_NumPanel.resources

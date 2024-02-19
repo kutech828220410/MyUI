@@ -621,7 +621,6 @@ namespace MyUI
             this.Focus();
             this.ShowKeyBoard(new Point(System.Windows.Forms.Cursor.Position.X, System.Windows.Forms.Cursor.Position.Y));
         }
-
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (((int)e.KeyChar <= 57 && (int)e.KeyChar >= 48) || (int)e.KeyChar == 8) // 8 > BackSpace
