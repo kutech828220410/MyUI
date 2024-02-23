@@ -12,7 +12,7 @@ using MyUI;
 
 namespace MyUI
 {
-    public partial class Dialog_AlarmForm : Form
+    public partial class Dialog_AlarmForm : MyDialog
     {
         public string Value = "";
         private MyThread MyThread_program;

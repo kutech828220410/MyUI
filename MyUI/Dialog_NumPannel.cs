@@ -11,7 +11,7 @@ using Basic;
 using DrawingClass;
 namespace MyUI
 {
-    public partial class Dialog_NumPannel : Form
+    public partial class Dialog_NumPannel : MyDialog
     {
         public static Form form;
         private Point location = new Point(0, 0);

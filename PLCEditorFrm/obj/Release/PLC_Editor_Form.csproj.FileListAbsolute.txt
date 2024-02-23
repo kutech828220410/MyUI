@@ -647,3 +647,6 @@ C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.Co
 C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\HS\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\Microsoft.mshtml.dll

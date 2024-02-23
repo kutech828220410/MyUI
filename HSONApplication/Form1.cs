@@ -39,7 +39,7 @@ namespace HSONApplication
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
 
-            mySerialPort_delta.Init("COM6", 38400, 8, System.IO.Ports.Parity.None, System.IO.Ports.StopBits.One);
+            //mySerialPort_delta.Init("COM6", 38400, 8, System.IO.Ports.Parity.None, System.IO.Ports.StopBits.One);
             plC_UI_Init1.Add_Method(sub_program);
             this.rJ_Button_UJOG.MouseDownEvent += RJ_Button_UJOG_MouseDownEvent; 
             this.rJ_Button_DJOG.MouseDownEvent += RJ_Button_DJOG_MouseDownEvent;
@@ -53,7 +53,30 @@ namespace HSONApplication
             this.rJ_Button_Servo_OFF.MouseDownEvent += RJ_Button_Servo_OFF_MouseDownEvent;
 
             Dialog_AlarmForm.form = this.FindForm();
+
+            List<StepEntity> list = new List<StepEntity>();
+            list.Add(new StepEntity("1", "新开单", 1, "这里是该步骤的描述信息", eumStepState.Completed, null));
+            list.Add(new StepEntity("2", "主管审批", 2, "这里是该步骤的描述信息", eumStepState.Waiting, null));
+            list.Add(new StepEntity("3", "总经理审批", 3, "这里是该步骤的描述信息", eumStepState.OutTime, null));
+            list.Add(new StepEntity("2", "完成", 4, "这里是该步骤的描述信息", eumStepState.Waiting, null));
+            this.stepViewer1.CurrentStep = 0;
+
+            this.stepViewer1.ListDataSource = list;
+            this.button_pre.Click += Button_pre_Click;
+            this.button_next.Click += Button_next_Click;
         }
+
+        private void Button_next_Click(object sender, EventArgs e)
+        {
+            this.stepViewer1.Next();
+        }
+        private void Button_pre_Click(object sender, EventArgs e)
+        {
+            this.stepViewer1.Pre();
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
+            dialog_NumPannel.ShowDialog();
+        }
+
         private void RJ_Button_Init_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_備藥通知.Get_All_Checked_RowsValues();
@@ -61,10 +84,10 @@ namespace HSONApplication
 
         private void sub_program()
         {
-            if(DeltaMotor485_port[1] != null)
-            {
-                plC_NumBox_po.Value = DeltaMotor485_port[1].CommandPosition;
-            }
+            //if(DeltaMotor485_port[1] != null)
+            //{
+            //    plC_NumBox_po.Value = DeltaMotor485_port[1].CommandPosition;
+            //}
      
         }
         private void RJ_Button_Servo_OFF_MouseDownEvent(MouseEventArgs mevent)

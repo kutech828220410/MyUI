@@ -2487,3 +2487,6 @@ C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\HS\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\Microsoft.mshtml.dll

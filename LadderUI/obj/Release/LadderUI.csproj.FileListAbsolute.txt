@@ -6459,3 +6459,6 @@ C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\HS\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\Microsoft.mshtml.dll

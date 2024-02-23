@@ -2429,8 +2429,9 @@ namespace SQLUI
                 this.ResumeDrawing();
                 dataGridView.ResumeDrawing();
             }));
-          
+
             if (RowEnterEvent != null) RowEnterEvent(this.GetRowValues(index));
+            if (RowClickEvent != null) RowClickEvent(this.GetRowValues(index));
         }
 
         public void ClearSelection()

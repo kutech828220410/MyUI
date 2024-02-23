@@ -3923,3 +3923,6 @@ C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyCom
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll

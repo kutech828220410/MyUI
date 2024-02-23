@@ -272,3 +272,12 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.TimeSetting.resou
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPicker.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.UC_NumPanel.resources
+C:\Users\User\Desktop\MyUI\MyUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPicker.resources
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.DateTimeIntervelPopup.resources
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.TimeSetting.resources
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.UC_NumPanel.resources
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.StepEntity.resources
+C:\Users\User\Desktop\MyUI\MyUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\MyUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.MyDialog.resources

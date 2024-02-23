@@ -5133,3 +5133,6 @@ C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\HS\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\Microsoft.mshtml.dll

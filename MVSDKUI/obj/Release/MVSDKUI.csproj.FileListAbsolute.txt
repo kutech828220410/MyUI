@@ -960,3 +960,6 @@ C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll

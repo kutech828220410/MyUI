@@ -1287,3 +1287,6 @@ C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.cspr
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll

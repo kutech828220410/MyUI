@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 namespace MyUI
 {
-    public partial class LoadingForm : Form
+    public partial class LoadingForm : MyDialog
     {
         public delegate void MethodEventHandler();
         public event MethodEventHandler MethodEvent;

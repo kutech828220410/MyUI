@@ -2368,3 +2368,6 @@ C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyCompl
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\HS\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\Microsoft.mshtml.dll

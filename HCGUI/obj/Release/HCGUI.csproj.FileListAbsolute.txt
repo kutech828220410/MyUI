@@ -1055,3 +1055,6 @@ C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\HS\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll

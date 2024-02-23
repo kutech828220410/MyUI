@@ -43,6 +43,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
+    <Reference Include="CSkin">
+      <HintPath>..\0.DLL\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\DrawingClass.dll</HintPath>
@@ -177,6 +180,12 @@
     </Compile>
     <Compile Include="LScrollBar.cs" />
     <Compile Include="MyContextMenuStrip.cs" />
+    <Compile Include="MyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyDialog.Designer.cs">
+      <DependentUpon>MyDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="PLC_CheckDeviceTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -407,6 +416,10 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="StepViewer.cs" />
+    <Compile Include="StepViewer.Designer.cs">
+      <DependentUpon>StepViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="TimeSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -468,6 +481,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoadingForm.resx">
       <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyDialog.resx">
+      <DependentUpon>MyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PLC_CheckDeviceTextBox.resx">
       <DependentUpon>PLC_CheckDeviceTextBox.cs</DependentUpon>
@@ -559,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StepViewer.resx">
+      <DependentUpon>StepViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TimeSetting.resx">
       <DependentUpon>TimeSetting.cs</DependentUpon>

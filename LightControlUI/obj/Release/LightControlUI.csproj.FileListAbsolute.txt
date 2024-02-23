@@ -1503,3 +1503,6 @@ C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.C
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\PopupControl.dll
+C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\CSkin.dll
+C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
