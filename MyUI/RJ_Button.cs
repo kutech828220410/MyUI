@@ -439,12 +439,8 @@ namespace MyUI
             {
                 if(this.MouseDownEvent != null || this.MouseDownEventEx != null)
                 {
-                    LoadingForm loadingForm = LoadingForm.getLoading();
-                    Task.Run(new Action(delegate
-                    {
-                        loadingForm.ShowDialog();
-                    }));
-              
+                    LoadingForm.ShowLoadingForm();
+
                 }
             }
             if (buttonType == ButtonType.Push)
@@ -472,9 +468,9 @@ namespace MyUI
                             }
                         }));
                     }
-                    if (myTimer.GetTickTime() < 2000 && showLoadingForm)
+                    if (myTimer.GetTickTime() < 1000 && showLoadingForm)
                     {
-                        System.Threading.Thread.Sleep(2000 - (int)myTimer.GetTickTime());
+                        System.Threading.Thread.Sleep(1000 - (int)myTimer.GetTickTime());
                     }
 
                 }));
@@ -502,9 +498,9 @@ namespace MyUI
                             }
                         }));
                     }
-                    if (myTimer.GetTickTime() < 2000 && showLoadingForm)
+                    if (myTimer.GetTickTime() < 1000 && showLoadingForm)
                     {
-                        System.Threading.Thread.Sleep(2000 - (int)myTimer.GetTickTime());
+                        System.Threading.Thread.Sleep(1000 - (int)myTimer.GetTickTime());
                     }
                     flag_MouseDownEvent_done = false;
 

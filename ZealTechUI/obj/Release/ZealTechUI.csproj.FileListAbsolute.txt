@@ -2371,3 +2371,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.cspro
 C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\Microsoft.mshtml.dll

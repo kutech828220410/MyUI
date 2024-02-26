@@ -238,7 +238,6 @@ namespace MyUI
                 this.StartPosition = FormStartPosition.WindowsDefaultLocation;
                 base.Location = this.location;
             }
-
         }
 
 

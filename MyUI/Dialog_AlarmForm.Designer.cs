@@ -68,6 +68,7 @@ namespace MyUI
             this.Name = "Dialog_AlarmForm";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.ShowInTaskbar = false;
+            this.Special_Time = 100;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.ResumeLayout(false);
 

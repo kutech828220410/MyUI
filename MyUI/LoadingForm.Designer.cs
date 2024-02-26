@@ -43,9 +43,9 @@ namespace MyUI
             // 
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(4, 28);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 95);
+            this.panel1.Size = new System.Drawing.Size(143, 99);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -65,9 +65,9 @@ namespace MyUI
             this.panel2.Controls.Add(this.lbl_description);
             this.panel2.Controls.Add(this.lbl_caption);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(147, 28);
+            this.panel2.Location = new System.Drawing.Point(143, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 95);
+            this.panel2.Size = new System.Drawing.Size(255, 99);
             this.panel2.TabIndex = 1;
             // 
             // lbl_description
@@ -95,13 +95,14 @@ namespace MyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(398, 127);
+            this.ClientSize = new System.Drawing.Size(398, 99);
+            this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LoadingForm";
-            this.ShadowWidth = 10;
+            this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "LoadingForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);

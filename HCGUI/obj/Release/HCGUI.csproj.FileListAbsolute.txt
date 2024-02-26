@@ -1058,3 +1058,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Assembly
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll

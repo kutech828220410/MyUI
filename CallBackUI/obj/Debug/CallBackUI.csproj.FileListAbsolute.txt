@@ -165,3 +165,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.csproj.
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.pdb
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Microsoft.mshtml.dll

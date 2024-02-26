@@ -10,12 +10,12 @@ using System.Windows.Forms;
 using System.Threading;
 namespace MyUI
 {
-    public partial class LoadingForm : MyDialog
+    public partial class LoadingForm : Form
     {
         public delegate void MethodEventHandler();
         public event MethodEventHandler MethodEvent;
-
-        private static LoadingForm pLoading = new LoadingForm();
+        static public bool IsShown = false;
+        static private  LoadingForm pLoading = new LoadingForm();
         delegate void SetTextCallback(string title, string caption, string description);
         delegate void CloseFormCallback();
 
@@ -34,7 +34,12 @@ namespace MyUI
             LoadingForm loadingForm = LoadingForm.getLoading();
             Task.Run(new Action(delegate
             {
-                loadingForm.ShowDialog();
+                if(IsShown == false)
+                {
+                    IsShown = true;
+                    loadingForm.ShowDialog();
+                }
+   
             }));
         }
         public static void CloseLoadingForm()
@@ -46,6 +51,7 @@ namespace MyUI
             if (pLoading.IsDisposed)
             {
                 pLoading = new LoadingForm();
+                pLoading.Shown += PLoading_Shown;
                 return pLoading;
             }
             else
@@ -53,6 +59,35 @@ namespace MyUI
                 return pLoading;
             }
         }
+
+        private static void PLoading_Shown(object sender, EventArgs e)
+        {
+            //for (byte i = 0; i < 200; i++)
+            //{
+            //    pLoading.Opacity = 0.004 * i;
+            //    System.Threading.Thread.Sleep(1);
+            //    Application.DoEvents();
+            //}
+
+
+            int cnt = 0;
+            Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(1);
+            myTimer.StartTickTime();
+            while (true)
+            {
+                if (cnt >= 200) break;
+                if (myTimer.IsTimeOut())
+                {
+                    pLoading.Opacity = 0 + 0.04 * cnt;
+                    myTimer.TickStop();
+                    myTimer.StartTickTime(1);
+                    Application.DoEvents();
+                    cnt++;
+                }
+            }
+
+        }
+
         public void SetCaptionAndDescription(string title, string caption, string description)
         {
             if (this.InvokeRequired && pLoading.lbl_caption.InvokeRequired && pLoading.lbl_description.InvokeRequired)
@@ -86,6 +121,7 @@ namespace MyUI
         }
         public void mCloseLoadingForm()
         {
+            if (IsShown == false) return;
             if (this.InvokeRequired)
             {
                 CloseFormCallback d = new CloseFormCallback(mCloseLoadingForm);
@@ -93,16 +129,37 @@ namespace MyUI
             }
             else
             {
-                if (!this.IsDisposed)
-                {
-                    this.Dispose(true);
-                }
+                pLoading.Close();
+                IsShown = false;
+
             }
         }
 
 
         private void LoadingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            int cnt = 0;
+            Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(1);
+            myTimer.StartTickTime();
+            while (true)
+            {
+                if (cnt >= 200) break;
+                if (myTimer.IsTimeOut())
+                {
+                    pLoading.Opacity = 0.8 - 0.004 * cnt;
+                    myTimer.TickStop();
+                    myTimer.StartTickTime(1);
+                    Application.DoEvents();
+                    cnt++;
+                }
+            }
+
+            //for (byte i = 0; i < 200; i++)
+            //{
+            //    pLoading.Opacity = 0.8 - 0.004 * i;
+            //    System.Threading.Thread.Sleep(1);
+            //    Application.DoEvents();
+            //}
             if (!this.IsDisposed)
             {
                 this.Dispose(true);

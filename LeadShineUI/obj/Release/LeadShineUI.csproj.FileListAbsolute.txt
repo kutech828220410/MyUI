@@ -3926,3 +3926,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csp
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll

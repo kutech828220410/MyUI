@@ -1290,3 +1290,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortCon
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll

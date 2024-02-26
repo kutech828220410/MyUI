@@ -73,7 +73,7 @@ namespace HSONApplication
         private void Button_pre_Click(object sender, EventArgs e)
         {
             this.stepViewer1.Pre();
-            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("test!!!");
             dialog_NumPannel.ShowDialog();
         }
 

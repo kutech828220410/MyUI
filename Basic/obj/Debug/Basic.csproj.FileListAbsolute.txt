@@ -155,3 +155,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Debug\Basic.csproj.CoreCompil
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Debug\Basic.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Debug\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Debug\Basic.pdb
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\Microsoft.mshtml.dll

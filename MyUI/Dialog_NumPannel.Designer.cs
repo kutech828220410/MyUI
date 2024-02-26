@@ -63,9 +63,9 @@
             this.panel_top.Controls.Add(this.rJ_Button_X);
             this.panel_top.Controls.Add(this.panel2);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Location = new System.Drawing.Point(9, 33);
+            this.panel_top.Location = new System.Drawing.Point(9, 13);
             this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(407, 33);
+            this.panel_top.Size = new System.Drawing.Size(399, 52);
             this.panel_top.TabIndex = 1;
             // 
             // rJ_Lable_Content
@@ -84,7 +84,7 @@
             this.rJ_Lable_Content.Name = "rJ_Lable_Content";
             this.rJ_Lable_Content.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable_Content.ShadowSize = 0;
-            this.rJ_Lable_Content.Size = new System.Drawing.Size(322, 12);
+            this.rJ_Lable_Content.Size = new System.Drawing.Size(314, 31);
             this.rJ_Lable_Content.TabIndex = 18;
             this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
@@ -105,7 +105,7 @@
             this.rJ_Lable_Title.Name = "rJ_Lable_Title";
             this.rJ_Lable_Title.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable_Title.ShadowSize = 0;
-            this.rJ_Lable_Title.Size = new System.Drawing.Size(322, 11);
+            this.rJ_Lable_Title.Size = new System.Drawing.Size(314, 11);
             this.rJ_Lable_Title.TabIndex = 17;
             this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
@@ -125,12 +125,12 @@
             this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_X.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_X.GUID = "";
-            this.rJ_Button_X.Location = new System.Drawing.Point(322, 0);
+            this.rJ_Button_X.Location = new System.Drawing.Point(314, 0);
             this.rJ_Button_X.Name = "rJ_Button_X";
             this.rJ_Button_X.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_X.ShadowSize = 0;
             this.rJ_Button_X.ShowLoadingForm = false;
-            this.rJ_Button_X.Size = new System.Drawing.Size(85, 23);
+            this.rJ_Button_X.Size = new System.Drawing.Size(85, 42);
             this.rJ_Button_X.State = false;
             this.rJ_Button_X.TabIndex = 15;
             this.rJ_Button_X.Text = "X";
@@ -141,9 +141,9 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 23);
+            this.panel2.Location = new System.Drawing.Point(0, 42);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(407, 10);
+            this.panel2.Size = new System.Drawing.Size(399, 10);
             this.panel2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -166,9 +166,9 @@
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button15);
             this.flowLayoutPanel1.Controls.Add(this.rJ_Button_Enter);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 144);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(9, 143);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(407, 335);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(399, 329);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // rJ_Button_1
@@ -611,7 +611,7 @@
             this.rJ_TextBox_Value.Font = new System.Drawing.Font("微軟正黑體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_Value.ForeColor = System.Drawing.Color.DimGray;
             this.rJ_TextBox_Value.GUID = "";
-            this.rJ_TextBox_Value.Location = new System.Drawing.Point(9, 66);
+            this.rJ_TextBox_Value.Location = new System.Drawing.Point(9, 65);
             this.rJ_TextBox_Value.Multiline = false;
             this.rJ_TextBox_Value.Name = "rJ_TextBox_Value";
             this.rJ_TextBox_Value.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -619,7 +619,7 @@
             this.rJ_TextBox_Value.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.rJ_TextBox_Value.PlaceholderText = "";
             this.rJ_TextBox_Value.ShowTouchPannel = false;
-            this.rJ_TextBox_Value.Size = new System.Drawing.Size(407, 78);
+            this.rJ_TextBox_Value.Size = new System.Drawing.Size(399, 78);
             this.rJ_TextBox_Value.TabIndex = 0;
             this.rJ_TextBox_Value.TextAlgin = System.Windows.Forms.HorizontalAlignment.Right;
             this.rJ_TextBox_Value.Texts = "";
@@ -630,11 +630,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(425, 488);
+            this.CanResize = false;
+            this.CaptionHeight = 4;
+            this.ClientSize = new System.Drawing.Size(417, 481);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rJ_TextBox_Value);
             this.Controls.Add(this.panel_top);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.DropBack = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Mobile = CCWin.MobileStyle.None;
             this.Name = "Dialog_NumPannel";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Radius = 20;

@@ -177,3 +177,12 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Debug\MyUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_AlarmForm.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.DateTimeIntervelPicker.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.DateTimeIntervelPopup.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.MyDialog.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.StepEntity.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.TimeSetting.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.UC_NumPanel.resources
