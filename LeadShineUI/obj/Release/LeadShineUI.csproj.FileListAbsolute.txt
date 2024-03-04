@@ -3817,7 +3817,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.Text.Jso
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\FontAwesome.Sharp.dll
@@ -3929,3 +3928,4 @@ C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\TCP.dll

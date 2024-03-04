@@ -70,3 +70,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Debug\DeltaMotor485.c
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Debug\DeltaMotor485.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Debug\DeltaMotor485.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Debug\DeltaMotor485.pdb
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Microsoft.mshtml.dll

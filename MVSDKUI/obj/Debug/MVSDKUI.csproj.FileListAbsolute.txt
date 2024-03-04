@@ -100,3 +100,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Debug\MVSDKUI.csproj.CoreCo
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Debug\MVSDKUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Debug\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Debug\MVSDKUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\Microsoft.mshtml.dll

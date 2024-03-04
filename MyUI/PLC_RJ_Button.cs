@@ -143,6 +143,8 @@ namespace MyUI
 
         public PLC_RJ_Button()
         {
+            this.BackColor = Color.Transparent;
+
             this.buttonType = ButtonType.Toggle;
             this.MouseMoveEvent += PLC_RJ_Button_MouseMoveEvent;
             this.MouseDownEvent += PLC_RJ_Button_MouseDown;
@@ -917,6 +919,12 @@ namespace MyUI
                     }
                 }
             }
+        }
+        public void SetBackgroundColor(Color color)
+        {
+            OFF_背景顏色 = color;
+            ON_背景顏色 = color;
+            sub_按鈕狀態設為OFF();
         }
         #endregion
 

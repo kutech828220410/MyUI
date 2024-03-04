@@ -966,7 +966,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Text.Json.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\FontAwesome.Sharp.dll
@@ -1061,3 +1060,4 @@ C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\TCP.dll

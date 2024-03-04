@@ -84,3 +84,6 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\PLC_Editor_Form.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Microsoft.mshtml.dll

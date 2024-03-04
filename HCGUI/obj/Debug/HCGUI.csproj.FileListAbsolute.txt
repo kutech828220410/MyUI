@@ -102,3 +102,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Debug\HCGUI.csproj.CoreCompil
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Debug\HCGUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Debug\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Debug\HCGUI.pdb
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Microsoft.mshtml.dll

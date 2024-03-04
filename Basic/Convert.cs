@@ -1450,6 +1450,11 @@ namespace Basic
 
             return false;
         }
+        public static bool IsLeap_Year(int input_years)
+        {
+            bool isleap_year = input_years % 400 == 0 || (input_years % 4 == 0 && input_years % 100 != 0);//將閏年條件賦值給bool
+            return isleap_year;
+        }
         public static int GetMonthOfDays(int Month)
         {
             switch(Month)
@@ -1457,7 +1462,15 @@ namespace Basic
                 case 1:
                     return 31;
                 case 2:
-                    return 28;
+                    if (IsLeap_Year(DateTime.Now.Year))
+                    {
+                        return 29;
+                    }
+                    else
+                    {
+                        return 28;
+                    }
+                  
                 case 3:
                     return 31;
                 case 4:

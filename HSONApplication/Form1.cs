@@ -73,8 +73,13 @@ namespace HSONApplication
         private void Button_pre_Click(object sender, EventArgs e)
         {
             this.stepViewer1.Pre();
-            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("test!!!");
-            dialog_NumPannel.ShowDialog();
+            Image image = @"C:\Users\Administrator\Desktop\Sequence0116.jpg".GetImage();
+            string base64 = image.ImageToBase64();
+            string encoder_base64 = Uri.EscapeDataString(base64);
+            Image image_buf = base64.Base64ToImage();
+            image_buf = image_buf.CopyImgByBytes();
+            image_buf.SaveJpeg(@"C:\Users\Administrator\Desktop\123.jpg", 90);
+            pictureBox1.Image = image_buf;
         }
 
         private void RJ_Button_Init_MouseDownEvent(MouseEventArgs mevent)

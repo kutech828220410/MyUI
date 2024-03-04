@@ -1439,7 +1439,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -1538,3 +1537,4 @@ C:\Users\User\Desktop\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\TCP.dll

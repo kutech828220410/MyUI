@@ -98,3 +98,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Debug\LightControlUI
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Debug\LightControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Debug\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Debug\LightControlUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Microsoft.mshtml.dll

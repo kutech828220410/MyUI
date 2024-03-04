@@ -52,6 +52,7 @@ namespace MyUI
             {
                 pLoading = new LoadingForm();
                 pLoading.Shown += PLoading_Shown;
+                pLoading.TopMost = true;
                 return pLoading;
             }
             else

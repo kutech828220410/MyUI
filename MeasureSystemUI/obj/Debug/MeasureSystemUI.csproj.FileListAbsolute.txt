@@ -163,3 +163,7 @@ C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Debug\MeasureSystem
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Debug\MeasureSystemUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\Basic.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\LadderUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\SLDUI.pdb

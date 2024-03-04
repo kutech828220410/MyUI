@@ -90,7 +90,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\System.Numerics.Vectors.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -112,3 +111,4 @@ C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\TCP.dll

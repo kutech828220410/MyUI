@@ -582,7 +582,6 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Memory.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
@@ -653,3 +652,4 @@ C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll

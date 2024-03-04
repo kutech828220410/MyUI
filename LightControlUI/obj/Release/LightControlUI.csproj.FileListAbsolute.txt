@@ -1419,7 +1419,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Text.
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\FontAwesome.Sharp.dll
@@ -1509,3 +1508,4 @@ C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\TCP.dll

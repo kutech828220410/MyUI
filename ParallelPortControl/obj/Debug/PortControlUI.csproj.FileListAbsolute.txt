@@ -100,3 +100,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Debug\PortContr
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Debug\PortControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Debug\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\obj\Debug\PortControlUI.pdb
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\Microsoft.mshtml.dll

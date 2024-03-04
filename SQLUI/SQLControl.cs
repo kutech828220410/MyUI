@@ -1226,6 +1226,7 @@ namespace SQLUI
         #region Method_GetColumnValues
         public List<object[]> GetColumnValues(string TableName, string ColumnName, bool Distinct)
         {
+            if (TableName == null) TableName = this.TableName;
             List<object[]> obj_temp_array = new List<object[]>();
             List<object> obj_temp = new List<object>();
             string Command;
@@ -1250,6 +1251,62 @@ namespace SQLUI
                 }
                 obj_temp_array.Add(obj_temp.ToArray());
             }
+            this.CloseConection(_MySqlConnection);
+
+            return obj_temp_array;
+
+        }
+        public List<object[]> GetColumnValues(string TableName, string[] ColumnNames, bool Distinct)
+        {
+            if (TableName == null) TableName = this.TableName;
+
+            string[] all_colNames = GetAllColumn_Name(TableName);
+            List<int> list_col_index = new List<int>();
+            for (int i = 0; i < ColumnNames.Length; i++)
+            {
+                int temp = -1;
+                for (int k = 0; k < all_colNames.Length; k++)
+                {
+                    if(ColumnNames[i] == all_colNames[k])
+                    {
+                        temp = k;
+                    }
+                  
+                }
+                list_col_index.Add(temp);
+            }
+
+
+            List<object[]> obj_temp_array = new List<object[]>();
+            List<object> obj_temp = new List<object>();
+            string Command;
+            Command = "SELECT ";
+            if (Distinct) Command += " distinct ";
+            for(int i = 0; i < ColumnNames.Length; i++)
+            {
+                Command += ColumnNames[i];
+                if (i != ColumnNames.Length - 1) Command += ",";
+            }
+         
+            Command += " FROM ";
+            Command += TableName;
+            System.Data.DataTable dataTable = new System.Data.DataTable();
+            MySqlConnection _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;");
+            this.OpenConnection(_MySqlConnection);
+            MySqlCommand _MySqlCommand = _MySqlConnection.CreateCommand();
+            _MySqlCommand.CommandText = Command;
+            var reader = _MySqlCommand.ExecuteReader();
+            int FieldCount = reader.FieldCount;
+            while (reader.Read())
+            {
+                object[] value = new object[all_colNames.Length];
+                for (int i = 0; i < ColumnNames.Length; i++)
+                {
+                    value[list_col_index[i]] = reader[ColumnNames[i]];
+                }
+                obj_temp_array.Add(value);
+            }
+
             this.CloseConection(_MySqlConnection);
 
             return obj_temp_array;
@@ -1641,6 +1698,13 @@ namespace SQLUI
             _MySqlCommand.Dispose();
             WtrteCommand("SET SQL_SAFE_UPDATES = 1;");
             return 1;
+        }
+
+        public int UpdateByDefulteExtra(string TableName, object[] value)
+        {
+            List<object[]> Value = new List<object[]>();
+            Value.Add(value);
+            return UpdateByDefulteExtra(TableName, Value);
         }
 
         public int UpdateByDefulteExtra(string TableName, List<object[]> Value)

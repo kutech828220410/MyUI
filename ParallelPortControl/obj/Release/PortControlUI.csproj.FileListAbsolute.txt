@@ -1202,7 +1202,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemUI.dll
@@ -1293,3 +1292,4 @@ C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll

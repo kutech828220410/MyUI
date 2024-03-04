@@ -875,7 +875,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Text.Json.dl
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\FontAwesome.Sharp.dll
@@ -966,3 +965,4 @@ C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\TCP.dll

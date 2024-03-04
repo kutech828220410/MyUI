@@ -30,7 +30,21 @@ namespace Basic
             {
                 sw.WriteLine($"{DateTime.Now:yyyyyMMdd-HH:mm:ss} - {Message}");
             }
-
         }
+        public static void LogAddLine(string Title)
+        {
+            LogAddLine(Title, "---------------------------------------------------------------------------");
+        }
+        public static void LogAddLine(string Title, string Message)
+        {
+            string LogFileName = $"{DateTime.Now:yyyyyMMdd-HH}.txt";
+            string LogFilePath = Path.Combine($"{logDirectory}{Title}/", LogFileName);
+            Directory.CreateDirectory($"{logDirectory}{Title}/");
+            using (StreamWriter sw = File.AppendText(LogFilePath))
+            {
+                sw.WriteLine($"{Message}");
+            }
+        }
+
     }
 }

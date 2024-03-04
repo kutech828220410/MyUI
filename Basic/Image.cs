@@ -10,6 +10,91 @@ namespace Basic
 {
     static public class MyImage
     {
+        public static Image GetImage(this string fileName)
+        {
+            FileStream s = File.Open(fileName, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            BinaryReader r = new BinaryReader(s);
+            r.BaseStream.Seek(0, SeekOrigin.Begin);    //将文件指针设置到文件开
+            byte[] bytes = r.ReadBytes((int)r.BaseStream.Length);
+            r.Close();
+            r.Dispose();
+            s.Close();
+            s.Dispose();
+            MemoryStream memoryStream = new MemoryStream(bytes);
+            Image img = Image.FromStream(memoryStream);
+            memoryStream.Close();
+            memoryStream.Dispose();
+            return CopyImgByBytes((Bitmap)img);
+        }
+        public static Bitmap CopyImgByBytes(this Image image)
+        {
+            return CopyImgByBytes((Bitmap)image);
+        }
+        public static Bitmap CopyImgByBytes(this Bitmap bmp)
+        {
+            Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            Bitmap img = new Bitmap(bmp.Width, bmp.Height, bmp.PixelFormat);
+            BitmapData bmpData = bmp.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);
+            BitmapData imgData = img.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);
+            IntPtr optr = bmpData.Scan0;
+            IntPtr nptr = imgData.Scan0;
+            int bytes = Math.Abs(bmpData.Stride) * bmp.Height;
+            byte[] OriginalImgBytes = new byte[bytes];
+            //把原始图像数据复制到byte[]数组中
+            System.Runtime.InteropServices.Marshal.Copy(optr, OriginalImgBytes, 0, bytes);
+            //把原始图像byte[]数据复制到新图像中
+            System.Runtime.InteropServices.Marshal.Copy(OriginalImgBytes, 0, nptr, bytes);
+            //解除锁定
+            bmp.UnlockBits(bmpData);
+            img.UnlockBits(imgData);
+            return img;
+        }
+
+        // 将图像保存到指定路径，自动确定文件扩展名
+        public static bool SaveImage(this Image image, string outputPath, string fileName)
+        {
+            try
+            {
+                string extension = GetImageExtension(image.RawFormat);
+                if (extension != null)
+                {
+                    string filePath = Path.Combine(outputPath, fileName + extension);
+                    image.Save(filePath);
+                    Console.WriteLine("Image saved successfully at: " + filePath);
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Unable to determine image format.");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error saving image: " + ex.Message);
+                return false;
+            }
+        }
+
+        // 根据图像格式获取文件扩展名
+        private static string GetImageExtension(ImageFormat format)
+        {
+            if (format.Equals(ImageFormat.Jpeg))
+                return ".jpg";
+            else if (format.Equals(ImageFormat.Png))
+                return ".png";
+            else if (format.Equals(ImageFormat.Bmp)|| format.Equals(ImageFormat.MemoryBmp))
+                return ".bmp";
+            else if (format.Equals(ImageFormat.Gif))
+                return ".gif";
+            else if (format.Equals(ImageFormat.Tiff))
+                return ".tiff";
+            else if (format.Equals(ImageFormat.Icon))
+                return ".ico";
+            else
+                return null; // 未知格式
+
+        }
         public static void SaveJpeg(this System.Drawing.Image img, string filePath, long quality)
         {
             ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
@@ -65,6 +150,10 @@ namespace Basic
                 else if (format.Equals(ImageFormat.Icon))
                 {
                     image.Save(ms, ImageFormat.Icon);
+                }
+                else if (format.Equals(ImageFormat.MemoryBmp))
+                {
+                    image.Save(ms, ImageFormat.Bmp);
                 }
                 byte[] buffer = new byte[ms.Length];
                 //Image.Save()會改變MemoryStream的Position，需要重新Seek到Begin
@@ -144,6 +233,38 @@ namespace Basic
 
             }
             return null;
+        }
+
+        public static string ImageToBase64(this Image image)
+        {
+            try
+            {
+                using (MemoryStream memoryStream = new MemoryStream())
+                {
+                    byte[] imageBytes = image.ImageToBytes();
+                    string base64String = Convert.ToBase64String(imageBytes);
+                    return base64String;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error converting image to base64: " + ex.Message);
+                return null;
+            }
+        }
+        public static Image Base64ToImage(this string base64String)
+        {
+            try
+            {
+                byte[] imageBytes = Convert.FromBase64String(base64String);
+                Image image  = imageBytes.BytesToImage();
+                return image;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error converting base64 to image: " + ex.Message);
+                return null;
+            }
         }
     }
 }

@@ -106,6 +106,18 @@ namespace MyUI
             }
             set
             {
+                if(Month == 2 && value == 29)
+                {
+                    if (this.rJ_ComboBox_Day.Items.Count <= 29)
+                    {
+                        List<string> list_value = new List<string>();
+                        for (int i = 1; i <= 29; i++)
+                        {
+                            list_value.Add(i.ToString());
+                        }
+                        this.rJ_ComboBox_Day.DataSource = list_value;
+                    }
+                }
                 this.rJ_ComboBox_Day.SelectedItem = value.ToString();
             }
         }
@@ -155,7 +167,15 @@ namespace MyUI
 
         private void rJ_ComboBox_Year_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            Value = new DateTime(Year, Value.Month, Value.Day);
+            if(Value.Day == 29 && !Basic.TypeConvert.IsLeap_Year(Year))
+            {
+                Value = new DateTime(Year, Value.Month, 28);
+            }
+            else
+            {
+                Value = new DateTime(Year, Value.Month, Value.Day);
+            }
+           
         }
         private void rJ_ComboBox_Month_OnSelectedIndexChanged(object sender, EventArgs e)
         {

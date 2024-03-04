@@ -320,23 +320,52 @@ namespace MyUI
             }
             else if (flag_MouseDown)
             {
-                int R = bkgroundcolor.R + (int)(bkgroundcolor.R * 0.3);
-                int G = bkgroundcolor.G + (int)(bkgroundcolor.G * 0.3);
-                int B = bkgroundcolor.B + (int)(bkgroundcolor.B * 0.3);
-                if (R > 255) R = 255;
-                if (G > 255) G = 255;
-                if (B > 255) B = 255;
-                bkgroundcolor = Color.FromArgb(R, G, B);
+           
+                if(bkgroundcolor.R <= 10 && bkgroundcolor.G <= 10 && bkgroundcolor.B <= 10)
+                {
+                    int R = bkgroundcolor.R + (int)(80);
+                    int G = bkgroundcolor.G + (int)(80);
+                    int B = bkgroundcolor.B + (int)(80);
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+                    bkgroundcolor = Color.FromArgb(R, G, B);
+                }
+                else
+                {
+                    int R = bkgroundcolor.R + (int)(bkgroundcolor.R * 0.3);
+                    int G = bkgroundcolor.G + (int)(bkgroundcolor.G * 0.3);
+                    int B = bkgroundcolor.B + (int)(bkgroundcolor.B * 0.3);
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+                    bkgroundcolor = Color.FromArgb(R, G, B);
+                }
+       
             }
             else if (flag_MouseMove)
             {
-                int R = bkgroundcolor.R - (int)(bkgroundcolor.R * 0.1);
-                int G = bkgroundcolor.G - (int)(bkgroundcolor.G * 0.1);
-                int B = bkgroundcolor.B - (int)(bkgroundcolor.B * 0.1);
-                if (R > 255) R = 255;
-                if (G > 255) G = 255;
-                if (B > 255) B = 255;
-                bkgroundcolor = Color.FromArgb(R, G, B);
+                if (bkgroundcolor.R <= 10 && bkgroundcolor.G <= 10 && bkgroundcolor.B <= 10)
+                {
+                    int R = bkgroundcolor.R + (int)(40);
+                    int G = bkgroundcolor.G + (int)(40);
+                    int B = bkgroundcolor.B + (int)(40);
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+                    bkgroundcolor = Color.FromArgb(R, G, B);
+                }
+                else
+                {
+                    int R = bkgroundcolor.R - (int)(bkgroundcolor.R * 0.1);
+                    int G = bkgroundcolor.G - (int)(bkgroundcolor.G * 0.1);
+                    int B = bkgroundcolor.B - (int)(bkgroundcolor.B * 0.1);
+                    if (R > 255) R = 255;
+                    if (G > 255) G = 255;
+                    if (B > 255) B = 255;
+                    bkgroundcolor = Color.FromArgb(R, G, B);
+                }
+
             }
 
             using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
