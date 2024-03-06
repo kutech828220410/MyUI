@@ -14,9 +14,18 @@ using Basic;
 using System.Runtime.InteropServices;
 namespace MyUI
 {
-      [System.Drawing.ToolboxBitmap(typeof(PLC_ScreenPage), "PLC_ScreenPage.bmp")]
+    [System.Drawing.ToolboxBitmap(typeof(PLC_ScreenPage), "PLC_ScreenPage.bmp")]
     public partial class PLC_ScreenPage : TabControl
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x00000020; // WS_EX_TRANSPARENT
+                return cp;
+            }
+        }
         public delegate void TabChangeEventHandler(string PageText);
         public event TabChangeEventHandler TabChangeEvent;
 
@@ -200,6 +209,7 @@ namespace MyUI
             //this.SizeMode = TabSizeMode.Fixed;
             // this.Layout += PLC_ScreenPage_Layout;
             this.SelectedIndexChanged += PLC_ScreenPage_SelectedIndexChanged;
+            SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
         }
 

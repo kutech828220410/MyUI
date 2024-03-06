@@ -12,6 +12,28 @@ namespace MyUI
 {
     public partial class LoadingForm : Form
     {
+        [System.Runtime.InteropServices.DllImport("user32")]
+        private static extern bool AnimateWindow(IntPtr hwnd, int dwTime, int dwFlags);
+        //正面_水平方向
+        const int AW_HOR_POSITIVE = 0x0001;
+        //负面_水平方向
+        const int AW_HOR_NEGATIVE = 0x0002;
+        //正面_垂直方向
+        const int AW_VER_POSITIVE = 0x0004;
+        //负面_垂直方向
+        const int AW_VER_NEGATIVE = 0x0008;
+        //由中间四周展开或由四周向中间缩小
+        const int AW_CENTER = 0x0010;
+        //隐藏对象
+        const int AW_HIDE = 0x10000;
+        //显示对象
+        const int AW_ACTIVATE = 0x20000;
+        //拉幕滑动效果
+        const int AW_SLIDE = 0x40000;
+        //淡入淡出渐变效果
+        const int AW_BLEND = 0x80000;
+
+        public static  Form form;
         public delegate void MethodEventHandler();
         public event MethodEventHandler MethodEvent;
         static public bool IsShown = false;
@@ -25,22 +47,35 @@ namespace MyUI
             Thread t = new Thread(new ThreadStart(delegateEventMethod));
             t.IsBackground = true;
             t.Start();
+     
             this.Load += LoadingForm_Load;
             this.FormClosing += LoadingForm_FormClosing;
         }
-
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x0014) return;
+            base.WndProc(ref m);
+        }
         public static void ShowLoadingForm()
         {
             LoadingForm loadingForm = LoadingForm.getLoading();
+            if (form != null)
+            {
+                loadingForm.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - loadingForm.Width) / 2 , (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - loadingForm.Height) / 2);
+            }
             Task.Run(new Action(delegate
             {
                 if(IsShown == false)
                 {
-                    IsShown = true;
                     loadingForm.ShowDialog();
                 }
    
             }));
+            while(true)
+            {
+                if (IsShown) break;
+                System.Threading.Thread.Sleep(20);
+            }
         }
         public static void CloseLoadingForm()
         {
@@ -50,30 +85,19 @@ namespace MyUI
         {
             if (pLoading.IsDisposed)
             {
-                pLoading = new LoadingForm();
-                pLoading.Shown += PLoading_Shown;
-                pLoading.TopMost = true;
+                pLoading = new LoadingForm();         
                 return pLoading;
             }
             else
-            {
+            {             
                 return pLoading;
             }
         }
-
-        private static void PLoading_Shown(object sender, EventArgs e)
+        protected override void OnShown(EventArgs e)
         {
-            //for (byte i = 0; i < 200; i++)
-            //{
-            //    pLoading.Opacity = 0.004 * i;
-            //    System.Threading.Thread.Sleep(1);
-            //    Application.DoEvents();
-            //}
-
-
             int cnt = 0;
-            Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(1);
-            myTimer.StartTickTime();
+            Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(2);
+            myTimer.StartTickTime(1);
             while (true)
             {
                 try
@@ -92,9 +116,15 @@ namespace MyUI
                 {
                     break;
                 }
-             
             }
 
+            base.OnShown(e);
+            IsShown = true;
+
+        }
+        private static void PLoading_Shown(object sender, EventArgs e)
+        {
+           
         }
 
         public void SetCaptionAndDescription(string title, string caption, string description)
@@ -143,8 +173,6 @@ namespace MyUI
 
             }
         }
-
-
         private void LoadingForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             int cnt = 0;
@@ -163,12 +191,6 @@ namespace MyUI
                 }
             }
 
-            //for (byte i = 0; i < 200; i++)
-            //{
-            //    pLoading.Opacity = 0.8 - 0.004 * i;
-            //    System.Threading.Thread.Sleep(1);
-            //    Application.DoEvents();
-            //}
             if (!this.IsDisposed)
             {
                 this.Dispose(true);
@@ -177,7 +199,7 @@ namespace MyUI
 
         private void LoadingForm_Load(object sender, EventArgs e)
         {
-           
+         
         }
     
     }

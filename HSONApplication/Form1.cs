@@ -53,6 +53,7 @@ namespace HSONApplication
             this.rJ_Button_Servo_OFF.MouseDownEvent += RJ_Button_Servo_OFF_MouseDownEvent;
 
             Dialog_AlarmForm.form = this.FindForm();
+            LoadingForm.form = this.FindForm();
 
             List<StepEntity> list = new List<StepEntity>();
             list.Add(new StepEntity("1", "新开单", 1, "这里是该步骤的描述信息", eumStepState.Completed, null));
@@ -126,7 +127,9 @@ namespace HSONApplication
 
         private void RJ_Button_UJOG_MouseDownEvent(MouseEventArgs mevent)
         {
-            DeltaMotor485_port[1].JOG(100);
+            LoadingForm.ShowLoadingForm();
+
+            LoadingForm.CloseLoadingForm();
         }
         private void RJ_Button_set_path_config_MouseDownEvent(MouseEventArgs mevent)
         {

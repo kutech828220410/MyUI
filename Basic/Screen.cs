@@ -122,18 +122,7 @@ namespace Basic
             Console.WriteLine("* Don't close this console window or the application will also close.");
             Console.WriteLine();
             Console.ForegroundColor = oriColor;
-            //// stdout's handle seems to always be equal to 7
-            //IntPtr defaultStdout = new IntPtr(7);
-            //IntPtr currentStdout = GetStdHandle(StdOutputHandle);
 
-            //if (currentStdout != defaultStdout)
-            //    // reset stdout
-            //    SetStdHandle(StdOutputHandle, defaultStdout);
-
-            //// reopen stdout
-            //TextWriter writer = new StreamWriter(Console.OpenStandardOutput())
-            //{ AutoFlush = true };
-            //Console.SetOut(writer);
         }
         public static void CloseConsole()
         {
