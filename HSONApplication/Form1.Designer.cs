@@ -35,6 +35,9 @@
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_ScreenPage_main = new MyUI.PLC_ScreenPage();
             this.主畫面 = new System.Windows.Forms.TabPage();
+            this.rJ_DatePicker1 = new MyUI.RJ_DatePicker();
+            this.plC_RJ_ScreenButtonEx1 = new MyUI.PLC_RJ_ScreenButtonEx();
+            this.rJ_Button1 = new MyUI.RJ_Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_next = new System.Windows.Forms.Button();
             this.button_pre = new System.Windows.Forms.Button();
@@ -54,7 +57,6 @@
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
-            this.rJ_Button1 = new MyUI.RJ_Button();
             this.panel_main.SuspendLayout();
             this.plC_ScreenPage_main.SuspendLayout();
             this.主畫面.SuspendLayout();
@@ -81,6 +83,7 @@
             // 
             this.plC_RJ_ScreenButton2.but_press = false;
             this.plC_RJ_ScreenButton2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plC_RJ_ScreenButton2.ForeColor = System.Drawing.Color.White;
             this.plC_RJ_ScreenButton2.IconChar = FontAwesome.Sharp.IconChar.Cube;
             this.plC_RJ_ScreenButton2.IconSize = 32;
             this.plC_RJ_ScreenButton2.Location = new System.Drawing.Point(193, 0);
@@ -118,8 +121,10 @@
             // 
             // plC_RJ_ScreenButton1
             // 
+            this.plC_RJ_ScreenButton1.BackColor = System.Drawing.Color.Transparent;
             this.plC_RJ_ScreenButton1.but_press = false;
             this.plC_RJ_ScreenButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plC_RJ_ScreenButton1.ForeColor = System.Drawing.Color.White;
             this.plC_RJ_ScreenButton1.IconChar = FontAwesome.Sharp.IconChar.Cubes;
             this.plC_RJ_ScreenButton1.IconSize = 32;
             this.plC_RJ_ScreenButton1.Location = new System.Drawing.Point(0, 0);
@@ -179,6 +184,8 @@
             // 
             // 主畫面
             // 
+            this.主畫面.Controls.Add(this.rJ_DatePicker1);
+            this.主畫面.Controls.Add(this.plC_RJ_ScreenButtonEx1);
             this.主畫面.Controls.Add(this.rJ_Button1);
             this.主畫面.Controls.Add(this.pictureBox1);
             this.主畫面.Controls.Add(this.button_next);
@@ -201,6 +208,99 @@
             this.主畫面.TabIndex = 2;
             this.主畫面.Text = "主畫面";
             this.主畫面.UseVisualStyleBackColor = true;
+            // 
+            // rJ_DatePicker1
+            // 
+            this.rJ_DatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_DatePicker1.BorderSize = 0;
+            this.rJ_DatePicker1.Font = new System.Drawing.Font("新細明體", 15.75F);
+            this.rJ_DatePicker1.Location = new System.Drawing.Point(266, 497);
+            this.rJ_DatePicker1.MinimumSize = new System.Drawing.Size(250, 35);
+            this.rJ_DatePicker1.Name = "rJ_DatePicker1";
+            this.rJ_DatePicker1.Size = new System.Drawing.Size(250, 35);
+            this.rJ_DatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.rJ_DatePicker1.TabIndex = 31;
+            this.rJ_DatePicker1.TextColor = System.Drawing.Color.White;
+            // 
+            // plC_RJ_ScreenButtonEx1
+            // 
+            this.plC_RJ_ScreenButtonEx1.AutoResetState = false;
+            this.plC_RJ_ScreenButtonEx1.BackColor = System.Drawing.Color.Transparent;
+            this.plC_RJ_ScreenButtonEx1.BackgroundColor = System.Drawing.Color.Black;
+            this.plC_RJ_ScreenButtonEx1.BackgroundImage = global::HSONApplication.Properties.Resources.人員資料_removebg_preview;
+            this.plC_RJ_ScreenButtonEx1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_ScreenButtonEx1.BorderRadius = 10;
+            this.plC_RJ_ScreenButtonEx1.BorderSize = 0;
+            this.plC_RJ_ScreenButtonEx1.but_press = false;
+            this.plC_RJ_ScreenButtonEx1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.plC_RJ_ScreenButtonEx1.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_ScreenButtonEx1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_ScreenButtonEx1.ForeColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButtonEx1.GUID = "";
+            this.plC_RJ_ScreenButtonEx1.Image_padding = new System.Windows.Forms.Padding(10);
+            this.plC_RJ_ScreenButtonEx1.Location = new System.Drawing.Point(93, 640);
+            this.plC_RJ_ScreenButtonEx1.Name = "plC_RJ_ScreenButtonEx1";
+            this.plC_RJ_ScreenButtonEx1.OffFont = new System.Drawing.Font("新細明體", 12F);
+            this.plC_RJ_ScreenButtonEx1.OffForeColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButtonEx1.OffIconColor = System.Drawing.Color.Black;
+            this.plC_RJ_ScreenButtonEx1.OffText = "";
+            this.plC_RJ_ScreenButtonEx1.OnFont = new System.Drawing.Font("新細明體", 12F);
+            this.plC_RJ_ScreenButtonEx1.OnForeColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButtonEx1.OnIconColor = System.Drawing.Color.Black;
+            this.plC_RJ_ScreenButtonEx1.OnText = "iConText";
+            this.plC_RJ_ScreenButtonEx1.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_ScreenButtonEx1.ShadowSize = 0;
+            this.plC_RJ_ScreenButtonEx1.ShowLoadingForm = false;
+            this.plC_RJ_ScreenButtonEx1.Size = new System.Drawing.Size(122, 108);
+            this.plC_RJ_ScreenButtonEx1.State = false;
+            this.plC_RJ_ScreenButtonEx1.TabIndex = 30;
+            this.plC_RJ_ScreenButtonEx1.Text = "20";
+            this.plC_RJ_ScreenButtonEx1.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButtonEx1.TextHeight = 20;
+            this.plC_RJ_ScreenButtonEx1.UseVisualStyleBackColor = false;
+            this.plC_RJ_ScreenButtonEx1.字元長度 = MyUI.PLC_RJ_ScreenButtonEx.WordLengthEnum.單字元;
+            this.plC_RJ_ScreenButtonEx1.寫入位置註解 = "";
+            this.plC_RJ_ScreenButtonEx1.寫入元件位置 = "";
+            this.plC_RJ_ScreenButtonEx1.按鈕型態 = MyUI.PLC_RJ_ScreenButtonEx.StatusEnum.保持型;
+            this.plC_RJ_ScreenButtonEx1.控制位址 = "D0";
+            this.plC_RJ_ScreenButtonEx1.換頁選擇方式 = MyUI.PLC_RJ_ScreenButtonEx.換頁選擇方式Enum.名稱;
+            this.plC_RJ_ScreenButtonEx1.致能讀取位置 = "";
+            this.plC_RJ_ScreenButtonEx1.讀取位元反向 = false;
+            this.plC_RJ_ScreenButtonEx1.讀取位置註解 = "";
+            this.plC_RJ_ScreenButtonEx1.讀取元件位置 = "";
+            this.plC_RJ_ScreenButtonEx1.音效 = true;
+            this.plC_RJ_ScreenButtonEx1.頁面名稱 = "手動";
+            this.plC_RJ_ScreenButtonEx1.頁面編號 = 0;
+            this.plC_RJ_ScreenButtonEx1.顯示方式 = MyUI.PLC_RJ_ScreenButtonEx.StateEnum.正常顯示;
+            this.plC_RJ_ScreenButtonEx1.顯示狀態 = false;
+            this.plC_RJ_ScreenButtonEx1.顯示讀取位置 = "";
+            // 
+            // rJ_Button1
+            // 
+            this.rJ_Button1.AutoResetState = false;
+            this.rJ_Button1.BackColor = System.Drawing.Color.Transparent;
+            this.rJ_Button1.BackgroundColor = System.Drawing.Color.Black;
+            this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button1.BorderRadius = 10;
+            this.rJ_Button1.BorderSize = 0;
+            this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button1.FlatAppearance.BorderSize = 0;
+            this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button1.GUID = "";
+            this.rJ_Button1.Image_padding = new System.Windows.Forms.Padding(0);
+            this.rJ_Button1.Location = new System.Drawing.Point(362, 591);
+            this.rJ_Button1.Name = "rJ_Button1";
+            this.rJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button1.ShadowSize = 3;
+            this.rJ_Button1.ShowLoadingForm = false;
+            this.rJ_Button1.Size = new System.Drawing.Size(162, 80);
+            this.rJ_Button1.State = false;
+            this.rJ_Button1.TabIndex = 29;
+            this.rJ_Button1.Text = "rJ_Button1";
+            this.rJ_Button1.TextColor = System.Drawing.Color.White;
+            this.rJ_Button1.TextHeight = 0;
+            this.rJ_Button1.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -279,6 +379,7 @@
             this.rJ_Button_Servo_OFF.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Servo_OFF.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_Servo_OFF.GUID = "";
+            this.rJ_Button_Servo_OFF.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Servo_OFF.Location = new System.Drawing.Point(494, 738);
             this.rJ_Button_Servo_OFF.Name = "rJ_Button_Servo_OFF";
             this.rJ_Button_Servo_OFF.ShadowColor = System.Drawing.Color.DimGray;
@@ -289,6 +390,7 @@
             this.rJ_Button_Servo_OFF.TabIndex = 22;
             this.rJ_Button_Servo_OFF.Text = "Servo OFF";
             this.rJ_Button_Servo_OFF.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Servo_OFF.TextHeight = 0;
             this.rJ_Button_Servo_OFF.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_Servo_ON
@@ -305,6 +407,7 @@
             this.rJ_Button_Servo_ON.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Servo_ON.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_Servo_ON.GUID = "";
+            this.rJ_Button_Servo_ON.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Servo_ON.Location = new System.Drawing.Point(266, 738);
             this.rJ_Button_Servo_ON.Name = "rJ_Button_Servo_ON";
             this.rJ_Button_Servo_ON.ShadowColor = System.Drawing.Color.DimGray;
@@ -315,6 +418,7 @@
             this.rJ_Button_Servo_ON.TabIndex = 21;
             this.rJ_Button_Servo_ON.Text = "Servo ON";
             this.rJ_Button_Servo_ON.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Servo_ON.TextHeight = 0;
             this.rJ_Button_Servo_ON.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_set_path_config
@@ -331,6 +435,7 @@
             this.rJ_Button_set_path_config.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_set_path_config.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_set_path_config.GUID = "";
+            this.rJ_Button_set_path_config.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_set_path_config.Location = new System.Drawing.Point(559, 561);
             this.rJ_Button_set_path_config.Name = "rJ_Button_set_path_config";
             this.rJ_Button_set_path_config.ShadowColor = System.Drawing.Color.DimGray;
@@ -341,6 +446,7 @@
             this.rJ_Button_set_path_config.TabIndex = 19;
             this.rJ_Button_set_path_config.Text = "set_path_config";
             this.rJ_Button_set_path_config.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_set_path_config.TextHeight = 0;
             this.rJ_Button_set_path_config.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_Init
@@ -357,6 +463,7 @@
             this.rJ_Button_Init.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Init.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_Init.GUID = "";
+            this.rJ_Button_Init.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Init.Location = new System.Drawing.Point(18, 561);
             this.rJ_Button_Init.Name = "rJ_Button_Init";
             this.rJ_Button_Init.ShadowColor = System.Drawing.Color.DimGray;
@@ -367,6 +474,7 @@
             this.rJ_Button_Init.TabIndex = 18;
             this.rJ_Button_Init.Text = "Init";
             this.rJ_Button_Init.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Init.TextHeight = 0;
             this.rJ_Button_Init.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_return_home
@@ -383,6 +491,7 @@
             this.rJ_Button_return_home.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_return_home.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_return_home.GUID = "";
+            this.rJ_Button_return_home.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_return_home.Location = new System.Drawing.Point(787, 561);
             this.rJ_Button_return_home.Name = "rJ_Button_return_home";
             this.rJ_Button_return_home.ShadowColor = System.Drawing.Color.DimGray;
@@ -393,6 +502,7 @@
             this.rJ_Button_return_home.TabIndex = 15;
             this.rJ_Button_return_home.Text = "return_home";
             this.rJ_Button_return_home.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_return_home.TextHeight = 0;
             this.rJ_Button_return_home.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_JOG_STOP
@@ -409,6 +519,7 @@
             this.rJ_Button_JOG_STOP.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_JOG_STOP.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_JOG_STOP.GUID = "";
+            this.rJ_Button_JOG_STOP.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_JOG_STOP.Location = new System.Drawing.Point(919, 738);
             this.rJ_Button_JOG_STOP.Name = "rJ_Button_JOG_STOP";
             this.rJ_Button_JOG_STOP.ShadowColor = System.Drawing.Color.DimGray;
@@ -419,6 +530,7 @@
             this.rJ_Button_JOG_STOP.TabIndex = 8;
             this.rJ_Button_JOG_STOP.Text = "JOG STOP";
             this.rJ_Button_JOG_STOP.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_JOG_STOP.TextHeight = 0;
             this.rJ_Button_JOG_STOP.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_DJOG
@@ -435,6 +547,7 @@
             this.rJ_Button_DJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_DJOG.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_DJOG.GUID = "";
+            this.rJ_Button_DJOG.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_DJOG.Location = new System.Drawing.Point(1075, 738);
             this.rJ_Button_DJOG.Name = "rJ_Button_DJOG";
             this.rJ_Button_DJOG.ShadowColor = System.Drawing.Color.DimGray;
@@ -445,6 +558,7 @@
             this.rJ_Button_DJOG.TabIndex = 7;
             this.rJ_Button_DJOG.Text = "DJOG";
             this.rJ_Button_DJOG.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_DJOG.TextHeight = 0;
             this.rJ_Button_DJOG.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_UJOG
@@ -461,6 +575,7 @@
             this.rJ_Button_UJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_UJOG.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_UJOG.GUID = "";
+            this.rJ_Button_UJOG.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_UJOG.Location = new System.Drawing.Point(763, 738);
             this.rJ_Button_UJOG.Name = "rJ_Button_UJOG";
             this.rJ_Button_UJOG.ShadowColor = System.Drawing.Color.DimGray;
@@ -471,6 +586,7 @@
             this.rJ_Button_UJOG.TabIndex = 6;
             this.rJ_Button_UJOG.Text = "UJOG";
             this.rJ_Button_UJOG.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_UJOG.TextHeight = 0;
             this.rJ_Button_UJOG.UseVisualStyleBackColor = false;
             // 
             // sqL_DataGridView_備藥通知
@@ -575,31 +691,6 @@
             this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
             this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
-            // rJ_Button1
-            // 
-            this.rJ_Button1.AutoResetState = false;
-            this.rJ_Button1.BackColor = System.Drawing.Color.Transparent;
-            this.rJ_Button1.BackgroundColor = System.Drawing.Color.Black;
-            this.rJ_Button1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button1.BorderRadius = 10;
-            this.rJ_Button1.BorderSize = 0;
-            this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
-            this.rJ_Button1.FlatAppearance.BorderSize = 0;
-            this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Button1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Button1.GUID = "";
-            this.rJ_Button1.Location = new System.Drawing.Point(362, 591);
-            this.rJ_Button1.Name = "rJ_Button1";
-            this.rJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Button1.ShadowSize = 3;
-            this.rJ_Button1.ShowLoadingForm = false;
-            this.rJ_Button1.Size = new System.Drawing.Size(162, 80);
-            this.rJ_Button1.State = false;
-            this.rJ_Button1.TabIndex = 29;
-            this.rJ_Button1.Text = "rJ_Button1";
-            this.rJ_Button1.TextColor = System.Drawing.Color.White;
-            this.rJ_Button1.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -648,6 +739,8 @@
         private System.Windows.Forms.Button button_next;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MyUI.RJ_Button rJ_Button1;
+        private MyUI.PLC_RJ_ScreenButtonEx plC_RJ_ScreenButtonEx1;
+        private MyUI.RJ_DatePicker rJ_DatePicker1;
     }
 }
 

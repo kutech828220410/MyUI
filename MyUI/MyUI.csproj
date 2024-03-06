@@ -274,6 +274,12 @@
     <Compile Include="PLC_RJ_Pannel.Designer.cs">
       <DependentUpon>PLC_RJ_Pannel.cs</DependentUpon>
     </Compile>
+    <Compile Include="PLC_RJ_ScreenButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PLC_RJ_ScreenButtonEx.Designer.cs">
+      <DependentUpon>PLC_RJ_ScreenButtonEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="PLC_RJ_ScreenButton.cs">
       <SubType>UserControl</SubType>
     </Compile>

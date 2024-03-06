@@ -307,6 +307,8 @@ namespace MyUI
 
         public RJ_ComboBox()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             cmbList = new ComboBox();
             lblText = new Label();
             btnIcon = new Button();

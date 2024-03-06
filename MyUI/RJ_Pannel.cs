@@ -184,6 +184,8 @@ namespace MyUI
         }
         public RJ_Pannel()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.BorderStyle = BorderStyle.None;
             this.Size = new Size(400, 300);
             this.BackColor = Color.White;
@@ -261,6 +263,8 @@ namespace MyUI
             RectangleF rectSurface = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
             RectangleF rectBackGround = new RectangleF(0, 0, this.Width, this.Height);
 
+            using (Bitmap bitmap = new Bitmap(this.Width, this.Height))
+            using (Graphics g = Graphics.FromImage(bitmap))
             using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
             using (GraphicsPath pathBackGround = this.GetFigurePath(rectBackGround, this.borderRadius))
             using (GraphicsPath pathShadow = this.GetFigurePath(rectShadow, this.borderRadius))
@@ -272,12 +276,13 @@ namespace MyUI
                 penBorder.Alignment = PenAlignment.Inset;
                 this.Region = new Region(rectBackGround);
                 this.BackColor = this.Parent.BackColor;
-                pevent.Graphics.FillPath(brushBackgroung, pathBackGround);
-                if (this.ShadowSize >= 1) DrawRoundShadow(pevent.Graphics, rectShadow, this.borderRadius, this.ShadowSize);
-                pevent.Graphics.DrawPath(penSurface, pathBackGround);
-                if (this.BorderSize >= 1) pevent.Graphics.DrawPath(penBorder, pathBorder);
+                g.FillPath(brushBackgroung, pathBackGround);
+                if (this.ShadowSize >= 1) DrawRoundShadow(g, rectShadow, this.borderRadius, this.ShadowSize);
+                g.DrawPath(penSurface, pathBackGround);
+                if (this.BorderSize >= 1) g.DrawPath(penBorder, pathBorder);
 
-              
+                pevent.Graphics.DrawImage(bitmap, new PointF());
+
             }
         }
         protected override void OnHandleCreated(EventArgs e)

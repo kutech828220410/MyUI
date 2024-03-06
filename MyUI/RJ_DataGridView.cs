@@ -196,6 +196,8 @@ namespace MyUI
 
         public RJ_DataGridView()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.columnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.BackgroundColor = Color.SkyBlue;
             this.EnableHeadersVisualStyles = false;

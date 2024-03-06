@@ -195,7 +195,7 @@ namespace MyUI
         public override void Run()
         {
             if(captureDelegate == null)captureDelegate = new CaptureDelegate(LabelCapture);
-            Basic.ControlExtensions.InvokeOnUiThreadIfRequired(this.label1, LabelCapture);
+            //Basic.ControlExtensions.InvokeOnUiThreadIfRequired(this.label1, LabelCapture);
             //Invoke(captureDelegate);
 
             if (pLC_ScreenPage != null)

@@ -12,6 +12,7 @@ namespace MyUI
 {
     public class RJ_Button : Button
     {
+    
         private bool flag_MouseMove = false;
         private bool flag_MouseDown = false;
         private MyTimer myTimer = new MyTimer();
@@ -174,6 +175,34 @@ namespace MyUI
             }
         }
 
+        private int textHeight = 0;
+        [Category("RJ Code Advance")]
+        public int TextHeight
+        {
+            set
+            {
+                textHeight = value;
+            }
+            get
+            {
+                return textHeight;
+            }
+        }
+        private Padding image_padding = new Padding();
+        [Category("RJ Code Advance")]
+        public Padding Image_padding
+        {
+            set
+            {
+                image_padding = value;
+            }
+            get
+            {
+                return image_padding;
+            }
+        }
+
+
         public enum ButtonType
         {
             Push,
@@ -209,6 +238,8 @@ namespace MyUI
 
         public RJ_Button()
         {
+            SetStyle(ControlStyles.UserPaint , true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.FlatStyle = FlatStyle.Flat;
             this.FlatAppearance.BorderSize = 0;
             this.Size = new Size(150, 40);
@@ -217,8 +248,6 @@ namespace MyUI
             this.Resize += RJ_Button_Resize;
             
         }
-
- 
 
         public void ResetState()
         {
@@ -302,7 +331,10 @@ namespace MyUI
                 }
             }
         }
-
+        public void ResetMouseDown()
+        {
+            flag_MouseDown = false;
+        }
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
@@ -367,7 +399,8 @@ namespace MyUI
                 }
 
             }
-
+            using (Bitmap bitmap = new Bitmap(this.Width, this.Height))
+            using (Graphics g = Graphics.FromImage(bitmap))
             using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))
             using (GraphicsPath pathBackGround = this.GetFigurePath(rectBackGround, this.borderRadius))
             using (GraphicsPath pathShadow = this.GetFigurePath(rectShadow, this.borderRadius))
@@ -379,21 +412,28 @@ namespace MyUI
                 penBorder.Alignment = PenAlignment.Inset;
                 this.Region = new Region(rectBackGround);
                 //this.BackColor = this.Parent.BackColor;
-               
-                pevent.Graphics.FillPath(brushBackgroung, pathBackGround);
-                if (this.ShadowSize >= 1) DrawRoundShadow(pevent.Graphics, rectShadow, this.borderRadius, this.ShadowSize);
-                pevent.Graphics.DrawPath(penSurface, pathBackGround);
+
+                g.FillPath(brushBackgroung, pathBackGround);
+                if (this.BackgroundImage != null)
+                {
+                    int y = image_padding.Top;
+                    int height = this.Height - (image_padding.Bottom + image_padding.Top + textHeight);
+                    g.DrawImage(this.BackgroundImage, image_padding.Left, y, this.Width - (image_padding.Right + image_padding.Left), height);
+
+                }
+                if (this.ShadowSize >= 1) DrawRoundShadow(g, rectShadow, this.borderRadius, this.ShadowSize);
+                g.DrawPath(penSurface, pathBackGround);
 
                 if (this.Enabled == true)
                 {
-                    if (this.BorderSize >= 1) pevent.Graphics.DrawPath(penBorder, pathBorder);
+                    if (this.BorderSize >= 1) g.DrawPath(penBorder, pathBorder);
                 }
 
                 Rectangle rectangle_text = new Rectangle((int)rectShadow.X, (int)rectShadow.Y, (int)rectShadow.Width, (int)rectShadow.Height);
-                SizeF size_Text_temp = pevent.Graphics.MeasureString(this.Text, this.Font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
+                SizeF size_Text_temp = g.MeasureString(this.Text, this.Font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
                 Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
                 Point point = new Point(0, 0);
-                if(TextAlign == ContentAlignment.TopLeft)
+                if (TextAlign == ContentAlignment.TopLeft)
                 {
                     point = new Point(0, 0);
                 }
@@ -431,11 +471,20 @@ namespace MyUI
                 }
                 Color foreColor = this.ForeColor;
                 if (this.Enabled == false) foreColor = Color.LightGray;
-                pevent.Graphics.DrawString($"{this.Text}", this.Font, new SolidBrush(foreColor), point, StringFormat.GenericDefault);
-               
-                if(this.Enabled == false)DrawProhibitionSymbol(pevent.Graphics, new Point((int)((rectShadow.X + rectShadow.Width) / 2), (int)((rectShadow.Y + rectShadow.Height) / 2)), 30, 4, 1);
+                if (textHeight == 0) g.DrawString($"{this.Text}", this.Font, new SolidBrush(foreColor), point, StringFormat.GenericDefault);
+                else
+                {
+                    point = new Point(point.X, this.Height - textHeight);
+                    g.DrawString($"{this.Text}", this.Font, new SolidBrush(foreColor), point, StringFormat.GenericDefault);
+
+                }
+                if (this.Enabled == false) DrawProhibitionSymbol(g, new Point((int)((rectShadow.X + rectShadow.Width) / 2), (int)((rectShadow.Y + rectShadow.Height) / 2)), 30, 4, 1);
+                //DrawingClass.GDI32.DrawImage(pevent.Graphics, bitmap);
+                pevent.Graphics.DrawImage(bitmap, new PointF());
+
 
             }
+            
         }
 
         protected override void OnPaintBackground(PaintEventArgs pevent)
@@ -611,7 +660,7 @@ namespace MyUI
             {
                 EventArgs e = new EventArgs();
                 MouseButtons mouseButtons = MouseButtons.Left;
-                MouseEventArgs mouseEventArgs = new MouseEventArgs(mouseButtons, 1, 0, 0, 0);
+                MouseEventArgs mouseEventArgs = new MouseEventArgs(mouseButtons, 1, -1, -1, 0);
                 base.OnMouseUp(mouseEventArgs);
                 base.OnMouseLeave(e);
             }
@@ -628,14 +677,20 @@ namespace MyUI
         public event MouseClickEventHandler MouseClickEvent;
         protected override void OnMouseClick(MouseEventArgs mevent)
         {
-            if (buttonType == ButtonType.Push)
+            if (mevent.X != 0 && mevent.Y != 0)
             {
-                base.OnMouseEnter(mevent);
+                if (buttonType == ButtonType.Push)
+                {
+                    //base.OnMouseEnter(mevent);
+                    if (MouseClickEvent != null) this.MouseClickEvent(mevent);
+                }
+                else
+                {
+                    if (MouseClickEvent != null) this.MouseClickEvent(mevent);
+                }
+
             }
-            else
-            {
-                if (MouseClickEvent != null) this.MouseClickEvent(mevent);
-            }
+     
         }
 
         public delegate void StateChangeEventHandler(RJ_Button rJ_Button, bool state);

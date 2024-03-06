@@ -140,7 +140,9 @@ namespace MyUI
 
         public DateTimeComList()
         {
-            InitializeComponent();    
+            InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
         }
         private void DateTimeComList_Load(object sender, EventArgs e)
         {

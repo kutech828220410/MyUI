@@ -881,7 +881,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\FontAwesome.Sharp.d
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\HCGUI.dll
@@ -966,3 +965,4 @@ C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\PortControlUI.dll

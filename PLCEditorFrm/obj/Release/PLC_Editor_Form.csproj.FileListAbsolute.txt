@@ -585,10 +585,8 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\Interop.Speech
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
@@ -600,7 +598,6 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxOvkBaseAsm4.
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
@@ -653,3 +650,6 @@ C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\PopupControl.d
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll

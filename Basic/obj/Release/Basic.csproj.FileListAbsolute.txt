@@ -1431,10 +1431,8 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\HCGUI.dll
@@ -1446,7 +1444,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkBaseAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\System.Memory.xml
@@ -1538,3 +1535,6 @@ C:\Users\User\Desktop\MyUI\Basic\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\PortControlUI.dll

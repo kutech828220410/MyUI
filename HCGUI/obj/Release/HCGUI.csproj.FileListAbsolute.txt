@@ -970,10 +970,8 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxOvkBase.dll
@@ -982,7 +980,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxOvkBaseAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Memory.xml
@@ -1061,3 +1058,6 @@ C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PortControlUI.dll

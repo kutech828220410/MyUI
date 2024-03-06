@@ -184,6 +184,8 @@ namespace MyUI
 
         private void InitializeComponent()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.rJ_Lable_Title = new MyUI.RJ_Lable();
             this.rJ_Pannel = new MyUI.RJ_Pannel();
             this.SuspendLayout();

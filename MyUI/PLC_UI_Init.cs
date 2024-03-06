@@ -465,6 +465,18 @@ namespace MyUI
                 }
 
             }
+            else if (ctl is PLC_RJ_ScreenButtonEx)
+            {
+                PLC_RJ_ScreenButtonEx ctl_temp = (PLC_RJ_ScreenButtonEx)ctl;
+                ctl_temp.音效 = this.音效;
+                ctl_temp.Run(PLC);
+                sub_FindScreenPage(ref ctl);
+                if (ctl is PLC_ScreenPage)
+                {
+                    ctl_temp.Set_PLC_ScreenPage((PLC_ScreenPage)ctl);
+                }
+
+            }
             else if (ctl is PLC_Button)
             {
                 PLC_Button ctl_temp = (PLC_Button)ctl;
@@ -684,6 +696,14 @@ namespace MyUI
                 else if (control.Controls[i] is PLC_RJ_ScreenButton)
                 {
                     ((PLC_RJ_ScreenButton)control.Controls[i]).Set_PLC_ScreenPage(pLC_ScreenPage);
+                }
+                else if (control.Controls[i] is PLC_RJ_ScreenButtonEx)
+                {
+                    ((PLC_RJ_ScreenButtonEx)control.Controls[i]).Set_PLC_ScreenPage(pLC_ScreenPage);
+                }
+                else if(control.Controls[i] is Panel)
+                {
+                    Set_PLC_ScreenPage(control.Controls[i], pLC_ScreenPage);
                 }
             }
         }

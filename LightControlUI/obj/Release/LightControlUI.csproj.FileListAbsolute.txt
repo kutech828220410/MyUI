@@ -1423,10 +1423,8 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\CallBackUI.d
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxOvkBase.dll
@@ -1435,7 +1433,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxOvkBaseAsm
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Memory.xml
@@ -1509,3 +1506,6 @@ C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PopupControl
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PortControlUI.dll

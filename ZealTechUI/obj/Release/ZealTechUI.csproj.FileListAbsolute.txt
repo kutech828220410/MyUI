@@ -2291,7 +2291,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\MeasureSystemUI.
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\AxOvkBase.dll
@@ -2374,3 +2373,4 @@ C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\PortControlUI.dll

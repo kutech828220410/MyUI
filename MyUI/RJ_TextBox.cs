@@ -278,6 +278,8 @@ namespace MyUI
         public RJ_TextBox()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             SetPlcaeHolder();
         }
 

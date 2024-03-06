@@ -4002,9 +4002,7 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\Interop.SpeechLib.d
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\HCGUI.dll
@@ -4014,7 +4012,6 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\AxOvkBaseAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\System.Memory.xml
@@ -4092,3 +4089,6 @@ C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\TCP\TCP\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\PortControlUI.dll

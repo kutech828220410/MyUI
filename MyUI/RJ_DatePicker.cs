@@ -82,7 +82,8 @@ namespace MyUI
 
         public RJ_DatePicker()
         {
-            this.SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(250, 35);
             this.Font = new Font(this.Font.Name, 15.75F);
         }

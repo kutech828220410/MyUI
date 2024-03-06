@@ -76,15 +76,23 @@ namespace MyUI
             myTimer.StartTickTime();
             while (true)
             {
-                if (cnt >= 200) break;
-                if (myTimer.IsTimeOut())
+                try
                 {
-                    pLoading.Opacity = 0 + 0.04 * cnt;
-                    myTimer.TickStop();
-                    myTimer.StartTickTime(1);
-                    Application.DoEvents();
-                    cnt++;
+                    if (cnt >= 200) break;
+                    if (myTimer.IsTimeOut())
+                    {
+                        pLoading.Opacity = 0 + 0.04 * cnt;
+                        myTimer.TickStop();
+                        myTimer.StartTickTime(1);
+                        Application.DoEvents();
+                        cnt++;
+                    }
                 }
+                catch
+                {
+                    break;
+                }
+             
             }
 
         }

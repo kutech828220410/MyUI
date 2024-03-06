@@ -200,9 +200,10 @@ namespace MyUI
             //this.SizeMode = TabSizeMode.Fixed;
             // this.Layout += PLC_ScreenPage_Layout;
             this.SelectedIndexChanged += PLC_ScreenPage_SelectedIndexChanged;
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
         }
 
-
+      
 
         delegate void SelecteTabDelegate(int page);
         void SelecteTab(int page)

@@ -38,6 +38,8 @@ namespace MyUI
         public DateTimeIntervelPicker()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             btnPopup.Click += BtnPopup_Click;
             DateTimeIntervelPopup content = new DateTimeIntervelPopup();
             popup = new Popup(content);

@@ -55,13 +55,10 @@
             // 
             // PLC_RJ_ScreenButton
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.iconButton1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "PLC_RJ_ScreenButton";
             this.Size = new System.Drawing.Size(209, 63);
-            this.Load += new System.EventHandler(this.PLC_RJ_ScreenButton_Load);
             this.ResumeLayout(false);
 
         }

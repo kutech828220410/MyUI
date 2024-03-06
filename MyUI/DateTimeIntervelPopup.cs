@@ -36,6 +36,8 @@ namespace MyUI
         public DateTimeIntervelPopup()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.btnSure.Click += BtnSure_Click;
         }
         public void SetDateTime(DateTime start, DateTime end)

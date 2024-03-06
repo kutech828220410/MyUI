@@ -104,6 +104,8 @@ namespace MyUI
 
         public RJ_CheckBox()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(45, 22);
         }
         private GraphicsPath GetFigurePath()

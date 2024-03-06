@@ -6353,10 +6353,8 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\HCGUI.dll
@@ -6366,7 +6364,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxOvkBaseAsm4.5.dl
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\System.Memory.xml
@@ -6464,3 +6461,6 @@ C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll

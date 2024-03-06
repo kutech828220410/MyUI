@@ -1205,7 +1205,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\Interop
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll
@@ -1217,7 +1216,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxOvkBa
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxAltairUDrv.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\System.Memory.xml
@@ -1293,3 +1291,5 @@ C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\PopupCo
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll

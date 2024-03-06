@@ -41,6 +41,8 @@ namespace MyUI
         }
         public RJ_RatioButton()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(0, 21);
         }
         protected override void OnPaint(PaintEventArgs pevent)

@@ -124,6 +124,8 @@ namespace MyUI
 
         public RJ_Lable()
         {
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.AutoSize = false;
             this.FlatStyle = FlatStyle.Flat;          
             this.Size = new Size(150, 40);

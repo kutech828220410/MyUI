@@ -39,7 +39,8 @@ namespace MyUI
 
         public RJ_ProgressBar()
         {
-            this.SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.ForeColor = Color.White;
             Basic.Reflection.MakeDoubleBuffered(this, true);
         }
