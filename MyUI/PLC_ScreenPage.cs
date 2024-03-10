@@ -209,8 +209,8 @@ namespace MyUI
             //this.SizeMode = TabSizeMode.Fixed;
             // this.Layout += PLC_ScreenPage_Layout;
             this.SelectedIndexChanged += PLC_ScreenPage_SelectedIndexChanged;
-            SetStyle(ControlStyles.UserPaint, true);
-            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+            //SetStyle(ControlStyles.UserPaint, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
         }
 
       

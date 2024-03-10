@@ -16,11 +16,129 @@ using System.Text.Json;
 using System.Text.Encodings.Web;
 using System.Text.Json.Serialization;
 using System.Xml;
+using System.Net.WebSockets;
 //using Newtonsoft.Json;
 namespace Basic
 {
     static public class Net
     {
+        public class SocketClient
+        {
+            static public bool ConsoleWrite = false;
+            private ClientWebSocket clientWebSocket;
+            private Uri serverUri
+            {
+                get
+                {
+                    return new Uri(webSocketUrl);
+                }
+            }
+            private string _url = "";
+            private string webSocketUrl
+            {
+                get
+                {
+                    return $@"ws://{_url}";
+                }
+            }
+            public SocketClient(string url)
+            {
+                _url = url;           
+                clientWebSocket = new ClientWebSocket();
+                clientWebSocket.Options.Proxy = null;
+                Open();
+            }
+            public void Open()
+            {
+                Task.Run(async () =>
+                {
+                    await OpenAsync();
+                    return ;
+                }).Wait();
+                return ;
+
+            }
+            public async Task OpenAsync()
+            {
+                try
+                {
+                    await clientWebSocket.ConnectAsync(serverUri, System.Threading.CancellationToken.None);
+                }
+                catch(Exception e)
+                {
+                    if (ConsoleWrite) Console.WriteLine($"open clientWebSocket error! {e.Message}");
+                }
+                finally
+                {
+                    if (ConsoleWrite) Console.WriteLine($"open clientWebSocket finally! state : {clientWebSocket.State} [{_url}]");
+                }
+             
+            }
+     
+            public string PostJson(string jsonString)
+            {
+                string result = Task.Run(async () =>
+                {
+                    string responseBody = await PostJsonAsync(jsonString);
+                    return responseBody;
+                }).Result;
+                return result;
+            }
+            public async Task<string> PostJsonAsync(string jsonString)
+            {
+                string str = "";
+                if (clientWebSocket.State != WebSocketState.Open)
+                {
+                    await clientWebSocket.ConnectAsync(serverUri, System.Threading.CancellationToken.None);
+                }
+                if (clientWebSocket.State == WebSocketState.Open)
+                {
+                    ArraySegment<byte> bytesToSend = new ArraySegment<byte>(Encoding.UTF8.GetBytes(jsonString));
+                    var result = new byte[4096];
+                    try
+                    {
+                        await clientWebSocket.SendAsync(bytesToSend, WebSocketMessageType.Text, true, System.Threading.CancellationToken.None);
+                        if (ConsoleWrite) Console.WriteLine($"send clientWebSocket sucess! message : {jsonString} [{_url}]");
+                    }
+                    catch(Exception e)
+                    {
+                        if (ConsoleWrite) Console.WriteLine($"send clientWebSocket error! {e.Message}");
+                        return "";
+                    }
+                    try
+                    {
+                        await clientWebSocket.ReceiveAsync(new ArraySegment<byte>(result), new System.Threading.CancellationToken());//接受数据
+                        var lastbyte = ByteCut(result, 0x00);
+                        str = Encoding.UTF8.GetString(lastbyte, 0, lastbyte.Length);
+                        if (ConsoleWrite) Console.WriteLine($"receive clientWebSocket sucess! message : {str} [{_url}]");
+                    }
+                    catch (Exception e)
+                    {
+                        if (ConsoleWrite) Console.WriteLine($"receive clientWebSocket error! {e.Message}");
+                        return "";
+                    }
+             
+                }
+                return str;
+            }
+            public byte[] ByteCut(byte[] b, byte cut)
+            {
+                var list = new List<byte>();
+                list.AddRange(b);
+                for (var i = list.Count - 1; i >= 0; i--)
+                {
+                    if (list[i] == cut)
+                        list.RemoveAt(i);
+                }
+                var lastbyte = new byte[list.Count];
+                for (var i = 0; i < list.Count; i++)
+                {
+                    lastbyte[i] = list[i];
+                }
+                return lastbyte;
+            }
+        }
+
         static public class ColorSerializationHelper
         {
             static public Color FromString(string value)
@@ -187,6 +305,22 @@ namespace Basic
             string jsonString = JsonSerializer.Serialize<object>(value, options);
             return jsonString;
         }
+        public static Task<string> JsonSerializationtAsync<T>(this T value)
+        {
+            return Task.FromResult(JsonSerializationt(value));
+        }
+        public static Task<string> JsonSerializationtAsync<T>(this T value, bool WriteIndented)
+        {
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {
+                WriteIndented = WriteIndented,
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                IgnoreNullValues = true,
+                IgnoreReadOnlyProperties = true,
+            };
+            string jsonString = JsonSerializer.Serialize(value, options);
+            return Task.FromResult(jsonString);
+        }
         public static T JsonDeserializet<T>(this string jsonString)
         {
             //return JsonConvert.DeserializeObject<T>(jsonString);
@@ -199,6 +333,10 @@ namespace Basic
                 return default(T);
             }
 
+        }
+        public static Task<T> JsonDeserializetAsync<T>(this string jsonString)
+        {
+            return Task.FromResult(JsonDeserializet<T>(jsonString));
         }
 
         public static byte[] JsonUtf8BytesSerializationt<T>(this T value)

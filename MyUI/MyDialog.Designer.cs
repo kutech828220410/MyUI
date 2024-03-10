@@ -36,6 +36,7 @@ namespace MyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CanResize = false;
             this.ClientSize = new System.Drawing.Size(850, 572);
             this.ControlBox = false;
             this.ControlBoxActive = System.Drawing.Color.DarkGray;
@@ -45,6 +46,7 @@ namespace MyUI
             this.ShadowWidth = 15;
             this.ShowDrawIcon = false;
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
 
         }

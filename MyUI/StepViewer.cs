@@ -38,9 +38,21 @@ namespace MyUI
     }
     public partial class StepViewer : UserControl
     {
-        public int CurrentStep = 0;
-      
-      
+        private int currentStep = 0;
+        public int CurrentStep
+        {
+            get
+            {
+                return currentStep;
+            }
+            set
+            {
+                currentStep = value;
+                Invalidate();
+            }
+        }
+       
+
 
         public StepViewer()
         {
@@ -78,6 +90,21 @@ namespace MyUI
                 }
             }
         }
+        private int lineWidth = 120;
+        [Browsable(true), Category("StepViewer")]
+        public int LineWidth
+        {
+            get
+            {
+                return lineWidth;
+            }
+            set
+            {
+                lineWidth = value;
+            }
+        }
+
+
         public void DrawCircleWithCheck(Graphics graphic, RectangleF rectangleF, Color circleColor, Color checkColor)
         {
             // 設置外圓圈的筆刷
@@ -110,7 +137,6 @@ namespace MyUI
                 int CenterY = this.Height / 2;
                 int index = 1;
                 int count = ListDataSource.Count;
-                int lineWidth = 120;
                 int StepNodeWH = 32;
                 //this.Width = 32 * count + lineWidth * (count - 1) + 6+300;
                 //defalut pen & brush

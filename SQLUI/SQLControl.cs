@@ -2277,7 +2277,7 @@ namespace SQLUI
                     if (serchValue[0].Check_Date_String() || serchValue[1].Check_Date_String())
                     {
                         Name = "date(" + serchColumnName[0] + ")";
-                        Console.WriteLine($"get rows date beteeen {serchValue[0]} : {serchValue[1]}");
+                        //Console.WriteLine($"get rows date beteeen {serchValue[0]} : {serchValue[1]}");
                     }
                     else Name = "(" + serchColumnName[0] + ")";          
                 }

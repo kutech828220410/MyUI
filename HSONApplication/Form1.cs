@@ -21,6 +21,8 @@ using System.Xml;
 using System.Xml.Xsl;
 using System.Xml.Schema;
 using HIS_DB_Lib;
+using System.Net.WebSockets;
+
 namespace HSONApplication
 {
     public partial class Form1 : Form
@@ -35,6 +37,8 @@ namespace HSONApplication
       
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
