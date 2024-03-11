@@ -41,12 +41,17 @@ namespace MyUI
             this.ControlBox = false;
             this.ControlBoxActive = System.Drawing.Color.DarkGray;
             this.ControlBoxDeactive = System.Drawing.Color.DarkGray;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MyDialog";
             this.Radius = 10;
             this.ShadowWidth = 15;
             this.ShowDrawIcon = false;
             this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }

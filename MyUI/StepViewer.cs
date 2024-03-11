@@ -65,13 +65,19 @@ namespace MyUI
         {
             CurrentStep++;
             if (CurrentStep > _dataSourceList.Count) CurrentStep = _dataSourceList.Count;
-            this.Refresh();
+            this.Invoke(new Action(delegate 
+            {
+                this.Refresh();
+            }));     
         }
         public void Pre()
         {
             CurrentStep--;
             if (CurrentStep <= 0) CurrentStep = 0;
-            this.Refresh();
+            this.Invoke(new Action(delegate
+            {
+                this.Refresh();
+            }));
         }
         private List<StepEntity> _dataSourceList = null;
         [Browsable(true), Category("StepViewer")]

@@ -154,43 +154,7 @@ namespace MyUI
 
         }
 
-        #region 隱藏屬性
-        [Browsable(false)]
-        public override Color BackColor
-        {
-            get
-            {
-                return base.BackColor;
-            }
-            set
-            {
-                base.BackColor = value;
-            }
-        }
-        [Browsable(false)]
-        public override Image BackgroundImage
-        {
-            get
-            {
-                return base.BackgroundImage;
-            }
-            set
-            {
-                base.BackgroundImage = value;
-            }
-        }
-        [Browsable(false)]
-        public override ImageLayout BackgroundImageLayout
-        {
-            get
-            {
-                return base.BackgroundImageLayout;
-            }
-            set
-            {
-                base.BackgroundImageLayout = value;
-            }
-        }
+        #region 隱藏屬性   
         [Browsable(false)]
         public override Cursor Cursor
         {
@@ -315,7 +279,8 @@ namespace MyUI
             }
         }
 
-
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Image 背景圖片 { get => base.BackgroundImage; set => base.BackgroundImage = value; }
         string _提示文字 = "";
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public string 提示文字

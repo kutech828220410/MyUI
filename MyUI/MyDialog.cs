@@ -44,10 +44,17 @@ namespace MyUI
         public static Form form;
         public DialogResult ShowDialog()
         {
-            MyDialog.form = this.ParentForm;
             if (form == null)
             {
                 this.Special = false;
+                this.TopMost = true;
+                this.TopLevel = true;
+                this.Opacity = 1;
+                this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+                this.ShowIcon = false;
+                this.ShowInTaskbar = false;
+                this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                this.SizeGripStyle = SizeGripStyle.Show;
                 //this.Visible = false;
                 base.ShowDialog();
             }
@@ -56,6 +63,14 @@ namespace MyUI
                 form.Invoke(new Action(delegate
                 {
                     this.Special = false;
+                    this.TopMost = true;
+                    this.TopLevel = true;
+                    this.Opacity = 1;
+                    this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+                    this.ShowIcon = false;
+                    this.ShowInTaskbar = false;
+                    this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    this.SizeGripStyle = SizeGripStyle.Show;
                     //this.Visible = false;
                     base.ShowDialog();
                 }));
