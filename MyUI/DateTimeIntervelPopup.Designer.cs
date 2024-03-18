@@ -35,15 +35,15 @@ namespace MyUI
             this.calendarEnd = new System.Windows.Forms.MonthCalendar();
             this.calendarStart = new System.Windows.Forms.MonthCalendar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.timeStart = new MyUI.TimeSetting();
             this.timeEnd = new MyUI.TimeSetting();
+            this.timeStart = new MyUI.TimeSetting();
             this.SuspendLayout();
             // 
             // btnSure
             // 
-            this.btnSure.Location = new System.Drawing.Point(381, 261);
+            this.btnSure.Location = new System.Drawing.Point(402, 266);
             this.btnSure.Name = "btnSure";
-            this.btnSure.Size = new System.Drawing.Size(75, 23);
+            this.btnSure.Size = new System.Drawing.Size(75, 32);
             this.btnSure.TabIndex = 10;
             this.btnSure.Text = "确定";
             this.btnSure.UseVisualStyleBackColor = true;
@@ -52,7 +52,7 @@ namespace MyUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(327, 11);
+            this.label2.Location = new System.Drawing.Point(353, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 12);
             this.label2.TabIndex = 9;
@@ -70,10 +70,12 @@ namespace MyUI
             // 
             // calendarEnd
             // 
-            this.calendarEnd.BackColor = System.Drawing.SystemColors.Window;
-            this.calendarEnd.Location = new System.Drawing.Point(236, 32);
+            this.calendarEnd.BackColor = System.Drawing.Color.White;
+            this.calendarEnd.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.calendarEnd.Location = new System.Drawing.Point(257, 32);
             this.calendarEnd.Name = "calendarEnd";
             this.calendarEnd.TabIndex = 7;
+            this.calendarEnd.TitleBackColor = System.Drawing.SystemColors.AppWorkspace;
             // 
             // calendarStart
             // 
@@ -81,21 +83,29 @@ namespace MyUI
             this.calendarStart.Name = "calendarStart";
             this.calendarStart.TabIndex = 6;
             // 
-            // timeStart
-            // 
-            this.timeStart.BackColor = System.Drawing.Color.White;
-            this.timeStart.Location = new System.Drawing.Point(23, 220);
-            this.timeStart.Name = "timeStart";
-            this.timeStart.Size = new System.Drawing.Size(192, 24);
-            this.timeStart.TabIndex = 11;
-            // 
             // timeEnd
             // 
             this.timeEnd.BackColor = System.Drawing.Color.White;
-            this.timeEnd.Location = new System.Drawing.Point(249, 220);
+            this.timeEnd.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.timeEnd.Hour = "00";
+            this.timeEnd.Location = new System.Drawing.Point(270, 220);
+            this.timeEnd.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.timeEnd.Min = "00";
             this.timeEnd.Name = "timeEnd";
+            this.timeEnd.Second = "00";
             this.timeEnd.Size = new System.Drawing.Size(192, 24);
             this.timeEnd.TabIndex = 12;
+            // 
+            // timeStart
+            // 
+            this.timeStart.BackColor = System.Drawing.Color.White;
+            this.timeStart.Hour = "00";
+            this.timeStart.Location = new System.Drawing.Point(23, 220);
+            this.timeStart.Min = "00";
+            this.timeStart.Name = "timeStart";
+            this.timeStart.Second = "00";
+            this.timeStart.Size = new System.Drawing.Size(192, 24);
+            this.timeStart.TabIndex = 11;
             // 
             // DateTimeIntervelPopup
             // 
@@ -111,7 +121,7 @@ namespace MyUI
             this.Controls.Add(this.calendarEnd);
             this.Controls.Add(this.calendarStart);
             this.Name = "DateTimeIntervelPopup";
-            this.Size = new System.Drawing.Size(463, 293);
+            this.Size = new System.Drawing.Size(491, 309);
             this.ResumeLayout(false);
             this.PerformLayout();
 

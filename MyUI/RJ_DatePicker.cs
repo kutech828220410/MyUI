@@ -22,7 +22,7 @@ namespace MyUI
         private RectangleF iconButtonArea;
         private const int calendarIconWidth = 34;
         private const int arrowIconWidth = 17;
-
+     
         public Color SkinColor
         {
             get
@@ -79,9 +79,32 @@ namespace MyUI
                 this.Invalidate();
             }
         }
-
+        public Font PickerFont
+        {
+            get
+            {
+                return this.CalendarFont;
+            }
+            set
+            {
+                this.CalendarFont = value;
+            }
+        }
+        public Color PickerFore
+        {
+            get
+            {
+                return this.CalendarForeColor;
+            }
+            set
+            {
+                this.CalendarForeColor = value;
+            }
+        }
         public RJ_DatePicker()
         {
+            //Application.SetCompatibleTextRenderingDefault(false);
+           
             SetStyle(ControlStyles.UserPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(250, 35);
