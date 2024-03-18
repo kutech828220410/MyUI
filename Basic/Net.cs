@@ -48,20 +48,29 @@ namespace Basic
                 clientWebSocket.Options.Proxy = null;
                 Open();
             }
-            public void Open()
+            public bool Open()
             {
-                Task.Run(async () =>
+                try
                 {
-                    await OpenAsync();
-                    return ;
-                }).Wait();
-                return ;
+                    Task.Run(async () =>
+                    {
+                        await OpenAsync();
+                        return;
+                    }).Wait();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+              
 
             }
             public async Task OpenAsync()
             {
                 try
                 {
+                    if (clientWebSocket == null) return;
                     await clientWebSocket.ConnectAsync(serverUri, System.Threading.CancellationToken.None);
                 }
                 catch(Exception e)
@@ -74,7 +83,43 @@ namespace Basic
                 }
              
             }
-     
+            public bool Close()
+            {
+                try
+                {
+                    Task.Run(async () =>
+                    {
+                        await CloseAsync();
+                        return;
+                    }).Wait();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+
+
+            }
+            public async Task CloseAsync()
+            {
+                try
+                {
+                    if (clientWebSocket == null) return;
+                    await clientWebSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing connection", System.Threading.CancellationToken.None);
+                    clientWebSocket.Dispose();
+                    clientWebSocket = null;
+                }
+                catch (Exception e)
+                {
+                    if (ConsoleWrite) Console.WriteLine($"close clientWebSocket error! {e.Message}");
+                }
+                finally
+                {
+                    if (ConsoleWrite) Console.WriteLine($"close clientWebSocket finally! state : {clientWebSocket.State} [{_url}]");
+                }
+            }
+
             public string PostJson(string jsonString)
             {
                 string result = Task.Run(async () =>

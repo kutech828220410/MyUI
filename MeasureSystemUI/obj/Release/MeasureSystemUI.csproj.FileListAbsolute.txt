@@ -3116,3 +3116,7 @@ C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
 C:\Users\Administrator\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb

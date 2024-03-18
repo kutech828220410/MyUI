@@ -11,7 +11,44 @@ namespace Basic
 {
     public class Voice
     {
+        static public void MediaPlay(string fileName)
+        {
+            try
+            {
+                using (System.Media.SoundPlayer sp = new System.Media.SoundPlayer($@"{fileName}"))
+                {
+                    sp.Stop();
+                    sp.Play();
+                    sp.PlaySync();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} : [{System.Reflection.MethodBase.GetCurrentMethod().Name}] Exception:{e.Message}");
+            }
 
+        }
+        static public void MediaPlayAsync(string fileName)
+        {
+            Task.Run(new Action(delegate 
+            {
+                try
+                {
+                    using (System.Media.SoundPlayer sp = new System.Media.SoundPlayer($@"{fileName}"))
+                    {
+                        sp.Stop();
+                        sp.Play();
+                        sp.PlaySync();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine($"{DateTime.Now.ToDateTimeString()} : [{System.Reflection.MethodBase.GetCurrentMethod().Name}] Exception:{e.Message}");
+                }
+            }));
+       
+
+        }
         [DllImport("winmm.dll")]
         static extern Int32 mciSendString(string lpszCommand, StringBuilder returnString, int bufferSize, IntPtr hwndCallback);
         [DllImport("winmm.dll")]
