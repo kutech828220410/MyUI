@@ -36,7 +36,6 @@ namespace MyUI
         public DateTimeIntervelPopup()
         {   
             InitializeComponent();
-            Application.SetCompatibleTextRenderingDefault(false);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.btnSure.Click += BtnSure_Click;
@@ -45,18 +44,18 @@ namespace MyUI
         {
             this.startTime = start;
             this.endTime = end;
-            calendarStart.SelectionStart = start;
-            calendarEnd.SelectionStart = end;
+            calendarStart.Date = start;
+            calendarEnd.Date = end;
             timeStart.SetTime(start.Hour, start.Minute, start.Second);
             timeEnd.SetTime(end.Hour, end.Minute, end.Second);
         }
         private void BtnSure_Click(object sender, EventArgs e)
         {
-            startTime = calendarStart.SelectionStart;
+            startTime = calendarStart.Date;
             String sStart = startTime.Year + "-" + startTime.Month + "-" + startTime.Day + " " + timeStart.MyTime;
             startTime = Convert.ToDateTime(sStart);
 
-            endTime = calendarEnd.SelectionStart;
+            endTime = calendarEnd.Date;
             String sEnd = endTime.Year + "-" + endTime.Month + "-" + endTime.Day + " " + timeEnd.MyTime;
             endTime = Convert.ToDateTime(sEnd);
 

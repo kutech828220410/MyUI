@@ -8,10 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DrawingClass;
+using System.Runtime.InteropServices;
 namespace MyUI
 {
     public class RJ_DatePicker : DateTimePicker
     {
+        private const int SWP_NOMOVE = 0x0002;
+        private const int DTM_First = 0x1000;
+        private const int DTM_GETMONTHCAL = DTM_First + 8;
+        private const int MCM_GETMINREQRECT = DTM_First + 9;
+
+        [DllImport("uxtheme.dll")]
+        private static extern int SetWindowTheme(IntPtr hWnd, string appName, string idList);
+        [DllImport("user32.dll")]
+        static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImport("user32.dll")]
+        static extern IntPtr SendMessage(IntPtr hWnd, int Msg, int wParam, ref RECT lParam);
+        [DllImport("user32.dll")]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter,
+        int X, int Y, int cx, int cy, int uFlags);
+        [DllImport("User32.dll")]
+        private static extern IntPtr GetParent(IntPtr hWnd);
+        [StructLayout(LayoutKind.Sequential)]
+        private struct RECT { public int L, T, R, B; }
+        [DllImport("user32.dll", SetLastError = true)]
+        static extern bool MoveWindow(IntPtr hWnd, int X, int Y, int nWidth, int nHeight, bool bRepaint);
+
+
         private Color skinColor = Color.MediumSlateBlue;
         private Color textColor = Color.White;
         private Color borderColor = Color.PaleVioletRed;
@@ -104,14 +127,52 @@ namespace MyUI
         public RJ_DatePicker()
         {
             //Application.SetCompatibleTextRenderingDefault(false);
-           
+     
             SetStyle(ControlStyles.UserPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(250, 35);
             this.Font = new Font(this.Font.Name, 15.75F);
+            base.AllowDrop = false;
+
+        }
+        protected override void OnClick(EventArgs e)
+        {         
+            base.OnClick(e);
         }
         protected override void OnDropDown(EventArgs eventargs)
         {
+            
+            ////添加后编译程序，在要使用的界面拖动用户控件使用即可，弹出窗口的大小会根据CalendarFont决定
+            //var hwndCalendar = SendMessage(this.Handle, DTM_GETMONTHCAL, 0, 0);
+            //SetWindowTheme(hwndCalendar, string.Empty, string.Empty);
+            //var r = new RECT();
+            //SendMessage(hwndCalendar, MCM_GETMINREQRECT, 0, ref r);
+            //var hwndDropDown = GetParent(hwndCalendar);
+            //SetWindowPos(hwndDropDown, IntPtr.Zero, 0, 0,
+            //    r.R - r.L + 6, r.B - r.T + 6, SWP_NOMOVE);
+
+            if (Application.RenderWithVisualStyles)
+            {
+                const int DTM_GETMONTHCAL = 0x1008;
+
+                //Get handle of calendar control - disable theming
+                IntPtr hCalendar = SendMessage(this.Handle, DTM_GETMONTHCAL, 0, 0);
+                if (hCalendar != IntPtr.Zero)
+                {
+                    SetWindowTheme(hCalendar, "", "");
+
+                    //Get handle of parent popup - resize appropriately
+                    IntPtr hParent = GetParent(hCalendar);
+                    var r = new RECT();
+                    SendMessage(hCalendar, MCM_GETMINREQRECT, 0, ref r);
+                    if (hParent != IntPtr.Zero)
+                    {
+                        //The size you specify here will depend on the CalendarFont size chosen
+                        MoveWindow(hParent, 0, 0, r.R - r.L + 6, r.B - r.T + 6, true);
+                    }
+                }
+            }
+
             base.OnDropDown(eventargs);
             this.droppedDown = true;
         }
@@ -149,6 +210,17 @@ namespace MyUI
 
                 graphics.DrawImage(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
             }
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // RJ_DatePicker
+            // 
+            this.CalendarFont = new System.Drawing.Font("新宋体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResumeLayout(false);
+
         }
     }
 }

@@ -213,10 +213,16 @@
             // 
             this.rJ_DatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_DatePicker1.BorderSize = 0;
+            this.rJ_DatePicker1.CalendarFont = new System.Drawing.Font("標楷體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_DatePicker1.CalendarTitleBackColor = System.Drawing.SystemColors.ControlLight;
+            this.rJ_DatePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
+            this.rJ_DatePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlLight;
             this.rJ_DatePicker1.Font = new System.Drawing.Font("新細明體", 15.75F);
             this.rJ_DatePicker1.Location = new System.Drawing.Point(266, 497);
             this.rJ_DatePicker1.MinimumSize = new System.Drawing.Size(250, 35);
             this.rJ_DatePicker1.Name = "rJ_DatePicker1";
+            this.rJ_DatePicker1.PickerFont = new System.Drawing.Font("標楷體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_DatePicker1.PickerFore = System.Drawing.SystemColors.ControlText;
             this.rJ_DatePicker1.Size = new System.Drawing.Size(250, 35);
             this.rJ_DatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
             this.rJ_DatePicker1.TabIndex = 31;
@@ -332,6 +338,8 @@
             // stepViewer1
             // 
             this.stepViewer1.BackColor = System.Drawing.Color.White;
+            this.stepViewer1.CurrentStep = 0;
+            this.stepViewer1.LineWidth = 120;
             this.stepViewer1.ListDataSource = null;
             this.stepViewer1.Location = new System.Drawing.Point(18, 219);
             this.stepViewer1.Name = "stepViewer1";

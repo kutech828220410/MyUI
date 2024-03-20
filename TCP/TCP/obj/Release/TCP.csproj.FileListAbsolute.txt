@@ -4092,3 +4092,5 @@ C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\Microsoft.mshtml.dl
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\PortControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.Common.dll

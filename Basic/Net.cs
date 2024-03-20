@@ -561,7 +561,7 @@ namespace Basic
                 request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
                 var response = await client.SendAsync(request);
                 responseBody = await response.Content.ReadAsStringAsync();
-                if (debug) Console.WriteLine(responseBody);
+                if (debug) Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-[{new System.Diagnostics.StackTrace().GetFrame(0).GetMethod().DeclaringType.Name}] sucess..  url:{url} ");
                 return responseBody;
             }
             catch

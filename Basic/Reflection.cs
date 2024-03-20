@@ -116,6 +116,12 @@ namespace Basic
             MethodBase m = MethodBase.GetCurrentMethod();
             return m.DeclaringType.Name;
         }
+        public static string GetAsyncMethodName()
+        {
+            return new System.Diagnostics.StackTrace().GetFrame(0).GetMethod().DeclaringType.Name;
+        }
 
+        
     }
+
 }

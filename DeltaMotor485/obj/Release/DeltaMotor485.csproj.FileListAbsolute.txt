@@ -112,3 +112,5 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Microsoft.msh
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\SunnyUI.Common.dll

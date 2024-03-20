@@ -2812,7 +2812,12 @@ namespace SQLUI
             TableName = tableName;
             ColumnList = columnList;
         }
+        public Table(Enum enum_type)
+        {
 
+            TableName = enum_type.GetEnumDescription();
+            AddColumnList(enum_type);
+        }
         public void SetTableConfig(SQLControl sQLControl)
         {
             this.TableName = sQLControl.TableName;
@@ -3292,6 +3297,103 @@ namespace SQLUI
             _ColumnElement.TypeName = GetTypeName(_DateType, M);
             _ColumnElement.IndexType = _IndexType;
             ColumnList.Add(_ColumnElement);
+        }
+        public void AddColumnList(object Enum)
+        {
+            ValueType valueType = ValueType.None;
+            StringType stringType = StringType.None;
+            DateType dateType = DateType.None;
+            OtherType otherType = OtherType.None;
+            IndexType indexType = IndexType.None;
+            string[] descriptions = Enum.GetEnumDescriptions();
+            for (int i = 0; i < descriptions.Length; i++)
+            {
+                valueType = ValueType.None;
+                stringType = StringType.None;
+                dateType = DateType.None;
+                otherType = OtherType.None;
+                indexType = IndexType.None;
+                string[] temp_ary = descriptions[i].Split(',');
+                string[] type_names;
+                if (temp_ary.Length == 4)
+                {
+                    string name = temp_ary[0];
+                    string valtype = temp_ary[1];
+                    int len = temp_ary[2].StringToInt32();
+                    string indextype = temp_ary[3];
+                    if (name.StringIsEmpty()) continue;
+                    if (valtype.StringIsEmpty()) continue;
+                    if (indextype.StringIsEmpty()) continue;
+                    if (len <= 0) continue;
+                    type_names = new ValueType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            valueType = (ValueType)k;
+                        }
+                    }
+                    type_names = new StringType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            stringType = (StringType)k;
+                        }
+                    }
+                    type_names = new DateType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            dateType = (DateType)k;
+                        }
+                    }
+                    type_names = new OtherType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            otherType = (OtherType)k;
+                        }
+                    }
+                    type_names = new IndexType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == indextype)
+                        {
+                            indexType = (IndexType)k;
+                        }
+                    }
+                    bool flag_continue = false;
+
+                    if (valueType != ValueType.None)
+                    {
+                        AddColumnList(name, valueType, (uint)len, indexType);
+                    }
+                    if (stringType != StringType.None)
+                    {
+                        AddColumnList(name, stringType, (uint)len, indexType);
+                    }
+                    if (dateType != DateType.None)
+                    {
+                        AddColumnList(name, dateType, (uint)len, indexType);
+                    }
+                    if (otherType != OtherType.None)
+                    {
+                        AddColumnList(name, otherType, indexType);
+                    }
+                    if (flag_continue)
+                    {
+                        this.ColumnList = null;
+                        return;
+                        continue;
+                    }
+
+
+                }
+            }
+
         }
 
         public void ClearColumn()

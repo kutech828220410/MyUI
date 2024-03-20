@@ -3929,3 +3929,5 @@ C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\PopupControl.dl
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\TCP.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.Common.dll

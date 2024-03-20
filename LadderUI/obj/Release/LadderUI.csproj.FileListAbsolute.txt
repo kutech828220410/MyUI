@@ -6464,3 +6464,5 @@ C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\Microsoft.mshtml.d
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.Common.dll

@@ -37,8 +37,8 @@ namespace HSONApplication
       
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
+            this.WindowState = FormWindowState.Maximized;
+            plC_UI_Init1.全螢幕顯示 = true;
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;

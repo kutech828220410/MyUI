@@ -88,6 +88,9 @@
     <Reference Include="SLDUI">
       <HintPath>..\0.DLL\SLDUI.dll</HintPath>
     </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>..\..\inventorySystem\0.DLL\SunnyUI.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -165,6 +168,18 @@
     </Compile>
     <Compile Include="Dialog_ContextMenuStrip.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DateTimeIntervel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DateTimeIntervel.Designer.cs">
+      <DependentUpon>Dialog_DateTimeIntervel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog_DateTimePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog_DateTimePicker.Designer.cs">
+      <DependentUpon>Dialog_DateTimePicker.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog_NumPannel.cs">
       <SubType>Form</SubType>
@@ -293,6 +308,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RJ_Calendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RJ_Calendar.Designer.cs">
+      <DependentUpon>RJ_Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="RJ_TrackBar.cs">
       <SubType>Component</SubType>
@@ -479,6 +500,12 @@
     <EmbeddedResource Include="Dialog_AlarmForm.resx">
       <DependentUpon>Dialog_AlarmForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_DateTimeIntervel.resx">
+      <DependentUpon>Dialog_DateTimeIntervel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog_DateTimePicker.resx">
+      <DependentUpon>Dialog_DateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog_NumPannel.resx">
       <DependentUpon>Dialog_NumPannel.cs</DependentUpon>
     </EmbeddedResource>
@@ -569,6 +596,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_DatePicker.resx">
+      <DependentUpon>RJ_DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RJ_Calendar.resx">
+      <DependentUpon>RJ_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RJ_TrackBar.resx">
       <DependentUpon>RJ_TrackBar.cs</DependentUpon>

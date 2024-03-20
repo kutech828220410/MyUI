@@ -1538,3 +1538,5 @@ C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\PortControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.Common.dll

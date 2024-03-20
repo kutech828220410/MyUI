@@ -47,7 +47,7 @@ namespace MyUI
             }
             private set
             {
-                this.Invoke(new Action(delegate { this.rJ_TextBox_Value.Text = value; }));      
+                this.Invoke(new Action(delegate { this.rJ_TextBox_Value.Texts = value; }));      
             }
         }
         public string Title

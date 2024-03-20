@@ -14,7 +14,17 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Drawing;
 namespace Basic
-{
+{      // 取得 Enum 列舉 Attribute Description 設定值
+    [AttributeUsage(AttributeTargets.Enum)]
+    public class EnumDescriptionAttribute : Attribute
+    {
+        public string Description { get; }
+
+        public EnumDescriptionAttribute(string description)
+        {
+            Description = description;
+        }
+    }
     public class MyConvert
     {
         public bool 檢查八進位合法(int val)
@@ -923,8 +933,13 @@ namespace Basic
             return val;
         }
         #region Enum_Convert
-        // 取得 Enum 列舉 Attribute Description 設定值
-   
+  
+        public static string GetEnumDescription(this Enum value)
+        {
+            Type enumType = value.GetType();
+            var attribute = (EnumDescriptionAttribute)Attribute.GetCustomAttribute(enumType, typeof(EnumDescriptionAttribute));
+            return attribute != null ? attribute.Description : enumType.Name;
+        }
         public static string GetDescriptionText<T>(this T source)
         {
             FieldInfo fi = source.GetType().GetField(source.ToString());
@@ -1515,6 +1530,17 @@ namespace Basic
             int _temp = _hour * 1000 + _min;
             int temp = hour * 1000 + min;
             return (temp - _temp <= 0);
+        }
+
+        public static DateTime GetStartDate(this DateTime dateTime)
+        {
+            dateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, 00, 00, 00);
+            return dateTime;
+        }
+        public static DateTime GetEndDate(this DateTime dateTime)
+        {
+            dateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, 23, 59, 59);
+            return dateTime;
         }
         #region Function
         static private string ToDATE_String(string Year, string Month, string Day)

@@ -1293,3 +1293,5 @@ C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Microso
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.Common.dll

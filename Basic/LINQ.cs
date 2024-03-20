@@ -174,6 +174,7 @@ namespace Basic
 
             return dictionary;
         }
+    
         static public bool IsEqual(this object[] srcvalue, object[] dstvalue ,params int[] exclude)
         {
             bool flag_continue = false;
