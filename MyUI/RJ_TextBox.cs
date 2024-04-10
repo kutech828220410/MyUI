@@ -27,6 +27,7 @@ namespace MyUI
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+        public RJ_Button KeypressEnterButton;
         public virtual string Text
         {
             get
@@ -283,6 +284,8 @@ namespace MyUI
             SetPlcaeHolder();
         }
 
+   
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
@@ -460,6 +463,13 @@ namespace MyUI
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             this.OnKeyPress(e);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if(KeypressEnterButton != null)
+                {
+                    KeypressEnterButton.onClick();
+                }
+            }
         }
         protected override void OnGotFocus(EventArgs e)
         {

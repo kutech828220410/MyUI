@@ -1575,8 +1575,8 @@ namespace SQLUI
                     _MySqlCommand.Parameters.AddWithValue((string)(serchColumnName[i] + i.ToString()), serchValue[i]);
                 }
             }
-        
 
+            //Console.WriteLine($"[GetRows]Command:{Command}");
             var reader = _MySqlCommand.ExecuteReader();
             int FieldCount = reader.FieldCount;
             object value;
@@ -2276,7 +2276,7 @@ namespace SQLUI
                     Command += " WHERE ";
                     if (serchValue[0].Check_Date_String() || serchValue[1].Check_Date_String())
                     {
-                        Name = "date(" + serchColumnName[0] + ")";
+                        Name = "(" + serchColumnName[0] + ")";
                         //Console.WriteLine($"get rows date beteeen {serchValue[0]} : {serchValue[1]}");
                     }
                     else Name = "(" + serchColumnName[0] + ")";          
@@ -3529,6 +3529,8 @@ namespace SQLUI
                 return null;
             }
         }
-  
+
+
+    
     }
 }

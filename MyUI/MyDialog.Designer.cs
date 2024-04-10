@@ -37,13 +37,14 @@ namespace MyUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CanResize = false;
+            this.CaptionFont = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.ClientSize = new System.Drawing.Size(850, 572);
+            this.CloseBoxSize = new System.Drawing.Size(32, 24);
             this.ControlBox = false;
-            this.ControlBoxActive = System.Drawing.Color.DarkGray;
-            this.ControlBoxDeactive = System.Drawing.Color.DarkGray;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
+            this.MaxSize = new System.Drawing.Size(32, 24);
             this.MinimizeBox = false;
+            this.MiniSize = new System.Drawing.Size(32, 24);
             this.Name = "MyDialog";
             this.Radius = 10;
             this.ShadowWidth = 15;
@@ -51,6 +52,7 @@ namespace MyUI
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.TitleOffset = new System.Drawing.Point(20, 5);
             this.TopMost = true;
             this.ResumeLayout(false);
 

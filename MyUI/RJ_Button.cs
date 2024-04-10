@@ -202,13 +202,65 @@ namespace MyUI
             }
         }
 
+        private int prohibitionBorderLineWidth = 1;
+        [Category("RJ Code Advance")]
+        public int ProhibitionBorderLineWidth
+        {
+            set
+            {
+                prohibitionBorderLineWidth = value;
+            }
+            get
+            {
+                return prohibitionBorderLineWidth;
+            }
+        }
+        private int prohibitionLineWidth = 4;
+        [Category("RJ Code Advance")]
+        public int ProhibitionLineWidth
+        {
+            set
+            {
+                prohibitionLineWidth = value;
+            }
+            get
+            {
+                return prohibitionLineWidth;
+            }
+        }
+        private int prohibitionSymbolSize = 30;
+        [Category("RJ Code Advance")]
+        public int ProhibitionSymbolSize
+        {
+            set
+            {
+                prohibitionSymbolSize = value;
+            }
+            get
+            {
+                return prohibitionSymbolSize;
+            }
+        }
+        private Color disenableColor = Color.Gray;
+        [Category("RJ Code Advance")]
+        public Color DisenableColor
+        {
+            set
+            {
+                disenableColor = value;
+            }
+            get
+            {
+                return disenableColor;
+            }
+        }
 
         public enum ButtonType
         {
             Push,
             Toggle,
         }
-
+        
         public bool state = false;
         private bool state_buf = false;
         [ReadOnly(false), Browsable(false), Category(""), Description(""), DefaultValue("")]
@@ -348,7 +400,7 @@ namespace MyUI
             Color bkgroundcolor = this.backgroundColor;
             if(this.Enabled == false)
             {
-                bkgroundcolor = Color.Gray;
+                bkgroundcolor = disenableColor;
             }
             else if (flag_MouseDown)
             {
@@ -486,7 +538,7 @@ namespace MyUI
                     g.DrawString($"{this.Text}", this.Font, new SolidBrush(foreColor), point, StringFormat.GenericDefault);
 
                 }
-                if (this.Enabled == false) DrawProhibitionSymbol(g, new Point((int)((rectShadow.X + rectShadow.Width) / 2), (int)((rectShadow.Y + rectShadow.Height) / 2)), 30, 4, 1);
+                if (this.Enabled == false) DrawProhibitionSymbol(g, new Point((int)((rectShadow.X + rectShadow.Width) / 2), (int)((rectShadow.Y + rectShadow.Height) / 2)), prohibitionSymbolSize, ProhibitionLineWidth, prohibitionBorderLineWidth);
                 //DrawingClass.GDI32.DrawImage(pevent.Graphics, bitmap);
                 pevent.Graphics.DrawImage(bitmap, new PointF());
 
@@ -505,12 +557,16 @@ namespace MyUI
         private bool flag_MouseDownEventEx_done = false;
         public delegate void MouseDownEventExHandler(RJ_Button rJ_Button, MouseEventArgs mevent);
         public event MouseDownEventExHandler MouseDownEventEx;
-       
 
-
+        public void onClick()
+        {
+            OnMouseDown(new MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0));
+        }
+ 
         private bool flag_MouseDownEvent_done = false;
         public delegate void MouseDownEventHandler(MouseEventArgs mevent);
         public event MouseDownEventHandler MouseDownEvent;
+    
         async protected override void OnMouseDown(MouseEventArgs mevent)
         {
             flag_MouseDown = true;

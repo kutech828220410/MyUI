@@ -75,8 +75,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DeltaMotor485
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DeltaMotor485.pdb
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MyUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\System.Memory.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MeasureSystemUI.dll
@@ -87,8 +85,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LightControlU
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\System.Numerics.Vectors.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -114,3 +110,7 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Memory.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Interop.SpeechLib.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll

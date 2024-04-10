@@ -79,7 +79,7 @@ namespace MyUI
                 this.Refresh();
             }));
         }
-        private List<StepEntity> _dataSourceList = null;
+        private List<StepEntity> _dataSourceList = new List<StepEntity>();
         [Browsable(true), Category("StepViewer")]
         public List<StepEntity> ListDataSource
         {
@@ -110,7 +110,31 @@ namespace MyUI
             }
         }
 
-
+        public void AddSetp(string stepname, string stepdesc, eumStepState stepstate)
+        {
+            if (_dataSourceList == null) _dataSourceList = new List<StepEntity>();
+            int temp = _dataSourceList.Count + 1;
+            AddSetp(temp.ToString(), stepname, temp, stepdesc, stepstate, null);
+        }
+        public void AddSetp( string stepname, string stepdesc)
+        {
+            if (_dataSourceList == null) _dataSourceList = new List<StepEntity>();
+            int temp = _dataSourceList.Count + 1;
+            AddSetp(temp.ToString(), stepname, temp, stepdesc, eumStepState.Waiting, null);
+        }
+        public void AddSetp(string id, string stepname, int steporder, string stepdesc)
+        {
+            AddSetp(id, stepname, steporder, stepdesc, eumStepState.Waiting, null);
+        }
+        public void AddSetp(string id, string stepname, int steporder, string stepdesc, eumStepState stepstate)
+        {
+            AddSetp(id, stepname, steporder, stepdesc, stepstate, null);
+        }
+        public void AddSetp(string id, string stepname, int steporder, string stepdesc, eumStepState stepstate ,object tag)
+        {
+            if (_dataSourceList == null) _dataSourceList = new List<StepEntity>();
+            _dataSourceList.Add(new StepEntity(id, stepname, steporder, stepdesc, stepstate, tag));
+        }
         public void DrawCircleWithCheck(Graphics graphic, RectangleF rectangleF, Color circleColor, Color checkColor)
         {
             // 設置外圓圈的筆刷

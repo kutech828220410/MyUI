@@ -16,6 +16,7 @@ namespace LeadShineUI
      [System.Drawing.ToolboxBitmap(typeof(IOC1280), "PCI.bmp")]
     public partial class IOC1280 : UserControl
     {
+        public static string currentDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         #region 自訂屬性
         private string _設備名稱 = "IOC1280-001";
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
@@ -56,7 +57,10 @@ namespace LeadShineUI
         public IOC1280()
         {
             InitializeComponent();
+            this.plC_Button_Save.btnClick += PlC_Button_Save_btnClick;
         }
+
+   
 
         private void SetLowerMachine(LowerMachine PLC)
         {
@@ -271,7 +275,7 @@ namespace LeadShineUI
                 }
                 if (!First_Init)
                 {
-                    this.SaveProperties();
+                    //this.SaveProperties();
                     this.LoadProperties();
                 }
                 First_Init = false;
@@ -297,7 +301,7 @@ namespace LeadShineUI
         {
             if (!this.IsOpen) return;
             this.List_SaveClass.Clear();
-            this.StreamName = @".\\IOC1280\\" + _設備名稱 + ".pro";
+            this.StreamName = $@"{currentDirectory}\\IOC1280\\" + _設備名稱 + ".pro";
             for (int i = 0; i < Card_count; i++)
             {
                 this.List_SaveClass.Add(IOC1280_Basic[i].GetSaveObject());
@@ -308,8 +312,13 @@ namespace LeadShineUI
         {
             object temp = new object();
             this.List_SaveClass.Clear();
-            this.StreamName = @".\\IOC1280\\" + _設備名稱 + ".pro";
-            Basic.FileIO.LoadProperties(ref temp, StreamName);
+            this.StreamName = $@"{currentDirectory}\\IOC1280\\" + _設備名稱 + ".pro";
+            Console.WriteLine($"[LoadProperties] StreamName:{StreamName}");
+            if(!Basic.FileIO.LoadProperties(ref temp, StreamName))
+            {
+                Console.WriteLine($"[LoadProperties] failed!");
+
+            }
             if (temp is List<IOC1280_Basic.SaveClass>)
             {
                 this.List_SaveClass = (List<IOC1280_Basic.SaveClass>)temp;
@@ -330,6 +339,11 @@ namespace LeadShineUI
                 BoardClose();
                 //this.SaveProperties();
             }
+        }
+        private void PlC_Button_Save_btnClick(object sender, EventArgs e)
+        {
+            this.SaveProperties();
+            MyMessageBox.ShowDialog("存檔完成!");
         }
     }
 }

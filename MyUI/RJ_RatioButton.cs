@@ -14,7 +14,7 @@ namespace MyUI
     {
         private Color checkColor = Color.MediumSlateBlue;
         private Color uncheckColor = Color.Gray;
-
+        public string GUID = "";
         public Color CheckColor
         {
             get

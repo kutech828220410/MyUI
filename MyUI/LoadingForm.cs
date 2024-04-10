@@ -56,6 +56,13 @@ namespace MyUI
             if (m.Msg == 0x0014) return;
             base.WndProc(ref m);
         }
+        public static void ShowLoadingFormInvoke()
+        {
+            form.Invoke(new Action(delegate 
+            {
+                ShowLoadingForm();
+            }));
+        }
         public static void ShowLoadingForm()
         {
             LoadingForm loadingForm = LoadingForm.getLoading();
@@ -67,6 +74,7 @@ namespace MyUI
             {
                 if(IsShown == false)
                 {
+                    IsShown = true;
                     loadingForm.ShowDialog();
                 }
    
@@ -76,6 +84,13 @@ namespace MyUI
                 if (IsShown) break;
                 System.Threading.Thread.Sleep(20);
             }
+        }
+        public static void CloseLoadingFormInvoke()
+        {
+            form.Invoke(new Action(delegate
+            {
+                CloseLoadingForm();
+            }));
         }
         public static void CloseLoadingForm()
         {
@@ -95,9 +110,13 @@ namespace MyUI
         }
         protected override void OnShown(EventArgs e)
         {
+            pLoading.BringToFront();
+            pLoading.TopLevel = true;
+            pLoading.TopMost = true;
             int cnt = 0;
             Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(2);
             myTimer.StartTickTime(1);
+      
             while (true)
             {
                 try
@@ -119,7 +138,7 @@ namespace MyUI
             }
 
             base.OnShown(e);
-            IsShown = true;
+          
 
         }
         private static void PLoading_Shown(object sender, EventArgs e)

@@ -617,6 +617,18 @@ namespace Basic
             }
             return dataTable;
         }
+        static public int GetColumnIndex(this DataTable dt, string col_Name)
+        {
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                if(dt.Columns[i].ColumnName == col_Name)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
 
         internal enum MoveFileFlags
         {

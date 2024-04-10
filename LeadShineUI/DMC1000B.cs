@@ -17,6 +17,7 @@ namespace LeadShineUI
     [Designer(typeof(ComponentSet.JLabelExDesigner))]  
     public partial class DMC1000B : UserControl
     {
+        public static string currentDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         #region 自訂屬性
         private string _設備名稱 = "DMC1000B-001";
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
@@ -507,7 +508,7 @@ namespace LeadShineUI
                         DMC1000B_Basic[i].Init();
                     }
                 }
-                if (!First_Init) this.SaveProperties();
+                //if (!First_Init) this.SaveProperties();
                 First_Init = false;
                 this.IsOpen = true;
                 for (int i = 0; i < Card_count; i++)
@@ -557,7 +558,7 @@ namespace LeadShineUI
         public void SaveProperties()
         {
             this.List_SaveClass.Clear();
-            this.StreamName = @".\\DMC1000B\\" + _設備名稱 +".pro";
+            this.StreamName = $@"{currentDirectory}\\DMC1000B\\" + _設備名稱 + ".pro";
             for (int i = 0; i < Card_count; i++)
             {
                 this.List_SaveClass.Add(DMC1000B_Basic[i].GetSaveObject());
@@ -568,7 +569,7 @@ namespace LeadShineUI
         {
             object temp = new object();
             this.List_SaveClass.Clear();
-            this.StreamName = @".\\DMC1000B\\" + _設備名稱 + ".pro";
+            this.StreamName = $@"{currentDirectory}\\DMC1000B\\" + _設備名稱 + ".pro";
             Basic.FileIO.LoadProperties(ref temp, StreamName);
             if (temp is List<DMC1000B_Basic.SaveClass>)
             {

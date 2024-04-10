@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCWin;
+using System.Runtime.InteropServices;
+using Basic;
 namespace MyUI
 {
     public partial class MyDialog : CCSkinMain
     {
         public delegate void LoadFinishedEventHandler(EventArgs e);
         public event LoadFinishedEventHandler LoadFinishedEvent;
+        public delegate void ShowDialogEventHandler();
+        public event ShowDialogEventHandler ShowDialogEvent;
 
         [System.Runtime.InteropServices.DllImport("user32")]
         private static extern bool AnimateWindow(IntPtr hwnd, int dwTime, int dwFlags);
@@ -36,43 +40,92 @@ namespace MyUI
         //淡入淡出渐变效果
         const int AW_BLEND = 0x80000;
 
+        // 导入 Windows API 函数
+        [DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool IsIconic(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        private const int SW_SHOWNORMAL = 1;
+        private const int SW_SHOW = 5;
+        private const int SW_RESTORE = 9;
+        // 显示指定标题的窗口到最前端
+        public static void BringDialogToFront(string windowTitle)
+        {
+            IntPtr hWnd = FindWindow(null, windowTitle);
+            if (hWnd != IntPtr.Zero)
+            {
+                ShowWindow(hWnd, SW_SHOW);
+                ShowWindow(hWnd, SW_SHOWNORMAL);
+                SetForegroundWindow(hWnd);
+            }
+        }
+     
+
         private int special_Time = 100;
         [Category("Skin")]
         [DefaultValue(true)]
         [Description("窗口淡出時間")]
         public int Special_Time { get { return this.special_Time; } set { this.special_Time = value; } }
+
+        private bool close_flag = false;
         public static Form form;
         public DialogResult ShowDialog()
         {
+            if (ShowDialogEvent != null) ShowDialogEvent();
+            if (this.DialogResult == DialogResult.Cancel) return this.DialogResult;
             if (form == null)
             {
                 this.Special = false;
-                this.TopMost = true;
-                this.TopLevel = true;
+          
                 this.Opacity = 1;
                 this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
-                this.ShowIcon = false;
-                this.ShowInTaskbar = false;
-                this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                if (this.FormBorderStyle == FormBorderStyle.FixedDialog)
+                {
+                    this.TopMost = true;
+                    this.TopLevel = true;
+                    this.ShowIcon = false;
+                    this.ShowInTaskbar = false;
+                    this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                }
+
                 this.SizeGripStyle = SizeGripStyle.Show;
-                //this.Visible = false;
-                base.ShowDialog();
+                if (this.FormBorderStyle == FormBorderStyle.None)
+                {
+                    base.Show();
+                }
+                else base.ShowDialog();
             }
             else
             {
                 form.Invoke(new Action(delegate
                 {
                     this.Special = false;
-                    this.TopMost = true;
-                    this.TopLevel = true;
+               
                     this.Opacity = 1;
                     this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
-                    this.ShowIcon = false;
-                    this.ShowInTaskbar = false;
-                    this.FormBorderStyle = FormBorderStyle.FixedDialog;
-                    this.SizeGripStyle = SizeGripStyle.Show;
+                    if (this.FormBorderStyle == FormBorderStyle.FixedDialog)
+                    {
+                        this.TopMost = true;
+                        this.TopLevel = true;
+                        this.ShowIcon = false;
+                        this.ShowInTaskbar = false;
+                        this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                    }
                     //this.Visible = false;
-                    base.ShowDialog();
+                    if (this.FormBorderStyle == FormBorderStyle.None)
+                    {
+                        base.Show();
+                    }
+                    else base.ShowDialog();
                 }));
             }
 
@@ -89,59 +142,40 @@ namespace MyUI
             UpdateStyles();
         }
 
-   
+        new public void Close()
+        {
+            if (this.IsHandleCreated)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    base.Close();
+                }));
+            }
+
+        }
+
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
             Application.DoEvents();
             AnimateWindow(this.Handle, special_Time, AW_HIDE | AW_BLEND | AW_SLIDE);
             Application.DoEvents();
-            //double temp = 1.0D / special_Time;
-            //int cnt = 0;
-            //Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(1);
-            //myTimer.StartTickTime();
-            //while (true)
-            //{
-            //    if (cnt >= special_Time) break;
-            //    if (myTimer.IsTimeOut())
-            //    {
-            //        this.Opacity = 1 - temp * cnt;
-            //        myTimer.TickStop();
-            //        myTimer.StartTickTime(1);
-            //        Application.DoEvents();
-            //        cnt++;
-            //    }
-            //}
+
 
         }
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x0014) return;
+            if (m.Msg == 6 && m.WParam.ToInt32() == 2097152)
+            {
+                Console.WriteLine($"m.Msg:{m.Msg},m.WParam:{m.WParam.ToInt32()}");
+                return;
+            }
             base.WndProc(ref m);
         }
         protected override void OnShown(EventArgs e)
         {
-            //this.Visible = true;
-           
-
             base.OnShown(e);
-    
-            //double temp = 1.0D / special_Time;
-            //int cnt = 0;
-            //Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(1);
-            //myTimer.StartTickTime();
-            //while (true)
-            //{
-            //    if (cnt >= special_Time) break;
-            //    if (myTimer.IsTimeOut())
-            //    {
-            //        this.Opacity = 0 + temp * cnt;
-            //        myTimer.TickStop();
-            //        myTimer.StartTickTime(1);
-            //        Application.DoEvents();
-            //        cnt++;
-            //    }
-            //}
         }
         protected override void OnLoad(EventArgs e)
         {

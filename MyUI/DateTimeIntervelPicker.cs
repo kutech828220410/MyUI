@@ -26,6 +26,10 @@ namespace MyUI
             {
                 return startTime;
             }
+            set
+            {
+                startTime = value;
+            }
         }
 
         public DateTime EndTime
@@ -33,6 +37,10 @@ namespace MyUI
             get
             {
                 return endTime;
+            }
+            set
+            {
+                endTime = value;
             }
         }
         public DateTimeIntervelPicker()
@@ -79,7 +87,10 @@ namespace MyUI
                 SureClick(sender, e, startTime, endTime);
             }
         }
-
+        public void OnSureClick()
+        {
+            content_SureClick(this, new EventArgs(), startTime, endTime);
+        }
         private void content_SureClick(object sender, EventArgs e, DateTime start, DateTime end)
         {
             rJ_Lable_起始.Text = startTime.ToDateTimeString();

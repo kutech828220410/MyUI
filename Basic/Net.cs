@@ -345,6 +345,7 @@ namespace Basic
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                 IgnoreNullValues = true,
                 IgnoreReadOnlyProperties = true,
+                PropertyNameCaseInsensitive = true,
                 //DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
             };
             string jsonString = JsonSerializer.Serialize<object>(value, options);
@@ -362,16 +363,23 @@ namespace Basic
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
                 IgnoreNullValues = true,
                 IgnoreReadOnlyProperties = true,
+                PropertyNameCaseInsensitive = true,
             };
             string jsonString = JsonSerializer.Serialize(value, options);
             return Task.FromResult(jsonString);
         }
         public static T JsonDeserializet<T>(this string jsonString)
         {
-            //return JsonConvert.DeserializeObject<T>(jsonString);
+            JsonSerializerOptions options = new JsonSerializerOptions
+            {           
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                IgnoreNullValues = true,
+                IgnoreReadOnlyProperties = true,
+                PropertyNameCaseInsensitive = true,
+            };
             try
             {
-                return JsonSerializer.Deserialize<T>(jsonString);
+                return JsonSerializer.Deserialize<T>(jsonString,options);
             }
             catch
             {
@@ -760,5 +768,33 @@ namespace Basic
             }
         }
 
+        public static byte[] WEBApiPostDownloaFile(string url, string jsonPayload)
+        {
+            byte[] result = Task.Run(async () =>
+            {
+                byte[] responseBody = await WEBApiPostDownloaFileAsync(url, jsonPayload);
+                return responseBody;
+            }).Result;
+            return result;
+        }
+        static async Task<byte[]> WEBApiPostDownloaFileAsync(string url, string jsonPayload)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // 設置Content-Type為application/json
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                // 發送POST請求
+                HttpResponseMessage response = await client.PostAsync(url, new StringContent(jsonPayload, Encoding.UTF8, "application/json"));
+
+                // 確認回應狀態碼是否成功
+                response.EnsureSuccessStatusCode();
+
+                // 讀取回應內容
+                byte[] xlsFile = await response.Content.ReadAsByteArrayAsync();
+
+                return xlsFile;
+            }
+        }
     }
 }
