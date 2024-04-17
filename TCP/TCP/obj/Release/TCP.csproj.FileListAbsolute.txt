@@ -4003,7 +4003,6 @@ C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\TCP\TCP\bin\Release\AxOvkBase.dll
@@ -4094,3 +4093,5 @@ C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\TCP\TCP\bin\Release\LightControlUI.dll

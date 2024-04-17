@@ -2403,11 +2403,9 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\PortControlUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -2495,3 +2493,7 @@ C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\LightControlUI.dll

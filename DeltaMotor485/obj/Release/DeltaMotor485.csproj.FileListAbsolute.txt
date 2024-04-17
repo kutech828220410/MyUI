@@ -81,11 +81,9 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MeasureSystem
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\PortControlUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBaseAsm4.5.dll
@@ -114,3 +112,6 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Memory
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Numerics.Vectors.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll

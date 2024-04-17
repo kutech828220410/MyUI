@@ -3120,3 +3120,5 @@ C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Newtonsoft.Json.xml

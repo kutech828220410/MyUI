@@ -966,13 +966,11 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Text.Json.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -1063,3 +1061,6 @@ C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\LightControlUI.dll

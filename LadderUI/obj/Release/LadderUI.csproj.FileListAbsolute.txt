@@ -6355,7 +6355,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\FontAwesome.Sharp.
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxOvkBase.dll
@@ -6466,3 +6465,5 @@ C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\LightControlUI.dll

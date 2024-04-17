@@ -582,12 +582,10 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Memory.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Numerics.Vectors.dll
@@ -655,3 +653,6 @@ C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll

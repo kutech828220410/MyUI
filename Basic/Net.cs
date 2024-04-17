@@ -368,21 +368,24 @@ namespace Basic
             string jsonString = JsonSerializer.Serialize(value, options);
             return Task.FromResult(jsonString);
         }
+
+        public static JsonSerializerOptions DeserializeOptions = new JsonSerializerOptions
+        {
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            IgnoreNullValues = true,
+            IgnoreReadOnlyProperties = true,
+            PropertyNameCaseInsensitive = false,
+        };
         public static T JsonDeserializet<T>(this string jsonString)
         {
-            JsonSerializerOptions options = new JsonSerializerOptions
-            {           
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                IgnoreNullValues = true,
-                IgnoreReadOnlyProperties = true,
-                PropertyNameCaseInsensitive = true,
-            };
+          
             try
             {
-                return JsonSerializer.Deserialize<T>(jsonString,options);
+                return JsonSerializer.Deserialize<T>(jsonString, DeserializeOptions);
             }
-            catch
+            catch(Exception e)
             {
+                Console.WriteLine($"[JsonDeserializet]{e.Message}");
                 return default(T);
             }
 
@@ -390,6 +393,39 @@ namespace Basic
         public static Task<T> JsonDeserializetAsync<T>(this string jsonString)
         {
             return Task.FromResult(JsonDeserializet<T>(jsonString));
+        }
+
+
+        public static async Task<List<T>> DeserializeJsonListAsync<T>(List<string> jsonStrings)
+        {
+            var tasks = jsonStrings.Select(json => Task.Run(() => JsonSerializer.Deserialize<T>(json)));
+            var results = await Task.WhenAll(tasks);
+            return results.ToList();
+        }
+        public static T NewtonJsonDeserializet<T>(this string jsonString)
+        {
+ 
+            try
+            {
+                Newtonsoft.Json.JsonSerializerSettings options = new Newtonsoft.Json.JsonSerializerSettings
+                {
+
+                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize
+                };
+
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonString, options);
+            }
+            catch
+            {
+                return default(T);
+            }
+
+        }
+        public static string NewtonJsonSerializationt<T>(this T value)
+        {
+
+            string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(value);
+            return jsonString;
         }
 
         public static byte[] JsonUtf8BytesSerializationt<T>(this T value)

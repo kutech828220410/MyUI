@@ -490,6 +490,7 @@ namespace MyUI
             this.plC_RJ_Button_返回.BorderSize = 0;
             this.plC_RJ_Button_返回.but_press = false;
             this.plC_RJ_Button_返回.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_返回.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_返回.Dock = System.Windows.Forms.DockStyle.Right;
             this.plC_RJ_Button_返回.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_返回.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -508,6 +509,9 @@ namespace MyUI
             this.plC_RJ_Button_返回.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
             this.plC_RJ_Button_返回.ON_文字顏色 = System.Drawing.Color.White;
             this.plC_RJ_Button_返回.ON_背景顏色 = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_返回.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_返回.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_返回.ProhibitionSymbolSize = 30;
             this.plC_RJ_Button_返回.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_返回.ShadowSize = 3;
             this.plC_RJ_Button_返回.ShowLoadingForm = false;
@@ -540,6 +544,7 @@ namespace MyUI
             this.plC_RJ_Button_確認.BorderSize = 0;
             this.plC_RJ_Button_確認.but_press = false;
             this.plC_RJ_Button_確認.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_確認.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_Button_確認.Dock = System.Windows.Forms.DockStyle.Right;
             this.plC_RJ_Button_確認.FlatAppearance.BorderSize = 0;
             this.plC_RJ_Button_確認.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -558,6 +563,9 @@ namespace MyUI
             this.plC_RJ_Button_確認.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
             this.plC_RJ_Button_確認.ON_文字顏色 = System.Drawing.Color.White;
             this.plC_RJ_Button_確認.ON_背景顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_確認.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_確認.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_確認.ProhibitionSymbolSize = 30;
             this.plC_RJ_Button_確認.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_確認.ShadowSize = 3;
             this.plC_RJ_Button_確認.ShowLoadingForm = false;

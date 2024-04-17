@@ -4979,3 +4979,4 @@ C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Release\Microsoft.m
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Release\Newtonsoft.Json.dll

@@ -56,12 +56,20 @@ namespace MyUI
         private void init(DateTime startTime, DateTime endTime)
         {
             InitializeComponent();
-            this.startTime = startTime;
-            this.endTime = endTime;
 
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             btnPopup.Click += BtnPopup_Click;
+
+            SetDateTime(startTime, endTime);
+
+
+        }
+        public void SetDateTime(DateTime startTime, DateTime endTime)
+        {
+            this.startTime = startTime;
+            this.endTime = endTime;
+
             DateTimeIntervelPopup content = new DateTimeIntervelPopup();
             popup = new Popup(content);
             popup.Dock = DockStyle.Bottom;

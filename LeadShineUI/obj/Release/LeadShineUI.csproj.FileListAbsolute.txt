@@ -3824,7 +3824,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\MeasureSystemUI
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\PortControlUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\AxOvkBase.dll
@@ -3931,3 +3930,5 @@ C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Microsoft.mshtm
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\LightControlUI.dll

@@ -1437,7 +1437,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkBaseAsm4.5.dll
@@ -1540,3 +1539,5 @@ C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\CallBackUI.dll

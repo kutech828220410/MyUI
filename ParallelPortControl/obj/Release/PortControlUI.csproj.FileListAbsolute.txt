@@ -1207,7 +1207,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\FontAwe
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxOvkBase.dll
@@ -1295,3 +1294,5 @@ C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll

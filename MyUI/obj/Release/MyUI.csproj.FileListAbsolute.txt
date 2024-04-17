@@ -205,7 +205,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\Interop.SpeechLib.dll
-C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -291,3 +290,5 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.RJ_DatePicker.res
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.Dialog_DateTimeIntervel.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.Dialog_DateTimePicker.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.RJ_Calendar.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\CallBackUI.dll
