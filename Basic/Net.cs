@@ -595,17 +595,21 @@ namespace Basic
 
             try
             {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(50000);
+
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 HttpClient client = new HttpClient();
                 HttpRequestMessage request = new HttpRequestMessage();
                 request.RequestUri = new Uri(url);
                 request.Method = HttpMethod.Post;
 
+               
 
                 request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
                 var response = await client.SendAsync(request);
                 responseBody = await response.Content.ReadAsStringAsync();
-                if (debug) Console.WriteLine($"{DateTime.Now.ToDateTimeString()}-[{new System.Diagnostics.StackTrace().GetFrame(0).GetMethod().DeclaringType.Name}] sucess..  url:{url} ");
+                if (debug) Console.WriteLine($"[{DateTime.Now.ToDateTimeString()}] Sucess, url:{url}  <{myTimerBasic.ToString()}>");
                 return responseBody;
             }
             catch

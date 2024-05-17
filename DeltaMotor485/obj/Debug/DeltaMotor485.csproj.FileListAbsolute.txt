@@ -73,3 +73,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Debug\DeltaMotor485.p
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\SunnyUI.Common.dll

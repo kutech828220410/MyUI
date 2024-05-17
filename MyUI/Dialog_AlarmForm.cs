@@ -38,6 +38,13 @@ namespace MyUI
 
             return this.DialogResult;
         }
+        public new void Show()
+        {
+            form.Invoke(new Action(delegate 
+            {
+                base.Show();
+            }));
+        }
         public Dialog_AlarmForm(string title, int time_ms)
         {
             InitializeComponent();
@@ -48,6 +55,10 @@ namespace MyUI
             this.FormClosing += Dialog_AlarmForm_FormClosing;
             this._Y_offset = 0;
             this._X_offset = 0;
+        }
+        public Dialog_AlarmForm()
+        {
+
         }
         public Dialog_AlarmForm(string title, int time_ms, Color bkColor)
         {
@@ -89,6 +100,7 @@ namespace MyUI
         }
         private void sub_program()
         {
+            if (_time_ms == 0) return;
             System.Threading.Thread.Sleep(_time_ms);
             this.Invoke(new Action(delegate
             {
@@ -104,7 +116,6 @@ namespace MyUI
                 MyThread_program = null;
             }
         }
-
         private void Dialog_AlarmForm_Load(object sender, EventArgs e)
         {
             this.rJ_Lable1.BackgroundColor = this.backColor;
@@ -117,6 +128,39 @@ namespace MyUI
             MyThread_program.AutoRun(true);
             MyThread_program.SetSleepTime(10);
             MyThread_program.Trigger();
+        }
+
+        public void SetTitle(string Title)
+        {
+            form.Invoke(new Action(delegate 
+            {
+                _title = Title;
+                if(this.IsHandleCreated)
+                {
+                    this.rJ_Lable1.Text = _title;
+                }
+              
+            }));
+     
+        }
+        public void SetTitle(string Title ,Color bkColor)
+        {
+            form.Invoke(new Action(delegate
+            {
+                _title = Title;
+                this.backColor = bkColor;
+                if (this.IsHandleCreated)
+                {
+                    this.rJ_Lable1.Text = _title;
+                    this.rJ_Lable1.BackgroundColor = this.backColor;
+                }
+           
+            }));
+
+        }
+        public void SetCloseTime(int time_ms)
+        {
+            _time_ms = time_ms;
         }
     }
 }

@@ -128,3 +128,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Debug\HSONApplicati
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\PopupControl.dll
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\SunnyUI.Common.dll

@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rJ_Lable1 = new MyUI.RJ_Lable();
             this.plC_RJ_ScreenButton2 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_ScreenPage_main = new MyUI.PLC_ScreenPage();
@@ -71,6 +73,8 @@
             // 
             // panel_main
             // 
+            this.panel_main.Controls.Add(this.label1);
+            this.panel_main.Controls.Add(this.rJ_Lable1);
             this.panel_main.Controls.Add(this.plC_RJ_ScreenButton2);
             this.panel_main.Controls.Add(this.plC_RJ_ScreenButton1);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Top;
@@ -78,6 +82,35 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1084, 62);
             this.panel_main.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(776, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 12);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "label1";
+            // 
+            // rJ_Lable1
+            // 
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Control;
+            this.rJ_Lable1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable1.BorderRadius = 15;
+            this.rJ_Lable1.BorderSize = 0;
+            this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable1.ForeColor = System.Drawing.Color.Transparent;
+            this.rJ_Lable1.GUID = "";
+            this.rJ_Lable1.Location = new System.Drawing.Point(508, 9);
+            this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 3;
+            this.rJ_Lable1.Size = new System.Drawing.Size(135, 53);
+            this.rJ_Lable1.TabIndex = 32;
+            this.rJ_Lable1.Text = "rJ_Lable1";
+            this.rJ_Lable1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable1.TextColor = System.Drawing.Color.White;
             // 
             // plC_RJ_ScreenButton2
             // 
@@ -239,6 +272,7 @@
             this.plC_RJ_ScreenButtonEx1.BorderSize = 0;
             this.plC_RJ_ScreenButtonEx1.but_press = false;
             this.plC_RJ_ScreenButtonEx1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.plC_RJ_ScreenButtonEx1.DisenableColor = System.Drawing.Color.Gray;
             this.plC_RJ_ScreenButtonEx1.FlatAppearance.BorderSize = 0;
             this.plC_RJ_ScreenButtonEx1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_ScreenButtonEx1.ForeColor = System.Drawing.Color.White;
@@ -254,6 +288,9 @@
             this.plC_RJ_ScreenButtonEx1.OnForeColor = System.Drawing.Color.White;
             this.plC_RJ_ScreenButtonEx1.OnIconColor = System.Drawing.Color.Black;
             this.plC_RJ_ScreenButtonEx1.OnText = "iConText";
+            this.plC_RJ_ScreenButtonEx1.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_ScreenButtonEx1.ProhibitionLineWidth = 4;
+            this.plC_RJ_ScreenButtonEx1.ProhibitionSymbolSize = 30;
             this.plC_RJ_ScreenButtonEx1.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_ScreenButtonEx1.ShadowSize = 0;
             this.plC_RJ_ScreenButtonEx1.ShowLoadingForm = false;
@@ -290,6 +327,7 @@
             this.rJ_Button1.BorderRadius = 10;
             this.rJ_Button1.BorderSize = 0;
             this.rJ_Button1.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button1.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button1.FlatAppearance.BorderSize = 0;
             this.rJ_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button1.ForeColor = System.Drawing.Color.White;
@@ -297,6 +335,9 @@
             this.rJ_Button1.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button1.Location = new System.Drawing.Point(362, 591);
             this.rJ_Button1.Name = "rJ_Button1";
+            this.rJ_Button1.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button1.ProhibitionLineWidth = 4;
+            this.rJ_Button1.ProhibitionSymbolSize = 30;
             this.rJ_Button1.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button1.ShadowSize = 3;
             this.rJ_Button1.ShowLoadingForm = false;
@@ -310,7 +351,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(252, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(394, 346);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(661, 314);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -349,9 +390,11 @@
             // dateTimeIntervelPicker1
             // 
             this.dateTimeIntervelPicker1.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeIntervelPicker1.EndTime = new System.DateTime(2024, 5, 15, 23, 59, 59, 0);
             this.dateTimeIntervelPicker1.Location = new System.Drawing.Point(169, 442);
             this.dateTimeIntervelPicker1.Name = "dateTimeIntervelPicker1";
             this.dateTimeIntervelPicker1.Size = new System.Drawing.Size(535, 32);
+            this.dateTimeIntervelPicker1.StartTime = new System.DateTime(2024, 5, 15, 0, 0, 0, 0);
             this.dateTimeIntervelPicker1.TabIndex = 24;
             // 
             // plC_NumBox_po
@@ -382,6 +425,7 @@
             this.rJ_Button_Servo_OFF.BorderRadius = 10;
             this.rJ_Button_Servo_OFF.BorderSize = 0;
             this.rJ_Button_Servo_OFF.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Servo_OFF.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Servo_OFF.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Servo_OFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Servo_OFF.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -390,6 +434,9 @@
             this.rJ_Button_Servo_OFF.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Servo_OFF.Location = new System.Drawing.Point(494, 738);
             this.rJ_Button_Servo_OFF.Name = "rJ_Button_Servo_OFF";
+            this.rJ_Button_Servo_OFF.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Servo_OFF.ProhibitionLineWidth = 4;
+            this.rJ_Button_Servo_OFF.ProhibitionSymbolSize = 30;
             this.rJ_Button_Servo_OFF.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_Servo_OFF.ShadowSize = 0;
             this.rJ_Button_Servo_OFF.ShowLoadingForm = false;
@@ -410,6 +457,7 @@
             this.rJ_Button_Servo_ON.BorderRadius = 10;
             this.rJ_Button_Servo_ON.BorderSize = 0;
             this.rJ_Button_Servo_ON.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Servo_ON.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Servo_ON.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Servo_ON.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Servo_ON.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -418,6 +466,9 @@
             this.rJ_Button_Servo_ON.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Servo_ON.Location = new System.Drawing.Point(266, 738);
             this.rJ_Button_Servo_ON.Name = "rJ_Button_Servo_ON";
+            this.rJ_Button_Servo_ON.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Servo_ON.ProhibitionLineWidth = 4;
+            this.rJ_Button_Servo_ON.ProhibitionSymbolSize = 30;
             this.rJ_Button_Servo_ON.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_Servo_ON.ShadowSize = 0;
             this.rJ_Button_Servo_ON.ShowLoadingForm = false;
@@ -438,6 +489,7 @@
             this.rJ_Button_set_path_config.BorderRadius = 10;
             this.rJ_Button_set_path_config.BorderSize = 0;
             this.rJ_Button_set_path_config.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_set_path_config.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_set_path_config.FlatAppearance.BorderSize = 0;
             this.rJ_Button_set_path_config.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_set_path_config.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -446,6 +498,9 @@
             this.rJ_Button_set_path_config.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_set_path_config.Location = new System.Drawing.Point(559, 561);
             this.rJ_Button_set_path_config.Name = "rJ_Button_set_path_config";
+            this.rJ_Button_set_path_config.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_set_path_config.ProhibitionLineWidth = 4;
+            this.rJ_Button_set_path_config.ProhibitionSymbolSize = 30;
             this.rJ_Button_set_path_config.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_set_path_config.ShadowSize = 0;
             this.rJ_Button_set_path_config.ShowLoadingForm = false;
@@ -466,6 +521,7 @@
             this.rJ_Button_Init.BorderRadius = 10;
             this.rJ_Button_Init.BorderSize = 0;
             this.rJ_Button_Init.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Init.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Init.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Init.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Init.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -474,6 +530,9 @@
             this.rJ_Button_Init.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Init.Location = new System.Drawing.Point(18, 561);
             this.rJ_Button_Init.Name = "rJ_Button_Init";
+            this.rJ_Button_Init.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Init.ProhibitionLineWidth = 4;
+            this.rJ_Button_Init.ProhibitionSymbolSize = 30;
             this.rJ_Button_Init.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_Init.ShadowSize = 0;
             this.rJ_Button_Init.ShowLoadingForm = false;
@@ -494,6 +553,7 @@
             this.rJ_Button_return_home.BorderRadius = 10;
             this.rJ_Button_return_home.BorderSize = 0;
             this.rJ_Button_return_home.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_return_home.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_return_home.FlatAppearance.BorderSize = 0;
             this.rJ_Button_return_home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_return_home.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -502,6 +562,9 @@
             this.rJ_Button_return_home.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_return_home.Location = new System.Drawing.Point(787, 561);
             this.rJ_Button_return_home.Name = "rJ_Button_return_home";
+            this.rJ_Button_return_home.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_return_home.ProhibitionLineWidth = 4;
+            this.rJ_Button_return_home.ProhibitionSymbolSize = 30;
             this.rJ_Button_return_home.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_return_home.ShadowSize = 0;
             this.rJ_Button_return_home.ShowLoadingForm = false;
@@ -522,6 +585,7 @@
             this.rJ_Button_JOG_STOP.BorderRadius = 10;
             this.rJ_Button_JOG_STOP.BorderSize = 0;
             this.rJ_Button_JOG_STOP.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_JOG_STOP.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_JOG_STOP.FlatAppearance.BorderSize = 0;
             this.rJ_Button_JOG_STOP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_JOG_STOP.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -530,6 +594,9 @@
             this.rJ_Button_JOG_STOP.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_JOG_STOP.Location = new System.Drawing.Point(919, 738);
             this.rJ_Button_JOG_STOP.Name = "rJ_Button_JOG_STOP";
+            this.rJ_Button_JOG_STOP.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_JOG_STOP.ProhibitionLineWidth = 4;
+            this.rJ_Button_JOG_STOP.ProhibitionSymbolSize = 30;
             this.rJ_Button_JOG_STOP.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_JOG_STOP.ShadowSize = 0;
             this.rJ_Button_JOG_STOP.ShowLoadingForm = false;
@@ -550,6 +617,7 @@
             this.rJ_Button_DJOG.BorderRadius = 10;
             this.rJ_Button_DJOG.BorderSize = 0;
             this.rJ_Button_DJOG.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_DJOG.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_DJOG.FlatAppearance.BorderSize = 0;
             this.rJ_Button_DJOG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_DJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -558,6 +626,9 @@
             this.rJ_Button_DJOG.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_DJOG.Location = new System.Drawing.Point(1075, 738);
             this.rJ_Button_DJOG.Name = "rJ_Button_DJOG";
+            this.rJ_Button_DJOG.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_DJOG.ProhibitionLineWidth = 4;
+            this.rJ_Button_DJOG.ProhibitionSymbolSize = 30;
             this.rJ_Button_DJOG.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_DJOG.ShadowSize = 0;
             this.rJ_Button_DJOG.ShowLoadingForm = false;
@@ -578,6 +649,7 @@
             this.rJ_Button_UJOG.BorderRadius = 10;
             this.rJ_Button_UJOG.BorderSize = 0;
             this.rJ_Button_UJOG.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_UJOG.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_UJOG.FlatAppearance.BorderSize = 0;
             this.rJ_Button_UJOG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_UJOG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -586,6 +658,9 @@
             this.rJ_Button_UJOG.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_UJOG.Location = new System.Drawing.Point(763, 738);
             this.rJ_Button_UJOG.Name = "rJ_Button_UJOG";
+            this.rJ_Button_UJOG.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_UJOG.ProhibitionLineWidth = 4;
+            this.rJ_Button_UJOG.ProhibitionSymbolSize = 30;
             this.rJ_Button_UJOG.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_UJOG.ShadowSize = 0;
             this.rJ_Button_UJOG.ShowLoadingForm = false;
@@ -604,6 +679,7 @@
             this.sqL_DataGridView_備藥通知.BorderColor = System.Drawing.Color.Silver;
             this.sqL_DataGridView_備藥通知.BorderRadius = 0;
             this.sqL_DataGridView_備藥通知.BorderSize = 2;
+            this.sqL_DataGridView_備藥通知.CellBorderColor = System.Drawing.Color.White;
             this.sqL_DataGridView_備藥通知.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.sqL_DataGridView_備藥通知.cellStylBackColor = System.Drawing.Color.PowderBlue;
             this.sqL_DataGridView_備藥通知.cellStyleFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -613,6 +689,7 @@
             this.sqL_DataGridView_備藥通知.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             this.sqL_DataGridView_備藥通知.columnHeadersHeight = 40;
             this.sqL_DataGridView_備藥通知.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.sqL_DataGridView_備藥通知.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.sqL_DataGridView_備藥通知.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_備藥通知.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.ImageBox = false;
@@ -666,7 +743,7 @@
             this.plC_UI_Init1.Name = "plC_UI_Init1";
             this.plC_UI_Init1.Size = new System.Drawing.Size(72, 25);
             this.plC_UI_Init1.TabIndex = 57;
-            this.plC_UI_Init1.光道視覺元件初始化 = true;
+            this.plC_UI_Init1.光道視覺元件初始化 = false;
             this.plC_UI_Init1.全螢幕顯示 = false;
             this.plC_UI_Init1.掃描速度 = 1;
             this.plC_UI_Init1.起始畫面標題內容 = "鴻森整合機電有限公司";
@@ -712,6 +789,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_main.ResumeLayout(false);
+            this.panel_main.PerformLayout();
             this.plC_ScreenPage_main.ResumeLayout(false);
             this.主畫面.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -749,6 +827,8 @@
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.PLC_RJ_ScreenButtonEx plC_RJ_ScreenButtonEx1;
         private MyUI.RJ_DatePicker rJ_DatePicker1;
+        private System.Windows.Forms.Label label1;
+        private MyUI.RJ_Lable rJ_Lable1;
     }
 }
 

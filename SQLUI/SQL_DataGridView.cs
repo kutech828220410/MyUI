@@ -65,6 +65,8 @@ namespace SQLUI
         public event CellPaintingImageEventHandler CellPaintingImageEvent;
         public delegate void RowPostPaintingEventHandler(DataGridViewRowPostPaintEventArgs e);
         public event RowPostPaintingEventHandler RowPostPaintingEvent;
+        public delegate void RowHeaderPostPaintingEventHandler(object sender , Graphics g, Rectangle rect_hedder, Brush brush_background, Pen pen_border);
+        public event RowHeaderPostPaintingEventHandler RowHeaderPostPaintingEvent;
 
         private delegate void ModuleChangeEventHandler(List<object[]> RowsList);
         private event ModuleChangeEventHandler ModuleChangeEvent;
@@ -222,7 +224,7 @@ namespace SQLUI
                 {
                     if (dataGridView.Columns[i].Visible == true) temp = i;
                 }
-                if(temp != -1) dataGridView.Columns[temp].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if(temp != -1) dataGridView.Columns[temp].AutoSizeMode = DataGridViewAutoSizeColumnMode;
 
                 this.ResumeDrawing();
                 dataGridView.ResumeDrawing();
@@ -464,7 +466,7 @@ namespace SQLUI
 
         #endregion
         #region 自訂屬性
-        bool _自動換行 = true;
+        private bool _自動換行 = true;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public bool 自動換行
         {
@@ -478,7 +480,21 @@ namespace SQLUI
             }
         }
 
-        Color _RowsColor = Control.DefaultBackColor;
+        private DataGridViewAutoSizeColumnMode dataGridViewAutoSizeColumnMode = DataGridViewAutoSizeColumnMode.Fill;
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public DataGridViewAutoSizeColumnMode DataGridViewAutoSizeColumnMode
+        {
+            get
+            {
+                return dataGridViewAutoSizeColumnMode;
+            }
+            set
+            {
+                dataGridViewAutoSizeColumnMode = value;
+            }
+        }
+
+        private Color _RowsColor = Control.DefaultBackColor;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public Color RowsColor
         {
@@ -923,6 +939,19 @@ namespace SQLUI
                 dataGridView.ColumnHeadersDefaultCellStyle.BackColor = value;
             }
         }
+        private Color _columnHeaderBorderColor = Color.DimGray;
+        [Category("RJ Code - Appearence")]
+        public Color columnHeaderBorderColor
+        {
+            get
+            {
+                return _columnHeaderBorderColor;
+            }
+            set
+            {
+                _columnHeaderBorderColor = value;
+            }
+        }
         [Category("RJ Code - Appearence")]
         public DataGridViewHeaderBorderStyle columnHeadersBorderStyle
         {
@@ -1081,6 +1110,73 @@ namespace SQLUI
             }
         }
 
+        private Color cellBorderColor = Color.White;
+        [Category("RJ Code - Appearence")]
+        public Color CellBorderColor
+        {
+            get
+            {
+                return cellBorderColor;
+            }
+            set
+            {
+                cellBorderColor = value;
+            }
+        }
+
+        private Color _selectedRowBackColor = Color.Blue;
+        [Category("RJ Code - Appearence")]
+        public Color selectedRowBackColor
+        {
+            get
+            {
+                return _selectedRowBackColor;
+            }
+            set
+            {
+                _selectedRowBackColor = value;
+            }
+        }
+        private Color _selectedRowBorderColor = Color.Blue;
+        [Category("RJ Code - Appearence")]
+        public Color selectedRowBorderColor
+        {
+            get
+            {
+                return _selectedRowBorderColor;
+            }
+            set
+            {
+                _selectedRowBorderColor = value;
+            }
+        }
+        private Color _selectedRowForeColor = Color.White;
+        [Category("RJ Code - Appearence")]
+        public Color selectedRowForeColor
+        {
+            get
+            {
+                return _selectedRowForeColor;
+            }
+            set
+            {
+                _selectedRowForeColor = value;
+            }
+        }
+        private int _selectedBorderSize = 0;
+        [Category("RJ Code - Appearence")]
+        public int selectedBorderSize
+        {
+            get
+            {
+                return _selectedBorderSize;
+            }
+            set
+            {
+                _selectedBorderSize = value;
+            }
+        }
+
         public class ConnentionClass
         {
             private string dataBaseName = "";
@@ -1214,6 +1310,8 @@ namespace SQLUI
         }
         public void Init(Table table)
         {
+            this.flag_Init = false;
+            this.Columns.Clear();
             this.TableName = table.TableName;
             for(int i = 0; i < table.ColumnList.Count; i++)
             {
@@ -1239,11 +1337,15 @@ namespace SQLUI
         public void Init()
         {
             if (OnlineState == OnlineEnum.Online) this.SQL_Reset();
-            if (this.flag_Init == true) return;
+            this.SQL_TableInit();
+            this.DataGrid_Init(IsStart);
+            if (this.flag_Init == true)
+            {
+                return;
+            }
             if (OnlineState == OnlineEnum.Online)
             {           
-                this.SQL_TableInit();
-                this.DataGrid_Init(IsStart);       
+     
                 this.ModuleChangeEvent += new ModuleChangeEventHandler(RowsChange);
                 dataGridView.MouseDown += SQL_DataGridView_MouseDown;
                 dataGridView.CellClick += DataGridView_CellClick;
@@ -1256,8 +1358,6 @@ namespace SQLUI
             }
             else if (OnlineState == OnlineEnum.Offline)
             {
-                this.SQL_TableInit();
-                this.DataGrid_Init(IsStart);
                 this.ModuleChangeEvent += new ModuleChangeEventHandler(RowsChange);
                 dataGridView.MouseDown += SQL_DataGridView_MouseDown;
                 dataGridView.CellClick += DataGridView_CellClick;
@@ -2434,6 +2534,30 @@ namespace SQLUI
             if (RowClickEvent != null) RowClickEvent(this.GetRowValues(index));
         }
 
+        public Rectangle GetColumnBounds(string name)
+        {
+            return GetColumnBounds(name, name);
+        }
+        public Rectangle GetColumnBounds(string start_col_name, string end_col_name)
+        {
+            int start_index = dataGridView.Columns[start_col_name].Index;
+            int end_index = dataGridView.Columns[end_col_name].Index;
+            Rectangle rectangle = new Rectangle();
+            rectangle.X = this.dataGridView.RowHeadersWidth;
+            if (顯示首列 == false) rectangle.X = 0;
+            rectangle.Height = this.columnHeadersHeight;
+            rectangle.Width = 0;
+            for (int i = start_index; i <= end_index; i++)
+            {
+                rectangle.Width += dataGridView.Columns[i].Width;
+            }
+            for (int i = start_index - 1; i > 0; i--)
+            {
+                rectangle.X += dataGridView.Columns[i].Width;
+            }
+            return rectangle;
+        }
+
         public void ClearSelection()
         {
             this.Invoke(new Action(delegate { dataGridView.ClearSelection(); }));
@@ -3073,7 +3197,18 @@ namespace SQLUI
         {
             this.columnHeadersHeight = height;
         }
-       
+
+        public int Get_ColumnWidth(string name)
+        {
+            int width = -1;
+            foreach (ColumnElement columns in Columns)
+            {
+                if (columns.Name == name) return columns.Width;
+            }
+            return width;
+        }
+
+
         public void ClearGrid()
         {
             List<object[]> RowsList = new List<object[]>();
@@ -3333,7 +3468,11 @@ namespace SQLUI
         }
         private void DataGridView_Paint(object sender, PaintEventArgs e)
         {
-            if(dataTable_buffer != null) this.dataGridView.DataSource = dataTable_buffer;
+            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
+            if (dataTable_buffer != null) this.dataGridView.DataSource = dataTable_buffer;
             if (dataGridView.CanSelect && dataGridView.Rows.Count > 0)
             {
                 if (_顯示CheckBox)
@@ -3344,12 +3483,32 @@ namespace SQLUI
                     checkBoxHeader.Location = new Point(headerWidth + (dataGridView.Columns[0].Width - checkBoxHeader.Width) / 2, (headerHeight - checkBoxHeader.Height) / 2);
                 }
             }
+            if (RowHeaderPostPaintingEvent != null)
+            {
+                using (Brush brush_background = new SolidBrush(columnHeaderBackColor))
+                using (Pen pen_border = new Pen(columnHeaderBorderColor))
+                {
+
+                    int col_width = this.dataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible);
+                    int x = 0;
+                    int y = 0;
+                    int width = col_width;
+                    int height = this.columnHeadersHeight;
+                    //e.Graphics.FillRectangle(brush_background, new RectangleF(x, y, width, height));
+                    //e.Graphics.DrawRectangle(pen_border, new Rectangle(x, y, width, height));
+
+                    RowHeaderPostPaintingEvent(this.dataGridView, e.Graphics, new Rectangle(x, y, width, height), brush_background, pen_border);
+                }
+            }
+
+
         }
         private void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, DataGridViewContentAlignment dataGridViewContentAlignment)
         {
             if (text == null) return;
 
             Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
+            
             SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
             Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
             Point point = new Point(0, 0);
@@ -3397,27 +3556,17 @@ namespace SQLUI
         }
         private void DataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
-
-            if (_顯示CheckBox)
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex == 0)
-                {
-                    e.PaintBackground(e.CellBounds, true);
-
-                    ControlPaint.DrawCheckBox(e.Graphics, e.CellBounds.X + 1, e.CellBounds.Y + 1,
-                        e.CellBounds.Width - 2, e.CellBounds.Height - 2,
-                        (bool)e.FormattedValue ? ButtonState.Checked : ButtonState.Normal);
-                    e.Handled = true;
-                }
-            }
-
+            
+            //序號欄
             if (e.RowIndex > -1 && e.ColumnIndex == -1)
             {
          
                 using (Brush brush_background = new SolidBrush(this.rowHeaderBackColor))
-                using (Pen pen_border = new Pen(Color.White))
+                using (Pen pen_border = new Pen(cellBorderColor))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
@@ -3426,17 +3575,35 @@ namespace SQLUI
                     e.Handled = true;
                 }
             }
-            if (e.RowIndex == -1 && e.ColumnIndex >= -1)
+            if (RowHeaderPostPaintingEvent == null)
             {
-                using (Brush brush_background = new SolidBrush(this.columnHeaderBackColor))
-                using (Pen pen_border = new Pen(Color.White))
+                if (e.RowIndex == -1 && e.ColumnIndex >= -1)
                 {
-                    e.Graphics.FillRectangle(brush_background, e.CellBounds);
-                    e.Graphics.DrawRectangle(pen_border, e.CellBounds);
-                    if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
-                    e.Handled = true;
-                }            
+                    using (Brush brush_background = new SolidBrush(this.columnHeaderBackColor))
+                    using (Pen pen_border = new Pen(cellBorderColor))
+                    {
+                        e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                        e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                        if (e.Value != null)
+                        {
+                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
+                        }
+                        e.Handled = true;
+                    }
+                 
+                }
             }
+            else
+            {
+ 
+                if (e.RowIndex == -1 && e.ColumnIndex == -1)
+                {
+                    
+                   
+                    e.Handled = true;
+                }
+            }
+          
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 if (RowPostPaintingEvent != null)
@@ -3444,14 +3611,23 @@ namespace SQLUI
                     e.Handled = true;
                     return;
                 }
-                if (_顯示CheckBox && e.ColumnIndex == 0)
+  
+                if (_顯示CheckBox)
                 {
-                    e.Handled = true;
-                    return;
+                    if (e.RowIndex >= 0 && e.ColumnIndex == 0)
+                    {
+                        e.PaintBackground(e.CellBounds, true);
+
+                        ControlPaint.DrawCheckBox(e.Graphics, e.CellBounds.X + 1, e.CellBounds.Y + 1,
+                            e.CellBounds.Width - 2, e.CellBounds.Height - 2,
+                            (bool)e.FormattedValue ? ButtonState.Checked : ButtonState.Normal);
+                        e.Handled = true;
+                        return;
+                    }
                 }
 
                 using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
-                using (Pen pen_border = new Pen(Color.White))
+                using (Pen pen_border = new Pen(cellBorderColor))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
@@ -3493,21 +3669,70 @@ namespace SQLUI
         }
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+
             if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
             if (this.dataGridView.Rows[e.RowIndex].Selected)
             {
-                using (Brush brush = new SolidBrush(Color.FromArgb(137, 91, 163)))
-                using (Pen pen = new Pen(Color.FromArgb(137, 91, 163)))
+                using (Brush brush_back = new SolidBrush(selectedRowBackColor))
+                using (Pen pen_Border = new Pen(selectedRowBorderColor))
                 {
                     int penWidth = 3;
-                    pen.Width = penWidth;
+                    pen_Border.Width = selectedBorderSize;
 
-                    int x = e.RowBounds.Left + (penWidth / 2) + 1;
+                    int col_width = this.dataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible);
+                    int RowHeadersWidth = this.dataGridView.RowHeadersWidth;
+                    if (顯示首列 == false) RowHeadersWidth = 0;
+                    int x = e.RowBounds.Left + (penWidth / 2) + 1 + RowHeadersWidth;
                     int y = e.RowBounds.Top + (penWidth / 2);
-                    int width = e.RowBounds.Width - penWidth - 3;
+                    int width = col_width - penWidth - 1;
                     int height = e.RowBounds.Height - penWidth;
-                    e.Graphics.DrawRectangle(pen, x, y, width, height);
+                 
+
+                    if (RowPostPaintingEvent != null)
+                    {
+                        RowPostPaintingEvent(e);
+                    }
+                    if (RowPostPaintingEvent == null) e.Graphics.FillRectangle(brush_back, x, y, width, height);
+                    if (this.selectedBorderSize > 0) e.Graphics.DrawRectangle(pen_Border, x, y, width, height);
+                    if (RowPostPaintingEvent != null) return;
+                    DataGridViewCellCollection cells = this.dataGridView.Rows[e.RowIndex].Cells;
+                    for (int i = 0; i < cells.Count; i++)
+                    {
+                        if (_顯示CheckBox)
+                        {
+                            if (e.RowIndex >= 0 && i == 0)
+                            {
+                                Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
+
+                                ControlPaint.DrawCheckBox(e.Graphics, rectangle.X + 1, rectangle.Y + 1,
+                                    rectangle.Width - 2, rectangle.Height - 2,
+                                    (bool)cells[i].FormattedValue ? ButtonState.Checked : ButtonState.Normal);
+                                continue;
+                            }
+                        }
+
+                        if (cells[i].Value != null && cells[i].Visible == true)
+                        {
+                            Type type = cells[i].Value.GetType();
+                            Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
+                            foreach (ColumnElement columnElement in Columns)
+                            {
+                                if(columnElement.Name == dataGridView.Columns[i].Name)
+                                {
+                                    DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, rectangle, selectedRowForeColor, columnElement.Alignment);
+                                    continue;
+                                }
+                            }                           
+                
+                        }
+                    } 
+
+
+            
                     
                 }
             }
@@ -3699,5 +3924,28 @@ namespace SQLUI
             }
         }
 
+        private Rectangle GetFirstColumnDimensions(DataGridView dataGridView)
+        {
+            if (dataGridView.Columns.Count == 0 )
+            {
+                MessageBox.Show("DataGridView中沒有行。");
+                return new Rectangle(0,0,0,0);
+            }
+
+            // 獲取首列的列索引
+            int firstColumnIndex = 0;
+
+            Rectangle headerRectangle = dataGridView.GetCellDisplayRectangle(firstColumnIndex, -1, true);
+            int col_width = this.dataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible);
+            int RowHeadersWidth = this.dataGridView.RowHeadersWidth;
+            // 取得 X, Y, Width 和 Height
+            int x = headerRectangle.X;
+            int y = headerRectangle.Y;
+            int width = col_width;
+            int height = headerRectangle.Height;
+
+            Rectangle rectangle = new Rectangle(x, y, width, height);
+            return rectangle;
+        }
     }
 }

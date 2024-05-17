@@ -87,3 +87,6 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\obj\Debug\GPP編譯軟體 
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\SunnyUI.Common.dll

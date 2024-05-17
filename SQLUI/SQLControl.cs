@@ -2666,8 +2666,22 @@ namespace SQLUI
         }
         
     }
+    public static class TableMethod
+    {
+        public static Table GetTable(this List<Table> tables , Enum _enum)
+        {
+            string name = _enum.GetEnumDescription();
+            for(int i = 0; i < tables.Count; i++)
+            {
+                if (tables[i].TableName == name) return tables[i];
+            }
+            return null;
+        }
+    }
     public class Table
     {
+     
+
         private DateTime Date = DateTime.Now;
         private string tableName = "";
         private List<ColumnElement> columnList = new List<ColumnElement>();
@@ -2828,6 +2842,10 @@ namespace SQLUI
             this.Port = sQLControl.Port.ToString();
 
         }
+
+
+
+
 
         public enum IndexType
         {

@@ -3,10 +3,12 @@ Basic.dll
 MyUI.dll
 TCP.dll
 System.Text.Json.dll
+Newtonsoft.Json.dll
 System.Memory.dll
 Interop.SpeechLib.dll
 System.Text.Encodings.Web.dll
 PopupControl.dll
+SunnyUI.dll
 CSkin.dll
 LadderUI.dll
 FontAwesome.Sharp.dll
@@ -26,6 +28,7 @@ System.Threading.Tasks.Extensions.dll
 Microsoft.Bcl.AsyncInterfaces.dll
 System.Buffers.dll
 System.Runtime.CompilerServices.Unsafe.dll
+SunnyUI.Common.dll
 Microsoft.mshtml.dll
 AxOvkBase.dll
 AxAltairUDrvAsm4.5.dll

@@ -101,3 +101,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\obj\Debug\ZealTechUI.pdb
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Debug\SunnyUI.Common.dll

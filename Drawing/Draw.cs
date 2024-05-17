@@ -26,6 +26,59 @@ namespace DrawingClass
             }
             return size;
         }
+        static public void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, System.Windows.Forms.DataGridViewContentAlignment dataGridViewContentAlignment)
+        {
+            if (text == null) return;
+
+            Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
+
+            SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
+            Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
+            Point point = new Point(0, 0);
+            if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.TopLeft)
+            {
+                point = new Point(0, 0);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.TopCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, 0);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.TopRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), 0);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.MiddleRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.BottomLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.BottomCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == System.Windows.Forms.DataGridViewContentAlignment.BottomRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
+            }
+
+            rectangle.X += point.X;
+            rectangle.Y += point.Y;
+
+            e.DrawString($"{text}", font, new SolidBrush(forecolor), rectangle, StringFormat.GenericDefault);
+        }
+
+
         static public void 文字左上繪製(String _str, PointF 文字位置, Font 文字字體, Color 文字顏色, Color 背景顏色, Graphics AxCanvasHDC, float Zoom_X, float Zoom_Y)
         {
             SizeF 文字面積 = AxCanvasHDC.MeasureString(_str, 文字字體);

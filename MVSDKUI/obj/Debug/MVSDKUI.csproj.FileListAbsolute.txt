@@ -103,3 +103,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Debug\MVSDKUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Debug\SunnyUI.Common.dll

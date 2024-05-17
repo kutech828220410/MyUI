@@ -101,3 +101,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Debug\LightControlUI
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\SunnyUI.Common.dll

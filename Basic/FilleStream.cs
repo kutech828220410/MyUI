@@ -602,10 +602,23 @@ namespace Basic
             }
             return list_value;
         }
-        static public DataTable ToDataTable(this List<object[]> list_value, object Enum)
+        static public DataTable ToDataTable(this List<object[]> list_value, Enum Enum)
         {
             string[] colnames = Enum.GetEnumNames();
 
+            DataTable dataTable = new DataTable();
+            for (int k = 0; k < colnames.Length; k++)
+            {
+                dataTable.Columns.Add(colnames[k]);
+            }
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                dataTable.Rows.Add(list_value[i].ToArray());
+            }
+            return dataTable;
+        }
+        static public DataTable ToDataTable(this List<object[]> list_value, string[] colnames)
+        {
             DataTable dataTable = new DataTable();
             for (int k = 0; k < colnames.Length; k++)
             {

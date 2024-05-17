@@ -68,7 +68,43 @@ namespace MyUI
                 SetForegroundWindow(hWnd);
             }
         }
-     
+
+        private Color _backColor = Color.White;
+        public new Color BackColor 
+        { 
+            get
+            {
+                return _backColor;
+            }
+            set
+            {
+                this._backColor = value;
+            }
+        }
+        private Color _ControlBoxActive = Color.DarkGray;
+        public new Color ControlBoxActive
+        {
+            get
+            {
+                return this._ControlBoxActive;
+            }
+            set
+            {
+                this._ControlBoxActive = value;
+            }
+        }
+        private Color _ControlBoxDeactive = Color.DarkGray;
+        public new Color ControlBoxDeactive
+        {
+            get
+            {
+                return this._ControlBoxDeactive;
+            }
+            set
+            {
+                this._ControlBoxDeactive = value;
+            }
+        }
 
         private int special_Time = 100;
         [Category("Skin")]
@@ -82,6 +118,10 @@ namespace MyUI
         {
             if (ShowDialogEvent != null) ShowDialogEvent();
             if (this.DialogResult == DialogResult.Cancel) return this.DialogResult;
+            base.ControlBoxActive = _ControlBoxActive;
+            base.ControlBoxDeactive = _ControlBoxDeactive;
+            base.BackColor = _backColor;
+
             if (form == null)
             {
                 this.Special = false;
@@ -191,6 +231,8 @@ namespace MyUI
             AnimateWindow(this.Handle, special_Time, AW_BLEND | AW_SLIDE);
             Application.DoEvents();
             if (LoadFinishedEvent != null) LoadFinishedEvent(e);
+
+   
         }
 
     }

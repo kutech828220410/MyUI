@@ -38,7 +38,7 @@ namespace HSONApplication
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            plC_UI_Init1.全螢幕顯示 = true;
+            plC_UI_Init1.全螢幕顯示 = false;
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
             plC_UI_Init1.Set_CycleTime(1);
             plC_UI_Init1.UI_Finished_Event += PlC_UI_Init1_UI_Finished_Event;
@@ -162,8 +162,11 @@ namespace HSONApplication
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);
             this.sqL_DataGridView_備藥通知.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_udnoectc.病歷號);
             this.sqL_DataGridView_備藥通知.DataGridRefreshEvent += SqL_DataGridView_備藥通知_DataGridRefreshEvent;
-      
+            Function_取得備藥通知();
+
         }
+
+     
 
         private void SqL_DataGridView_備藥通知_DataGridRefreshEvent()
         {
@@ -179,7 +182,7 @@ namespace HSONApplication
             returnData returnData = new returnData();
             returnData.ServerName = "cheom";
             returnData.ServerType = "癌症備藥機";
-            returnData.Value = "2023-11-23 00:00:00,2023-12-27 23:59:59";
+            returnData.Value = "2023-11-23 00:00:00,2025-12-27 23:59:59";
             string json_in = returnData.JsonSerializationt();
             string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
             returnData = json.JsonDeserializet<returnData>();
@@ -192,9 +195,7 @@ namespace HSONApplication
 
         private void sqL_DataGridView_備藥通知_MouseDown(object sender, MouseEventArgs e)
         {
-            Function_取得備藥通知();
-            Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm("123", 1000, 0, -100);
-            dialog_AlarmForm.ShowDialog();
+     
         }
     }
 }

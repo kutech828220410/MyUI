@@ -186,3 +186,10 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.MyDialog.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.StepEntity.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.TimeSetting.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.UC_NumPanel.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_DateTimeIntervel.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_DateTimePicker.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.RJ_DatePicker.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.RJ_Calendar.resources

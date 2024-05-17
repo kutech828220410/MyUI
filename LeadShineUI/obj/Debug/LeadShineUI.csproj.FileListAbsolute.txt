@@ -123,3 +123,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Debug\LeadShineUI.pdb
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Debug\SunnyUI.Common.dll

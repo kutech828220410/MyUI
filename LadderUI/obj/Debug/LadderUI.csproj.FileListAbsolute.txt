@@ -312,3 +312,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Debug\LadderUI.pdb
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Debug\SunnyUI.Common.dll

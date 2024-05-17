@@ -36,11 +36,15 @@ namespace MyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackShade = false;
             this.CanResize = false;
             this.CaptionFont = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.ClientSize = new System.Drawing.Size(850, 572);
             this.CloseBoxSize = new System.Drawing.Size(32, 24);
             this.ControlBox = false;
+            this.ControlBoxActive = System.Drawing.SystemColors.ActiveBorder;
+            this.ControlBoxDeactive = System.Drawing.SystemColors.ActiveBorder;
+            this.DropBack = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaxSize = new System.Drawing.Size(32, 24);
             this.MinimizeBox = false;

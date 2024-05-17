@@ -85,6 +85,14 @@ namespace MyUI
                 System.Threading.Thread.Sleep(20);
             }
         }
+        public static void Set_Description(string description)
+        {
+            form.Invoke(new Action(delegate
+            {
+                pLoading.lbl_description.Text = $"{description}";
+                pLoading.Refresh();
+            }));
+        }
         public static void CloseLoadingFormInvoke()
         {
             form.Invoke(new Action(delegate

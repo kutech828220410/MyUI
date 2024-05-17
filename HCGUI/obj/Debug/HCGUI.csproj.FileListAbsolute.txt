@@ -105,3 +105,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Debug\HCGUI.pdb
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\SunnyUI.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\SunnyUI.Common.dll

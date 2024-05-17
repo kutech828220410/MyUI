@@ -67,16 +67,16 @@ namespace MyUI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(143, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(255, 99);
+            this.panel2.Size = new System.Drawing.Size(308, 99);
             this.panel2.TabIndex = 1;
             // 
             // lbl_description
             // 
             this.lbl_description.AutoSize = true;
-            this.lbl_description.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_description.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_description.Location = new System.Drawing.Point(12, 53);
             this.lbl_description.Name = "lbl_description";
-            this.lbl_description.Size = new System.Drawing.Size(126, 27);
+            this.lbl_description.Size = new System.Drawing.Size(128, 30);
             this.lbl_description.TabIndex = 1;
             this.lbl_description.Text = "Loading....";
             // 
@@ -84,7 +84,7 @@ namespace MyUI
             // 
             this.lbl_caption.AutoSize = true;
             this.lbl_caption.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_caption.Location = new System.Drawing.Point(12, 18);
+            this.lbl_caption.Location = new System.Drawing.Point(12, 16);
             this.lbl_caption.Name = "lbl_caption";
             this.lbl_caption.Size = new System.Drawing.Size(145, 29);
             this.lbl_caption.TabIndex = 0;
@@ -95,7 +95,7 @@ namespace MyUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(398, 99);
+            this.ClientSize = new System.Drawing.Size(451, 99);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

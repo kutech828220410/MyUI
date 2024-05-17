@@ -167,3 +167,5 @@ C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\Basic.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\LadderUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\MyUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\SLDUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Debug\Newtonsoft.Json.xml

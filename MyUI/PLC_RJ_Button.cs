@@ -657,7 +657,7 @@ namespace MyUI
                     this.Font = OFF_文字字體;
                     this.ForeColor = OFF_文字顏色;
                     this.BackgroundColor = OFF_背景顏色;
-                    this.BorderSize = 0;
+                    if (背景圖片 == null) this.BorderSize = 0;
                 }));
             }
             else
@@ -667,7 +667,7 @@ namespace MyUI
                 this.Font = OFF_文字字體;
                 this.ForeColor = OFF_文字顏色;
                 this.BackgroundColor = OFF_背景顏色;
-                this.BorderSize = 0;
+                if (背景圖片 == null) this.BorderSize = 0;
             }
         }
         public bool Load_WriteState()
