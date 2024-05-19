@@ -129,6 +129,32 @@ namespace SQLUI
             };
             TestConnection();
         }
+        public SQLControl(Table table)
+        {
+            this.TableName = table.TableName;
+            this.Server = table.Server;
+            this.Database = table.DBName;
+            this.UserID = table.Username;
+            this.Password = table.Password;
+            this.Port = (uint)table.Port.StringToInt32();
+            this.SSLMode =  MySqlSslMode.None;
+            _MySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
+            {
+                Server = Server,
+                Database = Database,
+                UserID = UserID,
+                Password = Password,
+                Port = Port,
+                SslMode = SSLMode
+            };
+            SeverString += string.Format("server='{0}';", Server);
+            SeverString += string.Format("database='{0}';", Database);
+            SeverString += string.Format("user id='{0}';", UserID);
+            SeverString += string.Format("password='{0}';", Password);
+            SeverString += string.Format("Port='{0}';", Port);
+            SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
+            TestConnection();
+        }
         public SQLControl(string Server, string Database, string UserID, string Password)
         {
             this.Server = Server;

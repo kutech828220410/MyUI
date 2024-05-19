@@ -252,7 +252,7 @@ namespace MyUI
         public Dialog_ContextMenuStrip(object Enum)
         {
             texts = Enum.GetEnumNames();
-            string[] DescriptionTexts = Enum.GetEnumDescriptions();
+            string[] DescriptionTexts = Enum.GetEnumDescriptions(true);
             for (int i = 0; i < texts.Length; i++)
             {
                 if(!DescriptionTexts[i].StringIsEmpty())

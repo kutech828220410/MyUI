@@ -949,24 +949,35 @@ namespace Basic
         }
         public static string[] GetEnumDescriptions<T>(this T source)
         {
+            return GetEnumDescriptions(source, true);
+        }
+        public static string[] GetEnumDescriptions<T>(this T source , bool notNull)
+        {
             string[] texts = new string[source.GetLength()];
             Type t = source.GetType();
             Array Array_Enum = System.Enum.GetValues(t);
             for (int i = 0; i < Array_Enum.Length; i++)
             {
-              
+
                 if (Array_Enum.GetValue(i).GetDescriptionText().StringIsEmpty())
                 {
-                    texts[i] = Array_Enum.GetValue(i).ToString();
+                    if (notNull) texts[i] = Array_Enum.GetValue(i).ToString();
+                    else texts[i] = "";
                 }
                 else
                 {
                     texts[i] = Array_Enum.GetValue(i).GetDescriptionText();
+                    if (notNull)
+                    {
+                      
+                        if (Array_Enum.GetValue(i).GetDescriptionText() == Array_Enum.GetValue(i).ToString().ToString()) texts[i] = "";
+                    }
                 }
-          
+
             }
             return texts;
         }
+      
         public static int GetLength<T>(this T source)
         {
             return source.GetEnumNames().Length;
