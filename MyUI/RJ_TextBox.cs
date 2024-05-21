@@ -290,8 +290,10 @@ namespace MyUI
         {
             base.OnPaint(e);
             Graphics graphics = e.Graphics;
-
-            if(borderRadius > 1)
+            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            if (borderRadius > 1)
             {
                 var rectBorderSmooth = this.ClientRectangle;
                 var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);

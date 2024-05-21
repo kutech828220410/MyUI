@@ -390,7 +390,9 @@ namespace MyUI
         protected override void OnPaint(PaintEventArgs pevent)
         {
             base.OnPaint(pevent);
-            pevent.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            pevent.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            pevent.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            pevent.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
             RectangleF rectBorder = new RectangleF(0, 0, this.Width - (this.ShadowSize + this.BorderSize), this.Height - (this.ShadowSize + this.BorderSize));
             if (this.ShadowSize == 0) rectBorder = new RectangleF(0, 0, this.Width - (1), this.Height - (1));

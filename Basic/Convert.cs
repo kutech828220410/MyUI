@@ -862,6 +862,11 @@ namespace Basic
             int value = 0;
             return int.TryParse(source, out value);
         }
+        static public bool StringIsDouble(this string source)
+        {
+            double value = 0;
+            return double.TryParse(source, out value);
+        }
 
 
         static public int StringHexToint(this string strHex)

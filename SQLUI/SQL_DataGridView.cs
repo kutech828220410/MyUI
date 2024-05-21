@@ -41,6 +41,8 @@ namespace SQLUI
         }
         private int SelectRowindex_Buf = -1;
         #region Event
+        public delegate void DataGridClearGridEventHandler();
+        public event DataGridClearGridEventHandler DataGridClearGridEvent;
         public delegate void DataGridRowsChangeEventHandler(List<object[]> RowsList);
         public event DataGridRowsChangeEventHandler DataGridRowsChangeEvent;
         public delegate void DataGridRowsChangeRefEventHandler(ref List<object[]> RowsList);
@@ -3213,6 +3215,7 @@ namespace SQLUI
         {
             List<object[]> RowsList = new List<object[]>();
             SaveDataVal.RowsList = RowsList;
+            if (DataGridClearGridEvent != null) DataGridClearGridEvent();
             if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
         }
         public void RefreshGrid(List<object[]> RowsList)
