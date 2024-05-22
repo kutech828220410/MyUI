@@ -291,4 +291,5 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.Dialog_DateTimeIn
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.Dialog_DateTimePicker.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.RJ_Calendar.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\CallBackUI.dll

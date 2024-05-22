@@ -1296,3 +1296,4 @@ C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Basic.xml

@@ -5142,3 +5142,4 @@ C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\Basic.xml

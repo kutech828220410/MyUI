@@ -1062,5 +1062,6 @@ C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Newtonsoft.Json.dll
-C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\LightControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CallBackUI.dll

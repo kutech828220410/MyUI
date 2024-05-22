@@ -109,18 +109,12 @@
             // 
             this.Camera.CameraName = "CCD00";
             this.Camera.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Camera.EIShuter = 0D;
-            this.Camera.HorzFlip = false;
             this.Camera.ImageDepth = MVSDKUI.MindVision_Camera_UI.enum_ImageDepth._8Bit;
             this.Camera.Location = new System.Drawing.Point(0, 0);
             this.Camera.Name = "Camera";
-            this.Camera.Rotate = MVSDKUI.MindVision_Camera_UI.enum_Rotate.Deg0;
-            this.Camera.Sharpness = 0;
             this.Camera.Size = new System.Drawing.Size(607, 507);
             this.Camera.StreamIsSuspend = false;
             this.Camera.TabIndex = 0;
-            this.Camera.VertFlip = false;
-            this.Camera.VGain = -100;
             // 
             // label4
             // 
@@ -136,21 +130,25 @@
             // 
             this.plC_NumBox_取像時間.Font = new System.Drawing.Font("新細明體", 12F);
             this.plC_NumBox_取像時間.Location = new System.Drawing.Point(18, 92);
+            this.plC_NumBox_取像時間.mBackColor = System.Drawing.SystemColors.Control;
+            this.plC_NumBox_取像時間.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox_取像時間.Name = "plC_NumBox_取像時間";
             this.plC_NumBox_取像時間.ReadOnly = true;
             this.plC_NumBox_取像時間.Size = new System.Drawing.Size(72, 27);
             this.plC_NumBox_取像時間.TabIndex = 1;
-            this.plC_NumBox_取像時間.Text = "0";
             this.plC_NumBox_取像時間.Value = 0;
             this.plC_NumBox_取像時間.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.單字元;
             this.plC_NumBox_取像時間.密碼欄位 = false;
             this.plC_NumBox_取像時間.小數點位置 = 0;
+            this.plC_NumBox_取像時間.微調數值 = 1;
             this.plC_NumBox_取像時間.音效 = true;
+            this.plC_NumBox_取像時間.顯示微調按鈕 = false;
             this.plC_NumBox_取像時間.顯示螢幕小鍵盤 = false;
             // 
             // plC_Button_READY
             // 
             this.plC_Button_READY.Bool = false;
+            this.plC_Button_READY.but_press = false;
             this.plC_Button_READY.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
             this.plC_Button_READY.Location = new System.Drawing.Point(99, 3);
             this.plC_Button_READY.Name = "plC_Button_READY";
@@ -165,6 +163,7 @@
             this.plC_Button_READY.Size = new System.Drawing.Size(78, 46);
             this.plC_Button_READY.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_READY.TabIndex = 12;
+            this.plC_Button_READY.事件驅動 = false;
             this.plC_Button_READY.字型鎖住 = false;
             this.plC_Button_READY.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
             this.plC_Button_READY.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
@@ -173,6 +172,7 @@
             this.plC_Button_READY.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_READY.狀態ON圖片")));
             this.plC_Button_READY.讀取位元反向 = false;
             this.plC_Button_READY.讀寫鎖住 = false;
+            this.plC_Button_READY.起始狀態 = false;
             this.plC_Button_READY.音效 = true;
             this.plC_Button_READY.顯示 = false;
             this.plC_Button_READY.顯示狀態 = false;
@@ -180,6 +180,7 @@
             // plC_Button_TRIGGER
             // 
             this.plC_Button_TRIGGER.Bool = false;
+            this.plC_Button_TRIGGER.but_press = false;
             this.plC_Button_TRIGGER.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
             this.plC_Button_TRIGGER.Location = new System.Drawing.Point(3, 3);
             this.plC_Button_TRIGGER.Name = "plC_Button_TRIGGER";
@@ -194,6 +195,7 @@
             this.plC_Button_TRIGGER.Size = new System.Drawing.Size(90, 46);
             this.plC_Button_TRIGGER.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_TRIGGER.TabIndex = 11;
+            this.plC_Button_TRIGGER.事件驅動 = false;
             this.plC_Button_TRIGGER.字型鎖住 = false;
             this.plC_Button_TRIGGER.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
             this.plC_Button_TRIGGER.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
@@ -202,6 +204,7 @@
             this.plC_Button_TRIGGER.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_TRIGGER.狀態ON圖片")));
             this.plC_Button_TRIGGER.讀取位元反向 = false;
             this.plC_Button_TRIGGER.讀寫鎖住 = false;
+            this.plC_Button_TRIGGER.起始狀態 = false;
             this.plC_Button_TRIGGER.音效 = true;
             this.plC_Button_TRIGGER.顯示 = false;
             this.plC_Button_TRIGGER.顯示狀態 = false;
@@ -209,6 +212,7 @@
             // plC_Button_IsConneted
             // 
             this.plC_Button_IsConneted.Bool = false;
+            this.plC_Button_IsConneted.but_press = false;
             this.plC_Button_IsConneted.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
             this.plC_Button_IsConneted.Location = new System.Drawing.Point(183, 3);
             this.plC_Button_IsConneted.Name = "plC_Button_IsConneted";
@@ -223,6 +227,7 @@
             this.plC_Button_IsConneted.Size = new System.Drawing.Size(98, 46);
             this.plC_Button_IsConneted.Style = MyUI.PLC_Button.StyleEnum.經典;
             this.plC_Button_IsConneted.TabIndex = 13;
+            this.plC_Button_IsConneted.事件驅動 = false;
             this.plC_Button_IsConneted.字型鎖住 = false;
             this.plC_Button_IsConneted.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
             this.plC_Button_IsConneted.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
@@ -231,6 +236,7 @@
             this.plC_Button_IsConneted.狀態ON圖片 = ((System.Drawing.Image)(resources.GetObject("plC_Button_IsConneted.狀態ON圖片")));
             this.plC_Button_IsConneted.讀取位元反向 = false;
             this.plC_Button_IsConneted.讀寫鎖住 = false;
+            this.plC_Button_IsConneted.起始狀態 = false;
             this.plC_Button_IsConneted.音效 = true;
             this.plC_Button_IsConneted.顯示 = false;
             this.plC_Button_IsConneted.顯示狀態 = false;
@@ -249,16 +255,19 @@
             // 
             this.plC_NumBox_ActiveSurfaceHandle.Font = new System.Drawing.Font("新細明體", 12F);
             this.plC_NumBox_ActiveSurfaceHandle.Location = new System.Drawing.Point(10, 31);
+            this.plC_NumBox_ActiveSurfaceHandle.mBackColor = System.Drawing.SystemColors.Control;
+            this.plC_NumBox_ActiveSurfaceHandle.mForeColor = System.Drawing.SystemColors.WindowText;
             this.plC_NumBox_ActiveSurfaceHandle.Name = "plC_NumBox_ActiveSurfaceHandle";
             this.plC_NumBox_ActiveSurfaceHandle.ReadOnly = true;
             this.plC_NumBox_ActiveSurfaceHandle.Size = new System.Drawing.Size(138, 27);
             this.plC_NumBox_ActiveSurfaceHandle.TabIndex = 1;
-            this.plC_NumBox_ActiveSurfaceHandle.Text = "0";
             this.plC_NumBox_ActiveSurfaceHandle.Value = 0;
             this.plC_NumBox_ActiveSurfaceHandle.字元長度 = MyUI.PLC_NumBox.WordLengthEnum.雙字元;
             this.plC_NumBox_ActiveSurfaceHandle.密碼欄位 = false;
             this.plC_NumBox_ActiveSurfaceHandle.小數點位置 = 0;
+            this.plC_NumBox_ActiveSurfaceHandle.微調數值 = 1;
             this.plC_NumBox_ActiveSurfaceHandle.音效 = true;
+            this.plC_NumBox_ActiveSurfaceHandle.顯示微調按鈕 = false;
             this.plC_NumBox_ActiveSurfaceHandle.顯示螢幕小鍵盤 = false;
             // 
             // label2
@@ -337,8 +346,6 @@
         }
 
         #endregion
-
-        private MindVision_Camera_UI Camera;
         private MyUI.PLC_TrackBarHorizontal plC_TrackBarHorizontal_EISutter;
         private MyUI.PLC_TrackBarHorizontal plC_TrackBarHorizontal_Sharpness;
         private MyUI.PLC_TrackBarHorizontal plC_TrackBarHorizontal_VGain;
@@ -354,5 +361,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel_Control;
         private System.Windows.Forms.Panel panel3;
+        public MindVision_Camera_UI Camera;
     }
 }

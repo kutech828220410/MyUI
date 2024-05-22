@@ -656,3 +656,4 @@ C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.Common
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\Basic.xml

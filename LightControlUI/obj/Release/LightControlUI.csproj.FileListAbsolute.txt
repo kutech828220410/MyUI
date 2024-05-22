@@ -1511,4 +1511,5 @@ C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PortControlU
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\CallBackUI.dll

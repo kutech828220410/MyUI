@@ -525,6 +525,13 @@ namespace Basic
 
     public static class TypeConvert
     {
+        /// <summary>
+        /// 設置指定索引處的位為指定狀態（對UInt32類型）。
+        /// </summary>
+        /// <param name="value">要修改的值。</param>
+        /// <param name="index">要設置的位索引（0-31）。</param>
+        /// <param name="state">要設置的狀態（true為1，false為0）。</param>
+        /// <returns>修改後的值。</returns>
         static public UInt32 SetBit(this ref UInt32 value, int index, bool state)
         {
             index = 31 - index;
@@ -541,6 +548,13 @@ namespace Basic
             value = Convert.ToUInt32(str_temp0, 2);
             return value;
         }
+
+        /// <summary>
+        /// 獲取指定索引處的位狀態（對UInt32類型）。
+        /// </summary>
+        /// <param name="value">要檢查的值。</param>
+        /// <param name="index">要檢查的位索引（0-31）。</param>
+        /// <returns>位的狀態（true為1，false為0）。</returns>
         static public bool GetBit(this UInt32 value, int index)
         {
             bool FLAG = false;
@@ -557,18 +571,34 @@ namespace Basic
 
             return FLAG;
         }
+
+
+        /// <summary>
+        /// 設置指定索引處的位為指定狀態（對int類型）。
+        /// </summary>
+        /// <param name="value">要修改的值。</param>
+        /// <param name="index">要設置的位索引（0-31）。</param>
+        /// <param name="state">要設置的狀態（true為1，false為0）。</param>
+        /// <returns>修改後的值。</returns>
         static public int SetBit(this ref int value, int index, bool state)
         {
-            if (state) // 设置位
+            if (state) // 設置位
             {
-                value |= (1 << index); // 将指定位设置为 1
+                value |= (1 << index); // 將指定位設置為 1
             }
             else // 重置位
             {
-                value &= ~(1 << index); // 将指定位设置为 0
+                value &= ~(1 << index); // 將指定位設置為 0
             }
             return value;
         }
+
+        /// <summary>
+        /// 獲取指定索引處的位狀態（對int類型）。
+        /// </summary>
+        /// <param name="value">要檢查的值。</param>
+        /// <param name="index">要檢查的位索引（0-31）。</param>
+        /// <returns>位的狀態（true為1，false為0）。</returns>
         static public bool GetBit(this int value, int index)
         {
             bool FLAG = false;
@@ -586,15 +616,22 @@ namespace Basic
             return FLAG;
         }
 
+
+        /// <summary>
+        /// 將列名和對應的值組合成文本表示形式。
+        /// </summary>
+        /// <param name="columns">列名的陣列。</param>
+        /// <param name="value">對應於列名的值的陣列。</param>
+        /// <returns>包含列名和值的文本表示形式，如果列名和值的數量不相等，則返回null。</returns>
         static public string SetTextValue(string[] columns, object[] value)
         {
             if (columns.Length != value.Length) return null;
             List<string> titles = new List<string>();
             List<string> values = new List<string>();
-            for(int i = 0; i < columns.Length; i++)
+            for (int i = 0; i < columns.Length; i++)
             {
                 titles.Add(columns[i]);
-                if(value[i] is DateTime)
+                if (value[i] is DateTime)
                 {
                     values.Add(((DateTime)value[i]).ToDateTimeString_6());
                 }
@@ -604,8 +641,14 @@ namespace Basic
                 }
             }
             return SetTextValue(titles, values);
-
         }
+
+        /// <summary>
+        /// 將單個列名和值組合成文本表示形式。
+        /// </summary>
+        /// <param name="title">列名。</param>
+        /// <param name="value">對應於列名的值。</param>
+        /// <returns>包含列名和值的文本表示形式。</returns>
         static public string SetTextValue(string title, string value)
         {
             List<string> titles = new List<string>();
@@ -614,17 +657,25 @@ namespace Basic
             values.Add(value);
             return SetTextValue(titles, values);
         }
-        static public string SetTextValue(List<string> titles , List<string> values)
+
+        /// <summary>
+        /// 將多個列名和值組合成文本表示形式。
+        /// </summary>
+        /// <param name="titles">列名的列表。</param>
+        /// <param name="values">對應於列名的值的列表。</param>
+        /// <returns>包含列名和值的文本表示形式，如果列名和值的數量不相等，則返回null。</returns>
+        static public string SetTextValue(List<string> titles, List<string> values)
         {
             if (titles.Count != values.Count) return null;
             string str = "";
-            for(int i = 0; i < titles.Count; i++)
+            for (int i = 0; i < titles.Count; i++)
             {
                 str += $"[{titles[i]}]:{values[i]}";
                 if (i != titles.Count - 1) str += ",";
             }
             return str;
         }
+
 
         static public object[] GetTextValue(this string str , string[] columns)
         {

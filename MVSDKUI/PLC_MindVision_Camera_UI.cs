@@ -498,9 +498,13 @@ namespace MVSDKUI
         #region Function
         public void Set_Config()
         {
-            this.EIShuter = this.PLC_Device_00_EISutter.Value;
-            this.VGain = this.PLC_Device_01_VGain.Value;
-            this.Sharpness = this.PLC_Device_02_Sharpness.Value;
+            Set_Config(this.PLC_Device_00_EISutter.Value, this.PLC_Device_01_VGain.Value, this.PLC_Device_02_Sharpness.Value);
+        }
+        public void Set_Config(int EISutte, int VGain, int Sharpness)
+        {
+            this.EIShuter = EISutte;
+            this.VGain = VGain;
+            this.Sharpness = Sharpness;
         }
         public void Snap()
         {

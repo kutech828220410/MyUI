@@ -139,6 +139,75 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:Basic.LINQ.LockAdd``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            以執行緒安全的方式將元素添加到清單的末尾。
+            </summary>
+            <typeparam name="T">清單中元素的類型。</typeparam>
+            <param name="list_value">要添加元素的清單。</param>
+            <param name="value">要添加到清單中的元素。</param>
+        </member>
+        <member name="M:Basic.LINQ.LockAdd``1(System.Collections.Generic.List{``0},System.Collections.Generic.List{``0})">
+            <summary>
+            以執行緒安全的方式將多個元素添加到清單的末尾。
+            </summary>
+            <typeparam name="T">清單中元素的類型。</typeparam>
+            <param name="list_value">要添加元素的清單。</param>
+            <param name="values">要添加到清單中的元素列表。</param>
+        </member>
+        <member name="M:Basic.LINQ.LockAdd(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            以執行緒安全的方式將多個字串元素添加到清單的末尾，可選擇是否去重。
+            </summary>
+            <param name="list_value">要添加元素的清單。</param>
+            <param name="values">要添加到清單中的字串列表。</param>
+            <param name="Distinct">是否去重。</param>
+        </member>
+        <member name="M:Basic.LINQ.GetSelectColumnValue(System.Collections.Generic.List{System.Object[]},System.Int32)">
+            <summary>
+            獲取清單中指定列索引的所有值。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">要獲取值的列索引。</param>
+            <returns>指定列的所有值的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRows(System.Collections.Generic.List{System.Object[]},System.Int32,System.String)">
+            <summary>
+            根據指定的列索引和搜索值，篩選出符合條件的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsByLike(System.Collections.Generic.List{System.Object[]},System.Int32,System.String)">
+            <summary>
+            根據指定的列索引和搜索值，以大小寫不敏感的方式篩選出包含指定值的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsByLike(System.Collections.Generic.List{System.Object[]},System.Int32,System.String,System.Boolean)">
+            <summary>
+            根據指定的列索引和搜索值，以指定的大小寫敏感方式篩選出包含指定值的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <param name="upper">是否進行大小寫不敏感的比較。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsStartWithByLike(System.Collections.Generic.List{System.Object[]},System.Int32,System.String)">
+            <summary>
+            根據指定的列索引和搜索值，以大小寫不敏感的方式篩選出以指定值開頭的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
         <member name="F:Basic.MyMessageBox.components">
             <summary>
             Required designer variable.
