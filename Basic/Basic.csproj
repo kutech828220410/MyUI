@@ -34,7 +34,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>2</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Release\Basic.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\Basic.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
   </PropertyGroup>
   <ItemGroup>
@@ -227,10 +227,7 @@ copy /Y "$(TargetDir)$(ProjectName).xml" "$(SolutionDir)\0.DLL"</PostBuildEvent>
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>IF EXIST "$(SolutionDir)\0.DLL\$(ProjectName).xml" (
-    del "$(SolutionDir)\0.DLL\$(ProjectName).xml"
-)
-IF EXIST "$(TargetDir)$(ProjectName).xml" (
+    <PreBuildEvent>nIF EXIST "$(TargetDir)$(ProjectName).xml" (
     del "$(TargetDir)$(ProjectName).xml"
 )</PreBuildEvent>
   </PropertyGroup>

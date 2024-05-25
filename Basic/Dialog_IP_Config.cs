@@ -63,31 +63,52 @@ namespace Basic
             rJ_TextBox_Port.Visible = portVisibale;
             this.TopLevel = true;
             this.TopMost = true;
-        
+
+            this.rJ_Button_OK.MouseDownEvent += RJ_Button_OK_MouseDownEvent;
+            this.rJ_Button_Cancel.MouseDownEvent += RJ_Button_Cancel_MouseDownEvent;
+
+        }
+
+
+
+        private void RJ_Button_OK_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                int IPA = rJ_TextBox_IPA.Text.StringToInt32();
+                int IPB = rJ_TextBox_IPB.Text.StringToInt32();
+                int IPC = rJ_TextBox_IPC.Text.StringToInt32();
+                int IPD = rJ_TextBox_IPD.Text.StringToInt32();
+                int port = rJ_TextBox_Port.Text.StringToInt32();
+                if (!portVisibale) port = 0;
+                if (IPA < 0 || IPA > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
+                if (IPB < 0 || IPB > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
+                if (IPC < 0 || IPC > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
+                if (IPD < 0 || IPD > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
+                if (port < 0) { MyMessageBox.ShowDialog("請輸入正確 Port"); return; }
+
+                this.IP = $"{IPA}.{IPB}.{IPC}.{IPD}";
+                this.Port = port;
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            }));
+        }
+        private void RJ_Button_Cancel_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.No;
+                this.Close();
+            }));
+         
         }
         private void rJ_Button_Cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No;
-            this.Close();
+   
         }
         private void rJ_Button_OK_Click(object sender, EventArgs e)
         {
-            int IPA = rJ_TextBox_IPA.Text.StringToInt32();
-            int IPB = rJ_TextBox_IPB.Text.StringToInt32();
-            int IPC = rJ_TextBox_IPC.Text.StringToInt32();
-            int IPD = rJ_TextBox_IPD.Text.StringToInt32();
-            int port = rJ_TextBox_Port.Text.StringToInt32();
-            if (!portVisibale) port = 0;
-            if (IPA < 0 || IPA > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
-            if (IPB < 0 || IPB > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
-            if (IPC < 0 || IPC > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
-            if (IPD < 0 || IPD > 255) { MyMessageBox.ShowDialog("請輸入正確 IP"); return; }
-            if (port < 0) { MyMessageBox.ShowDialog("請輸入正確 Port"); return; }
-
-            this.IP = $"{IPA}.{IPB}.{IPC}.{IPD}";
-            this.Port = port;
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+    
         }
         private void rJ_TextBox_IPA__TextChanged(object sender, EventArgs e)
         {

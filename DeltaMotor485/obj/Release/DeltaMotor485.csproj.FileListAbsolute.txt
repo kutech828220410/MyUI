@@ -114,5 +114,5 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Numeri
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll
-C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Basic.xml

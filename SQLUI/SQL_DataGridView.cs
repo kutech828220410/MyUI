@@ -1312,9 +1312,14 @@ namespace SQLUI
         }
         public void Init(Table table)
         {
+            string TableName = table.TableName;
+            Init(table, TableName);
+        }
+        public void Init(Table table , string TableName)
+        {
             this.flag_Init = false;
             this.Columns.Clear();
-            this.TableName = table.TableName;
+            this.TableName = TableName;
             for(int i = 0; i < table.ColumnList.Count; i++)
             {
                 ColumnElement columnElement = new ColumnElement();

@@ -92,17 +92,34 @@ namespace Basic
             int ScreenWidth = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
             int ScreenHeight = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point((ScreenWidth - this.Width) / 2, (ScreenHeight - this.Height) / 2);
+            this.rJ_Button_OK.MouseDownEvent += RJ_Button_OK_MouseDownEvent;
+            this.rJ_Button_Cancel.MouseDownEvent += RJ_Button_Cancel_MouseDownEvent;
+        }
+
+        private void RJ_Button_Cancel_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate 
+            {
+                this.DialogResult = DialogResult.No;
+                this.Close();
+            }));
+        }
+        private void RJ_Button_OK_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            }));
         }
 
         private void rJ_Button_OK_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+      
         }
         private void rJ_Button_Cancel_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No;
-            this.Close();
+      
         }
     }
 }

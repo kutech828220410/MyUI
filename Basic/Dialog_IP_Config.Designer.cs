@@ -51,6 +51,7 @@
             this.rJ_TextBox_IPA.BorderSize = 2;
             this.rJ_TextBox_IPA.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_IPA.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_IPA.GUID = "";
             this.rJ_TextBox_IPA.Location = new System.Drawing.Point(81, 26);
             this.rJ_TextBox_IPA.Multiline = false;
             this.rJ_TextBox_IPA.Name = "rJ_TextBox_IPA";
@@ -70,15 +71,18 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 12;
             this.rJ_Lable1.BorderSize = 0;
             this.rJ_Lable1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable1.GUID = "";
             this.rJ_Lable1.Location = new System.Drawing.Point(12, 19);
             this.rJ_Lable1.Name = "rJ_Lable1";
+            this.rJ_Lable1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable1.ShadowSize = 0;
             this.rJ_Lable1.Size = new System.Drawing.Size(63, 45);
             this.rJ_Lable1.TabIndex = 1;
             this.rJ_Lable1.Text = "IP";
@@ -103,6 +107,7 @@
             this.rJ_TextBox_IPB.BorderSize = 2;
             this.rJ_TextBox_IPB.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_IPB.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_IPB.GUID = "";
             this.rJ_TextBox_IPB.Location = new System.Drawing.Point(160, 26);
             this.rJ_TextBox_IPB.Multiline = false;
             this.rJ_TextBox_IPB.Name = "rJ_TextBox_IPB";
@@ -129,6 +134,7 @@
             this.rJ_TextBox_IPC.BorderSize = 2;
             this.rJ_TextBox_IPC.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_IPC.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_IPC.GUID = "";
             this.rJ_TextBox_IPC.Location = new System.Drawing.Point(239, 26);
             this.rJ_TextBox_IPC.Multiline = false;
             this.rJ_TextBox_IPC.Name = "rJ_TextBox_IPC";
@@ -164,6 +170,7 @@
             this.rJ_TextBox_IPD.BorderSize = 2;
             this.rJ_TextBox_IPD.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_IPD.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_IPD.GUID = "";
             this.rJ_TextBox_IPD.Location = new System.Drawing.Point(318, 26);
             this.rJ_TextBox_IPD.Multiline = false;
             this.rJ_TextBox_IPD.Name = "rJ_TextBox_IPD";
@@ -192,15 +199,18 @@
             // 
             // rJ_Lable_Port
             // 
-            this.rJ_Lable_Port.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.rJ_Lable_Port.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable_Port.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
             this.rJ_Lable_Port.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable_Port.BorderRadius = 12;
             this.rJ_Lable_Port.BorderSize = 0;
             this.rJ_Lable_Port.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable_Port.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_Port.GUID = "";
             this.rJ_Lable_Port.Location = new System.Drawing.Point(392, 19);
             this.rJ_Lable_Port.Name = "rJ_Lable_Port";
+            this.rJ_Lable_Port.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable_Port.ShadowSize = 0;
             this.rJ_Lable_Port.Size = new System.Drawing.Size(63, 45);
             this.rJ_Lable_Port.TabIndex = 8;
             this.rJ_Lable_Port.Text = "Port";
@@ -216,6 +226,7 @@
             this.rJ_TextBox_Port.BorderSize = 2;
             this.rJ_TextBox_Port.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_Port.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_Port.GUID = "";
             this.rJ_TextBox_Port.Location = new System.Drawing.Point(461, 26);
             this.rJ_TextBox_Port.Multiline = false;
             this.rJ_TextBox_Port.Name = "rJ_TextBox_Port";
@@ -235,43 +246,65 @@
             // 
             // rJ_Button_Cancel
             // 
-            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_Cancel.AutoResetState = false;
+            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_Cancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_Cancel.BorderRadius = 5;
+            this.rJ_Button_Cancel.BorderRadius = 10;
             this.rJ_Button_Cancel.BorderSize = 0;
             this.rJ_Button_Cancel.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Cancel.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Cancel.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Cancel.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.GUID = "";
+            this.rJ_Button_Cancel.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_Cancel.Location = new System.Drawing.Point(551, 21);
             this.rJ_Button_Cancel.Name = "rJ_Button_Cancel";
+            this.rJ_Button_Cancel.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Cancel.ProhibitionLineWidth = 4;
+            this.rJ_Button_Cancel.ProhibitionSymbolSize = 30;
+            this.rJ_Button_Cancel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_Cancel.ShadowSize = 0;
+            this.rJ_Button_Cancel.ShowLoadingForm = false;
             this.rJ_Button_Cancel.Size = new System.Drawing.Size(76, 40);
             this.rJ_Button_Cancel.State = false;
             this.rJ_Button_Cancel.TabIndex = 10;
             this.rJ_Button_Cancel.Text = "Cancel";
             this.rJ_Button_Cancel.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.TextHeight = 0;
             this.rJ_Button_Cancel.UseVisualStyleBackColor = false;
             this.rJ_Button_Cancel.Click += new System.EventHandler(this.rJ_Button_Cancel_Click);
             // 
             // rJ_Button_OK
             // 
-            this.rJ_Button_OK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_OK.AutoResetState = false;
+            this.rJ_Button_OK.BackColor = System.Drawing.Color.White;
             this.rJ_Button_OK.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_OK.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_OK.BorderRadius = 5;
+            this.rJ_Button_OK.BorderRadius = 10;
             this.rJ_Button_OK.BorderSize = 0;
             this.rJ_Button_OK.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_OK.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_OK.FlatAppearance.BorderSize = 0;
             this.rJ_Button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_OK.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_OK.GUID = "";
+            this.rJ_Button_OK.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_OK.Location = new System.Drawing.Point(633, 21);
             this.rJ_Button_OK.Name = "rJ_Button_OK";
+            this.rJ_Button_OK.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_OK.ProhibitionLineWidth = 4;
+            this.rJ_Button_OK.ProhibitionSymbolSize = 30;
+            this.rJ_Button_OK.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_OK.ShadowSize = 0;
+            this.rJ_Button_OK.ShowLoadingForm = false;
             this.rJ_Button_OK.Size = new System.Drawing.Size(76, 40);
             this.rJ_Button_OK.State = false;
             this.rJ_Button_OK.TabIndex = 11;
             this.rJ_Button_OK.Text = "OK";
             this.rJ_Button_OK.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_OK.TextHeight = 0;
             this.rJ_Button_OK.UseVisualStyleBackColor = false;
             this.rJ_Button_OK.Click += new System.EventHandler(this.rJ_Button_OK_Click);
             // 

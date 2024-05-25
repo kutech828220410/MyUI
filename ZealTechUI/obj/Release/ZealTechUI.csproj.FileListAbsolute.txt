@@ -2376,5 +2376,5 @@ C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\LightControlUI.dll
-C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\Basic.xml

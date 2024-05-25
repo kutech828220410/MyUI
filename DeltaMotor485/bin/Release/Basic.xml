@@ -20,6 +20,64 @@
             </summary>
             <param name="properties"></param>
         </member>
+        <member name="M:Basic.TypeConvert.SetBit(System.UInt32@,System.Int32,System.Boolean)">
+            <summary>
+            設置指定索引處的位為指定狀態（對UInt32類型）。
+            </summary>
+            <param name="value">要修改的值。</param>
+            <param name="index">要設置的位索引（0-31）。</param>
+            <param name="state">要設置的狀態（true為1，false為0）。</param>
+            <returns>修改後的值。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.GetBit(System.UInt32,System.Int32)">
+            <summary>
+            獲取指定索引處的位狀態（對UInt32類型）。
+            </summary>
+            <param name="value">要檢查的值。</param>
+            <param name="index">要檢查的位索引（0-31）。</param>
+            <returns>位的狀態（true為1，false為0）。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.SetBit(System.Int32@,System.Int32,System.Boolean)">
+            <summary>
+            設置指定索引處的位為指定狀態（對int類型）。
+            </summary>
+            <param name="value">要修改的值。</param>
+            <param name="index">要設置的位索引（0-31）。</param>
+            <param name="state">要設置的狀態（true為1，false為0）。</param>
+            <returns>修改後的值。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.GetBit(System.Int32,System.Int32)">
+            <summary>
+            獲取指定索引處的位狀態（對int類型）。
+            </summary>
+            <param name="value">要檢查的值。</param>
+            <param name="index">要檢查的位索引（0-31）。</param>
+            <returns>位的狀態（true為1，false為0）。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.SetTextValue(System.String[],System.Object[])">
+            <summary>
+            將列名和對應的值組合成文本表示形式。
+            </summary>
+            <param name="columns">列名的陣列。</param>
+            <param name="value">對應於列名的值的陣列。</param>
+            <returns>包含列名和值的文本表示形式，如果列名和值的數量不相等，則返回null。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.SetTextValue(System.String,System.String)">
+            <summary>
+            將單個列名和值組合成文本表示形式。
+            </summary>
+            <param name="title">列名。</param>
+            <param name="value">對應於列名的值。</param>
+            <returns>包含列名和值的文本表示形式。</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.SetTextValue(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String})">
+            <summary>
+            將多個列名和值組合成文本表示形式。
+            </summary>
+            <param name="titles">列名的列表。</param>
+            <param name="values">對應於列名的值的列表。</param>
+            <returns>包含列名和值的文本表示形式，如果列名和值的數量不相等，則返回null。</returns>
+        </member>
         <member name="F:Basic.Dialog_IP_Config.components">
             <summary>
             Required designer variable.
@@ -207,6 +265,197 @@
             <param name="colindex">用於篩選的列索引。</param>
             <param name="serchvalue">要匹配的搜索值。</param>
             <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsInDate(System.Collections.Generic.List{System.Object[]},System.Int32,System.DateTime)">
+            <summary>
+            根據指定的日期篩選出符合條件的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="datetime">要篩選的日期。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsInMonth(System.Collections.Generic.List{System.Object[]},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            根據指定的年份和月份篩選出符合條件的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="Year">要篩選的年份。</param>
+            <param name="Month">要篩選的月份。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsInDate(System.Collections.Generic.List{System.Object[]},System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            根據指定的日期範圍篩選出符合條件的行，並返回這些行的列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="datetime_start">要篩選的起始日期。</param>
+            <param name="datetime_end">要篩選的結束日期。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsInDate(System.Collections.Generic.List{System.Object[]},System.Int32,System.Windows.Forms.DateTimePicker,System.Windows.Forms.DateTimePicker)">
+            <summary>
+            根據指定的日期範圍篩選出符合條件的行，並返回這些行的列表（使用DateTimePicker控制項）。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="datetime_start">要篩選的起始日期控制項。</param>
+            <param name="datetime_end">要篩選的結束日期控制項。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRowsInDateEx(System.Collections.Generic.List{System.Object[]},System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            根據指定的日期範圍篩選出符合條件的行，並返回這些行的列表（帶擴展功能）。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="datetime_start">要篩選的起始日期。</param>
+            <param name="datetime_end">要篩選的結束日期。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.GetRows(System.Collections.Generic.Dictionary{System.Object,System.Collections.Generic.List{System.Object[]}},System.Object)">
+            <summary>
+            根據指定的搜索值從字典中獲取對應的行，並返回這些行的列表。
+            </summary>
+            <param name="dictionary">包含多行的字典，每個鍵對應一個物件數組列表。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <returns>篩選後符合條件的行的列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.ConvertToDictionaryPRI(System.Collections.Generic.List{System.Object[]},System.Int32)">
+            <summary>
+            將列表轉換為字典，鍵為指定列索引的值，值為對應的行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="idColumnIndex">用作鍵的列索引。</param>
+            <returns>轉換後的字典。</returns>
+        </member>
+        <member name="M:Basic.LINQ.ConvertToDictionary(System.Collections.Generic.List{System.Object[]},System.Int32)">
+            <summary>
+            將列表轉換為字典，鍵為指定列索引的值，值為對應的行列表。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="idColumnIndex">用作鍵的列索引。</param>
+            <returns>轉換後的字典。</returns>
+        </member>
+        <member name="M:Basic.LINQ.IsEqual(System.Object[],System.Object[],System.Int32[])">
+            <summary>
+            比較兩個物件數組是否相等，排除指定的列。
+            </summary>
+            <param name="srcvalue">第一個物件數組。</param>
+            <param name="dstvalue">第二個物件數組。</param>
+            <param name="exclude">要排除比較的列索引。</param>
+            <returns>如果相等，返回true；否則返回false。</returns>
+        </member>
+        <member name="M:Basic.LINQ.CopyRowTo(System.Object[],System.Object[])">
+            <summary>
+            將源物件數組的值複製到目標物件數組中。
+            </summary>
+            <param name="src_value">源物件數組。</param>
+            <param name="value">目標物件數組。</param>
+        </member>
+        <member name="M:Basic.LINQ.CopyRows(System.Collections.Generic.List{System.Object[]},System.Object,System.Object,System.Int32[])">
+            <summary>
+            將源物件數組列表的值複製到目標物件數組列表中。
+            </summary>
+            <param name="src_values">源物件數組列表。</param>
+            <param name="enum_src">源列舉類型。</param>
+            <param name="enum_dst">目標列舉類型。</param>
+            <param name="src_exclude">要排除的列索引。</param>
+            <returns>目標物件數組列表。</returns>
+        </member>
+        <member name="M:Basic.LINQ.CopyRow(System.Object[],System.Object,System.Object,System.Int32[])">
+            <summary>
+            將源物件數組的值複製到新的目標物件數組中。
+            </summary>
+            <param name="src_value">源物件數組。</param>
+            <param name="enum_src">源列舉類型。</param>
+            <param name="enum_dst">目標列舉類型。</param>
+            <param name="src_exclude">要排除的列索引。</param>
+            <returns>新的目標物件數組。</returns>
+        </member>
+        <member name="M:Basic.LINQ.CopyRow(System.Object[],System.String[],System.String[],System.Int32[])">
+            <summary>
+            將源物件數組的值複製到新的目標物件數組中。
+            </summary>
+            <param name="src_value">源物件數組。</param>
+            <param name="src_EnumNames">源列舉名稱。</param>
+            <param name="dst_EnumNames">目標列舉名稱。</param>
+            <param name="src_exclude">要排除的列索引。</param>
+            <returns>新的目標物件數組。</returns>
+        </member>
+        <member name="M:Basic.LINQ.CopyRow(System.Object[],System.Object[]@,System.Object,System.Object,System.Int32[])">
+            <summary>
+            將源物件數組的值複製到指定的目標物件數組中。
+            </summary>
+            <param name="src_value">源物件數組。</param>
+            <param name="dst_value">目標物件數組。</param>
+            <param name="enum_src">源列舉類型。</param>
+            <param name="enum_dst">目標列舉類型。</param>
+            <param name="src_exclude">要排除的列索引。</param>
+            <returns>目標物件數組。</returns>
+        </member>
+        <member name="M:Basic.LINQ.CopyRow(System.Object[],System.Object[]@,System.String[],System.String[],System.Int32[])">
+            <summary>
+            將源物件數組的值複製到指定的目標物件數組中。
+            </summary>
+            <param name="src_value">源物件數組。</param>
+            <param name="dst_value">目標物件數組。</param>
+            <param name="src_EnumNames">源列舉名稱。</param>
+            <param name="dst_EnumNames">目標列舉名稱。</param>
+            <param name="src_exclude">要排除的列索引。</param>
+            <returns>目標物件數組。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveByGUID(System.Collections.Generic.List{System.Object[]},System.Object[])">
+            <summary>
+            根據指定的GUID從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="serchvalue">要匹配的物件數組。</param>
+            <returns>移除的行數。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveByGUID(System.Collections.Generic.List{System.Object[]},System.Collections.Generic.List{System.Object[]})">
+            <summary>
+            根據指定的GUID列表從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="list_serchvalue">要匹配的物件數組列表。</param>
+            <returns>移除的行數。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveByGUID(System.Collections.Generic.List{System.Object[]},System.String)">
+            <summary>
+            根據指定的GUID從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="serchvalue">要匹配的GUID。</param>
+            <returns>移除的行數。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveByGUID(System.Collections.Generic.List{System.Object[]},System.String[])">
+            <summary>
+            根據指定的GUID列表從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="serchvalue">要匹配的GUID列表。</param>
+            <returns>移除的行數。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveRow(System.Collections.Generic.List{System.Object[]},System.Int32,System.String)">
+            <summary>
+            根據指定的列索引和搜索值從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值。</param>
+            <returns>移除的行數。</returns>
+        </member>
+        <member name="M:Basic.LINQ.RemoveRow(System.Collections.Generic.List{System.Object[]},System.Int32,System.String[])">
+            <summary>
+            根據指定的列索引和搜索值列表從列表中移除行。
+            </summary>
+            <param name="list_value">包含多行的列表，每行是一個物件數組。</param>
+            <param name="colindex">用於篩選的列索引。</param>
+            <param name="serchvalue">要匹配的搜索值列表。</param>
+            <returns>移除的行數。</returns>
         </member>
         <member name="F:Basic.MyMessageBox.components">
             <summary>

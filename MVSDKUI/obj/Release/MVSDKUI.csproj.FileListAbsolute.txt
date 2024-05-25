@@ -968,5 +968,5 @@ C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\LightControlUI.dll
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Basic.xml

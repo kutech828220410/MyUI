@@ -42,7 +42,7 @@
             this.dateTimeComList.mFont = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dateTimeComList.Month = 1;
             this.dateTimeComList.Name = "dateTimeComList";
-            this.dateTimeComList.Size = new System.Drawing.Size(348, 51);
+            this.dateTimeComList.Size = new System.Drawing.Size(348, 91);
             this.dateTimeComList.Start_Year = 2022;
             this.dateTimeComList.TabIndex = 46;
             this.dateTimeComList.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
@@ -51,19 +51,24 @@
             // rJ_Button_Cancel
             // 
             this.rJ_Button_Cancel.AutoResetState = false;
-            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_Cancel.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Button_Cancel.BorderRadius = 10;
             this.rJ_Button_Cancel.BorderSize = 0;
             this.rJ_Button_Cancel.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Cancel.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Cancel.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Cancel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Cancel.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.GUID = "";
+            this.rJ_Button_Cancel.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_Cancel.Location = new System.Drawing.Point(470, 8);
             this.rJ_Button_Cancel.Name = "rJ_Button_Cancel";
+            this.rJ_Button_Cancel.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Cancel.ProhibitionLineWidth = 4;
+            this.rJ_Button_Cancel.ProhibitionSymbolSize = 30;
             this.rJ_Button_Cancel.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_Cancel.ShadowSize = 0;
             this.rJ_Button_Cancel.ShowLoadingForm = false;
@@ -72,24 +77,30 @@
             this.rJ_Button_Cancel.TabIndex = 45;
             this.rJ_Button_Cancel.Text = "Cancel";
             this.rJ_Button_Cancel.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.TextHeight = 0;
             this.rJ_Button_Cancel.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_OK
             // 
             this.rJ_Button_OK.AutoResetState = false;
-            this.rJ_Button_OK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_OK.BackColor = System.Drawing.Color.White;
             this.rJ_Button_OK.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_OK.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Button_OK.BorderRadius = 10;
             this.rJ_Button_OK.BorderSize = 0;
             this.rJ_Button_OK.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_OK.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_OK.FlatAppearance.BorderSize = 0;
             this.rJ_Button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_OK.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_OK.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_OK.GUID = "";
+            this.rJ_Button_OK.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_OK.Location = new System.Drawing.Point(385, 8);
             this.rJ_Button_OK.Name = "rJ_Button_OK";
+            this.rJ_Button_OK.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_OK.ProhibitionLineWidth = 4;
+            this.rJ_Button_OK.ProhibitionSymbolSize = 30;
             this.rJ_Button_OK.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Button_OK.ShadowSize = 0;
             this.rJ_Button_OK.ShowLoadingForm = false;
@@ -98,6 +109,7 @@
             this.rJ_Button_OK.TabIndex = 44;
             this.rJ_Button_OK.Text = "OK";
             this.rJ_Button_OK.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_OK.TextHeight = 0;
             this.rJ_Button_OK.UseVisualStyleBackColor = false;
             // 
             // Dialog_DateTime

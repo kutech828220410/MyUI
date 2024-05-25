@@ -3442,7 +3442,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Text.Enco
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Text.Json.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.ValueTuple.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\MeasureSystemUI.dll
@@ -3454,7 +3453,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\LightControlUI.d
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -3534,5 +3532,7 @@ C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\Basic.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\Basic.xml

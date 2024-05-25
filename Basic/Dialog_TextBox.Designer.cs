@@ -44,6 +44,7 @@ namespace Basic
             this.rJ_TextBox1.BorderSize = 2;
             this.rJ_TextBox1.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox1.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox1.GUID = "";
             this.rJ_TextBox1.Location = new System.Drawing.Point(170, 13);
             this.rJ_TextBox1.Multiline = false;
             this.rJ_TextBox1.Name = "rJ_TextBox1";
@@ -60,51 +61,73 @@ namespace Basic
             // 
             // rJ_Button_Cancel
             // 
-            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_Cancel.AutoResetState = false;
+            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_Cancel.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Button_Cancel.BorderRadius = 10;
             this.rJ_Button_Cancel.BorderSize = 0;
             this.rJ_Button_Cancel.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_Cancel.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_Cancel.FlatAppearance.BorderSize = 0;
             this.rJ_Button_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_Cancel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Cancel.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.GUID = "";
+            this.rJ_Button_Cancel.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_Cancel.Location = new System.Drawing.Point(511, 13);
             this.rJ_Button_Cancel.Name = "rJ_Button_Cancel";
+            this.rJ_Button_Cancel.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_Cancel.ProhibitionLineWidth = 4;
+            this.rJ_Button_Cancel.ProhibitionSymbolSize = 30;
+            this.rJ_Button_Cancel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_Cancel.ShadowSize = 0;
+            this.rJ_Button_Cancel.ShowLoadingForm = false;
             this.rJ_Button_Cancel.Size = new System.Drawing.Size(84, 42);
             this.rJ_Button_Cancel.State = false;
             this.rJ_Button_Cancel.TabIndex = 47;
             this.rJ_Button_Cancel.Text = "Cancel";
             this.rJ_Button_Cancel.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_Cancel.TextHeight = 0;
             this.rJ_Button_Cancel.UseVisualStyleBackColor = false;
             this.rJ_Button_Cancel.Click += new System.EventHandler(this.rJ_Button_Cancel_Click);
             // 
             // rJ_Button_OK
             // 
-            this.rJ_Button_OK.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_OK.AutoResetState = false;
+            this.rJ_Button_OK.BackColor = System.Drawing.Color.White;
             this.rJ_Button_OK.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_OK.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Button_OK.BorderRadius = 10;
             this.rJ_Button_OK.BorderSize = 0;
             this.rJ_Button_OK.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_OK.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_OK.FlatAppearance.BorderSize = 0;
             this.rJ_Button_OK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_OK.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_OK.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_OK.GUID = "";
+            this.rJ_Button_OK.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_OK.Location = new System.Drawing.Point(426, 13);
             this.rJ_Button_OK.Name = "rJ_Button_OK";
+            this.rJ_Button_OK.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_OK.ProhibitionLineWidth = 4;
+            this.rJ_Button_OK.ProhibitionSymbolSize = 30;
+            this.rJ_Button_OK.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_OK.ShadowSize = 0;
+            this.rJ_Button_OK.ShowLoadingForm = false;
             this.rJ_Button_OK.Size = new System.Drawing.Size(84, 42);
             this.rJ_Button_OK.State = false;
             this.rJ_Button_OK.TabIndex = 46;
             this.rJ_Button_OK.Text = "OK";
             this.rJ_Button_OK.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_OK.TextHeight = 0;
             this.rJ_Button_OK.UseVisualStyleBackColor = false;
             this.rJ_Button_OK.Click += new System.EventHandler(this.rJ_Button_OK_Click);
             // 
             // label_Title
             // 
-            this.label_Title.BackColor = System.Drawing.Color.SkyBlue;
+            this.label_Title.BackColor = System.Drawing.SystemColors.Window;
             this.label_Title.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.label_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.label_Title.BorderRadius = 12;
@@ -112,8 +135,11 @@ namespace Basic
             this.label_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.label_Title.ForeColor = System.Drawing.Color.White;
+            this.label_Title.GUID = "";
             this.label_Title.Location = new System.Drawing.Point(12, 14);
             this.label_Title.Name = "label_Title";
+            this.label_Title.ShadowColor = System.Drawing.Color.DimGray;
+            this.label_Title.ShadowSize = 0;
             this.label_Title.Size = new System.Drawing.Size(150, 40);
             this.label_Title.TabIndex = 48;
             this.label_Title.Text = "Title";
