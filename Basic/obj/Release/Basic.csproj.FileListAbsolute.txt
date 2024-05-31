@@ -1541,3 +1541,4 @@ C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\Newtonsoft.Json.xml
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\CallBackUI.dll
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\SQLUI.xml

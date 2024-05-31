@@ -3083,7 +3083,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if(this.Columns[k].Name == name[i])
+                    if(this.Columns[k].Text == name[i])
                     {
                         Columns[k].Visable = visable;
                     }
@@ -3136,7 +3136,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if (this.Columns[k].Name == name)
+                    if (this.Columns[k].Text == name)
                     {
                         Columns[k].Width = width;
                         Columns[k].Visable = true;
@@ -3183,7 +3183,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if (this.Columns[k].Name == name)
+                    if (this.Columns[k].Text == name)
                     {
                         Columns[k].SortMode = dataGridViewColumnSortMode;
                     }
@@ -3665,8 +3665,14 @@ namespace SQLUI
                     }
                     else
                     {
-              
-                        if (e.Value != null) DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
+
+                        if (e.Value != null)
+                        {
+                            int index = e.ColumnIndex;
+                            if (this.顯示CheckBox) index = index - 1;
+                            if (index < 0) return;
+                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, Columns[index].Alignment);
+                        }
                     }
                     e.Handled = true;
 
@@ -3729,7 +3735,7 @@ namespace SQLUI
                             Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
                             foreach (ColumnElement columnElement in Columns)
                             {
-                                if(columnElement.Name == dataGridView.Columns[i].Name)
+                                if(columnElement.Text == dataGridView.Columns[i].Name)
                                 {
                                     DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, rectangle, selectedRowForeColor, columnElement.Alignment);
                                     continue;

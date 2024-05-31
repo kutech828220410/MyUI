@@ -123,7 +123,7 @@ namespace Basic
             }
             catch
             {
-                if (ConsoleWrite) Console.Write($"{PortName} open failed!/n");
+                if (ConsoleWrite) Console.Write($"{PortName} open failed!\n");
                 return false;
             }
             return true;

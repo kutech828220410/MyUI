@@ -43,7 +43,17 @@ namespace SQLUI
             IN = 3,
             LIKE = 4,        
         }
-        public SQLControl(string Server, string Database, string TableName ,string UserID, string Password, uint Port, MySqlSslMode SSLMode)
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、表格名稱、使用者ID、密碼、連接埠和 SSL 模式。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="Database">資料庫名稱。</param>
+        /// <param name="TableName">表格名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
+        /// <param name="Port">連接埠號。</param>
+        /// <param name="SSLMode">SSL 模式。</param>
+        public SQLControl(string Server, string Database, string TableName, string UserID, string Password, uint Port, MySqlSslMode SSLMode)
         {
             this.TableName = TableName;
             this.Server = Server;
@@ -69,6 +79,16 @@ namespace SQLUI
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
             //TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼、連接埠和 SSL 模式。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="Database">資料庫名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
+        /// <param name="Port">連接埠號。</param>
+        /// <param name="SSLMode">SSL 模式。</param>
         public SQLControl(string Server, string Database, string UserID, string Password, uint Port, MySqlSslMode SSLMode)
         {
             this.Server = Server;
@@ -80,9 +100,9 @@ namespace SQLUI
             _MySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
                 Server = Server,
-                Database =  Database,
-                UserID =  UserID ,
-                Password =  Password,
+                Database = Database,
+                UserID = UserID,
+                Password = Password,
                 Port = Port,
                 SslMode = SSLMode
             };
@@ -94,6 +114,15 @@ namespace SQLUI
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
             //TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼和 SSL 模式。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="Database">資料庫名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
+        /// <param name="SSLMode">SSL 模式。</param>
         public SQLControl(string Server, string Database, string UserID, string Password, MySqlSslMode SSLMode)
         {
             this.Server = Server;
@@ -111,6 +140,15 @@ namespace SQLUI
             };
             TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼和連接埠。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="Database">資料庫名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
+        /// <param name="Port">連接埠號。</param>
         public SQLControl(string Server, string Database, string UserID, string Password, uint Port)
         {
             this.Server = Server;
@@ -129,6 +167,11 @@ namespace SQLUI
             };
             TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的 Table 物件。
+        /// </summary>
+        /// <param name="table">Table 物件，包含伺服器、資料庫、使用者ID和密碼。</param>
         public SQLControl(Table table)
         {
             this.TableName = table.TableName;
@@ -137,7 +180,7 @@ namespace SQLUI
             this.UserID = table.Username;
             this.Password = table.Password;
             this.Port = (uint)table.Port.StringToInt32();
-            this.SSLMode =  MySqlSslMode.None;
+            this.SSLMode = MySqlSslMode.None;
             _MySqlConnectionStringBuilder = new MySqlConnectionStringBuilder
             {
                 Server = Server,
@@ -155,6 +198,14 @@ namespace SQLUI
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
             TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID和密碼。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="Database">資料庫名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
         public SQLControl(string Server, string Database, string UserID, string Password)
         {
             this.Server = Server;
@@ -171,10 +222,20 @@ namespace SQLUI
             };
             TestConnection();
         }
+
+        /// <summary>
+        /// 初始化 SQLControl 類別的新實例。
+        /// </summary>
         public SQLControl()
         {
 
         }
+
+        /// <summary>
+        /// 設定伺服器和資料庫。
+        /// </summary>
+        /// <param name="server">伺服器名稱。</param>
+        /// <param name="dbName">資料庫名稱。</param>
         public void Set_Config(string server, string dbName)
         {
             this.Server = server;
@@ -195,6 +256,11 @@ namespace SQLUI
             SeverString += string.Format("Port='{0}';", Port);
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
         }
+
+        /// <summary>
+        /// 設定資料庫。
+        /// </summary>
+        /// <param name="Database">資料庫名稱。</param>
         public void Set_Database(string Database)
         {
             this.Database = Database;
@@ -210,6 +276,15 @@ namespace SQLUI
             string Command = string.Format("USE  {0};", this.Database);
             WtrteCommand(Command);
         }
+
+        /// <summary>
+        /// 設定連接資訊。
+        /// </summary>
+        /// <param name="Server">伺服器名稱。</param>
+        /// <param name="UserID">使用者ID。</param>
+        /// <param name="Password">密碼。</param>
+        /// <param name="Port">連接埠號。</param>
+        /// <param name="SSLMode">SSL 模式。</param>
         public void Set_Connection(string Server, string UserID, string Password, uint Port, MySqlSslMode SSLMode)
         {
             this.Server = Server;
@@ -234,6 +309,11 @@ namespace SQLUI
             SeverString += string.Format("SSLMode='{0}';", SSLMode.ToString());
             TestConnection();
         }
+
+        /// <summary>
+        /// 測試資料庫連接。
+        /// </summary>
+        /// <returns>如果連接成功，則返回 true；否則返回 false。</returns>
         public bool TestConnection()
         {
             bool Isopen = false;
@@ -243,45 +323,84 @@ namespace SQLUI
                 Isopen = (_MySqlConnection.State == System.Data.ConnectionState.Open ? true : false);
                 this.CloseConection(_MySqlConnection);
             }
-         
+
             return Isopen;
         }
 
+        /// <summary>
+        /// 獲取連接狀態。
+        /// </summary>
+        /// <returns>如果連接成功，則返回 true；否則返回 false。</returns>
         public bool GetConcetStatu()
         {
             return IsConnect;
         }
+
+        /// <summary>
+        /// 獲取伺服器名稱。
+        /// </summary>
+        /// <returns>如果連接成功，則返回伺服器名稱；否則返回 null。</returns>
         public string GetServer()
         {
             if (IsConnect) return this.Server;
             else return null;
         }
+
+        /// <summary>
+        /// 獲取資料庫名稱。
+        /// </summary>
+        /// <returns>如果連接成功，則返回資料庫名稱；否則返回 null。</returns>
         public string GetDatabase()
         {
             if (IsConnect) return this.Database;
             else return null;
         }
+
+        /// <summary>
+        /// 獲取使用者ID。
+        /// </summary>
+        /// <returns>如果連接成功，則返回使用者ID；否則返回 null。</returns>
         public string GetUserID()
         {
             if (IsConnect) return this.UserID;
             else return null;
         }
+
+        /// <summary>
+        /// 獲取密碼。
+        /// </summary>
+        /// <returns>如果連接成功，則返回密碼；否則返回 null。</returns>
         public string GetPassword()
         {
             if (IsConnect) return this.Password;
             else return null;
         }
+
+        /// <summary>
+        /// 獲取連接埠號。
+        /// </summary>
+        /// <returns>如果連接成功，則返回連接埠號；否則返回 null。</returns>
         public string GetPort()
         {
             if (IsConnect) return this.Port.ToString();
             else return null;
         }
+
+        /// <summary>
+        /// 獲取 SSL 模式。
+        /// </summary>
+        /// <returns>如果連接成功，則返回 SSL 模式；否則返回 null。</returns>
         public string GetSSLMode()
         {
             if (IsConnect) return this.SSLMode.ToString();
             else return null;
         }
 
+
+        /// <summary>
+        /// 獲取所有資料庫的名稱。
+        /// </summary>
+        /// <returns>包含所有資料庫名稱的列表。</returns>
         public List<string> Get_All_DataBase_Name()
         {
             List<string> string_list = new List<string>();
@@ -303,20 +422,44 @@ namespace SQLUI
             }
             return string_list;
         }
+
+        /// <summary>
+        /// 創建資料庫。
+        /// </summary>
+        /// <param name="Name">資料庫名稱。</param>
         public void Create_DataBase(string Name)
         {
             this.Create_DataBase(Name, "utf8");
         }
-        public void Create_DataBase(string Name, string Endcoding)
+
+        /// <summary>
+        /// 創建資料庫，使用指定的編碼。
+        /// </summary>
+        /// <param name="Name">資料庫名稱。</param>
+        /// <param name="Encoding">資料庫編碼。</param>
+        public void Create_DataBase(string Name, string Encoding)
         {
-            string Command = string.Format("create database  {0} DEFAULT CHARACTER SET {1};", Name , Endcoding);
+            string Command = string.Format("create database {0} DEFAULT CHARACTER SET {1};", Name, Encoding);
             WtrteCommand(Command);
         }
+
+        /// <summary>
+        /// 刪除資料庫。
+        /// </summary>
+        /// <param name="Name">資料庫名稱。</param>
         public void Drop_DataBase(string Name)
         {
-            string Command = string.Format("drop database  {0};", Name);
+            string Command = string.Format("drop database {0};", Name);
             WtrteCommand(Command);
         }
+
+        /// <summary>
+        /// 匯入資料庫。
+        /// </summary>
+        /// <param name="databaseName">資料庫名稱。</param>
+        /// <param name="fullfilePath">資料庫檔案完整路徑。</param>
+        /// <param name="root_password">根使用者密碼。</param>
+        /// <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
         public void Import_DataBase(string databaseName, string fullfilePath, string root_password, string mysqlDumpPath)
         {
             Process p = new Process();
@@ -328,26 +471,29 @@ namespace SQLUI
             p.StartInfo.CreateNoWindow = false;
             p.Start();
             String command = "";
-            //mysql dump 存放位置
             String _mysqlDumpPath = mysqlDumpPath;
             command = "cd " + _mysqlDumpPath;
-            //執行command
             p.StandardInput.WriteLine(command);
-            //要進行backup 的db名稱
             String dbName = databaseName;
             String outputPath = @fullfilePath;
-            //創建存放資料夾
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
             }
-            //注意 -p後緊接你的MYSQL密碼
             command = "mysqldump -u root -p" + root_password + " " + dbName + " --default-character-set=utf8" + " < " + outputPath + "\\" + dbName + ".sql";
-            //執行command
             p.StandardInput.WriteLine(command);
             p.StandardInput.WriteLine("exit");
             p.Close();
         }
+
+        /// <summary>
+        /// 匯入資料表。
+        /// </summary>
+        /// <param name="databaseName">資料庫名稱。</param>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="fullfilePath">資料表檔案完整路徑。</param>
+        /// <param name="root_password">根使用者密碼。</param>
+        /// <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
         public void Import_Table(string databaseName, string TableName, string fullfilePath, string root_password, string mysqlDumpPath)
         {
             if (TableName == null) TableName = this.TableName;
@@ -360,27 +506,28 @@ namespace SQLUI
             p.StartInfo.CreateNoWindow = false;
             p.Start();
             String command = "";
-            //mysql dump 存放位置
             String _mysqlDumpPath = mysqlDumpPath;
             command = "cd " + _mysqlDumpPath;
-            //執行command
             p.StandardInput.WriteLine(command);
-            //要進行backup 的db名稱
             String dbName = databaseName;
             String outputPath = @fullfilePath;
-            //創建存放資料夾
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
             }
-            //注意 -p後緊接你的MYSQL密碼
             command = "mysqldump -u root -p" + root_password + " " + dbName + " " + TableName + " --default-character-set=utf8" + " < " + outputPath + "\\" + TableName + ".sql";
-            //執行command
             p.StandardInput.WriteLine(command);
             p.StandardInput.WriteLine("exit");
             p.Close();
         }
 
+        /// <summary>
+        /// 匯出資料庫。
+        /// </summary>
+        /// <param name="databaseName">資料庫名稱。</param>
+        /// <param name="fullfilePath">匯出檔案的完整路徑。</param>
+        /// <param name="root_password">根使用者密碼。</param>
+        /// <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
         public void Export_DataBase(string databaseName, string fullfilePath, string root_password, string mysqlDumpPath)
         {
             Process p = new Process();
@@ -392,26 +539,29 @@ namespace SQLUI
             p.StartInfo.CreateNoWindow = false;
             p.Start();
             String command = "";
-            //mysql dump 存放位置
             String _mysqlDumpPath = mysqlDumpPath;
             command = "cd " + _mysqlDumpPath;
-            //執行command
             p.StandardInput.WriteLine(command);
-            //要進行backup 的db名稱
             String dbName = databaseName;
             String outputPath = @fullfilePath;
-            //創建存放資料夾
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
             }
-            //注意 -p後緊接你的MYSQL密碼
             command = "mysqldump -u root -p" + root_password + " " + dbName + " --default-character-set=utf8" + " > " + outputPath + "\\" + dbName + ".sql";
-            //執行command
             p.StandardInput.WriteLine(command);
             p.StandardInput.WriteLine("exit");
             p.Close();
         }
+
+        /// <summary>
+        /// 匯出資料表。
+        /// </summary>
+        /// <param name="databaseName">資料庫名稱。</param>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="fullfilePath">匯出檔案的完整路徑。</param>
+        /// <param name="root_password">根使用者密碼。</param>
+        /// <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
         public void Export_Table(string databaseName, string TableName, string fullfilePath, string root_password, string mysqlDumpPath)
         {
             if (TableName == null) TableName = this.TableName;
@@ -424,33 +574,42 @@ namespace SQLUI
             p.StartInfo.CreateNoWindow = false;
             p.Start();
             String command = "";
-            //mysql dump 存放位置
             String _mysqlDumpPath = mysqlDumpPath;
             command = "cd " + _mysqlDumpPath;
-            //執行command
             p.StandardInput.WriteLine(command);
-            //要進行backup 的db名稱
             String dbName = databaseName;
             String outputPath = @fullfilePath;
-            //創建存放資料夾
             if (!Directory.Exists(outputPath))
             {
                 Directory.CreateDirectory(outputPath);
             }
-            //注意 -p後緊接你的MYSQL密碼
-            command = "mysqldump -u root -p" + root_password + " " + dbName + " " + TableName +  " --default-character-set=utf8" + " > " + outputPath + "\\" + TableName + ".sql";
-            //執行command
+            command = "mysqldump -u root -p" + root_password + " " + dbName + " " + TableName + " --default-character-set=utf8" + " > " + outputPath + "\\" + TableName + ".sql";
             p.StandardInput.WriteLine(command);
             p.StandardInput.WriteLine("exit");
             p.Close();
         }
+
+        /// <summary>
+        /// 設置資料表名稱。
+        /// </summary>
+        /// <param name="Old_Name">舊的資料表名稱。</param>
+        /// <param name="New_Name">新的資料表名稱。</param>
         public void Set_Table_Name(string Old_Name, string New_Name)
         {
-            string Command = string.Format("USE   {0};", this.Database);
+            string Command = string.Format("USE {0};", this.Database);
             WtrteCommand(Command);
             Command = string.Format("RENAME TABLE {0} TO {1};", Old_Name, New_Name);
             WtrteCommand(Command);
         }
+
+        /// <summary>
+        /// 設置欄位名稱。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="Old_Name">舊的欄位名稱。</param>
+        /// <param name="New_Name">新的欄位名稱。</param>
+        /// <param name="valueType">欄位類型。</param>
+        /// <param name="TypeLen">欄位長度。</param>
         public void Set_Columm_Name(string TableName, string Old_Name, string New_Name, string valueType, string TypeLen)
         {
             if (TableName == null) TableName = this.TableName;
@@ -459,18 +618,35 @@ namespace SQLUI
             string Command = string.Format("ALTER TABLE {0} CHANGE COLUMN {1} {2} {3}{4}", TableName, Old_Name, New_Name, valueType, TypeLen);
             WtrteCommand(Command);
         }
-      
+
+        /// <summary>
+        /// 添加欄位。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
+        /// <param name="ColumnType">欄位類型。</param>
+        /// <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
         public int Add_Column(string TableName, string ColumnName, string ColumnType)
         {
             if (TableName == null) TableName = this.TableName;
             string[] ColumnNames = this.GetAllColumn_Name(TableName);
-            foreach(string value in ColumnNames)
+            foreach (string value in ColumnNames)
             {
                 if (value == ColumnName) return -1;
             }
-  
-            return this.Add_Column(TableName , ColumnName, ColumnType, ColumnNames[ColumnNames.Length - 1]);
+
+            return this.Add_Column(TableName, ColumnName, ColumnType, ColumnNames[ColumnNames.Length - 1]);
         }
+
+        /// <summary>
+        /// 添加欄位，並設置索引類型。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
+        /// <param name="ColumnType">欄位類型。</param>
+        /// <param name="indexType">索引類型。</param>
+        /// <param name="AfterColumnName">添加到指定欄位之後。</param>
+        /// <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
         public int Add_Column(string TableName, string ColumnName, string ColumnType, Table.IndexType indexType, string AfterColumnName)
         {
             if (TableName == null) TableName = this.TableName;
@@ -489,6 +665,15 @@ namespace SQLUI
             }
             return temp;
         }
+
+        /// <summary>
+        /// 添加欄位，並指定欄位索引位置。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
+        /// <param name="ColumnType">欄位類型。</param>
+        /// <param name="index">索引位置。</param>
+        /// <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
         public int Add_Column(string TableName, string ColumnName, string ColumnType, int index)
         {
             if (TableName == null) TableName = this.TableName;
@@ -499,6 +684,16 @@ namespace SQLUI
             }
             return this.Add_Column(TableName, ColumnName, ColumnType, ColumnNames[index]);
         }
+
+        /// <summary>
+        /// 添加欄位，設置索引類型並指定欄位索引位置。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
+        /// <param name="ColumnType">欄位類型。</param>
+        /// <param name="indexType">索引類型。</param>
+        /// <param name="index">索引位置。</param>
+        /// <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
         public int Add_Column(string TableName, string ColumnName, string ColumnType, Table.IndexType indexType, int index)
         {
             if (TableName == null) TableName = this.TableName;
@@ -510,13 +705,22 @@ namespace SQLUI
             int temp = this.Add_Column(TableName, ColumnName, ColumnType, ColumnNames[index]);
             if (temp == 1)
             {
-                if(indexType != Table.IndexType.None)
+                if (indexType != Table.IndexType.None)
                 {
                     this.Add_Index(TableName, ColumnName, indexType);
                 }
             }
             return temp;
         }
+
+        /// <summary>
+        /// 添加欄位，並指定欄位之後的位置。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
+        /// <param name="ColumnType">欄位類型。</param>
+        /// <param name="AfterColumnName">添加到指定欄位之後。</param>
+        /// <returns>返回 1 表示成功。</returns>
         public int Add_Column(string TableName, string ColumnName, string ColumnType, string AfterColumnName)
         {
             if (TableName == null) TableName = this.TableName;
@@ -524,13 +728,28 @@ namespace SQLUI
             WtrteCommand(Command);
             return 1;
         }
+
+        /// <summary>
+        /// 刪除欄位。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="ColumnName">欄位名稱。</param>
         public void Drop_Column(string TableName, string ColumnName)
         {
             if (TableName == null) TableName = this.TableName;
             string Command = string.Format(" alter table {0} drop {1};", TableName, ColumnName);
             WtrteCommand(Command);
         }
-        public void Modify_Afert_Column(string TableName, string Mod_ColumnName, string Mod_ColumnType, string Mod_DataLen, string Target_ColumnName)
+
+        /// <summary>
+        /// 修改欄位位置，將欄位移動到指定欄位之後。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="Mod_ColumnName">要修改的欄位名稱。</param>
+        /// <param name="Mod_ColumnType">要修改的欄位類型。</param>
+        /// <param name="Mod_DataLen">要修改的欄位長度。</param>
+        /// <param name="Target_ColumnName">目標欄位名稱。</param>
+        public void Modify_After_Column(string TableName, string Mod_ColumnName, string Mod_ColumnType, string Mod_DataLen, string Target_ColumnName)
         {
             if (TableName == null) TableName = this.TableName;
             if (Mod_ColumnType == "longblob") Mod_DataLen = "";
@@ -538,6 +757,14 @@ namespace SQLUI
             string Command = string.Format("ALTER TABLE {0} MODIFY {1} {2}{3} AFTER {4};", TableName, Mod_ColumnName, Mod_ColumnType, Mod_DataLen, Target_ColumnName);
             WtrteCommand(Command);
         }
+
+        /// <summary>
+        /// 修改欄位位置，將欄位移動到表的第一欄。
+        /// </summary>
+        /// <param name="TableName">資料表名稱。</param>
+        /// <param name="Mod_ColumnName">要修改的欄位名稱。</param>
+        /// <param name="Mod_ColumnType">要修改的欄位類型。</param>
+        /// <param name="Mod_DataLen">要修改的欄位長度。</param>
         public void Modify_First_Column(string TableName, string Mod_ColumnName, string Mod_ColumnType, string Mod_DataLen)
         {
             if (TableName == null) TableName = this.TableName;
@@ -546,7 +773,8 @@ namespace SQLUI
             string Command = string.Format("ALTER TABLE {0} MODIFY {1} {2}{3} FIRST;", TableName, Mod_ColumnName, Mod_ColumnType, Mod_DataLen);
             WtrteCommand(Command);
         }
-    
+
+
 
         public bool GetTableLock(string TableName)
         {

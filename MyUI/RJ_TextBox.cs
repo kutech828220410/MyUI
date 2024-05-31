@@ -249,7 +249,7 @@ namespace MyUI
             set
             {
                 placeholderText = value;
-                textBox1.Text = "";
+                //textBox1.Text = "";
                 SetPlcaeHolder();
             }
         }
@@ -372,7 +372,16 @@ namespace MyUI
                 this.UpdateControlHeight();
             }
         }
+        public void SetPlcaeHolder(string text, Color color)
+        {
+            this.Invoke(new Action(delegate 
+            {
+                this.placeholderColor = color;
+                this.placeholderText = text;
+                this.Text = "";
+            }));
 
+        }
         private void SetPlcaeHolder()
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")

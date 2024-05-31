@@ -2498,3 +2498,4 @@ C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SQLUI.xml
