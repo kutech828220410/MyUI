@@ -110,3 +110,9 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Newtonsoft.Js
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\AxOvkBase.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrvAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\AxOvkBaseAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\AxOvkMsr.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MeasureSystemFunction.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrv.dll
