@@ -188,7 +188,7 @@ namespace MyUI
             InitializeComponent();
             Value_buf = value;
             Title_buf = title;
-
+             
             this.LoadFinishedEvent += Dialog_NumPannel_LoadFinishedEvent;
         }
 
