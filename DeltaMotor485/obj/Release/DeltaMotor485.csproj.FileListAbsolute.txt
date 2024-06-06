@@ -84,12 +84,6 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\PortControlUI
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxOvkMsr.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.GenerateResource.cache
