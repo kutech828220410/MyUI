@@ -471,6 +471,12 @@
     <Compile Include="UC_NumPanel.Designer.cs">
       <DependentUpon>UC_NumPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_NumPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_NumPanel.Designer.cs">
+      <DependentUpon>UserControl_NumPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="字母鍵盤.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -627,6 +633,9 @@
     <EmbeddedResource Include="UC_NumPanel.resx">
       <DependentUpon>UC_NumPanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_NumPanel.resx">
+      <DependentUpon>UserControl_NumPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="字母鍵盤.resx">
       <DependentUpon>字母鍵盤.cs</DependentUpon>
     </EmbeddedResource>
@@ -721,6 +730,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\HSgifLOAD.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\646197_cancel_close_cross_delete_remove_icon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\118585_x_icon-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

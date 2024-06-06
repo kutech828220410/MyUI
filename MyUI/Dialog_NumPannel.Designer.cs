@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.panel_top = new System.Windows.Forms.Panel();
-            this.rJ_Lable_Content = new MyUI.RJ_Lable();
-            this.rJ_Lable_Title = new MyUI.RJ_Lable();
-            this.rJ_Button_X = new MyUI.RJ_Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.rJ_Button_1 = new MyUI.RJ_Button();
@@ -51,8 +48,13 @@
             this.rJ_Button15 = new MyUI.RJ_Button();
             this.rJ_Button_Enter = new MyUI.RJ_Button();
             this.rJ_TextBox_Value = new MyUI.RJ_TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rJ_Button_X = new MyUI.RJ_Button();
+            this.rJ_Lable_Title = new MyUI.RJ_Lable();
+            this.rJ_Lable_Content = new MyUI.RJ_Lable();
             this.panel_top.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_top
@@ -60,89 +62,13 @@
             this.panel_top.BackColor = System.Drawing.SystemColors.Window;
             this.panel_top.Controls.Add(this.rJ_Lable_Content);
             this.panel_top.Controls.Add(this.rJ_Lable_Title);
-            this.panel_top.Controls.Add(this.rJ_Button_X);
+            this.panel_top.Controls.Add(this.panel1);
             this.panel_top.Controls.Add(this.panel2);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(9, 13);
             this.panel_top.Name = "panel_top";
             this.panel_top.Size = new System.Drawing.Size(412, 52);
             this.panel_top.TabIndex = 1;
-            // 
-            // rJ_Lable_Content
-            // 
-            this.rJ_Lable_Content.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_Lable_Content.BackgroundColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Content.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_Content.BorderRadius = 0;
-            this.rJ_Lable_Content.BorderSize = 0;
-            this.rJ_Lable_Content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rJ_Lable_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_Content.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_Content.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable_Content.GUID = "";
-            this.rJ_Lable_Content.Location = new System.Drawing.Point(0, 11);
-            this.rJ_Lable_Content.Name = "rJ_Lable_Content";
-            this.rJ_Lable_Content.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable_Content.ShadowSize = 0;
-            this.rJ_Lable_Content.Size = new System.Drawing.Size(327, 31);
-            this.rJ_Lable_Content.TabIndex = 18;
-            this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
-            // 
-            // rJ_Lable_Title
-            // 
-            this.rJ_Lable_Title.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_Lable_Title.BackgroundColor = System.Drawing.Color.Lavender;
-            this.rJ_Lable_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_Title.BorderRadius = 0;
-            this.rJ_Lable_Title.BorderSize = 0;
-            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rJ_Lable_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_Title.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable_Title.GUID = "";
-            this.rJ_Lable_Title.Location = new System.Drawing.Point(0, 0);
-            this.rJ_Lable_Title.Name = "rJ_Lable_Title";
-            this.rJ_Lable_Title.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable_Title.ShadowSize = 0;
-            this.rJ_Lable_Title.Size = new System.Drawing.Size(327, 11);
-            this.rJ_Lable_Title.TabIndex = 17;
-            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
-            // 
-            // rJ_Button_X
-            // 
-            this.rJ_Button_X.AutoResetState = false;
-            this.rJ_Button_X.BackColor = System.Drawing.Color.SlateGray;
-            this.rJ_Button_X.BackgroundColor = System.Drawing.Color.SlateGray;
-            this.rJ_Button_X.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_X.BorderRadius = 5;
-            this.rJ_Button_X.BorderSize = 0;
-            this.rJ_Button_X.buttonType = MyUI.RJ_Button.ButtonType.Push;
-            this.rJ_Button_X.DisenableColor = System.Drawing.Color.Gray;
-            this.rJ_Button_X.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rJ_Button_X.FlatAppearance.BorderSize = 0;
-            this.rJ_Button_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Button_X.ForeColor = System.Drawing.Color.White;
-            this.rJ_Button_X.GUID = "";
-            this.rJ_Button_X.Image_padding = new System.Windows.Forms.Padding(0);
-            this.rJ_Button_X.Location = new System.Drawing.Point(327, 0);
-            this.rJ_Button_X.Name = "rJ_Button_X";
-            this.rJ_Button_X.ProhibitionBorderLineWidth = 1;
-            this.rJ_Button_X.ProhibitionLineWidth = 4;
-            this.rJ_Button_X.ProhibitionSymbolSize = 30;
-            this.rJ_Button_X.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Button_X.ShadowSize = 0;
-            this.rJ_Button_X.ShowLoadingForm = false;
-            this.rJ_Button_X.Size = new System.Drawing.Size(85, 42);
-            this.rJ_Button_X.State = false;
-            this.rJ_Button_X.TabIndex = 15;
-            this.rJ_Button_X.Text = "X";
-            this.rJ_Button_X.TextColor = System.Drawing.Color.White;
-            this.rJ_Button_X.TextHeight = 0;
-            this.rJ_Button_X.UseVisualStyleBackColor = false;
-            this.rJ_Button_X.MouseDownEvent += new MyUI.RJ_Button.MouseDownEventHandler(this.rJ_Button_X_MouseDownEvent);
             // 
             // panel2
             // 
@@ -180,10 +106,10 @@
             // rJ_Button_1
             // 
             this.rJ_Button_1.AutoResetState = false;
-            this.rJ_Button_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_1.BackColor = System.Drawing.Color.White;
             this.rJ_Button_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_1.BorderRadius = 5;
+            this.rJ_Button_1.BorderRadius = 10;
             this.rJ_Button_1.BorderSize = 0;
             this.rJ_Button_1.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_1.DisenableColor = System.Drawing.Color.Gray;
@@ -213,10 +139,10 @@
             // rJ_Button_2
             // 
             this.rJ_Button_2.AutoResetState = false;
-            this.rJ_Button_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_2.BackColor = System.Drawing.Color.White;
             this.rJ_Button_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_2.BorderRadius = 5;
+            this.rJ_Button_2.BorderRadius = 10;
             this.rJ_Button_2.BorderSize = 0;
             this.rJ_Button_2.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_2.DisenableColor = System.Drawing.Color.Gray;
@@ -246,10 +172,10 @@
             // rJ_Button_3
             // 
             this.rJ_Button_3.AutoResetState = false;
-            this.rJ_Button_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_3.BackColor = System.Drawing.Color.White;
             this.rJ_Button_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_3.BorderRadius = 5;
+            this.rJ_Button_3.BorderRadius = 10;
             this.rJ_Button_3.BorderSize = 0;
             this.rJ_Button_3.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_3.DisenableColor = System.Drawing.Color.Gray;
@@ -279,10 +205,10 @@
             // rJ_Button_BackSpace
             // 
             this.rJ_Button_BackSpace.AutoResetState = false;
-            this.rJ_Button_BackSpace.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_BackSpace.BackColor = System.Drawing.Color.White;
             this.rJ_Button_BackSpace.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_BackSpace.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_BackSpace.BorderRadius = 5;
+            this.rJ_Button_BackSpace.BorderRadius = 10;
             this.rJ_Button_BackSpace.BorderSize = 0;
             this.rJ_Button_BackSpace.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_BackSpace.DisenableColor = System.Drawing.Color.Gray;
@@ -312,10 +238,10 @@
             // rJ_Button_4
             // 
             this.rJ_Button_4.AutoResetState = false;
-            this.rJ_Button_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_4.BackColor = System.Drawing.Color.White;
             this.rJ_Button_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_4.BorderRadius = 5;
+            this.rJ_Button_4.BorderRadius = 10;
             this.rJ_Button_4.BorderSize = 0;
             this.rJ_Button_4.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_4.DisenableColor = System.Drawing.Color.Gray;
@@ -345,10 +271,10 @@
             // rJ_Button_5
             // 
             this.rJ_Button_5.AutoResetState = false;
-            this.rJ_Button_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_5.BackColor = System.Drawing.Color.White;
             this.rJ_Button_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_5.BorderRadius = 5;
+            this.rJ_Button_5.BorderRadius = 10;
             this.rJ_Button_5.BorderSize = 0;
             this.rJ_Button_5.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_5.DisenableColor = System.Drawing.Color.Gray;
@@ -378,10 +304,10 @@
             // rJ_Button_6
             // 
             this.rJ_Button_6.AutoResetState = false;
-            this.rJ_Button_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_6.BackColor = System.Drawing.Color.White;
             this.rJ_Button_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_6.BorderRadius = 5;
+            this.rJ_Button_6.BorderRadius = 10;
             this.rJ_Button_6.BorderSize = 0;
             this.rJ_Button_6.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_6.DisenableColor = System.Drawing.Color.Gray;
@@ -411,10 +337,10 @@
             // rJ_Button_CE
             // 
             this.rJ_Button_CE.AutoResetState = false;
-            this.rJ_Button_CE.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_CE.BackColor = System.Drawing.Color.White;
             this.rJ_Button_CE.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_CE.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_CE.BorderRadius = 5;
+            this.rJ_Button_CE.BorderRadius = 10;
             this.rJ_Button_CE.BorderSize = 0;
             this.rJ_Button_CE.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_CE.DisenableColor = System.Drawing.Color.Gray;
@@ -444,10 +370,10 @@
             // rJ_Button_7
             // 
             this.rJ_Button_7.AutoResetState = false;
-            this.rJ_Button_7.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_7.BackColor = System.Drawing.Color.White;
             this.rJ_Button_7.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_7.BorderRadius = 5;
+            this.rJ_Button_7.BorderRadius = 10;
             this.rJ_Button_7.BorderSize = 0;
             this.rJ_Button_7.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_7.DisenableColor = System.Drawing.Color.Gray;
@@ -477,10 +403,10 @@
             // rJ_Button_8
             // 
             this.rJ_Button_8.AutoResetState = false;
-            this.rJ_Button_8.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_8.BackColor = System.Drawing.Color.White;
             this.rJ_Button_8.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_8.BorderRadius = 5;
+            this.rJ_Button_8.BorderRadius = 10;
             this.rJ_Button_8.BorderSize = 0;
             this.rJ_Button_8.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_8.DisenableColor = System.Drawing.Color.Gray;
@@ -510,10 +436,10 @@
             // rJ_Button_9
             // 
             this.rJ_Button_9.AutoResetState = false;
-            this.rJ_Button_9.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_9.BackColor = System.Drawing.Color.White;
             this.rJ_Button_9.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_9.BorderRadius = 5;
+            this.rJ_Button_9.BorderRadius = 10;
             this.rJ_Button_9.BorderSize = 0;
             this.rJ_Button_9.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_9.DisenableColor = System.Drawing.Color.Gray;
@@ -543,10 +469,10 @@
             // rJ_Button_Cancel
             // 
             this.rJ_Button_Cancel.AutoResetState = false;
-            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_Cancel.BackColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.BackgroundColor = System.Drawing.Color.DimGray;
             this.rJ_Button_Cancel.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_Cancel.BorderRadius = 5;
+            this.rJ_Button_Cancel.BorderRadius = 10;
             this.rJ_Button_Cancel.BorderSize = 0;
             this.rJ_Button_Cancel.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_Cancel.DisenableColor = System.Drawing.Color.Gray;
@@ -607,10 +533,10 @@
             // rJ_Button_0
             // 
             this.rJ_Button_0.AutoResetState = false;
-            this.rJ_Button_0.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_0.BackColor = System.Drawing.Color.White;
             this.rJ_Button_0.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_0.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_0.BorderRadius = 5;
+            this.rJ_Button_0.BorderRadius = 10;
             this.rJ_Button_0.BorderSize = 0;
             this.rJ_Button_0.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_0.DisenableColor = System.Drawing.Color.Gray;
@@ -671,10 +597,10 @@
             // rJ_Button_Enter
             // 
             this.rJ_Button_Enter.AutoResetState = false;
-            this.rJ_Button_Enter.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_Enter.BackColor = System.Drawing.Color.White;
             this.rJ_Button_Enter.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_Enter.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_Enter.BorderRadius = 5;
+            this.rJ_Button_Enter.BorderRadius = 10;
             this.rJ_Button_Enter.BorderSize = 0;
             this.rJ_Button_Enter.buttonType = MyUI.RJ_Button.ButtonType.Push;
             this.rJ_Button_Enter.DisenableColor = System.Drawing.Color.Gray;
@@ -727,6 +653,90 @@
             this.rJ_TextBox_Value.Texts = "";
             this.rJ_TextBox_Value.UnderlineStyle = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rJ_Button_X);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(373, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(39, 42);
+            this.panel1.TabIndex = 19;
+            // 
+            // rJ_Button_X
+            // 
+            this.rJ_Button_X.AutoResetState = false;
+            this.rJ_Button_X.BackColor = System.Drawing.Color.White;
+            this.rJ_Button_X.BackgroundColor = System.Drawing.Color.White;
+            this.rJ_Button_X.BackgroundImage = global::MyUI.Properties.Resources._118585_x_icon_removebg_preview;
+            this.rJ_Button_X.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Button_X.BorderRadius = 5;
+            this.rJ_Button_X.BorderSize = 0;
+            this.rJ_Button_X.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_X.DisenableColor = System.Drawing.Color.Gray;
+            this.rJ_Button_X.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_Button_X.FlatAppearance.BorderSize = 0;
+            this.rJ_Button_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Button_X.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Button_X.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_X.GUID = "";
+            this.rJ_Button_X.Image_padding = new System.Windows.Forms.Padding(5);
+            this.rJ_Button_X.Location = new System.Drawing.Point(0, 0);
+            this.rJ_Button_X.Name = "rJ_Button_X";
+            this.rJ_Button_X.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_X.ProhibitionLineWidth = 4;
+            this.rJ_Button_X.ProhibitionSymbolSize = 30;
+            this.rJ_Button_X.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_X.ShadowSize = 0;
+            this.rJ_Button_X.ShowLoadingForm = false;
+            this.rJ_Button_X.Size = new System.Drawing.Size(39, 36);
+            this.rJ_Button_X.State = false;
+            this.rJ_Button_X.TabIndex = 16;
+            this.rJ_Button_X.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_X.TextHeight = 0;
+            this.rJ_Button_X.UseVisualStyleBackColor = false;
+            // 
+            // rJ_Lable_Title
+            // 
+            this.rJ_Lable_Title.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable_Title.BackgroundColor = System.Drawing.Color.White;
+            this.rJ_Lable_Title.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_Title.BorderRadius = 0;
+            this.rJ_Lable_Title.BorderSize = 0;
+            this.rJ_Lable_Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_Lable_Title.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_Title.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_Title.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Title.GUID = "";
+            this.rJ_Lable_Title.Location = new System.Drawing.Point(0, 0);
+            this.rJ_Lable_Title.Name = "rJ_Lable_Title";
+            this.rJ_Lable_Title.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable_Title.ShadowSize = 0;
+            this.rJ_Lable_Title.Size = new System.Drawing.Size(373, 11);
+            this.rJ_Lable_Title.TabIndex = 20;
+            this.rJ_Lable_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_Title.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_Lable_Content
+            // 
+            this.rJ_Lable_Content.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Lable_Content.BackgroundColor = System.Drawing.Color.White;
+            this.rJ_Lable_Content.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_Content.BorderRadius = 0;
+            this.rJ_Lable_Content.BorderSize = 0;
+            this.rJ_Lable_Content.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rJ_Lable_Content.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_Content.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_Content.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable_Content.GUID = "";
+            this.rJ_Lable_Content.Location = new System.Drawing.Point(0, 11);
+            this.rJ_Lable_Content.Name = "rJ_Lable_Content";
+            this.rJ_Lable_Content.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Lable_Content.ShadowSize = 0;
+            this.rJ_Lable_Content.Size = new System.Drawing.Size(373, 31);
+            this.rJ_Lable_Content.TabIndex = 21;
+            this.rJ_Lable_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_Content.TextColor = System.Drawing.Color.Black;
+            // 
             // Dialog_NumPannel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -737,7 +747,6 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rJ_TextBox_Value);
             this.Controls.Add(this.panel_top);
-            this.DropBack = false;
             this.Mobile = CCWin.MobileStyle.None;
             this.Name = "Dialog_NumPannel";
             this.Padding = new System.Windows.Forms.Padding(5);
@@ -749,6 +758,7 @@
             this.Load += new System.EventHandler(this.Dialog_NumPannel_Load);
             this.panel_top.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -774,9 +784,10 @@
         private RJ_Button rJ_Button_0;
         private RJ_Button rJ_Button15;
         private RJ_Button rJ_Button_Enter;
-        private RJ_Button rJ_Button_X;
         private System.Windows.Forms.Panel panel2;
-        private RJ_Lable rJ_Lable_Title;
         private RJ_Lable rJ_Lable_Content;
+        private RJ_Lable rJ_Lable_Title;
+        private System.Windows.Forms.Panel panel1;
+        private RJ_Button rJ_Button_X;
     }
 }

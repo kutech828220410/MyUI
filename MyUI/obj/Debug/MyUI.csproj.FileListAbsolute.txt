@@ -193,3 +193,5 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_DateTimeInte
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.Dialog_DateTimePicker.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.RJ_DatePicker.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.RJ_Calendar.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Debug\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Debug\MyUI.UserControl_NumPanel.resources

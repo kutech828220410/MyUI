@@ -90,3 +90,4 @@ C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Microsoft.mshtml
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Debug\Basic.xml

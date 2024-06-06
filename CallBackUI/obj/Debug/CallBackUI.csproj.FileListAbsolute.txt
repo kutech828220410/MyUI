@@ -171,3 +171,4 @@ C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Microsoft.mshtml.d
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Basic.xml

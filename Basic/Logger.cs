@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Reflection;
 namespace Basic
 {
     public class Logger
     {
-        private static string logDirectory = "log/";
+        public static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        private static string logDirectory = $"{currentDirectory}/log/";
         public static void Log(string Message)
         {
             string LogFileName = $"{DateTime.Now:yyyyMMdd-HH}.txt";
@@ -18,7 +20,7 @@ namespace Basic
             {
                 sw.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
             }
-
+            Console.WriteLine($"LogFilePath : {LogFilePath}");
         }
 
         public static void Log(string Title ,string Message)

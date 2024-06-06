@@ -161,3 +161,5 @@ C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\SQLUI.xml
+C:\Users\Administrator\source\repos\MyUI\Basic\bin\Debug\Basic.xml

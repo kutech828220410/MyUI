@@ -106,3 +106,4 @@ C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\Microsoft
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Debug\Basic.xml

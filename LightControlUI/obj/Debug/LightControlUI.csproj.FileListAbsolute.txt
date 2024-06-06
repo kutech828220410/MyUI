@@ -104,3 +104,4 @@ C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Microsoft.msht
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Debug\Basic.xml

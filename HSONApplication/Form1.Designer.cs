@@ -59,6 +59,7 @@
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
+            this.userControl_NumPanel1 = new MyUI.UserControl_NumPanel();
             this.panel_main.SuspendLayout();
             this.plC_ScreenPage_main.SuspendLayout();
             this.主畫面.SuspendLayout();
@@ -217,6 +218,7 @@
             // 
             // 主畫面
             // 
+            this.主畫面.Controls.Add(this.userControl_NumPanel1);
             this.主畫面.Controls.Add(this.rJ_DatePicker1);
             this.主畫面.Controls.Add(this.plC_RJ_ScreenButtonEx1);
             this.主畫面.Controls.Add(this.rJ_Button1);
@@ -351,7 +353,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(394, 346);
+            this.pictureBox1.Location = new System.Drawing.Point(282, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(661, 314);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -685,6 +687,7 @@
             this.sqL_DataGridView_備藥通知.cellStyleFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.cellStylForeColor = System.Drawing.Color.Black;
             this.sqL_DataGridView_備藥通知.columnHeaderBackColor = System.Drawing.Color.DarkGray;
+            this.sqL_DataGridView_備藥通知.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_備藥通知.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             this.sqL_DataGridView_備藥通知.columnHeadersHeight = 40;
@@ -704,6 +707,10 @@
             this.sqL_DataGridView_備藥通知.RowsColor = System.Drawing.SystemColors.Control;
             this.sqL_DataGridView_備藥通知.RowsHeight = 80;
             this.sqL_DataGridView_備藥通知.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_備藥通知.selectedBorderSize = 0;
+            this.sqL_DataGridView_備藥通知.selectedRowBackColor = System.Drawing.Color.Blue;
+            this.sqL_DataGridView_備藥通知.selectedRowBorderColor = System.Drawing.Color.Blue;
+            this.sqL_DataGridView_備藥通知.selectedRowForeColor = System.Drawing.Color.White;
             this.sqL_DataGridView_備藥通知.Server = "127.0.0.0";
             this.sqL_DataGridView_備藥通知.Size = new System.Drawing.Size(1076, 384);
             this.sqL_DataGridView_備藥通知.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
@@ -776,6 +783,17 @@
             this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
             this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
+            // userControl_NumPanel1
+            // 
+            this.userControl_NumPanel1.BackColor = System.Drawing.Color.White;
+            this.userControl_NumPanel1.ContentFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.userControl_NumPanel1.Location = new System.Drawing.Point(149, 26);
+            this.userControl_NumPanel1.Name = "userControl_NumPanel1";
+            this.userControl_NumPanel1.Size = new System.Drawing.Size(401, 469);
+            this.userControl_NumPanel1.TabIndex = 32;
+            this.userControl_NumPanel1.TitleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.userControl_NumPanel1.Value = -1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -829,6 +847,7 @@
         private MyUI.RJ_DatePicker rJ_DatePicker1;
         private System.Windows.Forms.Label label1;
         private MyUI.RJ_Lable rJ_Lable1;
+        private MyUI.UserControl_NumPanel userControl_NumPanel1;
     }
 }
 

@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SQLUI</name>
+    </assembly>
+    <members>
+        <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String,System.String,System.UInt32,MySql.Data.MySqlClient.MySqlSslMode)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、表格名稱、使用者ID、密碼、連接埠和 SSL 模式。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="Database">資料庫名稱。</param>
+            <param name="TableName">表格名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+            <param name="Port">連接埠號。</param>
+            <param name="SSLMode">SSL 模式。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String,System.UInt32,MySql.Data.MySqlClient.MySqlSslMode)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼、連接埠和 SSL 模式。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="Database">資料庫名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+            <param name="Port">連接埠號。</param>
+            <param name="SSLMode">SSL 模式。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String,MySql.Data.MySqlClient.MySqlSslMode)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼和 SSL 模式。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="Database">資料庫名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+            <param name="SSLMode">SSL 模式。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String,System.UInt32)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID、密碼和連接埠。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="Database">資料庫名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+            <param name="Port">連接埠號。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor(SQLUI.Table)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的 Table 物件。
+            </summary>
+            <param name="table">Table 物件，包含伺服器、資料庫、使用者ID和密碼。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、使用者ID和密碼。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="Database">資料庫名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.#ctor">
+            <summary>
+            初始化 SQLControl 類別的新實例。
+            </summary>
+        </member>
+        <member name="M:SQLUI.SQLControl.Set_Config(System.String,System.String)">
+            <summary>
+            設定伺服器和資料庫。
+            </summary>
+            <param name="server">伺服器名稱。</param>
+            <param name="dbName">資料庫名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Set_Database(System.String)">
+            <summary>
+            設定資料庫。
+            </summary>
+            <param name="Database">資料庫名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Set_Connection(System.String,System.String,System.String,System.UInt32,MySql.Data.MySqlClient.MySqlSslMode)">
+            <summary>
+            設定連接資訊。
+            </summary>
+            <param name="Server">伺服器名稱。</param>
+            <param name="UserID">使用者ID。</param>
+            <param name="Password">密碼。</param>
+            <param name="Port">連接埠號。</param>
+            <param name="SSLMode">SSL 模式。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.TestConnection">
+            <summary>
+            測試資料庫連接。
+            </summary>
+            <returns>如果連接成功，則返回 true；否則返回 false。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetConcetStatu">
+            <summary>
+            獲取連接狀態。
+            </summary>
+            <returns>如果連接成功，則返回 true；否則返回 false。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetServer">
+            <summary>
+            獲取伺服器名稱。
+            </summary>
+            <returns>如果連接成功，則返回伺服器名稱；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetDatabase">
+            <summary>
+            獲取資料庫名稱。
+            </summary>
+            <returns>如果連接成功，則返回資料庫名稱；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetUserID">
+            <summary>
+            獲取使用者ID。
+            </summary>
+            <returns>如果連接成功，則返回使用者ID；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetPassword">
+            <summary>
+            獲取密碼。
+            </summary>
+            <returns>如果連接成功，則返回密碼；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetPort">
+            <summary>
+            獲取連接埠號。
+            </summary>
+            <returns>如果連接成功，則返回連接埠號；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.GetSSLMode">
+            <summary>
+            獲取 SSL 模式。
+            </summary>
+            <returns>如果連接成功，則返回 SSL 模式；否則返回 null。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Get_All_DataBase_Name">
+            <summary>
+            獲取所有資料庫的名稱。
+            </summary>
+            <returns>包含所有資料庫名稱的列表。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Create_DataBase(System.String)">
+            <summary>
+            創建資料庫。
+            </summary>
+            <param name="Name">資料庫名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Create_DataBase(System.String,System.String)">
+            <summary>
+            創建資料庫，使用指定的編碼。
+            </summary>
+            <param name="Name">資料庫名稱。</param>
+            <param name="Encoding">資料庫編碼。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Drop_DataBase(System.String)">
+            <summary>
+            刪除資料庫。
+            </summary>
+            <param name="Name">資料庫名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Import_DataBase(System.String,System.String,System.String,System.String)">
+            <summary>
+            匯入資料庫。
+            </summary>
+            <param name="databaseName">資料庫名稱。</param>
+            <param name="fullfilePath">資料庫檔案完整路徑。</param>
+            <param name="root_password">根使用者密碼。</param>
+            <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Import_Table(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            匯入資料表。
+            </summary>
+            <param name="databaseName">資料庫名稱。</param>
+            <param name="TableName">資料表名稱。</param>
+            <param name="fullfilePath">資料表檔案完整路徑。</param>
+            <param name="root_password">根使用者密碼。</param>
+            <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Export_DataBase(System.String,System.String,System.String,System.String)">
+            <summary>
+            匯出資料庫。
+            </summary>
+            <param name="databaseName">資料庫名稱。</param>
+            <param name="fullfilePath">匯出檔案的完整路徑。</param>
+            <param name="root_password">根使用者密碼。</param>
+            <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Export_Table(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            匯出資料表。
+            </summary>
+            <param name="databaseName">資料庫名稱。</param>
+            <param name="TableName">資料表名稱。</param>
+            <param name="fullfilePath">匯出檔案的完整路徑。</param>
+            <param name="root_password">根使用者密碼。</param>
+            <param name="mysqlDumpPath">MySQL Dump 工具路徑。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Set_Table_Name(System.String,System.String)">
+            <summary>
+            設置資料表名稱。
+            </summary>
+            <param name="Old_Name">舊的資料表名稱。</param>
+            <param name="New_Name">新的資料表名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Set_Columm_Name(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            設置欄位名稱。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="Old_Name">舊的欄位名稱。</param>
+            <param name="New_Name">新的欄位名稱。</param>
+            <param name="valueType">欄位類型。</param>
+            <param name="TypeLen">欄位長度。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Add_Column(System.String,System.String,System.String)">
+            <summary>
+            添加欄位。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+            <param name="ColumnType">欄位類型。</param>
+            <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Add_Column(System.String,System.String,System.String,SQLUI.Table.IndexType,System.String)">
+            <summary>
+            添加欄位，並設置索引類型。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+            <param name="ColumnType">欄位類型。</param>
+            <param name="indexType">索引類型。</param>
+            <param name="AfterColumnName">添加到指定欄位之後。</param>
+            <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Add_Column(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            添加欄位，並指定欄位索引位置。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+            <param name="ColumnType">欄位類型。</param>
+            <param name="index">索引位置。</param>
+            <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Add_Column(System.String,System.String,System.String,SQLUI.Table.IndexType,System.Int32)">
+            <summary>
+            添加欄位，設置索引類型並指定欄位索引位置。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+            <param name="ColumnType">欄位類型。</param>
+            <param name="indexType">索引類型。</param>
+            <param name="index">索引位置。</param>
+            <returns>如果欄位已存在，返回 -1；否則返回 1。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Add_Column(System.String,System.String,System.String,System.String)">
+            <summary>
+            添加欄位，並指定欄位之後的位置。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+            <param name="ColumnType">欄位類型。</param>
+            <param name="AfterColumnName">添加到指定欄位之後。</param>
+            <returns>返回 1 表示成功。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.Drop_Column(System.String,System.String)">
+            <summary>
+            刪除欄位。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="ColumnName">欄位名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Modify_After_Column(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            修改欄位位置，將欄位移動到指定欄位之後。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="Mod_ColumnName">要修改的欄位名稱。</param>
+            <param name="Mod_ColumnType">要修改的欄位類型。</param>
+            <param name="Mod_DataLen">要修改的欄位長度。</param>
+            <param name="Target_ColumnName">目標欄位名稱。</param>
+        </member>
+        <member name="M:SQLUI.SQLControl.Modify_First_Column(System.String,System.String,System.String,System.String)">
+            <summary>
+            修改欄位位置，將欄位移動到表的第一欄。
+            </summary>
+            <param name="TableName">資料表名稱。</param>
+            <param name="Mod_ColumnName">要修改的欄位名稱。</param>
+            <param name="Mod_ColumnType">要修改的欄位類型。</param>
+            <param name="Mod_DataLen">要修改的欄位長度。</param>
+        </member>
+        <member name="F:SQLUI.SQL_DataGridView.components">
+            <summary> 
+            設計工具所需的變數。
+            </summary>
+        </member>
+        <member name="M:SQLUI.SQL_DataGridView.Dispose(System.Boolean)">
+            <summary> 
+            清除任何使用中的資源。
+            </summary>
+            <param name="disposing">如果應該處置 Managed 資源則為 true，否則為 false。</param>
+        </member>
+        <member name="M:SQLUI.SQL_DataGridView.InitializeComponent">
+            <summary> 
+            此為設計工具支援所需的方法 - 請勿使用程式碼編輯器
+            修改這個方法的內容。
+            </summary>
+        </member>
+    </members>
+</doc>

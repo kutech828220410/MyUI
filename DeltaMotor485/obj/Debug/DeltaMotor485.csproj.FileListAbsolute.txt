@@ -76,3 +76,4 @@ C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Microsoft.mshtm
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Debug\Basic.xml

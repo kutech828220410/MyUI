@@ -63,6 +63,26 @@ namespace MyUI.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap _118585_x_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("118585_x_icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap _646197_cancel_close_cross_delete_remove_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("646197_cancel_close_cross_delete_remove_icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Calendar_Dark {
             get {
                 object obj = ResourceManager.GetObject("Calendar_Dark", resourceCulture);

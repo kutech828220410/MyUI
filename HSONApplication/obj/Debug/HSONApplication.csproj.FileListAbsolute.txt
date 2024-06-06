@@ -131,3 +131,5 @@ C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\PopupControl.
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\bin\Debug\SQLUI.xml

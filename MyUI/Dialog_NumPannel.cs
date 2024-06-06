@@ -15,6 +15,8 @@ namespace MyUI
     {
         public static Form form;
         private Point location = new Point(0, 0);
+        private int _Y_offset = 0;
+        private int _X_offset = 0;
         public new Point Location
         {
             get
@@ -172,19 +174,26 @@ namespace MyUI
         {
             InitializeComponent();
             Title_buf = title;
+            this.LoadFinishedEvent += Dialog_NumPannel_LoadFinishedEvent;
         }
         public Dialog_NumPannel(string title , string content)
         {
             InitializeComponent();
             Title_buf = title;
-            Content_buf = content;        
+            Content_buf = content;
+            this.LoadFinishedEvent += Dialog_NumPannel_LoadFinishedEvent;
         }
         public Dialog_NumPannel(string title, int value)
         {
             InitializeComponent();
             Value_buf = value;
             Title_buf = title;
+
+            this.LoadFinishedEvent += Dialog_NumPannel_LoadFinishedEvent;
         }
+
+    
+
         public Dialog_NumPannel(int value)
         {
             InitializeComponent();
@@ -212,12 +221,13 @@ namespace MyUI
         }
         private void Dialog_NumPannel_Load(object sender, EventArgs e)
         {
+            this.rJ_Button_X.MouseDownEvent += RJ_Button_X_MouseDownEvent;
             this.DialogResult = DialogResult.None;
             this.OnClick_CE();
             this.Value = Value_buf;
             this.Title = Title_buf;
             this.Content = Content_buf;
-
+            this.rJ_TextBox_Value.Texts = this.Value.ToString();
             Size size_title = Draw.MeasureText(Title_buf, TitleFont);
             Size size_content = Draw.MeasureText(Content_buf, ContentFont);
             if (Title_buf.StringIsEmpty()) this.rJ_Lable_Title.Height = 0;
@@ -233,13 +243,30 @@ namespace MyUI
                 this.panel_top.Height += size_content.Height;
                 this.Height += size_content.Height;
             }
-            if (this.location.X != 0 && this.location.Y != 0)
+            if (this.location.X != 0 && this.location.Y != 0 || _X_offset != 0 || _Y_offset != 0)
             {
                 this.StartPosition = FormStartPosition.WindowsDefaultLocation;
                 base.Location = this.location;
+
+                base.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 + _X_offset, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 + _Y_offset);
+
             }
         }
+        public void Set_Location_Offset(int x_offset, int y_offset)
+        {
+            _X_offset = x_offset;
+            _Y_offset = y_offset;
+        }
 
+        public override void Refresh()
+        {
+            rJ_TextBox_Value.Refresh();
+            base.Refresh();
+        }
+        private void Dialog_NumPannel_LoadFinishedEvent(EventArgs e)
+        {
+            rJ_TextBox_Value.Refresh();
+        }
 
         private void OnClick_Num(int num)
         {
@@ -333,11 +360,11 @@ namespace MyUI
         {
             OnClick_Enter();
         }
-        private void rJ_Button_X_MouseDownEvent(MouseEventArgs mevent)
+ 
+        private void RJ_Button_X_MouseDownEvent(MouseEventArgs mevent)
         {
             OnClick_Cancel();
         }
-
         private void Dialog_NumPannel_FormClosed(object sender, FormClosedEventArgs e)
         {
            // this.Close();

@@ -108,3 +108,4 @@ C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Debug\Basic.xml
