@@ -40,7 +40,6 @@
             this.rJ_DatePicker1 = new MyUI.RJ_DatePicker();
             this.plC_RJ_ScreenButtonEx1 = new MyUI.PLC_RJ_ScreenButtonEx();
             this.rJ_Button1 = new MyUI.RJ_Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button_next = new System.Windows.Forms.Button();
             this.button_pre = new System.Windows.Forms.Button();
             this.stepViewer1 = new MyUI.StepViewer();
@@ -59,11 +58,9 @@
             this.plC_UI_Init1 = new MyUI.PLC_UI_Init();
             this.lowerMachine_Panel1 = new LadderUI.LowerMachine_Panel();
             this.plC_AlarmFlow2 = new MyUI.PLC_AlarmFlow();
-            this.userControl_NumPanel1 = new MyUI.UserControl_NumPanel();
             this.panel_main.SuspendLayout();
             this.plC_ScreenPage_main.SuspendLayout();
             this.主畫面.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.手動.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,11 +215,9 @@
             // 
             // 主畫面
             // 
-            this.主畫面.Controls.Add(this.userControl_NumPanel1);
             this.主畫面.Controls.Add(this.rJ_DatePicker1);
             this.主畫面.Controls.Add(this.plC_RJ_ScreenButtonEx1);
             this.主畫面.Controls.Add(this.rJ_Button1);
-            this.主畫面.Controls.Add(this.pictureBox1);
             this.主畫面.Controls.Add(this.button_next);
             this.主畫面.Controls.Add(this.button_pre);
             this.主畫面.Controls.Add(this.stepViewer1);
@@ -253,7 +248,7 @@
             this.rJ_DatePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ControlText;
             this.rJ_DatePicker1.CalendarTrailingForeColor = System.Drawing.SystemColors.ControlLight;
             this.rJ_DatePicker1.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker1.Location = new System.Drawing.Point(266, 497);
+            this.rJ_DatePicker1.Location = new System.Drawing.Point(250, 400);
             this.rJ_DatePicker1.MinimumSize = new System.Drawing.Size(250, 35);
             this.rJ_DatePicker1.Name = "rJ_DatePicker1";
             this.rJ_DatePicker1.PickerFont = new System.Drawing.Font("標楷體", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -351,15 +346,6 @@
             this.rJ_Button1.TextHeight = 0;
             this.rJ_Button1.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(282, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(661, 314);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
             // button_next
             // 
             this.button_next.Location = new System.Drawing.Point(313, 346);
@@ -384,7 +370,7 @@
             this.stepViewer1.CurrentStep = 0;
             this.stepViewer1.LineWidth = 120;
             this.stepViewer1.ListDataSource = null;
-            this.stepViewer1.Location = new System.Drawing.Point(18, 219);
+            this.stepViewer1.Location = new System.Drawing.Point(31, 460);
             this.stepViewer1.Name = "stepViewer1";
             this.stepViewer1.Size = new System.Drawing.Size(891, 80);
             this.stepViewer1.TabIndex = 25;
@@ -393,7 +379,7 @@
             // 
             this.dateTimeIntervelPicker1.BackColor = System.Drawing.Color.Transparent;
             this.dateTimeIntervelPicker1.EndTime = new System.DateTime(2024, 5, 15, 23, 59, 59, 0);
-            this.dateTimeIntervelPicker1.Location = new System.Drawing.Point(169, 442);
+            this.dateTimeIntervelPicker1.Location = new System.Drawing.Point(506, 400);
             this.dateTimeIntervelPicker1.Name = "dateTimeIntervelPicker1";
             this.dateTimeIntervelPicker1.Size = new System.Drawing.Size(535, 32);
             this.dateTimeIntervelPicker1.StartTime = new System.DateTime(2024, 5, 15, 0, 0, 0, 0);
@@ -783,17 +769,6 @@
             this.plC_AlarmFlow2.警報編輯 = ((System.Collections.Generic.List<string>)(resources.GetObject("plC_AlarmFlow2.警報編輯")));
             this.plC_AlarmFlow2.顯示警報編號 = false;
             // 
-            // userControl_NumPanel1
-            // 
-            this.userControl_NumPanel1.BackColor = System.Drawing.Color.White;
-            this.userControl_NumPanel1.ContentFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.userControl_NumPanel1.Location = new System.Drawing.Point(149, 26);
-            this.userControl_NumPanel1.Name = "userControl_NumPanel1";
-            this.userControl_NumPanel1.Size = new System.Drawing.Size(401, 469);
-            this.userControl_NumPanel1.TabIndex = 32;
-            this.userControl_NumPanel1.TitleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.userControl_NumPanel1.Value = -1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -810,7 +785,6 @@
             this.panel_main.PerformLayout();
             this.plC_ScreenPage_main.ResumeLayout(false);
             this.主畫面.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.手動.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -841,13 +815,11 @@
         private System.Windows.Forms.Button button_pre;
         private MyUI.StepViewer stepViewer1;
         private System.Windows.Forms.Button button_next;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private MyUI.RJ_Button rJ_Button1;
         private MyUI.PLC_RJ_ScreenButtonEx plC_RJ_ScreenButtonEx1;
         private MyUI.RJ_DatePicker rJ_DatePicker1;
         private System.Windows.Forms.Label label1;
         private MyUI.RJ_Lable rJ_Lable1;
-        private MyUI.UserControl_NumPanel userControl_NumPanel1;
     }
 }
 

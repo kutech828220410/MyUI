@@ -799,6 +799,8 @@ namespace SQLUI
                 set { canEdit = value; }
             }
 
+            public Type type = typeof(string);
+            public string[] EnumAry = new string[] { };
 
             private Color _BackgroundColor = Color.White;
             public Color BackgroundColor
@@ -895,7 +897,12 @@ namespace SQLUI
                 str += $"[Index : {_IndexType.GetEnumName()}]";
                 return str;
             }
+            
+
+         
         }
+     
+
         private List<ColumnElement> _Columns = new List<ColumnElement>();       
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         [ReadOnly(false), Browsable(true), Category("自訂集合"), Description("自訂集合"), DefaultValue("")]
@@ -1276,8 +1283,8 @@ namespace SQLUI
             this.dataGridView.RowPostPaint += DataGridView_RowPostPaint;
             this.dataGridView.CellPainting += DataGridView_CellPainting;
             this.dataGridView.Paint += DataGridView_Paint;
+            this.dataGridView.EditingControlShowing += DataGridView_EditingControlShowing;
         }
-
 
         private void SQL_DataGridView_Resize(object sender, EventArgs e)
         {
@@ -1330,6 +1337,7 @@ namespace SQLUI
                 columnElement.ValueType = table.ColumnList[i].ValueType;
                 columnElement.DateType = table.ColumnList[i].DateType;
                 columnElement.OtherType = table.ColumnList[i].OtherType;
+                columnElement.EnumAry = table.ColumnList[i].EnumAry.ToArray();
                 columnElement.Datalen = (uint)table.ColumnList[i].Num;
                 columnElement.CanEdit = false;
                 this.Columns.Add(columnElement);
@@ -1515,7 +1523,11 @@ namespace SQLUI
                 }
                 else if (columns.OtherType != Table.OtherType.None)
                 {
-                    SQL_Table.AddColumnList(columns.Name, columns.OtherType, columns.IndexType);
+                    if(columns.OtherType == Table.OtherType.ENUM)
+                    {
+                        SQL_Table.AddColumnList(columns.Name, columns.OtherType, columns.EnumAry, columns.IndexType);
+                    }
+          
                 }
             }
         }
@@ -2377,6 +2389,15 @@ namespace SQLUI
                     dataTable.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
                     continue;
                 }
+                if (columns.OtherType == Table.OtherType.ENUM)
+                {
+                    DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
+                    comboBoxColumn.HeaderText = $"{columns.Text}";
+                    comboBoxColumn.Name = $"{columns.Text}";
+                    comboBoxColumn.DataSource = columns.EnumAry;
+                    this.dataGridView.Columns.Add(comboBoxColumn);
+                    continue;
+                }
                 dataTable.Columns.Add(new DataColumn(columns.Text , typeof(string)));
             }
             dataGridView.DataSource = dataTable;
@@ -3132,17 +3153,14 @@ namespace SQLUI
         }
         public void Set_ColumnWidth(int width, DataGridViewContentAlignment alignment, string name)
         {
-            for (int i = 0; i < name.Length; i++)
+            for (int k = 0; k < this.Columns.Count; k++)
             {
-                for (int k = 0; k < this.Columns.Count; k++)
+                if (this.Columns[k].Text == name)
                 {
-                    if (this.Columns[k].Text == name)
-                    {
-                        Columns[k].Width = width;
-                        Columns[k].Visable = true;
-                        Columns[k].Alignment = alignment;
-                        Columns[k].CanEdit = false;
-                    }
+                    Columns[k].Width = width;
+                    Columns[k].Visable = true;
+                    Columns[k].Alignment = alignment;
+                    Columns[k].CanEdit = false;
                 }
             }
             foreach (ColumnElement columns in Columns)
@@ -3197,6 +3215,16 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
                 dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+            }
+        }
+        public void Set_ColumnType(string name, Type type)
+        {
+            for (int k = 0; k < this.Columns.Count; k++)
+            {
+                if (this.Columns[k].Text == name)
+                {
+                    Columns[k].type = type;
+                }
             }
         }
 
@@ -3567,8 +3595,9 @@ namespace SQLUI
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            string columnName = e.ColumnIndex >= 0 ? this.dataGridView.Columns[e.ColumnIndex].Name : string.Empty;
 
-            
+
             //序號欄
             if (e.RowIndex > -1 && e.ColumnIndex == -1)
             {
@@ -3639,8 +3668,9 @@ namespace SQLUI
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
                     e.Graphics.DrawRectangle(pen_border, e.CellBounds);
-                  
-                    if (e.Value.GetType() == typeof(Image) || e.Value.GetType() == typeof(Bitmap))
+                    if (e.Value == null) return;
+                    Type type = e.Value.GetType();
+                    if (type == typeof(Image) || type == typeof(Bitmap))
                     {
                         double scale = 0.0F;
                         Image image = (Image)e.Value;
@@ -3671,7 +3701,11 @@ namespace SQLUI
                             int index = e.ColumnIndex;
                             if (this.顯示CheckBox) index = index - 1;
                             if (index < 0) return;
-                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, Columns[index].Alignment);
+                           
+                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, Columns.GetColumn(columnName).Alignment);
+
+            
+                            e.Handled = true;
                         }
                     }
                     e.Handled = true;
@@ -3750,6 +3784,10 @@ namespace SQLUI
                     
                 }
             }
+        }
+        private void DataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+  
         }
         private void DataGridView_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
@@ -3960,6 +3998,17 @@ namespace SQLUI
 
             Rectangle rectangle = new Rectangle(x, y, width, height);
             return rectangle;
+        }
+    }
+    static public class ColumnElementMethod
+    {
+        static public SQL_DataGridView.ColumnElement GetColumn(this List<SQL_DataGridView.ColumnElement> columns, string columnName)
+        {
+            for (int i = 0; i < columns.Count; i++)
+            {
+                if (columns[i].Text == columnName || columns[i].Name == columnName) return columns[i];
+            }
+            return null;
         }
     }
 }

@@ -84,7 +84,6 @@ namespace HSONApplication
             Image image_buf = base64.Base64ToImage();
             image_buf = image_buf.CopyImgByBytes();
             image_buf.SaveJpeg(@"C:\Users\Administrator\Desktop\123.jpg", 90);
-            pictureBox1.Image = image_buf;
         }
 
         private void RJ_Button_Init_MouseDownEvent(MouseEventArgs mevent)
@@ -152,13 +151,13 @@ namespace HSONApplication
             string json_in = returnData.JsonSerializationt();
             string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
             List<Table> tables = json.JsonDeserializet<List<Table>>();
-
+            tables[0].ColumnList[1].TypeName = Table.GetTypeName(Table.OtherType.ENUM, new string[] { "病房", "病例" });
             this.sqL_DataGridView_備藥通知.Init(tables[0]);
             this.sqL_DataGridView_備藥通知.Set_ColumnVisible(false, new enum_udnoectc().GetEnumNames());
 
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, enum_udnoectc.病房);
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.病歷號);
-            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.診別);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleRight, enum_udnoectc.診別);
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);
             this.sqL_DataGridView_備藥通知.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_udnoectc.病歷號);
             this.sqL_DataGridView_備藥通知.DataGridRefreshEvent += SqL_DataGridView_備藥通知_DataGridRefreshEvent;
@@ -189,6 +188,7 @@ namespace HSONApplication
 
             List<udnoectc> udnoectcs = returnData.Data.ObjToListClass<udnoectc>();
             List<object[]> list_udnoectc = udnoectcs.ClassToSQL<udnoectc, enum_udnoectc>();
+            this.sqL_DataGridView_備藥通知.Set_ColumnType("病房", typeof(ComboBox));
             this.sqL_DataGridView_備藥通知.RefreshGrid(list_udnoectc);
 
         }

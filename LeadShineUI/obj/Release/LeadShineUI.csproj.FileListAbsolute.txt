@@ -3919,7 +3919,6 @@ C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreCom
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
@@ -3933,3 +3932,4 @@ C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Newtonsoft.Json
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache

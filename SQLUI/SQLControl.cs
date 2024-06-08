@@ -12,6 +12,8 @@ using Basic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.ComponentModel;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace SQLUI
 {
@@ -3073,6 +3075,30 @@ namespace SQLUI
             }
             [JsonIgnore]
             public int Num { get => num; set => num = value; }
+            [JsonIgnore]
+            public List<string> EnumAry
+            {
+                get
+                {
+                    string temp = TypeName;
+                    return ExtractEnumValues(temp);
+                }
+            }
+
+            static List<string> ExtractEnumValues(string enumString)
+            {
+                List<string> enumValues = new List<string>();
+                string pattern = @"'([^']*)'";
+
+                MatchCollection matches = Regex.Matches(enumString, pattern);
+
+                foreach (Match match in matches)
+                {
+                    enumValues.Add(match.Groups[1].Value);
+                }
+
+                return enumValues;
+            }
         }
         [JsonConstructor]
         public Table(string tableName, List<ColumnElement> columnList)
@@ -3110,10 +3136,11 @@ namespace SQLUI
         }
         public enum OtherType
         {
-            ENUM = 1,
-            SET = 2,
-            IMAGE = 3,
+            ENUM = 0,
+            SET = 1,
+            IMAGE = 2,
             None = 100,
+
         }
         public enum ValueType
         {
