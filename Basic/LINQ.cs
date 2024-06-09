@@ -294,6 +294,20 @@ namespace Basic
 
             return dictionary;
         }
+        /// <summary>
+        /// 根據指定的鍵值從字典中獲取對應的列表，如果鍵值不存在則返回空列表。
+        /// </summary>
+        /// <param name="dictionary">要查詢的字典，其中鍵是對象，值是對象數組的列表。</param>
+        /// <param name="value">要查詢的鍵值。</param>
+        /// <returns>返回對應於指定鍵值的對象數組列表。如果鍵值不存在，則返回空列表。</returns>
+        static public List<object[]> SortDictionary(this Dictionary<object, List<object[]>> dictionary, object value)
+        {
+            if (dictionary.ContainsKey(value))
+            {
+                return dictionary[value];
+            }
+            return new List<object[]>();
+        }
 
         /// <summary>
         /// 比較兩個物件數組是否相等，排除指定的列。

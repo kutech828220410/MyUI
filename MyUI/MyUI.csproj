@@ -201,6 +201,12 @@
     <Compile Include="MyDialog.Designer.cs">
       <DependentUpon>MyDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="ParentCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ParentCheckBox.Designer.cs">
+      <DependentUpon>ParentCheckBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="PLC_CheckDeviceTextBox.cs">
       <SubType>Component</SubType>
     </Compile>

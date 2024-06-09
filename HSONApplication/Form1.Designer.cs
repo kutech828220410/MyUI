@@ -669,7 +669,7 @@
             this.sqL_DataGridView_備藥通知.BorderSize = 2;
             this.sqL_DataGridView_備藥通知.CellBorderColor = System.Drawing.Color.White;
             this.sqL_DataGridView_備藥通知.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            this.sqL_DataGridView_備藥通知.cellStylBackColor = System.Drawing.Color.PowderBlue;
+            this.sqL_DataGridView_備藥通知.cellStylBackColor = System.Drawing.Color.Gainsboro;
             this.sqL_DataGridView_備藥通知.cellStyleFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.cellStylForeColor = System.Drawing.Color.Black;
             this.sqL_DataGridView_備藥通知.columnHeaderBackColor = System.Drawing.Color.DarkGray;

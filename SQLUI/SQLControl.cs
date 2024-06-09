@@ -2936,8 +2936,18 @@ namespace SQLUI
     }
     public class Table
     {
-     
 
+        public ColumnElement this[string colName]
+        {
+            get
+            {
+                for (int i = 0; i < columnList.Count; i++)
+                {
+                    if (columnList[i].Name == colName) return columnList[i];
+                }
+                return null;
+            }
+        }
         private DateTime Date = DateTime.Now;
         private string tableName = "";
         private List<ColumnElement> columnList = new List<ColumnElement>();

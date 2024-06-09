@@ -155,7 +155,7 @@ namespace HSONApplication
             this.sqL_DataGridView_備藥通知.Init(tables[0]);
             this.sqL_DataGridView_備藥通知.Set_ColumnVisible(false, new enum_udnoectc().GetEnumNames());
 
-            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, enum_udnoectc.病房);
+            this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleCenter, enum_udnoectc.病房);
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.病歷號);
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleRight, enum_udnoectc.診別);
             this.sqL_DataGridView_備藥通知.Set_ColumnWidth(500, DataGridViewContentAlignment.MiddleLeft, enum_udnoectc.RegimenName);

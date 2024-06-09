@@ -23,6 +23,7 @@ namespace SQLUI
     [System.Drawing.ToolboxBitmap(typeof(DataSet))]
     public partial class SQL_DataGridView : UserControl
     {
+        private List<ComboBox> comboBoxes = new List<ComboBox>();
         private bool flag_Init = false;
         private bool flag_Refresh = false;
         private CheckBox checkBoxHeader = new CheckBox();
@@ -69,25 +70,34 @@ namespace SQLUI
         public event RowPostPaintingEventHandler RowPostPaintingEvent;
         public delegate void RowHeaderPostPaintingEventHandler(object sender , Graphics g, Rectangle rect_hedder, Brush brush_background, Pen pen_border);
         public event RowHeaderPostPaintingEventHandler RowHeaderPostPaintingEvent;
+        public delegate void ComboBoxSelectedIndexChangedEventHandler(object sender, string colName, object[] RowValue);
+        public event ComboBoxSelectedIndexChangedEventHandler ComboBoxSelectedIndexChangedEvent;
 
-        private delegate void ModuleChangeEventHandler(List<object[]> RowsList);
+        private delegate void ModuleChangeEventHandler(List<object[]> RowsList, bool DoEvent);
         private event ModuleChangeEventHandler ModuleChangeEvent;
         private void RowsChange(List<object[]> RowsList)
         {
-            this.RowsChange(RowsList, this.AutoSelectToDeep);
+            this.RowsChange(RowsList, this.AutoSelectToDeep, true);
         }
-        public void RowsChange(List<object[]> RowsList, bool SelectToDeep)
+        private void RowsChange(List<object[]> RowsList, bool DoEvent)
+        {
+            this.RowsChange(RowsList, this.AutoSelectToDeep , DoEvent);
+        }
+        public void RowsChange(List<object[]> RowsList, bool SelectToDeep, bool DoEvent)
         {
             this.flag_Refresh = true;
             dataGridView.CellValueChanged -= DataGridView_CellValueChanged;
-            if (this.DataGridRowsChangeEvent != null)
+            if(DoEvent)
             {
-                this.DataGridRowsChangeEvent(RowsList);
-            }
-            if (this.DataGridRowsChangeRefEvent != null)
-            {
-                this.DataGridRowsChangeRefEvent(ref RowsList);
-            }
+                if (this.DataGridRowsChangeEvent != null)
+                {
+                    this.DataGridRowsChangeEvent(RowsList);
+                }
+                if (this.DataGridRowsChangeRefEvent != null)
+                {
+                    this.DataGridRowsChangeRefEvent(ref RowsList);
+                }
+            }       
             List<int> List_SelectRowindex = this.GetSelectRowsIndex();
             int ScrollingRowIndex = dataGridView.FirstDisplayedScrollingRowIndex;
             SaveDataVal.RowsList = null;
@@ -145,8 +155,14 @@ namespace SQLUI
             {
                 if (dataTable_buffer.Columns[columns.Text] == null)
                 {
-                    if (this.IsColumnsText(columns.Text)) dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(string)));
-                    else dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+                    if (this.IsColumnsText(columns.Text))
+                    {
+                        dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(string)));
+                    }
+                    else
+                    {
+                        dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+                    }
 
                 }
             }
@@ -1284,7 +1300,10 @@ namespace SQLUI
             this.dataGridView.CellPainting += DataGridView_CellPainting;
             this.dataGridView.Paint += DataGridView_Paint;
             this.dataGridView.EditingControlShowing += DataGridView_EditingControlShowing;
+            this.dataGridView.Scroll += DataGridView_Scroll;
         }
+
+ 
 
         private void SQL_DataGridView_Resize(object sender, EventArgs e)
         {
@@ -1340,6 +1359,7 @@ namespace SQLUI
                 columnElement.EnumAry = table.ColumnList[i].EnumAry.ToArray();
                 columnElement.Datalen = (uint)table.ColumnList[i].Num;
                 columnElement.CanEdit = false;
+                //if (columnElement.OtherType == Table.OtherType.ENUM) columnElement.CanEdit = true;
                 this.Columns.Add(columnElement);
             }
             Init();
@@ -1612,19 +1632,19 @@ namespace SQLUI
         public List<object[]> SQL_GetAllRows(bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName());
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetAllRows(int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName(), OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetAllRows(string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName(), OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
 
@@ -1637,151 +1657,151 @@ namespace SQLUI
         public List<object[]> SQL_GetRows(int serchColumnindex, string serchValue, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnindex, serchValue);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string serchColumnName, string serchValue, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string serchColumnName, string serchValue, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(int serchColumnindex, string serchValue, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnindex, serchValue, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(int serchColumnindex, string serchValue, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnindex, serchValue, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(int serchColumnindex, string serchValue, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnindex, serchValue, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string serchColumnName, string serchValue, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string serchColumnName, string serchValue, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string serchColumnName, string serchValue, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string[] serchColumnName, string[] serchValue, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string[] serchColumnName, string[] serchValue, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string[] serchColumnName, string[] serchValue, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string[] serchColumnName, string[] serchValue, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRows(string[] serchColumnName, string[] serchValue, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByDefult(SQL_Table.GetTableName(), serchColumnName, serchValue, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsOfRange(uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsOfRange(SQL_Table.GetTableName(), StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsOfRange(uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsOfRange(SQL_Table.GetTableName(), StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsOfRange(uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsOfRange(SQL_Table.GetTableName(), StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(int serchColumnindex, string LikeString, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnindex, LikeString);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(int serchColumnindex, string LikeString, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnindex, LikeString, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(int serchColumnindex, string LikeString, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnindex, LikeString, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(int serchColumnindex, string LikeString, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnindex, LikeString, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(string serchColumnName, string LikeString, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnName, LikeString);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(string serchColumnName, string LikeString, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnName, LikeString, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(string serchColumnName, string LikeString, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnName, LikeString, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByLike(string serchColumnName, string LikeString, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByLike(SQL_Table.GetTableName(), serchColumnName, LikeString, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
 
@@ -1808,31 +1828,31 @@ namespace SQLUI
         public List<object[]> SQL_GetRowsByBetween(int serchColumnindex, string brtween_value1, string brtween_value2, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnindex, brtween_value1, brtween_value2);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(int serchColumnindex, string brtween_value1, string brtween_value2, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnindex, brtween_value1, brtween_value2, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(int serchColumnindex, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnindex, brtween_value1, brtween_value2, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(int serchColumnindex, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnindex, brtween_value1, brtween_value2, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(int serchColumnindex, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnindex, brtween_value1, brtween_value2, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
 
@@ -1853,79 +1873,79 @@ namespace SQLUI
         public List<object[]> SQL_GetRowsByBetween(string serchColumnName, string brtween_value1, string brtween_value2, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnName, brtween_value1, brtween_value2);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(string serchColumnName, string brtween_value1, string brtween_value2, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnName, brtween_value1, brtween_value2, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(string serchColumnName, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnName, brtween_value1, brtween_value2, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(string serchColumnName, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnName, brtween_value1, brtween_value2, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByBetween(string serchColumnName, string brtween_value1, string brtween_value2, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByBetween(SQL_Table.GetTableName(), serchColumnName, brtween_value1, brtween_value2, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(int serchColumnindex, string[] IN_value, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnindex, IN_value);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(int serchColumnindex, string[] IN_value, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnindex, IN_value, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(int serchColumnindex, string[] IN_value, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnindex, IN_value, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(int serchColumnindex, string[] IN_value, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnindex, IN_value, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(string serchColumnName, string[] IN_value, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnName, IN_value);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(string serchColumnName, string[] IN_value, uint StrintIndex, uint NumOfData, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnName, IN_value, StrintIndex, NumOfData);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(string serchColumnName, string[] IN_value, uint StrintIndex, uint NumOfData, int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnName, IN_value, StrintIndex, NumOfData, OrderColumnindex, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
         public List<object[]> SQL_GetRowsByIn(string serchColumnName, string[] IN_value, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
         {
             List<object[]> temp = _SQLControl.GetRowsByIn(SQL_Table.GetTableName(), serchColumnName, IN_value, StrintIndex, NumOfData, OrderColumnName, _OrderType);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
             return temp;
         }
 
@@ -1935,7 +1955,7 @@ namespace SQLUI
             if (IsRefreshGrid)
             {
                 List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName());
-                if (IsRefreshGrid) this.RowsChange(temp, this.AutoSelectToDeep);
+                if (IsRefreshGrid) this.RowsChange(temp, this.AutoSelectToDeep, true);
             }
         }
         public void SQL_AddRows(List<object[]> Values, bool IsRefreshGrid)
@@ -1944,7 +1964,7 @@ namespace SQLUI
             if (IsRefreshGrid)
             {
                 List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName());
-                if (IsRefreshGrid) this.RowsChange(temp, this.AutoSelectToDeep);
+                if (IsRefreshGrid) this.RowsChange(temp, this.AutoSelectToDeep, true);
             }
         }
 
@@ -2278,7 +2298,7 @@ namespace SQLUI
                     obj_list.Add(new object[] { Name[i], "", Date[i] });
                 }
             }
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(obj_list);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(obj_list, true);
             return obj_list;
         }
         public List<object[]> SQL_GetAllImageRows(bool IsRefreshGrid, bool IsGetImage)
@@ -2300,7 +2320,7 @@ namespace SQLUI
                 }
                 obj_list = obj_list_buf.DeepClone();
             }
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(obj_list);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(obj_list , true);
             return obj_list;
         }
         public bool SQL_CheckServerImageNew(string ImageName, string TIMESTAMP)
@@ -2378,24 +2398,25 @@ namespace SQLUI
             }
             return true;
         }
+
+       
+
         private void DataGrid_Init()
         {
+            comboBoxes.Clear();
             dataGridView.Columns.Clear();
             dataTable = new DataTable();
             foreach (ColumnElement columns in Columns)
             {
                 if(columns.OtherType == Table.OtherType.IMAGE)
                 {
-                    dataTable.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+                    dataTable.Columns.Add(new DataColumn(columns.Text, typeof(string)));
                     continue;
                 }
                 if (columns.OtherType == Table.OtherType.ENUM)
                 {
-                    DataGridViewComboBoxColumn comboBoxColumn = new DataGridViewComboBoxColumn();
-                    comboBoxColumn.HeaderText = $"{columns.Text}";
-                    comboBoxColumn.Name = $"{columns.Text}";
-                    comboBoxColumn.DataSource = columns.EnumAry;
-                    this.dataGridView.Columns.Add(comboBoxColumn);
+                    dataTable.Columns.Add(new DataColumn(columns.Text, typeof(ComboBox)));
+              
                     continue;
                 }
                 dataTable.Columns.Add(new DataColumn(columns.Text , typeof(string)));
@@ -2417,9 +2438,23 @@ namespace SQLUI
                 {
                     ((DataGridViewImageColumn)dataGridView.Columns[$"{columns.Text}"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
                 }
+                if (columns.OtherType == Table.OtherType.ENUM)
+                {
+                    ComboBox comboBox = new ComboBox();  
+                    comboBox.Name = columns.Text;
+                    comboBox.Visible = false;
+                    comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                    comboBox.Font = this.cellStyleFont;
+                    comboBox.Items.AddRange(columns.EnumAry);
+                    comboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                    comboBoxes.Add(comboBox);
+                    this.Controls.Add(comboBox);
+                }
+
+
             }
 
-            if(_顯示CheckBox)
+            if (_顯示CheckBox)
             {
                 DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn = new DataGridViewCheckBoxColumn();
                 dataGridViewCheckBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -2475,6 +2510,9 @@ namespace SQLUI
             //dataGridView.AdvancedRowHeadersBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.InsetDouble;
             dataGridView.Refresh();
         }
+
+     
+
         public int GetSelectRow()
         {
             for (int i = 0; i < dataGridView.Rows.Count; i++)
@@ -2705,7 +2743,7 @@ namespace SQLUI
             {
                 SaveDataVal.RowsList.Add(obj_temp);
             }
-            if (IsRefreshGrid) this.RowsChange(SaveDataVal.RowsList, this.AutoSelectToDeep);
+            if (IsRefreshGrid) this.RowsChange(SaveDataVal.RowsList, this.AutoSelectToDeep, true);
         }
 
         public string[] GetAllColumn_Name()
@@ -2793,7 +2831,7 @@ namespace SQLUI
                 }
                 list_index++;
             }
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(RowsList_buf);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(RowsList_buf, true);
             return RowsList_buf;
         }
         public List<object[]> GetAllRows()
@@ -2843,7 +2881,7 @@ namespace SQLUI
             if (SelectIndex != -1)
             {
                 this.SaveDataVal.RowsList[SelectIndex] = Value;
-                if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+                if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
             }
 
         }
@@ -2904,7 +2942,7 @@ namespace SQLUI
             }
             
             SaveDataVal.RowsList = RowsList_buf.DeepClone();
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
         public void Replace(int ColumnIndex, object serchValue, object[] Value, bool IsRefreshGrid)
         {
@@ -2956,7 +2994,7 @@ namespace SQLUI
                 list_index++;
             }
             SaveDataVal.RowsList = RowsList_buf.DeepClone();
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
 
 
@@ -3002,7 +3040,7 @@ namespace SQLUI
             }
 
             SaveDataVal.RowsList = RowsList_buf.DeepClone();
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
 
         public void Delete(bool IsRefreshGrid)
@@ -3019,12 +3057,12 @@ namespace SQLUI
             {
                 this.SaveDataVal.RowsList.Remove(value);
             }
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
         public void Delete(int SelectIndex, bool IsRefreshGrid)
         {
             this.SaveDataVal.RowsList.RemoveAt(SelectIndex);
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
         public void Delete(int ColumnIndex, object serchValue, bool IsRefreshGrid)
         {
@@ -3076,23 +3114,10 @@ namespace SQLUI
                 list_index++;
             }
             SaveDataVal.RowsList = RowsList_buf.DeepClone();
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
 
-        public void Set_ColumnVisible(string ColumnName, bool Visible)
-        {
-            DataGridViewColumnCollection columns = this.dataGridView.Columns;
-            this.Invoke(new Action(delegate {
-                for (int i = 0; i < columns.Count; i++)
-                {
-                    if (columns[i].Name == ColumnName)
-                    {
-                        columns[i].Visible = Visible;
-                    }
-                }
-            }));
 
-        }
         public void Set_ColumnVisible(bool visable, params object[] Enum)
         {
             string[] array = Enum.GetEnumNames();
@@ -3104,7 +3129,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if(this.Columns[k].Text == name[i])
+                    if(this.Columns[k].Text == name[i] || this.Columns[k].Name == name[i])
                     {
                         Columns[k].Visable = visable;
                     }
@@ -3130,7 +3155,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if (this.Columns[k].Name == name)
+                    if (this.Columns[k].Text == name || this.Columns[k].Name == name)
                     {
                         Columns[k].Width = width;
                         Columns[k].Visable = true;
@@ -3155,7 +3180,7 @@ namespace SQLUI
         {
             for (int k = 0; k < this.Columns.Count; k++)
             {
-                if (this.Columns[k].Text == name)
+                if (this.Columns[k].Text == name || this.Columns[k].Name == name)
                 {
                     Columns[k].Width = width;
                     Columns[k].Visable = true;
@@ -3249,12 +3274,17 @@ namespace SQLUI
             List<object[]> RowsList = new List<object[]>();
             SaveDataVal.RowsList = RowsList;
             if (DataGridClearGridEvent != null) DataGridClearGridEvent();
-            if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
+        }
+        public void RefreshGridNoEvent(List<object[]> RowsList)
+        {
+            SaveDataVal.RowsList = RowsList.DeepClone();
+            if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList, false);
         }
         public void RefreshGrid(List<object[]> RowsList)
         {
             SaveDataVal.RowsList = RowsList.DeepClone();
-            if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList);
+            if (ModuleChangeEvent != null) this.ModuleChangeEvent(SaveDataVal.RowsList , true);
         }
         public void Set_Columns_NoSort()
         {
@@ -3340,7 +3370,7 @@ namespace SQLUI
                 SaveDataVal.RowsList = new List<object[]>();
                 SaveDataVal.OtherSaveList = new List<object[]>();
             }
-            if (ModuleChangeEvent != null) ModuleChangeEvent(SaveDataVal.RowsList);
+            if (ModuleChangeEvent != null) ModuleChangeEvent(SaveDataVal.RowsList, true);
         }
 
         public string ToDATE_String(string Year, string Month, string Day)
@@ -3500,7 +3530,28 @@ namespace SQLUI
                 }
           
             }
-       
+
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                string columnName = e.ColumnIndex >= 0 ? this.dataGridView.Columns[e.ColumnIndex].Name : string.Empty;
+                ColumnElement columnElement = Columns.GetColumn(columnName);
+                if (columnElement.OtherType == Table.OtherType.ENUM)
+                {
+                    Rectangle rect = dataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                    for (int i = 0; i < comboBoxes.Count; i++)
+                    {
+                        if(comboBoxes[i].Name == columnElement.Text || comboBoxes[i].Name == columnElement.Name)
+                        {
+                            comboBoxes[i].Bounds = rect;
+                            comboBoxes[i].Visible = true;
+                            comboBoxes[i].DroppedDown = true;
+                        }
+                    }
+                 
+                }
+            }
+
+
         }
         private void DataGridView_Paint(object sender, PaintEventArgs e)
         {
@@ -3663,7 +3714,7 @@ namespace SQLUI
                     }
                 }
 
-                using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
+                using (Brush brush_background = new SolidBrush(RowsColor))
                 using (Pen pen_border = new Pen(cellBorderColor))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
@@ -3701,9 +3752,23 @@ namespace SQLUI
                             int index = e.ColumnIndex;
                             if (this.顯示CheckBox) index = index - 1;
                             if (index < 0) return;
-                           
-                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, Columns.GetColumn(columnName).Alignment);
+                            ColumnElement columnElement = Columns.GetColumn(columnName);
+                            if (columnElement.OtherType == Table.OtherType.ENUM)
+                            {
+                                Rectangle display_rect = dataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                                e.Graphics.FillRectangle(brush_background, display_rect);
+                          
+                                Rectangle rect = new Rectangle(e.CellBounds.X + (e.CellBounds.Width - 20), e.CellBounds.Y + 2, 20, e.CellBounds.Height - 4);
+                                ComboBoxRenderer.DrawDropDownButton(e.Graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
+                                display_rect.Width = display_rect.Width - 20;
+                                DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, display_rect, e.CellStyle.ForeColor, columnElement.Alignment);
 
+                                e.Handled = true;
+                            }
+                            else
+                            {
+                                DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, columnElement.Alignment);
+                            }
             
                             e.Handled = true;
                         }
@@ -3722,9 +3787,12 @@ namespace SQLUI
             e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
+      
+
             if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
             if (this.dataGridView.Rows[e.RowIndex].Selected)
             {
+                using (Brush brush_background = new SolidBrush(RowsColor))
                 using (Brush brush_back = new SolidBrush(selectedRowBackColor))
                 using (Pen pen_Border = new Pen(selectedRowBorderColor))
                 {
@@ -3765,17 +3833,28 @@ namespace SQLUI
 
                         if (cells[i].Value != null && cells[i].Visible == true)
                         {
+                            string columnName = i >= 0 ? this.dataGridView.Columns[i].Name : string.Empty;
+
                             Type type = cells[i].Value.GetType();
-                            Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
-                            foreach (ColumnElement columnElement in Columns)
+              
+                            ColumnElement columnElement = Columns.GetColumn(columnName);
+                            if (columnElement.OtherType == Table.OtherType.ENUM)
                             {
-                                if(columnElement.Text == dataGridView.Columns[i].Name)
-                                {
-                                    DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, rectangle, selectedRowForeColor, columnElement.Alignment);
-                                    continue;
-                                }
-                            }                           
-                
+                                Rectangle display_rect = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, true);
+                                e.Graphics.FillRectangle(brush_back, display_rect);
+                      
+                                Rectangle rect = new Rectangle(display_rect.X + (display_rect.Width - 20), display_rect.Y + 2, 20, display_rect.Height - 4);
+                                ComboBoxRenderer.DrawDropDownButton(e.Graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
+                                display_rect.Width = display_rect.Width - 20;
+                                DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, display_rect, selectedRowForeColor, columnElement.Alignment);
+                            }
+                            else
+                            {
+                                Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
+                                DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, rectangle, selectedRowForeColor, columnElement.Alignment);
+                            }
+                       
+
                         }
                     } 
 
@@ -3854,7 +3933,36 @@ namespace SQLUI
         {
           
         }
-  
+        private void DataGridView_Scroll(object sender, ScrollEventArgs e)
+        {
+            for (int i = 0; i < comboBoxes.Count; i++)
+            {
+                comboBoxes[i].Visible = false;
+                comboBoxes[i].DroppedDown = false;
+
+            }
+        }
+        private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dataGridView.CurrentCell != null)
+            {
+                ComboBox comboBox = (ComboBox)sender;
+                List<object[]> list_rowValues = this.Get_All_Select_RowsValues();
+                if (list_rowValues.Count == 0) return;
+                object[] rowValue = this.Get_All_Select_RowsValues()[0];
+
+                string colName = comboBox.Name;
+                int col_index = Columns.GetColumnIndex(colName);
+
+                if (col_index == -1) return;
+
+                rowValue[col_index] = comboBox.SelectedItem.ToString();
+                //this.ReplaceExtra(rowValue, true);
+                comboBox.Visible = false;
+                comboBox.DroppedDown = false;
+                if (ComboBoxSelectedIndexChangedEvent != null) ComboBoxSelectedIndexChangedEvent(sender, comboBox.Name, rowValue);
+            }
+        }
         private void CheckBoxHeader_CheckedChanged(object sender, EventArgs e)
         {
             if (!_顯示CheckBox) return;
@@ -4009,6 +4117,14 @@ namespace SQLUI
                 if (columns[i].Text == columnName || columns[i].Name == columnName) return columns[i];
             }
             return null;
+        }
+        static public int GetColumnIndex(this List<SQL_DataGridView.ColumnElement> columns, string columnName)
+        {
+            for (int i = 0; i < columns.Count; i++)
+            {
+                if (columns[i].Text == columnName || columns[i].Name == columnName) return i;
+            }
+            return -1;
         }
     }
 }
