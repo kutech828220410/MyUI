@@ -13,6 +13,70 @@ namespace MyUI
 {
     public partial class DateTimeIntervelPicker : UserControl
     {
+        private Size titleSize = new Size(33, 39);
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Size TiTleSize
+        {
+            get
+            {
+                return titleSize;
+            }
+            set
+            {
+                titleSize = value;
+                label_起始.Size = value;
+                label_結束.Size = value;
+                this.Invalidate();
+            }
+        }
+        private Size dateSize = new Size(217, 39);
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Size DateSize
+        {
+            get
+            {
+                return dateSize;
+            }
+            set
+            {
+                dateSize = value;
+                rJ_Lable_起始.Size = value;
+                rJ_Lable_結束.Size = value;
+                this.Invalidate();
+            }
+        }
+        private Font titleFont = new Font("新細明體", 9);
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Font TitleFont
+        {
+            get
+            {
+                return titleFont;
+            }
+            set
+            {
+                titleFont = value;
+                label_起始.Font = value;
+                label_結束.Font = value;
+                this.Invalidate();
+            }
+        }
+        private Font dateFont = new Font("微軟正黑體", 14);
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public Font DateFont
+        {
+            get
+            {
+                return dateFont;
+            }
+            set
+            {
+                dateFont = value;
+                rJ_Lable_起始.Font = value;
+                rJ_Lable_結束.Font = value;
+                this.Invalidate();
+            }
+        }
         public delegate void BtnClickHandle(object sender, EventArgs e, DateTime start, DateTime end);
         public event BtnClickHandle SureClick;
 
@@ -48,7 +112,12 @@ namespace MyUI
             DateTime _startTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 00, 00, 00);
             DateTime _endTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 23, 59, 59);
             init(_startTime, _endTime);
+
+        
         }
+
+   
+
         public DateTimeIntervelPicker(DateTime startTime, DateTime endTime)
         {
             init(startTime, endTime);
@@ -110,6 +179,6 @@ namespace MyUI
             }
         }
 
-  
+
     }
 }

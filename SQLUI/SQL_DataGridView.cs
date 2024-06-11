@@ -129,9 +129,7 @@ namespace SQLUI
                         }
                         else if (Columns[i].DateType == Table.DateType.DATETIME)
                         {
-                            obj_buf[i] = Datebuf.Year.ToString("0000") + "-" + Datebuf.Month.ToString("00") + "-" + Datebuf.Day.ToString("00");
-                            obj_buf[i] += " ";
-                            obj_buf[i] += Datebuf.Hour.ToString("00") + ":" + Datebuf.Minute.ToString("00") + ":" + Datebuf.Second.ToString("00");
+                            obj_buf[i] = Datebuf.ToDateTimeString_6();
                         }
                         else if (Columns[i].DateType == Table.DateType.TIMESTAMP)
                         {
@@ -3534,6 +3532,7 @@ namespace SQLUI
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 string columnName = e.ColumnIndex >= 0 ? this.dataGridView.Columns[e.ColumnIndex].Name : string.Empty;
+                if (columnName.StringIsEmpty()) return;
                 ColumnElement columnElement = Columns.GetColumn(columnName);
                 if (columnElement.OtherType == Table.OtherType.ENUM)
                 {
@@ -3593,7 +3592,10 @@ namespace SQLUI
         private void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, DataGridViewContentAlignment dataGridViewContentAlignment)
         {
             if (text == null) return;
-
+            if (text.Check_Date_String())
+            {
+                text = text.StringToDateTime().ToDateTimeString();
+            }
             Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
             
             SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);

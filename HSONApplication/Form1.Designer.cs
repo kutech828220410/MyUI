@@ -43,7 +43,6 @@
             this.button_next = new System.Windows.Forms.Button();
             this.button_pre = new System.Windows.Forms.Button();
             this.stepViewer1 = new MyUI.StepViewer();
-            this.dateTimeIntervelPicker1 = new MyUI.DateTimeIntervelPicker();
             this.plC_NumBox_po = new MyUI.PLC_NumBox();
             this.rJ_Button_Servo_OFF = new MyUI.RJ_Button();
             this.rJ_Button_Servo_ON = new MyUI.RJ_Button();
@@ -221,7 +220,6 @@
             this.主畫面.Controls.Add(this.button_next);
             this.主畫面.Controls.Add(this.button_pre);
             this.主畫面.Controls.Add(this.stepViewer1);
-            this.主畫面.Controls.Add(this.dateTimeIntervelPicker1);
             this.主畫面.Controls.Add(this.plC_NumBox_po);
             this.主畫面.Controls.Add(this.rJ_Button_Servo_OFF);
             this.主畫面.Controls.Add(this.rJ_Button_Servo_ON);
@@ -374,16 +372,6 @@
             this.stepViewer1.Name = "stepViewer1";
             this.stepViewer1.Size = new System.Drawing.Size(891, 80);
             this.stepViewer1.TabIndex = 25;
-            // 
-            // dateTimeIntervelPicker1
-            // 
-            this.dateTimeIntervelPicker1.BackColor = System.Drawing.Color.Transparent;
-            this.dateTimeIntervelPicker1.EndTime = new System.DateTime(2024, 5, 15, 23, 59, 59, 0);
-            this.dateTimeIntervelPicker1.Location = new System.Drawing.Point(506, 400);
-            this.dateTimeIntervelPicker1.Name = "dateTimeIntervelPicker1";
-            this.dateTimeIntervelPicker1.Size = new System.Drawing.Size(535, 32);
-            this.dateTimeIntervelPicker1.StartTime = new System.DateTime(2024, 5, 15, 0, 0, 0, 0);
-            this.dateTimeIntervelPicker1.TabIndex = 24;
             // 
             // plC_NumBox_po
             // 
@@ -811,7 +799,6 @@
         private MyUI.RJ_Button rJ_Button_Servo_OFF;
         private MyUI.RJ_Button rJ_Button_Servo_ON;
         private MyUI.PLC_NumBox plC_NumBox_po;
-        private MyUI.DateTimeIntervelPicker dateTimeIntervelPicker1;
         private System.Windows.Forms.Button button_pre;
         private MyUI.StepViewer stepViewer1;
         private System.Windows.Forms.Button button_next;

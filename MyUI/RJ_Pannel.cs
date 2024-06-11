@@ -276,7 +276,8 @@ namespace MyUI
             RectangleF rectShadow = new RectangleF(0, 0, this.Width - (this.ShadowSize), this.Height - (this.ShadowSize));
             RectangleF rectSurface = new RectangleF(0, 0, this.Width - 1, this.Height - 1);
             RectangleF rectBackGround = new RectangleF(0, 0, this.Width, this.Height);
-
+            if (this.Height <= 0) return;
+            if (this.Width <= 0) return;
             using (Bitmap bitmap = new Bitmap(this.Width, this.Height))
             using (Graphics g = Graphics.FromImage(bitmap))
             using (GraphicsPath pathSurface = this.GetFigurePath(rectSurface, this.borderRadius))

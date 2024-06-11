@@ -31,9 +31,9 @@ namespace MyUI
         {
             this.btnPopup = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label_起始 = new System.Windows.Forms.Label();
             this.rJ_Lable_起始 = new MyUI.RJ_Lable();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label_結束 = new System.Windows.Forms.Label();
             this.rJ_Lable_結束 = new MyUI.RJ_Lable();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -41,24 +41,36 @@ namespace MyUI
             // btnPopup
             // 
             this.btnPopup.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnPopup.Location = new System.Drawing.Point(264, 0);
+            this.btnPopup.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnPopup.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPopup.Location = new System.Drawing.Point(271, 2);
             this.btnPopup.Name = "btnPopup";
-            this.btnPopup.Size = new System.Drawing.Size(42, 83);
+            this.btnPopup.Size = new System.Drawing.Size(42, 81);
             this.btnPopup.TabIndex = 5;
             this.btnPopup.Text = "...";
             this.btnPopup.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label1);
+            this.flowLayoutPanel1.Controls.Add(this.label_起始);
             this.flowLayoutPanel1.Controls.Add(this.rJ_Lable_起始);
-            this.flowLayoutPanel1.Controls.Add(this.label2);
+            this.flowLayoutPanel1.Controls.Add(this.label_結束);
             this.flowLayoutPanel1.Controls.Add(this.rJ_Lable_結束);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(264, 83);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(269, 81);
             this.flowLayoutPanel1.TabIndex = 10;
+            // 
+            // label_起始
+            // 
+            this.label_起始.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_起始.Location = new System.Drawing.Point(3, 0);
+            this.label_起始.Name = "label_起始";
+            this.label_起始.Size = new System.Drawing.Size(33, 39);
+            this.label_起始.TabIndex = 10;
+            this.label_起始.Text = "起始";
+            this.label_起始.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rJ_Lable_起始
             // 
@@ -81,25 +93,15 @@ namespace MyUI
             this.rJ_Lable_起始.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable_起始.TextColor = System.Drawing.Color.White;
             // 
-            // label1
+            // label_結束
             // 
-            this.label1.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 39);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "起始";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(3, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 39);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "結束";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_結束.Font = new System.Drawing.Font("新細明體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_結束.Location = new System.Drawing.Point(3, 39);
+            this.label_結束.Name = "label_結束";
+            this.label_結束.Size = new System.Drawing.Size(33, 39);
+            this.label_結束.TabIndex = 14;
+            this.label_結束.Text = "結束";
+            this.label_結束.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // rJ_Lable_結束
             // 
@@ -130,7 +132,8 @@ namespace MyUI
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.btnPopup);
             this.Name = "DateTimeIntervelPicker";
-            this.Size = new System.Drawing.Size(306, 83);
+            this.Padding = new System.Windows.Forms.Padding(2);
+            this.Size = new System.Drawing.Size(315, 85);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -139,9 +142,9 @@ namespace MyUI
         #endregion
         private System.Windows.Forms.Button btnPopup;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_起始;
+        private System.Windows.Forms.Label label_結束;
         private RJ_Lable rJ_Lable_起始;
-        private System.Windows.Forms.Label label2;
         private RJ_Lable rJ_Lable_結束;
     }
 }
