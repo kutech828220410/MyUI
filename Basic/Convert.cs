@@ -1275,12 +1275,32 @@ namespace Basic
         public static bool Check_Date_String(this string source, Enum_Year_Type Enum_Year_Type)
         {
 
-            DateTime dateTime = new DateTime();
-            return DateTime.TryParse(source, out dateTime);
-            int Year = 0;
-            int Month = 0;
-            int Day = 0;
-            return source.Get_Date(ref Year, ref Month, ref Day, Enum_Year_Type);
+            DateTime dateTime;
+
+            // 列出多種可能的有效日期和時間格式，但不包括 "10.5" 會匹配的任何格式
+            string[] formats = {
+            "yyyy-MM-dd",
+            "dd/MM/yyyy",
+            "MM/dd/yyyy",
+            "yyyy-MM-dd HH:mm:ss",
+            "dd/MM/yyyy HH:mm:ss",
+            "MM/dd/yyyy HH:mm:ss",
+            "yyyy-MM-ddTHH:mm:ss",
+            "dd/MM/yyyyTHH:mm:ss",
+            "MM/dd/yyyyTHH:mm:ss",
+            "yyyy/MM/dd",
+            "dd-MM-yyyy",
+            "MM-dd-yyyy",
+            "yyyy/MM/dd HH:mm:ss",
+            "dd-MM-yyyy HH:mm:ss",
+            "MM-dd-yyyy HH:mm:ss",
+            "yyyy/MM/ddTHH:mm:ss",
+            "dd-MM-yyyyTHH:mm:ss",
+            "MM-dd-yyyyTHH:mm:ss"
+        };
+
+            bool result = DateTime.TryParseExact(source, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateTime);
+            return result;
         }
         public static int Get_DateTINY(this string source)
         {

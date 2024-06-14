@@ -3716,7 +3716,7 @@ namespace SQLUI
                     }
                 }
 
-                using (Brush brush_background = new SolidBrush(RowsColor))
+                using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
                 using (Pen pen_border = new Pen(cellBorderColor))
                 {
                     e.Graphics.FillRectangle(brush_background, e.CellBounds);
