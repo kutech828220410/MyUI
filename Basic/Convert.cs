@@ -1277,7 +1277,6 @@ namespace Basic
 
             DateTime dateTime;
 
-            // 列出多種可能的有效日期和時間格式，但不包括 "10.5" 會匹配的任何格式
             string[] formats = {
             "yyyy-MM-dd",
             "dd/MM/yyyy",
@@ -1296,7 +1295,13 @@ namespace Basic
             "MM-dd-yyyy HH:mm:ss",
             "yyyy/MM/ddTHH:mm:ss",
             "dd-MM-yyyyTHH:mm:ss",
-            "MM-dd-yyyyTHH:mm:ss"
+            "MM-dd-yyyyTHH:mm:ss",
+            "yyyy/MM/dd HH:mm:ss.fffffff",    // 新增格式
+            "dd-MM-yyyy HH:mm:ss.fffffff",    // 新增格式
+            "MM-dd-yyyy HH:mm:ss.fffffff",    // 新增格式
+            "yyyy-MM-ddTHH:mm:ss.fffffff",    // 新增格式
+            "dd/MM/yyyyTHH:mm:ss.fffffff",    // 新增格式
+            "MM/dd/yyyyTHH:mm:ss.fffffff"     // 新增格式
         };
 
             bool result = DateTime.TryParseExact(source, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateTime);
