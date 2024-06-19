@@ -1339,6 +1339,16 @@ namespace SQLUI
             string TableName = table.TableName;
             Init(table, TableName);
         }
+        public void InitEx(Table table)
+        {
+            string TableName = table.TableName;
+            this.Server = table.Server;
+            this.DataBaseName = table.DBName;
+            this.UserName = table.Username;
+            this.Password = table.Password;
+            this.Port = table.Port.StringToUInt32();
+            Init(table, TableName);
+        }
         public void Init(Table table , string TableName)
         {
             this.flag_Init = false;

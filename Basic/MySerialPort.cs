@@ -8,6 +8,7 @@ namespace Basic
 {
     public class MySerialPort
     {
+        public bool keyBoardMode = false;
         private MyThread myThread;
         public bool RecvFinished
         {
@@ -20,6 +21,7 @@ namespace Basic
         {
             get
             {
+                if (keyBoardMode) return true;
                 return serialPort.IsOpen;
             }
         }
@@ -84,6 +86,7 @@ namespace Basic
         }
         private SerialPort serialPort = new SerialPort();
         private bool FLAG_UART_RX = false;
+        private bool FLAG_SET_READBYTE_RT_UART_RX = false;
         public int BufferSize = 20480;
         private List<byte> UART_RX_BUF = new List<byte>();
         private byte[] UART_RX_bytes;
@@ -133,6 +136,13 @@ namespace Basic
         {
             this.serialPort.Close();
         }
+
+        public void SetReadByte(byte[] bytes)
+        {
+            this.UART_RX_bytes = bytes;
+            keyBoardMode = true;
+            FLAG_SET_READBYTE_RT_UART_RX = true;
+        }
         public string ReadString()
         {
             return this.ReadString("UTF-8");
@@ -149,7 +159,7 @@ namespace Basic
         }
         public byte[] ReadByte()
         {
-            if (FLAG_UART_RX && MyTimer_RX_Timeout.IsTimeOut())
+            if ((FLAG_UART_RX && MyTimer_RX_Timeout.IsTimeOut())|| FLAG_SET_READBYTE_RT_UART_RX)
             {
                 return UART_RX_bytes;
             }
@@ -194,16 +204,24 @@ namespace Basic
         {
             //this.UART_RX_BUF.Clear();
             //this.FLAG_UART_RX = false;
-
-            lock (UART_RX_bytes)
+            try
             {
-                for (int i = 0; i < UART_RX_bytes.Length; i++)
+                lock (UART_RX_bytes)
                 {
-                    UART_RX_bytes[i] = 0;
+                    for (int i = 0; i < UART_RX_bytes.Length; i++)
+                    {
+                        UART_RX_bytes[i] = 0;
+                    }
+                    BytesToRead = 0;
+                    this.FLAG_UART_RX = false;
+                    FLAG_SET_READBYTE_RT_UART_RX = false;
                 }
-                BytesToRead = 0;
-                this.FLAG_UART_RX = false;
             }
+            catch
+            {
+
+            }
+      
               
         }
 
