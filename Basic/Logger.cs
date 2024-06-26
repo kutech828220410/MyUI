@@ -19,8 +19,8 @@ namespace Basic
             using (StreamWriter sw = File.AppendText(LogFilePath))
             {
                 sw.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
+                Console.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
             }
-            Console.WriteLine($"LogFilePath : {LogFilePath}");
         }
 
         public static void Log(string Title ,string Message)
@@ -31,11 +31,25 @@ namespace Basic
             using (StreamWriter sw = File.AppendText(LogFilePath))
             {
                 sw.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
+                Console.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
+            }
+        }
+
+        public static void LogAddLine()
+        {
+            string Message = "---------------------------------------------------------------------------";
+            string LogFileName = $"{DateTime.Now:yyyyMMdd-HH}.txt";
+            string LogFilePath = Path.Combine(logDirectory, LogFileName);
+            Directory.CreateDirectory(logDirectory);
+            using (StreamWriter sw = File.AppendText(LogFilePath))
+            {
+                sw.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
+                Console.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
             }
         }
         public static void LogAddLine(string Title)
         {
-            LogAddLine(Title, "---------------------------------------------------------------------------");
+            LogAddLine(Title, "---------------------------------------------------------------------------");   
         }
         public static void LogAddLine(string Title, string Message)
         {
@@ -45,6 +59,7 @@ namespace Basic
             using (StreamWriter sw = File.AppendText(LogFilePath))
             {
                 sw.WriteLine($"{Message}");
+                Console.WriteLine($"{Message}");
             }
         }
 

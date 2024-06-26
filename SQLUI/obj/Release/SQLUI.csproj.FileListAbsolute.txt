@@ -2488,7 +2488,6 @@ C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.Common.dll

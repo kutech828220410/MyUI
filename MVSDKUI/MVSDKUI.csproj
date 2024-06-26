@@ -36,6 +36,10 @@
     <Reference Include="Basic">
       <HintPath>..\0.DLL\Basic.dll</HintPath>
     </Reference>
+    <Reference Include="CSkin, Version=10.23.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\inventorySystem\0.DLL\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="LadderUI">
       <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>

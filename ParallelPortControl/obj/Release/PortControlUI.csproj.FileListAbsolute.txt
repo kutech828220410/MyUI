@@ -1288,7 +1288,6 @@ C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll

@@ -96,7 +96,6 @@ C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDK.dll

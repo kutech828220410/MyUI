@@ -85,169 +85,181 @@ namespace SQLUI
         }
         public void RowsChange(List<object[]> RowsList, bool SelectToDeep, bool DoEvent)
         {
-            this.flag_Refresh = true;
-            dataGridView.CellValueChanged -= DataGridView_CellValueChanged;
-            if(DoEvent)
+            try
             {
-                if (this.DataGridRowsChangeEvent != null)
+                this.flag_Refresh = true;
+                dataGridView.CellValueChanged -= DataGridView_CellValueChanged;
+                if (DoEvent)
                 {
-                    this.DataGridRowsChangeEvent(RowsList);
-                }
-                if (this.DataGridRowsChangeRefEvent != null)
-                {
-                    this.DataGridRowsChangeRefEvent(ref RowsList);
-                }
-            }       
-            List<int> List_SelectRowindex = this.GetSelectRowsIndex();
-            int ScrollingRowIndex = dataGridView.FirstDisplayedScrollingRowIndex;
-            SaveDataVal.RowsList = null;
-            SaveDataVal.RowsList = RowsList;
-            this.Checked = new bool[RowsList.Count];
-            List<object[]> RowsList_buf = new List<object[]>();
-            DateTime Datebuf;
-            int Index = 0;
-            object[] obj_buf;
-            foreach (object[] object_array in RowsList)
-            {
-                obj_buf = object_array;
-                for (int i = 0; i < object_array.Length; i++)
-                {
-                    if (object_array[i] is DateTime)
+                    if (this.DataGridRowsChangeEvent != null)
                     {
-                        Datebuf = (DateTime)obj_buf[i];
-                        if (Columns[i].DateType == Table.DateType.YEAR)
+                        this.DataGridRowsChangeEvent(RowsList);
+                    }
+                    if (this.DataGridRowsChangeRefEvent != null)
+                    {
+                        this.DataGridRowsChangeRefEvent(ref RowsList);
+                    }
+                }
+                List<int> List_SelectRowindex = this.GetSelectRowsIndex();
+                int ScrollingRowIndex = dataGridView.FirstDisplayedScrollingRowIndex;
+                SaveDataVal.RowsList = null;
+                SaveDataVal.RowsList = RowsList;
+                this.Checked = new bool[RowsList.Count];
+                List<object[]> RowsList_buf = new List<object[]>();
+                DateTime Datebuf;
+                int Index = 0;
+                object[] obj_buf;
+                foreach (object[] object_array in RowsList)
+                {
+                    obj_buf = object_array;
+                    for (int i = 0; i < object_array.Length; i++)
+                    {
+                        if (object_array[i] is DateTime)
                         {
-                            obj_buf[i] = Datebuf.Year.ToString("0000");
-                        }
-                        else if (Columns[i].DateType == Table.DateType.DATE)
-                        {
-                            obj_buf[i] = Datebuf.Year.ToString("0000") + "-" + Datebuf.Month.ToString("00") + "-" + Datebuf.Day.ToString("00");
-                        }
-                        else if (Columns[i].DateType == Table.DateType.TIME)
-                        {
-                            obj_buf[i] = Datebuf.Hour.ToString("00") + ":" + Datebuf.Minute.ToString(":") + "-" + Datebuf.Second.ToString(":");
-                        }
-                        else if (Columns[i].DateType == Table.DateType.DATETIME)
-                        {
-                            obj_buf[i] = Datebuf.ToDateTimeString_6();
-                        }
-                        else if (Columns[i].DateType == Table.DateType.TIMESTAMP)
-                        {
-                            obj_buf[i] = Datebuf.Year.ToString("0000") + Datebuf.Month.ToString("00") + Datebuf.Day.ToString("00");
-                            obj_buf[i] += Datebuf.Hour.ToString("00") + Datebuf.Minute.ToString("00") + Datebuf.Second.ToString("00");
+                            Datebuf = (DateTime)obj_buf[i];
+                            if (Columns[i].DateType == Table.DateType.YEAR)
+                            {
+                                obj_buf[i] = Datebuf.Year.ToString("0000");
+                            }
+                            else if (Columns[i].DateType == Table.DateType.DATE)
+                            {
+                                obj_buf[i] = Datebuf.Year.ToString("0000") + "-" + Datebuf.Month.ToString("00") + "-" + Datebuf.Day.ToString("00");
+                            }
+                            else if (Columns[i].DateType == Table.DateType.TIME)
+                            {
+                                obj_buf[i] = Datebuf.Hour.ToString("00") + ":" + Datebuf.Minute.ToString(":") + "-" + Datebuf.Second.ToString(":");
+                            }
+                            else if (Columns[i].DateType == Table.DateType.DATETIME)
+                            {
+                                obj_buf[i] = Datebuf.ToDateTimeString_6();
+                            }
+                            else if (Columns[i].DateType == Table.DateType.TIMESTAMP)
+                            {
+                                obj_buf[i] = Datebuf.Year.ToString("0000") + Datebuf.Month.ToString("00") + Datebuf.Day.ToString("00");
+                                obj_buf[i] += Datebuf.Hour.ToString("00") + Datebuf.Minute.ToString("00") + Datebuf.Second.ToString("00");
+                            }
+
                         }
 
                     }
-
+                    RowsList_buf.Add(obj_buf);
+                    Index++;
                 }
-                RowsList_buf.Add(obj_buf);
-                Index++;
-            }
-           
-            RowsList = RowsList_buf.DeepClone();
 
-            RowsList_buf = null;
-            if (dataTable_buffer != null) dataTable_buffer.Dispose();
-            dataTable_buffer = new DataTable();
-            foreach (ColumnElement columns in Columns)
-            {
-                if (dataTable_buffer.Columns[columns.Text] == null)
-                {
-                    if (this.IsColumnsText(columns.Text))
-                    {
-                        dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(string)));
-                    }
-                    else
-                    {
-                        dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
-                    }
+                RowsList = RowsList_buf.DeepClone();
 
-                }
-            }
-            foreach (object[] object_templass in RowsList)
-            {
-                dataTable_buffer.Rows.Add(object_templass);
-            }
-            dataGridView.Invoke(new Action(delegate
-            {
-                this.SuspendDrawing();
-                dataGridView.SuspendDrawing();
-                //if (dataGridView.DataSource != null) dataGridView.DataSource = null;
-                dataGridView.DataSource = dataTable_buffer;
-
-                bool IsSetEnable = (dataTable.Rows.Count != dataTable_buffer.Rows.Count);
-                if (IsSetEnable) dataGridView.Enabled = false;
-
-                if (DataGridRefreshEvent != null) this.DataGridRefreshEvent();
-                if (this.顯示首列)
-                {
-                    dataGridView.RowHeadersDefaultCellStyle.Padding = new Padding(0, 0, 0, 0);
-                    dataGridView.RowHeadersDefaultCellStyle.Font = this.cellStyleFont;
-                    dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-                }
-                for (int i = 0; i < dataGridView.Rows.Count; i++)
-                {
-                    dataGridView.Rows[i].Selected = false;
-                    if (this.顯示首列)
-                    {
-                        dataGridView.Rows[i].HeaderCell.Value = (i + 1).ToString();
-                    }
-                }
-                Size size = System.Windows.Forms.TextRenderer.MeasureText((dataGridView.Rows.Count + 1).ToString(), dataGridView.RowHeadersDefaultCellStyle.Font);
-                dataGridView.RowHeadersWidth = size.Width + 22;
-
-
-                for (int i = 0; i < List_SelectRowindex.Count; i++)
-                {
-                    if (List_SelectRowindex[i] < dataGridView.RowCount)
-                    {
-                        if (List_SelectRowindex[i] != -1)
-                        {
-                            dataGridView.Rows[List_SelectRowindex[i]].Selected = true;
-                        }
-                    }
-                }
+                RowsList_buf = null;
+                if (dataTable_buffer != null) dataTable_buffer.Dispose();
+                dataTable_buffer = new DataTable();
                 foreach (ColumnElement columns in Columns)
                 {
-                    if (columns.CanEdit)
+                    if (dataTable_buffer.Columns[columns.Text] == null)
                     {
-                        dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionBackColor = Color.Yellow;
-                        dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
-                        dataGridView.Columns[columns.Text].DefaultCellStyle.ForeColor = Color.DimGray;
-                    }
-                    dataGridView.Columns[columns.Text].Width = columns.Width;
-                    dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
-                }
-
-
-                if (IsSetEnable) dataGridView.Enabled = true;
-                if (dataGridView.RowCount - 1 > 0)
-                {
-                    if (SelectToDeep)
-                    {
-                        dataGridView.FirstDisplayedScrollingRowIndex = dataGridView.RowCount - 1;
-                    }
-                    else
-                    {
-                        if (ScrollingRowIndex != -1)
+                        if (this.IsColumnsText(columns.Text))
                         {
-                            if (ScrollingRowIndex < dataGridView.RowCount - 1) dataGridView.FirstDisplayedScrollingRowIndex = ScrollingRowIndex;
+                            dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(string)));
+                        }
+                        else
+                        {
+                            dataTable_buffer.Columns.Add(new DataColumn(columns.Text, typeof(Image)));
+                        }
+
+                    }
+                }
+                foreach (object[] object_templass in RowsList)
+                {
+                    dataTable_buffer.Rows.Add(object_templass);
+                }
+                dataGridView.Invoke(new Action(delegate
+                {
+                    this.SuspendDrawing();
+                    dataGridView.SuspendDrawing();
+                    //if (dataGridView.DataSource != null) dataGridView.DataSource = null;
+                    dataGridView.DataSource = dataTable_buffer;
+
+                    bool IsSetEnable = (dataTable.Rows.Count != dataTable_buffer.Rows.Count);
+                    if (IsSetEnable) dataGridView.Enabled = false;
+
+                    if (DataGridRefreshEvent != null) this.DataGridRefreshEvent();
+                    if (this.顯示首列)
+                    {
+                        dataGridView.RowHeadersDefaultCellStyle.Padding = new Padding(0, 0, 0, 0);
+                        dataGridView.RowHeadersDefaultCellStyle.Font = this.cellStyleFont;
+                        dataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+                    }
+                    for (int i = 0; i < dataGridView.Rows.Count; i++)
+                    {
+                        dataGridView.Rows[i].Selected = false;
+                        if (this.顯示首列)
+                        {
+                            dataGridView.Rows[i].HeaderCell.Value = (i + 1).ToString();
                         }
                     }
-                }
-                int temp = -1;
-                for (int i = 0; i < dataGridView.ColumnCount; i++)
-                {
-                    if (dataGridView.Columns[i].Visible == true) temp = i;
-                }
-                if(temp != -1) dataGridView.Columns[temp].AutoSizeMode = DataGridViewAutoSizeColumnMode;
+                    Size size = System.Windows.Forms.TextRenderer.MeasureText((dataGridView.Rows.Count + 1).ToString(), dataGridView.RowHeadersDefaultCellStyle.Font);
+                    dataGridView.RowHeadersWidth = size.Width + 22;
 
-                this.ResumeDrawing();
-                dataGridView.ResumeDrawing();
 
-            }));
-            this.flag_Refresh = false;
-            dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+                    for (int i = 0; i < List_SelectRowindex.Count; i++)
+                    {
+                        if (List_SelectRowindex[i] < dataGridView.RowCount)
+                        {
+                            if (List_SelectRowindex[i] != -1)
+                            {
+                                dataGridView.Rows[List_SelectRowindex[i]].Selected = true;
+                            }
+                        }
+                    }
+                    foreach (ColumnElement columns in Columns)
+                    {
+                        if (columns.CanEdit)
+                        {
+                            dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionBackColor = Color.Yellow;
+                            dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
+                            dataGridView.Columns[columns.Text].DefaultCellStyle.ForeColor = Color.DimGray;
+                        }
+                        dataGridView.Columns[columns.Text].Width = columns.Width;
+                        dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+                    }
+
+
+                    if (IsSetEnable) dataGridView.Enabled = true;
+                    if (dataGridView.RowCount - 1 > 0)
+                    {
+                        if (SelectToDeep)
+                        {
+                            dataGridView.FirstDisplayedScrollingRowIndex = dataGridView.RowCount - 1;
+                        }
+                        else
+                        {
+                            if (ScrollingRowIndex != -1)
+                            {
+                                if (ScrollingRowIndex < dataGridView.RowCount - 1) dataGridView.FirstDisplayedScrollingRowIndex = ScrollingRowIndex;
+                            }
+                        }
+                    }
+                    int temp = -1;
+                    for (int i = 0; i < dataGridView.ColumnCount; i++)
+                    {
+                        if (dataGridView.Columns[i].Visible == true) temp = i;
+                    }
+                    if (temp != -1) dataGridView.Columns[temp].AutoSizeMode = DataGridViewAutoSizeColumnMode;
+
+                    this.ResumeDrawing();
+                    dataGridView.ResumeDrawing();
+
+                }));
+                this.flag_Refresh = false;
+                dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"{DateTime.Now.ToDateTimeString()} - Exception : {ex.Message}");
+            }
+            finally
+            {
+
+            }
+           
         }
         private void DataGridView_MouseWheel(object sender, MouseEventArgs e)
         {
@@ -1299,6 +1311,7 @@ namespace SQLUI
             this.dataGridView.Paint += DataGridView_Paint;
             this.dataGridView.EditingControlShowing += DataGridView_EditingControlShowing;
             this.dataGridView.Scroll += DataGridView_Scroll;
+            this.dataGridView.SelectionChanged += DataGridView_SelectionChanged;
         }
 
  
@@ -1639,8 +1652,17 @@ namespace SQLUI
 
         public List<object[]> SQL_GetAllRows(bool IsRefreshGrid)
         {
-            List<object[]> temp = _SQLControl.GetAllRows(SQL_Table.GetTableName());
-            if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp , true);
+            List<object[]> temp = new List<object[]>();
+            try
+            {
+                temp = _SQLControl.GetAllRows(SQL_Table.GetTableName());
+                if (IsRefreshGrid) if (ModuleChangeEvent != null) this.ModuleChangeEvent(temp, true);
+            }
+            catch
+            {
+
+            }
+   
             return temp;
         }
         public List<object[]> SQL_GetAllRows(int OrderColumnindex, SQLControl.OrderType _OrderType, bool IsRefreshGrid)
@@ -2603,7 +2625,7 @@ namespace SQLUI
                 this.ResumeDrawing();
                 dataGridView.ResumeDrawing();
             }));
-
+            this.SelectRowindex_Buf = -1;
             if (RowEnterEvent != null) RowEnterEvent(this.GetRowValues(index));
             if (RowClickEvent != null) RowClickEvent(this.GetRowValues(index));
         }
@@ -3954,6 +3976,12 @@ namespace SQLUI
 
             }
         }
+        private void DataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            List<object[]> list_value = this.Get_All_Select_RowsValues();
+        }
+
+
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (dataGridView.CurrentCell != null)

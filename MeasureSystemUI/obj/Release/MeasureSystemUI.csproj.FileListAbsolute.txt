@@ -3122,3 +3122,5 @@ C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Newtonsoft.
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\CSkin.dll
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml

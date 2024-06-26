@@ -8,9 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MyUI;
 namespace Basic
 {
-    public partial class MyMessageBox : Form
+    public partial class MyMessageBox : MyDialog
     {
         public static Form form;
         public static MyMessageBox _myMessageBox = null;
@@ -219,7 +220,7 @@ namespace Basic
             string message = "";
             this.Get_message(Content, ref message);
             this.label_Content.Text = message;
-            this.Width = MaxTextWidth + 150;
+            this.Width = MaxTextWidth + 230;
             this.Height += this.label_Content.PreferredHeight;
             if (enum_BoxType == enum_BoxType.Warning)
             {

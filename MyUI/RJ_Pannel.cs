@@ -210,8 +210,9 @@ namespace MyUI
             if (this.borderRadius > this.Height)
             {
                 this.BorderRadius = this.Height;
+                this.Invalidate();
             }
-            this.Invalidate();
+           
         }
         private GraphicsPath GetFigurePath(RectangleF rect, float radius)
         {

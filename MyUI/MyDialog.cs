@@ -12,13 +12,36 @@ using System.Runtime.InteropServices;
 using Basic;
 namespace MyUI
 {
+
+    public class StaticDialog<T> where T : MyDialog, new()
+    {
+        static public T myDialog;
+
+        static public T GetForm()
+        {
+            if (myDialog != null)
+            {
+                return myDialog;
+            }
+            else
+            {
+                myDialog = new T();
+                return myDialog;
+            }
+        }
+    }
+ 
     public partial class MyDialog : CCSkinMain
     {
+
+        private bool flag_childForm = false;
+
         public delegate void LoadFinishedEventHandler(EventArgs e);
         public event LoadFinishedEventHandler LoadFinishedEvent;
         public delegate void ShowDialogEventHandler();
         public event ShowDialogEventHandler ShowDialogEvent;
-
+        public delegate void FormClosingEventHandler(object sender , CancelEventArgs e);
+        public event FormClosingEventHandler FormClosingEvent;
         [System.Runtime.InteropServices.DllImport("user32")]
         private static extern bool AnimateWindow(IntPtr hwnd, int dwTime, int dwFlags);
         //正面_水平方向
@@ -114,6 +137,55 @@ namespace MyUI
 
         private bool close_flag = false;
         public static Form form;
+        public void ShowChildForm(Panel panel)
+        {
+            flag_childForm = true;
+            if (ShowDialogEvent != null) ShowDialogEvent();
+            base.ControlBoxActive = _ControlBoxActive;
+            base.ControlBoxDeactive = _ControlBoxDeactive;
+            base.BackColor = _backColor;
+            if (form == null)
+            {
+                this.Special = false;
+                this.Opacity = 1;
+                this.Shadow = false;
+                this.TopLevel = false;
+                this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                this.StartPosition = FormStartPosition.CenterParent;
+                this.Dock = DockStyle.Fill;
+                this.FormClosed += (s, args) =>
+                {
+                    panel.Controls.Remove(this);
+                };
+                panel.Controls.Add(this);
+                this.BringToFront();
+                this.Show();
+                
+            }
+            else
+            {
+                this.Special = false;
+                this.Opacity = 1;
+                this.Shadow = false;
+                this.TopLevel = false;
+                this.FormBorderStyle = FormBorderStyle.FixedDialog;
+                this.StartPosition = FormStartPosition.CenterParent;
+                this.Dock = DockStyle.Fill;
+                this.FormClosed += (s, args) =>
+                {
+                    panel.Controls.Remove(this);
+                };
+                panel.Controls.Add(this);
+                this.BringToFront();
+                this.Show();
+            }
+            this.Resize += MyDialog_Resize;
+            this.Move += MyDialog_Move;
+        }
+
+
+
+
         public DialogResult ShowDialog()
         {
             if (ShowDialogEvent != null) ShowDialogEvent();
@@ -200,7 +272,7 @@ namespace MyUI
             Application.DoEvents();
             AnimateWindow(this.Handle, special_Time, AW_HIDE | AW_BLEND | AW_SLIDE);
             Application.DoEvents();
-
+            if (FormClosingEvent != null) FormClosingEvent(this, e);
 
         }
         protected override void WndProc(ref Message m)
@@ -235,5 +307,67 @@ namespace MyUI
    
         }
 
+
+
+        private void MyDialog_Resize(object sender, EventArgs e)
+        {
+            Form parentForm = this.ParentForm;
+            Control control = parentForm;
+            if (parentForm != null && this.WindowState == FormWindowState.Maximized && flag_childForm)
+            {
+                this.WindowState = FormWindowState.Normal;
+                // 设置子窗口最大化时的边界限制
+                this.MaximumSize = new Size(control.ClientSize.Width - 2 * control.Padding.Size.Width, control.ClientSize.Height - 2 * control.Padding.Size.Height);
+                this.Size = new Size(control.ClientSize.Width - 2 * control.Padding.Size.Width, control.ClientSize.Height - 2 * control.Padding.Size.Height);
+                this.Location = new Point(control.Padding.Left, control.Padding.Top);
+            }
+
+            if (this.WindowState == FormWindowState.Minimized && flag_childForm)
+            {
+           
+            }
+        }
+        private void MyDialog_Move(object sender, EventArgs e)
+        {
+            Form parentForm = this.ParentForm;
+
+            if (parentForm != null)
+            {
+                // 获取父窗口的边界
+                Rectangle parentBounds = parentForm.ClientRectangle;
+
+                // 获取子窗口在父窗口中的位置
+                Point childLocation = this.Location;
+
+                // 检查子窗口是否超出父窗口边界，并调整位置
+                if (childLocation.X < parentBounds.Left)
+                {
+                    childLocation.X = parentBounds.Left;
+                }
+                if (childLocation.Y < parentBounds.Top)
+                {
+                    childLocation.Y = parentBounds.Top;
+                }
+                if (childLocation.X + this.Width > parentBounds.Right)
+                {
+                    childLocation.X = parentBounds.Right - this.Width;
+                }
+                if (childLocation.Y + this.Height > parentBounds.Bottom)
+                {
+                    childLocation.Y = parentBounds.Bottom - this.Height;
+                }
+
+                // 设置调整后的子窗口位置
+                this.Location = childLocation;
+            }
+        }
+ 
+
+        private void ButtonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+ 
     }
 }

@@ -1634,6 +1634,28 @@ namespace Basic
             dateTime = new DateTime(dateTime.Year, dateTime.Month, dateTime.Day, 23, 59, 59);
             return dateTime;
         }
+        /// <summary>
+        /// 取得指定日期所在月份的第一天
+        /// </summary>
+        /// <param name="date">指定的日期</param>
+        /// <returns>該月份的第一天</returns>
+        public static DateTime GetFirstDayOfMonth(this DateTime date)
+        {
+            return new DateTime(date.Year, date.Month, 1);
+        }
+        /// <summary>
+        /// 取得指定日期所在月份的最後一天
+        /// </summary>
+        /// <param name="date">指定的日期</param>
+        /// <returns>該月份的最後一天</returns>
+        public static DateTime GetLastDayOfMonth(this DateTime date)
+        {
+            // 取得當前月份的天數
+            int daysInMonth = DateTime.DaysInMonth(date.Year, date.Month);
+
+            // 創建一個新的 DateTime 對象，表示當月的最後一天
+            return new DateTime(date.Year, date.Month, daysInMonth);
+        }
         #region Function
         static private string ToDATE_String(string Year, string Month, string Day)
         {

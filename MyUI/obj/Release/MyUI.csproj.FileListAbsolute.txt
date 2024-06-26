@@ -281,8 +281,6 @@ C:\Users\User\Desktop\MyUI\MyUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\MyUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.MyDialog.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Microsoft.mshtml.dll
-C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.MyDialog.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.StepEntity.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\SunnyUI.Common.dll
@@ -294,3 +292,5 @@ C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.UserControl_NumPanel.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.StaticDialog.resources
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.SidePanel.resources

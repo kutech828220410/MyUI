@@ -1503,7 +1503,6 @@ C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDK.dll
