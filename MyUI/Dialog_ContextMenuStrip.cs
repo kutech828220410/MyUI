@@ -192,6 +192,8 @@ namespace MyUI
         private void InitializeComponent()
         {
             this.SuspendLayout();
+            this.TopLevel = true;
+            this.TopMost = true;
             this.StartPosition = FormStartPosition.Manual;
             this.ControlBox = false;
             this.BackColor = Color.White;

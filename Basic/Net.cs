@@ -295,6 +295,33 @@ namespace Basic
 
             return true;
         }
+        /// <summary>
+        /// 下載指定網址的圖片並返回Base64字串。
+        /// </summary>
+        /// <param name="url">圖片的網址。</param>
+        /// <returns>圖片的Base64字串。</returns>
+        public static string DownloadImageAsBase64(string url)
+        {
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    // 從指定URL下載圖片數據
+                    byte[] imageBytes = client.DownloadData(url);
+
+                    // 將圖片數據轉換為Base64字串
+                    string base64String = Convert.ToBase64String(imageBytes);
+
+                    return base64String;
+                }
+            }
+            catch (Exception ex)
+            {
+                // 處理下載或轉換過程中的錯誤
+                Console.WriteLine($"Error downloading image: {ex.Message}");
+                return null;
+            }
+        }
         public static bool Ping(string IP, int retrynum, int timeout)
         {
             try
@@ -572,7 +599,7 @@ namespace Basic
 
         public static string WEBApiPostJson(string url, string value)
         {
-            return WEBApiPostJson(url, value, true);
+            return WEBApiPostJson(url, value, false);
         }
         public static string WEBApiPostJson(string url, string value, bool debug)
         {

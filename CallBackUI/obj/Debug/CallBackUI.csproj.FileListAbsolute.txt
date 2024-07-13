@@ -167,7 +167,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Debug\CallBackUI.pdb
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\PopupControl.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\CSkin.dll
-C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Debug\Newtonsoft.Json.dll

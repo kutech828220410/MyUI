@@ -3932,3 +3932,4 @@ C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\LightControlUI.
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll

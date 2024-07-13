@@ -489,6 +489,7 @@
     <Compile Include="UserControl_NumPanel.Designer.cs">
       <DependentUpon>UserControl_NumPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="字母鍵盤.cs">
       <SubType>Form</SubType>
     </Compile>

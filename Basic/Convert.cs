@@ -1236,6 +1236,16 @@ namespace Basic
             return ToDATETIME_String(datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second);
 
         }
+        static public string ToDateTimeTiny(this DateTime item, Enum_Year_Type Enum_Year_Type)
+        {
+            if (Enum_Year_Type == TypeConvert.Enum_Year_Type.Republic_of_China)
+            {
+                System.Globalization.TaiwanCalendar TaiwanCalendar = new System.Globalization.TaiwanCalendar();
+
+                return $"{TaiwanCalendar.GetYear(item).ToString("000")}{item.Month.ToString("00")}{item.Day.ToString("00")}{item.Hour.ToString("00")}{item.Minute.ToString("00")}{item.Second.ToString("00")}";
+            }
+            return $"{item.Year.ToString("0000")}{item.Month.ToString("00")}{item.Day.ToString("00")}{item.Hour.ToString("00")}{item.Minute.ToString("00")}{item.Second.ToString("00")}";
+        }
         static public string ToDateTimeString_6(this object item)
         {
             if (!(item is DateTime)) return "";
@@ -1593,7 +1603,7 @@ namespace Basic
                 case 9:
                     return 30;
                 case 10:
-                    return 30;
+                    return 31;
                 case 11:
                     return 30;
                 case 12:

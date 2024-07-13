@@ -106,7 +106,6 @@ namespace MyUI
 
         private int shadowSize = 0;
         private Color shadowColor = Color.DimGray;
-
         private Color backgroundColor = Color.Transparent;
 
         [Category("RJ Code Advance")]
@@ -193,6 +192,7 @@ namespace MyUI
         }
         public RJ_Pannel()
         {
+            //Basic.Reflection.MakeDoubleBuffered(this, true);
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.BorderStyle = BorderStyle.None;
@@ -304,7 +304,6 @@ namespace MyUI
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
-            //this.Parent.BackColorChanged += Parent_BackColorChanged;
         }
         private void Parent_BackColorChanged(object sender, EventArgs e)
         {

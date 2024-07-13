@@ -1064,3 +1064,4 @@ C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Basic.xml
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
+C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll

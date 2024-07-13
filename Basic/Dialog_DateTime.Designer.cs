@@ -31,18 +31,21 @@
             this.dateTimeComList = new MyUI.DateTimeComList();
             this.rJ_Button_Cancel = new MyUI.RJ_Button();
             this.rJ_Button_OK = new MyUI.RJ_Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimeComList
             // 
             this.dateTimeComList.BackColor = System.Drawing.SystemColors.Window;
             this.dateTimeComList.Day = 1;
+            this.dateTimeComList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimeComList.End_Year = 2030;
-            this.dateTimeComList.Location = new System.Drawing.Point(12, 17);
+            this.dateTimeComList.Location = new System.Drawing.Point(0, 0);
             this.dateTimeComList.mFont = new System.Drawing.Font("標楷體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dateTimeComList.Month = 1;
             this.dateTimeComList.Name = "dateTimeComList";
-            this.dateTimeComList.Size = new System.Drawing.Size(348, 91);
+            this.dateTimeComList.Size = new System.Drawing.Size(364, 57);
             this.dateTimeComList.Start_Year = 2022;
             this.dateTimeComList.TabIndex = 46;
             this.dateTimeComList.Value = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
@@ -63,7 +66,7 @@
             this.rJ_Button_Cancel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_Cancel.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_Cancel.GUID = "";
-            this.rJ_Button_Cancel.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.rJ_Button_Cancel.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_Cancel.Location = new System.Drawing.Point(470, 8);
             this.rJ_Button_Cancel.Name = "rJ_Button_Cancel";
             this.rJ_Button_Cancel.ProhibitionBorderLineWidth = 1;
@@ -95,7 +98,7 @@
             this.rJ_Button_OK.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_OK.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_OK.GUID = "";
-            this.rJ_Button_OK.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.rJ_Button_OK.Image_padding = new System.Windows.Forms.Padding(0);
             this.rJ_Button_OK.Location = new System.Drawing.Point(385, 8);
             this.rJ_Button_OK.Name = "rJ_Button_OK";
             this.rJ_Button_OK.ProhibitionBorderLineWidth = 1;
@@ -112,6 +115,14 @@
             this.rJ_Button_OK.TextHeight = 0;
             this.rJ_Button_OK.UseVisualStyleBackColor = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dateTimeComList);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(364, 57);
+            this.panel1.TabIndex = 47;
+            // 
             // Dialog_DateTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -119,7 +130,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(566, 80);
             this.ControlBox = false;
-            this.Controls.Add(this.dateTimeComList);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.rJ_Button_Cancel);
             this.Controls.Add(this.rJ_Button_OK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -127,6 +138,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,5 +147,6 @@
         private MyUI.RJ_Button rJ_Button_OK;
         private MyUI.RJ_Button rJ_Button_Cancel;
         private MyUI.DateTimeComList dateTimeComList;
+        private System.Windows.Forms.Panel panel1;
     }
 }

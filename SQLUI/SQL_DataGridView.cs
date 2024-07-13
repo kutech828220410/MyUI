@@ -2656,6 +2656,7 @@ namespace SQLUI
 
         public void ClearSelection()
         {
+            SelectRowindex_Buf = -1;
             this.Invoke(new Action(delegate { dataGridView.ClearSelection(); }));
 
         }
