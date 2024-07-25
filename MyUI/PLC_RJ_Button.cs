@@ -19,6 +19,8 @@ namespace MyUI
     [Designer(typeof(ComponentSet.JLabelExDesigner))]
     public class PLC_RJ_Button : RJ_Button
     {
+        public delegate void ValueChangeEventHandler(bool Value);
+        public event ValueChangeEventHandler ValueChangeEvent;
 
         private Basic.Keyboard Keys = new Basic.Keyboard();
         public bool Is_ButPress
@@ -137,7 +139,11 @@ namespace MyUI
             }
             set
             {
-                if (this.IsHandleCreated && flag_init) this.SetValue(value);
+                if (this.IsHandleCreated && flag_init)
+                {
+                    this.SetValue(value);
+                
+                }
             }
         }
 
@@ -997,7 +1003,17 @@ namespace MyUI
                         PLC.properties.Device.Set_Device(_寫入元件位置, FLAG_寫入);
                     }
                 }
+                if (this.ValueChangeEvent != null)
+                {
+                    if (Value_Buf != FLAG_寫入)
+                    {
+                        this.ValueChangeEvent(FLAG_寫入);
+                    }
+
+                }
+
                 Value_Buf = FLAG_寫入;
+             
                 but_press_buf = but_press;
             }
 

@@ -824,6 +824,9 @@ namespace SQLUI
                 get { return canEdit; }
                 set { canEdit = value; }
             }
+            private Font textFont = null;
+            public Font TextFont { get => textFont; set => textFont = value; }
+
 
             public Type type = typeof(string);
             public string[] EnumAry = new string[] { };
@@ -898,6 +901,7 @@ namespace SQLUI
                     _OtherType = value;
                 }
             }
+
 
             public override string ToString()
             {
@@ -2463,7 +2467,7 @@ namespace SQLUI
                 dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
                 dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
                 dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
-          
+                if (columns.TextFont != null) dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Font = columns.TextFont;
                 if (columns.OtherType == Table.OtherType.IMAGE)
                 {
                     ((DataGridViewImageColumn)dataGridView.Columns[$"{columns.Text}"]).ImageLayout = DataGridViewImageCellLayout.Zoom;
@@ -2621,6 +2625,7 @@ namespace SQLUI
                         dataGridView.Rows[i].Selected = false;
                     }
                     dataGridView.Rows[index].Selected = true;
+                    dataGridView.FirstDisplayedScrollingRowIndex = index;
                 }
                 this.ResumeDrawing();
                 dataGridView.ResumeDrawing();
@@ -3283,6 +3288,19 @@ namespace SQLUI
                 }
             }
         }
+        public void Set_ColumnFont(Font font, string ColumnName)
+        {
+            for (int k = 0; k < this.Columns.Count; k++)
+            {
+                if (this.Columns[k].Name == ColumnName)
+                {
+                    Columns[k].TextFont = font;
+                }
+            }
+
+        }
+
+
 
         public void Set_ColumnHeaderHeight(int height)
         {
@@ -3299,7 +3317,41 @@ namespace SQLUI
             return width;
         }
 
+        public void ScrollToIndex(int index)
+        {
+            this.Invoke(new Action(delegate
+            {
+                if (index < 0) index = 0;
+                if (index > this.dataGridView.RowCount - 1) index = this.dataGridView.RowCount - 1;
+                this.dataGridView.FirstDisplayedScrollingRowIndex = index;
+            }));
 
+        }
+        // 滾動到上一行
+        public void ScrollUp()
+        {
+            this.Invoke(new Action(delegate
+            {
+                if (this.dataGridView.FirstDisplayedScrollingRowIndex > 0)
+                {
+                    this.dataGridView.FirstDisplayedScrollingRowIndex--;
+                }
+            }));
+      
+        }
+
+        // 滾動到下一行
+        public void ScrollDown()
+        {
+            this.Invoke(new Action(delegate
+            {
+                if (this.dataGridView.FirstDisplayedScrollingRowIndex < this.dataGridView.RowCount - 1)
+                {
+                    this.dataGridView.FirstDisplayedScrollingRowIndex++;
+                }
+            }));
+         
+        }
         public void ClearGrid()
         {
             List<object[]> RowsList = new List<object[]>();
