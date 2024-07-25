@@ -27,5 +27,6 @@ namespace MyUI
 
         #endregion
 
+        private RJ_Pannel rJ_Pannel;
     }
 }

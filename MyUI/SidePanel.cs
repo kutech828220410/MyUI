@@ -12,42 +12,62 @@ using System.ComponentModel.Design;
 using System.Collections;
 using System.Windows.Forms.Design;
 
-
 namespace MyUI
 {
+    public enum ExpandDirection
+    {
+        Left,
+        Right,
+        Up,
+        Down
+    }
+
     [Designer(typeof(MyUserControlDesigner))]
     public partial class SidePanel : UserControl
     {
         private Timer animationTimer;
         private bool isPanelExpanded = true;
-        private int panelWidth;
+        private int panelSize;
         private Button toggleButton;
-        private RJ_Pannel rJ_Pannel;
-        [Category("自訂義"), Description("The width of the panel when expanded.")]
-        public int ExpandedWidth { get; set; } = 200;
+        private Form parentForm;
 
-        private int collapsedWidth = 30;
-        [Category("自訂義"), Description("The width of the panel when collapsed.")]
-        public int CollapsedWidth { get => collapsedWidth; set => collapsedWidth = value; }
+        [Category("自訂義"), Description("The size of the panel when expanded.")]
+        public int ExpandedSize { get; set; } = 200;
+
+        private int collapsedSize = 30;
+        [Category("自訂義"), Description("The size of the panel when collapsed.")]
+        public int CollapsedSize { get => collapsedSize; set => collapsedSize = value; }
 
         [Category("自訂義"), Description("The step size for the animation.")]
         public int AnimationStep { get; set; } = 30;
-        
 
-        public SidePanel()
-        {
-            InitializeComponent();
-
-            this.Load += SidePanel_Load;
-
+   
+        private ExpandDirection expandDirection = ExpandDirection.Left;
+        [Category("自訂義"), Description("The direction in which the panel expands and collapses.")]
+        public ExpandDirection ExpandDirection 
+        { 
+            get => expandDirection; 
+            set
+            {
+                expandDirection = value;
+                SetToggleButtonPosition();
+                this.Invalidate();
+            }
         }
 
 
 
-        private void InitializeComponent()
+        public SidePanel()
         {
+            InitializeComponent();
+            this.Load += SidePanel_Load;
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
+        }
+
+        private void InitializeComponent()
+        {
+
 
             this.components = new System.ComponentModel.Container();
             this.animationTimer = new System.Windows.Forms.Timer(this.components);
@@ -59,12 +79,10 @@ namespace MyUI
             this.animationTimer.Interval = 20;
             this.animationTimer.Tick += new System.EventHandler(this.AnimatePanel);
 
-
             // toggleButton
-            this.toggleButton.Dock = DockStyle.Right;
             this.toggleButton.Text = "<";
             this.toggleButton.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.toggleButton.Size = new System.Drawing.Size(30, 595);
+            this.toggleButton.Size = new System.Drawing.Size(30, 30);
             this.toggleButton.Click += new EventHandler(this.TogglePanel);
             this.toggleButton.BackColor = Color.White;
             this.toggleButton.FlatStyle = FlatStyle.Flat;
@@ -73,81 +91,164 @@ namespace MyUI
             // 
             // SidePanel
             // 
-            // 
-            // rJ_Pannel
-            // 
-            rJ_Pannel = new RJ_Pannel();
+            this.rJ_Pannel = new RJ_Pannel();
             this.rJ_Pannel.BackColor = System.Drawing.Color.White;
             this.rJ_Pannel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_Pannel.BorderRadius = 5;
             this.rJ_Pannel.BorderSize = 0;
             this.rJ_Pannel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rJ_Pannel.ForeColor = System.Drawing.Color.White;
-            this.rJ_Pannel.Location = new System.Drawing.Point(0, 37);
+            this.rJ_Pannel.Location = new System.Drawing.Point(0, 0);
             this.rJ_Pannel.Name = "rJ_Pannel";
             this.rJ_Pannel.Size = new System.Drawing.Size(521, 113);
             this.rJ_Pannel.TabIndex = 2;
-            // 
-            // RJ_GroupBox
-            // 
-       
-            this.Controls.Add(this.toggleButton);
             this.Controls.Add(this.rJ_Pannel);
+            this.Controls.Add(this.toggleButton);
             this.Name = "SidePanel";
-            this.Size = new System.Drawing.Size(150, 595);
+            this.Size = new System.Drawing.Size(200, 595);
             this.ResumeLayout(false);
-
         }
+
         private void SidePanel_Load(object sender, EventArgs e)
         {
-            this.toggleButton.Width = collapsedWidth;
+            this.parentForm = this.FindForm();
+            SetToggleButtonPosition();
         }
-        public void Init()
+
+        private void SetToggleButtonPosition()
         {
-            
+            switch (ExpandDirection)
+            {
+                case ExpandDirection.Left:
+                    this.toggleButton.Dock = DockStyle.Right;
+                    this.toggleButton.Text = isPanelExpanded ? "<" : ">";
+                    break;
+                case ExpandDirection.Right:
+                    this.toggleButton.Dock = DockStyle.Left;
+                    this.toggleButton.Text = isPanelExpanded ? ">" : "<";
+                    break;
+                case ExpandDirection.Up:
+                    this.toggleButton.Dock = DockStyle.Bottom;
+                    this.toggleButton.Text = isPanelExpanded ? "∧" : "∨";
+                    break;
+                case ExpandDirection.Down:
+                    this.toggleButton.Dock = DockStyle.Top;
+                    this.toggleButton.Text = isPanelExpanded ? "∨" : "∧";
+                    break;
+            }
         }
+
         private void TogglePanel(object sender, EventArgs e)
         {
             this.isPanelExpanded = !this.isPanelExpanded;
-            this.panelWidth = this.Width;
+            StartAnimation();
+        }
+
+        public void Expand()
+        {
+            if (!this.isPanelExpanded)
+            {
+                this.isPanelExpanded = true;
+                StartAnimation();
+            }
+        }
+
+        public void Collapse()
+        {
+            if (this.isPanelExpanded)
+            {
+                this.isPanelExpanded = false;
+                StartAnimation();
+            }
+        }
+
+        private void StartAnimation()
+        {
+            this.panelSize = ExpandDirection == ExpandDirection.Left || ExpandDirection == ExpandDirection.Right ? this.Width : this.Height;
+
+            // 暫停母表單的繪製
+            if (parentForm != null)
+            {
+                parentForm.SuspendLayout();
+            }
+
             this.Invoke(new Action(delegate
             {
-                this.toggleButton.Text = this.isPanelExpanded ? "<" : ">";
+                SetToggleButtonPosition();
                 this.animationTimer.Start();
             }));
         }
-
-
-
 
         private void AnimatePanel(object sender, EventArgs e)
         {
             if (this.isPanelExpanded)
             {
-                if (this.Width <= this.ExpandedWidth)
+                if (ExpandDirection == ExpandDirection.Left || ExpandDirection == ExpandDirection.Right)
                 {
-                    this.Width += this.AnimationStep;
-                    if (this.Width >= this.ExpandedWidth)
+                    if (this.Width <= this.ExpandedSize)
                     {
-                        this.Width = this.ExpandedWidth;
-                        this.animationTimer.Stop();
+                        this.Width += this.AnimationStep;
+                        if (this.Width >= this.ExpandedSize)
+                        {
+                            this.Width = this.ExpandedSize;
+                            this.animationTimer.Stop();
+                            ResumeParentFormLayout();
+                        }
+                    }
+                }
+                else
+                {
+                    if (this.Height <= this.ExpandedSize)
+                    {
+                        this.Height += this.AnimationStep;
+                        if (this.Height >= this.ExpandedSize)
+                        {
+                            this.Height = this.ExpandedSize;
+                            this.animationTimer.Stop();
+                            ResumeParentFormLayout();
+                        }
                     }
                 }
             }
             else
             {
-                if (this.Width >= this.CollapsedWidth)
+                if (ExpandDirection == ExpandDirection.Left || ExpandDirection == ExpandDirection.Right)
                 {
-                    this.Width -= this.AnimationStep;
-                    if (this.Width <= this.CollapsedWidth)
+                    if (this.Width >= this.CollapsedSize)
                     {
-                        this.Width = this.CollapsedWidth;
-                        this.animationTimer.Stop();
+                        this.Width -= this.AnimationStep;
+                        if (this.Width <= this.CollapsedSize)
+                        {
+                            this.Width = this.CollapsedSize;
+                            this.animationTimer.Stop();
+                            ResumeParentFormLayout();
+                        }
+                    }
+                }
+                else
+                {
+                    if (this.Height >= this.CollapsedSize)
+                    {
+                        this.Height -= this.AnimationStep;
+                        if (this.Height <= this.CollapsedSize)
+                        {
+                            this.Height = this.CollapsedSize;
+                            this.animationTimer.Stop();
+                            ResumeParentFormLayout();
+                        }
                     }
                 }
             }
         }
 
+        private void ResumeParentFormLayout()
+        {
+            if (parentForm != null)
+            {
+                parentForm.ResumeLayout();
+                parentForm.Refresh();
+            }
+        }
 
         protected override void OnControlAdded(ControlEventArgs e)
         {
@@ -174,12 +275,12 @@ namespace MyUI
             {
                 base.PostFilterProperties(properties);
                 var propertiesToRemove = new string[] {
-                "Dock", "Anchor",
-                "Size", "Location", "Width", "Height",
-                "MinimumSize", "MaximumSize",
-                "AutoSize", "AutoSizeMode",
-                "Visible", "Enabled",
-            };
+                    "Dock", "Anchor",
+                    "Size", "Location", "Width", "Height",
+                    "MinimumSize", "MaximumSize",
+                    "AutoSize", "AutoSizeMode",
+                    "Visible", "Enabled",
+                };
                 foreach (var item in propertiesToRemove)
                 {
                     if (properties.Contains(item))
@@ -211,6 +312,7 @@ namespace MyUI
                 return null;
             }
         }
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
         public RJ_Pannel ContentsPanel
         {

@@ -51,7 +51,6 @@ namespace HSONApplication
             this.rJ_Button_return_home.MouseDownEvent += RJ_Button_return_home_MouseDownEvent;
             this.rJ_Button_set_path_config.MouseDownEvent += RJ_Button_set_path_config_MouseDownEvent;
 
-            this.rJ_Button_Init.MouseDownEvent += RJ_Button_Init_MouseDownEvent;
 
             this.rJ_Button_Servo_ON.MouseDownEvent += RJ_Button_Servo_ON_MouseDownEvent;
             this.rJ_Button_Servo_OFF.MouseDownEvent += RJ_Button_Servo_OFF_MouseDownEvent;

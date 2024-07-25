@@ -78,6 +78,20 @@
             <param name="values">對應於列名的值的列表。</param>
             <returns>包含列名和值的文本表示形式，如果列名和值的數量不相等，則返回null。</returns>
         </member>
+        <member name="M:Basic.TypeConvert.GetFirstDayOfMonth(System.DateTime)">
+            <summary>
+            取得指定日期所在月份的第一天
+            </summary>
+            <param name="date">指定的日期</param>
+            <returns>該月份的第一天</returns>
+        </member>
+        <member name="M:Basic.TypeConvert.GetLastDayOfMonth(System.DateTime)">
+            <summary>
+            取得指定日期所在月份的最後一天
+            </summary>
+            <param name="date">指定的日期</param>
+            <returns>該月份的最後一天</returns>
+        </member>
         <member name="F:Basic.Dialog_IP_Config.components">
             <summary>
             Required designer variable.
@@ -339,6 +353,14 @@
             <param name="idColumnIndex">用作鍵的列索引。</param>
             <returns>轉換後的字典。</returns>
         </member>
+        <member name="M:Basic.LINQ.SortDictionary(System.Collections.Generic.Dictionary{System.Object,System.Collections.Generic.List{System.Object[]}},System.Object)">
+            <summary>
+            根據指定的鍵值從字典中獲取對應的列表，如果鍵值不存在則返回空列表。
+            </summary>
+            <param name="dictionary">要查詢的字典，其中鍵是對象，值是對象數組的列表。</param>
+            <param name="value">要查詢的鍵值。</param>
+            <returns>返回對應於指定鍵值的對象數組列表。如果鍵值不存在，則返回空列表。</returns>
+        </member>
         <member name="M:Basic.LINQ.IsEqual(System.Object[],System.Object[],System.Int32[])">
             <summary>
             比較兩個物件數組是否相等，排除指定的列。
@@ -473,6 +495,13 @@
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
             </summary>
+        </member>
+        <member name="M:Basic.Net.DownloadImageAsBase64(System.String)">
+            <summary>
+            下載指定網址的圖片並返回Base64字串。
+            </summary>
+            <param name="url">圖片的網址。</param>
+            <returns>圖片的Base64字串。</returns>
         </member>
         <member name="T:Basic.Properties.Resources">
             <summary>

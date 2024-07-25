@@ -24,7 +24,7 @@ namespace SQLUI
     public partial class SQL_DataGridView : UserControl
     {
         private List<ComboBox> comboBoxes = new List<ComboBox>();
-        private bool flag_Init = false;
+        public bool flag_Init = false;
         private bool flag_Refresh = false;
         private CheckBox checkBoxHeader = new CheckBox();
         private bool flag_unCheckedAll = false;
@@ -217,6 +217,7 @@ namespace SQLUI
                             dataGridView.Columns[columns.Text].DefaultCellStyle.SelectionForeColor = Color.DimGray;
                             dataGridView.Columns[columns.Text].DefaultCellStyle.ForeColor = Color.DimGray;
                         }
+                        if (columns.TextFont != null) dataGridView.Columns[columns.Text].DefaultCellStyle.Font = columns.TextFont;
                         dataGridView.Columns[columns.Text].Width = columns.Width;
                         dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
                     }
@@ -3226,12 +3227,16 @@ namespace SQLUI
             }
             foreach (ColumnElement columns in Columns)
             {
-                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.BackColor = columns.BackgroundColor;
-                dataGridView.Columns[$"{columns.Text}"].Width = columns.Width;
-                dataGridView.Columns[$"{columns.Text}"].SortMode = columns.SortMode;
-                dataGridView.Columns[$"{columns.Text}"].DefaultCellStyle.Alignment = columns.Alignment;
-                dataGridView.Columns[$"{columns.Text}"].Visible = columns.Visable;
-                dataGridView.Columns[$"{columns.Text}"].ReadOnly = !columns.CanEdit;
+                DataGridViewColumn dataGridViewColumn = dataGridView.Columns[$"{columns.Text}"];
+                if (dataGridViewColumn == null) dataGridViewColumn = dataGridView.Columns[$"{columns.Name}"];
+                if (dataGridViewColumn == null) continue;
+
+                dataGridViewColumn.DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridViewColumn.Width = columns.Width;
+                dataGridViewColumn.SortMode = columns.SortMode;
+                dataGridViewColumn.DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridViewColumn.Visible = columns.Visable;
+                dataGridViewColumn.ReadOnly = !columns.CanEdit;
             }
         }
         public void Set_ColumnText(string text, object Enum)
@@ -3262,7 +3267,7 @@ namespace SQLUI
             {
                 for (int k = 0; k < this.Columns.Count; k++)
                 {
-                    if (this.Columns[k].Text == name)
+                    if (this.Columns[k].Text == name || this.Columns[k].Name == name)
                     {
                         Columns[k].SortMode = dataGridViewColumnSortMode;
                     }
@@ -3282,17 +3287,21 @@ namespace SQLUI
         {
             for (int k = 0; k < this.Columns.Count; k++)
             {
-                if (this.Columns[k].Text == name)
+                if (this.Columns[k].Text == name || this.Columns[k].Name == name)
                 {
                     Columns[k].type = type;
                 }
             }
         }
-        public void Set_ColumnFont(Font font, string ColumnName)
+        public void Set_ColumnFont(Font font, object Enum)
+        {
+            this.Set_ColumnFont(font, Enum.GetEnumName());
+        }
+        public void Set_ColumnFont(Font font, string name)
         {
             for (int k = 0; k < this.Columns.Count; k++)
             {
-                if (this.Columns[k].Name == ColumnName)
+                if (this.Columns[k].Text == name || this.Columns[k].Name == name)
                 {
                     Columns[k].TextFont = font;
                 }
@@ -3879,7 +3888,6 @@ namespace SQLUI
             if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
             if (this.dataGridView.Rows[e.RowIndex].Selected)
             {
-                using (Brush brush_background = new SolidBrush(RowsColor))
                 using (Brush brush_back = new SolidBrush(selectedRowBackColor))
                 using (Pen pen_Border = new Pen(selectedRowBorderColor))
                 {
@@ -3899,7 +3907,14 @@ namespace SQLUI
                     {
                         RowPostPaintingEvent(e);
                     }
-                    if (RowPostPaintingEvent == null) e.Graphics.FillRectangle(brush_back, x, y, width, height);
+                    if (RowPostPaintingEvent == null)
+                    {
+                        if(selectedRowBackColor != Color.Transparent)
+                        {
+                            e.Graphics.FillRectangle(brush_back, x, y, width, height);
+                        }
+                      
+                    }
                     if (this.selectedBorderSize > 0) e.Graphics.DrawRectangle(pen_Border, x, y, width, height);
                     if (RowPostPaintingEvent != null) return;
                     DataGridViewCellCollection cells = this.dataGridView.Rows[e.RowIndex].Cells;
@@ -3917,32 +3932,38 @@ namespace SQLUI
                                 continue;
                             }
                         }
-
-                        if (cells[i].Value != null && cells[i].Visible == true)
+                        if (selectedRowBackColor != Color.Transparent)
                         {
-                            string columnName = i >= 0 ? this.dataGridView.Columns[i].Name : string.Empty;
-
-                            Type type = cells[i].Value.GetType();
-              
-                            ColumnElement columnElement = Columns.GetColumn(columnName);
-                            if (columnElement.OtherType == Table.OtherType.ENUM)
+                            if (cells[i].Value != null && cells[i].Visible == true)
                             {
-                                Rectangle display_rect = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, true);
-                                e.Graphics.FillRectangle(brush_back, display_rect);
-                      
-                                Rectangle rect = new Rectangle(display_rect.X + (display_rect.Width - 20), display_rect.Y + 2, 20, display_rect.Height - 4);
-                                ComboBoxRenderer.DrawDropDownButton(e.Graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
-                                display_rect.Width = display_rect.Width - 20;
-                                DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, display_rect, selectedRowForeColor, columnElement.Alignment);
-                            }
-                            else
-                            {
-                                Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
-                                DrawString(e.Graphics, cells[i].Value.ToString(), cellStyleFont, rectangle, selectedRowForeColor, columnElement.Alignment);
-                            }
-                       
+                                string columnName = i >= 0 ? this.dataGridView.Columns[i].Name : string.Empty;
 
+                                Type type = cells[i].Value.GetType();
+
+                                ColumnElement columnElement = Columns.GetColumn(columnName);
+                                Font font = columnElement.TextFont;
+                                if (font == null) font = cellStyleFont;
+                                if (columnElement.OtherType == Table.OtherType.ENUM)
+                                {
+
+                                    Rectangle display_rect = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, true);
+                                    e.Graphics.FillRectangle(brush_back, display_rect);
+
+                                    Rectangle rect = new Rectangle(display_rect.X + (display_rect.Width - 20), display_rect.Y + 2, 20, display_rect.Height - 4);
+                                    ComboBoxRenderer.DrawDropDownButton(e.Graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
+                                    display_rect.Width = display_rect.Width - 20;
+                                    DrawString(e.Graphics, cells[i].Value.ToString(), font, display_rect, selectedRowForeColor, columnElement.Alignment);
+                                }
+                                else
+                                {
+                                    Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
+                                    DrawString(e.Graphics, cells[i].Value.ToString(), font, rectangle, selectedRowForeColor, columnElement.Alignment);
+                                }
+
+
+                            }
                         }
+                      
                     } 
 
 
