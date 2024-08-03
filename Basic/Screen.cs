@@ -103,25 +103,38 @@ namespace Basic
             PostMessage(TouchhWnd, WM_SYSCOMMAND, SC_CLOSE, 0);
         }
 
-        private const UInt32 StdOutputHandle = 0xFFFFFFF5;
-        [DllImport("kernel32.dll")]
-        private static extern IntPtr GetStdHandle(UInt32 nStdHandle);
-        [DllImport("kernel32.dll")]
-        private static extern void SetStdHandle(UInt32 nStdHandle, IntPtr handle);
-        [System.Runtime.InteropServices.DllImport("kernel32.dll", SetLastError = true)]
-        [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
+        // P/Invoke 用来显示和隐藏控制台窗口
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
-        [System.Runtime.InteropServices.DllImport("Kernel32")]
-        public static extern void FreeConsole();
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool FreeConsole();
         public static void ShowConsole()
         {
-            AllocConsole();
+            // 分配新的控制台窗口
+            bool consoleAllocated = AllocConsole();
 
-            ConsoleColor oriColor = Console.ForegroundColor;
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("* Don't close this console window or the application will also close.");
-            Console.WriteLine();
-            Console.ForegroundColor = oriColor;
+            if (consoleAllocated)
+            {
+                Console.OutputEncoding = Encoding.GetEncoding("Big5");
+
+                // 重新定向标准输出流
+                var standardOutput = new StreamWriter(Console.OpenStandardOutput(), Encoding.GetEncoding("Big5"));
+                standardOutput.AutoFlush = true;
+                Console.SetOut(standardOutput);
+                ConsoleColor oriColor = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("* Don't close this console window or the application will also close.");
+                Console.WriteLine();
+            }
+            else
+            {
+                MessageBox.Show("無法顯示控制台窗口");
+            }
+
+          
 
         }
         public static void CloseConsole()

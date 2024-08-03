@@ -1319,8 +1319,6 @@ namespace SQLUI
             this.dataGridView.SelectionChanged += DataGridView_SelectionChanged;
         }
 
- 
-
         private void SQL_DataGridView_Resize(object sender, EventArgs e)
         {
             DataGrid_Init(!this.DesignMode);
@@ -3872,8 +3870,6 @@ namespace SQLUI
                     e.Handled = true;
 
                 }
-
-
             }
         }
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -3959,16 +3955,9 @@ namespace SQLUI
                                     Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
                                     DrawString(e.Graphics, cells[i].Value.ToString(), font, rectangle, selectedRowForeColor, columnElement.Alignment);
                                 }
-
-
                             }
-                        }
-                      
-                    } 
-
-
-            
-                    
+                        }                      
+                    }                    
                 }
             }
         }

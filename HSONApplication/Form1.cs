@@ -33,10 +33,12 @@ namespace HSONApplication
         public Form1()
         {
             InitializeComponent();
+     
         }
       
         private void Form1_Load(object sender, EventArgs e)
         {
+
             this.WindowState = FormWindowState.Maximized;
             plC_UI_Init1.全螢幕顯示 = false;
             plC_UI_Init1.Run(this.FindForm(), lowerMachine_Panel1);
@@ -124,13 +126,18 @@ namespace HSONApplication
 
         private void RJ_Button_DJOG_MouseDownEvent(MouseEventArgs mevent)
         {
-            DeltaMotor485_port[1].JOG(-100);
+   
         }
 
         private void RJ_Button_UJOG_MouseDownEvent(MouseEventArgs mevent)
         {
             LoadingForm.ShowLoadingForm();
-
+            this.Invoke(new Action(delegate 
+            {
+                Basic.Screen.ShowConsole();
+                Console.WriteLine("測試");
+            }));
+      
             LoadingForm.CloseLoadingForm();
         }
         private void RJ_Button_set_path_config_MouseDownEvent(MouseEventArgs mevent)

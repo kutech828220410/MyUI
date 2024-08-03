@@ -16,6 +16,7 @@ namespace MyUI
         Waiting,
         OutTime,
     }
+    [Serializable]
     public class StepEntity
     {
         public string Id { get; set; }
@@ -174,12 +175,14 @@ namespace MyUI
                 Brush brush = new SolidBrush(Color.Gray);
                 Pen p = new Pen(brush, 1f);
                 Brush brushNode = new SolidBrush(Color.DarkGray);
+                Brush brushNode_CurrentStep = new SolidBrush(Color.Black);
                 Pen penNode = new Pen(brushNode, 1f);
                 Brush brushNodeCompleted = new SolidBrush(Color.Blue);
                 Pen penNodeCompleted = new Pen(brushNodeCompleted, 1f);
                 int initX = 6;
                 //string
                 Font nFont = new Font("微软雅黑", 12);
+                Font nFont_CurrentStep = new Font("微软雅黑", 12, FontStyle.Bold);
                 Font stepFont = new Font("微软雅黑", 11, FontStyle.Bold);
                 int NodeNameWidth = 0;
                 foreach (var item in ListDataSource)
@@ -203,9 +206,9 @@ namespace MyUI
                         Point pTitle = new Point(initX + StepNodeWH / 2 - (int)Math.Round(fTitle.Width) / 2, CenterY - (int)Math.Round(fTitle.Height / 2));
                         e.Graphics.DrawString(index.ToString(), stepFont, Brushes.White, pTitle);
                         //nodeName
-                        SizeF sNode = e.Graphics.MeasureString(item.StepName, nFont);
+                        SizeF sNode = e.Graphics.MeasureString(item.StepName, nFont_CurrentStep);
                         Point pNode = new Point(initX + StepNodeWH, CenterY - (int)Math.Round(sNode.Height / 2) + 2);
-                        e.Graphics.DrawString(item.StepName, new Font(nFont, FontStyle.Bold), brushNode, pNode);
+                        e.Graphics.DrawString(item.StepName, new Font(nFont_CurrentStep, FontStyle.Bold), brushNode_CurrentStep, pNode);
                         NodeNameWidth = (int)Math.Round(sNode.Width);
                         if (index < count)
                         {
@@ -252,7 +255,14 @@ namespace MyUI
                     if (item.StepDesc != "")
                     {
                         Point pNode = new Point(initX + StepNodeWH, CenterY + 10);
-                        e.Graphics.DrawString(item.StepDesc, new Font(nFont.FontFamily, 10), brush, pNode);
+                        if (CurrentStep != item.StepOrder)
+                        {
+                            e.Graphics.DrawString(item.StepDesc, new Font(nFont.FontFamily, 10), brush, pNode);
+                        }
+                        else
+                        {
+                            e.Graphics.DrawString(item.StepDesc, new Font(nFont.FontFamily, 10 , FontStyle.Bold), brushNode_CurrentStep, pNode);
+                        }
                     }
                     index++;
                     //8 is space width

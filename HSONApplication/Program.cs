@@ -14,6 +14,7 @@ namespace HSONApplication
         [STAThread]
         static void Main()
         {
+            Basic.Screen.CloseConsole();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

@@ -13,6 +13,8 @@ namespace Basic
 {
     public partial class MyMessageBox : MyDialog
     {
+        public delegate void TimerEventHandler(MyMessageBox myMessageBox);
+        static public event TimerEventHandler TimerEvent;
         public static Form form;
         public static MyMessageBox _myMessageBox = null;
         public static bool IsMessageBoxCreate = false;
@@ -174,7 +176,7 @@ namespace Basic
             }
             return _MyMessageBox.Result;
         }
-
+ 
         private void Get_message(string[] Content, ref string message)
         {
             Graphics g = this.label_Content.CreateGraphics();
@@ -213,8 +215,8 @@ namespace Basic
         private MyMessageBox(string Title, string[] Content, enum_BoxType enum_BoxType, enum_Button enum_Button)
         {
             InitializeComponent();
-            this.TopMost = true;
-            this.TopLevel = true;
+            //this.TopMost = true;
+            //this.TopLevel = true;
             this.Text = Title;
 
             string message = "";
@@ -250,7 +252,22 @@ namespace Basic
             this._enum_Button = enum_Button;
             this.plC_Button_Confirm.音效 = 音效;
             this.plC_Button_Cancel.音效 = 音效;
+            this.FormClosing += MyMessageBox_FormClosing;
+            this.Shown += MyMessageBox_Shown;
         }
+
+        private void MyMessageBox_Shown(object sender, EventArgs e)
+        {
+            label_Content.Visible = true;
+        }
+
+
+        private void MyMessageBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.timer.Enabled = false;
+            this.Dispose();
+        }
+
         private void plC_Button_Confirm_btnClick(object sender, EventArgs e)
         {
             this.Invoke(new Action(delegate
@@ -276,6 +293,7 @@ namespace Basic
             {
                 this.WindowState = FormWindowState.Normal;
             }
+            if (TimerEvent != null) TimerEvent(this);
         }
 
         private void MyMessageBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -289,5 +307,7 @@ namespace Basic
             }
           
         }
+
+ 
     }
 }
