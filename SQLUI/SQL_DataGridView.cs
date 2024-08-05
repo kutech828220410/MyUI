@@ -23,6 +23,7 @@ namespace SQLUI
     [System.Drawing.ToolboxBitmap(typeof(DataSet))]
     public partial class SQL_DataGridView : UserControl
     {
+        public List<DataKeysClass> DataKeysClasses = new List<DataKeysClass>();
         private List<ComboBox> comboBoxes = new List<ComboBox>();
         public bool flag_Init = false;
         private bool flag_Refresh = false;
@@ -68,6 +69,8 @@ namespace SQLUI
         public event CellPaintingImageEventHandler CellPaintingImageEvent;
         public delegate void RowPostPaintingEventHandler(DataGridViewRowPostPaintEventArgs e);
         public event RowPostPaintingEventHandler RowPostPaintingEvent;
+        public delegate void RowPostPaintingFinishedEventHandler(DataGridViewRowPostPaintEventArgs e);
+        public event RowPostPaintingFinishedEventHandler RowPostPaintingFinishedEvent;
         public delegate void RowHeaderPostPaintingEventHandler(object sender , Graphics g, Rectangle rect_hedder, Brush brush_background, Pen pen_border);
         public event RowHeaderPostPaintingEventHandler RowHeaderPostPaintingEvent;
         public delegate void ComboBoxSelectedIndexChangedEventHandler(object sender, string colName, object[] RowValue);
@@ -722,7 +725,7 @@ namespace SQLUI
             }
         }
 
-        bool _顯示CheckBox = false;
+        private bool _顯示CheckBox = false;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public bool 顯示CheckBox
         {
@@ -932,7 +935,21 @@ namespace SQLUI
 
          
         }
-     
+
+        private bool dataKeyEnable = false;
+        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
+        public bool DataKeyEnable
+        {
+            get
+            {
+                return dataKeyEnable;
+            }
+            set
+            {
+                dataKeyEnable = value;
+
+            }
+        }
 
         private List<ColumnElement> _Columns = new List<ColumnElement>();       
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
@@ -1217,6 +1234,20 @@ namespace SQLUI
             }
         }
 
+        private Color _checkedRowBackColor = Color.YellowGreen;
+        [Category("RJ Code - Appearence")]
+        public Color checkedRowBackColor
+        {
+            get
+            {
+                return _checkedRowBackColor;
+            }
+            set
+            {
+                _checkedRowBackColor = value;
+            }
+        }
+
         public class ConnentionClass
         {
             private string dataBaseName = "";
@@ -1367,7 +1398,6 @@ namespace SQLUI
         }
         public void Init(Table table , string TableName)
         {
-            this.flag_Init = false;
             this.Columns.Clear();
             this.TableName = TableName;
             for(int i = 0; i < table.ColumnList.Count; i++)
@@ -1402,6 +1432,7 @@ namespace SQLUI
             {
                 return;
             }
+            this.flag_Init = true;
             if (OnlineState == OnlineEnum.Online)
             {           
      
@@ -1432,7 +1463,7 @@ namespace SQLUI
             {
                 checkBoxHeader.CheckedChanged += CheckBoxHeader_CheckedChanged;
             }
-            this.flag_Init = true;
+  
         }
 
     
@@ -2744,13 +2775,57 @@ namespace SQLUI
             }
             return list_value;
         }
+        public List<object[]> Get_All_Checked_RowsValuesEx(List<object[]> list_rowValue)
+        {
+            List<object[]> list_value = new List<object[]>();
+            if (dataKeyEnable)
+            {
+                System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = DataKeysClasses.CoverToDictionaryByGUID();
+                for (int i = 0; i < list_rowValue.Count; i++)
+                {
+                    string GUID = list_rowValue[i][0].ObjectToString();
+                    DataKeysClass dataKeysClass = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+                    if (dataKeysClass != null)
+                    {
+                        if (dataKeysClass.check) list_value.Add(list_rowValue[i]);
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    if (Checked[i]) list_value.Add(this.GetRowValues(i));
+                }
+            }
+
+            return list_value;
+        }
         public List<object[]> Get_All_Checked_RowsValuesEx()
         {
             List<object[]> list_value = new List<object[]>();
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            if(dataKeyEnable)
             {
-                if (Checked[i]) list_value.Add(this.GetRowValues(i));
+                System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs =  DataKeysClasses.CoverToDictionaryByGUID();
+                List<object[]> list_rowValue = this.GetAllRows();
+                for (int i = 0; i < list_rowValue.Count; i++)
+                {
+                    string GUID = list_rowValue[i][0].ObjectToString();
+                    DataKeysClass dataKeysClass = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+                    if (dataKeysClass != null)
+                    {
+                        if(dataKeysClass.check)list_value.Add(list_rowValue[i]);
+                    }
+                }
             }
+            else
+            {
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    if (Checked[i]) list_value.Add(this.GetRowValues(i));
+                }
+            }
+           
             return list_value;
         }
         public List<object[]> Get_All_Select_RowsValues()
@@ -3425,6 +3500,23 @@ namespace SQLUI
             this.SaveDataVal.OtherSaveList = OtherSaveList.DeepClone();
         }
 
+        public void SetDataKeys(List<object[]> list_value)
+        {
+            this.SetDataKeys(list_value, true);
+        }
+        public void SetDataKeys(List<object[]> list_value , bool flag_clear)
+        {
+            if (flag_clear) ClearDataKeys();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                DataKeysClasses.SetDataKey(list_value[i][0].ObjectToString());
+            }
+        }
+        public void ClearDataKeys()
+        {
+            DataKeysClasses.ClearDataKey();
+
+        }
         public void UploadToSQL()
         {
             this.SQL_CreateTable();
@@ -3573,6 +3665,18 @@ namespace SQLUI
             object[] value = this.GetRowValues();
             if (value != null)
             {
+                if (dataKeyEnable)
+                {
+                    DataKeysClasses.UpdateDataKey(value[0].ObjectToString());
+                    var dataGridView = sender as DataGridView;
+                    if (dataGridView != null)
+                    {
+                        using (Graphics graphics = dataGridView.CreateGraphics())
+                        {
+                            CustomRowPostPaint(graphics, dataGridView, SelectRowindex);
+                        }
+                    }
+                }
                 if (this.RowClickEvent != null) this.RowClickEvent(value);
             }
             if (_顯示CheckBox)
@@ -3620,7 +3724,7 @@ namespace SQLUI
                 }
           
             }
-
+         
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 string columnName = e.ColumnIndex >= 0 ? this.dataGridView.Columns[e.ColumnIndex].Name : string.Empty;
@@ -3680,61 +3784,7 @@ namespace SQLUI
             }
 
 
-        }
-        private void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, DataGridViewContentAlignment dataGridViewContentAlignment)
-        {
-            if (text == null) return;
-            if (text.Check_Date_String())
-            {
-                text = text.StringToDateTime().ToDateTimeString();
-            }
-            Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
-            
-            SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
-            Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
-            Point point = new Point(0, 0);
-            if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopLeft)
-            {
-                point = new Point(0, 0);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopCenter)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width) / 2, 0);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopRight)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width), 0);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleLeft)
-            {
-                point = new Point(0, (rectangle_text.Height - size_Text.Height) / 2);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleCenter)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height) / 2);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleRight)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height) / 2);
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomLeft)
-            {
-                point = new Point(0, (rectangle_text.Height - size_Text.Height));
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomCenter)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height));
-            }
-            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomRight)
-            {
-                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
-            }
-
-            rectangle.X += point.X;
-            rectangle.Y += point.Y;
-
-            e.DrawString($"{text}", font, new SolidBrush(forecolor), rectangle, StringFormat.GenericDefault);
-        }
+        }   
         private void DataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -3807,12 +3857,32 @@ namespace SQLUI
                         return;
                     }
                 }
-
                 using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
                 using (Pen pen_border = new Pen(cellBorderColor))
+                using (Brush brush_check_background = new SolidBrush(checkedRowBackColor))
+                using (Pen pen_check_border = new Pen(cellBorderColor))
                 {
-                    e.Graphics.FillRectangle(brush_background, e.CellBounds);
-                    e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                    if (dataKeyEnable == false)
+                    {
+                        e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                        e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                    }
+                    else
+                    {
+                        object[] value = GetRowValues(e.RowIndex);
+                        if (DataKeysClasses.GetDataKeysCheck(value[0].ObjectToString()))
+                        {
+                            e.Graphics.FillRectangle(brush_check_background, e.CellBounds);
+                            e.Graphics.DrawRectangle(pen_check_border, e.CellBounds);
+                        }
+                        else
+                        {
+                            e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                            e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                        }
+
+
+                    }
                     if (e.Value == null) return;
                     Type type = e.Value.GetType();
                     if (type == typeof(Image) || type == typeof(Bitmap))
@@ -3874,90 +3944,108 @@ namespace SQLUI
         }
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
+            CustomRowPostPaint(e.Graphics, (DataGridView)sender, e.RowIndex);
+        }
+        private void CustomRowPostPaint(Graphics graphics, DataGridView dataGridView, int rowIndex)
+        {
+            var rowBounds = dataGridView.GetRowDisplayRectangle(rowIndex, true);
 
-            e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            e.Graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
-      
-
-            if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
-            if (this.dataGridView.Rows[e.RowIndex].Selected)
+            if (this.dataGridView.Rows[rowIndex].Selected)
             {
+                using (Brush brush_background = new SolidBrush(this.RowsColor))
+                using (Brush brush_check_background = new SolidBrush(checkedRowBackColor))
+                using (Pen pen_check_border = new Pen(cellBorderColor))
                 using (Brush brush_back = new SolidBrush(selectedRowBackColor))
                 using (Pen pen_Border = new Pen(selectedRowBorderColor))
                 {
-                    int penWidth = 3;
-                    pen_Border.Width = selectedBorderSize;
-
+                    int penWidth = (int)pen_Border.Width;
                     int col_width = this.dataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible);
                     int RowHeadersWidth = this.dataGridView.RowHeadersWidth;
-                    if (顯示首列 == false) RowHeadersWidth = 0;
-                    int x = e.RowBounds.Left + (penWidth / 2) + 1 + RowHeadersWidth;
-                    int y = e.RowBounds.Top + (penWidth / 2);
-                    int width = col_width - penWidth - 1;
-                    int height = e.RowBounds.Height - penWidth;
-                 
+                    if (!顯示首列) RowHeadersWidth = 0;
 
-                    if (RowPostPaintingEvent != null)
+                    int x = rowBounds.Left + (penWidth / 2) + 1 + RowHeadersWidth;
+                    int y = rowBounds.Top + (penWidth / 2);
+                    int width = col_width - penWidth - 1;
+                    int height = rowBounds.Height - penWidth;
+
+                    if (selectedRowBackColor != Color.Transparent && dataKeyEnable == false)
                     {
-                        RowPostPaintingEvent(e);
+                        graphics.FillRectangle(brush_back, x, y, width, height);
                     }
-                    if (RowPostPaintingEvent == null)
+                    if(dataKeyEnable)
                     {
-                        if(selectedRowBackColor != Color.Transparent)
+                        object[] value = GetRowValues(rowIndex);
+                        if (value != null)
                         {
-                            e.Graphics.FillRectangle(brush_back, x, y, width, height);
+                            if (DataKeysClasses.GetDataKeysCheck(value[0].ObjectToString()))
+                            {
+                                graphics.FillRectangle(brush_check_background, x, y, width, height);
+                            }
+                            else
+                            {
+                                graphics.FillRectangle(brush_background, x, y, width, height);
+                            }
                         }
-                      
                     }
-                    if (this.selectedBorderSize > 0) e.Graphics.DrawRectangle(pen_Border, x, y, width, height);
-                    if (RowPostPaintingEvent != null) return;
-                    DataGridViewCellCollection cells = this.dataGridView.Rows[e.RowIndex].Cells;
+
+                    if (this.selectedBorderSize > 0)
+                    {
+                        graphics.DrawRectangle(pen_Border, x, y, width, height);
+                    }
+
+                    DataGridViewCellCollection cells = this.dataGridView.Rows[rowIndex].Cells;
                     for (int i = 0; i < cells.Count; i++)
                     {
                         if (_顯示CheckBox)
                         {
-                            if (e.RowIndex >= 0 && i == 0)
+                            if (rowIndex >= 0 && i == 0)
                             {
-                                Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
-
-                                ControlPaint.DrawCheckBox(e.Graphics, rectangle.X + 1, rectangle.Y + 1,
+                                Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, rowIndex, false);
+                                ControlPaint.DrawCheckBox(graphics, rectangle.X + 1, rectangle.Y + 1,
                                     rectangle.Width - 2, rectangle.Height - 2,
                                     (bool)cells[i].FormattedValue ? ButtonState.Checked : ButtonState.Normal);
                                 continue;
                             }
                         }
+
                         if (selectedRowBackColor != Color.Transparent)
                         {
-                            if (cells[i].Value != null && cells[i].Visible == true)
+                            if (cells[i].Value != null && cells[i].Visible)
                             {
                                 string columnName = i >= 0 ? this.dataGridView.Columns[i].Name : string.Empty;
-
-                                Type type = cells[i].Value.GetType();
-
                                 ColumnElement columnElement = Columns.GetColumn(columnName);
-                                Font font = columnElement.TextFont;
-                                if (font == null) font = cellStyleFont;
+                                Font font = columnElement.TextFont ?? cellStyleFont;
+
                                 if (columnElement.OtherType == Table.OtherType.ENUM)
                                 {
+                                    Rectangle displayRect = dataGridView.GetCellDisplayRectangle(i, rowIndex, true);
+                                    graphics.FillRectangle(brush_back, displayRect);
 
-                                    Rectangle display_rect = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, true);
-                                    e.Graphics.FillRectangle(brush_back, display_rect);
-
-                                    Rectangle rect = new Rectangle(display_rect.X + (display_rect.Width - 20), display_rect.Y + 2, 20, display_rect.Height - 4);
-                                    ComboBoxRenderer.DrawDropDownButton(e.Graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
-                                    display_rect.Width = display_rect.Width - 20;
-                                    DrawString(e.Graphics, cells[i].Value.ToString(), font, display_rect, selectedRowForeColor, columnElement.Alignment);
+                                    Rectangle rect = new Rectangle(displayRect.X + (displayRect.Width - 20), displayRect.Y + 2, 20, displayRect.Height - 4);
+                                    ComboBoxRenderer.DrawDropDownButton(graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
+                                    displayRect.Width -= 20;
+                                    DrawString(graphics, cells[i].Value.ToString(), font, displayRect, selectedRowForeColor, columnElement.Alignment);
                                 }
                                 else
                                 {
-                                    Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, e.RowIndex, false);
-                                    DrawString(e.Graphics, cells[i].Value.ToString(), font, rectangle, selectedRowForeColor, columnElement.Alignment);
+                                    Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, rowIndex, false);
+                                    if (dataKeyEnable == false)
+                                    {
+                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, selectedRowForeColor, columnElement.Alignment);
+                                    }
+                                    else
+                                    {
+                                 
+                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, DefaultForeColor, columnElement.Alignment);
+                                    }
                                 }
                             }
-                        }                      
-                    }                    
+                        }
+                    }
                 }
             }
         }
@@ -4122,10 +4210,12 @@ namespace SQLUI
         }
         private void On_RowEnter(int SelectRowindex)
         {
-            if(SelectRowindex_Buf != SelectRowindex)
+         
+            if (SelectRowindex_Buf != SelectRowindex)
             {
                 SelectRowindex_Buf = SelectRowindex;
                 object[] value = this.GetRowValues(SelectRowindex);
+           
                 if (value != null)
                 {
                     if (this.RowEnterEvent != null) this.RowEnterEvent(value);
@@ -4186,7 +4276,60 @@ namespace SQLUI
          
             }
         }
+        private void DrawString(Graphics e, string text, Font font, Rectangle rectangle, Color forecolor, DataGridViewContentAlignment dataGridViewContentAlignment)
+        {
+            if (text == null) return;
+            if (text.Check_Date_String())
+            {
+                text = text.StringToDateTime().ToDateTimeString();
+            }
+            Rectangle rectangle_text = new Rectangle((int)rectangle.X, (int)rectangle.Y, (int)rectangle.Width, (int)rectangle.Height);
 
+            SizeF size_Text_temp = e.MeasureString(text, font, new SizeF(rectangle_text.Width, rectangle_text.Height), StringFormat.GenericDefault);
+            Size size_Text = new Size((int)size_Text_temp.Width, (int)size_Text_temp.Height);
+            Point point = new Point(0, 0);
+            if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopLeft)
+            {
+                point = new Point(0, 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.TopRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), 0);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.MiddleRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height) / 2);
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomLeft)
+            {
+                point = new Point(0, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomCenter)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width) / 2, (rectangle_text.Height - size_Text.Height));
+            }
+            else if (dataGridViewContentAlignment == DataGridViewContentAlignment.BottomRight)
+            {
+                point = new Point((rectangle_text.Width - size_Text.Width), (rectangle_text.Height - size_Text.Height));
+            }
+
+            rectangle.X += point.X;
+            rectangle.Y += point.Y;
+
+            e.DrawString($"{text}", font, new SolidBrush(forecolor), rectangle, StringFormat.GenericDefault);
+        }
         private Rectangle GetFirstColumnDimensions(DataGridView dataGridView)
         {
             if (dataGridView.Columns.Count == 0 )
@@ -4229,5 +4372,114 @@ namespace SQLUI
             }
             return -1;
         }
+    }
+
+    static public class DataKeysClassMethod
+    {
+        static public DataKeysClass SortDictionaryByDataKeysClass(this System.Collections.Generic.Dictionary<string, DataKeysClass> dictionary, string guid)
+        {
+            if (dictionary.ContainsKey(guid))
+            {
+                return dictionary[guid];
+            }
+            return null;
+        }
+        static public System.Collections.Generic.Dictionary<string, DataKeysClass> CoverToDictionaryByGUID(this List<DataKeysClass> dataKeysClasses)
+        {
+            Dictionary<string, DataKeysClass> dictionary = new Dictionary<string, DataKeysClass>();
+
+            foreach (var item in dataKeysClasses)
+            {
+                string key = item.GUID;
+                dictionary[key] = item;
+            }
+
+            return dictionary;
+        }
+
+        static public void SetDataKey(this List<DataKeysClass> dataKeysClasses, string GUID)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+            if (dataKeysClass_temp == null)
+            {
+                DataKeysClass dataKeysClass = new DataKeysClass();
+                dataKeysClass.GUID = GUID;
+                dataKeysClass.check = true;
+                dataKeysClasses.Add(dataKeysClass);
+            }
+
+        }
+        static public void UpdateDataKey(this List<DataKeysClass> dataKeysClasses, string GUID)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+            if (dataKeysClass_temp == null)
+            {
+                DataKeysClass dataKeysClass = new DataKeysClass();
+                dataKeysClass.GUID = GUID;
+                dataKeysClass.check = true;
+                dataKeysClasses.Add(dataKeysClass);
+            }
+            else
+            {
+                dataKeysClass_temp.check = !dataKeysClass_temp.check;
+            }
+        }
+        static public void AddDataKey(this List<DataKeysClass> dataKeysClasses, DataKeysClass dataKeysClass)
+        {
+            AddDataKey(dataKeysClasses, dataKeysClass.GUID, dataKeysClass.check);
+        }
+        static public void AddDataKey(this List<DataKeysClass> dataKeysClasses, string GUID, bool flag_checked)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+            if (dataKeysClass_temp == null)
+            {
+                DataKeysClass dataKeysClass = new DataKeysClass();
+                dataKeysClass.GUID = GUID;
+                dataKeysClass.check = flag_checked;
+                dataKeysClasses.Add(dataKeysClass);
+            }
+            else
+            {
+                dataKeysClass_temp.check = flag_checked;
+            }
+        }
+        static public void ClearDataKey(this List<DataKeysClass> dataKeysClasses)
+        {
+            dataKeysClasses.Clear();
+        }
+      
+        static public void DeleteDataKey(this List<DataKeysClass> dataKeysClasses, DataKeysClass dataKeysClass)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(dataKeysClass.GUID);
+            if (dataKeysClass_temp != null)
+            {
+                dataKeysClasses.Remove(dataKeysClass);
+            }
+        }
+        static public DataKeysClass GetDataKeysClass(this List<DataKeysClass> dataKeysClasses, string GUID)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+            return dataKeysClass_temp;
+        }
+        static public bool GetDataKeysCheck(this List<DataKeysClass> dataKeysClasses, string GUID)
+        {
+            System.Collections.Generic.Dictionary<string, DataKeysClass> keyValuePairs = dataKeysClasses.CoverToDictionaryByGUID();
+            DataKeysClass dataKeysClass_temp = keyValuePairs.SortDictionaryByDataKeysClass(GUID);
+            if (dataKeysClass_temp == null) return false;
+            return dataKeysClass_temp.check;
+        }
+
+    }
+    public class DataKeysClass
+    {
+        public string GUID = "";
+        public bool check = false;
+
+      
     }
 }

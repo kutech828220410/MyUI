@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.plC_Button_Cancel = new MyUI.PLC_Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.plC_Button_Confirm = new MyUI.PLC_Button();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel_TopBox = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -55,9 +53,9 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 205);
+            this.panel1.Location = new System.Drawing.Point(4, 201);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(724, 85);
+            this.panel1.Size = new System.Drawing.Size(716, 85);
             this.panel1.TabIndex = 37;
             // 
             // panel5
@@ -66,7 +64,7 @@
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.plC_Button_Confirm);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(533, 0);
+            this.panel5.Location = new System.Drawing.Point(525, 0);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(3);
             this.panel5.Size = new System.Drawing.Size(191, 85);
@@ -150,17 +148,12 @@
             this.plC_Button_Confirm.顯示狀態 = false;
             this.plC_Button_Confirm.btnClick += new System.EventHandler(this.plC_Button_Confirm_btnClick);
             // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Location = new System.Drawing.Point(4, 28);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(724, 11);
+            this.panel2.Size = new System.Drawing.Size(716, 11);
             this.panel2.TabIndex = 38;
             // 
             // panel_TopBox
@@ -169,9 +162,9 @@
             this.panel_TopBox.Controls.Add(this.panel_ImageBox);
             this.panel_TopBox.Controls.Add(this.panel7);
             this.panel_TopBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_TopBox.Location = new System.Drawing.Point(0, 11);
+            this.panel_TopBox.Location = new System.Drawing.Point(4, 39);
             this.panel_TopBox.Name = "panel_TopBox";
-            this.panel_TopBox.Size = new System.Drawing.Size(724, 194);
+            this.panel_TopBox.Size = new System.Drawing.Size(716, 162);
             this.panel_TopBox.TabIndex = 40;
             // 
             // panel4
@@ -181,7 +174,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(115, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(609, 194);
+            this.panel4.Size = new System.Drawing.Size(601, 162);
             this.panel4.TabIndex = 46;
             // 
             // label_Content
@@ -200,7 +193,7 @@
             this.label_Content.Name = "label_Content";
             this.label_Content.ShadowColor = System.Drawing.Color.DimGray;
             this.label_Content.ShadowSize = 0;
-            this.label_Content.Size = new System.Drawing.Size(586, 194);
+            this.label_Content.Size = new System.Drawing.Size(578, 162);
             this.label_Content.TabIndex = 1;
             this.label_Content.Text = "rJ_Lable1";
             this.label_Content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -212,7 +205,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(23, 194);
+            this.panel3.Size = new System.Drawing.Size(23, 162);
             this.panel3.TabIndex = 0;
             // 
             // panel_ImageBox
@@ -221,7 +214,7 @@
             this.panel_ImageBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_ImageBox.Location = new System.Drawing.Point(17, 0);
             this.panel_ImageBox.Name = "panel_ImageBox";
-            this.panel_ImageBox.Size = new System.Drawing.Size(98, 194);
+            this.panel_ImageBox.Size = new System.Drawing.Size(98, 162);
             this.panel_ImageBox.TabIndex = 45;
             // 
             // panel_Image
@@ -231,7 +224,7 @@
             this.panel_Image.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Image.Location = new System.Drawing.Point(0, 0);
             this.panel_Image.Name = "panel_Image";
-            this.panel_Image.Size = new System.Drawing.Size(98, 194);
+            this.panel_Image.Size = new System.Drawing.Size(98, 162);
             this.panel_Image.TabIndex = 1;
             // 
             // panel7
@@ -239,7 +232,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(17, 194);
+            this.panel7.Size = new System.Drawing.Size(17, 162);
             this.panel7.TabIndex = 47;
             // 
             // MyMessageBox
@@ -248,11 +241,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(724, 290);
-            this.ControlBox = false;
             this.Controls.Add(this.panel_TopBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MyMessageBox";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Title";
@@ -271,7 +262,6 @@
         private System.Windows.Forms.Panel panel1;
         private MyUI.PLC_Button plC_Button_Confirm;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Timer timer;
         private MyUI.PLC_Button plC_Button_Cancel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;

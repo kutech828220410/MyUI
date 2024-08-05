@@ -15,8 +15,6 @@ namespace Basic
     {
         public delegate void TimerEventHandler(MyMessageBox myMessageBox);
         static public event TimerEventHandler TimerEvent;
-        public static Form form;
-        public static MyMessageBox _myMessageBox = null;
         public static bool IsMessageBoxCreate = false;
         public static bool 音效 = true;
         public static DialogResult ShowDialog(string Content)
@@ -47,134 +45,67 @@ namespace Basic
         public static DialogResult ShowDialog(string[] Content)
         {
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
                 _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType.None, enum_Button.Confirm);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-           
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType.None, enum_Button.Confirm);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
-
+            }));
+         
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
         }
         public static DialogResult ShowDialog(string[] Content, enum_BoxType enum_BoxType, enum_Button enum_Button)
         {
-
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
                 _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
+            }));
+        
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
+
         }
         public static DialogResult ShowDialog(string[] Content, enum_BoxType enum_BoxType)
         {
-
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
                 _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button.Confirm);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button.Confirm);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
+            }));
+           
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
         }
         public static DialogResult ShowDialog(string[] Content, string Title)
         {
-
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
                 _MyMessageBox = new MyMessageBox(Title, Content, enum_BoxType.None, enum_Button.Confirm);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(Title, Content, enum_BoxType.None, enum_Button.Confirm);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
+            }));       
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
         }
         public static DialogResult ShowDialog(string[] Content, string Title, enum_BoxType enum_BoxType, enum_Button enum_Button)
         {
-
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
-                _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
+                _MyMessageBox = new MyMessageBox(Title, Content, enum_BoxType, enum_Button);
+            }));     
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
         }
         public static DialogResult ShowDialog(string[] Content, string Title, enum_BoxType enum_BoxType)
         {
             MyMessageBox _MyMessageBox = null;
-            if (form == null)
+            form.Invoke(new Action(delegate
             {
-                _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button.Confirm);
-                _MyMessageBox.Invoke(new Action(delegate
-                {
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            else
-            {
-                form.Invoke(new Action(delegate
-                {
-                    _MyMessageBox = new MyMessageBox(" ", Content, enum_BoxType, enum_Button.Confirm);
-                    _MyMessageBox.ShowDialog();
-                }));
-            }
-            return _MyMessageBox.Result;
+                _MyMessageBox = new MyMessageBox(Title, Content, enum_BoxType, enum_Button.Confirm);
+            }));
+ 
+            DialogResult dialogResult = _MyMessageBox.ShowDialog();
+            return dialogResult;
         }
  
         private void Get_message(string[] Content, ref string message)
@@ -201,7 +132,6 @@ namespace Basic
             
         }
 
-        public DialogResult Result = DialogResult.None;
         private enum_Button _enum_Button;
         public enum enum_Button
         {
@@ -252,27 +182,32 @@ namespace Basic
             this._enum_Button = enum_Button;
             this.plC_Button_Confirm.音效 = 音效;
             this.plC_Button_Cancel.音效 = 音效;
+            this.LoadFinishedEvent += MyMessageBox_LoadFinishedEvent;
             this.FormClosing += MyMessageBox_FormClosing;
             this.Shown += MyMessageBox_Shown;
         }
 
-        private void MyMessageBox_Shown(object sender, EventArgs e)
+        private void MyMessageBox_LoadFinishedEvent(EventArgs e)
         {
             label_Content.Visible = true;
+        }
+
+        private void MyMessageBox_Shown(object sender, EventArgs e)
+        {
+           
         }
 
 
         private void MyMessageBox_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.timer.Enabled = false;
-            this.Dispose();
+            
         }
 
         private void plC_Button_Confirm_btnClick(object sender, EventArgs e)
         {
             this.Invoke(new Action(delegate
             {
-                Result = DialogResult.Yes;
+                DialogResult = DialogResult.Yes;
                 this.Close();
             }));
       
@@ -281,7 +216,7 @@ namespace Basic
         {
             this.Invoke(new Action(delegate
             {
-                Result = DialogResult.No;
+                DialogResult = DialogResult.No;
                 this.Close();
             }));
             
