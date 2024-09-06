@@ -17,6 +17,8 @@ using MySql.Data.MySqlClient;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
+using System.Text.Json.Serialization;
+
 namespace SQLUI
 {
     [DefaultEvent("MouseDown")]
@@ -254,6 +256,13 @@ namespace SQLUI
                 }));
                 this.flag_Refresh = false;
                 dataGridView.CellValueChanged += DataGridView_CellValueChanged;
+                if (_顯示CheckBox)
+                {
+                    if (dataGridView.Rows.Count == 0) return;
+                    //dataGridView.ClearSelection();
+                    //this.SetSelectRow(0);
+           
+                }
             }
             catch(Exception ex)
             {
@@ -828,25 +837,37 @@ namespace SQLUI
                 get { return canEdit; }
                 set { canEdit = value; }
             }
-            private Font textFont = null;
-            public Font TextFont { get => textFont; set => textFont = value; }
-
+  
 
             public Type type = typeof(string);
             public string[] EnumAry = new string[] { };
 
-            private Color _BackgroundColor = Color.White;
-            public Color BackgroundColor
+            [JsonIgnore]
+            public Font TextFont = null;
+            [Browsable(false)]
+            public string TextFont_Serialize
             {
-                get { return _BackgroundColor; }
-                set { _BackgroundColor = value; }
+                get { return FontSerializationHelper.ToString(TextFont); }
+                set { TextFont = FontSerializationHelper.FromString(value); }
             }
-            private Color _ForeColor = Color.White;
-            public Color ForeColor
+            [JsonIgnore]
+            public Color BackgroundColor = Color.White;
+            [Browsable(false)]
+            public string BackgroundColor_Serialize
             {
-                get { return _ForeColor; }
-                set { _ForeColor = value; }
+                get { return ColorSerializationHelper.ToString(BackgroundColor); }
+                set { BackgroundColor = ColorSerializationHelper.FromString(value); }
             }
+            [JsonIgnore]
+            public Color ForeColor = Color.White;
+            [Browsable(false)]
+            public string ForeColor_Serialize
+            {
+                get { return ColorSerializationHelper.ToString(ForeColor); }
+                set { ForeColor = ColorSerializationHelper.FromString(value); }
+            }
+
+
             private DataGridViewColumnSortMode _SortMode = DataGridViewColumnSortMode.NotSortable;
             public DataGridViewColumnSortMode SortMode
             {
@@ -2462,13 +2483,31 @@ namespace SQLUI
             }
             return true;
         }
-
+        bool flag_init = false;
        
 
         private void DataGrid_Init()
         {
+
             comboBoxes.Clear();
-            dataGridView.Columns.Clear();
+            if(DesignMode == true)
+            {
+                dataGridView.Columns.Clear();
+            }
+            else
+            {
+                if (dataGridView.Columns.Count > 0)
+                {
+                    dataGridView.Invoke(new Action(delegate
+                    {
+                        dataGridView.SuspendLayout();
+                        dataGridView.DataSource = null;  // 解除绑定
+                        dataGridView.Columns.Clear();
+                        dataGridView.ResumeLayout();
+                    }));
+                }
+            }
+           
             dataTable = new DataTable();
             foreach (ColumnElement columns in Columns)
             {
@@ -3394,11 +3433,47 @@ namespace SQLUI
             int width = -1;
             foreach (ColumnElement columns in Columns)
             {
-                if (columns.Name == name) return columns.Width;
+                if (columns.Name == name || columns.Text == name) return columns.Width;
             }
             return width;
         }
-
+        public bool Get_ColumnVisible(string name)
+        {
+            int width = -1;
+            foreach (ColumnElement columns in Columns)
+            {
+                if (columns.Name == name || columns.Text == name) return columns.Visable;
+            }
+            return false;
+        }
+        public Font Get_ColumnFont(string name)
+        {
+            Font font = null;
+            try
+            {
+                int width = -1;
+                foreach (ColumnElement columns in Columns)
+                {
+                    if (columns.Name == name || columns.Text == name)
+                    {
+                        font =  columns.TextFont;
+                        break;
+                    }
+                }
+                if (font == null) font = this.cellStyleFont;
+                return font;
+            }
+            catch
+            {
+                return font;
+            }
+            finally
+            {
+           
+         
+            }
+            
+        }
         public void ScrollToIndex(int index)
         {
             this.Invoke(new Action(delegate
@@ -3554,6 +3629,35 @@ namespace SQLUI
             }
             if (ModuleChangeEvent != null) ModuleChangeEvent(SaveDataVal.RowsList, true);
         }
+
+        public string GetColumnsJsonStr()
+        {
+            return this.Columns.JsonSerializationt();
+        }
+        public void SetColumnsJsonStr(string json)
+        {
+            List<ColumnElement> columnElements = json.JsonDeserializet<List<ColumnElement>>();
+            if (columnElements != null)
+            {
+                for (int i = 0; i < columnElements.Count; i++)
+                {
+                    foreach(ColumnElement columnElement in Columns)
+                    {
+                        if (columnElement.Name == columnElements[i].Name)
+                        {
+                            //columnElement.Text = columnElements[i].Text;
+                            columnElement.TextFont = columnElements[i].TextFont;
+                            columnElement.ForeColor = columnElements[i].ForeColor;
+                            columnElement.Width = columnElements[i].Width;
+                            columnElement.Alignment = columnElements[i].Alignment;
+                            columnElement.SortMode = columnElements[i].SortMode;
+                            columnElement.Visable = columnElements[i].Visable;
+                        }
+                    }
+                }
+            }
+        }
+
 
         public string ToDATE_String(string Year, string Month, string Day)
         {
@@ -3945,6 +4049,7 @@ namespace SQLUI
         private void DataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             CustomRowPostPaint(e.Graphics, (DataGridView)sender, e.RowIndex);
+            if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
         }
         private void CustomRowPostPaint(Graphics graphics, DataGridView dataGridView, int rowIndex)
         {
@@ -4157,6 +4262,9 @@ namespace SQLUI
         private void CheckBoxHeader_CheckedChanged(object sender, EventArgs e)
         {
             if (!_顯示CheckBox) return;
+            if (dataGridView.Rows.Count == 0) return;
+            dataGridView.ClearSelection();
+            this.SetSelectRow(0);
             this.SuspendDrawing();
             dataGridView.SuspendDrawing();
             if (checkBoxHeader.Checked)
@@ -4352,6 +4460,66 @@ namespace SQLUI
 
             Rectangle rectangle = new Rectangle(x, y, width, height);
             return rectangle;
+        }
+
+
+        static public class ColorSerializationHelper
+        {
+            static public Color FromString(string value)
+            {
+                var parts = value.Split(':');
+
+                int A = 0;
+                int R = 0;
+                int G = 0;
+                int B = 0;
+                int.TryParse(parts[0], out A);
+                int.TryParse(parts[1], out R);
+                int.TryParse(parts[2], out G);
+                int.TryParse(parts[3], out B);
+                return Color.FromArgb(A, R, G, B);
+            }
+            static public string ToString(Color color)
+            {
+                return color.A + ":" + color.R + ":" + color.G + ":" + color.B;
+
+            }
+        }
+        [TypeConverter(typeof(FontConverter))]
+        static public class FontSerializationHelper
+        {
+            static public Font FromString(string value)
+            {
+                if (value.StringIsEmpty()) return null;
+                var parts = value.Split(':');
+                return new Font(
+                    parts[0],                                                   // FontFamily.Name
+                    float.Parse(parts[1]),                                      // Size
+                    EnumSerializationHelper.FromString<FontStyle>(parts[2]),    // Style
+                    EnumSerializationHelper.FromString<GraphicsUnit>(parts[3]), // Unit
+                    byte.Parse(parts[4]),                                       // GdiCharSet
+                    bool.Parse(parts[5])                                        // GdiVerticalFont
+                );
+            }
+            static public string ToString(Font font)
+            {
+                if (font == null) return "";
+                return font.FontFamily.Name
+                        + ":" + font.Size
+                        + ":" + font.Style
+                        + ":" + font.Unit
+                        + ":" + font.GdiCharSet
+                        + ":" + font.GdiVerticalFont
+                        ;
+            }
+        }
+        [TypeConverter(typeof(EnumConverter))]
+        static public class EnumSerializationHelper
+        {
+            static public T FromString<T>(string value)
+            {
+                return (T)Enum.Parse(typeof(T), value, true);
+            }
         }
     }
     static public class ColumnElementMethod

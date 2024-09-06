@@ -185,6 +185,8 @@ namespace Basic
             this.LoadFinishedEvent += MyMessageBox_LoadFinishedEvent;
             this.FormClosing += MyMessageBox_FormClosing;
             this.Shown += MyMessageBox_Shown;
+            this.timer.Enabled = true;
+            this.timer.Tick += timer_Tick;
         }
 
         private void MyMessageBox_LoadFinishedEvent(EventArgs e)
@@ -200,7 +202,8 @@ namespace Basic
 
         private void MyMessageBox_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            timer.Enabled = false;
+            timer.Dispose();
         }
 
         private void plC_Button_Confirm_btnClick(object sender, EventArgs e)

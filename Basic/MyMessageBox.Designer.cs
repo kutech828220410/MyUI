@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.plC_Button_Cancel = new MyUI.PLC_Button();
@@ -41,6 +42,7 @@
             this.panel_ImageBox = new System.Windows.Forms.Panel();
             this.panel_Image = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel_TopBox.SuspendLayout();
@@ -272,5 +274,6 @@
         private System.Windows.Forms.Panel panel7;
         private MyUI.RJ_Lable label_Content;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Timer timer;
     }
 }

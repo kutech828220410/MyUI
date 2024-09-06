@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Media;
 namespace MyUI
 {
-    public partial class 數字鍵盤 : Form
+    public partial class 數字鍵盤 : MyDialog
     {
         private bool Beep_Voice = false;
         private int cnt_Beep_Voice = 0;

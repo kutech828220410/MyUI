@@ -1264,18 +1264,63 @@ namespace Basic
 
         static public DateTime StringToDateTime(this object item)
         {
-            if (item is DateTime) return (DateTime)item;
-            DateTime dateTime = new DateTime();
-            if (item is string)
-            {
+            if (item is DateTime)
+                return (DateTime)item;
 
-                if (DateTime.TryParse((string)item, out dateTime))
+            DateTime dateTime = new DateTime();
+
+            if (item is string str)
+            {
+                // 尝试使用默认的 TryParse 方法
+                if (DateTime.TryParse(str, out dateTime))
                 {
                     return dateTime;
                 }
-                else { return dateTime; }
+
+                // 如果默认的解析失败，尝试使用自定义格式和文化信息
+                string[] formats =
+            {
+                "yyyy-MM-dd",
+                "dd/MM/yyyy",
+                "MM/dd/yyyy",
+                "yyyy-MM-dd HH:mm:ss",
+                "dd/MM/yyyy HH:mm:ss",
+                "MM/dd/yyyy HH:mm:ss",
+                "yyyy-MM-ddTHH:mm:ss",
+                "dd/MM/yyyyTHH:mm:ss",
+                "MM/dd/yyyyTHH:mm:ss",
+                "yyyy/MM/dd",
+                "dd-MM-yyyy",
+                "MM-dd-yyyy",
+                "yyyy/MM/dd HH:mm:ss",
+                "dd-MM-yyyy HH:mm:ss",
+                "MM-dd-yyyy HH:mm:ss",
+                "yyyy/MM/ddTHH:mm:ss",
+                "dd-MM-yyyyTHH:mm:ss",
+                "MM-dd-yyyyTHH:mm:ss",
+                "yyyy/MM/dd HH:mm:ss.fffffff",    // 新增格式
+                "dd-MM-yyyy HH:mm:ss.fffffff",    // 新增格式
+                "MM-dd-yyyy HH:mm:ss.fffffff",    // 新增格式
+                "yyyy-MM-ddTHH:mm:ss.fffffff",    // 新增格式
+                "dd/MM/yyyyTHH:mm:ss.fffffff",    // 新增格式
+                "MM/dd/yyyyTHH:mm:ss.fffffff",    // 新增格式
+                "dd-MMMM-yyyy",                    // 支持中文月份，如"20-10月-2026"
+            
+                // 新增支持两位数年份的格式
+                "M/d/yy",
+                "MM/dd/yy",
+                "M/d/yyyy", // 可选：如果需要同时支持单/双位数年份
+                "MM/dd/yyyy" // 已存在，但保留以确保兼容性
+            };
+                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-TW"); // 使用 "zh-TW" (繁体中文) 或 "zh-CN" (简体中文)
+
+                if (DateTime.TryParseExact(str, formats, culture, System.Globalization.DateTimeStyles.None, out dateTime))
+                {
+                    return dateTime;
+                }
             }
-            return dateTime;
+
+            return dateTime; // 如果转换失败，返回默认的 DateTime 值
         }
 
         public static bool Check_Date_String(this string source)
@@ -1284,37 +1329,46 @@ namespace Basic
         }
         public static bool Check_Date_String(this string source, Enum_Year_Type Enum_Year_Type)
         {
-
             DateTime dateTime;
+            string[] formats =
+             {
+                "yyyy-MM-dd",
+                "dd/MM/yyyy",
+                "MM/dd/yyyy",
+                "yyyy-MM-dd HH:mm:ss",
+                "dd/MM/yyyy HH:mm:ss",
+                "MM/dd/yyyy HH:mm:ss",
+                "yyyy-MM-ddTHH:mm:ss",
+                "dd/MM/yyyyTHH:mm:ss",
+                "MM/dd/yyyyTHH:mm:ss",
+                "yyyy/MM/dd",
+                "dd-MM-yyyy",
+                "MM-dd-yyyy",
+                "yyyy/MM/dd HH:mm:ss",
+                "dd-MM-yyyy HH:mm:ss",
+                "MM-dd-yyyy HH:mm:ss",
+                "yyyy/MM/ddTHH:mm:ss",
+                "dd-MM-yyyyTHH:mm:ss",
+                "MM-dd-yyyyTHH:mm:ss",
+                "yyyy/MM/dd HH:mm:ss.fffffff",    // 新增格式
+                "dd-MM-yyyy HH:mm:ss.fffffff",    // 新增格式
+                "MM-dd-yyyy HH:mm:ss.fffffff",    // 新增格式
+                "yyyy-MM-ddTHH:mm:ss.fffffff",    // 新增格式
+                "dd/MM/yyyyTHH:mm:ss.fffffff",    // 新增格式
+                "MM/dd/yyyyTHH:mm:ss.fffffff",    // 新增格式
+                "dd-MMMM-yyyy",                    // 支持中文月份，如"20-10月-2026"
+            
+                // 新增支持两位数年份的格式
+                "M/d/yy",
+                "MM/dd/yy",
+                "M/d/yyyy", // 可选：如果需要同时支持单/双位数年份
+                "MM/dd/yyyy" // 已存在，但保留以确保兼容性
+            };
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-TW"); // 或者使用 "zh-TW"
 
-            string[] formats = {
-            "yyyy-MM-dd",
-            "dd/MM/yyyy",
-            "MM/dd/yyyy",
-            "yyyy-MM-dd HH:mm:ss",
-            "dd/MM/yyyy HH:mm:ss",
-            "MM/dd/yyyy HH:mm:ss",
-            "yyyy-MM-ddTHH:mm:ss",
-            "dd/MM/yyyyTHH:mm:ss",
-            "MM/dd/yyyyTHH:mm:ss",
-            "yyyy/MM/dd",
-            "dd-MM-yyyy",
-            "MM-dd-yyyy",
-            "yyyy/MM/dd HH:mm:ss",
-            "dd-MM-yyyy HH:mm:ss",
-            "MM-dd-yyyy HH:mm:ss",
-            "yyyy/MM/ddTHH:mm:ss",
-            "dd-MM-yyyyTHH:mm:ss",
-            "MM-dd-yyyyTHH:mm:ss",
-            "yyyy/MM/dd HH:mm:ss.fffffff",    // 新增格式
-            "dd-MM-yyyy HH:mm:ss.fffffff",    // 新增格式
-            "MM-dd-yyyy HH:mm:ss.fffffff",    // 新增格式
-            "yyyy-MM-ddTHH:mm:ss.fffffff",    // 新增格式
-            "dd/MM/yyyyTHH:mm:ss.fffffff",    // 新增格式
-            "MM/dd/yyyyTHH:mm:ss.fffffff"     // 新增格式
-        };
+            // 尝试解析日期
+            bool result = DateTime.TryParseExact(source, formats, culture, System.Globalization.DateTimeStyles.None, out dateTime);
 
-            bool result = DateTime.TryParseExact(source, formats, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out dateTime);
             return result;
         }
         public static int Get_DateTINY(this string source)

@@ -55,7 +55,7 @@
             this.textBox_Value.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textBox_Value.Font = new System.Drawing.Font("新細明體", 20F);
             this.textBox_Value.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox_Value.Location = new System.Drawing.Point(99, 12);
+            this.textBox_Value.Location = new System.Drawing.Point(107, 61);
             this.textBox_Value.Name = "textBox_Value";
             this.textBox_Value.ReadOnly = true;
             this.textBox_Value.Size = new System.Drawing.Size(234, 39);
@@ -69,7 +69,7 @@
             this.label1.AutoSize = true;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("新細明體", 20F);
-            this.label1.Location = new System.Drawing.Point(17, 18);
+            this.label1.Location = new System.Drawing.Point(25, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 29);
             this.label1.TabIndex = 17;
@@ -83,7 +83,7 @@
             // 
             // exButton_Enter
             // 
-            this.exButton_Enter.Location = new System.Drawing.Point(253, 294);
+            this.exButton_Enter.Location = new System.Drawing.Point(261, 343);
             this.exButton_Enter.Name = "exButton_Enter";
             this.exButton_Enter.OFF_文字內容 = "↵ ";
             this.exButton_Enter.OFF_文字字體 = new System.Drawing.Font("新細明體", 60F);
@@ -107,7 +107,7 @@
             // 
             // exButton_Dot
             // 
-            this.exButton_Dot.Location = new System.Drawing.Point(173, 294);
+            this.exButton_Dot.Location = new System.Drawing.Point(181, 343);
             this.exButton_Dot.Name = "exButton_Dot";
             this.exButton_Dot.OFF_文字內容 = ".";
             this.exButton_Dot.OFF_文字字體 = new System.Drawing.Font("新細明體", 60F);
@@ -131,7 +131,7 @@
             // 
             // exButton_0
             // 
-            this.exButton_0.Location = new System.Drawing.Point(93, 294);
+            this.exButton_0.Location = new System.Drawing.Point(101, 343);
             this.exButton_0.Name = "exButton_0";
             this.exButton_0.OFF_文字內容 = "0";
             this.exButton_0.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -155,7 +155,7 @@
             // 
             // exButton_正負
             // 
-            this.exButton_正負.Location = new System.Drawing.Point(13, 294);
+            this.exButton_正負.Location = new System.Drawing.Point(21, 343);
             this.exButton_正負.Name = "exButton_正負";
             this.exButton_正負.OFF_文字內容 = "±";
             this.exButton_正負.OFF_文字字體 = new System.Drawing.Font("新細明體", 30F);
@@ -179,7 +179,7 @@
             // 
             // exButton_3
             // 
-            this.exButton_3.Location = new System.Drawing.Point(173, 215);
+            this.exButton_3.Location = new System.Drawing.Point(181, 264);
             this.exButton_3.Name = "exButton_3";
             this.exButton_3.OFF_文字內容 = "3";
             this.exButton_3.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -203,7 +203,7 @@
             // 
             // exButton_2
             // 
-            this.exButton_2.Location = new System.Drawing.Point(93, 215);
+            this.exButton_2.Location = new System.Drawing.Point(101, 264);
             this.exButton_2.Name = "exButton_2";
             this.exButton_2.OFF_文字內容 = "2";
             this.exButton_2.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -227,7 +227,7 @@
             // 
             // exButton_1
             // 
-            this.exButton_1.Location = new System.Drawing.Point(13, 215);
+            this.exButton_1.Location = new System.Drawing.Point(21, 264);
             this.exButton_1.Name = "exButton_1";
             this.exButton_1.OFF_文字內容 = "1";
             this.exButton_1.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -251,7 +251,7 @@
             // 
             // exButton_CE
             // 
-            this.exButton_CE.Location = new System.Drawing.Point(253, 136);
+            this.exButton_CE.Location = new System.Drawing.Point(261, 185);
             this.exButton_CE.Name = "exButton_CE";
             this.exButton_CE.OFF_文字內容 = "CE";
             this.exButton_CE.OFF_文字字體 = new System.Drawing.Font("新細明體", 30F);
@@ -275,7 +275,7 @@
             // 
             // exButton_6
             // 
-            this.exButton_6.Location = new System.Drawing.Point(173, 136);
+            this.exButton_6.Location = new System.Drawing.Point(181, 185);
             this.exButton_6.Name = "exButton_6";
             this.exButton_6.OFF_文字內容 = "6";
             this.exButton_6.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -299,7 +299,7 @@
             // 
             // exButton_5
             // 
-            this.exButton_5.Location = new System.Drawing.Point(93, 136);
+            this.exButton_5.Location = new System.Drawing.Point(101, 185);
             this.exButton_5.Name = "exButton_5";
             this.exButton_5.OFF_文字內容 = "5";
             this.exButton_5.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -323,7 +323,7 @@
             // 
             // exButton_4
             // 
-            this.exButton_4.Location = new System.Drawing.Point(13, 136);
+            this.exButton_4.Location = new System.Drawing.Point(21, 185);
             this.exButton_4.Name = "exButton_4";
             this.exButton_4.OFF_文字內容 = "4";
             this.exButton_4.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -347,7 +347,7 @@
             // 
             // exButton_Backspace
             // 
-            this.exButton_Backspace.Location = new System.Drawing.Point(253, 57);
+            this.exButton_Backspace.Location = new System.Drawing.Point(261, 106);
             this.exButton_Backspace.Name = "exButton_Backspace";
             this.exButton_Backspace.OFF_文字內容 = "←";
             this.exButton_Backspace.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -371,7 +371,7 @@
             // 
             // exButton_9
             // 
-            this.exButton_9.Location = new System.Drawing.Point(173, 57);
+            this.exButton_9.Location = new System.Drawing.Point(181, 106);
             this.exButton_9.Name = "exButton_9";
             this.exButton_9.OFF_文字內容 = "9";
             this.exButton_9.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -395,7 +395,7 @@
             // 
             // exButton_8
             // 
-            this.exButton_8.Location = new System.Drawing.Point(93, 57);
+            this.exButton_8.Location = new System.Drawing.Point(101, 106);
             this.exButton_8.Name = "exButton_8";
             this.exButton_8.OFF_文字內容 = "8";
             this.exButton_8.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -419,7 +419,7 @@
             // 
             // exButton_7
             // 
-            this.exButton_7.Location = new System.Drawing.Point(13, 57);
+            this.exButton_7.Location = new System.Drawing.Point(21, 106);
             this.exButton_7.Name = "exButton_7";
             this.exButton_7.OFF_文字內容 = "7";
             this.exButton_7.OFF_文字字體 = new System.Drawing.Font("新細明體", 40F);
@@ -445,7 +445,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 384);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(365, 472);
+            this.CloseBoxSize = new System.Drawing.Size(40, 40);
+            this.ControlBox = true;
             this.Controls.Add(this.exButton_Enter);
             this.Controls.Add(this.exButton_Dot);
             this.Controls.Add(this.exButton_0);
@@ -464,9 +467,8 @@
             this.Controls.Add(this.textBox_Value);
             this.Controls.Add(this.exButton_7);
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "數字鍵盤";
-            this.ShowIcon = false;
+            this.ShadowColor = System.Drawing.Color.DodgerBlue;
             this.Text = "數字鍵盤";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.數字鍵盤_FormClosing);
             this.Load += new System.EventHandler(this.數字鍵盤_Load);
