@@ -1827,7 +1827,7 @@ namespace SQLUI
             Command = "SELECT ";
             Command += "*";
             Command += " FROM ";
-            Command += TableName;
+            Command += $"{Database}.{TableName}";
 
             if (_SerchType == SerchType.BETWEEN) Command += this.Get_WHERE_Command(serchColumnName, serchValue, _SerchType, LikeString);  
             else Command += this.Get_WHERE_Command(serchColumnName, _SerchType, LikeString);       

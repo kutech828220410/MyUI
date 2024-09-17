@@ -630,6 +630,26 @@ namespace Basic
             }
             return dataTable;
         }
+        static public DataTable ColumnRename(this DataTable dt, string CurrentColumnName ,string NewColumnName)
+        {
+            DataColumn column = dt.Columns[CurrentColumnName];
+            // 更新欄位名稱
+            if (column != null)
+            {
+                column.ColumnName = NewColumnName;
+            }
+            return dt;
+        }
+        static public DataTable RemoveColumn(this DataTable dt, Enum EnumColumnName)
+        {
+            dt = RemoveColumn(dt, EnumColumnName.GetEnumName());
+            return dt;
+        }
+        static public DataTable RemoveColumn(this DataTable dt, string ColumnName)
+        {
+            dt.Columns.Remove(ColumnName);
+            return dt;
+        }
         static public int GetColumnIndex(this DataTable dt, string col_Name)
         {
             for (int i = 0; i < dt.Columns.Count; i++)

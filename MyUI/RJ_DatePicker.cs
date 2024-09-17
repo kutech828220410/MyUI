@@ -188,14 +188,19 @@ namespace MyUI
         }
         protected override void OnPaint(PaintEventArgs e)
         {
+
+
+
             using (Graphics graphics = this.CreateGraphics())
             using (Pen penBorder = new Pen(borderColor, borderSize))
             using (SolidBrush skinBrush = new SolidBrush(skinColor))
             using (SolidBrush openIconBrush = new SolidBrush(Color.FromArgb(50, 64, 64, 64)))
             using (SolidBrush textBrush = new SolidBrush(textColor))
             using (StringFormat textFormat = new StringFormat())
-            {     
-             
+            {
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                 RectangleF clientArea = new RectangleF(0, 0, this.Width - 0.5F, this.Height - 0.5F);
                 RectangleF IconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
                 penBorder.Alignment = PenAlignment.Inset;

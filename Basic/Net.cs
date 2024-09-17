@@ -241,7 +241,63 @@ namespace Basic
             }
         }
 
+        public static string JsonSerializeDataTable(this List<System.Data.DataTable> tableList)
+        {
+            List<string> xmlList = new List<string>();
 
+            foreach (var table in tableList)
+            {
+                using (StringWriter sw = new StringWriter())
+                {
+                    table.WriteXml(sw, System.Data.XmlWriteMode.WriteSchema);
+                    xmlList.Add(sw.ToString());
+                }
+            }
+
+            return xmlList.JsonSerializationt();
+        }
+
+        // 反序列化 JSON 回到 List<DataTable>
+        public static List<System.Data.DataTable> JsonDeserializeToDataTables(this string json)
+        {
+            List<string> xmlList = json.JsonDeserializet<List<string>>();
+            List<System.Data.DataTable> tableList = new List<System.Data.DataTable>();
+
+            foreach (var xmlString in xmlList)
+            {
+                System.Data.DataTable table = new System.Data.DataTable();
+                using (StringReader sr = new StringReader(xmlString))
+                {
+                    table.ReadXml(sr);
+                }
+                tableList.Add(table);
+            }
+
+            return tableList;
+        }
+        public static string JsonSerializeDataTable(this System.Data.DataTable table)
+        {
+            // 使用 WriteXml 將 DataTable 轉換成 XML 字串
+            using (StringWriter sw = new StringWriter())
+            {
+                table.WriteXml(sw, System.Data.XmlWriteMode.WriteSchema);
+                return sw.JsonSerializationt();
+            }
+        }
+
+        // 反序列化 JSON 回到 DataTable
+        public static System.Data.DataTable JsonDeserializeToDataTable(this string json)
+        {
+            string xmlString = json.JsonDeserializet<string>();
+            System.Data.DataTable table = new System.Data.DataTable();
+
+            using (StringReader sr = new StringReader(xmlString))
+            {
+                table.ReadXml(sr);
+            }
+
+            return table;
+        }
 
         public static bool is_Chrome()
         {
