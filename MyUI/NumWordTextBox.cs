@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MyUI
 {
-       [System.Drawing.ToolboxBitmap(typeof(TextBox))]
+    [System.Drawing.ToolboxBitmap(typeof(TextBox))]
     public partial class NumWordTextBox : TextBox
     {
         string str_value = "";

@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DrawingClass;
 using System.Runtime.InteropServices;
+using Basic;
 namespace MyUI
 {
     public class RJ_DatePicker : DateTimePicker
     {
+        private bool DefaultDate = false;
         private const int SWP_NOMOVE = 0x0002;
         private const int DTM_First = 0x1000;
         private const int DTM_GETMONTHCAL = DTM_First + 8;
         private const int MCM_GETMINREQRECT = DTM_First + 9;
-
+        private DateTime dateTime_min = "1753-01-01".StringToDateTime();
         [DllImport("uxtheme.dll")]
         private static extern int SetWindowTheme(IntPtr hWnd, string appName, string idList);
         [DllImport("user32.dll")]
@@ -125,31 +127,22 @@ namespace MyUI
             }
         }
         public RJ_DatePicker()
-        {
-            //Application.SetCompatibleTextRenderingDefault(false);
-     
+        {     
             SetStyle(ControlStyles.UserPaint, true);
-            //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             this.MinimumSize = new Size(250, 35);
             this.Font = new Font(this.Font.Name, 15.75F);
             base.AllowDrop = false;
-
+            this.MinDate = DateTime.MinValue;
+            this.MaxDate = DateTime.MaxValue;
         }
         protected override void OnClick(EventArgs e)
-        {         
+        {
+            DefaultDate = false;
             base.OnClick(e);
         }
         protected override void OnDropDown(EventArgs eventargs)
         {
             
-            ////添加后编译程序，在要使用的界面拖动用户控件使用即可，弹出窗口的大小会根据CalendarFont决定
-            //var hwndCalendar = SendMessage(this.Handle, DTM_GETMONTHCAL, 0, 0);
-            //SetWindowTheme(hwndCalendar, string.Empty, string.Empty);
-            //var r = new RECT();
-            //SendMessage(hwndCalendar, MCM_GETMINREQRECT, 0, ref r);
-            //var hwndDropDown = GetParent(hwndCalendar);
-            //SetWindowPos(hwndDropDown, IntPtr.Zero, 0, 0,
-            //    r.R - r.L + 6, r.B - r.T + 6, SWP_NOMOVE);
 
             if (Application.RenderWithVisualStyles)
             {
@@ -178,6 +171,7 @@ namespace MyUI
         }
         protected override void OnCloseUp(EventArgs eventargs)
         {
+            DefaultDate = false;
             base.OnCloseUp(eventargs);
             this.droppedDown = false;
         }
@@ -189,8 +183,6 @@ namespace MyUI
         protected override void OnPaint(PaintEventArgs e)
         {
 
-
-
             using (Graphics graphics = this.CreateGraphics())
             using (Pen penBorder = new Pen(borderColor, borderSize))
             using (SolidBrush skinBrush = new SolidBrush(skinColor))
@@ -198,6 +190,7 @@ namespace MyUI
             using (SolidBrush textBrush = new SolidBrush(textColor))
             using (StringFormat textFormat = new StringFormat())
             {
+                string text = this.Text;
                 graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
                 graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                 graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
@@ -205,10 +198,13 @@ namespace MyUI
                 RectangleF IconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
                 penBorder.Alignment = PenAlignment.Inset;
 
-                SizeF textSize = graphics.MeasureString("   " + this.Text, this.Font);            
+                SizeF textSize = graphics.MeasureString("   " + text, this.Font);            
                 graphics.FillRectangle(skinBrush, clientArea);
-
-                graphics.DrawString("   " + this.Text, this.Font, textBrush, 0, (this.Height - TextRenderer.MeasureText(this.Text, this.Font).Height) / 2, textFormat);
+                if(DefaultDate)
+                {
+                    text = "----/--/--";
+                }
+                graphics.DrawString("   " + text, this.Font, textBrush, 0, (this.Height - TextRenderer.MeasureText(text, this.Font).Height) / 2, textFormat);
                 if (droppedDown == true) graphics.FillRectangle(openIconBrush, IconArea);
 
                 if (borderSize >= 1) graphics.DrawRectangle(penBorder, clientArea.X, clientArea.Y, clientArea.Width, clientArea.Height);
@@ -216,7 +212,14 @@ namespace MyUI
                 graphics.DrawImage(calendarIcon, this.Width - calendarIcon.Width - 9, (this.Height - calendarIcon.Height) / 2);
             }
         }
-
+        public void SetDefaultDate()
+        {
+            DefaultDate = true;
+        }
+        public bool IsDefaultDate()
+        {
+            return DefaultDate;
+        }
         private void InitializeComponent()
         {
             this.SuspendLayout();

@@ -22,6 +22,7 @@ namespace Basic
 {
     static public class Net
     {
+        public static bool DebugLog = false;
         public class SocketClient
         {
             static public bool ConsoleWrite = false;
@@ -692,7 +693,7 @@ namespace Basic
                 request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
                 var response = await client.SendAsync(request);
                 responseBody = await response.Content.ReadAsStringAsync();
-                if (debug) Console.WriteLine($"[{DateTime.Now.ToDateTimeString()}] Sucess, url:{url}  <{myTimerBasic.ToString()}>");
+                if (debug|| DebugLog) Console.WriteLine($"[{DateTime.Now.ToDateTimeString()}] Sucess, url:{url}  <{myTimerBasic.ToString()}>");
                 return responseBody;
             }
             catch

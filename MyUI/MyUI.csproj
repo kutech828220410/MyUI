@@ -214,11 +214,11 @@
     <Compile Include="PLC_CheckDeviceTextBox.Designer.cs">
       <DependentUpon>PLC_CheckDeviceTextBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="NumWordTextBox .cs">
+    <Compile Include="NumWordTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NumWordTextBox .Designer.cs">
-      <DependentUpon>NumWordTextBox .cs</DependentUpon>
+    <Compile Include="NumWordTextBox.Designer.cs">
+      <DependentUpon>NumWordTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="NumTextBox.cs">
       <SubType>Component</SubType>
@@ -541,8 +541,8 @@
     <EmbeddedResource Include="PLC_CheckDeviceTextBox.resx">
       <DependentUpon>PLC_CheckDeviceTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NumWordTextBox .resx">
-      <DependentUpon>NumWordTextBox .cs</DependentUpon>
+    <EmbeddedResource Include="NumWordTextBox.resx">
+      <DependentUpon>NumWordTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NumTextBox.resx">
       <DependentUpon>NumTextBox.cs</DependentUpon>
