@@ -122,6 +122,7 @@ namespace MyUI
             }
         }
         public int ControlsHeight = 50;
+        public int ControlsWidth = 100;
         private ContentAlignment controlsTextAlign = ContentAlignment.MiddleCenter;
         public ContentAlignment ControlsTextAlign
         {
@@ -208,7 +209,7 @@ namespace MyUI
             panel.Padding = new Padding(2, 2, 2, 2);
             label_Title = new Label();
 
-            label_Title.AutoSize = false;
+            label_Title.AutoSize = true;
             label_Title.Dock = DockStyle.Top;
             label_Title.TextAlign = ContentAlignment.MiddleLeft;
             label_Title.ForeColor = titleForeColor;   
@@ -224,7 +225,7 @@ namespace MyUI
                 list_Controls.Add(rJ_Button);           
                 rJ_Buttons.Add(rJ_Button);
             }
-            this.RJ_Button_Init();
+        
             rJ_Button_Calcel = new RJ_Button();
             list_Controls.Add(rJ_Button_Calcel);
             rJ_Button_Calcel.Size = new Size(100, this.ControlsHeight);
@@ -242,7 +243,10 @@ namespace MyUI
             {
                 panel.Controls.Add(list_Controls[i]);
             }
+            this.RJ_Button_Init();
             this.Controls.Add(this.panel);
+
+
             this.Resize();
             panel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -269,6 +273,11 @@ namespace MyUI
             InitializeComponent();
             this.Load += Dialog_ContextMenuStrip_Load;
         }
+        public void SetEnable(object Enum, bool value)
+        {
+            int temp = (int)Enum;
+            pLC_Devices[temp].Bool = value;
+        }
         public Dialog_ContextMenuStrip(params string[] values)
         {
             texts = values;
@@ -287,16 +296,17 @@ namespace MyUI
         }
         private void Resize()
         {
+            this.Width = this.ControlsWidth;
             this.Height = label_height + rjbutton_height + rjbutton_cancel_height + 10;
-            int ScreenWidth = this.FindForm().Width;
-            int ScreenHeight = this.FindForm().Height;
-            this.Location = new Point((ScreenWidth - this.Width) / 2 + this.FindForm().Location.X, (ScreenHeight - this.Height) / 2 + this.FindForm().Location.Y);
+            int ScreenWidth = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
+            int ScreenHeight = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
         }
         private void RJ_Button_Init()
         {
             for (int i = 0; i < rJ_Buttons.Count; i++)
             {
-                rJ_Buttons[i].Size = new Size(100, this.ControlsHeight);
+                rJ_Buttons[i].Size = new Size(this.ControlsWidth, this.ControlsHeight);
                 rJ_Buttons[i].Dock = DockStyle.Top;
                 if(i < texts.Length) rJ_Buttons[i].Text = texts[i];
                 rJ_Buttons[i].Font = controlsFont;
@@ -313,7 +323,12 @@ namespace MyUI
                     rJ_Buttons[i].Enabled = pLC_Devices[i].Bool;              
                 }
                 rJ_Buttons[i].Invalidate();
-            }     
+            }
+
+            rJ_Button_Calcel.Size = new Size(this.ControlsWidth, this.ControlsHeight);
+            rJ_Button_Calcel.Font = controlsFont;
+            rJ_Button_Calcel.BorderRadius = controlsRadius;
+      
         }
         private void RJ_Button_Calcel_Click(object sender, EventArgs e)
         {

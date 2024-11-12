@@ -28,6 +28,7 @@ namespace SQLUI
         public List<DataKeysClass> DataKeysClasses = new List<DataKeysClass>();
         private List<ComboBox> comboBoxes = new List<ComboBox>();
         public bool flag_Init = false;
+        public bool CustomEnable = false;
         private bool flag_Refresh = false;
         private CheckBox checkBoxHeader = new CheckBox();
         private bool flag_unCheckedAll = false;
@@ -71,6 +72,9 @@ namespace SQLUI
         public event CellPaintingImageEventHandler CellPaintingImageEvent;
         public delegate void RowPostPaintingEventHandler(DataGridViewRowPostPaintEventArgs e);
         public event RowPostPaintingEventHandler RowPostPaintingEvent;
+        public delegate void RowPostPaintingEventExHandler(SQL_DataGridView sQL_DataGridView, DataGridViewRowPostPaintEventArgs e);
+        public event RowPostPaintingEventExHandler RowPostPaintingEventEx;
+
         public delegate void RowPostPaintingFinishedEventHandler(DataGridViewRowPostPaintEventArgs e);
         public event RowPostPaintingFinishedEventHandler RowPostPaintingFinishedEvent;
         public delegate void RowHeaderPostPaintingEventHandler(object sender , Graphics g, Rectangle rect_hedder, Brush brush_background, Pen pen_border);
@@ -3351,6 +3355,36 @@ namespace SQLUI
                 dataGridViewColumn.ReadOnly = !columns.CanEdit;
             }
         }
+
+        public void Set_CanEdit(bool can_edit, object Enum)
+        {
+            this.Set_CanEdit(can_edit, Enum.GetEnumName());
+        }
+        public void Set_CanEdit( bool can_edit, string name)
+        {
+            for (int k = 0; k < this.Columns.Count; k++)
+            {
+                if (this.Columns[k].Text == name || this.Columns[k].Name == name)
+                {
+                    Columns[k].Visable = true;
+                    Columns[k].CanEdit = can_edit;
+                }
+            }
+            foreach (ColumnElement columns in Columns)
+            {
+                DataGridViewColumn dataGridViewColumn = dataGridView.Columns[$"{columns.Text}"];
+                if (dataGridViewColumn == null) dataGridViewColumn = dataGridView.Columns[$"{columns.Name}"];
+                if (dataGridViewColumn == null) continue;
+
+                dataGridViewColumn.DefaultCellStyle.BackColor = columns.BackgroundColor;
+                dataGridViewColumn.Width = columns.Width;
+                dataGridViewColumn.SortMode = columns.SortMode;
+                dataGridViewColumn.DefaultCellStyle.Alignment = columns.Alignment;
+                dataGridViewColumn.Visible = columns.Visable;
+                dataGridViewColumn.ReadOnly = !columns.CanEdit;
+            }
+        }
+
         public void Set_ColumnText(string text, object Enum)
         {
             this.Set_ColumnText(text, Enum.GetEnumName());
@@ -3942,7 +3976,7 @@ namespace SQLUI
           
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                if (RowPostPaintingEvent != null)
+                if (RowPostPaintingEvent != null || RowPostPaintingEventEx != null)
                 {
                     e.Handled = true;
                     return;
@@ -4050,6 +4084,8 @@ namespace SQLUI
         {
             CustomRowPostPaint(e.Graphics, (DataGridView)sender, e.RowIndex);
             if (RowPostPaintingEvent != null) RowPostPaintingEvent(e);
+            if (RowPostPaintingEventEx != null) RowPostPaintingEventEx(this,e);
+            
         }
         private void CustomRowPostPaint(Graphics graphics, DataGridView dataGridView, int rowIndex)
         {

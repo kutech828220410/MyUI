@@ -969,4 +969,3 @@ C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Basic.xml
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll
