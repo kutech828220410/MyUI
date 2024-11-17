@@ -122,7 +122,7 @@ namespace MyUI
             }
         }
         public int ControlsHeight = 50;
-        public int ControlsWidth = 100;
+        public int ControlsWidth = 350;
         private ContentAlignment controlsTextAlign = ContentAlignment.MiddleCenter;
         public ContentAlignment ControlsTextAlign
         {

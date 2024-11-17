@@ -62,7 +62,7 @@ namespace SQLUI
         public event RowEnterEventHandler RowEnterEvent;
         public delegate void RowClickEventHandler(object[] RowValue);
         public event RowClickEventHandler RowClickEvent;
-        public delegate void RowEndEditEventHandler(object[] RowValue, int rowIndex, int colIndex, string value);
+        public delegate bool RowEndEditEventHandler(object[] RowValue, int rowIndex, int colIndex, string value);
         public event RowEndEditEventHandler RowEndEditEvent;
         public delegate void CellValidatingEventHandler(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e);
         public event CellValidatingEventHandler CellValidatingEvent;
@@ -4228,9 +4228,16 @@ namespace SQLUI
             dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.Font = new Font(cellStyleFont.FontFamily, cellStyleFont.Size, FontStyle.Bold);
             if (value != null)
             {
-                if (this.RowEndEditEvent != null) this.RowEndEditEvent(value , e.RowIndex,e.ColumnIndex, value[col_index].ToString());
+                bool flag_replace =  false;
+                if (this.RowEndEditEvent != null) flag_replace = this.RowEndEditEvent(value , e.RowIndex,e.ColumnIndex, value[col_index].ToString());
+
+                if(flag_replace)
+                {
+                    this.ReplaceExtra(value, true);
+                }
             }
             dataGridView.Rows[0].Cells[e.ColumnIndex].Selected = true;
+           
             //dataGridView.CurrentCell = dataGridView.Rows[0].Cells[e.ColumnIndex];
         }
         private void DataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -4249,6 +4256,8 @@ namespace SQLUI
                 }
             }
             if (col_index == -1) return;
+            if (Columns[col_index].CanEdit == false) return;
+
             if (this.CellValidatingEvent != null) CellValidatingEvent(value, e.RowIndex, e.ColumnIndex, e.FormattedValue.ToString(), e);
         }
         private void DataGridView_CellValidated(object sender, DataGridViewCellEventArgs e)
