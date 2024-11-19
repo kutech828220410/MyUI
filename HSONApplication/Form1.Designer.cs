@@ -283,7 +283,7 @@
             // 
             // button_next
             // 
-            this.button_next.Location = new System.Drawing.Point(313, 346);
+            this.button_next.Location = new System.Drawing.Point(591, 400);
             this.button_next.Name = "button_next";
             this.button_next.Size = new System.Drawing.Size(75, 23);
             this.button_next.TabIndex = 27;
@@ -565,6 +565,7 @@
             this.sqL_DataGridView_備藥通知.cellStylBackColor = System.Drawing.Color.Gainsboro;
             this.sqL_DataGridView_備藥通知.cellStyleFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_備藥通知.checkedRowBackColor = System.Drawing.Color.YellowGreen;
             this.sqL_DataGridView_備藥通知.columnHeaderBackColor = System.Drawing.Color.DarkGray;
             this.sqL_DataGridView_備藥通知.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_備藥通知.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -572,6 +573,7 @@
             this.sqL_DataGridView_備藥通知.columnHeadersHeight = 40;
             this.sqL_DataGridView_備藥通知.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.sqL_DataGridView_備藥通知.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sqL_DataGridView_備藥通知.DataKeyEnable = false;
             this.sqL_DataGridView_備藥通知.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_備藥通知.Font = new System.Drawing.Font("新細明體", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.sqL_DataGridView_備藥通知.ImageBox = false;

@@ -78,7 +78,7 @@ namespace MyUI
         private void RJ_TextBox_Click(object sender, EventArgs e)
         {
             RJ_TextBox rJ_TextBox = (RJ_TextBox)sender;
-            int temp = rJ_TextBox.Text.StringToInt32();
+            double temp = rJ_TextBox.Text.StringToInt32();
             if (temp < 0) temp = 0;
 
             Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel(0);

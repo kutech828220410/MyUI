@@ -13,6 +13,8 @@ namespace MyUI
 {
     public partial class Dialog_NumPannel : MyDialog
     {
+        public bool flag_dot = false;
+        private bool flag_Init_Text = false;
         public static Form form;
         private Point location = new Point(0, 0);
         private int _Y_offset = 0;
@@ -29,11 +31,11 @@ namespace MyUI
                 this.location = value;
             }
         }
-        public int Value
+        public double Value
         {
             get
             {
-                return Texts.StringToInt32();
+                return Texts.StringToDouble();
             }
             set
             {
@@ -50,6 +52,20 @@ namespace MyUI
             private set
             {
                 this.Invoke(new Action(delegate { this.rJ_TextBox_Value.Texts = value; }));      
+            }
+        }
+
+        private string _Init_Text = "";
+        public string Init_Text
+        {
+            get
+            {
+                return _Init_Text;
+            }
+            set
+            {
+                _Init_Text = value;
+                flag_Init_Text = true;
             }
         }
         public string Title
@@ -107,6 +123,7 @@ namespace MyUI
         private int Value_buf = 0;
         private string Title_buf = "";
         private string Content_buf = "";
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.NumPad0 || keyData == Keys.D0)
@@ -151,7 +168,7 @@ namespace MyUI
             }
             else if (keyData == Keys.OemPeriod || keyData == Keys.Decimal)
             {
-
+                OnClick_Dot();
             }
             else if (keyData == Keys.Back)
             {
@@ -222,14 +239,19 @@ namespace MyUI
         private void Dialog_NumPannel_Load(object sender, EventArgs e)
         {
             this.rJ_Button_X.MouseDownEvent += RJ_Button_X_MouseDownEvent;
+            this.rJ_Button_Enter.MouseDownEvent += RJ_Button_Enter_MouseDownEvent;
+            this.rJ_Button_dot.MouseDownEvent += RJ_Button_dot_MouseDownEvent;
             this.DialogResult = DialogResult.None;
             this.OnClick_CE();
             this.Value = Value_buf;
             this.Title = Title_buf;
             this.Content = Content_buf;
+
+            //this.rJ_TextBox_Value.Texts = _Init_Text;
             this.rJ_TextBox_Value.Texts = this.Value.ToString();
             Size size_title = Draw.MeasureText(Title_buf, TitleFont);
             Size size_content = Draw.MeasureText(Content_buf, ContentFont);
+
             if (Title_buf.StringIsEmpty()) this.rJ_Lable_Title.Height = 0;
             else
             {
@@ -247,17 +269,18 @@ namespace MyUI
             {
                 this.StartPosition = FormStartPosition.WindowsDefaultLocation;
                 base.Location = this.location;
-
                 base.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 + _X_offset, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 + _Y_offset);
-
             }
+       
         }
+
+     
+
         public void Set_Location_Offset(int x_offset, int y_offset)
         {
             _X_offset = x_offset;
             _Y_offset = y_offset;
         }
-
         public override void Refresh()
         {
             rJ_TextBox_Value.Refresh();
@@ -266,14 +289,19 @@ namespace MyUI
         private void Dialog_NumPannel_LoadFinishedEvent(EventArgs e)
         {
             rJ_TextBox_Value.Refresh();
+
         }
 
         private void OnClick_Num(int num)
         {
             string temp = Texts;
             temp = temp + num.ToString();
-            temp = temp.StringToInt32().ToString();
-            if (temp == "-1") temp = "0";
+            if (temp.Substring(0, 1) == "0" && temp.Length >= 2)
+            {
+               if(temp.Contains(".") == false) temp = temp.Remove(0, 1);
+            }
+            //temp = temp.StringToDouble().ToString();
+            if (temp == "-1" && temp.Contains(".")) temp = "0";
             Texts = temp;
         }
         private void OnClick_CE()
@@ -304,6 +332,15 @@ namespace MyUI
                 this.Close();
             }));
         }
+        private void OnClick_Dot()
+        {
+            if(flag_dot == false)
+            {
+                Texts += '.';
+                flag_dot = true;
+            }
+        }
+
         private void rJ_Button_1_MouseDownEvent(MouseEventArgs mevent)
         {
             OnClick_Num(1);
@@ -356,11 +393,14 @@ namespace MyUI
         {
             OnClick_Cancel();
         }
-        private void rJ_Button_Enter_MouseDownEvent(MouseEventArgs mevent)
+        private void RJ_Button_Enter_MouseDownEvent(MouseEventArgs mevent)
         {
             OnClick_Enter();
         }
- 
+        private void RJ_Button_dot_MouseDownEvent(MouseEventArgs mevent)
+        {
+            OnClick_Dot();
+        }
         private void RJ_Button_X_MouseDownEvent(MouseEventArgs mevent)
         {
             OnClick_Cancel();

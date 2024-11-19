@@ -74,7 +74,9 @@ namespace HSONApplication
 
         private void Button_next_Click(object sender, EventArgs e)
         {
-            this.stepViewer1.Next();
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
+            dialog_NumPannel.ShowDialog();
+            //this.stepViewer1.Next();
         }
         private void Button_pre_Click(object sender, EventArgs e)
         {
