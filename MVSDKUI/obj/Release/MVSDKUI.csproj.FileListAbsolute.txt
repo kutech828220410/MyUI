@@ -882,12 +882,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\HCGUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\AxOvkMsr.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Memory.xml
@@ -969,3 +963,9 @@ C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CallBackUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\AxOvkBase.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\AxAltairUDrvAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\AxOvkBaseAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\AxOvkMsr.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\MeasureSystemFunction.dll
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\AxAltairUDrv.dll
