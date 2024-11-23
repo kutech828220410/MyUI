@@ -8,11 +8,139 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 namespace Basic
 {
+    public class FileInfoModel
+    {
+        public string FileName { get; set; } // 檔案名稱
+        public string FullPath { get; set; } // 完整路徑
+        public DateTime LastModified { get; set; } // 修改日期
+        public long FileSize { get; set; } // 檔案大小（以位元組為單位）
+
+
+    }
     static public class FileIO
     {
+        /// <summary>
+        /// 從提供的檔案清單中篩選檔名包含特定文字的檔案
+        /// </summary>
+        /// <param name="fileList">檔案清單</param>
+        /// <param name="keyword">檔名中包含的文字</param>
+        /// <returns>符合條件的檔案清單</returns>
+        public static List<FileInfoModel> FilterByFileName(this List<FileInfoModel> fileList, string keyword)
+        {
+            if (fileList == null || fileList.Count == 0 || string.IsNullOrWhiteSpace(keyword))
+            {
+                return new List<FileInfoModel>();
+            }
 
+            return fileList.Where(file =>
+                file.FileName.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0
+            ).ToList();
+        }
+        /// <summary>
+        /// 從提供的檔案清單中篩選指定日期範圍內的檔案
+        /// </summary>
+        /// <param name="fileList">檔案資訊列表</param>
+        /// <param name="startDate">開始日期</param>
+        /// <param name="endDate">結束日期</param>
+        /// <returns>符合日期範圍的檔案資訊列表</returns>
+        public static List<FileInfoModel> FilterByDateRange(this List<FileInfoModel> fileList, DateTime startDate, DateTime endDate)
+        {
+            if (fileList == null || fileList.Count == 0)
+            {
+                return new List<FileInfoModel>(); // 如果輸入列表為空，直接返回空列表
+            }
+
+            // 篩選符合日期範圍的檔案
+            return fileList.Where(file => file.LastModified >= startDate && file.LastModified <= endDate).ToList();
+        }
+        public static List<FileInfoModel> GetFilesInfo(string folderPath)
+        {
+            var fileList = new List<FileInfoModel>();
+
+            try
+            {
+                // 檢查資料夾是否存在
+                if (!Directory.Exists(folderPath))
+                {
+                    throw new DirectoryNotFoundException($"資料夾不存在: {folderPath}");
+                }
+
+                // 取得資料夾內所有檔案資訊
+                string[] files = Directory.GetFiles(folderPath, "*.*", SearchOption.TopDirectoryOnly);
+
+                Parallel.ForEach(Directory.EnumerateFiles(folderPath, "*.*", SearchOption.TopDirectoryOnly), file =>
+                {
+                    var fileInfo = new FileInfo(file);
+                    lock (fileList) // 確保多線程安全
+                    {
+                        fileList.Add(new FileInfoModel
+                        {
+                            FileName = fileInfo.Name,
+                            FullPath = fileInfo.FullName,
+                            LastModified = fileInfo.LastWriteTime,
+                            FileSize = fileInfo.Length
+                        });
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"發生錯誤: {ex.Message}");
+            }
+
+            return fileList;
+        }
+        /// <summary>
+        /// 獲取指定資料夾中包含特定文字的檔案資訊
+        /// </summary>
+        /// <param name="folderPath">資料夾路徑</param>
+        /// <param name="filterKeyword">過濾檔名的文字，忽略大小寫</param>
+        /// <returns>符合條件的檔案資訊列表</returns>
+        public static List<FileInfoModel> GetFilesInfo(string folderPath, string filterKeyword)
+        {
+            var fileList = new List<FileInfoModel>();
+
+            try
+            {
+                // 檢查資料夾是否存在
+                if (!Directory.Exists(folderPath))
+                {
+                    throw new DirectoryNotFoundException($"資料夾不存在: {folderPath}");
+                }
+
+                // 使用 EnumerateFiles 獲取檔案
+                var files = Directory.EnumerateFiles(folderPath, "*.*", SearchOption.TopDirectoryOnly);
+
+                // 過濾包含指定文字的檔案（忽略大小寫）
+                var filteredFiles = files.Where(file =>
+                    Path.GetFileName(file).IndexOf(filterKeyword, StringComparison.OrdinalIgnoreCase) >= 0);
+
+                // 逐步處理檔案資訊
+                Parallel.ForEach(filteredFiles, file =>
+                {
+                    var fileInfo = new FileInfo(file);
+                    lock (fileList) // 確保多線程安全
+                    {
+                        fileList.Add(new FileInfoModel
+                        {
+                            FileName = fileInfo.Name,
+                            FullPath = fileInfo.FullName,
+                            LastModified = fileInfo.LastWriteTime,
+                            FileSize = fileInfo.Length
+                        });
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"發生錯誤: {ex.Message}");
+            }
+
+            return fileList;
+        }
         static public byte[] LoadFileStream(string filename)
         {
             List<byte> bytes = new List<byte>();
