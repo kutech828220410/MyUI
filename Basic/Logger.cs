@@ -22,10 +22,15 @@ namespace Basic
                 Console.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
             }
         }
-
+     
         public static void Log(string Title ,string Message)
         {
             string LogFileName = $"{DateTime.Now:yyyyMMdd-HH}.txt";
+            Log(LogFileName, Title, Message);
+        }
+        public static void Log(string fileName, string Title, string Message)
+        {
+            string LogFileName = $"{fileName}.txt";
             string LogFilePath = Path.Combine($"{logDirectory}{Title}/", LogFileName);
             Directory.CreateDirectory($"{logDirectory}{Title}/");
             using (StreamWriter sw = File.AppendText(LogFilePath))
@@ -34,7 +39,6 @@ namespace Basic
                 Console.WriteLine($"{DateTime.Now:yyyyMMdd-HH:mm:ss} - {Message}");
             }
         }
-
         public static void LogAddLine()
         {
             string Message = "---------------------------------------------------------------------------";
