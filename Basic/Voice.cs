@@ -68,6 +68,30 @@ namespace Basic
             }
           
         }
+        static public string GoogleSpeakerBase64(string text, string language = "zh-tw")
+        {
+            // 確保輸入的文字是URL安全的
+            string encodedText = Uri.EscapeDataString(text);
+            string url = string.Format("http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen={0}&client=tw-ob&q={1}&tl={2}",
+                                        text.Length, encodedText, language);
+            using (WebClient webClient = new WebClient())
+            {
+                try
+                {
+                    byte[] audioData = webClient.DownloadData(url);
+
+                    // 將音訊資料轉換為 Base64 字串
+                    string base64Audio = Convert.ToBase64String(audioData);
+
+                    return base64Audio;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return null;
+                }
+            }
+        }
         static private void CloseMP3(string fileName)
         {
             string CommandString = "";
