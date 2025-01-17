@@ -452,6 +452,98 @@ namespace Basic
         {
             return $@"{System.IO.Path.GetDirectoryName(str)}\";
         }
+
+
+        public static byte[] ReadFileFromNetworkDrive(string fullFilePath, string username, string password)
+        {
+            try
+            {
+                // 提取網路目錄部分
+                string networkPath = Path.GetDirectoryName(fullFilePath);
+
+                // 連接到網路磁碟機
+                ConnectToNetworkDrive(networkPath, username, password);
+
+
+
+                // 讀取檔案內容
+                using (FileStream fs = new FileStream(fullFilePath, FileMode.Open, FileAccess.Read))
+                {
+                    byte[] fileBytes = new byte[fs.Length];
+                    fs.Read(fileBytes, 0, (int)fs.Length);
+                    return fileBytes;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"讀取檔案失敗: {ex.Message}");
+                throw;
+            }
+            finally
+            {
+                // 斷開網路磁碟機
+                string networkPath = Path.GetDirectoryName(fullFilePath);
+                DisconnectFromNetworkDrive(networkPath);
+            }
+        }
+
+        private static void ConnectToNetworkDrive(string networkPath, string username, string password)
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo("net", $"use {networkPath} /user:{username} {password}")
+                {
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (Process process = Process.Start(psi))
+                {
+                    process.WaitForExit();
+
+                    if (process.ExitCode != 0)
+                    {
+                        string errorMessage = process.StandardError.ReadToEnd();
+                        throw new Exception($"連接網路磁碟失敗: {errorMessage}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"連接網路磁碟時發生錯誤: {ex.Message}");
+            }
+        }
+
+        private static void DisconnectFromNetworkDrive(string networkPath)
+        {
+            try
+            {
+                ProcessStartInfo psi = new ProcessStartInfo("net", $"use {networkPath} /delete")
+                {
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (Process process = Process.Start(psi))
+                {
+                    process.WaitForExit();
+
+                    if (process.ExitCode != 0)
+                    {
+                        string errorMessage = process.StandardError.ReadToEnd();
+                        Console.WriteLine($"斷開網路磁碟失敗: {errorMessage}");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"斷開網路磁碟時發生錯誤: {ex.Message}");
+            }
+        }
     }
     static public class MyFileStream
     {

@@ -604,7 +604,33 @@ namespace Basic
             }).Result;
             return result;
         }
-
+        public static async Task<string> WEBApiGetAsync(string url, string apiKey)
+        {
+            string responseBody = "";
+            try
+            {
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
+                HttpResponseMessage response = await client.GetAsync(url);
+                response.EnsureSuccessStatusCode();
+                responseBody = await response.Content.ReadAsStringAsync();
+                return responseBody;
+            }
+            catch
+            {
+                return responseBody;
+            }
+        }
+        public static string WEBApiGet(string url, string apiKey)
+        {
+            string result = Task.Run(async () =>
+            {
+                string responseBody = await WEBApiGetAsync(url, apiKey);
+                return responseBody;
+            }).Result;
+            return result;
+        }
         public static string WEBApiPost(string url, List<string> names, List<string> values)
         {
             string result = Task.Run(async () =>
@@ -658,17 +684,25 @@ namespace Basic
         {
             return WEBApiPostJson(url, value, false);
         }
+        public static string WEBApiPostJson(string url, string value, string apiKey)
+        {
+            return WEBApiPostJson(url, value, apiKey, false);
+        }
         public static string WEBApiPostJson(string url, string value, bool debug)
+        {
+            return WEBApiPostJson(url, value, null, debug);
+        }
+        public static string WEBApiPostJson(string url, string value, string apiKey, bool debug)
         {
             string result = Task.Run(async () =>
             {
-                string responseBody = await WEBApiPostJsonAsync(url, value, debug);
+                string responseBody = await WEBApiPostJsonAsync(url, value, apiKey, debug);
                 return responseBody;
             }).Result;
             return result;
         }
 
-        public static async Task<string> WEBApiPostJsonAsync(string url, string value, bool debug)
+        public static async Task<string> WEBApiPostJsonAsync(string url, string value, string apiKey, bool debug)
         {
             string responseBody = "";
             if (url.StringIsEmpty())
@@ -684,6 +718,7 @@ namespace Basic
 
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 HttpClient client = new HttpClient();
+                if (apiKey.StringIsEmpty() == false) client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
                 HttpRequestMessage request = new HttpRequestMessage();
                 request.RequestUri = new Uri(url);
                 request.Method = HttpMethod.Post;
