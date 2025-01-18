@@ -108,13 +108,26 @@ namespace Basic
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
+        [DllImport("kernel32.dll")]
+        static extern bool AttachConsole(int dwProcessId);
+
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool FreeConsole();
+        static extern bool FreeConsole()
+            ;
+        private static bool consoleAllocated = false;
+
         public static void ShowConsole()
         {
-            // 分配新的控制台窗口
-            bool consoleAllocated = AllocConsole();
+            // 檢查是否已經有 Console
+            if (!consoleAllocated)
+            {
+                consoleAllocated = AllocConsole();
+                if (!consoleAllocated)
+                {
+                    AttachConsole(-1);  // 嘗試附加到現有的 Console
+                }
+            }
 
             if (consoleAllocated)
             {
@@ -124,18 +137,23 @@ namespace Basic
                 var standardOutput = new StreamWriter(Console.OpenStandardOutput(), Encoding.GetEncoding("Big5"));
                 standardOutput.AutoFlush = true;
                 Console.SetOut(standardOutput);
-                ConsoleColor oriColor = Console.ForegroundColor;
+                Console.SetError(standardOutput);
+
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("* Don't close this console window or the application will also close.");
+                Console.ResetColor();
                 Console.WriteLine();
             }
             else
             {
                 MessageBox.Show("無法顯示控制台窗口");
             }
+        }
 
-          
-
+        public static void HideConsole()
+        {
+            FreeConsole();
+            consoleAllocated = false;
         }
         public static void CloseConsole()
         {

@@ -30,7 +30,7 @@ namespace Basic
         }
         public static void Log(string fileName, string Title, string Message)
         {
-            string LogFileName = $"{fileName}.txt";
+            string LogFileName = $"{fileName}";
             string LogFilePath = Path.Combine($"{logDirectory}{Title}/", LogFileName);
             Directory.CreateDirectory($"{logDirectory}{Title}/");
             using (StreamWriter sw = File.AppendText(LogFilePath))

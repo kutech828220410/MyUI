@@ -136,6 +136,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleTrayUI.cs" />
     <Compile Include="ControlMethodClass.cs" />
     <Compile Include="DataBaseView.cs">
       <SubType>UserControl</SubType>

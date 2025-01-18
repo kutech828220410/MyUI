@@ -578,6 +578,22 @@ namespace Basic
             public const string WWW_FORM_URLENCODED_UTF8 = "application/x-www-form-urlencoded;charset=utf-8";
             public const string MULTIPART_FORM_DATA = "multipart/form-data";
         }
+        public class API_Key
+        {
+            public API_Key(string name , string value)
+            {
+                this.name = name;
+                this.value = value;
+            }
+            public string name
+            {
+                get;set;
+            }
+            public string value
+            {
+                get;set;
+            }
+        }
         public static async Task<string> WEBApiGetAsync(string url)
         {
             string responseBody = "";
@@ -604,14 +620,14 @@ namespace Basic
             }).Result;
             return result;
         }
-        public static async Task<string> WEBApiGetAsync(string url, string apiKey)
+        public static async Task<string> WEBApiGetAsync(string url, API_Key aPI_Key)
         {
             string responseBody = "";
             try
             {
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 HttpClient client = new HttpClient();
-                client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
+                if (aPI_Key != null) client.DefaultRequestHeaders.Add(aPI_Key.name, aPI_Key.value);
                 HttpResponseMessage response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
                 responseBody = await response.Content.ReadAsStringAsync();
@@ -622,11 +638,11 @@ namespace Basic
                 return responseBody;
             }
         }
-        public static string WEBApiGet(string url, string apiKey)
+        public static string WEBApiGet(string url, API_Key aPI_Key)
         {
             string result = Task.Run(async () =>
             {
-                string responseBody = await WEBApiGetAsync(url, apiKey);
+                string responseBody = await WEBApiGetAsync(url, aPI_Key);
                 return responseBody;
             }).Result;
             return result;
@@ -684,25 +700,25 @@ namespace Basic
         {
             return WEBApiPostJson(url, value, false);
         }
-        public static string WEBApiPostJson(string url, string value, string apiKey)
+        public static string WEBApiPostJson(string url, string value, API_Key aPI_Key)
         {
-            return WEBApiPostJson(url, value, apiKey, false);
+            return WEBApiPostJson(url, value, aPI_Key, false);
         }
         public static string WEBApiPostJson(string url, string value, bool debug)
         {
             return WEBApiPostJson(url, value, null, debug);
         }
-        public static string WEBApiPostJson(string url, string value, string apiKey, bool debug)
+        public static string WEBApiPostJson(string url, string value, API_Key aPI_Key, bool debug)
         {
             string result = Task.Run(async () =>
             {
-                string responseBody = await WEBApiPostJsonAsync(url, value, apiKey, debug);
+                string responseBody = await WEBApiPostJsonAsync(url, value, aPI_Key, debug);
                 return responseBody;
             }).Result;
             return result;
         }
 
-        public static async Task<string> WEBApiPostJsonAsync(string url, string value, string apiKey, bool debug)
+        public static async Task<string> WEBApiPostJsonAsync(string url, string value, API_Key aPI_Key, bool debug)
         {
             string responseBody = "";
             if (url.StringIsEmpty())
@@ -718,7 +734,7 @@ namespace Basic
 
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 HttpClient client = new HttpClient();
-                if (apiKey.StringIsEmpty() == false) client.DefaultRequestHeaders.Add("X-Api-Key", apiKey);
+                if (aPI_Key != null) client.DefaultRequestHeaders.Add(aPI_Key.name, aPI_Key.value);
                 HttpRequestMessage request = new HttpRequestMessage();
                 request.RequestUri = new Uri(url);
                 request.Method = HttpMethod.Post;
