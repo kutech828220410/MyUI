@@ -28,6 +28,9 @@ namespace MyUI
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool AllocConsole();
 
+        [DllImport("kernel32.dll")]
+        static extern bool AttachConsole(int dwProcessId);
+
         [DllImport("kernel32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
         static extern bool FreeConsole();
@@ -100,6 +103,8 @@ namespace MyUI
             if (GetConsoleWindow() == IntPtr.Zero)
             {
                 AllocConsole();
+                AttachConsole(-1); // 附加到父 Console，確保輸出顯示
+
                 Console.OutputEncoding = Encoding.UTF8;
                 Console.SetOut(new StreamWriter(Console.OpenStandardOutput(), Encoding.UTF8) { AutoFlush = true });
                 Console.SetError(new StreamWriter(Console.OpenStandardError(), Encoding.UTF8) { AutoFlush = true });
