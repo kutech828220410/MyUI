@@ -717,7 +717,39 @@ namespace Basic
             }).Result;
             return result;
         }
+        public static async Task<string> WEBApiPostJsonAsync(string url, string value, bool debug)
+        {
+            string responseBody = "";
+            if (url.StringIsEmpty())
+            {
+                Console.WriteLine($"{Basic.Reflection.GetMethodName()} : 網址不得為空!");
+                return null;
+            }
 
+            try
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(50000);
+
+                System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                HttpClient client = new HttpClient();
+                HttpRequestMessage request = new HttpRequestMessage();
+                request.RequestUri = new Uri(url);
+                request.Method = HttpMethod.Post;
+
+
+
+                request.Content = new StringContent(value, Encoding.UTF8, HttpContentType.APPLICATION_JSON);
+                var response = await client.SendAsync(request);
+                responseBody = await response.Content.ReadAsStringAsync();
+                if (debug || DebugLog) Console.WriteLine($"[{DateTime.Now.ToDateTimeString()}] Sucess, url:{url}  <{myTimerBasic.ToString()}>");
+                return responseBody;
+            }
+            catch
+            {
+                return responseBody;
+            }
+        }
         public static async Task<string> WEBApiPostJsonAsync(string url, string value, API_Key aPI_Key, bool debug)
         {
             string responseBody = "";
