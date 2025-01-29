@@ -2952,18 +2952,6 @@ namespace SQLUI
             return DateTime.Now.TimeOfDay.ToString().Replace(":", "").Replace("/", "").Replace(".", "");
         }
     }
-    public static class TableMethod
-    {
-        public static Table GetTable(this List<Table> tables , Enum _enum)
-        {
-            string name = _enum.GetEnumDescription();
-            for(int i = 0; i < tables.Count; i++)
-            {
-                if (tables[i].TableName == name) return tables[i];
-            }
-            return null;
-        }
-    }
     public class Table
     {
 
@@ -3045,7 +3033,7 @@ namespace SQLUI
                 {
                     string temp = TypeName;
                     int index_of = temp.IndexOf('(');
-     
+
                     int num = 50;
                     if (index_of != -1)
                     {
@@ -3074,10 +3062,10 @@ namespace SQLUI
                 {
                     string temp = TypeName;
                     int index_of = temp.IndexOf('(');
-                    if(index_of != -1)
+                    if (index_of != -1)
                     {
                         temp = temp.Remove(index_of, temp.Length - index_of);
-                    }    
+                    }
                     temp = temp.Trim();
                     string[] ary = new Table.StringType().GetEnumNames();
                     for (int i = 0; i < ary.Length; i++)
@@ -3172,7 +3160,7 @@ namespace SQLUI
             None = 0,
             INDEX = 1,
             PRIMARY = 2,
-            UNIQUE = 3,      
+            UNIQUE = 3,
         }
         public enum OtherType
         {
@@ -3204,7 +3192,7 @@ namespace SQLUI
             TEXT = 3,
             MEDIUMTEXT = 4,
             LONGTEXT = 5,
-            LONGBLOB =6,
+            LONGBLOB = 6,
             TINYBLOB = 7,
             BLOB = 8,
             MEDIUMBLOB = 9,
@@ -3219,11 +3207,11 @@ namespace SQLUI
             YEAR = 4,//YYYY
             None = 100,
         }
- 
+
         public Table(string Name)
         {
             this.SetTableName(Name);
-   
+
         }
         public void SetTableName(string Name)
         {
@@ -3231,9 +3219,9 @@ namespace SQLUI
         }
         public string GetTypeName(string ColumnName)
         {
-            for(int i = 0; i < ColumnList.Count; i++)
+            for (int i = 0; i < ColumnList.Count; i++)
             {
-                if(ColumnList[i].Name == ColumnName)
+                if (ColumnList[i].Name == ColumnName)
                 {
                     return ColumnList[i].TypeName;
                 }
@@ -3255,17 +3243,17 @@ namespace SQLUI
         public static string GetTypeName(OtherType _OtherType)
         {
             string str = null;
-  
+
             return str;
         }
         public static string GetTypeName(OtherType _OtherType, string[] stringArray)
         {
             string str = null;
-    
+
             if (_OtherType == OtherType.ENUM)
             {
                 str = " ENUM(";
-                for(int i =0 ; i < stringArray.Length ; i++)
+                for (int i = 0; i < stringArray.Length; i++)
                 {
                     str += "'" + stringArray[i] + "',";
                 }
@@ -3287,8 +3275,8 @@ namespace SQLUI
         public static string GetTypeName(ValueType _ValueType)
         {
             string str = null;
-        
-            if(_ValueType == ValueType.TINYINT)
+
+            if (_ValueType == ValueType.TINYINT)
             {
                 str = " TINYINT";
             }
@@ -3457,7 +3445,7 @@ namespace SQLUI
             else if (_StringType == StringType.LONGTEXT)
             {
                 str = " LONGTEXT";
-            }    
+            }
             else if (_StringType == StringType.LONGBLOB)
             {
                 str = " LONGBLOB";
@@ -3869,7 +3857,20 @@ namespace SQLUI
             }
         }
 
-      
+
 
     }
+    public static class TableMethod
+    {
+        public static Table GetTable(this List<Table> tables , Enum _enum)
+        {
+            string name = _enum.GetEnumDescription();
+            for(int i = 0; i < tables.Count; i++)
+            {
+                if (tables[i].TableName == name) return tables[i];
+            }
+            return null;
+        }
+    }
+
 }

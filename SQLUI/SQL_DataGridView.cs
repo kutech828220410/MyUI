@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Input;
 using System.Text.Json.Serialization;
+using MySqlX.XDevAPI.Relational;
 
 namespace SQLUI
 {
@@ -539,19 +540,7 @@ namespace SQLUI
             }
         }
 
-        private Color _RowsColor = Control.DefaultBackColor;
-        [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
-        public Color RowsColor
-        {
-            get
-            {
-                return _RowsColor;
-            }
-            set
-            {
-                _RowsColor = value;
-            }
-        }
+      
         int _RowsHeight = 10;
         [ReadOnly(false), Browsable(true), Category("自訂屬性"), Description(""), DefaultValue("")]
         public int RowsHeight
@@ -997,6 +986,12 @@ namespace SQLUI
         }
         #endregion
 
+        public enum RowBorderStyleOption
+        {
+            All,
+            BottomLine
+        }
+
         [Category("RJ Code - Appearence")]
         public Font columnHeaderFont
         {
@@ -1071,6 +1066,21 @@ namespace SQLUI
                 dataGridView.ColumnHeadersHeight = value;
             }
         }
+       
+        private RowBorderStyleOption _rowHeaderBorderStyleOption = RowBorderStyleOption.All;
+        [Category("RJ Code - Appearence")]
+        public RowBorderStyleOption  rowHeaderBorderStyleOption
+        {
+            get
+            {
+                return _rowHeaderBorderStyleOption;
+            }
+            set
+            {
+                _rowHeaderBorderStyleOption = value;
+                dataGridView.Invalidate();
+            }
+        }
         [Category("RJ Code - Appearence")]
         public Color rowHeaderBackColor
         {
@@ -1095,6 +1105,21 @@ namespace SQLUI
                 dataGridView.RowHeadersBorderStyle = value;
             }
         }
+        public RowBorderStyleOption _rowBorderStyleOption = RowBorderStyleOption.All;
+        [Category("RJ Code - Appearence")]
+        public RowBorderStyleOption rowBorderStyleOption
+        {
+            get
+            {
+                return _rowBorderStyleOption;
+            }
+            set
+            {
+                _rowBorderStyleOption = value;
+                dataGridView.Invalidate();
+            }
+        }
+
         [Category("RJ Code - Appearence")]
         public Font cellStyleFont
         {
@@ -1191,7 +1216,19 @@ namespace SQLUI
                 dataGridView.BackgroundColor = value;
             }
         }
-
+        private Color _RowsColor = Control.DefaultBackColor;
+        [Category("RJ Code - Appearence")]
+        public Color RowsColor
+        {
+            get
+            {
+                return _RowsColor;
+            }
+            set
+            {
+                _RowsColor = value;
+            }
+        }
         private Color cellBorderColor = Color.White;
         [Category("RJ Code - Appearence")]
         public Color CellBorderColor
@@ -3485,12 +3522,11 @@ namespace SQLUI
             Font font = null;
             try
             {
-                int width = -1;
                 foreach (ColumnElement columns in Columns)
                 {
                     if (columns.Name == name || columns.Text == name)
                     {
-                        font =  columns.TextFont;
+                        font = columns.TextFont;
                         break;
                     }
                 }
@@ -3503,10 +3539,36 @@ namespace SQLUI
             }
             finally
             {
-           
-         
+
+
             }
-            
+
+        }
+        public DataGridViewContentAlignment Get_ColumnAlignment(string name)
+        {
+            DataGridViewContentAlignment alignment = DataGridViewContentAlignment.MiddleCenter;
+            try
+            {
+                foreach (ColumnElement columns in Columns)
+                {
+                    if (columns.Name == name || columns.Text == name)
+                    {
+                        alignment = columns.Alignment;
+                        break;
+                    }
+                }
+                return alignment;
+            }
+            catch
+            {
+                return alignment;
+            }
+            finally
+            {
+
+
+            }
+
         }
         public void ScrollToIndex(int index)
         {
@@ -3898,9 +3960,12 @@ namespace SQLUI
                 if (_顯示CheckBox)
                 {
                     checkBoxHeader.Visible = true;
+                    int headerposX = 0;
                     int headerWidth = dataGridView.RowHeadersWidth;
                     int headerHeight = dataGridView.ColumnHeadersHeight;
-                    checkBoxHeader.Location = new Point(headerWidth + (dataGridView.Columns[0].Width - checkBoxHeader.Width) / 2, (headerHeight - checkBoxHeader.Height) / 2);
+                   if (this.顯示首列) headerposX = headerWidth + (dataGridView.Columns[0].Width - checkBoxHeader.Width) / 2; 
+                   else headerposX = (dataGridView.Columns[0].Width - checkBoxHeader.Width) / 2;
+                    checkBoxHeader.Location = new Point(headerposX, (headerHeight - checkBoxHeader.Height) / 2);
                 }
             }
             if (RowHeaderPostPaintingEvent != null)
@@ -3920,9 +3985,36 @@ namespace SQLUI
                     RowHeaderPostPaintingEvent(this.dataGridView, e.Graphics, new Rectangle(x, y, width, height), brush_background, pen_border);
                 }
             }
+            else
+            {
+                if (_rowHeaderBorderStyleOption == RowBorderStyleOption.BottomLine)
+                {
+                    using (Brush brush_background = new SolidBrush(columnHeaderBackColor))
+                    using (Pen pen_border = new Pen(columnHeaderBorderColor))
+                    {
+                        // 取得整個標題列的矩形範圍
+                        Rectangle headerRect = new Rectangle(0, 0, this.dataGridView.Width, columnHeadersHeight);
 
+                        // 填充背景色
+                        e.Graphics.FillRectangle(brush_background, headerRect);
 
-        }   
+                        // 畫底部邊界線
+                        e.Graphics.DrawLine(pen_border, headerRect.Left, headerRect.Bottom - 1, headerRect.Right, headerRect.Bottom - 1);
+
+                        foreach (DataGridViewColumn column in this.dataGridView.Columns)
+                        {
+                            if (column.Visible)
+                            {
+                                Rectangle rect = this.dataGridView.GetColumnDisplayRectangle(column.Index, false);
+                                rect = new Rectangle(rect.X, rect.Y, rect.Width - 1, columnHeadersHeight);  
+                                DrawString(e.Graphics, column.HeaderText, columnHeaderFont, rect, cellStylForeColor, Get_ColumnAlignment(column.HeaderText));
+                            }
+                        }
+                    }
+                }
+               
+            }
+        }
         private void DataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             e.Graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
@@ -3949,17 +4041,23 @@ namespace SQLUI
             {
                 if (e.RowIndex == -1 && e.ColumnIndex >= -1)
                 {
-                    using (Brush brush_background = new SolidBrush(this.columnHeaderBackColor))
-                    using (Pen pen_border = new Pen(cellBorderColor))
+                    if (_rowHeaderBorderStyleOption == RowBorderStyleOption.All)
                     {
-                        e.Graphics.FillRectangle(brush_background, e.CellBounds);
-                        e.Graphics.DrawRectangle(pen_border, e.CellBounds);
-                        if (e.Value != null)
+                        using (Brush brush_background = new SolidBrush(this.columnHeaderBackColor))
+                        using (Pen pen_border = new Pen(columnHeaderBorderColor))
                         {
-                            DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
+                            e.Graphics.FillRectangle(brush_background, e.CellBounds);
+                            DrawBottomLine(e.Graphics, e.CellBounds, columnHeaderBorderColor, 1);
+                            DrawLeftLine(e.Graphics, e.CellBounds, columnHeaderBackColor, 1);
+                            DrawRightLine(e.Graphics, e.CellBounds, columnHeaderBackColor, 1);
+                            if (e.Value != null)
+                            {
+                                DrawString(e.Graphics, e.Value.ToString(), e.CellStyle.Font, e.CellBounds, e.CellStyle.ForeColor, e.CellStyle.Alignment);
+                            }
+                            e.Handled = true;
                         }
-                        e.Handled = true;
                     }
+                    
                  
                 }
             }
@@ -3967,9 +4065,7 @@ namespace SQLUI
             {
  
                 if (e.RowIndex == -1 && e.ColumnIndex == -1)
-                {
-                    
-                   
+                {                                   
                     e.Handled = true;
                 }
             }
@@ -3996,14 +4092,14 @@ namespace SQLUI
                     }
                 }
                 using (Brush brush_background = new SolidBrush(e.CellStyle.BackColor))
-                using (Pen pen_border = new Pen(cellBorderColor))
+                using (Pen pen_cell_border = new Pen(cellBorderColor))
                 using (Brush brush_check_background = new SolidBrush(checkedRowBackColor))
                 using (Pen pen_check_border = new Pen(cellBorderColor))
                 {
                     if (dataKeyEnable == false)
                     {
                         e.Graphics.FillRectangle(brush_background, e.CellBounds);
-                        e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                        e.Graphics.DrawRectangle(pen_cell_border, e.CellBounds);
                     }
                     else
                     {
@@ -4011,16 +4107,15 @@ namespace SQLUI
                         if (DataKeysClasses.GetDataKeysCheck(value[0].ObjectToString()))
                         {
                             e.Graphics.FillRectangle(brush_check_background, e.CellBounds);
-                            e.Graphics.DrawRectangle(pen_check_border, e.CellBounds);
+                            e.Graphics.DrawRectangle(pen_cell_border, e.CellBounds);
                         }
                         else
                         {
                             e.Graphics.FillRectangle(brush_background, e.CellBounds);
-                            e.Graphics.DrawRectangle(pen_border, e.CellBounds);
+                            e.Graphics.DrawRectangle(pen_cell_border, e.CellBounds);
                         }
-
-
                     }
+
                     if (e.Value == null) return;
                     Type type = e.Value.GetType();
                     if (type == typeof(Image) || type == typeof(Bitmap))
@@ -4095,14 +4190,15 @@ namespace SQLUI
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
-            if (this.dataGridView.Rows[rowIndex].Selected)
+            if (this.dataGridView.Rows[rowIndex].Selected || (_rowBorderStyleOption == RowBorderStyleOption.BottomLine))
             {
                 using (Brush brush_background = new SolidBrush(this.RowsColor))
                 using (Brush brush_check_background = new SolidBrush(checkedRowBackColor))
                 using (Pen pen_check_border = new Pen(cellBorderColor))
-                using (Brush brush_back = new SolidBrush(selectedRowBackColor))
+                using (Brush brush_back = new SolidBrush(((this.dataGridView.Rows[rowIndex].Selected) ? selectedRowBackColor : RowsColor)))
                 using (Pen pen_Border = new Pen(selectedRowBorderColor))
                 {
+                    Color _selectedRowForeColor = ((this.dataGridView.Rows[rowIndex].Selected) ? selectedRowForeColor : cellStylForeColor);
                     int penWidth = (int)pen_Border.Width;
                     int col_width = this.dataGridView.Columns.GetColumnsWidth(DataGridViewElementStates.Visible);
                     int RowHeadersWidth = this.dataGridView.RowHeadersWidth;
@@ -4116,8 +4212,9 @@ namespace SQLUI
                     if (selectedRowBackColor != Color.Transparent && dataKeyEnable == false)
                     {
                         graphics.FillRectangle(brush_back, x, y, width, height);
+    
                     }
-                    if(dataKeyEnable)
+                    if (dataKeyEnable)
                     {
                         object[] value = GetRowValues(rowIndex);
                         if (value != null)
@@ -4132,11 +4229,13 @@ namespace SQLUI
                             }
                         }
                     }
-
-                    if (this.selectedBorderSize > 0)
+                    if (_rowBorderStyleOption == RowBorderStyleOption.BottomLine)
                     {
-                        graphics.DrawRectangle(pen_Border, x, y, width, height);
+                        graphics.DrawRectangle(new Pen(RowsColor), x, y, width, height);
+                        DrawTopLine(graphics, rowBounds, cellBorderColor, 1);
+                        DrawBottomLine(graphics, rowBounds, cellBorderColor, 1);
                     }
+                    if (this.selectedBorderSize > 0 && this.dataGridView.Rows[rowIndex].Selected) graphics.DrawRectangle(pen_Border, x, y, width, height);
 
                     DataGridViewCellCollection cells = this.dataGridView.Rows[rowIndex].Cells;
                     for (int i = 0; i < cells.Count; i++)
@@ -4169,25 +4268,29 @@ namespace SQLUI
                                     Rectangle rect = new Rectangle(displayRect.X + (displayRect.Width - 20), displayRect.Y + 2, 20, displayRect.Height - 4);
                                     ComboBoxRenderer.DrawDropDownButton(graphics, rect, System.Windows.Forms.VisualStyles.ComboBoxState.Disabled);
                                     displayRect.Width -= 20;
-                                    DrawString(graphics, cells[i].Value.ToString(), font, displayRect, selectedRowForeColor, columnElement.Alignment);
+                                    DrawString(graphics, cells[i].Value.ToString(), font, displayRect, _selectedRowForeColor, columnElement.Alignment);
                                 }
                                 else
                                 {
                                     Rectangle rectangle = dataGridView.GetCellDisplayRectangle(i, rowIndex, false);
                                     if (dataKeyEnable == false)
                                     {
-                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, selectedRowForeColor, columnElement.Alignment);
+                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, _selectedRowForeColor, columnElement.Alignment);
                                     }
                                     else
                                     {
-                                 
-                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, DefaultForeColor, columnElement.Alignment);
+
+                                        DrawString(graphics, cells[i].Value.ToString(), font, rectangle, _selectedRowForeColor, columnElement.Alignment);
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }
+            else
+            {
+                
             }
         }
         private void DataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -4506,7 +4609,36 @@ namespace SQLUI
             Rectangle rectangle = new Rectangle(x, y, width, height);
             return rectangle;
         }
+        private void DrawBottomLine(Graphics e, Rectangle rectangle, Color lineColor, int lineWidth)
+        {
+            using (Pen pen = new Pen(lineColor, lineWidth))
+            {
+                e.DrawLine(pen, rectangle.Left, rectangle.Bottom - lineWidth / 2, rectangle.Right, rectangle.Bottom - lineWidth / 2);
+            }
+        }
+        private void DrawTopLine(Graphics e, Rectangle rectangle, Color lineColor, int lineWidth)
+        {
+            using (Pen pen = new Pen(lineColor, lineWidth))
+            {
+                e.DrawLine(pen, rectangle.Left, rectangle.Top + lineWidth / 2, rectangle.Right, rectangle.Top + lineWidth / 2);
+            }
+        }
 
+        private void DrawLeftLine(Graphics e, Rectangle rectangle, Color lineColor, int lineWidth)
+        {
+            using (Pen pen = new Pen(lineColor, lineWidth))
+            {
+                e.DrawLine(pen, rectangle.Left + lineWidth / 2, rectangle.Top, rectangle.Left + lineWidth / 2, rectangle.Bottom);
+            }
+        }
+
+        private void DrawRightLine(Graphics e, Rectangle rectangle, Color lineColor, int lineWidth)
+        {
+            using (Pen pen = new Pen(lineColor, lineWidth))
+            {
+                e.DrawLine(pen, rectangle.Right - lineWidth / 2, rectangle.Top, rectangle.Right - lineWidth / 2, rectangle.Bottom);
+            }
+        }
 
         static public class ColorSerializationHelper
         {

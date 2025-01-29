@@ -459,7 +459,8 @@ namespace MyUI
             using (GraphicsPath pathBackGround = this.GetFigurePath(rectBackGround, this.borderRadius))
             using (GraphicsPath pathShadow = this.GetFigurePath(rectShadow, this.borderRadius))
             using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius))
-            using (Brush brushBackgroung = new SolidBrush(bkgroundcolor))
+            using (Brush brushBackgroung = new SolidBrush(this.backgroundColor))
+            using (Brush brushbtnBackgroung = new SolidBrush(bkgroundcolor))
             using (Pen penSurface = new Pen(this.Parent.BackColor, this.ShadowSize + 1))
             using (Pen penBorder = new Pen(borderColor, borderSize))
             {
@@ -475,7 +476,8 @@ namespace MyUI
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                 g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
 
-                g.FillPath(brushBackgroung, pathBackGround);
+                g.FillRectangle(brushBackgroung, 0, 0, this.Width, this.Height);
+                g.FillPath(brushbtnBackgroung, pathBackGround);
                 if (this.BackgroundImage != null)
                 {
                     int y = image_padding.Top;
