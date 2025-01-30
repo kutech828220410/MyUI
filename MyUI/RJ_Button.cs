@@ -459,7 +459,7 @@ namespace MyUI
             using (GraphicsPath pathBackGround = this.GetFigurePath(rectBackGround, this.borderRadius))
             using (GraphicsPath pathShadow = this.GetFigurePath(rectShadow, this.borderRadius))
             using (GraphicsPath pathBorder = this.GetFigurePath(rectBorder, this.borderRadius))
-            using (Brush brushBackgroung = new SolidBrush(this.backgroundColor))
+            using (Brush brushBackgroung = new SolidBrush(this.Parent.BackColor))
             using (Brush brushbtnBackgroung = new SolidBrush(bkgroundcolor))
             using (Pen penSurface = new Pen(this.Parent.BackColor, this.ShadowSize + 1))
             using (Pen penBorder = new Pen(borderColor, borderSize))

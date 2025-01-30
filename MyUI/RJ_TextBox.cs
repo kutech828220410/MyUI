@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Basic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -40,7 +41,8 @@ namespace MyUI
                 this.Invoke(new Action(delegate 
                 {
                     textBox1.Text = value;
-                    SetPlcaeHolder();
+                    textBox1.ForeColor = this.ForeColor;
+                    isPlaceholder = false;
                 }));    
             }
         }
@@ -175,9 +177,8 @@ namespace MyUI
                     {
                         if (isPlaceholder && value == "") return;
                         textBox1.Text = value;
-                        RemovePlcaeHolder();
-                        textBox1.Text = value;
-                        RemovePlcaeHolder();
+                        textBox1.ForeColor = this.ForeColor;
+                        isPlaceholder = false;
                     }));
                 }
                         
@@ -268,13 +269,7 @@ namespace MyUI
         }
 
         public event EventHandler _TextChanged;
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if(this._TextChanged != null)
-            {
-                this._TextChanged.Invoke(sender, e);
-            }
-        }
+ 
 
         public RJ_TextBox()
         {
@@ -282,9 +277,10 @@ namespace MyUI
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             SetPlcaeHolder();
+            this.textBox1.GotFocus += TextBox1_GotFocus;
         }
 
-   
+    
 
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -384,7 +380,7 @@ namespace MyUI
         }
         private void SetPlcaeHolder()
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
+            if ((textBox1.Text == PlaceholderText || textBox1.Text.StringIsEmpty()) && placeholderText.StringIsEmpty() == false)
             {
                 if (isPasswordChar)
                 {
@@ -394,12 +390,13 @@ namespace MyUI
                 isPlaceholder = true;
                 textBox1.Text = placeholderText;
                 textBox1.ForeColor = placeholderColor;
-              
+                textBox1.SelectionStart = 0;
+
             }
         }
         private void RemovePlcaeHolder()
         {
-            if (isPlaceholder && placeholderText != "")
+            if (isPlaceholder && placeholderText.StringIsEmpty() == false)
             {
                 isPlaceholder = false;
                 textBox1.Text = "";
@@ -481,6 +478,7 @@ namespace MyUI
                     KeypressEnterButton.onClick();
                 }
             }
+            this.RemovePlcaeHolder();
         }
         protected override void OnGotFocus(EventArgs e)
         {
@@ -488,11 +486,24 @@ namespace MyUI
         }
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if(!this.DesignMode)
+           
+        }
+        private void TextBox1_GotFocus(object sender, EventArgs e)
+        {
+            if (!this.DesignMode)
             {
                 this.IsFocused = true;
+
+
+                if (textBox1.Text == PlaceholderText && placeholderText.StringIsEmpty() == false)
+                {
+                    textBox1.SelectionStart = 0;
+                }
+                else
+                {
+                    this.RemovePlcaeHolder();
+                }
                 this.Invalidate();
-                this.RemovePlcaeHolder();
             }
         }
         private void textBox1_Leave(object sender, EventArgs e)
@@ -503,6 +514,13 @@ namespace MyUI
                 this.SetPlcaeHolder();
                 this.Invalidate();
         
+            }
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (this._TextChanged != null)
+            {
+                this._TextChanged.Invoke(sender, e);
             }
         }
     }

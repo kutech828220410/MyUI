@@ -3636,6 +3636,63 @@ namespace SQLUI
         {
             this.RefreshGrid(this.SaveDataVal.RowsList);
         }
+        public void RefreshGridByUpdate(List<object[]> RowsList)
+        {
+            List<object[]> list_add = new List<object[]>();
+            List<object[]> list_replace = new List<object[]>();
+            List<object[]> list_delete = new List<object[]>();
+
+            // Create dictionaries for quick lookup
+            Dictionary<string, object[]> currentDataDict = this.SaveDataVal.RowsList.ToDictionary(row => row[0].ToString());
+            Dictionary<string, object[]> newDataDict = RowsList.ToDictionary(row => row[0].ToString());
+
+            // Find rows to add and replace
+            foreach (var newRow in RowsList)
+            {
+                string key = newRow[0].ToString();
+                if (currentDataDict.ContainsKey(key))
+                {
+                    list_replace.Add(newRow);
+                }
+                else
+                {
+                    list_add.Add(newRow);
+                }
+            }
+
+            // Find rows to delete
+            foreach (var currentRow in this.SaveDataVal.RowsList)
+            {
+                string key = currentRow[0].ToString();
+                if (!newDataDict.ContainsKey(key))
+                {
+                    list_delete.Add(currentRow);
+                }
+            }
+
+            // Perform the updates
+            foreach (var row in list_add)
+            {
+                this.SaveDataVal.RowsList.Add(row);
+            }
+
+            foreach (var row in list_replace)
+            {
+                int index = this.SaveDataVal.RowsList.FindIndex(r => r[0].ToString() == row[0].ToString());
+                if (index != -1)
+                {
+                    this.SaveDataVal.RowsList[index] = row;
+                }
+            }
+
+            foreach (var row in list_delete)
+            {
+                this.SaveDataVal.RowsList.Remove(row);
+            }
+
+            // Refresh the grid
+            this.RefreshGrid(this.SaveDataVal.RowsList);
+        }
         public List<object[]> GetRowsList()
         {
             return this.SaveDataVal.RowsList;

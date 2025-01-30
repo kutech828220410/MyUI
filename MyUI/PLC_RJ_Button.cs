@@ -914,9 +914,7 @@ namespace MyUI
                 flag_init = true;
             }
         }
-
-      
-
+     
         private void 按鈕狀態計算()
         {
             Init();

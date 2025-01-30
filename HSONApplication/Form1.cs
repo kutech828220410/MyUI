@@ -185,19 +185,19 @@ namespace HSONApplication
 
         private void Function_取得備藥通知()
         {
-            string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/get_udnoectc_by_ctdate_st_end";
-            returnData returnData = new returnData();
-            returnData.ServerName = "cheom";
-            returnData.ServerType = "癌症備藥機";
-            returnData.Value = "2023-11-23 00:00:00,2025-12-27 23:59:59";
-            string json_in = returnData.JsonSerializationt();
-            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
-            returnData = json.JsonDeserializet<returnData>();
+            //string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/get_udnoectc_by_ctdate_st_end";
+            //returnData returnData = new returnData();
+            //returnData.ServerName = "cheom";
+            //returnData.ServerType = "癌症備藥機";
+            //returnData.Value = "2023-11-23 00:00:00,2025-12-27 23:59:59";
+            //string json_in = returnData.JsonSerializationt();
+            //string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            //returnData = json.JsonDeserializet<returnData>();
 
-            List<udnoectc> udnoectcs = returnData.Data.ObjToListClass<udnoectc>();
-            List<object[]> list_udnoectc = udnoectcs.ClassToSQL<udnoectc, enum_udnoectc>();
-            this.sqL_DataGridView_備藥通知.Set_ColumnType("病房", typeof(ComboBox));
-            this.sqL_DataGridView_備藥通知.RefreshGrid(list_udnoectc);
+            //List<udnoectc> udnoectcs = returnData.Data.ObjToListClass<udnoectc>();
+            //List<object[]> list_udnoectc = udnoectcs.ClassToSQL<udnoectc, enum_udnoectc>();
+            //this.sqL_DataGridView_備藥通知.Set_ColumnType("病房", typeof(ComboBox));
+            //this.sqL_DataGridView_備藥通知.RefreshGrid(list_udnoectc);
 
         }
 

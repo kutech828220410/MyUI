@@ -125,25 +125,25 @@ namespace MyUI
             Basic.MyTimerBasic myTimer = new Basic.MyTimerBasic(2);
             myTimer.StartTickTime(1);
       
-            while (true)
-            {
-                try
-                {
-                    if (cnt >= 200) break;
-                    if (myTimer.IsTimeOut())
-                    {
-                        pLoading.Opacity = 0 + 0.04 * cnt;
-                        myTimer.TickStop();
-                        myTimer.StartTickTime(1);
-                        Application.DoEvents();
-                        cnt++;
-                    }
-                }
-                catch
-                {
-                    break;
-                }
-            }
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        if (cnt >= 200) break;
+            //        if (myTimer.IsTimeOut())
+            //        {
+            //            pLoading.Opacity = 0 + 0.04 * cnt;
+            //            myTimer.TickStop();
+            //            myTimer.StartTickTime(1);
+            //            Application.DoEvents();
+            //            cnt++;
+            //        }
+            //    }
+            //    catch
+            //    {
+            //        break;
+            //    }
+            //}
 
             base.OnShown(e);
           
