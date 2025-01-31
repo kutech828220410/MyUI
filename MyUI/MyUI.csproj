@@ -136,6 +136,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlignedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConsoleTrayUI.cs" />
     <Compile Include="ControlMethodClass.cs" />
     <Compile Include="DataBaseView.cs">
