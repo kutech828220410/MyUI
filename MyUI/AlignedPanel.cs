@@ -17,40 +17,13 @@ public class AlignedPanel : Panel
     private bool _fillWidth = false;
     private bool _fillHeight = false;
 
-    /// <summary>
-    /// 設定 Panel 內的唯一元件
-    /// </summary>
-    [Browsable(false)] // 不顯示在設計器中
-    public Control ChildControl
-    {
-        get => _childControl;
-        set
-        {
-            if (_childControl != null)
-            {
-                this.Controls.Remove(_childControl); // 移除舊的元件
-            }
-
-            _childControl = value;
-
-            if (_childControl != null)
-            {
-                this.Controls.Add(_childControl);
-                _childControl.Anchor = AnchorStyles.None; // 禁止 Anchor
-                _childControl.Dock = DockStyle.None; // 禁止 Dock
-                _childControl.LocationChanged += (s, e) => AlignControl();
-                _childControl.SizeChanged += (s, e) => AlignControl();
-                AlignControl(); // 立即對齊
-            }
-        }
-    }
 
     /// <summary>
     /// 控制元件的水平對齊方式
     /// </summary>
     [Category("Layout")]
     [Description("設定內部元件的對齊方式（靠左、置中、靠右）")]
-    [DefaultValue(Alignment.Center)] // 設定預設值為置中
+    [DefaultValue(Alignment.Center)]
     [Browsable(true)]
     [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
     public Alignment HorizontalAlignment
@@ -58,8 +31,11 @@ public class AlignedPanel : Panel
         get => _horizontalAlignment;
         set
         {
-            _horizontalAlignment = value;
-            AlignControl();
+            if (_horizontalAlignment != value)
+            {
+                _horizontalAlignment = value;
+                AlignControl();
+            }
         }
     }
 
@@ -76,8 +52,11 @@ public class AlignedPanel : Panel
         get => _fillWidth;
         set
         {
-            _fillWidth = value;
-            AlignControl();
+            if (_fillWidth != value)
+            {
+                _fillWidth = value;
+                AlignControl();
+            }
         }
     }
 
@@ -94,16 +73,35 @@ public class AlignedPanel : Panel
         get => _fillHeight;
         set
         {
-            _fillHeight = value;
-            AlignControl();
+            if (_fillHeight != value)
+            {
+                _fillHeight = value;
+                AlignControl();
+            }
         }
     }
 
     public AlignedPanel()
     {
+        this.ControlAdded += AlignedPanel_ControlAdded; 
         this.Resize += (s, e) => AlignControl(); // 當 Panel 大小變更時，重新對齊
     }
 
+    private void AlignedPanel_ControlAdded(object sender, ControlEventArgs e)
+    {
+        _childControl = e.Control;
+
+        if (_childControl != null)
+        {
+            _childControl.Anchor = AnchorStyles.None;
+            _childControl.Dock = DockStyle.None;       
+            AlignControl(); // 立即對齊
+        }
+    }
+
+    /// <summary>
+    /// 重新計算元件位置與大小
+    /// </summary>
     private void AlignControl()
     {
         if (_childControl == null) return;
@@ -124,13 +122,13 @@ public class AlignedPanel : Panel
             switch (_horizontalAlignment)
             {
                 case Alignment.Center:
-                    x = (this.Width - _childControl.Width) / 2; // 置中
+                    x = (this.Width - _childControl.Width) / 2;
                     break;
                 case Alignment.Right:
-                    x = this.Width - _childControl.Width; // 靠右
+                    x = this.Width - _childControl.Width;
                     break;
                 case Alignment.Left:
-                    x = 0; // 靠左
+                    x = 0;
                     break;
             }
         }
@@ -142,11 +140,7 @@ public class AlignedPanel : Panel
             height = this.Height;
         }
 
-        _childControl.Location = new Point(x, y);
-        _childControl.Width = width;
-        _childControl.Height = height;
-        _childControl.Invalidate();
-        this.Invalidate();
-     
+        _childControl.SetBounds(x, y, width, height);
     }
+
 }

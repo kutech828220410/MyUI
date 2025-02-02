@@ -181,6 +181,14 @@ namespace MyUI
                         isPlaceholder = false;
                     }));
                 }
+                else
+                {
+                    if (isPlaceholder && value == "") return;
+                    textBox1.Text = value;
+                    textBox1.ForeColor = this.ForeColor;
+                    isPlaceholder = false;
+
+                }
                         
             }
         }

@@ -37,7 +37,7 @@
             this.plC_RJ_ScreenButton1 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_ScreenPage_main = new MyUI.PLC_ScreenPage();
             this.主畫面 = new System.Windows.Forms.TabPage();
-            this.sidePanel1 = new MyUI.SidePanel();
+            this.ipAddressInput1 = new MyUI.IPAddressInput();
             this.rJ_DatePicker1 = new MyUI.RJ_DatePicker();
             this.button_next = new System.Windows.Forms.Button();
             this.button_pre = new System.Windows.Forms.Button();
@@ -58,7 +58,6 @@
             this.panel_main.SuspendLayout();
             this.plC_ScreenPage_main.SuspendLayout();
             this.主畫面.SuspendLayout();
-            this.sidePanel1.SuspendLayout();
             this.手動.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,7 +212,7 @@
             // 
             // 主畫面
             // 
-            this.主畫面.Controls.Add(this.sidePanel1);
+            this.主畫面.Controls.Add(this.ipAddressInput1);
             this.主畫面.Controls.Add(this.rJ_DatePicker1);
             this.主畫面.Controls.Add(this.button_next);
             this.主畫面.Controls.Add(this.button_pre);
@@ -234,33 +233,13 @@
             this.主畫面.Text = "主畫面";
             this.主畫面.UseVisualStyleBackColor = true;
             // 
-            // sidePanel1
+            // ipAddressInput1
             // 
-            this.sidePanel1.AnimationStep = 30;
-            this.sidePanel1.CollapsedSize = 30;
-            // 
-            // sidePanel1.ContentsPanel
-            // 
-            this.sidePanel1.ContentsPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.sidePanel1.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
-            this.sidePanel1.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
-            this.sidePanel1.ContentsPanel.BorderRadius = 5;
-            this.sidePanel1.ContentsPanel.BorderSize = 0;
-            this.sidePanel1.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel1.ContentsPanel.ForeColor = System.Drawing.Color.White;
-            this.sidePanel1.ContentsPanel.IsSelected = false;
-            this.sidePanel1.ContentsPanel.Location = new System.Drawing.Point(0, 0);
-            this.sidePanel1.ContentsPanel.Name = "ContentsPanel";
-            this.sidePanel1.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
-            this.sidePanel1.ContentsPanel.ShadowSize = 0;
-            this.sidePanel1.ContentsPanel.Size = new System.Drawing.Size(235, 435);
-            this.sidePanel1.ContentsPanel.TabIndex = 3;
-            this.sidePanel1.ExpandDirection = MyUI.ExpandDirection.Up;
-            this.sidePanel1.ExpandedSize = 200;
-            this.sidePanel1.Location = new System.Drawing.Point(60, 302);
-            this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(235, 465);
-            this.sidePanel1.TabIndex = 32;
+            this.ipAddressInput1.BackColor = System.Drawing.Color.Transparent;
+            this.ipAddressInput1.Location = new System.Drawing.Point(343, 590);
+            this.ipAddressInput1.Name = "ipAddressInput1";
+            this.ipAddressInput1.Size = new System.Drawing.Size(266, 33);
+            this.ipAddressInput1.TabIndex = 32;
             // 
             // rJ_DatePicker1
             // 
@@ -583,7 +562,9 @@
             this.sqL_DataGridView_備藥通知.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
             this.sqL_DataGridView_備藥通知.Password = "user82822040";
             this.sqL_DataGridView_備藥通知.Port = ((uint)(3306u));
+            this.sqL_DataGridView_備藥通知.rowBorderStyleOption = SQLUI.SQL_DataGridView.RowBorderStyleOption.All;
             this.sqL_DataGridView_備藥通知.rowHeaderBackColor = System.Drawing.Color.Gray;
+            this.sqL_DataGridView_備藥通知.rowHeaderBorderStyleOption = SQLUI.SQL_DataGridView.RowBorderStyleOption.All;
             this.sqL_DataGridView_備藥通知.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
             this.sqL_DataGridView_備藥通知.RowsColor = System.Drawing.SystemColors.Control;
             this.sqL_DataGridView_備藥通知.RowsHeight = 80;
@@ -680,7 +661,6 @@
             this.panel_main.PerformLayout();
             this.plC_ScreenPage_main.ResumeLayout(false);
             this.主畫面.ResumeLayout(false);
-            this.sidePanel1.ResumeLayout(false);
             this.手動.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -712,7 +692,7 @@
         private MyUI.RJ_DatePicker rJ_DatePicker1;
         private System.Windows.Forms.Label label1;
         private MyUI.RJ_Lable rJ_Lable1;
-        private MyUI.SidePanel sidePanel1;
+        private MyUI.IPAddressInput ipAddressInput1;
     }
 }
 
