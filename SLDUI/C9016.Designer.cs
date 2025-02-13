@@ -30,20 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(C9016));
             this.panel_Open = new System.Windows.Forms.Panel();
-            this.exButton_Open = new MyUI.ExButton();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.numWordTextBox_StreamName = new MyUI.NumWordTextBox();
             this.panel67 = new System.Windows.Forms.Panel();
             this.label_CycleTime = new System.Windows.Forms.Label();
             this.label_單位 = new System.Windows.Forms.Label();
+            this.exButton_Open = new MyUI.ExButton();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.numWordTextBox_StreamName = new MyUI.NumWordTextBox();
+            this.button_Save = new System.Windows.Forms.Button();
             this.panel_Open.SuspendLayout();
-            this.groupBox14.SuspendLayout();
             this.panel67.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Open
             // 
             this.panel_Open.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Open.Controls.Add(this.button_Save);
             this.panel_Open.Controls.Add(this.panel67);
             this.panel_Open.Controls.Add(this.exButton_Open);
             this.panel_Open.Controls.Add(this.groupBox14);
@@ -53,6 +55,38 @@
             this.panel_Open.Size = new System.Drawing.Size(583, 58);
             this.panel_Open.TabIndex = 10;
             // 
+            // panel67
+            // 
+            this.panel67.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel67.Controls.Add(this.label_CycleTime);
+            this.panel67.Controls.Add(this.label_單位);
+            this.panel67.Location = new System.Drawing.Point(120, 14);
+            this.panel67.Name = "panel67";
+            this.panel67.Size = new System.Drawing.Size(104, 31);
+            this.panel67.TabIndex = 38;
+            // 
+            // label_CycleTime
+            // 
+            this.label_CycleTime.AutoSize = true;
+            this.label_CycleTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label_CycleTime.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label_CycleTime.Location = new System.Drawing.Point(27, 6);
+            this.label_CycleTime.Name = "label_CycleTime";
+            this.label_CycleTime.Size = new System.Drawing.Size(31, 16);
+            this.label_CycleTime.TabIndex = 16;
+            this.label_CycleTime.Text = "000";
+            // 
+            // label_單位
+            // 
+            this.label_單位.AutoSize = true;
+            this.label_單位.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label_單位.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label_單位.Location = new System.Drawing.Point(75, 6);
+            this.label_單位.Name = "label_單位";
+            this.label_單位.Size = new System.Drawing.Size(25, 16);
+            this.label_單位.TabIndex = 15;
+            this.label_單位.Text = "ms";
+            // 
             // exButton_Open
             // 
             this.exButton_Open.Location = new System.Drawing.Point(9, 4);
@@ -60,9 +94,11 @@
             this.exButton_Open.OFF_文字內容 = "Open";
             this.exButton_Open.OFF_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_Open.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.exButton_Open.OFF_背景顏色 = System.Drawing.SystemColors.Control;
             this.exButton_Open.ON_文字內容 = "Open";
             this.exButton_Open.ON_文字字體 = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.exButton_Open.ON_文字顏色 = System.Drawing.Color.White;
+            this.exButton_Open.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.exButton_Open.Size = new System.Drawing.Size(105, 47);
             this.exButton_Open.Style = MyUI.ExButton.StyleEnum.經典;
             this.exButton_Open.TabIndex = 1;
@@ -96,37 +132,14 @@
             this.numWordTextBox_StreamName.TabIndex = 5;
             this.numWordTextBox_StreamName.Text = "C9016-001";
             // 
-            // panel67
+            // button_Save
             // 
-            this.panel67.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel67.Controls.Add(this.label_CycleTime);
-            this.panel67.Controls.Add(this.label_單位);
-            this.panel67.Location = new System.Drawing.Point(120, 14);
-            this.panel67.Name = "panel67";
-            this.panel67.Size = new System.Drawing.Size(104, 31);
-            this.panel67.TabIndex = 38;
-            // 
-            // label_CycleTime
-            // 
-            this.label_CycleTime.AutoSize = true;
-            this.label_CycleTime.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label_CycleTime.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label_CycleTime.Location = new System.Drawing.Point(27, 6);
-            this.label_CycleTime.Name = "label_CycleTime";
-            this.label_CycleTime.Size = new System.Drawing.Size(32, 16);
-            this.label_CycleTime.TabIndex = 16;
-            this.label_CycleTime.Text = "000";
-            // 
-            // label_單位
-            // 
-            this.label_單位.AutoSize = true;
-            this.label_單位.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label_單位.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label_單位.Location = new System.Drawing.Point(75, 6);
-            this.label_單位.Name = "label_單位";
-            this.label_單位.Size = new System.Drawing.Size(26, 16);
-            this.label_單位.TabIndex = 15;
-            this.label_單位.Text = "ms";
+            this.button_Save.Location = new System.Drawing.Point(349, 13);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(84, 33);
+            this.button_Save.TabIndex = 39;
+            this.button_Save.Text = " Save";
+            this.button_Save.UseVisualStyleBackColor = true;
             // 
             // C9016
             // 
@@ -137,10 +150,10 @@
             this.Name = "C9016";
             this.Size = new System.Drawing.Size(583, 519);
             this.panel_Open.ResumeLayout(false);
-            this.groupBox14.ResumeLayout(false);
-            this.groupBox14.PerformLayout();
             this.panel67.ResumeLayout(false);
             this.panel67.PerformLayout();
+            this.groupBox14.ResumeLayout(false);
+            this.groupBox14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -154,7 +167,6 @@
         private System.Windows.Forms.Panel panel67;
         private System.Windows.Forms.Label label_CycleTime;
         private System.Windows.Forms.Label label_單位;
-
-     
+        private System.Windows.Forms.Button button_Save;
     }
 }

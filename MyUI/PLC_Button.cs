@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using LadderConnection;
 using System.Media;
 using System.Runtime.InteropServices;
+using Basic;
 namespace MyUI
 {
      [System.Drawing.ToolboxBitmap(typeof(Button))]
@@ -696,6 +697,11 @@ namespace MyUI
 
                 if (divice_OK) _寫入元件位置 = value;
                 else _寫入元件位置 = "";
+                if (this.OFF_文字內容.StringIsEmpty() && this.ON_文字內容.StringIsEmpty())
+                {
+                    this.OFF_文字內容 = value;
+                    this.ON_文字內容 = value;
+                }
             }
         }
         private string _讀取元件位置 = "";
@@ -705,19 +711,153 @@ namespace MyUI
             get { return _讀取元件位置; }
             set
             {
-                value = value.ToUpper();
-                bool divice_OK = false;
-                if (LadderProperty.DEVICE.TestDevice(value))
+                try
                 {
-                    string temp = value.Remove(1);
-                    if (temp == "X" || temp == "Y" || temp == "M" || temp == "S" || temp == "T") divice_OK = true;
-                }
+                    value = value.ToUpper();
+                    bool divice_OK = false;
+                    if (LadderProperty.DEVICE.TestDevice(value))
+                    {
+                        string temp = value.Remove(1);
+                        if (temp == "X" || temp == "Y" || temp == "M" || temp == "S" || temp == "T") divice_OK = true;
+                    }
 
-                if (divice_OK) _讀取元件位置 = value;
-                else _讀取元件位置 = "";
+                    if (divice_OK) _讀取元件位置 = value;
+                    else _讀取元件位置 = "";
+                    if (this.OFF_文字內容.StringIsEmpty() && this.ON_文字內容.StringIsEmpty())
+                    {
+                        this.OFF_文字內容 = value;
+                        this.ON_文字內容 = value;
+                    }
+                }
+                catch
+                {
+
+                }
+                finally
+                {
+                    this.Invalidate();
+                }
+               
             }
         }
-
+        [Browsable(true)]  // 仍然可以在屬性窗口中顯示
+        [Category("自訂屬性")]
+        [Description("")]
+        [DefaultValue("")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] // 防止設計工具序列化
+        public virtual int 讀取元件Chanel
+        {
+            get
+            {
+                _讀取元件位置 = _讀取元件位置.ToUpper();
+                bool divice_OK = false;
+                if (LadderProperty.DEVICE.TestDevice(_讀取元件位置))
+                {
+                    string temp = _讀取元件位置.Remove(1);
+                    if (temp == "X" || temp == "Y" || temp == "M" || temp == "S" || temp == "T") divice_OK = true;
+                }
+                else
+                {
+                    return -1;
+                }
+                if(divice_OK)
+                {
+                    int temp = _讀取元件位置.Substring(1, _讀取元件位置.Length - 1).StringToInt32();
+                    return temp / 10;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            set
+            {
+                _讀取元件位置 = _讀取元件位置.ToUpper();
+                bool divice_OK = false;
+                string device_head = "";
+                if (LadderProperty.DEVICE.TestDevice(_讀取元件位置))
+                {
+                    device_head = _讀取元件位置.Remove(1);
+                    if (device_head == "X" || device_head == "Y" || device_head == "M" || device_head == "S" || device_head == "T") divice_OK = true;
+                }
+                else
+                {
+                    return;
+                }
+                if (divice_OK)
+                {
+                    int temp = _讀取元件位置.Substring(1, _讀取元件位置.Length - 1).StringToInt32();
+                    temp = (value * 10) + temp % 10;
+                    this.OFF_文字內容 = "";
+                    this.ON_文字內容 = "";
+                    讀取元件位置 = $"{device_head}{temp}";
+                    this.Invalidate();
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+        [Browsable(true)]  // 仍然可以在屬性窗口中顯示
+        [Category("自訂屬性")]
+        [Description("")]
+        [DefaultValue("")]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)] // 防止設計工具序列化
+        public virtual int 寫入元件Chanel
+        {
+            get
+            {
+                _寫入元件位置 = _寫入元件位置.ToUpper();
+                bool divice_OK = false;
+                if (LadderProperty.DEVICE.TestDevice(_寫入元件位置))
+                {
+                    string temp = _寫入元件位置.Remove(1);
+                    if (temp == "X" || temp == "Y" || temp == "M" || temp == "S" || temp == "T") divice_OK = true;
+                }
+                else
+                {
+                    return -1;
+                }
+                if (divice_OK)
+                {
+                    int temp = _寫入元件位置.Substring(1, _寫入元件位置.Length - 1).StringToInt32();
+                    return temp / 10;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            set
+            {
+                _寫入元件位置 = _寫入元件位置.ToUpper();
+                bool divice_OK = false;
+                string device_head = "";
+                if (LadderProperty.DEVICE.TestDevice(_寫入元件位置))
+                {
+                    device_head = _寫入元件位置.Remove(1);
+                    if (device_head == "X" || device_head == "Y" || device_head == "M" || device_head == "S" || device_head == "T") divice_OK = true;
+                }
+                else
+                {
+                    return;
+                }
+                if (divice_OK)
+                {
+                    int temp = _寫入元件位置.Substring(1, _寫入元件位置.Length - 1).StringToInt32();
+                    temp = (value * 10) + temp % 10;
+                    this.OFF_文字內容 = "";
+                    this.ON_文字內容 = "";
+                    寫入元件位置 = $"{device_head}{temp}";
+                    this.Invalidate();
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
         public enum PressEnum : int
         {
             Mouse_左鍵, Key_上, Key_下, Key_左, Key_右, Key_右三角引號, Key_左三角引號, Key_PageUp, Key_PageDown, Key_Esc, Key_Enter

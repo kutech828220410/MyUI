@@ -69,6 +69,13 @@ namespace SLDUI
         public C1230()
         {
             InitializeComponent();
+            button_Save.Click += Button_Save_Click;
+        }
+
+        private void Button_Save_Click(object sender, EventArgs e)
+        {
+            SaveProperties();
+            MyMessageBox.ShowDialog("Save Success");
         }
 
         public void UI_Visible(bool visble)
@@ -365,13 +372,12 @@ namespace SLDUI
                 }
             }
          
-            SaveProperties();    
             FLAG_C1230_Isopen = true;
             cnt++;
         }
         void cnt_Open_C1230_250_開啟失敗(ref byte cnt)
         {
-            MessageBox.Show("Open PCI-1230 fail" + "#" + card_num.ToString("00"));
+            MyMessageBox.ShowDialog("Open PCI-1230 fail" + "#" + card_num.ToString("00"));
             cnt++;
         }
         void cnt_Open_C1230_(ref byte cnt)

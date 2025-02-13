@@ -102,6 +102,7 @@ namespace MyUI
             set
             {
                 this._backColor = value;
+                base.BackColor = value;
             }
         }
         private Color _ControlBoxActive = Color.DarkGray;
@@ -114,6 +115,7 @@ namespace MyUI
             set
             {
                 this._ControlBoxActive = value;
+                base.ControlBoxActive = value;
             }
         }
         private Color _ControlBoxDeactive = Color.DarkGray;
@@ -126,6 +128,7 @@ namespace MyUI
             set
             {
                 this._ControlBoxDeactive = value;
+                base.ControlBoxDeactive = value;
             }
         }
 

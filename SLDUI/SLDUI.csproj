@@ -43,6 +43,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
+    <Reference Include="CSkin, Version=12.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\0.DLL\CSkin.dll</HintPath>
+    </Reference>
     <Reference Include="LadderUI">
       <HintPath>..\0.DLL\LadderUI.dll</HintPath>
     </Reference>

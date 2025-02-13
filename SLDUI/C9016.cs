@@ -146,7 +146,15 @@ namespace SLDUI
         public C9016()
         {
             InitializeComponent();
+            button_Save.Click += Button_Save_Click;
         }
+
+        private void Button_Save_Click(object sender, EventArgs e)
+        {
+            SaveProperties();
+            MyMessageBox.ShowDialog("Save sucessfully!");
+        }
+
         delegate void UI_Visible_Delegate(bool visble);
         private void sub_UI_Visible(bool visble)
         {
@@ -504,7 +512,6 @@ namespace SLDUI
                     }
                 }
             }
-            SaveProperties();
             Thread.Sleep(500);
             Thread00.Trigger();
             Thread01.Trigger();
