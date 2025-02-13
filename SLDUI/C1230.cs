@@ -371,7 +371,7 @@ namespace SLDUI
 
                 }
             }
-         
+            SaveProperties();
             FLAG_C1230_Isopen = true;
             cnt++;
         }
