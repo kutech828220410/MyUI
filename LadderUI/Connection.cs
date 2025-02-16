@@ -2898,54 +2898,107 @@ namespace LadderConnection
                 FLAG_Program_pause_enable = new bool[properties.Program.Count];
             }
         }
-        private void SaveDevice()
+        //private void SaveDevice()
+        //{
+        //    try
+        //    {
+        //        IFormatter binFmt = new BinaryFormatter();
+        //        Stream stream = null;
+
+        //        saveDeviceFile.allValue = properties.Device.GetAllValue();
+
+        //        try
+        //        {
+        //            stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Create);
+        //            binFmt.Serialize(stream, saveDeviceFile);
+        //        }
+        //        finally
+        //        {
+        //            if (stream != null) stream.Close();
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        MyMessageBox.ShowDialog("儲存Device.val失敗!");
+        //    }
+        
+        //}
+        //private void LoadDevice()
+        //{
+        //    IFormatter binFmt = new BinaryFormatter();
+        //    Stream stream = null;
+        //    MemoryStream memoryStream = null;
+        //    try
+        //    {
+               
+        //        if (File.Exists($@"{currentDirectory}\Device.val"))
+        //        {
+        //            stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Open);
+        //            try { saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(stream); }
+        //            catch { }
+        //        }
+        //        properties.Device.SetAllValue(saveDeviceFile.allValue);
+        
+        //    }
+        //    finally
+        //    {
+        //        if (stream != null) stream.Close();
+        //        if (memoryStream != null) memoryStream.Close();
+        //    }
+        //}
+        public string SaveDevice()
         {
+            string base64String = "";
             try
             {
                 IFormatter binFmt = new BinaryFormatter();
-                Stream stream = null;
-
                 saveDeviceFile.allValue = properties.Device.GetAllValue();
 
-                try
+                using (MemoryStream memoryStream = new MemoryStream())
                 {
-                    stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Create);
-                    binFmt.Serialize(stream, saveDeviceFile);
+                    binFmt.Serialize(memoryStream, saveDeviceFile);
+                    base64String = Convert.ToBase64String(memoryStream.ToArray());
+
+                    File.WriteAllText($@"{currentDirectory}\Device.txt", base64String, Encoding.UTF8);
                 }
-                finally
-                {
-                    if (stream != null) stream.Close();
-                }
+                return base64String;
             }
             catch
             {
-                MyMessageBox.ShowDialog("儲存Device.val失敗!");
+                MyMessageBox.ShowDialog("儲存Device.txt失敗!");
             }
-        
+            return base64String;
         }
-        private void LoadDevice()
+        public void LoadDevice()
         {
-            IFormatter binFmt = new BinaryFormatter();
-            Stream stream = null;
-            MemoryStream memoryStream = null;
+            string filePath = $@"{currentDirectory}\Device.txt";
+            if (!File.Exists(filePath))
+                return;
+
+            string base64String = File.ReadAllText(filePath, Encoding.UTF8);
+            LoadDevice(base64String);
+        }
+        public void LoadDevice(string base64String)
+        {
             try
             {
-               
-                if (File.Exists($@"{currentDirectory}\Device.val"))
+       
+                byte[] binaryData = Convert.FromBase64String(base64String);
+
+                using (MemoryStream memoryStream = new MemoryStream(binaryData))
                 {
-                    stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Open);
-                    try { saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(stream); }
-                    catch { }
+                    IFormatter binFmt = new BinaryFormatter();
+                    saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(memoryStream);
                 }
+
                 properties.Device.SetAllValue(saveDeviceFile.allValue);
-        
             }
-            finally
+            catch
             {
-                if (stream != null) stream.Close();
-                if (memoryStream != null) memoryStream.Close();
+                MyMessageBox.ShowDialog("讀取Device.txt失敗!");
             }
         }
+
         #endregion
 
         public bool OpenSerialPort()
