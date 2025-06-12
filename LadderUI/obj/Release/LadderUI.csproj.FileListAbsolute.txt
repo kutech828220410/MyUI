@@ -6386,7 +6386,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.Up_Down_l
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderForm.Upload.resources
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
 C:\Users\HS\Source\Repos\MyUI\LadderUI\bin\Release\LADDER_Panel.resx
@@ -6607,3 +6606,4 @@ C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompil
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date

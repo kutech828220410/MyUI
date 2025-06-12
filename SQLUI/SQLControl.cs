@@ -14,6 +14,7 @@ using System.Text.Json.Serialization;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Data;
 
 namespace SQLUI
 {
@@ -1041,7 +1042,7 @@ namespace SQLUI
         {
             if (TableName == null) TableName = this.TableName;
             object[] obj_AllColumnName = GetAllColumn_Name(TableName);
-            if (Value.Count > 0)
+            if (Value.Count > 0)    
             {
                 if (Value[0].Length > 0 && Value[0].Length <= obj_AllColumnName.Length)
                 {
@@ -2678,7 +2679,11 @@ namespace SQLUI
             }
             return Command;
         }
-        private void WtrteCommand(string CommandText)
+        public void WtrteCommandSafeUpdate(bool flag)
+        {
+            WtrteCommand($"SET SQL_SAFE_UPDATES = {(flag ? "1" : "0")};");
+        }
+        public void WtrteCommand(string CommandText)
         {
             if (CommandText.StringIsEmpty()) return;
             MySqlConnection _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;");
@@ -2687,6 +2692,23 @@ namespace SQLUI
             _MySqlCommand.CommandText = CommandText;
             _MySqlCommand.ExecuteNonQuery();
             this.CloseConection(_MySqlConnection);
+        }
+        public DataTable WtrteCommandAndExecuteReader(string CommandText)
+        {
+            if (CommandText.StringIsEmpty()) return null;
+            MySqlConnection _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;");
+            this.OpenConnection(_MySqlConnection);
+            MySqlCommand _MySqlCommand = _MySqlConnection.CreateCommand();
+            _MySqlCommand.CommandText = CommandText;
+      
+            var reader = _MySqlCommand.ExecuteReader();
+            int FieldCount = reader.FieldCount;
+
+            DataTable dataTable = new DataTable();
+            dataTable.Load(reader);
+            this.CloseConection(_MySqlConnection);
+
+            return dataTable;
         }
         private void WtrteCommand(string CommandText, object[][] AddWithValue)
         {

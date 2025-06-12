@@ -3855,7 +3855,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.IOC
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.IOC1280_Basic.resources
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
 C:\Users\HS\Source\Repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.dll.config
@@ -4066,3 +4065,4 @@ C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.Core
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date

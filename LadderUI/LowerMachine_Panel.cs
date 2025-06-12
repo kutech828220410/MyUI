@@ -221,6 +221,24 @@ namespace LadderUI
             return lowerMachine;
         }
 
+        public string GetDeviceBase64()
+        {
+            return lowerMachine.GetSaveDeviceBase64();
+        }
+        public string SaveDevice()
+        {
+            return lowerMachine.SaveDevice();
+        }
+        public void LoadDevice(string base64string)
+        {
+            List<string> devices = new List<string>();
+            for (int i = 0; i < 200; i++)
+            {
+                devices.Add($"R{i}");
+                devices.Add($"D{i}");
+            }
+            lowerMachine.LoadDevice(base64string , devices.ToArray());
+        }
         private void checkBox_SerialPort_自動連線_CheckedChanged(object sender, EventArgs e)
         {
            if( lowerMachine!=null)

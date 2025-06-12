@@ -1494,8 +1494,16 @@ namespace LadderProperty
 
             return allValue;
         }
-        public void SetAllValue( List<object[]> allValue)
+        public void SetAllValue(List<object[]> allValue, params string[] exclude_device)
         {
+            HashSet<string> excludeSet = null;
+            if (exclude_device != null && exclude_device.Length > 0)
+            {
+                excludeSet = new HashSet<string>(
+                    exclude_device.Select(e => e.ToUpper())
+                );
+            }
+
             if (allValue != null)
             {
                 foreach (object[] obj_array in allValue)
@@ -1503,32 +1511,44 @@ namespace LadderProperty
                     if (obj_array[0] is string)
                     {
                         string Device = (string)obj_array[0];
+
                         if (Device == "X" || Device == "Y" || Device == "M" || Device == "S")
                         {
                             for (int i = 1; i < obj_array.Length; i++)
                             {
-                                if (obj_array[i].GetType().Name == "Boolean")
+                                if (obj_array[i] is bool)
                                 {
+                                    string deviceKey = Device + (i - 1).ToString().ToLower();
+
+                                    if (excludeSet != null && excludeSet.Contains(deviceKey.ToUpper()))
+                                        continue;
+
+                                    if (i < 1000) continue;
+
                                     this.Set_Device(Device + (i - 1).ToString(), (bool)obj_array[i]);
                                 }
                             }
                         }
-                        if (Device == "D" || Device == "R" || Device == "F" || Device == "Z")
+                        else if (Device == "D" || Device == "R" || Device == "F" || Device == "Z")
                         {
                             for (int i = 1; i < obj_array.Length; i++)
                             {
-                                if (obj_array[i].GetType().Name == "Int32")
+                                string deviceKey = Device + (i - 1).ToString().ToLower();
+
+                                if (excludeSet != null && excludeSet.Contains(deviceKey.ToUpper()))
+                                    continue;
+
+                                if (obj_array[i] is int)
                                 {
                                     this.Set_Device(Device + (i - 1).ToString(), (int)obj_array[i]);
                                 }
                             }
                         }
                     }
-                
                 }
             }
-  
         }
+
 
         public List<object[]> Get_F_Device_Value()
         {

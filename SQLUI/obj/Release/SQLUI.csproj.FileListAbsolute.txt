@@ -2426,7 +2426,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.SQL_DataGridVie
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.SQL_TextBoxUI.resources
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
 C:\Users\User\Desktop\MyUI\SQLUI\obj\Release\SQLUI.csproj.AssemblyReference.cache
@@ -2620,3 +2619,4 @@ C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
+C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date

@@ -21,6 +21,7 @@ namespace MyUI
         private int _Y_offset = 0;
         private int _X_offset = 0;
         private Color backColor = Color.DarkRed;
+        private Color _textColor = Color.White;
         public static Form form;
         public DialogResult ShowDialog()
         {
@@ -85,6 +86,19 @@ namespace MyUI
             this._X_offset = x_offset;
             this.backColor = bkColor;
         }
+        public Dialog_AlarmForm(string title, int time_ms, int x_offset, int y_offset, Color bkColor, Color textColor)
+        {
+            InitializeComponent();
+            _title = title;
+            _time_ms = time_ms;
+
+            this.Load += Dialog_AlarmForm_Load;
+            this.FormClosing += Dialog_AlarmForm_FormClosing;
+            this._Y_offset = y_offset;
+            this._X_offset = x_offset;
+            this.backColor = bkColor;
+            this.rJ_Lable_text.TextColor = textColor;
+        }
         public Dialog_AlarmForm(string title, int time_ms, int x_offset, int y_offset)
         {
             InitializeComponent();
@@ -118,10 +132,29 @@ namespace MyUI
         }
         private void Dialog_AlarmForm_Load(object sender, EventArgs e)
         {
-            this.rJ_Lable1.BackgroundColor = this.backColor;
-            this.rJ_Lable1.Text = _title;
-       
-            this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 + _X_offset, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 + _Y_offset);
+            this.rJ_Lable_text.BackgroundColor = this.backColor;
+            this.rJ_Lable_text.Text = _title;
+
+            // 根據文字計算尺寸
+            using (Graphics g = this.CreateGraphics())
+            {
+                SizeF textSize = g.MeasureString(_title, this.rJ_Lable_text.Font);
+                int padding = 40; // 額外補償內距
+                int minWidth = 770; // 最小寬度
+                int minHeight = 160; // 最小高度
+
+                int newWidth = Math.Max((int)textSize.Width + padding, minWidth);
+                int newHeight = Math.Max((int)textSize.Height + padding, minHeight);
+
+                this.Size = new Size(newWidth, newHeight);
+                this.rJ_Lable_text.Size = new Size(newWidth, newHeight); // 同步調整 Label 大小
+            }
+
+            // 視窗置中顯示 + 偏移量
+            this.Location = new Point(
+                (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 + _X_offset,
+                (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 + _Y_offset
+            );
 
             MyThread_program = new MyThread();
             MyThread_program.Add_Method(sub_program);
@@ -130,6 +163,7 @@ namespace MyUI
             MyThread_program.Trigger();
         }
 
+
         public void SetTitle(string Title)
         {
             form.Invoke(new Action(delegate 
@@ -137,7 +171,7 @@ namespace MyUI
                 _title = Title;
                 if(this.IsHandleCreated)
                 {
-                    this.rJ_Lable1.Text = _title;
+                    this.rJ_Lable_text.Text = _title;
                 }
               
             }));
@@ -151,8 +185,8 @@ namespace MyUI
                 this.backColor = bkColor;
                 if (this.IsHandleCreated)
                 {
-                    this.rJ_Lable1.Text = _title;
-                    this.rJ_Lable1.BackgroundColor = this.backColor;
+                    this.rJ_Lable_text.Text = _title;
+                    this.rJ_Lable_text.BackgroundColor = this.backColor;
                 }
            
             }));

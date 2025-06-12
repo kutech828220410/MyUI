@@ -11,7 +11,7 @@ using MyUI;
 using Basic;
 namespace MyUI
 {
-    public class Dialog_ContextMenuStrip : Form
+    public class Dialog_ContextMenuStrip : MyDialog
     {
         private string value = "None";
         public string Value
@@ -297,7 +297,7 @@ namespace MyUI
         private void Resize()
         {
             this.Width = this.ControlsWidth;
-            this.Height = label_height + rjbutton_height + rjbutton_cancel_height + 10;
+            this.Height = label_height + rjbutton_height + rjbutton_cancel_height + 25;
             int ScreenWidth = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width;
             int ScreenHeight = System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point((System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width - this.Width) / 2, (System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);

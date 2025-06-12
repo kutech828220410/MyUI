@@ -103,6 +103,7 @@ namespace SLDUI
             static public int 高速計數器致能 = 6;
             static public int 位置比較輸出致能 = 7;
             static public int 位置比較方式 = 8;
+            static public int 電子齒輪比致能 = 9;
         }
 
         private List<NumTextBox[,]> NumTextBox_Axis_運動參數 = new List<NumTextBox[,]>();
@@ -526,7 +527,7 @@ namespace SLDUI
                 {
                     axis_index = Axis_對應軸號[N][k, 0];
                     if (axis_index == 9999) continue;
-                    for (int m = 0; m < 9; m++)
+                    for (int m = 0; m < 10; m++)
                     {
                         if (m == 0) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "Axis_Busy";
                         if (m == 1) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "更改位置致能";
@@ -537,23 +538,24 @@ namespace SLDUI
                         if (m == 6) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "高速計數器致能";
                         if (m == 7) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "位置比較輸出致能";
                         if (m == 8) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "位置比較方式";
+                        if (m == 9) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "電子齒輪比致能";
 
                         PLC.properties.Device.Set_Device("M" + ((8340 + axis_index * 10 + m)).ToString(), commemt);
                     }
-                    for (int m = 0; m < 9; m++)
+                    for (int m = 0; m < 10; m++)
                     {
                         if (m == 0) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "現在位置";
-                        if (m == 1) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "齒輪比_分子";
-                        if (m == 2) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "齒輪比_分母";
-                        if (m == 3) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運轉目標位置";
-                        if (m == 4) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "基底速度";
-                        if (m == 5) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運動命令碼";
-                        if (m == 6) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運轉速度";
-                        if (m == 7) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "加速度";
-                        if (m == 8) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "減速度";
+                        if (m == 2) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "齒輪比_分子";
+                        if (m == 3) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "齒輪比_分母";
+                        if (m == 4) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運轉目標位置";
+                        if (m == 5) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "基底速度";
+                        if (m == 6) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運動命令碼";
+                        if (m == 7) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "運轉速度";
+                        if (m == 8) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "加速度";
+                        if (m == 9) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "減速度";
                         PLC.properties.Device.Set_Device("D" + ((8340 + axis_index * 10 + m)).ToString(), commemt);
                     }
-                    for (int m = 0; m < 9; m++)
+                    for (int m = 0; m < 10; m++)
                     {
                         if (m == 0) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "現在位置";
                         if (m == 1) commemt = "(C9016)" + N.ToString("00") + "-" + k.ToString("00") + " " + "比較位置數量";
@@ -846,13 +848,19 @@ namespace SLDUI
                     }
                     for (int k = 0; k < Axis_num; k++)
                     {
+
                         bool paulse = false;
-                        if (Axis_運動參數[N][k, 運動參數.齒輪比_分子] > 0 && Axis_運動參數[N][k, 運動參數.齒輪比_分母] > 0) gear_ratio = Axis_運動參數[N][k, 運動參數.齒輪比_分子] / Axis_運動參數[N][k, 運動參數.齒輪比_分母];
+                        if (Axis_運動參數[N][k, 運動參數.齒輪比_分子] > 0 && Axis_運動參數[N][k, 運動參數.齒輪比_分母] > 0)
+                        {
+                            gear_ratio = Axis_運動參數[N][k, 運動參數.齒輪比_分子] / Axis_運動參數[N][k, 運動參數.齒輪比_分母];
+                        }
                         else gear_ratio = 1;
                         gear_ratio = 1;
 
                         int M = card_id[N];
                         axis_num = k + M * Axis_num;
+
+
                         if (!Axis_PC_Enable[axis_num])
                         {
                             basic_speed = Math.Abs(Axis_運動參數[N][k, 運動參數.基底速度]);

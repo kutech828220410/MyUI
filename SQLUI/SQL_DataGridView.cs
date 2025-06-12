@@ -303,6 +303,14 @@ namespace SQLUI
             public List<object[]> OtherSaveList = new List<object[]>();
         }
 
+        public DataGridViewRowCollection Rows
+        {
+            get
+            {
+                return dataGridView.Rows;
+            }
+        }
+
         private const string Extension = @".data";
         private bool IsStart = false;
         private SQLControl _SQLControl;

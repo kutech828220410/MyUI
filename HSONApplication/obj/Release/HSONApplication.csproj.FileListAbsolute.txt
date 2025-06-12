@@ -4902,7 +4902,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplica
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\Administrator\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
 C:\Users\User\Desktop\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.AssemblyReference.cache
@@ -5119,3 +5118,4 @@ C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csp
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONAppl.FDEF4028.Up2Date
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\obj\Release\HSONAppl.FDEF4028.Up2Date

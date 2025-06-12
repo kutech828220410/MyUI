@@ -16,6 +16,7 @@ using LadderProperty;
 using LadderUI;
 using TCP_Server;
 using Basic;
+using System.Globalization;
 namespace LadderConnection
 {
     public class Properties
@@ -2898,70 +2899,38 @@ namespace LadderConnection
                 FLAG_Program_pause_enable = new bool[properties.Program.Count];
             }
         }
-        //private void SaveDevice()
-        //{
-        //    try
-        //    {
-        //        IFormatter binFmt = new BinaryFormatter();
-        //        Stream stream = null;
-
-        //        saveDeviceFile.allValue = properties.Device.GetAllValue();
-
-        //        try
-        //        {
-        //            stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Create);
-        //            binFmt.Serialize(stream, saveDeviceFile);
-        //        }
-        //        finally
-        //        {
-        //            if (stream != null) stream.Close();
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        MyMessageBox.ShowDialog("儲存Device.val失敗!");
-        //    }
-        
-        //}
-        //private void LoadDevice()
-        //{
-        //    IFormatter binFmt = new BinaryFormatter();
-        //    Stream stream = null;
-        //    MemoryStream memoryStream = null;
-        //    try
-        //    {
-               
-        //        if (File.Exists($@"{currentDirectory}\Device.val"))
-        //        {
-        //            stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Open);
-        //            try { saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(stream); }
-        //            catch { }
-        //        }
-        //        properties.Device.SetAllValue(saveDeviceFile.allValue);
-        
-        //    }
-        //    finally
-        //    {
-        //        if (stream != null) stream.Close();
-        //        if (memoryStream != null) memoryStream.Close();
-        //    }
-        //}
-        public string SaveDevice()
+        public string GetSaveDeviceBase64()
         {
             string base64String = "";
             try
             {
                 IFormatter binFmt = new BinaryFormatter();
                 saveDeviceFile.allValue = properties.Device.GetAllValue();
-
                 using (MemoryStream memoryStream = new MemoryStream())
                 {
                     binFmt.Serialize(memoryStream, saveDeviceFile);
                     base64String = Convert.ToBase64String(memoryStream.ToArray());
-
-                    File.WriteAllText($@"{currentDirectory}\Device.txt", base64String, Encoding.UTF8);
                 }
                 return base64String;
+            }
+            catch(Exception ex)
+            {
+                MyMessageBox.ShowDialog($"GetSaveDeviceBase64 Error:{ex.Message}");
+            }
+            return base64String;
+        }
+        public string SaveDevice()
+        {
+            string base64String = GetSaveDeviceBase64();
+            if(base64String.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("SaveDevice Error: base64String is empty");
+                return base64String;
+            }
+            try
+            {
+                File.WriteAllText($@"{currentDirectory}\Device.txt", base64String, Encoding.UTF8);
+
             }
             catch
             {
@@ -2973,12 +2942,33 @@ namespace LadderConnection
         {
             string filePath = $@"{currentDirectory}\Device.txt";
             if (!File.Exists(filePath))
-                return;
+            {
+                IFormatter binFmt = new BinaryFormatter();
+                Stream stream = null;
+                MemoryStream memoryStream = null;
+                try
+                {
 
+                    if (File.Exists($@"{currentDirectory}\Device.val"))
+                    {
+                        stream = File.Open($@"{currentDirectory}\Device.val", FileMode.Open);
+                        try { saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(stream); }
+                        catch { }
+                    }
+                    properties.Device.SetAllValue(saveDeviceFile.allValue);
+
+                }
+                finally
+                {
+                    if (stream != null) stream.Close();
+                    if (memoryStream != null) memoryStream.Close();
+                }
+                return;
+            }
             string base64String = File.ReadAllText(filePath, Encoding.UTF8);
             LoadDevice(base64String);
         }
-        public void LoadDevice(string base64String)
+        public void LoadDevice(string base64String, params string[] exclude_device)
         {
             try
             {
@@ -2990,8 +2980,8 @@ namespace LadderConnection
                     IFormatter binFmt = new BinaryFormatter();
                     saveDeviceFile = (SaveDeviceFile)binFmt.Deserialize(memoryStream);
                 }
-
-                properties.Device.SetAllValue(saveDeviceFile.allValue);
+       
+                properties.Device.SetAllValue(saveDeviceFile.allValue, exclude_device);
             }
             catch
             {

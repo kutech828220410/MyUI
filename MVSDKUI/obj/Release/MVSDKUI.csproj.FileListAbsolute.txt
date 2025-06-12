@@ -895,7 +895,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.MindVision_
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.PLC_MindVision_Camera_UI.resources
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
 C:\Users\HS\Source\Repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll.config
@@ -1083,3 +1082,4 @@ C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileI
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date

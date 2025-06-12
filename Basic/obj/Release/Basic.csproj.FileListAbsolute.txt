@@ -1462,7 +1462,6 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.MyMessageBox.re
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
 C:\Users\HS\Source\Repos\MyUI\Basic\bin\Release\Basic.dll.config
@@ -1675,3 +1674,4 @@ C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
+C:\Users\Administrator\source\repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date

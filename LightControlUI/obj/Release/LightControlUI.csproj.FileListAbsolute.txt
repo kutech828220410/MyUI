@@ -1444,7 +1444,6 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\System.Value
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.LD_NP24DV_4T.resources
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
 C:\Users\HS\Source\Repos\MyUI\LightControlUI\bin\Release\LightControlUI.dll.config
@@ -1624,3 +1623,4 @@ C:\Users\User'\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.cspro
 C:\Users\User'\Source\Repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date
 C:\Users\User'\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\User'\Source\Repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date

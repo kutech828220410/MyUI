@@ -5068,7 +5068,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.E6232.resources
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
 C:\Users\HS\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.resx
@@ -5274,3 +5273,4 @@ C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
+C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date

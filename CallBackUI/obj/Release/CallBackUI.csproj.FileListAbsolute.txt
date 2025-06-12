@@ -3454,12 +3454,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\TCP.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxOvkMsr.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Buffers.xml
@@ -3471,7 +3465,6 @@ C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Text.Json
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\bin\Release\System.ValueTuple.xml
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
 C:\Users\User\Desktop\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.AssemblyReference.cache
@@ -3643,3 +3636,10 @@ C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCo
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxOvkBase.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxAltairUDrvAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxOvkBaseAsm4.5.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxOvkMsr.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\MeasureSystemFunction.dll
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxAltairUDrv.dll

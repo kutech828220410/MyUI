@@ -991,7 +991,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.HCG_485_IO_Basi
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.Properties.Resources.resources
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Interop.SpeechLib.dll
@@ -1180,3 +1179,4 @@ C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
+C:\Users\Administrator\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date

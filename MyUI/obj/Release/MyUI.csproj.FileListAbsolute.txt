@@ -261,7 +261,6 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.字母鍵盤.reso
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.數字鍵盤.resources
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.GenerateResource.cache
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.cache
-C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\obj\Release\MyUI.pdb
 C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.Dialog_AlarmForm.resources
@@ -510,3 +509,4 @@ C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
