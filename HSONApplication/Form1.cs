@@ -111,9 +111,6 @@ namespace HSONApplication
             DeltaMotor485_port[1].Servo_on_off(true);
         }
 
-    
-
-
 
         async private void RJ_Button_return_home_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -185,19 +182,7 @@ namespace HSONApplication
 
         private void Function_取得備藥通知()
         {
-            //string url = $"http://220.135.128.247:4433/api/ChemotherapyRxScheduling/get_udnoectc_by_ctdate_st_end";
-            //returnData returnData = new returnData();
-            //returnData.ServerName = "cheom";
-            //returnData.ServerType = "癌症備藥機";
-            //returnData.Value = "2023-11-23 00:00:00,2025-12-27 23:59:59";
-            //string json_in = returnData.JsonSerializationt();
-            //string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
-            //returnData = json.JsonDeserializet<returnData>();
-
-            //List<udnoectc> udnoectcs = returnData.Data.ObjToListClass<udnoectc>();
-            //List<object[]> list_udnoectc = udnoectcs.ClassToSQL<udnoectc, enum_udnoectc>();
-            //this.sqL_DataGridView_備藥通知.Set_ColumnType("病房", typeof(ComboBox));
-            //this.sqL_DataGridView_備藥通知.RefreshGrid(list_udnoectc);
+  
 
         }
 
@@ -209,7 +194,7 @@ namespace HSONApplication
         private void button_next_Click_1(object sender, EventArgs e)
         {
             string base64 = Voice.GoogleSpeakerBase64("你好，世界");
-            base64 = AudioProcessingLibrary.Voice.PlayBase64Mp3WithFFmpegAndReturnMp3Base64(base64, 1, 1.5F);
+            base64 = AudioProcessingLibrary.Voice.PlayBase64Mp3WithFFmpegAndReturnMp3Base64(base64, 1.5F);
             AudioProcessingLibrary.Voice.PlayBase64Mp3(base64);
         }
     }

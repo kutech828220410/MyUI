@@ -105,7 +105,7 @@ namespace AudioProcessingLibrary
     {
         public static string currentDirectory = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-        static public string PlayBase64Mp3WithFFmpegAndReturnMp3Base64(this string base64Data, float volume = 1.0f, float speed = 1.0f)
+        static public string PlayBase64Mp3WithFFmpegAndReturnMp3Base64(this string base64Data, float speed = 1.0f)
         {
             string tempInputPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.mp3");
             string tempOutputPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.mp3");
@@ -119,10 +119,16 @@ namespace AudioProcessingLibrary
                 // 呼叫 FFmpeg 處理 atempo 並輸出 MP3
                 Console.WriteLine("開始呼叫 FFmpeg 處理...");
 
+                string ffmpegPath = $@"{currentDirectory}\ffmpeg.exe"; // ⚠ 請改成你的路徑
+                Console.WriteLine(ffmpegPath);
+
+                // 注意 atempo 只接受 0.5~2.0，若超過要串接多個 atempo
+                string atempoFilter = GenerateAtempoFilter(speed);
+
                 var psi = new ProcessStartInfo
                 {
-                    FileName = $@"{currentDirectory}\ffmpeg.exe",
-                    Arguments = $"-y -i \"{tempInputPath}\" -filter:a \"atempo={speed}\" -codec:a libmp3lame -qscale:a 2 \"{tempOutputPath}\"",
+                    FileName = "ffmpeg.exe",
+                    Arguments = $"-y -i \"{tempInputPath}\" -filter:a \"{atempoFilter}\" -codec:a libmp3lame -qscale:a 2 \"{tempOutputPath}\"",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true,
@@ -139,23 +145,7 @@ namespace AudioProcessingLibrary
                     process.WaitForExit();
                 }
 
-                Console.WriteLine("FFmpeg 處理完成，開始播放...");
-
-                using (var reader = new AudioFileReader(tempOutputPath))
-                using (var waveOut = new WaveOutEvent())
-                {
-                    var volumeProvider = new VolumeSampleProvider(reader) { Volume = volume };
-
-                    waveOut.Init(volumeProvider);
-                    waveOut.Play();
-
-                    while (waveOut.PlaybackState == PlaybackState.Playing)
-                    {
-                        Thread.Sleep(100);
-                    }
-                }
-
-                Console.WriteLine("播放完成");
+                Console.WriteLine("FFmpeg 處理完成");
 
                 // 回傳處理後 MP3 的 Base64
                 byte[] mp3Bytes = File.ReadAllBytes(tempOutputPath);
@@ -163,7 +153,7 @@ namespace AudioProcessingLibrary
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"播放過程發生錯誤: {ex.Message}");
+                Console.WriteLine($"處理過程發生錯誤: {ex.Message}");
             }
             finally
             {
@@ -172,6 +162,100 @@ namespace AudioProcessingLibrary
             }
 
             return resultBase64;
+        }
+        static public string PlayBase64Mp3WithFFmpegAndReturnMp3Base64_Docker(this string base64Data, float speed = 1.0f)
+        {
+            string tempInputPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.mp3");
+            string tempOutputPath = Path.Combine(Path.GetTempPath(), $"{Guid.NewGuid()}.mp3");
+            string resultBase64 = null;
+
+            try
+            {
+                File.WriteAllBytes(tempInputPath, Convert.FromBase64String(base64Data));
+
+                Console.WriteLine("PlayBase64Mp3WithFFmpegAndReturnMp3Base64_Docker");
+                Console.WriteLine("開始呼叫 FFmpeg 處理...");
+
+                string atempoFilter = GenerateAtempoFilter(speed);
+
+                var psi = new ProcessStartInfo
+                {
+                    FileName = "ffmpeg",
+                    Arguments = $"-y -i \"{tempInputPath}\" -filter:a \"{atempoFilter}\" -codec:a libmp3lame -qscale:a 2 \"{tempOutputPath}\"",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    CreateNoWindow = true
+                };
+
+                using (var process = new Process { StartInfo = psi })
+                {
+                    process.OutputDataReceived += (s, e) => { if (e.Data != null) Console.WriteLine(e.Data); };
+                    process.ErrorDataReceived += (s, e) => { if (e.Data != null) Console.WriteLine(e.Data); };
+
+                    process.Start();
+                    process.BeginOutputReadLine();
+                    process.BeginErrorReadLine();
+
+                    if (!process.WaitForExit(60000))
+                    {
+                        process.Kill();
+                        throw new TimeoutException("FFmpeg 處理超時");
+                    }
+
+                    if (process.ExitCode != 0)
+                    {
+                        throw new Exception($"FFmpeg 執行失敗，ExitCode: {process.ExitCode}");
+                    }
+                }
+
+                byte[] mp3Bytes = File.ReadAllBytes(tempOutputPath);
+                resultBase64 = Convert.ToBase64String(mp3Bytes);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"處理過程發生錯誤: {ex.Message}");
+            }
+            finally
+            {
+                if (File.Exists(tempInputPath)) File.Delete(tempInputPath);
+                if (File.Exists(tempOutputPath)) File.Delete(tempOutputPath);
+            }
+
+            return resultBase64;
+        }
+
+        // 自動產生 atempo 串接字串 (支援 >2 或 <0.5)
+        private static string GenerateAtempoFilter(float speed)
+        {
+            if (speed < 0.5f)
+            {
+                var filters = new List<string>();
+                float remaining = speed;
+                while (remaining < 0.5f)
+                {
+                    filters.Add("atempo=0.5");
+                    remaining /= 0.5f;
+                }
+                filters.Add($"atempo={remaining}");
+                return string.Join(",", filters);
+            }
+            else if (speed > 2.0f)
+            {
+                var filters = new List<string>();
+                float remaining = speed;
+                while (remaining > 2.0f)
+                {
+                    filters.Add("atempo=2.0");
+                    remaining /= 2.0f;
+                }
+                filters.Add($"atempo={remaining}");
+                return string.Join(",", filters);
+            }
+            else
+            {
+                return $"atempo={speed}";
+            }
         }
         static public void PlayBase64Mp3WithFFmpeg(this string base64Data, float volume = 1.0f, float speed = 1.0f)
         {
