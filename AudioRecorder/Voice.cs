@@ -225,38 +225,7 @@ namespace AudioProcessingLibrary
             return resultBase64;
         }
 
-        // 自動產生 atempo 串接字串 (支援 >2 或 <0.5)
-        private static string GenerateAtempoFilter(float speed)
-        {
-            if (speed < 0.5f)
-            {
-                var filters = new List<string>();
-                float remaining = speed;
-                while (remaining < 0.5f)
-                {
-                    filters.Add("atempo=0.5");
-                    remaining /= 0.5f;
-                }
-                filters.Add($"atempo={remaining}");
-                return string.Join(",", filters);
-            }
-            else if (speed > 2.0f)
-            {
-                var filters = new List<string>();
-                float remaining = speed;
-                while (remaining > 2.0f)
-                {
-                    filters.Add("atempo=2.0");
-                    remaining /= 2.0f;
-                }
-                filters.Add($"atempo={remaining}");
-                return string.Join(",", filters);
-            }
-            else
-            {
-                return $"atempo={speed}";
-            }
-        }
+     
         static public void PlayBase64Mp3WithFFmpeg(this string base64Data, float volume = 1.0f, float speed = 1.0f)
         {
             try
@@ -375,5 +344,38 @@ namespace AudioProcessingLibrary
             }
         }
  
+
+           // 自動產生 atempo 串接字串 (支援 >2 或 <0.5)
+        private static string GenerateAtempoFilter(float speed)
+        {
+            if (speed < 0.5f)
+            {
+                var filters = new List<string>();
+                float remaining = speed;
+                while (remaining < 0.5f)
+                {
+                    filters.Add("atempo=0.5");
+                    remaining /= 0.5f;
+                }
+                filters.Add($"atempo={remaining}");
+                return string.Join(",", filters);
+            }
+            else if (speed > 2.0f)
+            {
+                var filters = new List<string>();
+                float remaining = speed;
+                while (remaining > 2.0f)
+                {
+                    filters.Add("atempo=2.0");
+                    remaining /= 2.0f;
+                }
+                filters.Add($"atempo={remaining}");
+                return string.Join(",", filters);
+            }
+            else
+            {
+                return $"atempo={speed}";
+            }
+        }
     }
 }
