@@ -208,12 +208,9 @@ namespace HSONApplication
 
         private void button_next_Click_1(object sender, EventArgs e)
         {
-            string base64 = Voice. GoogleSpeakerBase64("你好，世界");
-
-            if (!string.IsNullOrEmpty(base64))
-            {
-                Voice.PlayVoiceFromBase64(base64);
-            }
+            string base64 = Voice.GoogleSpeakerBase64("你好，世界");
+            base64 = AudioProcessingLibrary.Voice.PlayBase64Mp3WithFFmpegAndReturnMp3Base64(base64, 1, 1.5F);
+            AudioProcessingLibrary.Voice.PlayBase64Mp3(base64);
         }
     }
 }

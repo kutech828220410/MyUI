@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 
 namespace AudioProcessingLibrary
 {  
@@ -238,5 +239,8 @@ namespace AudioProcessingLibrary
             }
         }
         #endregion
+
+
+     
     }
 }

@@ -3209,7 +3209,6 @@ C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\HsBasic.dll
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.pdb
-C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Basic.dll.config
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\bin\Release\System.Buffers.xml
@@ -3247,3 +3246,4 @@ C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureS.2D
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
+C:\Users\User'\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
