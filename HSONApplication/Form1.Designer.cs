@@ -236,10 +236,12 @@
             // ipAddressInput1
             // 
             this.ipAddressInput1.BackColor = System.Drawing.Color.Transparent;
+            this.ipAddressInput1.IPAddress = "...";
             this.ipAddressInput1.Location = new System.Drawing.Point(343, 590);
             this.ipAddressInput1.Name = "ipAddressInput1";
             this.ipAddressInput1.Size = new System.Drawing.Size(266, 33);
             this.ipAddressInput1.TabIndex = 32;
+            this.ipAddressInput1.TextBoxWidth = 50;
             // 
             // rJ_DatePicker1
             // 
@@ -268,6 +270,7 @@
             this.button_next.TabIndex = 27;
             this.button_next.Text = "next";
             this.button_next.UseVisualStyleBackColor = true;
+            this.button_next.Click += new System.EventHandler(this.button_next_Click_1);
             // 
             // button_pre
             // 

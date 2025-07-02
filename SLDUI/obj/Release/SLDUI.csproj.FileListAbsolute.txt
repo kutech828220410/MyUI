@@ -5013,9 +5013,6 @@ C:\Users\88696\Desktop\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs.cac
 C:\Users\88696\Desktop\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
 C:\Users\88696\Desktop\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\88696\Desktop\MyUI\SLDUI\obj\Release\SLDUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.resx
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.cs
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\PLC_NumBox.Designer.cs
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\SLDUI.dll.config
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\SLDUI.pdb
@@ -5049,8 +5046,6 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MeasureSystemFunction.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MVSDK.dll
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MyUI.pdb
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MyUI.dll.config
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.Memory.xml
@@ -5274,3 +5269,8 @@ C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
 C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.resx
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.cs
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.Designer.cs
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\MyUI.dll.config

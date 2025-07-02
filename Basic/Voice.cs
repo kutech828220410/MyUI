@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using SpeechLib;
 using System.Net;
 using System.IO;
+using System.Threading;
 namespace Basic
 {
     public class Voice
@@ -68,28 +69,123 @@ namespace Basic
             }
           
         }
+        static public void PlayGoogleTTS(string text, string language = "zh-tw")
+        {
+            string encodedText = Uri.EscapeDataString(text);
+            string url = string.Format(
+                "http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen={0}&client=tw-ob&q={1}&tl={2}",
+                text.Length, encodedText, language);
+
+            Console.WriteLine($"PlayGoogleTTS : {url}");
+
+            using (WebClient webClient = new WebClient())
+            {
+                try
+                {
+                    Console.WriteLine("開始下載語音資料...");
+                    byte[] audioData = webClient.DownloadData(url);
+                    Console.WriteLine($"下載完成，資料大小: {audioData.Length} bytes");
+
+                    // 建立臨時檔案
+                    string tempFile = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".mp3");
+                    File.WriteAllBytes(tempFile, audioData);
+                    Console.WriteLine($"臨時檔案建立於: {tempFile}");
+
+                    // 撥放
+                    Console.WriteLine("準備播放音檔...");
+                    mciSendString("close Mp3File", null, 0, IntPtr.Zero);
+                    mciSendString($"open \"{tempFile}\" type mpegvideo alias Mp3File", null, 0, IntPtr.Zero);
+                    mciSendString("play Mp3File", null, 0, IntPtr.Zero);
+                    Console.WriteLine("播放中...");
+
+                    // 等待播放完成
+                    bool isPlaying = true;
+                    while (isPlaying)
+                    {
+                        StringBuilder sb = new StringBuilder(128);
+                        mciSendString("status Mp3File mode", sb, sb.Capacity, IntPtr.Zero);
+                        string status = sb.ToString().Trim();
+                        Console.WriteLine($"播放狀態: {status}");
+                        if (status != "playing")
+                        {
+                            isPlaying = false;
+                        }
+                        System.Threading.Thread.Sleep(100);
+                    }
+
+                    // 關閉並刪除檔案
+                    Console.WriteLine("播放結束，關閉並刪除臨時檔案。");
+                    mciSendString("close Mp3File", null, 0, IntPtr.Zero);
+                    File.Delete(tempFile);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("播放失敗: " + ex.Message);
+                }
+            }
+
+        }
+
         static public string GoogleSpeakerBase64(string text, string language = "zh-tw")
         {
-            // 確保輸入的文字是URL安全的
             string encodedText = Uri.EscapeDataString(text);
-            string url = string.Format("http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen={0}&client=tw-ob&q={1}&tl={2}",
-                                        text.Length, encodedText, language);
+            string url = string.Format(
+                "http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen={0}&client=tw-ob&q={1}&tl={2}",
+                text.Length, encodedText, language);
+            Console.WriteLine($"Google TTS URL: {url}");
+
             using (WebClient webClient = new WebClient())
             {
                 try
                 {
                     byte[] audioData = webClient.DownloadData(url);
-
-                    // 將音訊資料轉換為 Base64 字串
-                    string base64Audio = Convert.ToBase64String(audioData);
-
-                    return base64Audio;
+                    Console.WriteLine($"下載完成，音檔大小：{audioData.Length} bytes");
+                    return Convert.ToBase64String(audioData);
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Error: " + ex.Message);
+                    Console.WriteLine("下載失敗: " + ex.Message);
                     return null;
                 }
+            }
+        }
+        static public void PlayVoiceFromBase64(string base64Audio)
+        {
+            try
+            {
+                Console.WriteLine("開始解碼 Base64 音檔...");
+                byte[] audioData = Convert.FromBase64String(base64Audio);
+
+                string tempFile = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString() + ".mp3");
+                File.WriteAllBytes(tempFile, audioData);
+                Console.WriteLine($"臨時音檔已儲存: {tempFile}");
+
+                Console.WriteLine("開始播放...");
+                mciSendString("close Mp3File", null, 0, IntPtr.Zero);
+                mciSendString($"open \"{tempFile}\" type mpegvideo alias Mp3File", null, 0, IntPtr.Zero);
+                mciSendString("play Mp3File", null, 0, IntPtr.Zero);
+
+                bool isPlaying = true;
+                while (isPlaying)
+                {
+                    StringBuilder sb = new StringBuilder(128);
+                    mciSendString("status Mp3File mode", sb, sb.Capacity, IntPtr.Zero);
+                    string status = sb.ToString().Trim();
+                    Console.WriteLine($"播放狀態: {status}");
+                    if (status != "playing")
+                    {
+                        isPlaying = false;
+                    }
+                    Thread.Sleep(100);
+                }
+
+                Console.WriteLine("播放結束，關閉檔案並刪除臨時檔案");
+                mciSendString("close Mp3File", null, 0, IntPtr.Zero);
+                File.Delete(tempFile);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("播放失敗: " + ex.Message);
             }
         }
         static private void CloseMP3(string fileName)
