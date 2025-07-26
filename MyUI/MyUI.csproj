@@ -192,6 +192,9 @@
     <Compile Include="Dialog_NumPannel.Designer.cs">
       <DependentUpon>Dialog_NumPannel.cs</DependentUpon>
     </Compile>
+    <Compile Include="DragDropListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="IPAddressInput.cs">
       <SubType>UserControl</SubType>
     </Compile>

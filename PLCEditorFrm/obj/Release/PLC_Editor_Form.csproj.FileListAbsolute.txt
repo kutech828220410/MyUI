@@ -745,3 +745,47 @@ C:\Users\User'\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻�
 C:\Users\User'\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\Basic.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\DrawingClass.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LadderUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MyUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\Newtonsoft.Json.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Memory.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\Interop.SpeechLib.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Numerics.Vectors.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Buffers.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.Common.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\AxOvkBase.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrvAsm4.5.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\AxOvkBaseAsm4.5.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\AxOvkMsr.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemFunction.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\AxAltairUDrv.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\Basic.xml
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.AssemblyReference.cache
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司.Form_main.resources
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體__鴻森整合機電有限公司_.Properties.Resources.resources
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.GenerateResource.cache
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CoreCompileInputs.cache
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
+C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
