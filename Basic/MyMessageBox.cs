@@ -246,6 +246,25 @@ namespace Basic
           
         }
 
- 
+        public static void CloseAllDialog()
+        {
+            foreach (Form form in Application.OpenForms.OfType<Form>().ToList())
+            {
+                if (form is MyMessageBox)
+                {
+                    form.Invoke(new Action(() =>
+                    {
+                        try
+                        {
+                            form.Close();
+                        }
+                        catch
+                        {
+                            // 可以視情況加上LOG
+                        }
+                    }));
+                }
+            }
+        }
     }
 }

@@ -365,7 +365,9 @@ namespace Basic
         }
         public string ByteToStringHex(byte[] value)
         {
-            return string.Join(",", value.Select(b => $"0x{b:X2}"));
+            return BitConverter.ToString(value);
+
+            //return string.Join(",", value.Select(b => $"0x{b:X2}"));
         }
 
         public string[] 分解分隔號字串(string str, char 分隔號)
