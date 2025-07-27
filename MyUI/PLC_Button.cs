@@ -1041,6 +1041,15 @@ namespace MyUI
                     PLC.properties.Device.Set_Device(_顯示讀取位置, value);
                 }
             }
+            else
+            {
+                this.Invoke(new Action(delegate
+                {
+                    this.Visible = value;
+                    Visible_buf = value;
+                }));
+             
+            }
         }
 
         public virtual void Run(LowerMachine pLC)

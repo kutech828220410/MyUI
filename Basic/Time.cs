@@ -86,4 +86,31 @@ namespace Basic
             return DateTime.Now.TimeOfDay.TotalMilliseconds;
         }
     }
+    public class TimeLogHelper
+    {
+        private Stopwatch stopwatch = new Stopwatch();
+        private TimeSpan lastTick;
+        private List<string> segments = new List<string>();
+
+        public TimeLogHelper()
+        {
+            stopwatch.Start();
+            lastTick = TimeSpan.Zero;
+        }
+
+        public void Tick(string label)
+        {
+            var now = stopwatch.Elapsed;
+            var diff = now - lastTick;
+            segments.Add($"{label}:{diff.TotalMilliseconds:0.###}ms");
+            lastTick = now;
+        }
+
+        public string GetResult()
+        {
+            return string.Join(" → ", segments);
+        }
+
+        public string Total => $"{stopwatch.Elapsed.TotalMilliseconds:0.###}ms";
+    }
 }
