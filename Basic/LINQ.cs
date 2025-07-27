@@ -680,5 +680,17 @@ namespace Basic
 
             return list_T.ClassToSQL<T, E>();
         }
+
+        public static T ShallowCopy<T>(this T source) where T : class, new()
+        {
+            if (source == null) return null;
+            T copy = new T();
+            foreach (var prop in typeof(T).GetProperties().Where(p => p.CanWrite))
+            {
+                var value = prop.GetValue(source);
+                prop.SetValue(copy, value);
+            }
+            return copy;
+        }
     }
 }
