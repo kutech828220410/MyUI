@@ -528,6 +528,44 @@ namespace Basic
     public static class TypeConvert
     {
         /// <summary>
+        /// 從 List<string> 中依照「key=value」格式取得指定 key 的值。
+        /// </summary>
+        /// <param name="list">
+        /// 來源的字串清單，例如 ValueAry，內容為 "key=value" 形式。
+        /// </param>
+        /// <param name="key">
+        /// 要查找的鍵值 (不區分大小寫)。
+        /// </param>
+        /// <returns>
+        /// 傳回對應的 Value 部分（去除前後空白）。  
+        /// 若找不到指定的 key，則傳回 null。  
+        /// </returns>
+        /// <example>
+        /// <code>
+        /// var filters = new List&lt;string&gt; { "status=草稿", "page=1" };
+        /// string status = filters.MyFind("status"); // 回傳 "草稿"
+        /// int page = filters.MyFind("page").StringToInt32(); // 回傳 1
+        /// </code>
+        /// </example>
+        public static string MyFind(this List<string> list, string key)
+        {
+            if (list == null || list.Count == 0) return null;
+
+            foreach (var item in list)
+            {
+                if (string.IsNullOrWhiteSpace(item)) continue;
+
+                var parts = item.Split(new char[] { '=' }, 2, StringSplitOptions.None);
+                if (parts.Length == 2 && parts[0].Trim().Equals(key, StringComparison.OrdinalIgnoreCase))
+                {
+                    return parts[1].Trim();
+                }
+            }
+            return null;
+        }
+
+
+        /// <summary>
         /// 設置指定索引處的位為指定狀態（對UInt32類型）。
         /// </summary>
         /// <param name="value">要修改的值。</param>
