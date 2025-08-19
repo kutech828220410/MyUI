@@ -15,6 +15,7 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Data;
+using System.Threading;
 
 namespace SQLUI
 {
@@ -46,6 +47,38 @@ namespace SQLUI
             IN = 3,
             LIKE = 4,        
         }
+        public async Task<List<object[]>> WriteCommandAndExecuteReaderAsync(string commandText, CancellationToken ct = default)
+        {
+            List<object[]> results = new List<object[]>();
+            if (commandText.StringIsEmpty()) return results;
+
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = commandText;
+
+                    using (var reader = await cmd.ExecuteReaderAsync(ct).ConfigureAwait(false))
+                    {
+                        int fieldCount = reader.FieldCount;
+
+                        while (await reader.ReadAsync(ct).ConfigureAwait(false))
+                        {
+                            var values = new object[fieldCount];
+                            reader.GetValues(values);
+                            results.Add(values);
+                        }
+                    }
+                }
+            }
+
+            return results;
+        }
+
         /// <summary>
         /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、表格名稱、使用者ID、密碼、連接埠和 SSL 模式。
         /// </summary>
