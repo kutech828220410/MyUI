@@ -47,6 +47,226 @@ namespace SQLUI
             IN = 3,
             LIKE = 4,        
         }
+        /// <summary>
+        /// 新增單筆資料列至指定資料表。
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="value">單筆資料列的欄位值陣列。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> AddRowAsync(string tableName, object[] value, CancellationToken ct = default)
+        {
+            List<object[]> values = new List<object[]>();
+            values.Add(value);
+            return await AddRowsAsync(tableName, values, ct).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// 新增多筆資料列至指定資料表。
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="values">多筆資料列的欄位值集合。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> AddRowsAsync(string tableName, List<object[]> values, CancellationToken ct = default)
+        {
+            if (string.IsNullOrWhiteSpace(tableName)) tableName = this.TableName;
+            if (values == null || values.Count == 0) return 0;
+
+            object[] allColumnNames = GetAllColumn_Name(tableName);
+            if (values[0].Length == 0 || values[0].Length > allColumnNames.Length) return 0;
+
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+            int affected = 0;
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                using (var tx = await conn.BeginTransactionAsync(ct).ConfigureAwait(false))
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.Transaction = tx;
+
+                    // 建立 INSERT 模板
+                    var sb = new StringBuilder();
+                    sb.Append($"INSERT INTO {tableName} VALUES (");
+
+                    for (int k = 0; k < values[0].Length; k++)
+                    {
+                        var colName = (string)allColumnNames[k];
+                        if (k > 0) sb.Append(",");
+                        sb.Append($"@{colName}");
+
+                        // 預先建立參數
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = colName; // 注意這裡不用 @
+                        p.Value = DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
+                    sb.Append(");");
+                    cmd.CommandText = sb.ToString();
+
+                    // 逐筆更新參數並執行
+                    foreach (var row in values)
+                    {
+                        for (int k = 0; k < row.Length; k++)
+                        {
+                            var colName = (string)allColumnNames[k];
+                            cmd.Parameters[colName].Value = row[k] ?? DBNull.Value;
+                        }
+
+                        affected += await cmd.ExecuteNonQueryAsync(ct).ConfigureAwait(false);
+                    }
+
+                    // Commit transaction
+                    tx.Commit();
+                }
+            }
+
+            return affected;
+        }
+        /// <summary>
+        /// 更新單筆資料列（依 GUID 比對）
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="value">單筆完整資料列（含 GUID 與所有欄位值）。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> UpdateRowAsync(string tableName, object[] value, CancellationToken ct = default)
+        {
+            List<object[]> values = new List<object[]>();
+            values.Add(value);
+            return await UpdateRowsAsync(tableName, values, ct).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// 更新多筆資料列（依 GUID 比對）
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="values">多筆完整資料列（含 GUID 與所有欄位值）。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> UpdateRowsAsync(string tableName, List<object[]> values, CancellationToken ct = default)
+        {
+            if (string.IsNullOrWhiteSpace(tableName)) tableName = this.TableName;
+            if (values == null || values.Count == 0) return 0;
+
+            object[] allColumnNames = GetAllColumn_Name(tableName);
+            int colCount = allColumnNames.Length;
+            if (values[0].Length != colCount) return 0; // 你已保證一致，這裡再防呆一次
+
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+            int affected = 0;
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                using (var tx = conn.BeginTransaction())       // MySql.Data：同步 Commit()
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.Transaction = tx;
+
+                    // UPDATE {table} SET col2=@col2, col3=@col3, ... WHERE GUID=@GUID;
+                    var sb = new StringBuilder();
+                    sb.Append($"UPDATE {tableName} SET ");
+                    for (int i = 1; i < colCount; i++)
+                    {
+                        if (i > 1) sb.Append(", ");
+                        sb.Append($"{allColumnNames[i]}=@{allColumnNames[i]}");
+                    }
+                    sb.Append(" WHERE GUID=@GUID;");
+                    cmd.CommandText = sb.ToString();
+
+                    // 預先建立所有參數（GUID + 其餘欄位）
+                    for (int i = 0; i < colCount; i++)
+                    {
+                        var p = cmd.CreateParameter();
+                        p.ParameterName = (string)allColumnNames[i];  // 不含 @
+                        p.Value = DBNull.Value;
+                        cmd.Parameters.Add(p);
+                    }
+
+                    // 逐筆指定值並執行
+                    foreach (var row in values)
+                    {
+                        for (int i = 0; i < colCount; i++)
+                        {
+                            cmd.Parameters[(string)allColumnNames[i]].Value = row[i] ?? DBNull.Value;
+                        }
+                        affected += await cmd.ExecuteNonQueryAsync(ct).ConfigureAwait(false);
+                    }
+
+                    tx.Commit(); // 若改用 MySqlConnector → await tx.CommitAsync(ct);
+                }
+            }
+
+            return affected;
+        }
+        /// <summary>
+        /// 刪除單筆資料列（依 GUID 比對）。
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="value">單筆資料列（GUID 須存在於索引 0）。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> DeleteRowAsync(string tableName, object[] value, CancellationToken ct = default)
+        {
+            List<object[]> values = new List<object[]>();
+            values.Add(value);
+            return await DeleteRowsByGuidAsync(tableName, values, ct).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// 刪除多筆資料列（依 GUID 比對）。
+        /// </summary>
+        /// <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+        /// <param name="rows">多筆資料列（每筆的 GUID 須存在於索引 0）。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>受影響的資料筆數。</returns>
+        public async Task<int> DeleteRowsByGuidAsync(string tableName, List<object[]> rows, CancellationToken ct = default)
+        {
+            if (string.IsNullOrWhiteSpace(tableName)) tableName = this.TableName;
+            if (rows == null || rows.Count == 0) return 0;
+
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+            int affected = 0;
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                using (var tx = conn.BeginTransaction())
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.Transaction = tx;
+                    cmd.CommandText = $"DELETE FROM {tableName} WHERE GUID=@GUID;";
+
+                    var p = cmd.CreateParameter();
+                    p.ParameterName = "GUID";
+                    p.Value = DBNull.Value;
+                    cmd.Parameters.Add(p);
+
+                    foreach (var row in rows)
+                    {
+                        object guid = (row != null && row.Length > 0) ? row[0] : null;
+                        cmd.Parameters["GUID"].Value = guid ?? DBNull.Value;
+                        affected += await cmd.ExecuteNonQueryAsync(ct).ConfigureAwait(false);
+                    }
+
+                    tx.Commit();
+                }
+            }
+
+            return affected;
+        }
+        /// <summary>
+        /// 執行 SQL 指令並回傳查詢結果。
+        /// </summary>
+        /// <param name="commandText">欲執行的 SQL 查詢字串。</param>
+        /// <param name="ct">取消作業的 CancellationToken。</param>
+        /// <returns>查詢結果集合，每筆為 object[]。</returns>
+        /// <remarks>
+        /// 此方法使用 DataReader 逐筆讀取資料，並將每列存入 object[]。
+        /// </remarks>
         public async Task<List<object[]>> WriteCommandAndExecuteReaderAsync(string commandText, CancellationToken ct = default)
         {
             List<object[]> results = new List<object[]>();
