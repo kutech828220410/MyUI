@@ -1409,7 +1409,6 @@ C:\Users\User'\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.c
 C:\Users\User'\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
 C:\Users\User'\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\User'\Source\Repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
-C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.dll.config
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\PortControlUI.pdb
@@ -1467,3 +1466,4 @@ C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.cs
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete

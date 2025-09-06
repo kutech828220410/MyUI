@@ -49,7 +49,7 @@
             <param name="ct">取消作業的 CancellationToken。</param>
             <returns>受影響的資料筆數。</returns>
         </member>
-        <member name="M:SQLUI.SQLControl.DeleteRowsByGuidAsync(System.String,System.Collections.Generic.List{System.Object[]},System.Threading.CancellationToken)">
+        <member name="M:SQLUI.SQLControl.DeleteRowsAsync(System.String,System.Collections.Generic.List{System.Object[]},System.Threading.CancellationToken)">
             <summary>
             刪除多筆資料列（依 GUID 比對）。
             </summary>
@@ -58,7 +58,7 @@
             <param name="ct">取消作業的 CancellationToken。</param>
             <returns>受影響的資料筆數。</returns>
         </member>
-        <member name="M:SQLUI.SQLControl.WriteCommandAndExecuteReaderAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:SQLUI.SQLControl.WriteCommandAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             執行 SQL 指令並回傳查詢結果。
             </summary>

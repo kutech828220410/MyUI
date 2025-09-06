@@ -198,7 +198,6 @@ C:\Users\User'\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.
 C:\Users\User'\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMot.AE0ECDD9.Up2Date
 C:\Users\User'\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.dll
 C:\Users\User'\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.pdb
-C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMot.AE0ECDD9.Up2Date
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\DeltaMotor485.dll.config
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\DeltaMotor485.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\DeltaMotor485.pdb
@@ -241,3 +240,4 @@ C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.C
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMot.AE0ECDD9.Up2Date
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.pdb
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.CopyComplete

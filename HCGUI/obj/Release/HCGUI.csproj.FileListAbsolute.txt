@@ -1179,7 +1179,6 @@ C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\User'\Source\Repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
-C:\Users\Administrator\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.dll.config
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.pdb
@@ -1238,3 +1237,4 @@ C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
+C:\Users\Administrator\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete

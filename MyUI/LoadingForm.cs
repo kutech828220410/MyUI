@@ -65,6 +65,19 @@ namespace MyUI
         }
         public static void ShowLoadingForm()
         {
+            ShowLoadingForm("");
+        }
+        public static void ShowLoadingForm(string description)
+        {
+            if(description != "")
+            {
+                form.Invoke(new Action(delegate
+                {
+                    pLoading.lbl_description.Text = $"{description}";
+                    pLoading.Refresh();
+                }));
+            }
+          
             LoadingForm loadingForm = LoadingForm.getLoading();
             if (form != null)
             {

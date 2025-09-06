@@ -4,6 +4,71 @@
         <name>SQLUI</name>
     </assembly>
     <members>
+        <member name="M:SQLUI.SQLControl.AddRowAsync(System.String,System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            新增單筆資料列至指定資料表。
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="value">單筆資料列的欄位值陣列。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.AddRowsAsync(System.String,System.Collections.Generic.List{System.Object[]},System.Threading.CancellationToken)">
+            <summary>
+            新增多筆資料列至指定資料表。
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="values">多筆資料列的欄位值集合。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.UpdateRowAsync(System.String,System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            更新單筆資料列（依 GUID 比對）
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="value">單筆完整資料列（含 GUID 與所有欄位值）。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.UpdateRowsAsync(System.String,System.Collections.Generic.List{System.Object[]},System.Threading.CancellationToken)">
+            <summary>
+            更新多筆資料列（依 GUID 比對）
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="values">多筆完整資料列（含 GUID 與所有欄位值）。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.DeleteRowAsync(System.String,System.Object[],System.Threading.CancellationToken)">
+            <summary>
+            刪除單筆資料列（依 GUID 比對）。
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="value">單筆資料列（GUID 須存在於索引 0）。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.DeleteRowsAsync(System.String,System.Collections.Generic.List{System.Object[]},System.Threading.CancellationToken)">
+            <summary>
+            刪除多筆資料列（依 GUID 比對）。
+            </summary>
+            <param name="tableName">資料表名稱，若為 null 或空字串則使用預設 TableName。</param>
+            <param name="rows">多筆資料列（每筆的 GUID 須存在於索引 0）。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>受影響的資料筆數。</returns>
+        </member>
+        <member name="M:SQLUI.SQLControl.WriteCommandAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            執行 SQL 指令並回傳查詢結果。
+            </summary>
+            <param name="commandText">欲執行的 SQL 查詢字串。</param>
+            <param name="ct">取消作業的 CancellationToken。</param>
+            <returns>查詢結果集合，每筆為 object[]。</returns>
+            <remarks>
+            此方法使用 DataReader 逐筆讀取資料，並將每列存入 object[]。
+            </remarks>
+        </member>
         <member name="M:SQLUI.SQLControl.#ctor(System.String,System.String,System.String,System.String,System.String,System.UInt32,MySql.Data.MySqlClient.MySqlSslMode)">
             <summary>
             初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、表格名稱、使用者ID、密碼、連接埠和 SSL 模式。

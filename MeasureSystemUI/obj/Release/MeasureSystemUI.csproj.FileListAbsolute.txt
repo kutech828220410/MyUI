@@ -3242,7 +3242,6 @@ C:\Users\User'\Source\Repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
 C:\Users\User'\source\repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\User'\source\repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\User'\source\repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureS.2DD8B85D.Up2Date
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\LadderUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\MyUI.pdb
 C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\SLDUI.pdb
@@ -3309,3 +3308,4 @@ C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.cspr
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureS.2DD8B85D.Up2Date
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete

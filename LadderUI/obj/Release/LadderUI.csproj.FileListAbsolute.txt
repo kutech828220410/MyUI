@@ -6606,7 +6606,6 @@ C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompil
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\User'\Source\Repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LADDER_Panel.resx
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LADDER_Panel.cs
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LADDER_Panel.Designer.cs
@@ -6677,3 +6676,4 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompile
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete

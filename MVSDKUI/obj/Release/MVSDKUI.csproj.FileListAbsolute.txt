@@ -1082,7 +1082,6 @@ C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileI
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\User'\Source\Repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll.config
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.pdb
@@ -1140,3 +1139,4 @@ C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileIn
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete

@@ -2619,7 +2619,6 @@ C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\User'\Source\Repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
-C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\SQLUI.dll.config
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\SQLUI.xml
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\SQLUI.dll
@@ -2681,3 +2680,4 @@ C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
+C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete

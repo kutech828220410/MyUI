@@ -3636,7 +3636,6 @@ C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCo
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\User'\Source\Repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
-C:\Users\Administrator\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.Up2Date
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\source\repos\MyUI\CallBackUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -3697,3 +3696,4 @@ C:\Users\Evan\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CoreCom
 C:\Users\Evan\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.pdb
+C:\Users\Administrator\source\repos\MyUI\CallBackUI\obj\Release\CallBackUI.csproj.CopyComplete

@@ -2488,7 +2488,6 @@ C:\Users\User'\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCo
 C:\Users\User'\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.Up2Date
 C:\Users\User'\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\User'\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
-C:\Users\Administrator\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.dll.config
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\ZealTechUI.pdb
@@ -2545,3 +2544,4 @@ C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCom
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete

@@ -1674,7 +1674,6 @@ C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\User'\Source\Repos\MyUI\Basic\obj\Release\Basic.pdb
-C:\Users\Administrator\source\repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.dll.config
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.xml
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.dll
@@ -1742,3 +1741,4 @@ C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.pdb
+C:\Users\Administrator\source\repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete

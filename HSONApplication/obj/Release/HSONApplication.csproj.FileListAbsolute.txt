@@ -5118,7 +5118,6 @@ C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.csp
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONAppl.FDEF4028.Up2Date
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\User'\Source\Repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
-C:\Users\Administrator\source\repos\MyUI\HSONApplication\obj\Release\HSONAppl.FDEF4028.Up2Date
 C:\Users\User'\source\repos\MyUI\HSONApplication\bin\Release\AudioProcessingLibrary.dll
 C:\Users\User'\source\repos\MyUI\HSONApplication\bin\Release\System.dll
 C:\Users\User'\source\repos\MyUI\HSONApplication\bin\Release\System.xml
@@ -5274,3 +5273,4 @@ C:\Users\Evan\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.cspr
 C:\Users\Evan\source\repos\MyUI\HSONApplication\obj\Release\HSONAppl.FDEF4028.Up2Date
 C:\Users\Evan\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.exe
 C:\Users\Evan\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.pdb
+C:\Users\Administrator\source\repos\MyUI\HSONApplication\obj\Release\HSONApplication.csproj.CopyComplete

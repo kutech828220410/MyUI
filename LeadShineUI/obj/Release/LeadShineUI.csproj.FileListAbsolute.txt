@@ -4065,7 +4065,6 @@ C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.Core
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\User'\Source\Repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.dll.config
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\bin\Release\LeadShineUI.pdb
@@ -4133,3 +4132,4 @@ C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreC
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete

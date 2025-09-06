@@ -213,7 +213,7 @@ namespace SQLUI
         {
             List<object[]> values = new List<object[]>();
             values.Add(value);
-            return await DeleteRowsByGuidAsync(tableName, values, ct).ConfigureAwait(false);
+            return await DeleteRowsAsync(tableName, values, ct).ConfigureAwait(false);
         }
         /// <summary>
         /// 刪除多筆資料列（依 GUID 比對）。
@@ -222,7 +222,7 @@ namespace SQLUI
         /// <param name="rows">多筆資料列（每筆的 GUID 須存在於索引 0）。</param>
         /// <param name="ct">取消作業的 CancellationToken。</param>
         /// <returns>受影響的資料筆數。</returns>
-        public async Task<int> DeleteRowsByGuidAsync(string tableName, List<object[]> rows, CancellationToken ct = default)
+        public async Task<int> DeleteRowsAsync(string tableName, List<object[]> rows, CancellationToken ct = default)
         {
             if (string.IsNullOrWhiteSpace(tableName)) tableName = this.TableName;
             if (rows == null || rows.Count == 0) return 0;
@@ -267,7 +267,7 @@ namespace SQLUI
         /// <remarks>
         /// 此方法使用 DataReader 逐筆讀取資料，並將每列存入 object[]。
         /// </remarks>
-        public async Task<List<object[]>> WriteCommandAndExecuteReaderAsync(string commandText, CancellationToken ct = default)
+        public async Task<List<object[]>> WriteCommandAsync(string commandText, CancellationToken ct = default)
         {
             List<object[]> results = new List<object[]>();
             if (commandText.StringIsEmpty()) return results;
@@ -1431,6 +1431,42 @@ namespace SQLUI
             }
             return list_str.ToArray();
         }
+        public async Task<string[]> GetAllColumn_NameAsync(string TableName, CancellationToken ct = default)
+        {
+            if (TableName == null) TableName = this.TableName;
+            List<object> obj_temp_array = new List<object>();
+            List<string> list_str = new List<string>();
+            string Command;
+
+
+            Command = string.Format("SELECT column_name FROM information_schema.columns WHERE table_schema = '{0}' AND table_name = '{1}'", this.Database, TableName);
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = Command;
+
+                    using (var reader = await cmd.ExecuteReaderAsync(ct).ConfigureAwait(false))
+                    {
+                        int fieldCount = reader.FieldCount;
+
+                        while (await reader.ReadAsync(ct).ConfigureAwait(false))
+                        {
+                            obj_temp_array.Add(reader["COLUMN_NAME"]);
+
+                        }
+                    }
+                }
+                foreach (object value in obj_temp_array)
+                {
+                    list_str.Add((string)value);
+                }
+                return list_str.ToArray();
+            }
+        }
         public string[] GetAllColumn_DataType(string TableName)
         {
             if (TableName == null) TableName = this.TableName;
@@ -1864,6 +1900,13 @@ namespace SQLUI
         {
             return GetRows(TableName, new string[] { }, new string[] { }, SerchType.NONE, "", 0, -1, OrderColumnName, _OrderType); 
         }
+        public async Task<List<object[]>> GetAllRowsAsync(string TableName)
+        {
+            if (TableName.StringIsEmpty()) TableName = this.TableName;
+            string db = this.Database;
+            string command = $"SELECT * FROM {db}.{TableName};";
+            return await WriteCommandAsync(command);
+        }
 
         public List<object[]> GetRowsOfRange(string TableName, uint StrintIndex, uint NumOfData)
         {
@@ -1946,6 +1989,32 @@ namespace SQLUI
         public List<object[]> GetRowsByDefult(string TableName, string[] serchColumnName, string[] serchValue, uint StrintIndex, uint NumOfData, string OrderColumnName, SQLControl.OrderType _OrderType)
         {
             return GetRows(TableName, serchColumnName, serchValue, SerchType.DEFULT, "", StrintIndex, (int)NumOfData, OrderColumnName, _OrderType);
+        }
+        public async Task<List<object[]>> GetRowsByDefultAsync(string TableName, string serchColumnName, string serchValue)
+        {
+            if (TableName.StringIsEmpty()) TableName = this.TableName;
+            string db = this.Database;
+            string command = $"SELECT * FROM {db}.{TableName} WHERE {serchColumnName} = '{serchValue}';";
+            return await WriteCommandAsync(command);
+        }
+        public async Task<List<object[]>> GetRowsByDefultAsync(string TableName, int serchColumnindex, string serchValue)
+        {
+            if (TableName.StringIsEmpty()) TableName = this.TableName;
+            string db = this.Database;
+            object[] AllColumName = await GetAllColumn_NameAsync(TableName);
+            string serchColumnName = (string)AllColumName[serchColumnindex];
+            string command = $"SELECT * FROM {db}.{TableName} WHERE {serchColumnName} = '{serchValue}';";
+            return await WriteCommandAsync(command);
+        }
+        public async Task<List<object[]>> GetRowsByDefultAsync(string TableName, int serchColumnindex, string[] serchValue)
+        {
+            if (TableName.StringIsEmpty()) TableName = this.TableName;
+            string db = this.Database;
+            object[] AllColumName = await GetAllColumn_NameAsync(TableName);
+            string serchColumnName = (string)AllColumName[serchColumnindex];
+            string serchValue_str = string.Join(",", serchValue.Select(x => $"'{x}'"));
+            string command = $"SELECT * FROM {db}.{TableName} WHERE {serchColumnName} IN ({serchValue_str});";
+            return await WriteCommandAsync(command);
         }
 
         public List<object[]> GetRowsByLike(string TableName, int serchColumnindex, string LikeString)

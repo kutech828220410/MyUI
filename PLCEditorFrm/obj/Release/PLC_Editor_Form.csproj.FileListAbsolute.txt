@@ -744,7 +744,6 @@ C:\Users\User'\Source\Repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2D
 C:\Users\User'\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\User'\Source\Repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe.config
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
@@ -789,3 +788,4 @@ C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CopyComplete

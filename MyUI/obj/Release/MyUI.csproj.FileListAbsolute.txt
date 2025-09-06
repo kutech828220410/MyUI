@@ -509,7 +509,6 @@ C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\User'\Source\Repos\MyUI\MyUI\obj\Release\MyUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\PLC_NumBox.resx
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\PLC_NumBox.cs
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\PLC_NumBox.Designer.cs
@@ -618,3 +617,4 @@ C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.c
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.pdb
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CopyComplete

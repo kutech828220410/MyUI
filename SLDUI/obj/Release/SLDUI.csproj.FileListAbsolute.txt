@@ -5268,7 +5268,6 @@ C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInput
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\User'\Source\Repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
-C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.resx
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.cs
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PLC_NumBox.Designer.cs
@@ -5340,3 +5339,4 @@ C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
+C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
