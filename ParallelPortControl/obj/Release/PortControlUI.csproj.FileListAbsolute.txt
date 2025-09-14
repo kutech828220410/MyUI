@@ -1466,4 +1466,4 @@ C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.cs
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
-C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date

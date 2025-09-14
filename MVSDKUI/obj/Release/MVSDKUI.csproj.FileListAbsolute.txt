@@ -1139,4 +1139,4 @@ C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileIn
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date

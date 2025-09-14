@@ -1679,4 +1679,4 @@ C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date

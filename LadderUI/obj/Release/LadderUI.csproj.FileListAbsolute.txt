@@ -6676,4 +6676,4 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompile
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date

@@ -617,4 +617,4 @@ C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.c
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date

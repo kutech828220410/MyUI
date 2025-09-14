@@ -5339,4 +5339,4 @@ C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
-C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete
+C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date

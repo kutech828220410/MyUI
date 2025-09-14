@@ -16,6 +16,9 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Data;
 using System.Threading;
+using Dapper;
+
+using Dapper;
 
 namespace SQLUI
 {
@@ -298,6 +301,69 @@ namespace SQLUI
 
             return results;
         }
+        //public async Task<List<object[]>> WriteCommandAsync(string sql, object parameters, CancellationToken ct = default)
+        //{
+        //    var results = new List<object[]>();
+        //    if (string.IsNullOrWhiteSpace(sql)) return results;
+
+        //    var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+
+        //    using (var conn = new MySqlConnection(connStr))
+        //    {
+        //        await conn.OpenAsync(ct).ConfigureAwait(false);
+
+        //        using (var cmd = conn.CreateCommand())
+        //        {
+        //            cmd.CommandText = sql;
+
+        //            // 把參數加進去
+        //            if (parameters != null)
+        //            {
+        //                foreach (var prop in parameters.GetType().GetProperties())
+        //                {
+        //                    var name = "@" + prop.Name;
+        //                    var value = prop.GetValue(parameters) ?? DBNull.Value;
+        //                    cmd.Parameters.AddWithValue(name, value);
+        //                }
+        //            }
+
+        //            using (var reader = await cmd.ExecuteReaderAsync(ct).ConfigureAwait(false))
+        //            {
+        //                int fieldCount = reader.FieldCount;
+        //                while (await reader.ReadAsync(ct).ConfigureAwait(false))
+        //                {
+        //                    var values = new object[fieldCount];
+        //                    reader.GetValues(values);
+        //                    results.Add(values);
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return results;
+        //}
+        public async Task<List<object[]>> WriteCommandAsync(string sql, object parameters, CancellationToken ct = default)
+        {
+            var results = new List<object[]>();
+            if (string.IsNullOrWhiteSpace(sql)) return results;
+
+            var connStr = _MySqlConnectionStringBuilder.ConnectionString + ";Pooling=true;";
+
+            using (var conn = new MySqlConnection(connStr))
+            {
+                await conn.OpenAsync(ct).ConfigureAwait(false);
+
+                // 直接交給 Dapper 處理
+                var rows = await conn.QueryAsync(sql, parameters);
+
+                foreach (var row in rows)
+                {
+                    var dict = (IDictionary<string, object>)row;
+                    results.Add(dict.Values.ToArray());
+                }
+            }
+            return results;
+        }
+
 
         /// <summary>
         /// 初始化 SQLControl 類別的新實例，使用指定的伺服器、資料庫、表格名稱、使用者ID、密碼、連接埠和 SSL 模式。
