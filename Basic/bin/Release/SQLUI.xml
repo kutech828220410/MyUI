@@ -360,6 +360,38 @@
             <param name="Mod_ColumnType">要修改的欄位類型。</param>
             <param name="Mod_DataLen">要修改的欄位長度。</param>
         </member>
+        <member name="M:SQLUI.SQLControl.WtrteCommandAsync(System.String)">
+            <summary>
+            非同步執行 SQL Command (不回傳結果集)
+            </summary>
+        </member>
+        <member name="M:SQLUI.SQLControl.WtrteCommandAndExecuteReaderAsync(System.String)">
+            <summary>
+            非同步執行 SQL Command，並回傳 DataTable
+            </summary>
+        </member>
+        <member name="M:SQLUI.Table.#ctor(System.Type)">
+            <summary>
+            建立 Table (Class 版本)
+            </summary>
+        </member>
+        <member name="M:SQLUI.Table.AddColumnList(System.String,System.String,System.String)">
+            <summary>
+            新增欄位 (字串版本)
+            </summary>
+            <param name="Name">欄位名稱</param>
+            <param name="TypeName">型別名稱 (如 VARCHAR(50), TEXT, DATETIME)</param>
+            <param name="IndexType">索引類型 (PRIMARY, UNIQUE, INDEX, NONE)</param>
+        </member>
+        <member name="M:SQLUI.Table.AddColumnList(System.String,System.String,System.UInt32,System.String)">
+            <summary>
+            新增欄位 (字串版本，帶長度)
+            </summary>
+            <param name="Name">欄位名稱</param>
+            <param name="BaseType">型別 (VARCHAR / DATETIME / TEXT)</param>
+            <param name="Length">長度 (僅針對 VARCHAR 用)</param>
+            <param name="IndexType">索引類型</param>
+        </member>
         <member name="F:SQLUI.SQL_DataGridView.components">
             <summary> 
             設計工具所需的變數。

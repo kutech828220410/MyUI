@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -578,6 +580,29 @@ namespace Basic
 
             return value;
         }
+        /// <summary>
+        /// 將 Class 轉換為 SQL 用 object[]
+        /// (只取有 Description 的屬性，依照宣告順序回傳值)
+        /// </summary>
+        public static object[] ClassToSQL<T>(this T obj)
+        {
+            if (obj == null) return Array.Empty<object>();
+
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            // 過濾出有 Description 的屬性
+            var filtered = new List<object>();
+            foreach (var prop in properties)
+            {
+                var descAttr = prop.GetCustomAttribute<DescriptionAttribute>();
+                if (descAttr == null) continue;
+
+                filtered.Add(prop.GetValue(obj));
+            }
+
+            return filtered.ToArray();
+        }
+
         static public T SQLToClass<T, E>(this object[] values)
         {
             T obj = Activator.CreateInstance<T>();
@@ -636,6 +661,63 @@ namespace Basic
 
             return obj;
         }
+        /// <summary>
+        /// 將 SQL 取得的 object[] 轉換為 Class
+        /// (只填入有 Description 的屬性，依宣告順序對應 values)
+        /// </summary>
+        public static T SQLToClass<T>(this object[] values) where T : new()
+        {
+            if (values == null) return default;
+
+            T obj = new T();
+
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            int index = 0;
+            foreach (var prop in properties)
+            {
+                // 只處理有 [Description] 的屬性
+                var descAttr = prop.GetCustomAttribute<DescriptionAttribute>();
+                if (descAttr == null) continue;
+
+                if (index >= values.Length) break;
+
+                object value = values[index];
+
+                if (value == null)
+                {
+                    prop.SetValue(obj, null);
+                }
+                else if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTime?))
+                {
+                    // 如果屬性是 DateTime
+                    if (value is DateTime dt)
+                    {
+                        prop.SetValue(obj, dt);
+                    }
+                    else
+                    {
+                        prop.SetValue(obj, value.ToString().StringToDateTime());
+                    }
+                }
+                else
+                {
+                    string temp = value.ToString();
+                    if (temp.Check_Date_String() == true)
+                    {
+                        prop.SetValue(obj, temp.StringToDateTime().ToDateTimeString_6('-'));
+                    }
+                    else
+                    {
+                        prop.SetValue(obj, temp);
+                    }
+                }
+
+                index++;
+            }
+
+            return obj;
+        }
 
         static public List<object[]> ClassToSQL<T, E>(this List<T> _classes) where E : Enum, new()
         {
@@ -646,6 +728,32 @@ namespace Basic
                 object[] value = _classes[i].ClassToSQL<T, E>();
                 list_value.Add(value);
             }
+            return list_value;
+        }
+        /// <summary>
+        /// 將 List<Class> 轉換為 List<object[]>
+        /// (只取有 Description 的屬性，依宣告順序回傳)
+        /// </summary>
+        public static List<object[]> ClassToSQL<T>(this List<T> classes)
+        {
+            List<object[]> list_value = new List<object[]>();
+            if (classes == null || classes.Count == 0) return list_value;
+
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (var obj in classes)
+            {
+                var row = new List<object>();
+                foreach (var prop in properties)
+                {
+                    var descAttr = prop.GetCustomAttribute<DescriptionAttribute>();
+                    if (descAttr == null) continue;
+
+                    row.Add(prop.GetValue(obj));
+                }
+                list_value.Add(row.ToArray());
+            }
+
             return list_value;
         }
 
@@ -662,6 +770,67 @@ namespace Basic
             }
             return list_value;
         }
+        /// <summary>
+        /// 將 List<object[]> 轉換為 List<Class>
+        /// (只填入有 Description 的屬性，依宣告順序對應 values)
+        /// </summary>
+        public static List<T> SQLToClass<T>(this List<object[]> values) where T : new()
+        {
+            var list_value = new List<T>();
+            if (values == null || values.Count == 0) return list_value;
+
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                                      .Where(p => p.GetCustomAttribute<DescriptionAttribute>() != null)
+                                      .ToArray();
+
+            foreach (var row in values)
+            {
+                T obj = new T();
+                int index = 0;
+
+                foreach (var prop in properties)
+                {
+                    if (index >= row.Length) break;
+
+                    object value = row[index];
+
+                    if (value == null)
+                    {
+                        prop.SetValue(obj, null);
+                    }
+                    else if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTime?))
+                    {
+                        if (value is DateTime dt)
+                        {
+                            prop.SetValue(obj, dt);
+                        }
+                        else
+                        {
+                            prop.SetValue(obj, value.ToString().StringToDateTime());
+                        }
+                    }
+                    else
+                    {
+                        string temp = value.ToString();
+                        if (temp.Check_Date_String() == true)
+                        {
+                            prop.SetValue(obj, temp.StringToDateTime().ToDateTimeString_6('-'));                        
+                        }
+                        else
+                        {
+                            prop.SetValue(obj, temp);
+                        }
+                    }
+
+                    index++;
+                }
+
+                list_value.Add(obj);
+            }
+
+            return list_value;
+        }
+
 
         static public T ObjToClass<T>(this object data)
         {

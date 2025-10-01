@@ -1144,14 +1144,14 @@ namespace Basic
             return dt;
         }
 
-        static public string ToDateString(this object item)
+        static public string ToDateString(this object item, char split_char = '/')
         {
-            return ToDateString(item, Enum_Year_Type.Anno_Domini, "/");
+            return ToDateString(item, Enum_Year_Type.Anno_Domini, split_char.ToString());
 
         }
-        static public string ToDateString(this DateTime item)
+        static public string ToDateString(this DateTime item, char split_char = '/')
         {
-            return ToDateString(item, Enum_Year_Type.Anno_Domini, "/");
+            return ToDateString(item, Enum_Year_Type.Anno_Domini, split_char.ToString());
         }
         static public string ToDateString(this object item, Enum_Year_Type Enum_Year_Type)
         {
@@ -1249,31 +1249,31 @@ namespace Basic
 
         }
 
-        static public string ToDateTimeString(this object item)
+        static public string ToDateTimeString(this object item , char split_char = '/')
         {
-            return ToDateTimeString(item, Enum_Year_Type.Anno_Domini);
+            return ToDateTimeString(item, Enum_Year_Type.Anno_Domini , split_char);
 
         }
         static public string ToDateTimeString(this DateTime item)
         {
             return ToDateTimeString(item, Enum_Year_Type.Anno_Domini);
         }
-        static public string ToDateTimeString(this object item, Enum_Year_Type Enum_Year_Type)
+        static public string ToDateTimeString(this object item, Enum_Year_Type Enum_Year_Type, char split_char = '/')
         {
             if (!(item is DateTime)) return "";
-            return ToDateTimeString((DateTime)item, Enum_Year_Type);
+            return ToDateTimeString((DateTime)item, Enum_Year_Type , split_char);
 
         }
-        static public string ToDateTimeString(this DateTime item, Enum_Year_Type Enum_Year_Type)
+        static public string ToDateTimeString(this DateTime item, Enum_Year_Type Enum_Year_Type, char split_char = '/')
         {
             DateTime datetime = item;
             if (Enum_Year_Type == TypeConvert.Enum_Year_Type.Republic_of_China)
             {
                 System.Globalization.TaiwanCalendar TaiwanCalendar = new System.Globalization.TaiwanCalendar();
 
-                return ToDATETIME_String(TaiwanCalendar.GetYear(datetime), datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second);
+                return ToDATETIME_String(TaiwanCalendar.GetYear(datetime), datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second , split_char);
             }
-            return ToDATETIME_String(datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second);
+            return ToDATETIME_String(datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second , split_char);
 
         }
         static public string ToDateTimeTiny(this DateTime item, Enum_Year_Type Enum_Year_Type)
@@ -1286,7 +1286,7 @@ namespace Basic
             }
             return $"{item.Year.ToString("0000")}{item.Month.ToString("00")}{item.Day.ToString("00")}{item.Hour.ToString("00")}{item.Minute.ToString("00")}{item.Second.ToString("00")}";
         }
-        static public string ToDateTimeString_6(this object item)
+        static public string ToDateTimeString_6(this object item, char split_cahr = '/')
         {
             if (!(item is DateTime)) return "";
             DateTime datetime = (DateTime)item;
@@ -1297,12 +1297,12 @@ namespace Basic
             string Minute = datetime.Minute.ToString("00");
             string Second = datetime.Second.ToString("00");
             string TimeOfDay = datetime.TimeOfDay.ToString();
-            string str_dateTime = string.Format("{0}/{1}/{2} {3}", Year, Month, Day, TimeOfDay);
+            string str_dateTime = $"{Year}{split_cahr}{Month}{split_cahr}{Day} {TimeOfDay}";
             return str_dateTime;
 
         }
 
-        static public DateTime StringToDateTime(this object item)
+        static public DateTime StringToDateTime(this object item )
         {
             if (item is DateTime)
                 return (DateTime)item;
@@ -1372,45 +1372,62 @@ namespace Basic
             DateTime dateTime;
             string[] formats =
              {
-                "yyyy-MM-dd",
-                "dd/MM/yyyy",
-                "MM/dd/yyyy",
-                "yyyy-MM-dd HH:mm:ss",
-                "dd/MM/yyyy HH:mm:ss",
-                "MM/dd/yyyy HH:mm:ss",
-                "yyyy-MM-ddTHH:mm:ss",
-                "dd/MM/yyyyTHH:mm:ss",
-                "MM/dd/yyyyTHH:mm:ss",
-                "yyyy/MM/dd",
-                "dd-MM-yyyy",
-                "MM-dd-yyyy",
-                "yyyy/MM/dd HH:mm:ss",
-                "dd-MM-yyyy HH:mm:ss",
-                "MM-dd-yyyy HH:mm:ss",
-                "yyyy/MM/ddTHH:mm:ss",
-                "dd-MM-yyyyTHH:mm:ss",
-                "MM-dd-yyyyTHH:mm:ss",
-                "yyyy/MM/dd HH:mm:ss.fffffff",    // 新增格式
-                "dd-MM-yyyy HH:mm:ss.fffffff",    // 新增格式
-                "MM-dd-yyyy HH:mm:ss.fffffff",    // 新增格式
-                "yyyy-MM-ddTHH:mm:ss.fffffff",    // 新增格式
-                "dd/MM/yyyyTHH:mm:ss.fffffff",    // 新增格式
-                "MM/dd/yyyyTHH:mm:ss.fffffff",    // 新增格式
-                "dd-MMMM-yyyy",                    // 支持中文月份，如"20-10月-2026"
-            
-                // 新增支持两位数年份的格式
-                "M/d/yy",
-                "MM/dd/yy",
-                "M/d/yyyy", // 可选：如果需要同时支持单/双位数年份
-                "MM/dd/yyyy" // 已存在，但保留以确保兼容性
-            };
-            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-TW"); // 或者使用 "zh-TW"
+        "yyyy-MM-dd",
+        "dd/MM/yyyy",
+        "MM/dd/yyyy",
+        "yyyy-MM-dd HH:mm:ss",
+        "dd/MM/yyyy HH:mm:ss",
+        "MM/dd/yyyy HH:mm:ss",
+        "yyyy-MM-ddTHH:mm:ss",
+        "dd/MM/yyyyTHH:mm:ss",
+        "MM/dd/yyyyTHH:mm:ss",
+        "yyyy/MM/dd",
+        "dd-MM-yyyy",
+        "MM-dd-yyyy",
+        "yyyy/MM/dd HH:mm:ss",
+        "dd-MM-yyyy HH:mm:ss",
+        "MM-dd-yyyy HH:mm:ss",
+        "yyyy/MM/ddTHH:mm:ss",
+        "dd-MM-yyyyTHH:mm:ss",
+        "MM-dd-yyyyTHH:mm:ss",
+        "yyyy/MM/dd HH:mm:ss.fffffff",
+        "dd-MM-yyyy HH:mm:ss.fffffff",
+        "MM-dd-yyyy HH:mm:ss.fffffff",
+        "yyyy-MM-ddTHH:mm:ss.fffffff",
+        "dd/MM/yyyyTHH:mm:ss.fffffff",
+        "MM/dd/yyyyTHH:mm:ss.fffffff",
+        "dd-MMMM-yyyy",                    
 
-            // 尝试解析日期
-            bool result = DateTime.TryParseExact(source, formats, culture, System.Globalization.DateTimeStyles.None, out dateTime);
+        // 兩位數年份
+        "M/d/yy",
+        "MM/dd/yy",
+        "M/d/yyyy",
+        "MM/dd/yyyy",
+
+        // ✅ 新增支援 中文 上午/下午
+        "yyyy/M/d tt hh:mm:ss",
+        "yyyy/M/d tt hh:mm:ss.fffffff",
+        "yyyy/M/dd tt hh:mm:ss",
+        "yyyy/M/dd tt hh:mm:ss.fffffff",
+        "yyyy-MM-dd tt hh:mm:ss",
+        "yyyy/MM/dd tt hh:mm:ss",
+        "yyyy-MM-dd tt hh:mm:ss.fffffff",
+        "yyyy/MM/dd tt hh:mm:ss.fffffff"
+    };
+
+            var culture = new System.Globalization.CultureInfo("zh-TW");
+
+            bool result = DateTime.TryParseExact(
+                source,
+                formats,
+                culture,
+                System.Globalization.DateTimeStyles.None,
+                out dateTime
+            );
 
             return result;
         }
+
         public static int Get_DateTINY(this string source)
         {
             int Year = 0;
@@ -1771,9 +1788,9 @@ namespace Basic
             if (!int.TryParse(Day, out int_Day)) return null;
             return ToDATE_String(int_Year, int_Month, int_Day);
         }
-        static private string ToDATE_String(int Year, int Month, int Day)
+        static private string ToDATE_String(int Year, int Month, int Day , char split_char = '/')
         {
-            return ToDATE_String(Year, Month, Day, "/");
+            return ToDATE_String(Year, Month, Day, split_char.ToString());
         }
         static private string ToDATE_String(int Year, int Month, int Day, string split_char)
         {
@@ -1803,9 +1820,9 @@ namespace Basic
             string TIME = ToTIME_String(Hour, Min, Sec);
             return DATE + " " + TIME;
         }
-        static private string ToDATETIME_String(int Year, int Month, int Day, int Hour, int Min, int Sec)
+        static private string ToDATETIME_String(int Year, int Month, int Day, int Hour, int Min, int Sec, char split_char = '/')
         {
-            string DATE = ToDATE_String(Year, Month, Day);
+            string DATE = ToDATE_String(Year, Month, Day , split_char);
             string TIME = ToTIME_String(Hour, Min, Sec);
             return DATE + " " + TIME;
         }

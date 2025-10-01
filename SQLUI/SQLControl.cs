@@ -19,6 +19,7 @@ using System.Threading;
 using Dapper;
 
 using Dapper;
+using System.Reflection;
 
 namespace SQLUI
 {
@@ -3114,6 +3115,50 @@ namespace SQLUI
             _MySqlCommand.ExecuteNonQuery();
             this.CloseConection(_MySqlConnection);
         }
+        /// <summary>
+        /// 非同步執行 SQL Command (不回傳結果集)
+        /// </summary>
+        public async Task WtrteCommandAsync(string CommandText)
+        {
+            if (CommandText.StringIsEmpty()) return;
+
+            using (var _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;"))
+            {
+                await _MySqlConnection.OpenAsync();
+                using (var _MySqlCommand = _MySqlConnection.CreateCommand())
+                {
+                    _MySqlCommand.CommandText = CommandText;
+                    await _MySqlCommand.ExecuteNonQueryAsync();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 非同步執行 SQL Command，並回傳 DataTable
+        /// </summary>
+        public async Task<DataTable> WtrteCommandAndExecuteReaderAsync(string CommandText)
+        {
+            if (CommandText.StringIsEmpty()) return null;
+
+            using (var _MySqlConnection = new MySqlConnection(_MySqlConnectionStringBuilder.ConnectionString + ";pooling=true;"))
+            {
+                await _MySqlConnection.OpenAsync();
+                using (var _MySqlCommand = _MySqlConnection.CreateCommand())
+                {
+                    _MySqlCommand.CommandText = CommandText;
+
+                    using (var reader = await _MySqlCommand.ExecuteReaderAsync())
+                    {
+                        DataTable dataTable = new DataTable();
+                        dataTable.Load(reader); // DataTable.Load 目前只有同步版本
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+       
+
 
         public static readonly string Column01ImageName = "ImageName";
         public static readonly string Column02ImageName = "ImageBlob";
@@ -3550,6 +3595,44 @@ namespace SQLUI
             TableName = enum_type.GetEnumDescription();
             AddColumnList(enum_type);
         }
+        /// <summary>
+        /// 建立 Table (Class 版本)
+        /// </summary>
+        public Table(Type classType)
+        {
+            // 類別的 Description 當作 TableName
+            TableName = classType.GetCustomAttribute<DescriptionAttribute>()?.Description ?? classType.Name;
+
+            // 遍歷屬性
+            foreach (var prop in classType.GetProperties())
+            {
+                var descAttr = prop.GetCustomAttribute<DescriptionAttribute>();
+                if (descAttr == null) continue; // 沒描述就略過
+
+                string[] temp_ary = descAttr.Description.Split(',');
+
+                if (temp_ary.Length == 3)
+                {
+                    // 格式: "型別,長度,索引"
+                    string columnType = temp_ary[0].Trim();
+                    int len = temp_ary[1].StringToInt32();
+                    string indexType = temp_ary[2].Trim().ToUpper();
+
+                    AddColumnList(prop.Name, columnType, (uint)len, indexType);
+                }
+                else if (temp_ary.Length == 4)
+                {
+                    // 格式: "欄位名,型別,長度,索引"
+                    string columnName = temp_ary[0].Trim();
+                    string columnType = temp_ary[1].Trim();
+                    int len = temp_ary[2].StringToInt32();
+                    string indexType = temp_ary[3].Trim().ToUpper();
+
+                    AddColumnList(columnName, columnType, (uint)len, indexType);
+                }
+            }
+        }
+
         public void SetTableConfig(SQLControl sQLControl)
         {
             this.TableName = sQLControl.TableName;
@@ -4035,6 +4118,61 @@ namespace SQLUI
             _ColumnElement.IndexType = _IndexType;
             ColumnList.Add(_ColumnElement);
         }
+        /// <summary>
+        /// 新增欄位 (字串版本)
+        /// </summary>
+        /// <param name="Name">欄位名稱</param>
+        /// <param name="TypeName">型別名稱 (如 VARCHAR(50), TEXT, DATETIME)</param>
+        /// <param name="IndexType">索引類型 (PRIMARY, UNIQUE, INDEX, NONE)</param>
+        public void AddColumnList(string Name, string TypeName, string IndexType)
+        {
+            ColumnElement _ColumnElement = new ColumnElement();
+            _ColumnElement.Name = Name;
+
+            // 將 IndexType 轉換成 Enum，如果不合法就設 NONE
+            if (Enum.TryParse(IndexType, true, out IndexType parsedIndex))
+            {
+                _ColumnElement.IndexType = parsedIndex;
+            }
+            else
+            {
+                _ColumnElement.IndexType = Table.IndexType.None;
+            }
+            _ColumnElement.TypeName = $" {TypeName}";
+
+            ColumnList.Add(_ColumnElement);
+        }
+        /// <summary>
+        /// 新增欄位 (字串版本，帶長度)
+        /// </summary>
+        /// <param name="Name">欄位名稱</param>
+        /// <param name="BaseType">型別 (VARCHAR / DATETIME / TEXT)</param>
+        /// <param name="Length">長度 (僅針對 VARCHAR 用)</param>
+        /// <param name="IndexType">索引類型</param>
+        public void AddColumnList(string Name, string BaseType, uint Length, string IndexType)
+        {
+            ColumnElement _ColumnElement = new ColumnElement();
+            _ColumnElement.Name = Name;
+
+            if (BaseType.ToUpper() == "VARCHAR")
+                _ColumnElement.TypeName = $"{BaseType}({Length})";
+            else
+                _ColumnElement.TypeName = BaseType;
+
+            if (Enum.TryParse(IndexType, true, out IndexType parsedIndex))
+            {
+                _ColumnElement.IndexType = parsedIndex;
+            }
+            else
+            {
+                _ColumnElement.IndexType = Table.IndexType.None;
+            }
+            _ColumnElement.TypeName = $" {_ColumnElement.TypeName}";
+
+            ColumnList.Add(_ColumnElement);
+        }
+
+
         public void AddColumnList(object Enum)
         {
             ValueType valueType = ValueType.None;
@@ -4043,6 +4181,7 @@ namespace SQLUI
             OtherType otherType = OtherType.None;
             IndexType indexType = IndexType.None;
             string[] descriptions = Enum.GetEnumDescriptions();
+
             for (int i = 0; i < descriptions.Length; i++)
             {
                 valueType = ValueType.None;
@@ -4050,18 +4189,23 @@ namespace SQLUI
                 dateType = DateType.None;
                 otherType = OtherType.None;
                 indexType = IndexType.None;
+
                 string[] temp_ary = descriptions[i].Split(',');
                 string[] type_names;
+
+                // === 原本 4 個參數模式 ===
                 if (temp_ary.Length == 4)
                 {
                     string name = temp_ary[0];
                     string valtype = temp_ary[1];
                     int len = temp_ary[2].StringToInt32();
                     string indextype = temp_ary[3];
+
                     if (name.StringIsEmpty()) continue;
                     if (valtype.StringIsEmpty()) continue;
                     if (indextype.StringIsEmpty()) continue;
                     if (len <= 0) continue;
+
                     type_names = new ValueType().GetEnumNames();
                     for (int k = 0; k < type_names.Length; k++)
                     {
@@ -4102,7 +4246,6 @@ namespace SQLUI
                             indexType = (IndexType)k;
                         }
                     }
-                    bool flag_continue = false;
 
                     if (valueType != ValueType.None)
                     {
@@ -4120,18 +4263,82 @@ namespace SQLUI
                     {
                         AddColumnList(name, otherType, indexType);
                     }
-                    if (flag_continue)
+                }
+                // === 新增：3 個參數模式 ===
+                else if (temp_ary.Length == 3)
+                {
+                    // name 改為 enum 本身名字
+                    string name = Enum.ToString();
+                    string valtype = temp_ary[0];
+                    int len = temp_ary[1].StringToInt32();
+                    string indextype = temp_ary[2];
+
+                    if (name.StringIsEmpty()) continue;
+                    if (valtype.StringIsEmpty()) continue;
+                    if (indextype.StringIsEmpty()) continue;
+                    if (len <= 0) continue;
+
+                    type_names = new ValueType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
                     {
-                        this.ColumnList = null;
-                        return;
-                        continue;
+                        if (type_names[k] == valtype)
+                        {
+                            valueType = (ValueType)k;
+                        }
+                    }
+                    type_names = new StringType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            stringType = (StringType)k;
+                        }
+                    }
+                    type_names = new DateType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            dateType = (DateType)k;
+                        }
+                    }
+                    type_names = new OtherType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == valtype)
+                        {
+                            otherType = (OtherType)k;
+                        }
+                    }
+                    type_names = new IndexType().GetEnumNames();
+                    for (int k = 0; k < type_names.Length; k++)
+                    {
+                        if (type_names[k] == indextype)
+                        {
+                            indexType = (IndexType)k;
+                        }
                     }
 
-
+                    if (valueType != ValueType.None)
+                    {
+                        AddColumnList(name, valueType, (uint)len, indexType);
+                    }
+                    if (stringType != StringType.None)
+                    {
+                        AddColumnList(name, stringType, (uint)len, indexType);
+                    }
+                    if (dateType != DateType.None)
+                    {
+                        AddColumnList(name, dateType, (uint)len, indexType);
+                    }
+                    if (otherType != OtherType.None)
+                    {
+                        AddColumnList(name, otherType, indexType);
+                    }
                 }
             }
-
         }
+
 
         public void ClearColumn()
         {

@@ -9,6 +9,8 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using System.Reflection;
+using System.ComponentModel;
 namespace Basic
 {
     public class FileInfoModel
@@ -821,6 +823,45 @@ namespace Basic
                 list_value.Add(dt.Rows[i].ItemArray);
             }
             return list_value;
+        }
+        /// <summary>
+        /// 將 List 轉換成 DataTable (僅轉換有 DescriptionAttribute 的屬性)
+        /// </summary>
+        /// <typeparam name="T">目標型別</typeparam>
+        /// <param name="list_value">來源資料 (每一列是一個 object[])</param>
+        /// <returns>轉換後的 DataTable</returns>
+        public static DataTable ToDataTable<T>(this List<object[]> list_value)
+        {
+            DataTable table = new DataTable();
+
+            // 取出有 DescriptionAttribute 的屬性
+            PropertyInfo[] props = typeof(T).GetProperties()
+                .Where(p => p.GetCustomAttribute<DescriptionAttribute>() != null)
+                .ToArray();
+
+            // 建立 DataTable 欄位
+            foreach (var prop in props)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+
+            // 填入資料
+            foreach (var values in list_value)
+            {
+                if (values.Length != props.Length)
+                {
+                    throw new ArgumentException($"物件陣列長度 ({values.Length}) 與加了 Description 的屬性數量 ({props.Length}) 不符");
+                }
+
+                DataRow row = table.NewRow();
+                for (int i = 0; i < props.Length; i++)
+                {
+                    row[i] = values[i] ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+
+            return table;
         }
         static public DataTable ToDataTable(this List<object[]> list_value, Enum Enum)
         {
