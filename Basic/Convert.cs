@@ -1362,6 +1362,79 @@ namespace Basic
 
             return dateTime; // 如果转换失败，返回默认的 DateTime 值
         }
+        /// <summary>
+        /// 檢查字串是否為合法的星期格式
+        /// 支援格式：
+        /// 1,2,3,4,5,6,7 或 一,二,三,四,五,六,日 或 Mon,Tue,... 或 Monday,Tuesday,...
+        /// </summary>
+        public static bool Check_DayOfWeek_String(this string dayOfWeekStr)
+        {
+            if (string.IsNullOrWhiteSpace(dayOfWeekStr)) return false;
+
+            // 標準化：去除空白並用逗號分隔
+            var parts = dayOfWeekStr
+                .Replace("，", ",")
+                .Replace(" ", "")
+                .Split(',');
+
+            if (parts.Length == 0) return false;
+
+            // 合法集合
+            var validNumbers = new HashSet<string> { "1", "2", "3", "4", "5", "6", "7" };
+            var validChinese = new HashSet<string> { "一", "二", "三", "四", "五", "六", "日", "天" };
+            var validEnglishShort = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            var validEnglishFull = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+            foreach (var part in parts)
+            {
+                if (validNumbers.Contains(part)) continue;
+                if (validChinese.Contains(part)) continue;
+                if (validEnglishShort.Contains(part)) continue;
+                if (validEnglishFull.Contains(part)) continue;
+
+                // 只要出現一個無效的就失敗
+                return false;
+            }
+
+            return true;
+        }
+        /// <summary>
+        /// 將單一天字串轉換成標準星期代碼 (1=週一, 2=週二, ..., 7=週日)
+        /// 支援中文、英文、數字格式。
+        /// </summary>
+        public static string ToNormalizedWeekday(this string dayStr)
+        {
+            if (string.IsNullOrWhiteSpace(dayStr)) return "";
+
+            string s = dayStr.Trim().ToLower();
+
+            switch (s)
+            {
+                // 中文
+                case "一": case "mon": case "monday": return "1";
+                case "二": case "tue": case "tuesday": return "2";
+                case "三": case "wed": case "wednesday": return "3";
+                case "四": case "thu": case "thursday": return "4";
+                case "五": case "fri": case "friday": return "5";
+                case "六": case "sat": case "saturday": return "6";
+                case "日": case "天": case "sun": case "sunday": return "7";
+
+                // 數字
+                case "1":
+                case "2":
+                case "3":
+                case "4":
+                case "5":
+                case "6":
+                case "7":
+                    return s;
+
+                default:
+                    return ""; // 無法識別 → 回傳空字串
+            }
+        }
 
         public static bool Check_Date_String(this string source)
         {
