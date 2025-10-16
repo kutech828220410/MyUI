@@ -407,9 +407,9 @@ namespace Basic
                     }
                 }
             }
-            catch
+            catch(Exception ex) 
             {
-                Console.Write($"{IP} ping failed!\n");
+                Console.Write($"Exception : {ex.Message} , {IP} ping failed!\n");
                 return false;
             }
 

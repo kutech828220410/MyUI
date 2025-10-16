@@ -1700,11 +1700,9 @@ C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\TCP.dll

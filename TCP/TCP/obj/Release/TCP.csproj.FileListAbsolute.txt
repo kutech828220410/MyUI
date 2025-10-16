@@ -4239,11 +4239,9 @@ C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\AxOvkBase.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\AxAltairUDrvAsm4.5.dll

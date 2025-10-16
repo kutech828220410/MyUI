@@ -3668,7 +3668,6 @@ C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\CallBackUI\bin\Release\Newtonsoft.Json.dll

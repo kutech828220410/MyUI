@@ -6635,11 +6635,9 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\AxOvkBase.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\AxAltairUDrvAsm4.5.dll

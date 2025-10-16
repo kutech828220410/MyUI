@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SLDUI;
-using LeadShineUI;
+//using SLDUI;
+//using LeadShineUI;
 using PortControl;
 using System.Runtime.InteropServices;
 using MeasureSystemUI;
 using LightControlUI;
 using ZealTechUI;
-using HCGUI;
 namespace MyUI
 {
      [System.Drawing.ToolboxBitmap(typeof(PLC_UI_Init), "PLC_UI_Init.bmp")]
@@ -584,46 +583,46 @@ namespace MyUI
             }
             #endregion
             #region 外部設備
-            else if (ctl is C9016)
-            {
-                C9016 ctl_temp = (C9016)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is E400)
-            {
-                E400 ctl_temp = (E400)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is E6232)
-            {
-                E6232 ctl_temp = (E6232)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is C1230)
-            {
-                C1230 ctl_temp = (C1230)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is DMC1000B)
-            {
-                DMC1000B ctl_temp = (DMC1000B)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is IOC1280)
-            {
-                IOC1280 ctl_temp = (IOC1280)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is DMC2410)
-            {
-                DMC2410 ctl_temp = (DMC2410)ctl;
-                ctl_temp.Run(form, PLC);
-            }
-            else if (ctl is DMC3000)
-            {
-                DMC3000 ctl_temp = (DMC3000)ctl;
-                ctl_temp.Run(form, PLC);
-            }
+            //else if (ctl is C9016)
+            //{
+            //    C9016 ctl_temp = (C9016)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is E400)
+            //{
+            //    E400 ctl_temp = (E400)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is E6232)
+            //{
+            //    E6232 ctl_temp = (E6232)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is C1230)
+            //{
+            //    C1230 ctl_temp = (C1230)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is DMC1000B)
+            //{
+            //    DMC1000B ctl_temp = (DMC1000B)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is IOC1280)
+            //{
+            //    IOC1280 ctl_temp = (IOC1280)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is DMC2410)
+            //{
+            //    DMC2410 ctl_temp = (DMC2410)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
+            //else if (ctl is DMC3000)
+            //{
+            //    DMC3000 ctl_temp = (DMC3000)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
             else if (ctl is ParallelPortControlUI)
             {
                 ParallelPortControlUI ctl_temp = (ParallelPortControlUI)ctl;
@@ -644,11 +643,11 @@ namespace MyUI
                 DAQM_4206A ctl_temp = (DAQM_4206A)ctl;
                 ctl_temp.Run(form, PLC, this);
             }
-            else if (ctl is HCG_485_IO)
-            {
-                HCG_485_IO ctl_temp = (HCG_485_IO)ctl;
-                ctl_temp.Run(form, PLC);
-            }
+            //else if (ctl is HCG_485_IO)
+            //{
+            //    HCG_485_IO ctl_temp = (HCG_485_IO)ctl;
+            //    ctl_temp.Run(form, PLC);
+            //}
             #endregion
         }
 

@@ -519,9 +519,7 @@ C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\FontAwesome.Sharp.dll
-C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\LadderUI.dll
-C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll

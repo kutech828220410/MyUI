@@ -2518,7 +2518,6 @@ C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\LightControlUI.dll
-C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\AxOvkBase.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\AxAltairUDrvAsm4.5.dll

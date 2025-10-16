@@ -1653,7 +1653,6 @@ C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\SunnyUI.Common.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\AxOvkBase.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\AxAltairUDrvAsm4.5.dll

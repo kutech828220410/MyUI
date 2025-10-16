@@ -5299,10 +5299,8 @@ C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\SunnyUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\Newtonsoft.Json.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\bin\Release\Interop.SpeechLib.dll

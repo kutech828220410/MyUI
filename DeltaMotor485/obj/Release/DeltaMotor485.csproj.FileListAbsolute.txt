@@ -218,7 +218,6 @@ C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\System.Numerics.Vectors.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\System.Buffers.dll

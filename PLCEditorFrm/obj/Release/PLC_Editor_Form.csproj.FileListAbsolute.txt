@@ -767,7 +767,6 @@ C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
-C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Numerics.Vectors.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\System.Buffers.dll
