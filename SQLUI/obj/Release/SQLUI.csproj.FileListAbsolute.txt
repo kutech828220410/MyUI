@@ -2639,13 +2639,10 @@ C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\System.ValueTuple.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\ZealTechUI.dll

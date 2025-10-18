@@ -1086,7 +1086,6 @@ C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll.config
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDKUI.pdb
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\Basic.dll
-C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MVSDK.dll
@@ -1108,8 +1107,6 @@ C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\SunnyUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\bin\Release\ZealTechUI.dll

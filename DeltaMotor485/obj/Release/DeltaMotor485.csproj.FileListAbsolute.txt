@@ -208,13 +208,10 @@ C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\System.Memory.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\Interop.SpeechLib.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll

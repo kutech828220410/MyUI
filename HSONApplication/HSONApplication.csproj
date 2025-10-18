@@ -53,10 +53,6 @@
     <Reference Include="CallBackUI">
       <HintPath>..\0.DLL\CallBackUI.dll</HintPath>
     </Reference>
-    <Reference Include="CSkin, Version=10.23.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\0.DLL\CSkin.dll</HintPath>
-    </Reference>
     <Reference Include="DeltaMotor485">
       <HintPath>..\0.DLL\DeltaMotor485.dll</HintPath>
     </Reference>

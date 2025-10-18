@@ -5181,7 +5181,6 @@ C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\HSONApplication.pdb
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\AudioProcessingLibrary.dll
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\CallBackUI.dll
-C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\DeltaMotor485.dll
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\HSONApplication\bin\Release\FontAwesome.Sharp.dll

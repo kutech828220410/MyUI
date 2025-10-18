@@ -1183,7 +1183,6 @@ C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.dll.config
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\HCGUI.pdb
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\Basic.dll
-C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\MyUI.dll
@@ -1205,8 +1204,6 @@ C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\SunnyUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\bin\Release\ZealTechUI.dll

@@ -516,7 +516,6 @@ C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\MyUI.dll.config
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\MyUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\MyUI.pdb
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\Basic.dll
-C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\bin\Release\LadderUI.dll

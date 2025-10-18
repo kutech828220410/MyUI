@@ -1678,7 +1678,6 @@ C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.dll.config
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.xml
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Basic.pdb
-C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Interop.SpeechLib.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\MySql.Data.dll
@@ -1699,7 +1698,6 @@ C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\Basic\bin\Release\ZealTechUI.dll

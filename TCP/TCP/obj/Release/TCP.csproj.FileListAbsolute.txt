@@ -4235,7 +4235,6 @@ C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\Interop.SpeechLib.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\TCP\TCP\bin\Release\MVSDKUI.dll

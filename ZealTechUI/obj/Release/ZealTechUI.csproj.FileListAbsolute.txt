@@ -2510,12 +2510,9 @@ C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\CallBackUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.Common.dll

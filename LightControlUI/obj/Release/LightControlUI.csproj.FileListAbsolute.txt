@@ -1627,7 +1627,6 @@ C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LightControlUI.dll.co
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LightControlUI.pdb
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\Basic.dll
-C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\MyUI.dll
@@ -1649,8 +1648,6 @@ C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\SunnyUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\ZealTechUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\bin\Release\SunnyUI.Common.dll

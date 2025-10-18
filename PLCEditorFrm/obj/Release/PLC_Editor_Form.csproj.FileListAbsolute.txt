@@ -758,12 +758,9 @@ C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\CallBackUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll

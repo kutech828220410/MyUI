@@ -6614,7 +6614,6 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LadderUI.pdb
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\CallBackUI.dll
-C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\MyUI.dll
@@ -6634,7 +6633,6 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\SunnyUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\bin\Release\ZealTechUI.dll

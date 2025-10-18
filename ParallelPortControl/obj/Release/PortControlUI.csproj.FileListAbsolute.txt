@@ -1431,12 +1431,9 @@ C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\DrawingClass.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.dll
-C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
-C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\SLDUI.dll
-C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\ZealTechUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\bin\Release\SunnyUI.Common.dll

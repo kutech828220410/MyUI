@@ -747,7 +747,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.rJ_TextBox_Value);
             this.Controls.Add(this.panel_top);
-            this.Mobile = CCWin.MobileStyle.None;
+            this.Mobile = HsWin.MobileStyle.None;
             this.Name = "Dialog_NumPannel";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Radius = 20;

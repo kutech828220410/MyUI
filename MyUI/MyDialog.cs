@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CCWin;
 using System.Runtime.InteropServices;
 using Basic;
+using HsWin;
 namespace MyUI
 {
 
@@ -31,7 +31,7 @@ namespace MyUI
         }
     }
  
-    public partial class MyDialog : CCSkinMain
+    public partial class MyDialog : HskinMain
     {
 
         private bool flag_childForm = false;

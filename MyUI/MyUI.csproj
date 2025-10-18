@@ -37,14 +37,12 @@
     <DocumentationFile>
     </DocumentationFile>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Basic, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\Basic.dll</HintPath>
-    </Reference>
-    <Reference Include="CSkin">
-      <HintPath>..\0.DLL\CSkin.dll</HintPath>
     </Reference>
     <Reference Include="DrawingClass, Version=1.0.0.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -189,6 +187,33 @@
     <Compile Include="DragDropListBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Hskin\AntiAliasGraphics.cs" />
+    <Compile Include="Hskin\cmSysButton.cs" />
+    <Compile Include="Hskin\ControlBoxManager.cs" />
+    <Compile Include="Hskin\CustomSysButtonCollection.cs" />
+    <Compile Include="Hskin\GraphicsPathHelper.cs" />
+    <Compile Include="Hskin\HSKinFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hskin\HskinFormDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hskin\HskinMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hskin\HskinNativeMethods.cs" />
+    <Compile Include="Hskin\HskinSkinFormRenderer.cs" />
+    <Compile Include="Hskin\HsStrcut.cs" />
+    <Compile Include="Hskin\ImageDrawRect.cs" />
+    <Compile Include="Hskin\RenderHelper.cs" />
+    <Compile Include="Hskin\SkinButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Hskin\SkinFormProfessionalRenderer.cs" />
+    <Compile Include="Hskin\SkinProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Hskin\SkinTools.cs" />
     <Compile Include="IPAddressInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,9 +225,7 @@
     </Compile>
     <Compile Include="LScrollBar.cs" />
     <Compile Include="MyContextMenuStrip.cs" />
-    <Compile Include="MyDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MyDialog.cs" />
     <Compile Include="MyDialog.Designer.cs">
       <DependentUpon>MyDialog.cs</DependentUpon>
     </Compile>
