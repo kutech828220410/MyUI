@@ -1205,10 +1205,7 @@ C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\Interop
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\ParallelPortControl\bin\Release\AxOvkBaseAsm4.5.dll
@@ -1286,7 +1283,6 @@ C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\ParallelPortControl\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\bin\Release\MVSDK.dll
@@ -1462,4 +1458,4 @@ C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.cs
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.dll
 C:\Users\Evan\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.pdb
-C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortCont.B2A63EBD.Up2Date
+C:\Users\Administrator\source\repos\MyUI\ParallelPortControl\obj\Release\PortControlUI.csproj.CopyComplete

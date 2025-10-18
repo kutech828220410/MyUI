@@ -2288,9 +2288,6 @@ C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\MVSDKUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\LeadShineUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\ZealTechUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -2367,7 +2364,6 @@ C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\ZealTechUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\ZealTechUI\bin\Release\SunnyUI.dll
@@ -2540,4 +2536,4 @@ C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CoreCom
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.dll
 C:\Users\Evan\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.pdb
-C:\Users\Administrator\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\ZealTechUI\obj\Release\ZealTechUI.csproj.CopyComplete

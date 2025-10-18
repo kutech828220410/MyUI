@@ -2400,11 +2400,8 @@ C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\MVSDKUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\SQLUI\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -2486,7 +2483,6 @@ C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\SQLUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\SunnyUI.Common.dll
@@ -2676,7 +2672,6 @@ C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\obj\Release\SQLUI.pdb
-C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.Up2Date
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\Microsoft.Win32.Primitives.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\netstandard.dll
 C:\Users\Administrator\source\repos\MyUI\SQLUI\bin\Release\System.AppContext.dll
@@ -2871,3 +2866,4 @@ C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\System.Xml.XPath.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\System.Xml.XPath.XDocument.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\Dapper.dll
 C:\Users\Evan\source\repos\MyUI\SQLUI\bin\Release\Dapper.xml
+C:\Users\Administrator\source\repos\MyUI\SQLUI\obj\Release\SQLUI.csproj.CopyComplete

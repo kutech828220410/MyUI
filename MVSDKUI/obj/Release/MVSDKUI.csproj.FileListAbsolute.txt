@@ -878,10 +878,7 @@ C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\Interop.SpeechLib.d
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Buffers.xml
 C:\Users\Administrator\Source\Repos\MyUI\MVSDKUI\bin\Release\System.Memory.xml
@@ -953,7 +950,6 @@ C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\MVSDKUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\source\repos\MyUI\MVSDKUI\bin\Release\SunnyUI.dll
@@ -1135,4 +1131,4 @@ C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CoreCompileIn
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.dll
 C:\Users\Evan\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\MVSDKUI\obj\Release\MVSDKUI.csproj.CopyComplete

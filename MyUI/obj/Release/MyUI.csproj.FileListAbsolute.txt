@@ -185,9 +185,7 @@ C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\MyUI.pdb
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\Basic.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\FontAwesome.Sharp.dll
-C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\LadderUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\MyUI\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
@@ -279,7 +277,6 @@ C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.StepEntity.resources
 C:\Users\User\Desktop\MyUI\MyUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\MyUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\User\Desktop\MyUI\MyUI\obj\Release\MyUI.MyDialog.resources
-C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.StepEntity.resources
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\MyUI\bin\Release\SunnyUI.Common.dll
@@ -614,4 +611,4 @@ C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CoreCompileInputs.c
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.dll
 C:\Users\Evan\source\repos\MyUI\MyUI\obj\Release\MyUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\MyUI\obj\Release\MyUI.csproj.CopyComplete

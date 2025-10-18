@@ -3821,10 +3821,8 @@ C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\DrawingClass.dl
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\MVSDKUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\SLDUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\LeadShineUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -3922,7 +3920,6 @@ C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LeadShineUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\LeadShineUI\bin\Release\SunnyUI.Common.dll
@@ -4129,4 +4126,4 @@ C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CoreC
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.dll
 C:\Users\Evan\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShin.4A4787BD.Up2Date
+C:\Users\Administrator\source\repos\MyUI\LeadShineUI\obj\Release\LeadShineUI.csproj.CopyComplete

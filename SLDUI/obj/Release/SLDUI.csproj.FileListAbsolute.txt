@@ -5033,10 +5033,8 @@ C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MeasureSystemUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\MVSDKUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\SLDUI\bin\Release\AxOvkBase.dll
@@ -5130,7 +5128,6 @@ C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\SLDUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\SunnyUI.dll
 C:\Users\Administrator\source\repos\MyUI\SLDUI\bin\Release\SunnyUI.Common.dll
@@ -5336,4 +5333,4 @@ C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.dll
 C:\Users\Evan\source\repos\MyUI\SLDUI\obj\Release\SLDUI.pdb
-C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\SLDUI\obj\Release\SLDUI.csproj.CopyComplete

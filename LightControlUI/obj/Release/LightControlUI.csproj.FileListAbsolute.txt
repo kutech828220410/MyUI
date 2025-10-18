@@ -1422,10 +1422,7 @@ C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\Interop.Spee
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\LightControlUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -1501,7 +1498,6 @@ C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LightControlUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\LightControlUI\bin\Release\MVSDK.dll
@@ -1675,4 +1671,4 @@ C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.dll
 C:\Users\Evan\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LightControlUI\obj\Release\LightCon.4E3435E4.Up2Date
+C:\Users\Administrator\source\repos\MyUI\LightControlUI\obj\Release\LightControlUI.csproj.CopyComplete

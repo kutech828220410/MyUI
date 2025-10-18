@@ -968,8 +968,6 @@ C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\ZealTechUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\HCGUI\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -1051,7 +1049,6 @@ C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\HCGUI\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\HCGUI\bin\Release\MVSDK.dll
@@ -1234,4 +1231,4 @@ C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.dll
 C:\Users\Evan\source\repos\MyUI\HCGUI\obj\Release\HCGUI.pdb
-C:\Users\Administrator\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\HCGUI\obj\Release\HCGUI.csproj.CopyComplete

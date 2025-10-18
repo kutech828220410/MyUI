@@ -6353,10 +6353,7 @@ C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxAltairUDrvAsm4.5.dll
 C:\Users\Administrator\Source\Repos\MyUI\LadderUI\bin\Release\AxOvkBaseAsm4.5.dll
@@ -6457,7 +6454,6 @@ C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\LadderUI\bin\Release\Microsoft.mshtml.dll
-C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\MyUI\LadderUI\bin\Release\PortControlUI.dll
@@ -6672,4 +6668,4 @@ C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CoreCompile
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.dll
 C:\Users\Evan\source\repos\MyUI\LadderUI\obj\Release\LadderUI.pdb
-C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\LadderUI\obj\Release\LadderUI.csproj.CopyComplete

@@ -584,10 +584,7 @@ C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Memory.
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Numerics.Vectors.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\System.Buffers.dll
 C:\Users\Administrator\Source\Repos\MyUI\PLCEditorFrm\bin\Release\AxOvkBase.dll
@@ -644,7 +641,6 @@ C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\PLCEditorFrm\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\bin\Release\MVSDK.dll
@@ -784,4 +780,4 @@ C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).exe
 C:\Users\Evan\source\repos\MyUI\PLCEditorFrm\obj\Release\GPP編譯軟體 (鴻森整合機電有限公司).pdb
-C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Edit.8D08FB6B.Up2Date
+C:\Users\Administrator\source\repos\MyUI\PLCEditorFrm\obj\Release\PLC_Editor_Form.csproj.CopyComplete

@@ -78,11 +78,8 @@ C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MyUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\PortControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.Properties.Resources.resources
@@ -94,7 +91,6 @@ C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\DeltaMotor485\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\PopupControl.dll
-C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\bin\Release\MVSDK.dll
@@ -236,4 +232,4 @@ C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.C
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMot.AE0ECDD9.Up2Date
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.dll
 C:\Users\Evan\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.pdb
-C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMot.AE0ECDD9.Up2Date
+C:\Users\Administrator\source\repos\MyUI\DeltaMotor485\obj\Release\DeltaMotor485.csproj.CopyComplete

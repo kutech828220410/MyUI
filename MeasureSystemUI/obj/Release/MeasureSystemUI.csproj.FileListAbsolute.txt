@@ -3308,6 +3308,5 @@ C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.cspr
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureS.2DD8B85D.Up2Date
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.dll
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.pdb
-C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureS.2DD8B85D.Up2Date
-C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
 C:\Users\Evan\source\repos\MyUI\MeasureSystemUI\bin\Release\Basic.xml
+C:\Users\Administrator\source\repos\MyUI\MeasureSystemUI\obj\Release\MeasureSystemUI.csproj.CopyComplete

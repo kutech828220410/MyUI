@@ -1431,11 +1431,8 @@ C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\System.ValueTuple.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LadderUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\FontAwesome.Sharp.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\MeasureSystemUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\SLDUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LeadShineUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\LightControlUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\ZealTechUI.dll
-C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\HCGUI.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\DrawingClass.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxOvkBase.dll
 C:\Users\Administrator\Source\Repos\MyUI\Basic\bin\Release\AxAltairUDrvAsm4.5.dll
@@ -1530,7 +1527,6 @@ C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\PopupControl.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\User\Desktop\MyUI\Basic\bin\Release\Microsoft.mshtml.dll
-C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\CSkin.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDKUI.dll
 C:\Users\Administrator\source\repos\MyUI\Basic\bin\Release\MVSDK.dll
@@ -1737,4 +1733,4 @@ C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.csproj.CoreCompileInputs
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.dll
 C:\Users\Evan\source\repos\MyUI\Basic\obj\Release\Basic.pdb
-C:\Users\Administrator\source\repos\MyUI\Basic\obj\Release\Basic.csproj.Up2Date
+C:\Users\Administrator\source\repos\MyUI\Basic\obj\Release\Basic.csproj.CopyComplete
